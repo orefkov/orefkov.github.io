@@ -1,0 +1,906 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>simstr: Шаблон класса simstr::str_storable&lt; K, Impl, Allocator &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.4.0</span>
+   </div>
+   <div id="projectbrief">Yet another strings library</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classsimstr_1_1str__storable.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="classsimstr_1_1str__storable-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Шаблон класса simstr::str_storable&lt; K, Impl, Allocator &gt;</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>База для объектов, владеющих строкой.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="sstring_8h_source.html">sstring.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:simstr::str_storable&lt; K, Impl, Allocator &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classsimstr_1_1str__storable.png" usemap="#simstr::str_5Fstorable_3C_20K_2C_20Impl_2C_20Allocator_20_3E_map" alt=""/>
+  <map id="simstr::str_5Fstorable_3C_20K_2C_20Impl_2C_20Allocator_20_3E_map" name="simstr::str_5Fstorable_3C_20K_2C_20Impl_2C_20Allocator_20_3E_map">
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; K, N, forShared, Allocator &gt;" shape="rect" coords="270,56,530,80"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; u8s, N &gt;" shape="rect" coords="270,112,530,136"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; ubs, N &gt;" shape="rect" coords="270,168,530,192"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; wchar_t, N &gt;" shape="rect" coords="270,224,530,248"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; u16s, N &gt;" shape="rect" coords="270,280,530,304"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; u32s, N &gt;" shape="rect" coords="270,336,530,360"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; u8s, N, true &gt;" shape="rect" coords="270,392,530,416"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; ubs, N, true &gt;" shape="rect" coords="270,448,530,472"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; wchar_t, N, true &gt;" shape="rect" coords="270,504,530,528"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; u16s, N, true &gt;" shape="rect" coords="270,560,530,584"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; u32s, N, true &gt;" shape="rect" coords="270,616,530,640"/>
+<area href="classsimstr_1_1sstring.html" alt="simstr::sstring&lt; K, Allocator &gt;" shape="rect" coords="270,672,530,696"/>
+<area href="classsimstr_1_1sstring.html" alt="simstr::sstring&lt; u8s &gt;" shape="rect" coords="270,728,530,752"/>
+<area href="classsimstr_1_1sstring.html" alt="simstr::sstring&lt; ubs &gt;" shape="rect" coords="270,784,530,808"/>
+<area href="classsimstr_1_1sstring.html" alt="simstr::sstring&lt; wchar_t &gt;" shape="rect" coords="270,840,530,864"/>
+<area href="classsimstr_1_1sstring.html" alt="simstr::sstring&lt; u16s &gt;" shape="rect" coords="270,896,530,920"/>
+<area href="classsimstr_1_1sstring.html" alt="simstr::sstring&lt; u32s &gt;" shape="rect" coords="270,952,530,976"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:af93a700258bc7492e53ceb2acf414315" id="r_af93a700258bc7492e53ceb2acf414315"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af93a700258bc7492e53ceb2acf414315">operator const K *</a> () const noexcept</td></tr>
+<tr class="memdesc:af93a700258bc7492e53ceb2acf414315"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор преобразования в нуль-терминированную C-строку.  <br /></td></tr>
+<tr class="separator:af93a700258bc7492e53ceb2acf414315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed242dbe057042c9f72f9514aaf861ee" id="r_aed242dbe057042c9f72f9514aaf861ee"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1simple__str__nt.html">s_str_nt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed242dbe057042c9f72f9514aaf861ee">to_nts</a> (size_t from=0) const</td></tr>
+<tr class="memdesc:aed242dbe057042c9f72f9514aaf861ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить <a class="el" href="structsimstr_1_1simple__str__nt.html" title="Класс, заявляющий, что ссылается на нуль-терминированную строку.">simple_str_nt</a>, начиная с заданного символа.  <br /></td></tr>
+<tr class="separator:aed242dbe057042c9f72f9514aaf861ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcae77eab91707d4b3fa578dde83d34a" id="r_abcae77eab91707d4b3fa578dde83d34a"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcae77eab91707d4b3fa578dde83d34a">operator s_str_nt</a> () const</td></tr>
+<tr class="memdesc:abcae77eab91707d4b3fa578dde83d34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразовать в <a class="el" href="structsimstr_1_1simple__str__nt.html" title="Класс, заявляющий, что ссылается на нуль-терминированную строку.">simple_str_nt</a>.  <br /></td></tr>
+<tr class="separator:abcae77eab91707d4b3fa578dde83d34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a9f215b08b645dbf40480cc566b478f07" id="r_a9f215b08b645dbf40480cc566b478f07"><td class="memTemplParams" colspan="2">template&lt;typename T, typename... Args&gt; <br />
+requires std::is_constructible_v&lt;allocator_t, Args...&gt;</td></tr>
+<tr class="memitem:a9f215b08b645dbf40480cc566b478f07"><td class="memTemplItemLeft" align="right" valign="top">static my_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9f215b08b645dbf40480cc566b478f07">join</a> (const T &amp;strings, <a class="el" href="structsimstr_1_1simple__str.html">s_str</a> delimeter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a9f215b08b645dbf40480cc566b478f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конкатенация строк из контейнера в одну строку.  <br /></td></tr>
+<tr class="separator:a9f215b08b645dbf40480cc566b478f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cb647956eba06372b0cef5328a0bc91" id="r_a6cb647956eba06372b0cef5328a0bc91"><td class="memTemplParams" colspan="2">template&lt;StrType&lt; K &gt; From, typename... Args&gt; <br />
+requires std::is_constructible_v&lt;allocator_t, Args...&gt;</td></tr>
+<tr class="memitem:a6cb647956eba06372b0cef5328a0bc91"><td class="memTemplItemLeft" align="right" valign="top">static my_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a6cb647956eba06372b0cef5328a0bc91">upperred_only_ascii_from</a> (const From &amp;f, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a6cb647956eba06372b0cef5328a0bc91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создать строку, копию переданной в верхнем регистре символов ASCII.  <br /></td></tr>
+<tr class="separator:a6cb647956eba06372b0cef5328a0bc91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95c800534b214e4473b6f59c3d761dc4" id="r_a95c800534b214e4473b6f59c3d761dc4"><td class="memTemplParams" colspan="2">template&lt;StrType&lt; K &gt; From, typename... Args&gt; <br />
+requires std::is_constructible_v&lt;allocator_t, Args...&gt;</td></tr>
+<tr class="memitem:a95c800534b214e4473b6f59c3d761dc4"><td class="memTemplItemLeft" align="right" valign="top">static my_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a95c800534b214e4473b6f59c3d761dc4">lowered_only_ascii_from</a> (const From &amp;f, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a95c800534b214e4473b6f59c3d761dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создать копию переданной строки в нижнем регистре символов ASCII.  <br /></td></tr>
+<tr class="separator:a95c800534b214e4473b6f59c3d761dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c53f8d59e980315bc0d44b5cf6b1e6d" id="r_a3c53f8d59e980315bc0d44b5cf6b1e6d"><td class="memTemplParams" colspan="2">template&lt;StrType&lt; K &gt; From, typename... Args&gt; <br />
+requires std::is_constructible_v&lt;allocator_t, Args...&gt;</td></tr>
+<tr class="memitem:a3c53f8d59e980315bc0d44b5cf6b1e6d"><td class="memTemplItemLeft" align="right" valign="top">static my_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3c53f8d59e980315bc0d44b5cf6b1e6d">upperred_from</a> (const From &amp;f, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a3c53f8d59e980315bc0d44b5cf6b1e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создать копию переданной строки в верхнем регистре символов Unicode первой плоскости (&lt;0xFFFF).  <br /></td></tr>
+<tr class="separator:a3c53f8d59e980315bc0d44b5cf6b1e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7946e4e405f908fd85c896bd75f67d72" id="r_a7946e4e405f908fd85c896bd75f67d72"><td class="memTemplParams" colspan="2">template&lt;StrType&lt; K &gt; From, typename... Args&gt; <br />
+requires std::is_constructible_v&lt;allocator_t, Args...&gt;</td></tr>
+<tr class="memitem:a7946e4e405f908fd85c896bd75f67d72"><td class="memTemplItemLeft" align="right" valign="top">static my_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7946e4e405f908fd85c896bd75f67d72">lowered_from</a> (const From &amp;f, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a7946e4e405f908fd85c896bd75f67d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создать копию переданной строки в нижнем регистре символов Unicode первой плоскости (&lt;0xFFFF).  <br /></td></tr>
+<tr class="separator:a7946e4e405f908fd85c896bd75f67d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafdcc9ae62c73be2c37e4a40c3366ded" id="r_aafdcc9ae62c73be2c37e4a40c3366ded"><td class="memTemplParams" colspan="2">template&lt;StrType&lt; K &gt; From, typename... Args&gt; <br />
+requires std::is_constructible_v&lt;allocator_t, Args...&gt;</td></tr>
+<tr class="memitem:aafdcc9ae62c73be2c37e4a40c3366ded"><td class="memTemplItemLeft" align="right" valign="top">static my_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aafdcc9ae62c73be2c37e4a40c3366ded">replaced_from</a> (const From &amp;f, <a class="el" href="structsimstr_1_1simple__str.html">s_str</a> pattern, <a class="el" href="structsimstr_1_1simple__str.html">s_str</a> repl, size_t offset=0, size_t maxCount=0, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:aafdcc9ae62c73be2c37e4a40c3366ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создать копию переданной строки с заменой подстрок.  <br /></td></tr>
+<tr class="separator:aafdcc9ae62c73be2c37e4a40c3366ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a458697f089f5d3f2aba985e0c707a577" id="r_a458697f089f5d3f2aba985e0c707a577"><td class="memItemLeft" align="right" valign="top"><a id="a458697f089f5d3f2aba985e0c707a577" name="a458697f089f5d3f2aba985e0c707a577"></a>
+constexpr allocator_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>allocator</b> ()</td></tr>
+<tr class="memdesc:a458697f089f5d3f2aba985e0c707a577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить аллокатор. <br /></td></tr>
+<tr class="separator:a458697f089f5d3f2aba985e0c707a577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a005fd4083acc1c2c44fe59ae6e2ec8ce" id="r_a005fd4083acc1c2c44fe59ae6e2ec8ce"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a005fd4083acc1c2c44fe59ae6e2ec8ce"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a005fd4083acc1c2c44fe59ae6e2ec8ce">str_storable</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a005fd4083acc1c2c44fe59ae6e2ec8ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создать пустой объект.  <br /></td></tr>
+<tr class="separator:a005fd4083acc1c2c44fe59ae6e2ec8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4116dbd55a53014cef88f4f571cb0c64" id="r_a4116dbd55a53014cef88f4f571cb0c64"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4116dbd55a53014cef88f4f571cb0c64">init_from_str_other</a> (<a class="el" href="structsimstr_1_1simple__str.html">s_str</a> other)</td></tr>
+<tr class="memdesc:a4116dbd55a53014cef88f4f571cb0c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация из другого строкового объекта.  <br /></td></tr>
+<tr class="separator:a4116dbd55a53014cef88f4f571cb0c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e0afaaca95e435c77ecc4ab3f26b8d" id="r_a92e0afaaca95e435c77ecc4ab3f26b8d"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92e0afaaca95e435c77ecc4ab3f26b8d">init_str_repeat</a> (size_t repeat, <a class="el" href="structsimstr_1_1simple__str.html">s_str</a> pattern)</td></tr>
+<tr class="memdesc:a92e0afaaca95e435c77ecc4ab3f26b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация повторением строки.  <br /></td></tr>
+<tr class="separator:a92e0afaaca95e435c77ecc4ab3f26b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47d5032575e4c90cdb9a8bcd0aa8c735" id="r_a47d5032575e4c90cdb9a8bcd0aa8c735"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47d5032575e4c90cdb9a8bcd0aa8c735">init_symb_repeat</a> (size_t count, K pad)</td></tr>
+<tr class="memdesc:a47d5032575e4c90cdb9a8bcd0aa8c735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация повторением символа.  <br /></td></tr>
+<tr class="separator:a47d5032575e4c90cdb9a8bcd0aa8c735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d6ca99606646e8a2fb07f5808dae999" id="r_a5d6ca99606646e8a2fb07f5808dae999"><td class="memTemplParams" colspan="2">template&lt;StrExprForType&lt; K &gt; A&gt; </td></tr>
+<tr class="memitem:a5d6ca99606646e8a2fb07f5808dae999"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5d6ca99606646e8a2fb07f5808dae999">init_str_expr</a> (const A &amp;expr)</td></tr>
+<tr class="memdesc:a5d6ca99606646e8a2fb07f5808dae999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация из строкового выражения.  <br /></td></tr>
+<tr class="separator:a5d6ca99606646e8a2fb07f5808dae999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1090a808b0e761a7ecff753d80faebba" id="r_a1090a808b0e761a7ecff753d80faebba"><td class="memTemplParams" colspan="2">template&lt;StrType&lt; K &gt; From&gt; </td></tr>
+<tr class="memitem:a1090a808b0e761a7ecff753d80faebba"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1090a808b0e761a7ecff753d80faebba">init_replaced</a> (const From &amp;f, <a class="el" href="structsimstr_1_1simple__str.html">s_str</a> pattern, <a class="el" href="structsimstr_1_1simple__str.html">s_str</a> repl, size_t offset=0, size_t maxCount=0)</td></tr>
+<tr class="memdesc:a1090a808b0e761a7ecff753d80faebba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация из строкового источника с заменой.  <br /></td></tr>
+<tr class="separator:a1090a808b0e761a7ecff753d80faebba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename K, typename Impl, typename Allocator&gt;<br />
+class simstr::str_storable&lt; K, Impl, Allocator &gt;</div><p>База для объектов, владеющих строкой. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">K</td><td>- тип символов. </td></tr>
+    <tr><td class="paramname">Impl</td><td>- конечный класс наследник. </td></tr>
+    <tr><td class="paramname">Allocator</td><td>- тип аллокатора.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>По прежнему ничего не знает о том, где наследник хранит строку и её размер. Просто вызывает его методы для получения места, и заполняет его при необходимости. Работает только при создании объекта, не работает с модификацией строки после ее создания и гарантирует, что если вызываются эти методы, объект еще только создается, и какого-либо расшаривания данных еще не было.</p>
+<p>Эти методы должен реализовать класс-наследник, вызываются только при создании объекта</p><ul>
+<li><code>K* init(size_t size)</code> - выделить место для строки указанного размера, вернуть адрес</li>
+<li><code>void create_empty()</code> - создать пустой объект</li>
+<li><code>K* set_size(size_t size)</code> - перевыделить место для строки, если при создании не угадали нужный размер и место нужно больше или меньше. Содержимое строки нужно оставить. Хотя тип аллокатора и задаётся параметром шаблона, делается это только для проброса его типа в конструкторы, методы аллокатора не вызываются. Если наследник не пользуется аллокатором, а сам в <code>init</code> и <code>set_size</code> как-то выделяет место, может указать типом аллокатора какой-либо пустой класс. </li>
+</ul>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a005fd4083acc1c2c44fe59ae6e2ec8ce" name="a005fd4083acc1c2c44fe59ae6e2ec8ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a005fd4083acc1c2c44fe59ae6e2ec8ce">&#9670;&#160;</a></span>str_storable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::str_storable </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel constexpr">constexpr</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создать пустой объект. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...args</td><td>- параметры для инициализации аллокатора. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a4116dbd55a53014cef88f4f571cb0c64" name="a4116dbd55a53014cef88f4f571cb0c64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4116dbd55a53014cef88f4f571cb0c64">&#9670;&#160;</a></span>init_from_str_other()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::init_from_str_other </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">s_str</a></td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Инициализация из другого строкового объекта. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>- другой строковый объект, <a class="el" href="structsimstr_1_1simple__str.html" title="Простейший класс иммутабельной не владеющей строки.">simple_str</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1090a808b0e761a7ecff753d80faebba" name="a1090a808b0e761a7ecff753d80faebba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1090a808b0e761a7ecff753d80faebba">&#9670;&#160;</a></span>init_replaced()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<div class="memtemplate">
+template&lt;StrType&lt; K &gt; From&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::init_replaced </td>
+          <td>(</td>
+          <td class="paramtype">const From &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">s_str</a></td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">s_str</a></td>          <td class="paramname"><span class="paramname"><em>repl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>maxCount</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Инициализация из строкового источника с заменой. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>- строковый объект, из которого берётся исходная строка. </td></tr>
+    <tr><td class="paramname">pattern</td><td>- подстрока, которую надо заменить. </td></tr>
+    <tr><td class="paramname">repl</td><td>- строка, на которую надо заменить. </td></tr>
+    <tr><td class="paramname">offset</td><td>- начальная позиция для поиска подстрок. </td></tr>
+    <tr><td class="paramname">maxCount</td><td>- максимальное количество замен, 0 - без ограничений. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5d6ca99606646e8a2fb07f5808dae999" name="a5d6ca99606646e8a2fb07f5808dae999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d6ca99606646e8a2fb07f5808dae999">&#9670;&#160;</a></span>init_str_expr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<div class="memtemplate">
+template&lt;StrExprForType&lt; K &gt; A&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::init_str_expr </td>
+          <td>(</td>
+          <td class="paramtype">const A &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Инициализация из строкового выражения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>- строковое выражение.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Запрашивает у строкового выражения <code>length()</code>, выделяет память нужного размера, и вызывает метод <code>place()</code> для размещения результата в буфере. </p>
+
+</div>
+</div>
+<a id="a92e0afaaca95e435c77ecc4ab3f26b8d" name="a92e0afaaca95e435c77ecc4ab3f26b8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92e0afaaca95e435c77ecc4ab3f26b8d">&#9670;&#160;</a></span>init_str_repeat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::init_str_repeat </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>repeat</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">s_str</a></td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Инициализация повторением строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">repeat</td><td>- количество повторов. </td></tr>
+    <tr><td class="paramname">pattern</td><td>- строка, которую надо повторить. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a47d5032575e4c90cdb9a8bcd0aa8c735" name="a47d5032575e4c90cdb9a8bcd0aa8c735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47d5032575e4c90cdb9a8bcd0aa8c735">&#9670;&#160;</a></span>init_symb_repeat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::init_symb_repeat </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">K</td>          <td class="paramname"><span class="paramname"><em>pad</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Инициализация повторением символа. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>- количество повторов. </td></tr>
+    <tr><td class="paramname">pad</td><td>- символ, который надо повторить. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9f215b08b645dbf40480cc566b478f07" name="a9f215b08b645dbf40480cc566b478f07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f215b08b645dbf40480cc566b478f07">&#9670;&#160;</a></span>join()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<div class="memtemplate">
+template&lt;typename T, typename... Args&gt; <br />
+requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static my_type <a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::join </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>strings</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">s_str</a></td>          <td class="paramname"><span class="paramname"><em>delimeter</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>tail</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>skip_empty</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конкатенация строк из контейнера в одну строку. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strings</td><td>- контейнер со строками. </td></tr>
+    <tr><td class="paramname">delimeter</td><td>- разделитель, добавляемый между строками. </td></tr>
+    <tr><td class="paramname">tail</td><td>- добавить разделитель после последней строки. </td></tr>
+    <tr><td class="paramname">skip_empty</td><td>- пропускать пустые строки без добавления разделителя. </td></tr>
+    <tr><td class="paramname">...args</td><td>- параметры для инициализации аллокатора.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Функция служит для слияния контейнера строк в одну строку с разделителем. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
+<div class="line">ssa delim = get_current_delimeter();</div>
+<div class="line"><span class="keyword">auto</span> line = <a class="code hl_function" href="#a9f215b08b645dbf40480cc566b478f07">lstringa&lt;200&gt;::join</a>(strings, delimeter);</div>
+<div class="ttc" id="aclasssimstr_1_1str__storable_html_a9f215b08b645dbf40480cc566b478f07"><div class="ttname"><a href="#a9f215b08b645dbf40480cc566b478f07">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimeter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Определения</b> sstring.h:1283</div></div>
+</div><!-- fragment --><p> Стоит отметить, что при заранее известном разделителе лучше пользоваться строковым выражением <code>e_join</code>. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
+<div class="line">lstringa&lt;200&gt; line{<a class="code hl_function" href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">e_join</a>(strings, <span class="stringliteral">&quot;/&quot;</span>)};</div>
+<div class="ttc" id="agroup___str_exprs_html_gafd2e6b8a52bfe20c0b86d25f9f78cb52"><div class="ttname"><a href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a></div><div class="ttdeci">constexpr auto e_join(const T &amp;s, L &amp;&amp;d)</div><div class="ttdoc">Получить строковое выражение, конкатенирующее строки в контейнере в одну строку с заданным разделител...</div><div class="ttdef"><b>Определения</b> strexpr.h:1884</div></div>
+</div><!-- fragment --><p> В этом случае компилятор может лучше оптимизировать код слияния строк. </p>
+
+</div>
+</div>
+<a id="a7946e4e405f908fd85c896bd75f67d72" name="a7946e4e405f908fd85c896bd75f67d72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7946e4e405f908fd85c896bd75f67d72">&#9670;&#160;</a></span>lowered_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<div class="memtemplate">
+template&lt;StrType&lt; K &gt; From, typename... Args&gt; <br />
+requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static my_type <a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::lowered_from </td>
+          <td>(</td>
+          <td class="paramtype">const From &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создать копию переданной строки в нижнем регистре символов Unicode первой плоскости (&lt;0xFFFF). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>- строка источник. </td></tr>
+    <tr><td class="paramname">...args</td><td>- параметры для инициализации аллокатора.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Регистр меняется упрощенными таблицами, где один code_point всегда меняется в один code_point (но для UTF-8 возможно, что длина в code unit'ах изменится). </p>
+
+</div>
+</div>
+<a id="a95c800534b214e4473b6f59c3d761dc4" name="a95c800534b214e4473b6f59c3d761dc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95c800534b214e4473b6f59c3d761dc4">&#9670;&#160;</a></span>lowered_only_ascii_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<div class="memtemplate">
+template&lt;StrType&lt; K &gt; From, typename... Args&gt; <br />
+requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static my_type <a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::lowered_only_ascii_from </td>
+          <td>(</td>
+          <td class="paramtype">const From &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создать копию переданной строки в нижнем регистре символов ASCII. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>- строка источник. </td></tr>
+    <tr><td class="paramname">...args</td><td>- параметры для инициализации аллокатора. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af93a700258bc7492e53ceb2acf414315" name="af93a700258bc7492e53ceb2acf414315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af93a700258bc7492e53ceb2acf414315">&#9670;&#160;</a></span>operator const K *()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::operator const K * </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Оператор преобразования в нуль-терминированную C-строку. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>const K* - указатель на начало строки. </dd></dl>
+
+</div>
+</div>
+<a id="abcae77eab91707d4b3fa578dde83d34a" name="abcae77eab91707d4b3fa578dde83d34a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcae77eab91707d4b3fa578dde83d34a">&#9670;&#160;</a></span>operator s_str_nt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::operator <a class="el" href="structsimstr_1_1simple__str__nt.html">s_str_nt</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Преобразовать в <a class="el" href="structsimstr_1_1simple__str__nt.html" title="Класс, заявляющий, что ссылается на нуль-терминированную строку.">simple_str_nt</a>. </p>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="structsimstr_1_1simple__str__nt.html" title="Класс, заявляющий, что ссылается на нуль-терминированную строку.">simple_str_nt</a>. </dd></dl>
+
+</div>
+</div>
+<a id="aafdcc9ae62c73be2c37e4a40c3366ded" name="aafdcc9ae62c73be2c37e4a40c3366ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafdcc9ae62c73be2c37e4a40c3366ded">&#9670;&#160;</a></span>replaced_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<div class="memtemplate">
+template&lt;StrType&lt; K &gt; From, typename... Args&gt; <br />
+requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static my_type <a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::replaced_from </td>
+          <td>(</td>
+          <td class="paramtype">const From &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">s_str</a></td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">s_str</a></td>          <td class="paramname"><span class="paramname"><em>repl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>maxCount</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создать копию переданной строки с заменой подстрок. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>- строка источник. </td></tr>
+    <tr><td class="paramname">pattern</td><td>- подстрока, которую надо заменить. </td></tr>
+    <tr><td class="paramname">repl</td><td>- строка, на которую надо заменить. </td></tr>
+    <tr><td class="paramname">offset</td><td>- начальная позиция для поиска подстрок. </td></tr>
+    <tr><td class="paramname">maxCount</td><td>- максимальное количество замен, 0 - без ограничений. </td></tr>
+    <tr><td class="paramname">...args</td><td>- параметры для инициализации аллокатора. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aed242dbe057042c9f72f9514aaf861ee" name="aed242dbe057042c9f72f9514aaf861ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed242dbe057042c9f72f9514aaf861ee">&#9670;&#160;</a></span>to_nts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsimstr_1_1simple__str__nt.html">s_str_nt</a> <a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::to_nts </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>from</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получить <a class="el" href="structsimstr_1_1simple__str__nt.html" title="Класс, заявляющий, что ссылается на нуль-терминированную строку.">simple_str_nt</a>, начиная с заданного символа. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>- позиция начального символа, по умолчанию 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="structsimstr_1_1simple__str__nt.html" title="Класс, заявляющий, что ссылается на нуль-терминированную строку.">simple_str_nt</a>, </dd></dl>
+
+</div>
+</div>
+<a id="a3c53f8d59e980315bc0d44b5cf6b1e6d" name="a3c53f8d59e980315bc0d44b5cf6b1e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c53f8d59e980315bc0d44b5cf6b1e6d">&#9670;&#160;</a></span>upperred_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<div class="memtemplate">
+template&lt;StrType&lt; K &gt; From, typename... Args&gt; <br />
+requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static my_type <a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::upperred_from </td>
+          <td>(</td>
+          <td class="paramtype">const From &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создать копию переданной строки в верхнем регистре символов Unicode первой плоскости (&lt;0xFFFF). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>- строка источник. </td></tr>
+    <tr><td class="paramname">...args</td><td>- параметры для инициализации аллокатора.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Регистр меняется упрощенными таблицами, где один code_point всегда меняется в один code_point (но для UTF-8 возможно, что длина в code unit'ах изменится). </p>
+
+</div>
+</div>
+<a id="a6cb647956eba06372b0cef5328a0bc91" name="a6cb647956eba06372b0cef5328a0bc91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cb647956eba06372b0cef5328a0bc91">&#9670;&#160;</a></span>upperred_only_ascii_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl, typename Allocator&gt; </div>
+<div class="memtemplate">
+template&lt;StrType&lt; K &gt; From, typename... Args&gt; <br />
+requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static my_type <a class="el" href="classsimstr_1_1str__storable.html">simstr::str_storable</a>&lt; K, Impl, Allocator &gt;::upperred_only_ascii_from </td>
+          <td>(</td>
+          <td class="paramtype">const From &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создать строку, копию переданной в верхнем регистре символов ASCII. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>- строка источник. </td></tr>
+    <tr><td class="paramname">...args</td><td>- параметры для инициализации аллокатора. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li><a class="el" href="sstring_8h_source.html">sstring.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacesimstr.html">simstr</a></li><li class="navelem"><a class="el" href="classsimstr_1_1str__storable.html">str_storable</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

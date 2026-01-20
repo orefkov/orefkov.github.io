@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>simstr: Библиотека simstr.</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.4.0</span>
+   </div>
+   <div id="projectbrief">Yet another strings library</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('index.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Библиотека simstr. </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md0"></a>
+simstr - библиотека строковых объектов и функций</h1>
+<p><a href="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml"><img src="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml/badge.svg" alt="CMake on multiple platforms" style="pointer-events: none;" class="inline"/></a></p>
+<p>Версия 1.4.0.</p>
+<p><span class="obfuscator"><a href="readme.md">On English | По-английски</a></span></p>
+<p>В этой библиотеке содержится современная реализация нескольких видов строковых объектов и различных алгоритмов для работы со строками.</p>
+<p>Цель библиотеки - сделать работу со строками в С++ такой же простой и лёгкой, как во множестве других языков, особенно скриптовых, но при этом сохранив оптимальность и производительность на уровне С и C++, и даже улучшив их.</p>
+<p>Не секрет, что работа со строками в С++ зачастую доставляет боль. Класс <code>std::string</code> часто неудобен либо неэффективен. Многих функций, обычно необходимых при работе со строками, просто нет, и их каждому приходится писать самому.</p>
+<p>Эта библиотека не делалась как универсальный комбайн, который "может всё", я реализовывал то, что мне приходилось использовать в работе, стараясь сделать это наиболее эффективным способом, и скромно надеюсь, что кое-что у меня получилось и пригодится другим людям, либо напрямую, либо как источник идей.</p>
+<p>Библиотека не претендует на роль "поменял хедер и всё заработало лучше". Многие методы я старался делать совместимыми с <code>std::string</code> и <code>std::string_view</code>, но особо с этим не заморачивался. Переписывание старого кода на работу с simstr потребует некоторых усилий, но уверяю, что они окупятся. А новый код писать с её применением легко и доставляет удовольствие :)</p>
+<p>Основное отличие simstr от std::string - для работы со строками используется не единый универсальный класс, а несколько видов объектов, каждый из которых хорош для своих целей, и при этом хорошо взаимодействующих друг с другом. Если вы активно использовали std::string_view и понимали, в чём его преимущество и недостатки по сравнению с std::string, то подход simstr вам также будет понятен.</p>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Основные возможности библиотеки</h2>
+<ul>
+<li>Строки <code>char</code>, <code>char8_t</code>, <code>char16_t</code>, <code>char32_t</code>, <code>wchar_t</code>.</li>
+<li>Прозрачное преобразование строк из одного типа символов в другой, с автоматической конвертацией между UTF-8, UTF-16, UTF-32, используя <a href="https://github.com/simdutf/simdutf">simdutf</a>. Строки "совместимых" типов преобразуются простым копированием: <code>char &lt;-&gt; char8_t</code>, <code>wchar_t &lt;-&gt; char32_t</code> в Linux, <code>wchar_t &lt;-&gt; char16_t</code> в Windows.</li>
+<li>Расширяемая система "Строковых выражений". Позволяет эффективно реализовать преобразование и сложение (конкатенацию) строк, литералов, чисел и возможно других объектов. За счёт расширяемости реализована и работа со стандартными строками (<code>std::basic_string</code>, <code>std::basic_string_view</code>), что позволяет применять быструю конкатенацию и там, где пока не получается отказаться от стандартных строк. Тоже позволяет смешивать в операциях строки совместимых типов символов.</li>
+<li>Строковые функции:<ul>
+<li>Получение подстрок.</li>
+<li>Поиск подстрок и символов - с начала или с конца строки.</li>
+<li>Различный тримминг строк - справа, слева, везде, по пробельным символам, по заданным символам.</li>
+<li>Замена подстрок.</li>
+<li>Замена набора символов на набор соответствующих подстрок.</li>
+<li>Слияние (join) контейнеров строк в единую строку, с заданием разделителей и опций - "пропускать пустые", "разделитель после последней".</li>
+<li>Разбиение (split) строк на части по заданному разделителю. Разбиение возможно сразу в контейнер со строками, либо вызовом функтора для каждой подстроки, либо путем итерации с помощью итератора <code>Splitter</code>.</li>
+</ul>
+</li>
+<li>Интеграция с функциями форматирования <code>format</code> и <code>sprintf</code> (с автоматическим увеличением буфера). Форматирование возможно для строк <code>char</code>, <code>wchar_t</code> и строк, совместимых с <code>wchar_t</code> по размеру. То есть под Windows это <code>char16_t</code>, под Linux - <code>char32_t</code>. Писать свою библиотеку форматирования не входило в мои замыслы.</li>
+<li>Парсинг целых чисел с возможностью "тонкой" настройки при компиляции - можно задавать опции проверки переполнения, пропуск пробельных символов, конкретное основание счисления либо автовыбор по префиксам <code>0x</code>, <code>0</code>, <code>0b</code>, <code>0o</code>, допустимость знака <code>+</code>. Парсинг реализован для всех видов строк и символов.</li>
+<li>Парсинг double для всех типов символов.</li>
+<li>Содержится минимальная поддержка Unicode при преобразовании <code>upper</code>, <code>lower</code> и регистро-независимом сравнении строк. Работает только для символов первой плоскости Unicode (до 0xFFFF), а при смене регистра не учитываются случаи, когда один code point может преобразовываться в несколько, то есть преобразование регистра символов соответствует <code>std::towupper</code>, <code>std::towlower</code> для unicode локали, только быстрее и может работать с любым видом символов.</li>
+<li>Реализован <code>hash map</code> для ключей строкового типа, на базе <code>std::unordered_map</code>, с возможностью более эффективного хранения и сравнения ключей по сравнению с ключами <code>std::string</code>. Поддерживается возможность регистро-независимого сравнения ключей (Ascii или минимальный Unicode (см. предыдущий пункт)).</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Основные объекты библиотеки</h2>
+<ul>
+<li>simple_str&lt;K&gt; - самая простая строка (или кусок строки), иммутабельная, не владеющая, аналог <code>std::string_view</code>.</li>
+<li>simple_str_nt&lt;K&gt; - то же самое, только заявляет, что заканчивается 0. Для работы со сторонними C-API.</li>
+<li>sstring&lt;K&gt; - shared string, иммутабельная, владеющая, с разделяемым буфером символов, поддержка SSO.</li>
+<li>lstring&lt;K, N&gt; - local string, мутабельная, владеющая, с задаваемым размером SSO буфера.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Статьи</h2>
+<ul>
+<li>Обзор и введение</li>
+<li><a href="https://habr.com/ru/articles/935590">Обзорная статья на Хабре</a></li>
+<li><a href="https://habr.com/ru/articles/936468/">Описание применяемой техники "Expression Templates"</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Использование</h2>
+<p><code>simstr</code> состоит из трёх заголовочных файлов и двух исходников. Можно подключать как CMake проект через <code>add_subdirectory</code> (библиотека <code>simstr</code>), можно просто включить файлы в свой проект. Для сборки также требуется <a href="https://github.com/simdutf/simdutf">simdutf</a> (при использовании CMake скачивается автоматически).</p>
+<p>Библиотека включена в <a href="https://vcpkg.io">vcpkg</a>, подключается как <code>orefkov-simstr</code>.</p>
+<p>Для работы <code>simstr</code> требуется компилятор стандарта не ниже С++20 - используются концепты и std::format. Работа проверялась под Windows на MSVC-19 и Clang-19, под Linux - на GCC-13 и Clang-21. Также проверялась работа в WASM, сборка в Emscripten 4.0.6, Clang-21.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Удобная отладка</h2>
+<p>Вместе с библиотекой поставляются два файла, делающие просмотр simstr строковых объектов в отладчиках более удобным.\ Более подробно описано здесь.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Бенчмарки</h2>
+<p>Бенчмарки производятся с использованием фреймворка <a href="https://github.com/google/benchmark">Google benchmark</a>. Постарался сделать замеры для наиболее типичных операций, встречающихся в обычной работе. Я проводил замеры на своём оборудовании, под Windows и Linux (в WSL), с использованием компиляторов MSVC, Clang, GCC. Сторонние результаты приветствуются. Также проводил замеры в WASM, сборка в Emscripten. Обращаю внимание, что под WASM в Emscripten собирается 32-битная сборка, а значит, размеры буферов SSO в объектах меньше.</p>
+<ul>
+<li><a href="bench/bench_str.cpp">Исходный код бенчмарков</a></li>
+<li><a href="https://snegopat.ru/simstr/results.html">Результаты бенчмарков</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Примеры использования</h2>
+<p>Пока отдельных примеров использования не подготовлено, можно посмотреть тексты <a href="https://github.com/orefkov/simstr/blob/main/tests/test_str.cpp">тестов</a>, <a href="https://github.com/orefkov/simstr/blob/main/bench/bench_str.cpp">бенчмарков</a>, и <a href="https://github.com/orefkov/simstr/blob/main/bench/process_result.cpp">утилиты подготовки html</a> из результатов бенчмарков.</p>
+<p>Также simstr используется в моих проектах:</p><ul>
+<li><a href="https://github.com/orefkov/simjson">simjson</a> - библиотека для простой работы с JSON с использованием строк simstr.</li>
+<li><a href="https://github.com/orefkov/simrex">simrex</a> - обёртка для работы с регулярными выражениями <a href="https://github.com/kkos/oniguruma">Oniguruma</a> с использованием строк simstr.</li>
+<li><a href="https://github.com/orefkov/v8sqlite">v8sqlite</a> - внешняя компонента для 1С-Предприятия V8 для работы с sqlite.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Сгенерированная документация</h2>
+<p><a href="https://snegopat.ru/simstr/docs_ru/">Находится здесь</a>   </p>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

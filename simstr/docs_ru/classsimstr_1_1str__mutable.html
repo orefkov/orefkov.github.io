@@ -1,0 +1,2478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>simstr: Шаблон класса simstr::str_mutable&lt; K, Impl &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.4.0</span>
+   </div>
+   <div id="projectbrief">Yet another strings library</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classsimstr_1_1str__mutable.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classsimstr_1_1str__mutable-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Шаблон класса simstr::str_mutable&lt; K, Impl &gt;</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Базовый класс работы с изменяемыми строками  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="sstring_8h_source.html">sstring.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:simstr::str_mutable&lt; K, Impl &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classsimstr_1_1str__mutable.png" usemap="#simstr::str_5Fmutable_3C_20K_2C_20Impl_20_3E_map" alt=""/>
+  <map id="simstr::str_5Fmutable_3C_20K_2C_20Impl_20_3E_map" name="simstr::str_5Fmutable_3C_20K_2C_20Impl_20_3E_map">
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; K, N, forShared, Allocator &gt;" shape="rect" coords="270,56,530,80"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; u8s, N &gt;" shape="rect" coords="270,112,530,136"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; ubs, N &gt;" shape="rect" coords="270,168,530,192"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; wchar_t, N &gt;" shape="rect" coords="270,224,530,248"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; u16s, N &gt;" shape="rect" coords="270,280,530,304"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; u32s, N &gt;" shape="rect" coords="270,336,530,360"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; u8s, N, true &gt;" shape="rect" coords="270,392,530,416"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; ubs, N, true &gt;" shape="rect" coords="270,448,530,472"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; wchar_t, N, true &gt;" shape="rect" coords="270,504,530,528"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; u16s, N, true &gt;" shape="rect" coords="270,560,530,584"/>
+<area href="classsimstr_1_1lstring.html" alt="simstr::lstring&lt; u32s, N, true &gt;" shape="rect" coords="270,616,530,640"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a90be6688c9793f9ea707f322ebdfc131" id="r_a90be6688c9793f9ea707f322ebdfc131"><td class="memItemLeft" align="right" valign="top">K *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90be6688c9793f9ea707f322ebdfc131">str</a> () noexcept</td></tr>
+<tr class="memdesc:a90be6688c9793f9ea707f322ebdfc131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить указатель на буфер строки.  <br /></td></tr>
+<tr class="separator:a90be6688c9793f9ea707f322ebdfc131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32cb440524f81da0e00cfa303cb4fab6" id="r_a32cb440524f81da0e00cfa303cb4fab6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32cb440524f81da0e00cfa303cb4fab6">operator K*</a> () noexcept</td></tr>
+<tr class="memdesc:a32cb440524f81da0e00cfa303cb4fab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить указатель на буфер строки.  <br /></td></tr>
+<tr class="separator:a32cb440524f81da0e00cfa303cb4fab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab697bf9b655f0ed7762ee830efb25b18" id="r_ab697bf9b655f0ed7762ee830efb25b18"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab697bf9b655f0ed7762ee830efb25b18">trim</a> ()</td></tr>
+<tr class="memdesc:ab697bf9b655f0ed7762ee830efb25b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить пробельные символы в начале и в конце строки.  <br /></td></tr>
+<tr class="separator:ab697bf9b655f0ed7762ee830efb25b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a244334bd105c03fa510804b31707996f" id="r_a244334bd105c03fa510804b31707996f"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a244334bd105c03fa510804b31707996f">trim_left</a> ()</td></tr>
+<tr class="memdesc:a244334bd105c03fa510804b31707996f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить пробельные символы в начале строки.  <br /></td></tr>
+<tr class="separator:a244334bd105c03fa510804b31707996f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a8daf67d09761a0834881d00562596f" id="r_a8a8daf67d09761a0834881d00562596f"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a8daf67d09761a0834881d00562596f">trim_right</a> ()</td></tr>
+<tr class="memdesc:a8a8daf67d09761a0834881d00562596f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить пробельные символы в конце строки.  <br /></td></tr>
+<tr class="separator:a8a8daf67d09761a0834881d00562596f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af25c5f127c99392c53470f0a9919b504" id="r_af25c5f127c99392c53470f0a9919b504"><td class="memTemplParams" colspan="2">template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt; <br />
+requires is_const_pattern&lt;N&gt;</td></tr>
+<tr class="memitem:af25c5f127c99392c53470f0a9919b504"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af25c5f127c99392c53470f0a9919b504">trim</a> (T &amp;&amp;pattern)</td></tr>
+<tr class="memdesc:af25c5f127c99392c53470f0a9919b504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить символы, входящие в строковый литерал, в начале и в конце строки.  <br /></td></tr>
+<tr class="separator:af25c5f127c99392c53470f0a9919b504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b013501c10698abf323333d17ab2ac" id="r_a65b013501c10698abf323333d17ab2ac"><td class="memTemplParams" colspan="2">template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt; <br />
+requires is_const_pattern&lt;N&gt;</td></tr>
+<tr class="memitem:a65b013501c10698abf323333d17ab2ac"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a65b013501c10698abf323333d17ab2ac">trim_left</a> (T &amp;&amp;pattern)</td></tr>
+<tr class="memdesc:a65b013501c10698abf323333d17ab2ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить символы, входящие в строковый литерал, в начале строки.  <br /></td></tr>
+<tr class="separator:a65b013501c10698abf323333d17ab2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73083ad3987d977364c90a9a80a1509f" id="r_a73083ad3987d977364c90a9a80a1509f"><td class="memTemplParams" colspan="2">template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt; <br />
+requires is_const_pattern&lt;N&gt;</td></tr>
+<tr class="memitem:a73083ad3987d977364c90a9a80a1509f"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a73083ad3987d977364c90a9a80a1509f">trim_right</a> (T &amp;&amp;pattern)</td></tr>
+<tr class="memdesc:a73083ad3987d977364c90a9a80a1509f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить символы, входящие в строковый литерал, в конце строки.  <br /></td></tr>
+<tr class="separator:a73083ad3987d977364c90a9a80a1509f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3240c4342cc4fa0de4126d1446501647" id="r_a3240c4342cc4fa0de4126d1446501647"><td class="memTemplParams" colspan="2">template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt; <br />
+requires is_const_pattern&lt;N&gt;</td></tr>
+<tr class="memitem:a3240c4342cc4fa0de4126d1446501647"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3240c4342cc4fa0de4126d1446501647">trim_with_spaces</a> (T &amp;&amp;pattern)</td></tr>
+<tr class="memdesc:a3240c4342cc4fa0de4126d1446501647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить символы, входящие в строковый литерал, а также пробельные символы, в начале и в конце строки.  <br /></td></tr>
+<tr class="separator:a3240c4342cc4fa0de4126d1446501647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f668bb7ec9de3acf40727167787e630" id="r_a5f668bb7ec9de3acf40727167787e630"><td class="memTemplParams" colspan="2">template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt; <br />
+requires is_const_pattern&lt;N&gt;</td></tr>
+<tr class="memitem:a5f668bb7ec9de3acf40727167787e630"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5f668bb7ec9de3acf40727167787e630">trim_left_with_spaces</a> (T &amp;&amp;pattern)</td></tr>
+<tr class="memdesc:a5f668bb7ec9de3acf40727167787e630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить символы, входящие в строковый литерал, а также пробельные символы, в начале строки.  <br /></td></tr>
+<tr class="separator:a5f668bb7ec9de3acf40727167787e630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c59b83d60ff726a3ec9a9aeb1ae404b" id="r_a2c59b83d60ff726a3ec9a9aeb1ae404b"><td class="memTemplParams" colspan="2">template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt; <br />
+requires is_const_pattern&lt;N&gt;</td></tr>
+<tr class="memitem:a2c59b83d60ff726a3ec9a9aeb1ae404b"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2c59b83d60ff726a3ec9a9aeb1ae404b">trim_right_with_wpaces</a> (T &amp;&amp;pattern)</td></tr>
+<tr class="memdesc:a2c59b83d60ff726a3ec9a9aeb1ae404b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить символы, входящие в строковый литерал, а также пробельные символы, в конце строки.  <br /></td></tr>
+<tr class="separator:a2c59b83d60ff726a3ec9a9aeb1ae404b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14ae0d5f1aef083fc2c84274cd794c74" id="r_a14ae0d5f1aef083fc2c84274cd794c74"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14ae0d5f1aef083fc2c84274cd794c74">trim</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> pattern)</td></tr>
+<tr class="memdesc:a14ae0d5f1aef083fc2c84274cd794c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить символы, входящие в переданную строку, в начале и в конце строки.  <br /></td></tr>
+<tr class="separator:a14ae0d5f1aef083fc2c84274cd794c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e26d84497e19b7bbfd83da9cc593310" id="r_a2e26d84497e19b7bbfd83da9cc593310"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e26d84497e19b7bbfd83da9cc593310">trim_left</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> pattern)</td></tr>
+<tr class="memdesc:a2e26d84497e19b7bbfd83da9cc593310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить символы, входящие в переданную строку, в начале строки.  <br /></td></tr>
+<tr class="separator:a2e26d84497e19b7bbfd83da9cc593310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c100b87423b8c6261c8c2d16cd82194" id="r_a8c100b87423b8c6261c8c2d16cd82194"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c100b87423b8c6261c8c2d16cd82194">trim_right</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> pattern)</td></tr>
+<tr class="memdesc:a8c100b87423b8c6261c8c2d16cd82194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить символы, входящие в переданную строку, в конце строки.  <br /></td></tr>
+<tr class="separator:a8c100b87423b8c6261c8c2d16cd82194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e8bfc1561a193de117800effb3bbc7d" id="r_a8e8bfc1561a193de117800effb3bbc7d"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e8bfc1561a193de117800effb3bbc7d">trim_with_spaces</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> pattern)</td></tr>
+<tr class="memdesc:a8e8bfc1561a193de117800effb3bbc7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить символы, входящие в переданную строку, а также пробельные символы, в начале и в конце строки.  <br /></td></tr>
+<tr class="separator:a8e8bfc1561a193de117800effb3bbc7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff45375785f56489e1e6d8f9d978120" id="r_a7ff45375785f56489e1e6d8f9d978120"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ff45375785f56489e1e6d8f9d978120">trim_left_with_spaces</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> pattern)</td></tr>
+<tr class="memdesc:a7ff45375785f56489e1e6d8f9d978120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить символы, входящие в переданную строку, а также пробельные символы, в начале строки.  <br /></td></tr>
+<tr class="separator:a7ff45375785f56489e1e6d8f9d978120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73428dd849aa12f674ece721e067ccb9" id="r_a73428dd849aa12f674ece721e067ccb9"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73428dd849aa12f674ece721e067ccb9">trim_right_with_spaces</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> pattern)</td></tr>
+<tr class="memdesc:a73428dd849aa12f674ece721e067ccb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить символы, входящие в переданную строку, а также пробельные символы, в конце строки.  <br /></td></tr>
+<tr class="separator:a73428dd849aa12f674ece721e067ccb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c7b47cfc00189c51a5683fd34095192" id="r_a1c7b47cfc00189c51a5683fd34095192"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c7b47cfc00189c51a5683fd34095192">upper_only_ascii</a> ()</td></tr>
+<tr class="memdesc:a1c7b47cfc00189c51a5683fd34095192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразовать в верхний регистр ASCII символы.  <br /></td></tr>
+<tr class="separator:a1c7b47cfc00189c51a5683fd34095192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f5a8e01bd18d94b873390bdd5eee8d" id="r_a21f5a8e01bd18d94b873390bdd5eee8d"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21f5a8e01bd18d94b873390bdd5eee8d">lower_only_ascii</a> ()</td></tr>
+<tr class="memdesc:a21f5a8e01bd18d94b873390bdd5eee8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразовать в нижний регистр ASCII символы.  <br /></td></tr>
+<tr class="separator:a21f5a8e01bd18d94b873390bdd5eee8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1b975226e92b0e57796dd14fed5248f" id="r_ad1b975226e92b0e57796dd14fed5248f"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1b975226e92b0e57796dd14fed5248f">upper</a> ()</td></tr>
+<tr class="memdesc:ad1b975226e92b0e57796dd14fed5248f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразовать в верхний регистр Unicode символы первой плоскости (&lt;0xFFFF).  <br /></td></tr>
+<tr class="separator:ad1b975226e92b0e57796dd14fed5248f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0c4239efb3b35bfcb99b61feff08156" id="r_ac0c4239efb3b35bfcb99b61feff08156"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0c4239efb3b35bfcb99b61feff08156">lower</a> ()</td></tr>
+<tr class="memdesc:ac0c4239efb3b35bfcb99b61feff08156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразовать в нижний регистр Unicode символы первой плоскости (&lt;0xFFFF).  <br /></td></tr>
+<tr class="separator:ac0c4239efb3b35bfcb99b61feff08156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bb338bd949c276a8bd4b9bbc8f9ef5a" id="r_a8bb338bd949c276a8bd4b9bbc8f9ef5a"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bb338bd949c276a8bd4b9bbc8f9ef5a">append</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> other)</td></tr>
+<tr class="memdesc:a8bb338bd949c276a8bd4b9bbc8f9ef5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить другую строку в конец строки.  <br /></td></tr>
+<tr class="separator:a8bb338bd949c276a8bd4b9bbc8f9ef5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0275b9ec5edad56807286a9eabd613ff" id="r_a0275b9ec5edad56807286a9eabd613ff"><td class="memTemplParams" colspan="2">template&lt;StrExprForType&lt; K &gt; A&gt; </td></tr>
+<tr class="memitem:a0275b9ec5edad56807286a9eabd613ff"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0275b9ec5edad56807286a9eabd613ff">append</a> (const A &amp;expr)</td></tr>
+<tr class="memdesc:a0275b9ec5edad56807286a9eabd613ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить строковое выражение в конец строки.  <br /></td></tr>
+<tr class="separator:a0275b9ec5edad56807286a9eabd613ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885c6a5a9ecf6417993824dbb4425af6" id="r_a885c6a5a9ecf6417993824dbb4425af6"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a885c6a5a9ecf6417993824dbb4425af6">operator+=</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> other)</td></tr>
+<tr class="memdesc:a885c6a5a9ecf6417993824dbb4425af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить другую строку в конец строки.  <br /></td></tr>
+<tr class="separator:a885c6a5a9ecf6417993824dbb4425af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa5514cee68803e4a0a18e648cb5cfc0" id="r_afa5514cee68803e4a0a18e648cb5cfc0"><td class="memTemplParams" colspan="2">template&lt;StrExprForType&lt; K &gt; A&gt; </td></tr>
+<tr class="memitem:afa5514cee68803e4a0a18e648cb5cfc0"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afa5514cee68803e4a0a18e648cb5cfc0">operator+=</a> (const A &amp;expr)</td></tr>
+<tr class="memdesc:afa5514cee68803e4a0a18e648cb5cfc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить строковое выражение в конец строки.  <br /></td></tr>
+<tr class="separator:afa5514cee68803e4a0a18e648cb5cfc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740d3b2e75a7ad8c08a8363cbfa9b4df" id="r_a740d3b2e75a7ad8c08a8363cbfa9b4df"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a740d3b2e75a7ad8c08a8363cbfa9b4df">append_in</a> (size_t pos, <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> other)</td></tr>
+<tr class="memdesc:a740d3b2e75a7ad8c08a8363cbfa9b4df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить другую строку, начиная с заданной позиции.  <br /></td></tr>
+<tr class="separator:a740d3b2e75a7ad8c08a8363cbfa9b4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66589c8ea0f96cc3dd33ca9bba3a65e" id="r_ae66589c8ea0f96cc3dd33ca9bba3a65e"><td class="memTemplParams" colspan="2">template&lt;StrExprForType&lt; K &gt; A&gt; </td></tr>
+<tr class="memitem:ae66589c8ea0f96cc3dd33ca9bba3a65e"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae66589c8ea0f96cc3dd33ca9bba3a65e">append_in</a> (size_t pos, const A &amp;expr)</td></tr>
+<tr class="memdesc:ae66589c8ea0f96cc3dd33ca9bba3a65e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить строковое выражение, начиная с заданной позиции.  <br /></td></tr>
+<tr class="separator:ae66589c8ea0f96cc3dd33ca9bba3a65e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a03860f5d616ab4850daa1778e13f57" id="r_a5a03860f5d616ab4850daa1778e13f57"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a03860f5d616ab4850daa1778e13f57">change</a> (size_t from, size_t len, <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> other)</td></tr>
+<tr class="memdesc:a5a03860f5d616ab4850daa1778e13f57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заменить кусок строки на другую строку.  <br /></td></tr>
+<tr class="separator:a5a03860f5d616ab4850daa1778e13f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537880538e549f94a3ce137d7cf33064" id="r_a537880538e549f94a3ce137d7cf33064"><td class="memTemplParams" colspan="2">template&lt;StrExprForType&lt; K &gt; A&gt; </td></tr>
+<tr class="memitem:a537880538e549f94a3ce137d7cf33064"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a537880538e549f94a3ce137d7cf33064">change</a> (size_t from, size_t len, const A &amp;expr)</td></tr>
+<tr class="memdesc:a537880538e549f94a3ce137d7cf33064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заменить кусок строки на строковое выражение.  <br /></td></tr>
+<tr class="separator:a537880538e549f94a3ce137d7cf33064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81a87ca9286d27c944b0453df89e7f92" id="r_a81a87ca9286d27c944b0453df89e7f92"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81a87ca9286d27c944b0453df89e7f92">insert</a> (size_t to, <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> other)</td></tr>
+<tr class="memdesc:a81a87ca9286d27c944b0453df89e7f92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вставить строку в указанную позицию.  <br /></td></tr>
+<tr class="separator:a81a87ca9286d27c944b0453df89e7f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01abc4c1daa39bb99451be642dc86f48" id="r_a01abc4c1daa39bb99451be642dc86f48"><td class="memTemplParams" colspan="2">template&lt;StrExprForType&lt; K &gt; A&gt; </td></tr>
+<tr class="memitem:a01abc4c1daa39bb99451be642dc86f48"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a01abc4c1daa39bb99451be642dc86f48">insert</a> (size_t to, const A &amp;expr)</td></tr>
+<tr class="memdesc:a01abc4c1daa39bb99451be642dc86f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вставить строковое выражение в указанную позицию.  <br /></td></tr>
+<tr class="separator:a01abc4c1daa39bb99451be642dc86f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eb2a4a250dc0fe4c7c71ecd51745259" id="r_a5eb2a4a250dc0fe4c7c71ecd51745259"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5eb2a4a250dc0fe4c7c71ecd51745259">remove</a> (size_t from, size_t len)</td></tr>
+<tr class="memdesc:a5eb2a4a250dc0fe4c7c71ecd51745259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалить часть строки.  <br /></td></tr>
+<tr class="separator:a5eb2a4a250dc0fe4c7c71ecd51745259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37c3fa40f6a3f82eb83e0b7c61f1a0fd" id="r_a37c3fa40f6a3f82eb83e0b7c61f1a0fd"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37c3fa40f6a3f82eb83e0b7c61f1a0fd">prepend</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> other)</td></tr>
+<tr class="memdesc:a37c3fa40f6a3f82eb83e0b7c61f1a0fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить другую строку в начало строки.  <br /></td></tr>
+<tr class="separator:a37c3fa40f6a3f82eb83e0b7c61f1a0fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab2f039d8eb7f384b96ceb0d7f55cf7c" id="r_aab2f039d8eb7f384b96ceb0d7f55cf7c"><td class="memTemplParams" colspan="2">template&lt;StrExprForType&lt; K &gt; A&gt; </td></tr>
+<tr class="memitem:aab2f039d8eb7f384b96ceb0d7f55cf7c"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aab2f039d8eb7f384b96ceb0d7f55cf7c">prepend</a> (const A &amp;expr)</td></tr>
+<tr class="memdesc:aab2f039d8eb7f384b96ceb0d7f55cf7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить строковое выражение в начало строки.  <br /></td></tr>
+<tr class="separator:aab2f039d8eb7f384b96ceb0d7f55cf7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0ee55594becb6b2c2b98df722cc7a33" id="r_ac0ee55594becb6b2c2b98df722cc7a33"><td class="memItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0ee55594becb6b2c2b98df722cc7a33">replace</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> pattern, <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> repl, size_t offset=0, size_t maxCount=0)</td></tr>
+<tr class="memdesc:ac0ee55594becb6b2c2b98df722cc7a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заменить вхождения подстроки на другую строку.  <br /></td></tr>
+<tr class="separator:ac0ee55594becb6b2c2b98df722cc7a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad86b3a4c468f51e3ab3f7ba9e8786f9f" id="r_ad86b3a4c468f51e3ab3f7ba9e8786f9f"><td class="memTemplParams" colspan="2">template&lt;StrType&lt; K &gt; From&gt; </td></tr>
+<tr class="memitem:ad86b3a4c468f51e3ab3f7ba9e8786f9f"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad86b3a4c468f51e3ab3f7ba9e8786f9f">replace_from</a> (const From &amp;f, <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> pattern, <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> repl, size_t offset=0, size_t maxCount=0)</td></tr>
+<tr class="memdesc:ad86b3a4c468f51e3ab3f7ba9e8786f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Скопировать строку-источник, заменив вхождения подстрок на другую строку.  <br /></td></tr>
+<tr class="separator:ad86b3a4c468f51e3ab3f7ba9e8786f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53aa57efa783f3d9484a4c9b09bd4f70" id="r_a53aa57efa783f3d9484a4c9b09bd4f70"><td class="memTemplParams" colspan="2">template&lt;typename Op&gt; </td></tr>
+<tr class="memitem:a53aa57efa783f3d9484a4c9b09bd4f70"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a53aa57efa783f3d9484a4c9b09bd4f70">fill</a> (size_t from, const Op &amp;fillFunction)</td></tr>
+<tr class="memdesc:a53aa57efa783f3d9484a4c9b09bd4f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполнение буфера строки с помощью функтора.  <br /></td></tr>
+<tr class="separator:a53aa57efa783f3d9484a4c9b09bd4f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a1cad4ba4af2bdd831580151cb32962" id="r_a4a1cad4ba4af2bdd831580151cb32962"><td class="memTemplParams" colspan="2">template&lt;typename Op&gt; <br />
+requires std::is_invocable_v&lt;Op, K*, size_t&gt;</td></tr>
+<tr class="memitem:a4a1cad4ba4af2bdd831580151cb32962"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4a1cad4ba4af2bdd831580151cb32962">operator&lt;&lt;</a> (const Op &amp;fillFunction)</td></tr>
+<tr class="memdesc:a4a1cad4ba4af2bdd831580151cb32962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет строку методом fill с нулевой позиции.  <br /></td></tr>
+<tr class="separator:a4a1cad4ba4af2bdd831580151cb32962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01b1fdf213da8dc5cdaf6211904ee690" id="r_a01b1fdf213da8dc5cdaf6211904ee690"><td class="memTemplParams" colspan="2">template&lt;typename Op&gt; <br />
+requires std::is_invocable_v&lt;Op, K*, size_t&gt;</td></tr>
+<tr class="memitem:a01b1fdf213da8dc5cdaf6211904ee690"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a01b1fdf213da8dc5cdaf6211904ee690">operator&lt;&lt;=</a> (const Op &amp;fillFunction)</td></tr>
+<tr class="memdesc:a01b1fdf213da8dc5cdaf6211904ee690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет строку методом fill после конца строки.  <br /></td></tr>
+<tr class="separator:a01b1fdf213da8dc5cdaf6211904ee690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5d59fd9e97d25cc5a9940c19ab796c" id="r_a0a5d59fd9e97d25cc5a9940c19ab796c"><td class="memTemplParams" colspan="2">template&lt;typename Op&gt; <br />
+requires std::is_invocable_v&lt;Op, my_type&amp;&gt;</td></tr>
+<tr class="memitem:a0a5d59fd9e97d25cc5a9940c19ab796c"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0a5d59fd9e97d25cc5a9940c19ab796c">operator&lt;&lt;</a> (const Op &amp;fillFunction)</td></tr>
+<tr class="memdesc:a0a5d59fd9e97d25cc5a9940c19ab796c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает переданный функтор, передав ссылку на себя.  <br /></td></tr>
+<tr class="separator:a0a5d59fd9e97d25cc5a9940c19ab796c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a875205d5df5bc2d8b825ba8edd79b22a" id="r_a875205d5df5bc2d8b825ba8edd79b22a"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</td></tr>
+<tr class="memitem:a875205d5df5bc2d8b825ba8edd79b22a"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a875205d5df5bc2d8b825ba8edd79b22a">printf_from</a> (size_t from, const K *<a class="el" href="#a86d999a1fa5ea393acf2029c79109a97">format</a>, T &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a875205d5df5bc2d8b825ba8edd79b22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет отформатированный с помощью sprintf вывод, начиная с указанной позиции.  <br /></td></tr>
+<tr class="separator:a875205d5df5bc2d8b825ba8edd79b22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f4c37cfab5e6a48dd47c8e7754e6530" id="r_a3f4c37cfab5e6a48dd47c8e7754e6530"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</td></tr>
+<tr class="memitem:a3f4c37cfab5e6a48dd47c8e7754e6530"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3f4c37cfab5e6a48dd47c8e7754e6530">printf</a> (const K *<a class="el" href="#a86d999a1fa5ea393acf2029c79109a97">format</a>, T &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a3f4c37cfab5e6a48dd47c8e7754e6530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Форматирует строку помощью sprintf.  <br /></td></tr>
+<tr class="separator:a3f4c37cfab5e6a48dd47c8e7754e6530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256725807b06cfe2009cf378c4a687f5" id="r_a256725807b06cfe2009cf378c4a687f5"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</td></tr>
+<tr class="memitem:a256725807b06cfe2009cf378c4a687f5"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a256725807b06cfe2009cf378c4a687f5">append_printf</a> (const K *<a class="el" href="#a86d999a1fa5ea393acf2029c79109a97">format</a>, T &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a256725807b06cfe2009cf378c4a687f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет отформатированный с помощью sprintf вывод в конец строки.  <br /></td></tr>
+<tr class="separator:a256725807b06cfe2009cf378c4a687f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a3c20bdbd465d94bbc072838f0a19e" id="r_aa0a3c20bdbd465d94bbc072838f0a19e"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</td></tr>
+<tr class="memitem:aa0a3c20bdbd465d94bbc072838f0a19e"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa0a3c20bdbd465d94bbc072838f0a19e">format_from</a> (size_t from, const FmtString&lt; K, T... &gt; &amp;<a class="el" href="#a86d999a1fa5ea393acf2029c79109a97">format</a>, T &amp;&amp;... args)</td></tr>
+<tr class="memdesc:aa0a3c20bdbd465d94bbc072838f0a19e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет отформатированный с помощью std::format вывод, начиная с указанной позиции.  <br /></td></tr>
+<tr class="separator:aa0a3c20bdbd465d94bbc072838f0a19e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cf2545d9002b51989700a64d7aaff0e" id="r_a7cf2545d9002b51989700a64d7aaff0e"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</td></tr>
+<tr class="memitem:a7cf2545d9002b51989700a64d7aaff0e"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7cf2545d9002b51989700a64d7aaff0e">vformat_from</a> (size_t from, size_t max_write, <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> <a class="el" href="#a86d999a1fa5ea393acf2029c79109a97">format</a>, T &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a7cf2545d9002b51989700a64d7aaff0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет отформатированный с помощью std::vformat вывод, начиная с указанной позиции.  <br /></td></tr>
+<tr class="separator:a7cf2545d9002b51989700a64d7aaff0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86d999a1fa5ea393acf2029c79109a97" id="r_a86d999a1fa5ea393acf2029c79109a97"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</td></tr>
+<tr class="memitem:a86d999a1fa5ea393acf2029c79109a97"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a86d999a1fa5ea393acf2029c79109a97">format</a> (const FmtString&lt; K, T... &gt; &amp;pattern, T &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a86d999a1fa5ea393acf2029c79109a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Форматирует строку с помощью std::format.  <br /></td></tr>
+<tr class="separator:a86d999a1fa5ea393acf2029c79109a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae036d396e850545516f8e40f3146278c" id="r_ae036d396e850545516f8e40f3146278c"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</td></tr>
+<tr class="memitem:ae036d396e850545516f8e40f3146278c"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae036d396e850545516f8e40f3146278c">append_formatted</a> (const FmtString&lt; K, T... &gt; &amp;<a class="el" href="#a86d999a1fa5ea393acf2029c79109a97">format</a>, T &amp;&amp;... args)</td></tr>
+<tr class="memdesc:ae036d396e850545516f8e40f3146278c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет отформатированный с помощью std::format вывод в конец строки.  <br /></td></tr>
+<tr class="separator:ae036d396e850545516f8e40f3146278c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c0ab4a1d48cbf3b7c3474a4bf28569c" id="r_a4c0ab4a1d48cbf3b7c3474a4bf28569c"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</td></tr>
+<tr class="memitem:a4c0ab4a1d48cbf3b7c3474a4bf28569c"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4c0ab4a1d48cbf3b7c3474a4bf28569c">vformat</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> <a class="el" href="#a86d999a1fa5ea393acf2029c79109a97">format</a>, T &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a4c0ab4a1d48cbf3b7c3474a4bf28569c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Форматирует строку с помощью std::vformat.  <br /></td></tr>
+<tr class="separator:a4c0ab4a1d48cbf3b7c3474a4bf28569c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc3c063949d1d48ca056085eef1dccc3" id="r_adc3c063949d1d48ca056085eef1dccc3"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</td></tr>
+<tr class="memitem:adc3c063949d1d48ca056085eef1dccc3"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adc3c063949d1d48ca056085eef1dccc3">append_vformatted</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> <a class="el" href="#a86d999a1fa5ea393acf2029c79109a97">format</a>, T &amp;&amp;... args)</td></tr>
+<tr class="memdesc:adc3c063949d1d48ca056085eef1dccc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет отформатированный с помощью std::vformat вывод в конец строки.  <br /></td></tr>
+<tr class="separator:adc3c063949d1d48ca056085eef1dccc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85893478637a79c79321e5c15cab9763" id="r_a85893478637a79c79321e5c15cab9763"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</td></tr>
+<tr class="memitem:a85893478637a79c79321e5c15cab9763"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a85893478637a79c79321e5c15cab9763">vformat_n</a> (size_t max_write, <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> <a class="el" href="#a86d999a1fa5ea393acf2029c79109a97">format</a>, T &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a85893478637a79c79321e5c15cab9763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Форматирует строку с помощью std::vformat не более указанного размера.  <br /></td></tr>
+<tr class="separator:a85893478637a79c79321e5c15cab9763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48d3c0afd02f09b0f9d32f2a7f52522a" id="r_a48d3c0afd02f09b0f9d32f2a7f52522a"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</td></tr>
+<tr class="memitem:a48d3c0afd02f09b0f9d32f2a7f52522a"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a48d3c0afd02f09b0f9d32f2a7f52522a">append_vformatted_n</a> (size_t max_write, <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> <a class="el" href="#a86d999a1fa5ea393acf2029c79109a97">format</a>, T &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a48d3c0afd02f09b0f9d32f2a7f52522a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет отформатированный с помощью std::vformat вывод в конец строки, записывая не более указанного количества символов.  <br /></td></tr>
+<tr class="separator:a48d3c0afd02f09b0f9d32f2a7f52522a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a9104a71b1593fea01f6eff162fec4" id="r_a43a9104a71b1593fea01f6eff162fec4"><td class="memTemplParams" colspan="2">template&lt;typename Op, typename... Args&gt; </td></tr>
+<tr class="memitem:a43a9104a71b1593fea01f6eff162fec4"><td class="memTemplItemLeft" align="right" valign="top">Impl &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a43a9104a71b1593fea01f6eff162fec4">with</a> (const Op &amp;fillFunction, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a43a9104a71b1593fea01f6eff162fec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызов функтора со строкой и переданными аргументами.  <br /></td></tr>
+<tr class="separator:a43a9104a71b1593fea01f6eff162fec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename K, typename Impl&gt;<br />
+class simstr::str_mutable&lt; K, Impl &gt;</div><p>Базовый класс работы с изменяемыми строками </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">K</td><td>- тип символов </td></tr>
+    <tr><td class="paramname">Impl</td><td>- конечный тип наследника</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>По прежнему ничего не знает о том, где наследник хранит строку и её размер. Просто вызывает его методы для получения места, и заполняет его при необходимости. Для работы класс-наследник должен реализовать методы:</p><ul>
+<li><code>size_t length() const noexcept</code> - возвращает длину строки</li>
+<li><code>const K* symbols() const</code> - возвращает указатель на начало строки</li>
+<li><code>bool is_empty() const noexcept</code> - проверка, не пустая ли строка</li>
+<li><code>K* <a class="el" href="#a90be6688c9793f9ea707f322ebdfc131" title="Получить указатель на буфер строки.">str()</a> noexcept</code> - Неконстантный указатель на начало строки</li>
+<li><code>K* set_size(size_t size)</code> - Изменить размер строки, как больше, так и меньше. Содержимое строки нужно оставить.</li>
+<li><code>K* reserve_no_preserve(size_t size)</code> - выделить место под строку, старую можно не сохранять</li>
+<li><code>K* alloc_for_copy(size_t size)</code> - выделить место для копии строки заданного размера, пока не изменяя саму строку, можно вернуть текущий буфер, если место позволяет.</li>
+<li><code>set_from_copy(K* str, size_t size)</code> - присвоить строку из памяти, ранее выделенной в alloc_for_copy. Если место выделялось в текущем буфере, ничего не делать.</li>
+<li><code>size_t capacity() const noexcept</code> - вернуть текущую ёмкость строки, сколько может поместится без аллокации. </li>
+</ul>
+</div><h2 class="groupheader">Методы</h2>
+<a id="a0275b9ec5edad56807286a9eabd613ff" name="a0275b9ec5edad56807286a9eabd613ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0275b9ec5edad56807286a9eabd613ff">&#9670;&#160;</a></span>append() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;StrExprForType&lt; K &gt; A&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::append </td>
+          <td>(</td>
+          <td class="paramtype">const A &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить строковое выражение в конец строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>- строковое выражение. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a8bb338bd949c276a8bd4b9bbc8f9ef5a" name="a8bb338bd949c276a8bd4b9bbc8f9ef5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bb338bd949c276a8bd4b9bbc8f9ef5a">&#9670;&#160;</a></span>append() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::append </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить другую строку в конец строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>- другая строка. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="ae036d396e850545516f8e40f3146278c" name="ae036d396e850545516f8e40f3146278c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae036d396e850545516f8e40f3146278c">&#9670;&#160;</a></span>append_formatted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::append_formatted </td>
+          <td>(</td>
+          <td class="paramtype">const FmtString&lt; K, T... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет отформатированный с помощью std::format вывод в конец строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>- форматная строка, константная. </td></tr>
+    <tr><td class="paramname">...args</td><td>- аргументы для std::format. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же.</dd></dl>
+<p>При необходимости автоматически увеличивает размер буфера строки. </p>
+
+</div>
+</div>
+<a id="ae66589c8ea0f96cc3dd33ca9bba3a65e" name="ae66589c8ea0f96cc3dd33ca9bba3a65e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66589c8ea0f96cc3dd33ca9bba3a65e">&#9670;&#160;</a></span>append_in() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;StrExprForType&lt; K &gt; A&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::append_in </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const A &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить строковое выражение, начиная с заданной позиции. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>- позиция, с которой добавлять. Сначала строка укорачивается до заданного размера, а потом добавляется строковое выражение. </td></tr>
+    <tr><td class="paramname">expr</td><td>- строковое выражение. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же.</dd></dl>
+<p>Если строка длиннее<code>pos</code>, то она укорачивается до этого размера, а потом добавляется <code>expr</code>. </p>
+
+</div>
+</div>
+<a id="a740d3b2e75a7ad8c08a8363cbfa9b4df" name="a740d3b2e75a7ad8c08a8363cbfa9b4df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a740d3b2e75a7ad8c08a8363cbfa9b4df">&#9670;&#160;</a></span>append_in() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::append_in </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>other</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить другую строку, начиная с заданной позиции. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>- позиция, с которой добавлять. Сначала строка укорачивается до заданного размера, а потом добавляется другая строка. </td></tr>
+    <tr><td class="paramname">other</td><td>- другая строка. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же.</dd></dl>
+<p>Если строка длиинее<code>pos</code>, то она укорачивается до этого размера, а потом добавляется <code>other</code>. </p>
+
+</div>
+</div>
+<a id="a256725807b06cfe2009cf378c4a687f5" name="a256725807b06cfe2009cf378c4a687f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a256725807b06cfe2009cf378c4a687f5">&#9670;&#160;</a></span>append_printf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::append_printf </td>
+          <td>(</td>
+          <td class="paramtype">const K *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет отформатированный с помощью sprintf вывод в конец строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>- форматная строка. </td></tr>
+    <tr><td class="paramname">...args</td><td>- аргументы для sprintf. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же.</dd></dl>
+<p>При необходимости автоматически увеличивает размер буфера строки. </p>
+
+</div>
+</div>
+<a id="adc3c063949d1d48ca056085eef1dccc3" name="adc3c063949d1d48ca056085eef1dccc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc3c063949d1d48ca056085eef1dccc3">&#9670;&#160;</a></span>append_vformatted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::append_vformatted </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет отформатированный с помощью std::vformat вывод в конец строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>- форматная строка. </td></tr>
+    <tr><td class="paramname">...</td><td>- аргументы для std::vformat. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же.</dd></dl>
+<p>При необходимости автоматически увеличивает размер буфера строки. </p>
+
+</div>
+</div>
+<a id="a48d3c0afd02f09b0f9d32f2a7f52522a" name="a48d3c0afd02f09b0f9d32f2a7f52522a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48d3c0afd02f09b0f9d32f2a7f52522a">&#9670;&#160;</a></span>append_vformatted_n()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::append_vformatted_n </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_write</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет отформатированный с помощью std::vformat вывод в конец строки, записывая не более указанного количества символов. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_write</td><td>- максимальное количество записываемых символов. </td></tr>
+    <tr><td class="paramname">format</td><td>- форматная строка. </td></tr>
+    <tr><td class="paramname">...args</td><td>- аргументы для std::vformat. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же</dd></dl>
+<p>При необходимости автоматически увеличивает размер буфера строки. </p>
+
+</div>
+</div>
+<a id="a537880538e549f94a3ce137d7cf33064" name="a537880538e549f94a3ce137d7cf33064"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a537880538e549f94a3ce137d7cf33064">&#9670;&#160;</a></span>change() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;StrExprForType&lt; K &gt; A&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::change </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const A &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заменить кусок строки на строковое выражение. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>- начальная позиция для замены. </td></tr>
+    <tr><td class="paramname">len</td><td>- длина заменяемой части. </td></tr>
+    <tr><td class="paramname">expr</td><td>- строковое выражение. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a5a03860f5d616ab4850daa1778e13f57" name="a5a03860f5d616ab4850daa1778e13f57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a03860f5d616ab4850daa1778e13f57">&#9670;&#160;</a></span>change() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::change </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>other</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заменить кусок строки на другую строку. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>- начальная позиция для замены. </td></tr>
+    <tr><td class="paramname">len</td><td>- длина заменяемой части. </td></tr>
+    <tr><td class="paramname">other</td><td>- строка, на которую эта часть меняется . </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же </dd></dl>
+
+</div>
+</div>
+<a id="a53aa57efa783f3d9484a4c9b09bd4f70" name="a53aa57efa783f3d9484a4c9b09bd4f70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53aa57efa783f3d9484a4c9b09bd4f70">&#9670;&#160;</a></span>fill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename Op&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::fill </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Op &amp;</td>          <td class="paramname"><span class="paramname"><em>fillFunction</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заполнение буфера строки с помощью функтора. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>- начальная позиция для заполнения. </td></tr>
+    <tr><td class="paramname">fillFunction</td><td>- size_t(K*, size_t) функтор, получающий адрес буфера строки и его ёмкость, возвращающий необходимый размер строки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же.</dd></dl>
+<p>Функция вызывает функтор, передавая ему адрес буфера строки и его ёмкость. Функтор может изменять буфер в пределах выделенной ёмкости, и должен вернуть размер итоговой строки. Пока возвращаемый размер больше ёмкости (т.е. строка не может поместиться в буфер), выделятся память как минимум возвращенного размера, и функтор вызывается снова. До тех пор, пока возвращённый размер не будет помещаться в буфер строки. Этот размер и становится длиной строки. </p>
+
+</div>
+</div>
+<a id="a86d999a1fa5ea393acf2029c79109a97" name="a86d999a1fa5ea393acf2029c79109a97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86d999a1fa5ea393acf2029c79109a97">&#9670;&#160;</a></span>format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::format </td>
+          <td>(</td>
+          <td class="paramtype">const FmtString&lt; K, T... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Форматирует строку с помощью std::format. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- форматная строка, константная. </td></tr>
+    <tr><td class="paramname">...args</td><td>- аргументы для std::format. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же.</dd></dl>
+<p>При необходимости автоматически увеличивает размер буфера строки. </p>
+
+</div>
+</div>
+<a id="aa0a3c20bdbd465d94bbc072838f0a19e" name="aa0a3c20bdbd465d94bbc072838f0a19e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a3c20bdbd465d94bbc072838f0a19e">&#9670;&#160;</a></span>format_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::format_from </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const FmtString&lt; K, T... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет отформатированный с помощью std::format вывод, начиная с указанной позиции. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>- начальная позиция добавления. </td></tr>
+    <tr><td class="paramname">format</td><td>- форматная строка, константная. </td></tr>
+    <tr><td class="paramname">...args</td><td>- аргументы для std::format. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же.</dd></dl>
+<p>При необходимости автоматически увеличивает размер буфера строки. </p>
+
+</div>
+</div>
+<a id="a01abc4c1daa39bb99451be642dc86f48" name="a01abc4c1daa39bb99451be642dc86f48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01abc4c1daa39bb99451be642dc86f48">&#9670;&#160;</a></span>insert() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;StrExprForType&lt; K &gt; A&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>to</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const A &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вставить строковое выражение в указанную позицию. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">to</td><td>- позиция для вставки. </td></tr>
+    <tr><td class="paramname">expr</td><td>- строковое выражение. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a81a87ca9286d27c944b0453df89e7f92" name="a81a87ca9286d27c944b0453df89e7f92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81a87ca9286d27c944b0453df89e7f92">&#9670;&#160;</a></span>insert() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>to</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>other</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вставить строку в указанную позицию. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">to</td><td>- позиция для вставки. </td></tr>
+    <tr><td class="paramname">other</td><td>- вставляемая строка. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="ac0c4239efb3b35bfcb99b61feff08156" name="ac0c4239efb3b35bfcb99b61feff08156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0c4239efb3b35bfcb99b61feff08156">&#9670;&#160;</a></span>lower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::lower </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Преобразовать в нижний регистр Unicode символы первой плоскости (&lt;0xFFFF). </p>
+<p>Регистр меняется упрощенными таблицами, где один code_point всегда меняется в один code_point (но для UTF-8 возможно, что длина в code unit'ах изменится). </p><dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же </dd></dl>
+
+</div>
+</div>
+<a id="a21f5a8e01bd18d94b873390bdd5eee8d" name="a21f5a8e01bd18d94b873390bdd5eee8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21f5a8e01bd18d94b873390bdd5eee8d">&#9670;&#160;</a></span>lower_only_ascii()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::lower_only_ascii </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Преобразовать в нижний регистр ASCII символы. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a32cb440524f81da0e00cfa303cb4fab6" name="a32cb440524f81da0e00cfa303cb4fab6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32cb440524f81da0e00cfa303cb4fab6">&#9670;&#160;</a></span>operator K*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::operator K* </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получить указатель на буфер строки. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>K* - указатель на буфер строки. </dd></dl>
+
+</div>
+</div>
+<a id="afa5514cee68803e4a0a18e648cb5cfc0" name="afa5514cee68803e4a0a18e648cb5cfc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa5514cee68803e4a0a18e648cb5cfc0">&#9670;&#160;</a></span>operator+=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;StrExprForType&lt; K &gt; A&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const A &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить строковое выражение в конец строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>- строковое выражение. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a885c6a5a9ecf6417993824dbb4425af6" name="a885c6a5a9ecf6417993824dbb4425af6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a885c6a5a9ecf6417993824dbb4425af6">&#9670;&#160;</a></span>operator+=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить другую строку в конец строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>- другая строка. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a4a1cad4ba4af2bdd831580151cb32962" name="a4a1cad4ba4af2bdd831580151cb32962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a1cad4ba4af2bdd831580151cb32962">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename Op&gt; <br />
+requires std::is_invocable_v&lt;Op, K*, size_t&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const Op &amp;</td>          <td class="paramname"><span class="paramname"><em>fillFunction</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заполняет строку методом fill с нулевой позиции. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fillFunction</td><td>- функтор заполнения строки, size_t(K*, size_t). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a0a5d59fd9e97d25cc5a9940c19ab796c" name="a0a5d59fd9e97d25cc5a9940c19ab796c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5d59fd9e97d25cc5a9940c19ab796c">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename Op&gt; <br />
+requires std::is_invocable_v&lt;Op, my_type&amp;&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const Op &amp;</td>          <td class="paramname"><span class="paramname"><em>fillFunction</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывает переданный функтор, передав ссылку на себя. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fillFunction</td><td>- фуктор void(my_type&amp;). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a01b1fdf213da8dc5cdaf6211904ee690" name="a01b1fdf213da8dc5cdaf6211904ee690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01b1fdf213da8dc5cdaf6211904ee690">&#9670;&#160;</a></span>operator&lt;&lt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename Op&gt; <br />
+requires std::is_invocable_v&lt;Op, K*, size_t&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::operator&lt;&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const Op &amp;</td>          <td class="paramname"><span class="paramname"><em>fillFunction</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заполняет строку методом fill после конца строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fillFunction</td><td>- функтор заполнения строки, size_t(K*, size_t). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="aab2f039d8eb7f384b96ceb0d7f55cf7c" name="aab2f039d8eb7f384b96ceb0d7f55cf7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab2f039d8eb7f384b96ceb0d7f55cf7c">&#9670;&#160;</a></span>prepend() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;StrExprForType&lt; K &gt; A&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::prepend </td>
+          <td>(</td>
+          <td class="paramtype">const A &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить строковое выражение в начало строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>- строковое выражение. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a37c3fa40f6a3f82eb83e0b7c61f1a0fd" name="a37c3fa40f6a3f82eb83e0b7c61f1a0fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37c3fa40f6a3f82eb83e0b7c61f1a0fd">&#9670;&#160;</a></span>prepend() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::prepend </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить другую строку в начало строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>- другая строка. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a3f4c37cfab5e6a48dd47c8e7754e6530" name="a3f4c37cfab5e6a48dd47c8e7754e6530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4c37cfab5e6a48dd47c8e7754e6530">&#9670;&#160;</a></span>printf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::printf </td>
+          <td>(</td>
+          <td class="paramtype">const K *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Форматирует строку помощью sprintf. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>- форматная строка. </td></tr>
+    <tr><td class="paramname">...args</td><td>- аргументы для sprintf. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же</dd></dl>
+<p>При необходимости автоматически увеличивает размер буфера строки. </p>
+
+</div>
+</div>
+<a id="a875205d5df5bc2d8b825ba8edd79b22a" name="a875205d5df5bc2d8b825ba8edd79b22a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a875205d5df5bc2d8b825ba8edd79b22a">&#9670;&#160;</a></span>printf_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::printf_from </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const K *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет отформатированный с помощью sprintf вывод, начиная с указанной позиции. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>- начальная позиция добавления. </td></tr>
+    <tr><td class="paramname">format</td><td>- форматная строка. </td></tr>
+    <tr><td class="paramname">...args</td><td>- аргументы для sprintf. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же.</dd></dl>
+<p>При необходимости автоматически увеличивает размер буфера строки. </p>
+
+</div>
+</div>
+<a id="a5eb2a4a250dc0fe4c7c71ecd51745259" name="a5eb2a4a250dc0fe4c7c71ecd51745259"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eb2a4a250dc0fe4c7c71ecd51745259">&#9670;&#160;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::remove </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить часть строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>- позиция, с которой удалить. </td></tr>
+    <tr><td class="paramname">len</td><td>- длина удаляемой части. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="ac0ee55594becb6b2c2b98df722cc7a33" name="ac0ee55594becb6b2c2b98df722cc7a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0ee55594becb6b2c2b98df722cc7a33">&#9670;&#160;</a></span>replace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::replace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>repl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>maxCount</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заменить вхождения подстроки на другую строку. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- искомая подстрока. </td></tr>
+    <tr><td class="paramname">repl</td><td>- строка замены. </td></tr>
+    <tr><td class="paramname">offset</td><td>- начальная позиция для поиска. </td></tr>
+    <tr><td class="paramname">maxCount</td><td>- максимальное количество замен, 0 - без ограничений. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="ad86b3a4c468f51e3ab3f7ba9e8786f9f" name="ad86b3a4c468f51e3ab3f7ba9e8786f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad86b3a4c468f51e3ab3f7ba9e8786f9f">&#9670;&#160;</a></span>replace_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;StrType&lt; K &gt; From&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::replace_from </td>
+          <td>(</td>
+          <td class="paramtype">const From &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>repl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>maxCount</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Скопировать строку-источник, заменив вхождения подстрок на другую строку. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>- строка-источник. </td></tr>
+    <tr><td class="paramname">pattern</td><td>- искомая подстрока. </td></tr>
+    <tr><td class="paramname">repl</td><td>- строка замены. </td></tr>
+    <tr><td class="paramname">offset</td><td>- начальная позиция для поиска. </td></tr>
+    <tr><td class="paramname">maxCount</td><td>- максимальное количество замен, 0 - без ограничений. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a90be6688c9793f9ea707f322ebdfc131" name="a90be6688c9793f9ea707f322ebdfc131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90be6688c9793f9ea707f322ebdfc131">&#9670;&#160;</a></span>str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">K * <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::str </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получить указатель на буфер строки. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>K* - указатель на буфер строки. </dd></dl>
+
+</div>
+</div>
+<a id="ab697bf9b655f0ed7762ee830efb25b18" name="ab697bf9b655f0ed7762ee830efb25b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab697bf9b655f0ed7762ee830efb25b18">&#9670;&#160;</a></span>trim() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить пробельные символы в начале и в конце строки. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a14ae0d5f1aef083fc2c84274cd794c74" name="a14ae0d5f1aef083fc2c84274cd794c74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14ae0d5f1aef083fc2c84274cd794c74">&#9670;&#160;</a></span>trim() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить символы, входящие в переданную строку, в начале и в конце строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- строка, содержащая символы, которые надо удалить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же </dd></dl>
+
+</div>
+</div>
+<a id="af25c5f127c99392c53470f0a9919b504" name="af25c5f127c99392c53470f0a9919b504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af25c5f127c99392c53470f0a9919b504">&#9670;&#160;</a></span>trim() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt; <br />
+requires is_const_pattern&lt;N&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить символы, входящие в строковый литерал, в начале и в конце строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- строковый литерал, содержащий символы, которые надо удалить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a244334bd105c03fa510804b31707996f" name="a244334bd105c03fa510804b31707996f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a244334bd105c03fa510804b31707996f">&#9670;&#160;</a></span>trim_left() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim_left </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить пробельные символы в начале строки. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a2e26d84497e19b7bbfd83da9cc593310" name="a2e26d84497e19b7bbfd83da9cc593310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e26d84497e19b7bbfd83da9cc593310">&#9670;&#160;</a></span>trim_left() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim_left </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить символы, входящие в переданную строку, в начале строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- строка, содержащая символы, которые надо удалить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же </dd></dl>
+
+</div>
+</div>
+<a id="a65b013501c10698abf323333d17ab2ac" name="a65b013501c10698abf323333d17ab2ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b013501c10698abf323333d17ab2ac">&#9670;&#160;</a></span>trim_left() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt; <br />
+requires is_const_pattern&lt;N&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim_left </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить символы, входящие в строковый литерал, в начале строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- строковый литерал, содержащий символы, которые надо удалить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a7ff45375785f56489e1e6d8f9d978120" name="a7ff45375785f56489e1e6d8f9d978120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ff45375785f56489e1e6d8f9d978120">&#9670;&#160;</a></span>trim_left_with_spaces() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim_left_with_spaces </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить символы, входящие в переданную строку, а также пробельные символы, в начале строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- строка, содержащая символы, которые надо удалить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же </dd></dl>
+
+</div>
+</div>
+<a id="a5f668bb7ec9de3acf40727167787e630" name="a5f668bb7ec9de3acf40727167787e630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f668bb7ec9de3acf40727167787e630">&#9670;&#160;</a></span>trim_left_with_spaces() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt; <br />
+requires is_const_pattern&lt;N&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim_left_with_spaces </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить символы, входящие в строковый литерал, а также пробельные символы, в начале строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- строковый литерал, содержащий символы, которые надо удалить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же </dd></dl>
+
+</div>
+</div>
+<a id="a8a8daf67d09761a0834881d00562596f" name="a8a8daf67d09761a0834881d00562596f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a8daf67d09761a0834881d00562596f">&#9670;&#160;</a></span>trim_right() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim_right </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить пробельные символы в конце строки. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a8c100b87423b8c6261c8c2d16cd82194" name="a8c100b87423b8c6261c8c2d16cd82194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c100b87423b8c6261c8c2d16cd82194">&#9670;&#160;</a></span>trim_right() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim_right </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить символы, входящие в переданную строку, в конце строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- строка, содержащая символы, которые надо удалить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же </dd></dl>
+
+</div>
+</div>
+<a id="a73083ad3987d977364c90a9a80a1509f" name="a73083ad3987d977364c90a9a80a1509f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73083ad3987d977364c90a9a80a1509f">&#9670;&#160;</a></span>trim_right() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt; <br />
+requires is_const_pattern&lt;N&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim_right </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить символы, входящие в строковый литерал, в конце строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- строковый литерал, содержащий символы, которые надо удалить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a73428dd849aa12f674ece721e067ccb9" name="a73428dd849aa12f674ece721e067ccb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73428dd849aa12f674ece721e067ccb9">&#9670;&#160;</a></span>trim_right_with_spaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim_right_with_spaces </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить символы, входящие в переданную строку, а также пробельные символы, в конце строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- строка, содержащая символы, которые надо удалить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же </dd></dl>
+
+</div>
+</div>
+<a id="a2c59b83d60ff726a3ec9a9aeb1ae404b" name="a2c59b83d60ff726a3ec9a9aeb1ae404b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c59b83d60ff726a3ec9a9aeb1ae404b">&#9670;&#160;</a></span>trim_right_with_wpaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt; <br />
+requires is_const_pattern&lt;N&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim_right_with_wpaces </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить символы, входящие в строковый литерал, а также пробельные символы, в конце строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- строковый литерал, содержащий символы, которые надо удалить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же </dd></dl>
+
+</div>
+</div>
+<a id="a8e8bfc1561a193de117800effb3bbc7d" name="a8e8bfc1561a193de117800effb3bbc7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e8bfc1561a193de117800effb3bbc7d">&#9670;&#160;</a></span>trim_with_spaces() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim_with_spaces </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить символы, входящие в переданную строку, а также пробельные символы, в начале и в конце строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- строка, содержащая символы, которые надо удалить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же </dd></dl>
+
+</div>
+</div>
+<a id="a3240c4342cc4fa0de4126d1446501647" name="a3240c4342cc4fa0de4126d1446501647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3240c4342cc4fa0de4126d1446501647">&#9670;&#160;</a></span>trim_with_spaces() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt; <br />
+requires is_const_pattern&lt;N&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::trim_with_spaces </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удалить символы, входящие в строковый литерал, а также пробельные символы, в начале и в конце строки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- строковый литерал, содержащий символы, которые надо удалить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же </dd></dl>
+
+</div>
+</div>
+<a id="ad1b975226e92b0e57796dd14fed5248f" name="ad1b975226e92b0e57796dd14fed5248f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1b975226e92b0e57796dd14fed5248f">&#9670;&#160;</a></span>upper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::upper </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Преобразовать в верхний регистр Unicode символы первой плоскости (&lt;0xFFFF). </p>
+<p>Регистр меняется упрощенными таблицами, где один code_point всегда меняется в один code_point (но для UTF-8 возможно, что длина в code unit'ах изменится). </p><dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же </dd></dl>
+
+</div>
+</div>
+<a id="a1c7b47cfc00189c51a5683fd34095192" name="a1c7b47cfc00189c51a5683fd34095192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c7b47cfc00189c51a5683fd34095192">&#9670;&#160;</a></span>upper_only_ascii()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::upper_only_ascii </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Преобразовать в верхний регистр ASCII символы. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<a id="a4c0ab4a1d48cbf3b7c3474a4bf28569c" name="a4c0ab4a1d48cbf3b7c3474a4bf28569c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c0ab4a1d48cbf3b7c3474a4bf28569c">&#9670;&#160;</a></span>vformat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::vformat </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Форматирует строку с помощью std::vformat. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>- форматная строка. </td></tr>
+    <tr><td class="paramname">...args</td><td>- аргументы для std::vformat. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же.</dd></dl>
+<p>При необходимости автоматически увеличивает размер буфера строки. </p>
+
+</div>
+</div>
+<a id="a7cf2545d9002b51989700a64d7aaff0e" name="a7cf2545d9002b51989700a64d7aaff0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cf2545d9002b51989700a64d7aaff0e">&#9670;&#160;</a></span>vformat_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::vformat_from </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_write</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет отформатированный с помощью std::vformat вывод, начиная с указанной позиции. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>- начальная позиция добавления. </td></tr>
+    <tr><td class="paramname">max_write</td><td>- максимальное количество записываемых символов. </td></tr>
+    <tr><td class="paramname">format</td><td>- форматная строка. </td></tr>
+    <tr><td class="paramname">...args</td><td>- аргументы для std::vformat. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же.</dd></dl>
+<p>При необходимости автоматически увеличивает размер буфера строки. </p>
+
+</div>
+</div>
+<a id="a85893478637a79c79321e5c15cab9763" name="a85893478637a79c79321e5c15cab9763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85893478637a79c79321e5c15cab9763">&#9670;&#160;</a></span>vformat_n()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename... T&gt; <br />
+requires (is_one_of_std_char_v&lt;K&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::vformat_n </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_write</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Форматирует строку с помощью std::vformat не более указанного размера. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_write</td><td>- максимальное количество записываемых символов. </td></tr>
+    <tr><td class="paramname">format</td><td>- форматная строка. </td></tr>
+    <tr><td class="paramname">...args</td><td>- аргументы для std::vformat. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же.</dd></dl>
+<p>При необходимости автоматически увеличивает размер буфера строки. </p>
+
+</div>
+</div>
+<a id="a43a9104a71b1593fea01f6eff162fec4" name="a43a9104a71b1593fea01f6eff162fec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a9104a71b1593fea01f6eff162fec4">&#9670;&#160;</a></span>with()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename Impl&gt; </div>
+<div class="memtemplate">
+template&lt;typename Op, typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Impl &amp; <a class="el" href="classsimstr_1_1str__mutable.html">simstr::str_mutable</a>&lt; K, Impl &gt;::with </td>
+          <td>(</td>
+          <td class="paramtype">const Op &amp;</td>          <td class="paramname"><span class="paramname"><em>fillFunction</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызов функтора со строкой и переданными аргументами. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fillFunction</td><td>- функтор, принимающий первым параметром ссылку на строку. </td></tr>
+    <tr><td class="paramname">...args</td><td>- аргументы, передаваемые в функтор. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Impl&amp; - ссылку на себя же. </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li><a class="el" href="sstring_8h_source.html">sstring.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacesimstr.html">simstr</a></li><li class="navelem"><a class="el" href="classsimstr_1_1str__mutable.html">str_mutable</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

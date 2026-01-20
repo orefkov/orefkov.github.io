@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>simstr: Шаблон класса simstr::chunked_string_builder&lt; K &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.4.0</span>
+   </div>
+   <div id="projectbrief">Yet another strings library</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classsimstr_1_1chunked__string__builder.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classsimstr_1_1chunked__string__builder-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Шаблон класса simstr::chunked_string_builder&lt; K &gt;</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Для построения длинных динамических строк конкатенацией мелких кусочков.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="sstring_8h_source.html">sstring.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:simstr::chunked_string_builder&lt; K &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classsimstr_1_1chunked__string__builder.png" usemap="#simstr::chunked_5Fstring_5Fbuilder_3C_20K_20_3E_map" alt=""/>
+  <map id="simstr::chunked_5Fstring_5Fbuilder_3C_20K_20_3E_map" name="simstr::chunked_5Fstring_5Fbuilder_3C_20K_20_3E_map">
+<area href="structsimstr_1_1expr__to__std__string.html" alt="simstr::expr_to_std_string&lt; chunked_string_builder&lt; K &gt; &gt;" shape="rect" coords="0,0,341,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1chunked__string__builder_1_1portion__store.html">portion_store</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Объект, позволяющий последовательно копировать содержимое в буфер заданного размера.  <a href="structsimstr_1_1chunked__string__builder_1_1portion__store.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a0da373aac48e549cd45ff34cf0ae8cc2" id="r_a0da373aac48e549cd45ff34cf0ae8cc2"><td class="memItemLeft" align="right" valign="top"><a id="a0da373aac48e549cd45ff34cf0ae8cc2" name="a0da373aac48e549cd45ff34cf0ae8cc2"></a>
+<a class="el" href="classsimstr_1_1chunked__string__builder.html">my_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (<a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt; <a class="el" href="#af0b7cc558b6f119079ecf436f7d4c3ab">data</a>)</td></tr>
+<tr class="memdesc:a0da373aac48e549cd45ff34cf0ae8cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавление порции данных. <br /></td></tr>
+<tr class="separator:a0da373aac48e549cd45ff34cf0ae8cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d962595752f565201fc9c7947157930" id="r_a9d962595752f565201fc9c7947157930"><td class="memItemLeft" align="right" valign="top"><a id="a9d962595752f565201fc9c7947157930" name="a9d962595752f565201fc9c7947157930"></a>
+<a class="el" href="classsimstr_1_1chunked__string__builder.html">my_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (const StrExprForType&lt; K &gt; auto &amp;expr)</td></tr>
+<tr class="memdesc:a9d962595752f565201fc9c7947157930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавление строкового выражения. <br /></td></tr>
+<tr class="separator:a9d962595752f565201fc9c7947157930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61b415d7c03737e01056715da4d36f4b" id="r_a61b415d7c03737e01056715da4d36f4b"><td class="memTemplParams" colspan="2"><a id="a61b415d7c03737e01056715da4d36f4b" name="a61b415d7c03737e01056715da4d36f4b"></a>
+template&lt;typename T&gt; <br />
+requires std::is_same_v&lt;T, K&gt;</td></tr>
+<tr class="memitem:a61b415d7c03737e01056715da4d36f4b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classsimstr_1_1chunked__string__builder.html">my_type</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator&lt;&lt;</b> (T <a class="el" href="#af0b7cc558b6f119079ecf436f7d4c3ab">data</a>)</td></tr>
+<tr class="memdesc:a61b415d7c03737e01056715da4d36f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавление символа. <br /></td></tr>
+<tr class="separator:a61b415d7c03737e01056715da4d36f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3576a70031c6790f399076313d15d96e" id="r_a3576a70031c6790f399076313d15d96e"><td class="memItemLeft" align="right" valign="top"><a id="a3576a70031c6790f399076313d15d96e" name="a3576a70031c6790f399076313d15d96e"></a>
+constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>length</b> () const noexcept</td></tr>
+<tr class="memdesc:a3576a70031c6790f399076313d15d96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Длина сохранённого текста. <br /></td></tr>
+<tr class="separator:a3576a70031c6790f399076313d15d96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a867a801a119be85afd237ac67dabea28" id="r_a867a801a119be85afd237ac67dabea28"><td class="memItemLeft" align="right" valign="top"><a id="a867a801a119be85afd237ac67dabea28" name="a867a801a119be85afd237ac67dabea28"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
+<tr class="memdesc:a867a801a119be85afd237ac67dabea28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбрасывает содержимое, но при этом не удаляет первый буфер, чтобы потом избежать аллокации. <br /></td></tr>
+<tr class="separator:a867a801a119be85afd237ac67dabea28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac865ed84503c831e6ffb1674738bece9" id="r_ac865ed84503c831e6ffb1674738bece9"><td class="memTemplParams" colspan="2">template&lt;typename Op&gt; </td></tr>
+<tr class="memitem:ac865ed84503c831e6ffb1674738bece9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac865ed84503c831e6ffb1674738bece9">out</a> (const Op &amp;o) const</td></tr>
+<tr class="memdesc:ac865ed84503c831e6ffb1674738bece9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Применяет функтор к каждому сохранённому буферу.  <br /></td></tr>
+<tr class="separator:ac865ed84503c831e6ffb1674738bece9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d8e89a6d9cd07b5ef35e2ff31b1166" id="r_ab3d8e89a6d9cd07b5ef35e2ff31b1166"><td class="memItemLeft" align="right" valign="top"><a id="ab3d8e89a6d9cd07b5ef35e2ff31b1166" name="ab3d8e89a6d9cd07b5ef35e2ff31b1166"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_continuous</b> () const</td></tr>
+<tr class="memdesc:ab3d8e89a6d9cd07b5ef35e2ff31b1166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, расположен ли весь текст одним непрерывным куском в памяти. <br /></td></tr>
+<tr class="separator:ab3d8e89a6d9cd07b5ef35e2ff31b1166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af357aa425b7f09192d7f3b207e1ea785" id="r_af357aa425b7f09192d7f3b207e1ea785"><td class="memItemLeft" align="right" valign="top"><a id="af357aa425b7f09192d7f3b207e1ea785" name="af357aa425b7f09192d7f3b207e1ea785"></a>
+const K *&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> () const</td></tr>
+<tr class="memdesc:af357aa425b7f09192d7f3b207e1ea785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить указатель на начало первого буфера. Имеет смысл применять только если is_continuous true. <br /></td></tr>
+<tr class="separator:af357aa425b7f09192d7f3b207e1ea785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95ed33ebbe60c9641920282dd9344412" id="r_a95ed33ebbe60c9641920282dd9344412"><td class="memItemLeft" align="right" valign="top"><a id="a95ed33ebbe60c9641920282dd9344412" name="a95ed33ebbe60c9641920282dd9344412"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="memdesc:a95ed33ebbe60c9641920282dd9344412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очистить объект, освободив все выделенные буфера. <br /></td></tr>
+<tr class="separator:a95ed33ebbe60c9641920282dd9344412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b255030f75dfcf6bb20de886d729d31" id="r_a1b255030f75dfcf6bb20de886d729d31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsimstr_1_1chunked__string__builder_1_1portion__store.html">portion_store</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b255030f75dfcf6bb20de886d729d31">get_portion</a> () const</td></tr>
+<tr class="memdesc:a1b255030f75dfcf6bb20de886d729d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить <a class="el" href="structsimstr_1_1chunked__string__builder_1_1portion__store.html" title="Объект, позволяющий последовательно копировать содержимое в буфер заданного размера.">portion_store</a>, через который можно последовательно извлекать данные во внешний буфер.  <br /></td></tr>
+<tr class="separator:a1b255030f75dfcf6bb20de886d729d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b7cc558b6f119079ecf436f7d4c3ab" id="r_af0b7cc558b6f119079ecf436f7d4c3ab"><td class="memItemLeft" align="right" valign="top">const auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0b7cc558b6f119079ecf436f7d4c3ab">data</a> () const</td></tr>
+<tr class="memdesc:af0b7cc558b6f119079ecf436f7d4c3ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить внутренние буфера с данными.  <br /></td></tr>
+<tr class="separator:af0b7cc558b6f119079ecf436f7d4c3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename K&gt;<br />
+class simstr::chunked_string_builder&lt; K &gt;</div><p>Для построения длинных динамических строк конкатенацией мелких кусочков. </p>
+<p>Выделяет по мере надобности отдельные блоки заданного размера (или кратного ему для больших вставок), чтобы избежать релокации длинных строк. После построения можно слить в одну строку. Как показали замеры, если сливать потом в одну строку, работает медленнее, чем lstring +=, но экономнее по памяти. Если не сливать в одну строку, а дальше перебирать буфера - быстрее. Сам является строковым выражением. </p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="af0b7cc558b6f119079ecf436f7d4c3ab" name="af0b7cc558b6f119079ecf436f7d4c3ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b7cc558b6f119079ecf436f7d4c3ab">&#9670;&#160;</a></span>data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto &amp; <a class="el" href="classsimstr_1_1chunked__string__builder.html">simstr::chunked_string_builder</a>&lt; K &gt;::data </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получить внутренние буфера с данными. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>const auto&amp;. </dd></dl>
+
+</div>
+</div>
+<a id="a1b255030f75dfcf6bb20de886d729d31" name="a1b255030f75dfcf6bb20de886d729d31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b255030f75dfcf6bb20de886d729d31">&#9670;&#160;</a></span>get_portion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsimstr_1_1chunked__string__builder_1_1portion__store.html">portion_store</a> <a class="el" href="classsimstr_1_1chunked__string__builder.html">simstr::chunked_string_builder</a>&lt; K &gt;::get_portion </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получить <a class="el" href="structsimstr_1_1chunked__string__builder_1_1portion__store.html" title="Объект, позволяющий последовательно копировать содержимое в буфер заданного размера.">portion_store</a>, через который можно последовательно извлекать данные во внешний буфер. </p>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="structsimstr_1_1chunked__string__builder_1_1portion__store.html" title="Объект, позволяющий последовательно копировать содержимое в буфер заданного размера.">portion_store</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ac865ed84503c831e6ffb1674738bece9" name="ac865ed84503c831e6ffb1674738bece9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac865ed84503c831e6ffb1674738bece9">&#9670;&#160;</a></span>out()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K&gt; </div>
+<div class="memtemplate">
+template&lt;typename Op&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classsimstr_1_1chunked__string__builder.html">simstr::chunked_string_builder</a>&lt; K &gt;::out </td>
+          <td>(</td>
+          <td class="paramtype">const Op &amp;</td>          <td class="paramname"><span class="paramname"><em>o</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Применяет функтор к каждому сохранённому буферу. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Op</td><td>- тип функтора, функция вида (const K* ptr, size_t len). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>- функтор. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li><a class="el" href="sstring_8h_source.html">sstring.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacesimstr.html">simstr</a></li><li class="navelem"><a class="el" href="classsimstr_1_1chunked__string__builder.html">chunked_string_builder</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

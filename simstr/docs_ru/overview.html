@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>simstr: Обзор</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.4.0</span>
+   </div>
+   <div id="projectbrief">Yet another strings library</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('overview.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Обзор</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md9"></a>
+Строки в С++</h1>
+<p>(, что с вами не так?)</p>
+<p><span class="obfuscator"><a href="overview.md">On English | По-английски</a></span></p>
+<p><cite> В ретроспективе 1991 года по истории C++ его создатель Бьярне Страуструп назвал отсутствие стандартного строкового типа (и некоторых других стандартных типов) в C++ 1.0 худшей ошибкой, которую он допустил при его разработке: "the absence of those led to everybody re-inventing the wheel and to an unnecessary diversity in the most fundamental classes" («Их отсутствие привело к тому, что все заново изобретали велосипед, и к ненужному разнообразию в самых фундаментальных классах»). </cite></p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Что было и есть</h2>
+<p>Во вступительной части я хочу немного описать, каково ныне состояние со строками в С++, как мы к нему докатились и почему оно таково. А также описать недостатки текущих реализаций, чтобы были понятны решения, которые я использую в своей библиотеке строк.</p>
+<p>Собственно, изначально как такового стандартного типа для строк в С++ не было. Для работы со строками использовался подход из C – строка есть указатель на массив байтов, оканчивающихся нулём. Недостатки таких строк — невозможно в строке использовать байт <code>0</code>, т. е. не подходит для бинарных данных, непонятна стратегия управления/владения ресурсами, ну и основной недостаток — длину строки приходится вычислять каждый раз, перебирая все её символы.</p>
+<p>Откуда ноги растут у такого решения вполне понятно — со времён динозавров: как динозавры были большие, с маленьким мозгом и короткими ручками, так и компьютеры были большие, память у них была маленькая, а строки короткими. Сэкономить память на хранении длины строки было важнее, чем потерять время на повторный подсчет длины.</p>
+<p>Первые попытки стандартизировать строки как класс начались только в С++98 - std::string появился, как часть STL, и как многое из STL, крайне неоднозначно воспринимался программистами.</p>
+<p>И первое, что приходит в голову при улучшении C-строк — надо хранить длину строки: </p><div class="fragment"><div class="line">    <span class="keyword">struct </span>simple_string {</div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span>* data;</div>
+<div class="line">        <span class="keywordtype">size_t</span> length;</div>
+<div class="line">    };</div>
+</div><!-- fragment --><p>При наличии такой строки, уже множество алгоритмов значительно оптимизируются. Например, при сравнении двух строк на равенство мы можем даже не начинать сравнивать их символы, если длины строк не равны. Более того, этих данных абсолютно достаточно для всех методов, которые не модифицируют строку. Также заметим, что такой объект на современных 64-битных архитектурах прекрасно передается в функции по значению — оба его поля укладываются в регистры (ну, кроме windows), что облегчает работу оптимизатору компилятора.</p>
+<p>Между тем, такое решение попало в стандарт только аж в С++17, в виде <code>std::string_view</code>. Видимо, только тогда до комитета смогли донести мысль, что строки строкам рознь, и использовать только один универсальный объект для строк — по меньшей мере может приводить к уменьшению производительности, а также нарушает принцип «не плати за то, чем не пользуешься». Почему же «строки строкам рознь» и почему нам мало одного типа для строки, рассмотрим как раз далее.</p>
+<h3><a class="anchor" id="autotoc_md11"></a>
+Ресурсы</h3>
+<p>И следующий вопрос, возникающий со строками — это владение ресурсами. Практически каждый крупный фреймворк решал эту задачу самостоятельно, изобретая свои велосипеды. У нас есть <code>std::string</code>, в QT у нас <code>QString</code>, в MFC - <code>CString</code>, в ATL - <code>CAtlString</code>, свои строки есть в Folly, в общем, “тысячи их”, любой игровой движок начинают с того, чтобы написать свои строки.</p>
+<p>Многие из этих реализаций в аспекте управления ресурсами для улучшения производительности использовали подход <b>COW</b> – “Copy On Write”. При этом объект строки ссылался на некий разделяемый между несколькими объектами буфер с символами строки и счётчиком ссылок на этот буфер, что позволяло быстро создавать копию строки, а реально копировать символы только при её модификации.</p>
+<p>Но все они совпадали в одном — строка всегда предполагалась мутабельной, то есть что мы можем модифицировать символы в буфере строки.</p>
+<h3><a class="anchor" id="autotoc_md12"></a>
+Мутабельность / иммутабельность</h3>
+<p>Из-за этого подход <b>COW</b> умер к С++11: при каждой операции, могущей модифицировать символы строки приходилось проверять, не ссылаемся ли мы на разделяемый буфер и если да, то копировать символы в другой буфер. В многопоточной же среде потом ещё и проверять, не надо ли теперь освобождать старый буфер, и естественно всё это обмазавшись локами или атомиками, что тоже не бесплатно. Поэтому, начиная с С++11 <code>std::string</code> не использует <b>COW</b>, и каждое копирование объекта строки приводит и к копированию всех символов строки в другой буфер.</p>
+<p>Естественно, что каждый новый буфер требует аллокации памяти, что пытаются немного оптимизировать за счёт <b>SSO</b> – “Small String Optimization”, когда объект строки содержит внутри себя небольшой буфер и символы коротких строк располагаются прямо в нём. Но это уже зависит от реализации: в одних библиотеках помещают в объект строки до 15 байт, в некоторых до 23. Однако эта оптимизация тоже палка о двух концах, и может в различных реализациях усложнить перемещение строки - если она хранит указатель на свой внутренний буфер, его придётся корректировать.</p>
+<p>А без COW мутабельность строк приводит к тому, что любая инициализация объекта строки приводит к копированию байтов. Посмотрим такой код: </p><div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span>* text1 = <span class="stringliteral">&quot;Hello, World&quot;</span>;         <span class="comment">// ничего не стоит</span></div>
+<div class="line">std::string_view text2 = <span class="stringliteral">&quot;Hello, World&quot;</span>;    <span class="comment">// Ничего не стоит, вычисляет длину строки при компиляции</span></div>
+<div class="line">std::string text3 = <span class="stringliteral">&quot;Hello, World&quot;</span>;         <span class="comment">// В рантайме каждый раз копирует символы строки</span></div>
+</div><!-- fragment --><p>(Удостоверится в правдивости комментариев можно на <a href="https://godbolt.org/z/51oKGWT5T">https://godbolt.org/z/51oKGWT5T</a> )</p>
+<p>Но если нам дальше по коду не нужно никак модифицировать строку, мы зря платим за аллокацию, копирование символов, а также за деструктор строки. То есть хотелось бы иметь как минимум два варианта строк — мутабельные и иммутабельные, чтобы явно дать понять компилятору, что мы не собираемся модифицировать строку. Или банальный пример — мы парсим какой-то входящий буфер данных, нам нужно проверить, равен ли некий кусок буфера строке ”hello” на «чистом С++», т. е. без всяких memcmp и strcmp. До появления string_view приходилось делать примерно так: </p><div class="fragment"><div class="line"><span class="keywordtype">bool</span> is_part_buffer_equal_hello(<span class="keyword">const</span> <span class="keywordtype">char</span>* data, <span class="keywordtype">int</span> start, <span class="keywordtype">int</span> end) {</div>
+<div class="line">    <span class="keywordflow">return</span> std::string(data + start, end - start) == <span class="stringliteral">&quot;hello&quot;</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> Тут получается, сначала копируются символы из буфера data в буфер временной строки, возможно с аллокацией памяти, и лишь потом временная строка сравнивается с ”hello”, а потом ещё и деструктор и раскрутка стека на случай исключения.</p>
+<p>При использовании же вместо <code>std::string</code> <code>std::string_view</code> – код на C++ почти не меняется: </p><div class="fragment"><div class="line"><span class="keywordtype">bool</span> is_part_buffer_equal_hello_view(<span class="keyword">const</span> <span class="keywordtype">char</span>* data, <span class="keywordtype">int</span> start, <span class="keywordtype">int</span> end) {</div>
+<div class="line">    <span class="keywordflow">return</span> std::string_view(data + start, end - start) == <span class="stringliteral">&quot;hello&quot;</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> Однако генерируемый машинный код значительно преобразуется, достигая уровня ручного С-кода — там просто сравнивается, что end – start == 5 и дальше кусок начального буфера сравнивается через memcmp со строкой ”hello” (при -O2 c константами 1819043176 (’hell’) и 111 (’o’)). Ни создания временного объекта, ни копирования байтов, ни деструктора, ни раскрутки стека для исключений. Убедится можно на <a href="https://godbolt.org/z/9fo188e7c">https://godbolt.org/z/9fo188e7c</a></p>
+<p>Казалось бы, ну вот же в С++17 появился <code>string_view</code>, пожалуйста, используй его в параметрах своих функций вместо <code>const std::string&amp;</code>, и будет счастье. Но тут тоже есть нюанс — всё отлично работает, пока нам не нужно передать строку в стороннее C-API: string_view не даёт гарантий нуль-терминированности строки, поэтому его data() нельзя передать в стороннее C-API, и потому всё-равно придётся сначала скопировать его в <code>std::string</code>. А раз нужен <code>std::string</code>, то и параметром функции оптимальнее cделать <code>const std::string&amp;</code> и далее по цепочке, все параметры вновь станут <code>const std::string&amp;</code>.</p>
+<h3><a class="anchor" id="autotoc_md13"></a>
+Конкатенация строк</h3>
+<p>Далее, после инициализации строки, самая частая мутабельная операция с ними, скорее всего конкатенация строк, либо в виде просто сложения строк, либо добавления строки к строке. И именно она легко может вызывать как неоптимальную производительность при неграмотном использовании, так и оверхед по памяти, даже при грамотном использовании.</p>
+<p>Рассмотрим простой код ( <a href="https://godbolt.org/z/odx7W1Pv7">https://godbolt.org/z/odx7W1Pv7</a> ) </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><span class="keywordtype">void</span> some_outer_function(<span class="keyword">const</span> std::string&amp;);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> func(<span class="keyword">const</span> std::string&amp; s1, <span class="keyword">const</span> std::string&amp; s2) {</div>
+<div class="line">    std::string concat = s1 + s2 + <span class="stringliteral">&quot;hello&quot;</span>;</div>
+<div class="line">    some_outer_function(concat);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> Как видим, и в clang, и в GCC создается несколько временных объектов, в которые последовательно перекладываются символы строк, и как результат — мы получаем несколько лишних аллокаций для промежуточных буферов, символы из строк копируются несколько лишних раз из промежуточных буферов. В идеале для лучшей производительности такой код нужно переписать так: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><span class="keywordtype">void</span> some_outer_function(<span class="keyword">const</span> std::string&amp;);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> func(<span class="keyword">const</span> std::string&amp; s1, <span class="keyword">const</span> std::string&amp; s2) {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">const</span> std::string_view hello = <span class="stringliteral">&quot;hello&quot;</span>;</div>
+<div class="line">    std::string concat;</div>
+<div class="line">    concat.reserve(s1.size() + s2.size() + hello.size());</div>
+<div class="line">    concat += s1;</div>
+<div class="line">    concat += s2;</div>
+<div class="line">    concat += hello;</div>
+<div class="line">    some_outer_function(concat);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>К сожалению, пока ни один компилятор не оптимизирует первый простой код до уровня второго более оптимального кода, а писать такой код каждый раз руками довольно неудобно. То есть опять приходится платить за то, чем не пользуешься. Да и в этом случае вполне может возникнуть оверхед по памяти — операции добавления строки обычно во всех реализациях увеличивают размер буфера строки не меньше, чем в два раза, считая, что скоро к строке могут снова что-нибудь добавить. Поэтому если строку не планируется более модифицировать, но время её жизни ещё не подошло к концу (например, это поле какого-либо класса), нужно ещё не забыть сделать на ней <code>shrink_to_fit</code>.</p>
+<p>Между тем, часто основной сценарий использования строк — это как раз некая подготовка строки путём нескольких модификаций и конкатенаций, а затем она где-то хранится, более не меняясь. При этом программист обычно знает, примерно какой размер строк ожидается в этом месте, и мог бы выделить буфер для этих промежуточных модификаций прямо на стеке, прибегая к динамической аллокации только при превышении размера этого буфера. Однако с текущей реализацией строк это сделать довольно проблематично, либо неудобно.</p>
+<p>Подытожим, что имеем на данный момент:</p>
+<ul>
+<li>«Из коробки» в С++ для работы со строками сейчас имеется <code>std::string</code>.</li>
+<li>Строки подразумеваются мутабельными, что приводит к обязательному копированию всех символов строки при инициализации и копировании объектов строк.</li>
+<li>Соответственно, не имеем возможности быстрого копирования строк, даже если не планируем потом менять копию.</li>
+<li>Конкатенация нескольких строк — задача, могущая выполнятся неоптимально, приводить к оверхеду по памяти, написать оптимальный код сложно.</li>
+<li>Есть костыль для иммутабельных строк в виде <code>std::string_view</code>, однако он не решает вопросы владения строкой, поэтому по сути годится только как тип для передачи параметров в функции, не меняющие строки, с оговоркой, что не может использоваться в функциях, вызывающих C-API, так как не даёт гарантий нуль-терминированности.</li>
+<li>Ну и к <code>std::string</code> есть вопросы, что несмотря на то, что это класс для строк, собственно для работы со строками в нём крайне куцый функционал по сравнению с тем, к чему привыкли в других языках — к примеру нет замены подстрок по шаблону (в других языках это обычно replace, но в С++ эта функция делает совершенно другое), trim, split, join, upper, lower и т. п. Эти функции приходится каждый раз писать самому, и не факт, что у всех это получится оптимально.</li>
+</ul>
+<p>Надеюсь, после этого небольшого вступления вам будет более понятно, какие проблемы я решал своей строковой библиотекой и каким образом.</p>
+<h2><a class="anchor" id="autotoc_md14"></a>
+Библиотека simstr</h2>
+<p>Собственно, нельзя сказать, что «я свелосипедил свою реализацию класса для строк». Как я ранее показал, сложно, а то и даже невозможно написать один единый строковый класс, хорошо подходящий для всех сценариев использования. Именно поэтому у меня не строковый класс, а строковая библиотека, которая содержит несколько разных строковых типов, от более простых к более сложным, каждый из которых имеет свои сильные и слабые стороны, и пользователю нужно грамотно подходить к вопросу, какой из этих классов в каком случае стоит использовать.</p>
+<p>Саму библиотеку я начал потихоньку разрабатывать ещё в 2011-2012 годах, когда у нас уже появилась семантика перемещения, но ещё не было std::string_view. Однако сейчас минимальная версия стандарта для работы библиотеки: <b>C++20</b> – используются концепты и &lt;format&gt;.</p>
+<p>Сначала я расскажу о классах библиотеки для самих строк, а потом о том, как в ней оптимально решается задача конкатенации строк.</p>
+<p>Несколько общих моментов:</p><ul>
+<li>Все классы для работы со строками шаблонизированы типом символов, но подразумевается, что символы могут быть <code>char</code>, <code>char8_t</code>, <code>char16_t</code>, <code>char32_t</code>, <code>wchar_t</code>.</li>
+<li>Все строки имеют явную длину.</li>
+<li>Классы владельцы строк хранят их с завершающим нулем в конце, который не входит в длину строки.</li>
+<li>В самой строке могут содержаться нулевые символы, все алгоритмы работают только через длину строки, не обращая на них внимания.</li>
+<li>Библиотека считает разные строковые типы "совместимыми", если они имеют одинаковый размер символов. То есть <code>char</code> и <code>char8_t</code> всегда тождественны, а также в Linux тождественны <code>wchar_t</code> и <code>char32_t</code>, а в Windows <code>wchar_t</code> и <code>char16_t</code>.</li>
+<li>Классы владельцы строк могут инициализироваться строками другого типа символов, выполняя конвертацию между UTF-8, UTF-16, UTF-32. При этом если строки разных, но совместимых типов, они просто копируются без конвертации.</li>
+<li>Для смены регистра символов и сравнения строк без учёта регистра используются встроенные таблицы для первой плоскости юникода (до 0xFFFF). Строки считаются представленными в кодировке UTF-8, UTF-16, UTF-32 соответственно. Однако не делается нормализация строк и не обрабатываются ситуации, когда смена регистра символа приводит к изменению их количества. То есть преобразование регистра символов соответствует <code>std::towupper</code>, <code>std::towlower</code> для unicode локали, только быстрее и может работать с любым видом символов. Если вам нужна строгая работа с юникодом, используйте другие средства, например ICU.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md15"></a>
+Классы строк.</h3>
+<h4><a class="anchor" id="autotoc_md16"></a>
+Первый самый простой класс строки называется, естественно, <code>simple_str</code> :)</h4>
+<p>(<a class="el" href="structsimstr_1_1simple__str.html" title="Простейший класс иммутабельной не владеющей строки.">simstr::simple_str</a>)</p>
+<p>Класс просто представляет собой указатель на начало константной строки и её длину, по сути то же самое, что <code>std::string_view</code>. Предназначен для работы с иммутабельными строками, не владеющий ими, то есть вы должны сами озаботиться тем, что реальная строка, представленная через <code>simple_str</code> – жива во время его использования.</p>
+<p>Реализует все строковые методы, не модифицирующие строку.</p>
+<p>Алиасы:</p><ul>
+<li><code>ssa</code> для simple_str&lt;char&gt;</li>
+<li><code>ssb</code> для simple_str&lt;char8_t&gt;</li>
+<li><code>ssu</code> для simple_str&lt;char16_t&gt;</li>
+<li><code>ssw</code> для simple_str&lt;wchar_t&gt;</li>
+<li><code>ssuu</code> для simple_str&lt;char32_t&gt;</li>
+</ul>
+<p>Применяется в основном для передачи строк как параметр функций, не модифицирующих переданную строку, вместо <code>const std::string&amp;</code>, а также для локальных переменных при работе с частями строк.</p>
+<h4><a class="anchor" id="autotoc_md17"></a>
+Второй класс — <code>simple_str_nt</code></h4>
+<p>(<a class="el" href="structsimstr_1_1simple__str__nt.html" title="Класс, заявляющий, что ссылается на нуль-терминированную строку.">simstr::simple_str_nt</a>)</p>
+<p>По устройству и назначению совпадает с <code>simple_str</code>, но дает гарантии нуль-терминированности строки. То есть если функции надо переданный параметр без изменений передать дальше как C-строку в какое то API, она должна использовать для параметра тип <code>simple_str_nt</code>. Все классы владеющих строк (<a class="el" href="classsimstr_1_1sstring.html" title="Класс иммутабельной владеющей строки.">simstr::sstring</a>, <a class="el" href="classsimstr_1_1lstring.html" title="Класс мутабельной, владеющей строки. Содержит внутренний буфер для строк заданного размера.">simstr::lstring</a>) могут быть преобразованы в <code>simple_str_nt</code>, так как хранят строки с завершающим нулём. Это позволяет писать функции с единым типом параметра, принимающим на вход любой тип владеющих строковых объектов.</p>
+<p>Алиасы:</p><ul>
+<li><code>stra</code> для simple_str_nt&lt;char&gt;</li>
+<li><code>strb</code> для simple_str_nt&lt;char8_t&gt;</li>
+<li><code>stru</code> для simple_str_nt&lt;char16_t&gt;</li>
+<li><code>strw</code> для simple_str_nt&lt;wchar_t&gt;</li>
+<li><code>struu</code> для simple_str_nt&lt;char32_t&gt;</li>
+</ul>
+<p>Может инициализироваться строковыми литералами: </p><div class="fragment"><div class="line">stra text = <span class="stringliteral">&quot;Text&quot;</span>;</div>
+</div><!-- fragment --><p> Длина в этом случае вычисляется сразу при компиляции. Аналогично <code>simple_str_nt</code> создается с помощью <code>operator""_ss</code>:</p>
+<div class="fragment"><div class="line">stringa result = <span class="stringliteral">&quot;Count: &quot;</span>_ss + count;</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md18"></a>
+Класс sstring (shared string).</h4>
+<p>(<a class="el" href="classsimstr_1_1sstring.html" title="Класс иммутабельной владеющей строки.">simstr::sstring</a>)</p>
+<p>Класс, умеющий хранить иммутабельную строку. То есть ему можно присвоить некую строку только целиком, модифицировать символы строки нельзя.</p>
+<p>Владеет строкой, управляет памятью для символов строки. Хранит со строками завершающий нуль, и может быть источником для <code>simple_str_nt</code>, для передачи в C-API. Так же, как и <code>simple_str</code>, реализует все методы, не модифицирующие строку.</p>
+<p>Алиасы:</p><ul>
+<li><code>stringa</code> для sstring&lt;char&gt;</li>
+<li><code>stringb</code> для sstring&lt;char8_t&gt;</li>
+<li><code>stringu</code> для sstring&lt;char16_t&gt;</li>
+<li><code>stringw</code> для sstring&lt;wchar_t&gt;</li>
+<li><code>stringuu</code> для sstring&lt;char32_t&gt;</li>
+</ul>
+<p>То, что хранимая строка иммутабельна, позволяет применить ряд оптимизаций:</p><ul>
+<li>Для строк, не подходящих для SSO, использует общий разделяемый буфер с атомарным счётчиком ссылок. Позволяет быстро копировать строку без необходимости блокировок доступа к содержимому буфера.</li>
+<li>Нет необходимости хранить размер буфера (capacity) — всё равно мы ничего не дописываем в буфер.</li>
+<li>Позволяет просто ссылаться на литералы программы, не копируя их символы в какой-либо буфер: <div class="fragment"><div class="line">stringa str = <span class="stringliteral">&quot;Hello!&quot;</span>;       <span class="comment">// Ничего не стоит, не копирует байты строки</span></div>
+<div class="line">stringa ltr = stra{<span class="stringliteral">&quot;Hello!&quot;</span>}; <span class="comment">// А вот тут копирует байты строки в ltr</span></div>
+</div><!-- fragment --></li>
+</ul>
+<p>Также в классе применяется <b>SSO</b> – Small String Optimization. Короткие строки помещаются внутри самого объекта во внутренний буфер.</p>
+<p>Размеры:</p>
+<p>Для 64 бит:</p><ul>
+<li><code>stringa</code> – класс 24 байта, SSO до 23 символов.</li>
+<li><code>stringu</code> – класс 32 байта, SSO до 15 символов.</li>
+<li><code>stringuu</code> – класс 32 байта, SSO до 7 символов.</li>
+</ul>
+<p>Для 32 бит:</p><ul>
+<li><code>stringa</code> – класс 16 байт, SSO до 15 символов.</li>
+<li><code>stringu</code> – класс 24 байта, SSO до 11 символов.</li>
+<li><code>stringuu</code> – класс 24 байта, SSO до 5 символов.</li>
+</ul>
+<h4><a class="anchor" id="autotoc_md19"></a>
+Класс lstring&lt;K, N, forShared&gt; (local string)</h4>
+<p>(<a class="el" href="classsimstr_1_1lstring.html" title="Класс мутабельной, владеющей строки. Содержит внутренний буфер для строк заданного размера.">simstr::lstring</a>)</p>
+<p>Класс, хранящий строку и позволяющий её модифицировать. Владеет строкой, управляет памятью для символов строки. Хранит со строками завершающий нуль, и может быть источником для <code>simple_str_nt</code>, для передачи в C-API. Как и все остальные классы, реализует все методы, не модифицирующие строку.</p>
+<p>В качестве <code>N</code> в параметре шаблона задаётся размер внутреннего буфера для хранения символов. Строки длиной до N символов хранятся внутри объекта, а при превышении этого количества — аллоцируется динамический буфер, в который сохраняются символы. При копировании объекта все символы также всегда копируются.</p>
+<p>Если <code>forShare</code> == true и символы не помещаются в локальный буфер, то динамический буфер создается с дополнительным местом, так чтобы совпадать по структуре с буфером <code>sstring</code>. Тогда при перемещении <code>lstring</code> в <code>sstring</code> – переместится только указатель на буфер, без излишнего копирования символов.</p>
+<p>Этот класс удобен для работы со строками как локальная переменная на стеке. Обычно мы предполагаем примерный размер строк, с котороми будем работать, и можем создать локальную строку с буфером на стеке, и работать с ней. При этом не опасаясь переполнения буфера, так как в этом случае строка переключится на динамический буфер.</p>
+<p>Алиасы:</p><ul>
+<li><code>lstringa&lt;N=15&gt;</code> для lsrting&lt;char, N, false&gt;</li>
+<li><code>lstringb&lt;N=15&gt;</code> для lsrting&lt;char8_t, N, false&gt;</li>
+<li><code>lstringu&lt;N=15&gt;</code> для lsrting&lt;char16_t, N, false&gt;</li>
+<li><code>lstringw&lt;N=15&gt;</code> для lsrting&lt;wchar_t, N, false&gt;</li>
+<li><code>lstringuu&lt;N=15&gt;</code> для lsrting&lt;char32_t, N, false&gt;</li>
+<li><code>lstringsa&lt;N=15&gt;</code> для lsrting&lt;char, N, true&gt;</li>
+<li><code>lstringsb&lt;N=15&gt;</code> для lsrting&lt;char8_t, N, true&gt;</li>
+<li><code>lstringsu&lt;N=15&gt;</code> для lsrting&lt;char16_t, N, true&gt;</li>
+<li><code>lstringsw&lt;N=15&gt;</code> для lsrting&lt;wchar_t, N, true&gt;</li>
+<li><code>lstringsuu&lt;N=15&gt;</code> для lsrting&lt;char32_t, N, true&gt;</li>
+</ul>
+<p>Небольшой пример использования с пояснениями: </p><div class="fragment"><div class="line"><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> path_separator = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">size_t</span> MAX_PATH = 260;</div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> path_separator = <span class="charliteral">&#39;/&#39;</span>;</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> get_current_dir() {</div>
+<div class="line"><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line">    <span class="comment">/* заполняем буфер wchar_t строки lstringw&lt;MAX_PATH&gt; из GetCurrentDirectoryW с возможным</span></div>
+<div class="line"><span class="comment">    увеличением буфера и конвертируем в ut8 char. В конструкторе используется то, что появилось</span></div>
+<div class="line"><span class="comment">    только в С++23 как `resize_and_overwrite`, а у нас было изначально :) */</span></div>
+<div class="line"> </div>
+<div class="line">    lstringa&lt;MAX_PATH&gt; path{lstringw&lt;MAX_PATH&gt;{ [](<span class="keyword">auto</span> p, <span class="keyword">auto</span> s) { <span class="keywordflow">return</span> GetCurrentDirectoryW(DWORD(s + 1), p); }}};</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">/* Эта одна строчка делает примерно то же самое, что и вот такой код.</span></div>
+<div class="line"><span class="comment">    typedef struct lstringa_MAX_PATH_t {</span></div>
+<div class="line"><span class="comment">        char* data;</span></div>
+<div class="line"><span class="comment">        size_t length;</span></div>
+<div class="line"><span class="comment">        size_t capacity;</span></div>
+<div class="line"><span class="comment">        char local_buffer[MAX_PATH + 1];</span></div>
+<div class="line"><span class="comment">    } lstringa_MAX_PATH;</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    lstringa_MAX_PATH* get_current_dir(lstringa_MAX_PATH* result) {</span></div>
+<div class="line"><span class="comment">        wchar_t buffer[MAX_PATH + 1], *buf = buffer;</span></div>
+<div class="line"><span class="comment">        DWORD size = sizeof(buffer) / sizeof(wchar_t), lengthOfpath;</span></div>
+<div class="line"><span class="comment">        for (;;) {</span></div>
+<div class="line"><span class="comment">            // Возвращает либо количество скопированных символов без учёта завершающего нуля,</span></div>
+<div class="line"><span class="comment">            // либо если буфер мал, то нужный размер буфера вместе с завершающим нулём</span></div>
+<div class="line"><span class="comment">            DWORD ret = GetCurrentDirectoryW(size, buf);</span></div>
+<div class="line"><span class="comment">            if (ret &lt; size) {</span></div>
+<div class="line"><span class="comment">                // Влезло в буфер, хотя в Windows пути могут быть и длиннее, чем MAX_PATH, если начинаются с \\?\</span></div>
+<div class="line"><span class="comment">                // https://learn.microsoft.com/ru-ru/windows/win32/fileio/maximum-file-path-limitation?tabs=registry</span></div>
+<div class="line"><span class="comment">                lenOfpath = ret;</span></div>
+<div class="line"><span class="comment">                break;</span></div>
+<div class="line"><span class="comment">            }</span></div>
+<div class="line"><span class="comment">            size = ret;</span></div>
+<div class="line"><span class="comment">            if (buf != buffer)</span></div>
+<div class="line"><span class="comment">                free(buf);</span></div>
+<div class="line"><span class="comment">            buf = malloc(size);</span></div>
+<div class="line"><span class="comment">        }</span></div>
+<div class="line"><span class="comment">        utf16toUtf8(buf, lengthOfPath, result);</span></div>
+<div class="line"><span class="comment">        if (buf != buffer)</span></div>
+<div class="line"><span class="comment">            free(buf);</span></div>
+<div class="line"><span class="comment">        return result;</span></div>
+<div class="line"><span class="comment">    }</span></div>
+<div class="line"><span class="comment">    */</span></div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line">    lstringa&lt;MAX_PATH&gt; path{ [](<span class="keywordtype">char</span>* p, <span class="keywordtype">size_t</span> s) {</div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">char</span>* res = getcwd(p, s + 1);</div>
+<div class="line">        <span class="keywordflow">if</span> (res) {</div>
+<div class="line">            <span class="keywordflow">return</span> stra{res}.<a class="code hl_function" href="structsimstr_1_1simple__str.html#a574c8578274b5cc7a3e9507e8669d343">length</a>(); <span class="comment">// Возвращаем длину строки</span></div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span> (errno == ERANGE)  <span class="comment">// Не влезло в буфер, попробуем в два раза больше</span></div>
+<div class="line">            <span class="keywordflow">return</span> s * 2;</div>
+<div class="line">        <span class="keywordflow">return</span> 0ul;</div>
+<div class="line">    }};</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line">    <span class="comment">// Удостоверимся, что строка будет заканчиваться разделителем директорий</span></div>
+<div class="line">    <span class="keywordflow">if</span> (!path.length() || path.at(-1) != path_separator) {</div>
+<div class="line">        path += <a class="code hl_function" href="group___str_exprs.html#gab54b64072b9629a32837d9197dfe51b5">e_c</a>(1, path_separator);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> path;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">stringa build_full_path(ssa fileName) {</div>
+<div class="line">    <span class="keywordflow">return</span> get_current_dir() + fileName + <span class="stringliteral">&quot;.txt&quot;</span>;</div>
+<div class="line">    <span class="comment">/*</span></div>
+<div class="line"><span class="comment">    Здесь сначала на стеке создастся временный объект lstringa&lt;MAX_PATH&gt; для вызова get_current_dir.</span></div>
+<div class="line"><span class="comment">    Функция get_current_dir заполнит его названием текущего каталога.</span></div>
+<div class="line"><span class="comment">    В 99.9% случаев для этого хватит локального буфера на стеке.</span></div>
+<div class="line"><span class="comment">    После рассчитывается общая длина для результата: длина current_dir + длина fileName + 4.</span></div>
+<div class="line"><span class="comment">    Определяется буфер для строки конечного результата - если длина меньше 24 — строка будет размещена прямо в stringa,</span></div>
+<div class="line"><span class="comment">    иначе аллоцируется буфер для результирующей строки сразу нужного размера.</span></div>
+<div class="line"><span class="comment">    Затем в буфер результирующей строки последовательно копируются символы из current_dir, file_name, &quot;.txt&quot;;</span></div>
+<div class="line"><span class="comment">    Ну и благодаря RVO - место для самого результата (stringa) - отводится в вызывающей функции,</span></div>
+<div class="line"><span class="comment">    то есть никакого дополнительного копирования при возврате не будет.</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">    Таким образом, будет максимум всего две аллокации памяти (если current_dir не влезет в MAX_PATH),</span></div>
+<div class="line"><span class="comment">    или одна, если результирующая строка длиннее 23 символов, при этом эта аллокация будет сразу нужного размера.</span></div>
+<div class="line"><span class="comment">    */</span></div>
+<div class="line">}</div>
+<div class="ttc" id="agroup___str_exprs_html_gab54b64072b9629a32837d9197dfe51b5"><div class="ttname"><a href="group___str_exprs.html#gab54b64072b9629a32837d9197dfe51b5">simstr::e_c</a></div><div class="ttdeci">constexpr expr_pad&lt; K &gt; e_c(size_t l, K s)</div><div class="ttdoc">Генерирует строку из l символов s типа K.</div><div class="ttdef"><b>Определения</b> strexpr.h:898</div></div>
+<div class="ttc" id="astructsimstr_1_1simple__str_html_a574c8578274b5cc7a3e9507e8669d343"><div class="ttname"><a href="structsimstr_1_1simple__str.html#a574c8578274b5cc7a3e9507e8669d343">simstr::simple_str::length</a></div><div class="ttdeci">constexpr size_t length() const noexcept</div><div class="ttdoc">Получить длину строки.</div><div class="ttdef"><b>Определения</b> sstring.h:458</div></div>
+</div><!-- fragment --><p>В этом примере вы наверняка заметили, как конкатенируются строки и задались вопросом — как же при двух сложениях считалась длина всего результата, чтобы выделить необходимое место сразу за один раз, без промежуточных буферов?</p>
+<p>Ответ на этот вопрос:</p>
+<h3><a class="anchor" id="autotoc_md20"></a>
+Строковые выражения</h3>
+<p>Дело в том, что в библиотеке нет сложения строковых объектов как такового. Сложение выполняется для «строковых выражений».</p>
+<p><em>Строковое выражение</em> — это любой объект произвольного типа, имеющий функции <code>length</code> и <code>place</code>. Функция <code>length</code> – возвращает длину строки, функция <code>place</code> – помещает символы строки в переданный ей буфер.</p>
+<p>Любая владеющая строка (<a class="el" href="classsimstr_1_1sstring.html" title="Класс иммутабельной владеющей строки.">simstr::sstring</a>, <a class="el" href="classsimstr_1_1lstring.html" title="Класс мутабельной, владеющей строки. Содержит внутренний буфер для строк заданного размера.">simstr::lstring</a>) может инициализироваться строковым выражением — она запрашивает у него длину, выделяет место для хранения символов, и передает это место строковому выражению, вызывая его функцию place.</p>
+<p>Кроме того, все входящие в <code>simstr</code> строковые выражения могут преобразовываться в стандартные строки (<code>std::basic_string</code>) совместимых типов символов, что позволяет применять быструю конкатенацию там, где заменить <code>std::string</code> пока невозможно. Совместимые типы символов - такие, которые совпадают по размеру. Для получения стандартной строки до C++23 используется <code>resize</code>, а потом заполнение через <code>data()</code>, начиная с C++23 используется более оптимальный <code>resize_and_overwrite</code>.</p>
+<p>Для строковых выражений определена шаблонная функция сложения: </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;StrExpr A, StrExprForType&lt;<span class="keyword">typename</span> A::symb_type&gt; B&gt;</div>
+<div class="line"><span class="keyword">inline</span> <span class="keyword">auto</span> operator + (<span class="keyword">const</span> A&amp; a, <span class="keyword">const</span> B&amp; b) {</div>
+<div class="line">    <span class="keywordflow">return</span> strexprjoin&lt;A, B&gt;{a, b};</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><code>strexprjoin</code> – шаблонный тип, который сам является строковым выражением. В себе он хранит ссылки на два переданных ему строковых выражения. При запросе длины он выдает сумму длин двух строковых выражений, а при размещении символов — сначала размещает в переданном буфере первое выражение, затем второе. </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;StrExpr A, StrExprForType&lt;<span class="keyword">typename</span> A::symb_type&gt; B&gt;</div>
+<div class="line"><span class="keyword">struct </span>strexprjoin {</div>
+<div class="line">    <span class="keyword">using </span>symb_type = <span class="keyword">typename</span> A::symb_type;</div>
+<div class="line">    <span class="keyword">const</span> A&amp; a;</div>
+<div class="line">    <span class="keyword">const</span> B&amp; b;</div>
+<div class="line">    <span class="keyword">constexpr</span> strexprjoin(<span class="keyword">const</span> A&amp; a_, <span class="keyword">const</span> B&amp; b_) : a(a_), b(b_){}</div>
+<div class="line">    <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> length() const noexcept { <span class="keywordflow">return</span> a.length() + b.length(); }</div>
+<div class="line">    <span class="keyword">constexpr</span> symb_type* place(symb_type* p) <span class="keyword">const</span> <span class="keyword">noexcept</span> { <span class="keywordflow">return</span> b.place(a.place(p)); }</div>
+<div class="line">};</div>
+</div><!-- fragment --><p> Таким образом, операция сложения строковых выражений создает объект, также являющийся строковым выражением, к которому также может быть применена следующая операция сложения, и который рекурсивно хранит ссылки на слагаемые части, каждая из которых знает свой размер и умеет размещать себя в буфере результата. И так далее, к каждому получаемому строковому выражению можно снова применить <code>operator +</code>, формируя цепочку из нескольких строковых выражений, и в итоге "материализовать" последний получившийся объект, который сначала посчитает размер всей общей памяти для конечного результата, а затем разместит вложенные подвыражения в один буфер.</p>
+<p>Операция сложения строковых выражений позволяет конкатенировать строковые выражения разных, но совместимых типов. То есть в одном выражении вы можете смешивать <code>""</code> и <code>u8""</code>, в Linux <code>L""</code> и <code>U""</code>, в Windows <code>L""</code> и <code>u""</code> типы символов. Примеры есть в <code>tests\test_str.cpp TEST(SimStr, StrPrintfU8)</code>.</p>
+<p>Все строковые типы библиотеки сами являются строковыми выражениями, то есть могут служить слагаемыми в конкатенациях строковых выражений.</p>
+<p>Также <code>operator+</code> определён для строковых выражений и строковых литералов, строковых выражений и чисел (числа конвертируются в десятичное представление), а также вы можете сами добавить желаемые типы.</p>
+<p>Пример: </p><div class="fragment"><div class="line">stringa text = header + <span class="stringliteral">&quot; count=&quot;</span> + count + <span class="stringliteral">&quot;, done&quot;</span>;</div>
+</div><!-- fragment --><p>Для стандартных строк (<code>std::basic_string</code> и <code>std::basic_string_view</code>) также сделаны операторы сложения со строковыми выражениями, поэтому переменные этих типов также напрямую участвовать в операциях конкатенирования. Однако cтандартные строки могут напрямую участвовать в строковых выражениях только когда другой операнд тоже является строковым выражением. Если другой операнд - не строковое выражение, используйте перед стандартными строками унарный <code>operator+</code>, чтобы превратить <code>std::basic_string</code> или <code>std::basic_string_view</code> в строковое выражение.</p>
+<p>Пример: </p><div class="fragment"><div class="line">std::string make_text(<span class="keyword">const</span> std::string&amp; text, std::string_view what, <span class="keywordtype">int</span> count) {</div>
+<div class="line">    <span class="comment">//     + превращает text в строковое выражение, а дальше они уже складываются между собой</span></div>
+<div class="line">    <span class="keywordflow">return</span> +text + <span class="stringliteral">&quot; &quot;</span> + count + <span class="stringliteral">&quot; &quot;</span> + what + e_if(count &gt; 1, <span class="stringliteral">&quot;s&quot;</span>);</div>
+<div class="line">    <span class="comment">//                                 what участвует уже напрямую как операнд со стороковым выражением</span></div>
+<div class="line">}</div>
+<div class="line">std::string make_answer(<span class="keyword">const</span> std::string&amp; text, std::string_view what, <span class="keywordtype">int</span> count) {</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Answer is: &quot;</span> + +text + <span class="stringliteral">&quot; &quot;</span> + count + <span class="stringliteral">&quot; &quot;</span> + what + e_if(count &gt; 1, <span class="stringliteral">&quot;s&quot;</span>);</div>
+<div class="line">    <span class="comment">//                     + превращает text в строковое выражени, и оно может быть сложено с предыдущим строковым литералом</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p> То есть унарный <code>+</code> нужен только где-то в начале выражения, если другой операнд не строковое выражение.</p>
+<p>Существует несколько типов строковых выражений "из коробки", для выполнения различных операций со строками:</p>
+<h4><a class="anchor" id="autotoc_md21"></a>
+expr_spaces&lt;ТипСимвола, КоличествоСимволов, Символ = ' '&gt;{}</h4>
+<p>Выдает строку длиной КоличествоСимволов, заполненную заданным символом. Количество символов и символ - константы времени компиляции. Для некоторых случаев есть сокращенная запись: </p><pre class="fragment">e_spca(КоличествоСимволов) - строка char пробелов
+e_spcw(КоличествоСимволов) - строка w_char пробелов
+</pre><h4><a class="anchor" id="autotoc_md22"></a>
+expr_pad&lt;ТипСимвола&gt;{КоличествоСимволов, Символ = ' '}</h4>
+<p>Выдает строку длиной КоличествоСимволов, заполненную заданным символом. Количество символов и символ могут задаваться в рантайме. Сокращенная запись: </p><pre class="fragment">e_c(КоличествоСимволов, Символ)
+</pre><h4><a class="anchor" id="autotoc_md23"></a>
+e_repeat{Str, count}</h4>
+<p>Генерирует повторение строкового литерала или выражения <code>Str</code> <code>count</code> раз. </p><pre class="fragment">e_repeat("aa", 10);
+</pre><h4><a class="anchor" id="autotoc_md24"></a>
+e_choice(bool Condition, StrExpr1, StrExpr2)</h4>
+<p>Если Condition == true, результат будет равен StrExpr1, иначе StrExpr2.</p>
+<h4><a class="anchor" id="autotoc_md25"></a>
+e_if(bool Condition, StrExpr1)</h4>
+<p>Если Condition == true, результат будет равен StrExpr1, иначе пустая строка.</p>
+<h4><a class="anchor" id="autotoc_md26"></a>
+expr_num&lt;ТипСимвола&gt;(ЦелоеЧисло)</h4>
+<p>Конвертирует число в десятичное представление. Редко используется, так как для строковых выражений и чисел переопределен оператор "+", и число можно просто написать как <code>text + number</code>;</p>
+<h4><a class="anchor" id="autotoc_md27"></a>
+expr_real&lt;ТипСимвола&gt;(ВещественноеЧисло)</h4>
+<p>конвертирует число в десятичное представление. Редко используется, так как для строковых выражений и чисел переопределен оператор "+", и число можно просто написать как <code>text + number</code>;</p>
+<h4><a class="anchor" id="autotoc_md28"></a>
+e_join&lt;bool ПослеПоследнего = false, bool ТолькоНеПустые = false&gt;&gt;(контейнер, "Разделитель")</h4>
+<p>Конкатенирует все строки в контейнере, используя разделитель. Если ПослеПоследнего == true, то разделитель добавляется и после последнего элемента контейнера, иначе только между элементами. Если ТолькоНеПустые == true, то пустые строки пропускаются без добавления разделителя.</p>
+<h4><a class="anchor" id="autotoc_md29"></a>
+e_repl(ИсходнаяСтрока, "Искать", "Заменять")</h4>
+<p>Заменяет в исходной строке вхождения "Искать" на "Заменять". Шаблоны поиска и замены - строковые литералы времени компиляции.</p>
+<h4><a class="anchor" id="autotoc_md30"></a>
+expr_replaced&lt;ТипСимвола&gt;{ИсходнаяСтрока, Искать, Заменять}</h4>
+<p>Заменяет в исходной строке вхождения Искать на Заменять. Шаблоны поиска и замены - могут быть любыми строковыми объектами в рантайме.</p>
+<h4><a class="anchor" id="autotoc_md31"></a>
+empty_expr&lt;ТипСимвола&gt;</h4>
+<p>Выдает пустую строку. Сокращённая запись — eea, eeu, eew, eeuu. Применяется если формирование строки начинается с числа и строкового литерала: </p><div class="fragment"><div class="line">str = eea + count + <span class="stringliteral">&quot; times.&quot;</span>;</div>
+</div><!-- fragment --><p> так как оператор сложения определён только для сложения строкового выражения и числа. Также замечу, что существует <code>operator""_ss</code>, который превращает строковый литерал в объект <code>simple_str_nt</code>, который уже является строковым выражением: </p><div class="fragment"><div class="line">str = <span class="stringliteral">&quot;Count = &quot;</span>_ss + count;</div>
+<div class="line">...</div>
+<div class="line">str = count + <span class="stringliteral">&quot; times.&quot;</span>_ss;</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md32"></a>
+Свои строковые выражения</h4>
+<p>Вы можете сами создавать свои типы строковых выражений для оптимального формирования строк в нужных вам целях и алгоритмах. Для этого просто создайте тип с методами <code>length</code>, <code>place</code> и <code>typename symb_type</code>. Примеры создания и использования из реальных проектов:</p>
+<div class="fragment"><div class="line"><span class="comment">/* Сформировать строку в JSON формате, в 16 битных символах */</span></div>
+<div class="line"><span class="keyword">struct </span>expr_json_str {</div>
+<div class="line">    <span class="keyword">using </span>symb_type = u16s;</div>
+<div class="line">    ssu text;</div>
+<div class="line">    <span class="keywordtype">size_t</span> l;</div>
+<div class="line">    <span class="keywordtype">size_t</span> length() const noexcept {</div>
+<div class="line">        <span class="keywordflow">return</span> l;</div>
+<div class="line">    }</div>
+<div class="line">    u16s* place(u16s* ptr) <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line">    expr_json_str(ssu t);</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">inline</span> expr_json_str::expr_json_str(ssu t) : text(t) {</div>
+<div class="line">    <span class="keyword">const</span> u16s* ptr = text.symbols();</div>
+<div class="line">    <span class="keywordtype">size_t</span> add = 0;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; text.length(); i++) {</div>
+<div class="line">        <span class="keywordflow">switch</span> (*ptr++) {</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\b&#39;</span>:</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\f&#39;</span>:</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\r&#39;</span>:</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\n&#39;</span>:</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\t&#39;</span>:</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\&quot;&#39;</span>:</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\\&#39;</span>:</div>
+<div class="line">            add++;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    l = text.len + add;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">inline</span> u16s* expr_json_str::place(u16s* ptr) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line">    <span class="keyword">const</span> u16s *r = text.symbols();</div>
+<div class="line">    <span class="keywordtype">size_t</span> lenOfText = text.length(), lenOfTail = l;</div>
+<div class="line">    <span class="keywordflow">while</span> (lenOfTail &gt; lenOfText) {</div>
+<div class="line">        u16s s = *r++;</div>
+<div class="line">        <span class="keywordflow">switch</span> (s) {</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\b&#39;</span>:</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;b&#39;</span>;</div>
+<div class="line">            lenOfTail--;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\f&#39;</span>:</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;f&#39;</span>;</div>
+<div class="line">            lenOfTail--;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\r&#39;</span>:</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;r&#39;</span>;</div>
+<div class="line">            lenOfTail--;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\n&#39;</span>:</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;n&#39;</span>;</div>
+<div class="line">            lenOfTail--;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\t&#39;</span>:</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;t&#39;</span>;</div>
+<div class="line">            lenOfTail--;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\&quot;&#39;</span>:</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;\&quot;&#39;</span>;</div>
+<div class="line">            lenOfTail--;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;\\&#39;</span>:</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line">            lenOfTail--;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">default</span>:</div>
+<div class="line">            *ptr++ = s;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">        lenOfTail--;</div>
+<div class="line">        lenOfText--;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (lenOfTail) {</div>
+<div class="line">        std::char_traits&lt;u16s&gt;::copy(ptr, r, lenOfTail);</div>
+<div class="line">        ptr += lenOfTail;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> ptr;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Использование:</p>
+<div class="fragment"><div class="line">........</div>
+<div class="line">chunked_string_builder&lt;u16s&gt; vtText;</div>
+<div class="line">........</div>
+<div class="line">vtText &lt;&lt; uR<span class="stringliteral">&quot;({&quot;#type&quot;:&quot;jxs:string&quot;,&quot;#value&quot;:&quot;)&quot; + expr_json_str(name) + u</span><span class="stringliteral">&quot;\&quot;}&quot;</span>;</div>
+<div class="line">.......</div>
+</div><!-- fragment --><p>Ещё пример </p><div class="fragment"><div class="line"><span class="comment">/* Нужно сформировать бинарные данные в BASE64 формате, в 16 битных символах */</span></div>
+<div class="line"><span class="keyword">struct </span>expr_str_base64 {</div>
+<div class="line">    <span class="keyword">using </span>symb_type = u16s;</div>
+<div class="line">    ssa text;</div>
+<div class="line">    <span class="keywordtype">size_t</span> length() const noexcept {</div>
+<div class="line">        <span class="keywordflow">return</span> (text.len + 2) / 3 * 4;</div>
+<div class="line">    }</div>
+<div class="line">    u16s* place(u16s* ptr) <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line">    expr_str_base64(ssa t) : text(t) {}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">inline</span> u16s* expr_str_base64::place(u16s* ptr) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">constexpr</span> u8s alphabet[] = <span class="stringliteral">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* t = (<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*)text.str;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line">    <span class="keywordflow">if</span> (text.len &gt; 2) {</div>
+<div class="line">        <span class="keywordflow">for</span> (; i &lt; text.len - 2; i += 3) {</div>
+<div class="line">            *ptr++ = alphabet[(t[i] &gt;&gt; 2) &amp; 0x3F];</div>
+<div class="line">            *ptr++ = alphabet[((t[i] &amp; 0x3) &lt;&lt; 4) | ((<span class="keywordtype">int</span>)(t[i + 1] &amp; 0xF0) &gt;&gt; 4)];</div>
+<div class="line">            *ptr++ = alphabet[((t[i + 1] &amp; 0xF) &lt;&lt; 2) | ((<span class="keywordtype">int</span>)(t[i + 2] &amp; 0xC0) &gt;&gt; 6)];</div>
+<div class="line">            *ptr++ = alphabet[t[i + 2] &amp; 0x3F];</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (i &lt; text.len) {</div>
+<div class="line">        *ptr++ = alphabet[(t[i] &gt;&gt; 2) &amp; 0x3F];</div>
+<div class="line">        <span class="keywordflow">if</span> (i == (text.len - 1)) {</div>
+<div class="line">            *ptr++ = alphabet[((t[i] &amp; 0x3) &lt;&lt; 4)];</div>
+<div class="line">            *ptr++ = <span class="charliteral">&#39;=&#39;</span>;</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            *ptr++ = alphabet[((t[i] &amp; 0x3) &lt;&lt; 4) | ((<span class="keywordtype">int</span>)(t[i + 1] &amp; 0xF0) &gt;&gt; 4)];</div>
+<div class="line">            *ptr++ = alphabet[((t[i + 1] &amp; 0xF) &lt;&lt; 2)];</div>
+<div class="line">        }</div>
+<div class="line">        *ptr++ = <span class="charliteral">&#39;=&#39;</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> ptr;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Использование: </p><div class="fragment"><div class="line">......</div>
+<div class="line">chunked_string_builder&lt;u16s&gt; vtText;</div>
+<div class="line">......</div>
+<div class="line">vtText &lt;&lt; u<span class="stringliteral">&quot;{\&quot;#\&quot;,87126200-3e98-44e0-b931-ccb1d7edc497,{1,{#base64:&quot;</span> + expr_str_base64(v) + u<span class="stringliteral">&quot;}}},&quot;</span>;</div>
+<div class="line">......</div>
+</div><!-- fragment --><p>И ещё</p>
+<div class="fragment"><div class="line"><span class="comment">/* Нужно преобразовать tm в строку даты/времени в 16-битных символах */</span></div>
+<div class="line"><span class="keyword">struct </span>expr_str_tm {</div>
+<div class="line">    <span class="keyword">using </span>symb_type = u16s;</div>
+<div class="line">    <span class="keyword">const</span> tm&amp; t;</div>
+<div class="line">    <span class="keywordtype">size_t</span> length() const noexcept {</div>
+<div class="line">        <span class="keywordflow">return</span> 19;</div>
+<div class="line">    }</div>
+<div class="line">    u16s* place(u16s* ptr) <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line">    expr_str_tm(<span class="keyword">const</span> tm&amp; _t) : t(_t) {}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">inline</span> u16s* expr_str_tm::place(u16s* ptr) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line">    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>(wchar_t) == 2) {</div>
+<div class="line">        <span class="comment">// Под Windows можно сразу форматнуть строку в нужный буфер</span></div>
+<div class="line">        std::swprintf((<span class="keywordtype">wchar_t</span>*)ptr, 20, L<span class="stringliteral">&quot;%04i-%02i-%02i %02i:%02i:%02i&quot;</span>, t.tm_year + 1900, t.tm_mon + 1, t.tm_mday,</div>
+<div class="line">            t.tm_hour, t.tm_min, t.tm_sec);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="comment">// Сначала форматнём в промежуточный буфер, потом скопируем в результат</span></div>
+<div class="line">        <span class="keywordtype">char</span> buf[20];</div>
+<div class="line">        std::snprintf(buf, 20, <span class="stringliteral">&quot;%04i-%02i-%02i %02i:%02i:%02i&quot;</span>, t.tm_year + 1900, t.tm_mon + 1, t.tm_mday, t.tm_hour,</div>
+<div class="line">            t.tm_min, t.tm_sec);</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; 19; i++) {</div>
+<div class="line">            ptr[i] = buf[i];</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> ptr + 19;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Использование</p>
+<div class="fragment"><div class="line">......</div>
+<div class="line"><span class="keywordtype">bool</span> makeBind(SqliteQuery&amp; query, tVariant&amp; param, <span class="keywordtype">unsigned</span> paramNum) {</div>
+<div class="line">    <span class="keywordflow">switch</span> (param.vt) {</div>
+<div class="line">......</div>
+<div class="line">    <span class="keywordflow">case</span> VTYPE_DATE:</div>
+<div class="line">        query.bind(paramNum, lstringu&lt;30&gt;{expr_str_tm{winDateToTm(param.date)}}.to_str());</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> VTYPE_TM:</div>
+<div class="line">        query.bind(paramNum, lstringu&lt;30&gt;{expr_str_tm{param.tmVal}}.to_str());</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">......</div>
+</div><!-- fragment --><p>ВНИМАНИЕ: обычно поля в объектах строковых выражений являются ссылками на исходные данные. И ссылки эти почти всегда ведут на локальные или временные объекты. Поэтому крайне рискованно возвращать строковые выражения из функций — надо сто раз проверить, что в них не попали ссылки на локальные или временные переменные. Возьмите за правило — можно легко передавать строковые выражения в функции, и опасно возвращать их из функций. Лучше при возврате материализовать строковое выражение в строковый объект, содержащий итоговую строку. При желании тип возвращаемой строки можно задать шаблонным параметром.</p>
+<h3><a class="anchor" id="autotoc_md33"></a>
+Класс chunked_string_builder</h3>
+<p>Предназначен для конкатенации множества строк. Когда вам нужно последовательно формировать длинный текст из множества небольших кусочков (например, формируете html ответ и т. п.) - последовательно складывать всё в один строковый объект крайне неоптимально — будет много переаллокаций и перекопирования уже накопленных символов. В этом случае удобно использовать chunked_string_builder — всё, что он умеет, это прибавлять строку к накопленным символам. Однако делает он это не в единый последовательный буфер памяти, а в отдельные буфера, не меньше чем заданное выравнивание. При заполнении очередного буфера он просто создает ещё один буфер и продолжает складывать данные в него.</p>
+<p>То есть допустим вы задали выравнивание 1024. Добавили несколько строк, заполнили буфер на 100 символов. И добавляете строку длинной 3000 символов. При этом 924 символа скопируются в первый буфер, заполнив его до конца. Для оставшихся 2076 создастся буфер размером 3072 символа, и они скопируются в него, в нём останется место для 996 символов. Так последовательно каждый буфер заполняется до конца, и имеет размер кратный заданному выравниванию. Таким образом избегаются переаллокации и перекопирование обработанных символов.</p>
+<p>После окончательного заполнения вы можете работать с накопленными данными — либо слить все буфера в одну последовательную строку (размер для буфера которой вы теперь уже знаете), либо перебирать их по отдельности, например, посылая эти буфера в сеть. Либо последовательно копируя данные в буфер заданного размера.   </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

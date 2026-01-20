@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>simstr: Шаблон класса simstr::hashStrMap&lt; K, T, H, E &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.4.0</span>
+   </div>
+   <div id="projectbrief">Yet another strings library</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classsimstr_1_1hash_str_map.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="classsimstr_1_1hash_str_map-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Шаблон класса simstr::hashStrMap&lt; K, T, H, E &gt;</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Контейнер для более эффективного поиска по строковым ключам.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="sstring_8h_source.html">sstring.h</a>&gt;</code></p>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename K, typename T, typename H = strhash&lt;K&gt;, typename E = streql&lt;K&gt;&gt;<br />
+class simstr::hashStrMap&lt; K, T, H, E &gt;</div><p>Контейнер для более эффективного поиска по строковым ключам. </p>
+<p>Используется для хранения и поиска ключей любого строкового типа. Как unordered_map, но чуть лучше. В качестве ключей хранит <a class="el" href="structsimstr_1_1simple__str.html" title="Простейший класс иммутабельной не владеющей строки.">simple_str</a> вместе с посчитанным хешем и пустым местом для sstring. После вставки создает в этом пустом месте sstring, чтобы <a class="el" href="structsimstr_1_1simple__str.html" title="Простейший класс иммутабельной не владеющей строки.">simple_str</a> было на что ссылаться. Позволяет использовать для вставки и поиска любые simstr строковые объекты, создавая из них объект sstring только при реальной вставке. Начиная с С++20 в unordered_map появилась возможность для гетерогенного поиска по ключу с типом, отличным от типа хранящегося ключа, но это требует определённых танцев с типами хэша и сравнения. Поиск же со вставкой (try_emplace) по типу, отличному от типа ключа, появляется в стандарте только с C++26. Имеется реализация хеширования и сравнения для вариантов:</p><ul>
+<li>с учётом регистра символов</li>
+<li>без учёта регистра символов, только ASCII</li>
+<li>без учёта регистра символов, упрощённый Unicode (до 0xFFFF). Хэширование выполняется алгоритмом FNV-1A. Автоматическая конвертация simstr строковых объектов в тип хранящегося ключа (т.е. с посчитанным хешем), а также сохранение sstring в ключе при вставке - выполняется для методов try_emplace, emplace, at, find, operator[], erase. При использовании других методов поиска вам нужно самим обеспечить правильно посчитанный хэш в ключе StoreType. Методами вставки помимо перечисленных не пользоваться, они не сохранят sstring в ключе.</li>
+</ul>
+<p>Основное, на чём хотелось бы заострить внимание - само назначение strHashMap, для чего оно изначально придумывалось. Цель была не в том, чтобы как-то побить по производительности/памяти unordered_map (иначе зачем делать strHashMap на базе unordered_map?) Основная проблема, которая решалась - это то, что у нас несколько вариантов строковых объектов, и хотелось бы иметь возможность использовать для вставки и поиска ключей любой из типов строковых объектов. У нас есть <a class="el" href="structsimstr_1_1simple__str.html" title="Простейший класс иммутабельной не владеющей строки.">simple_str</a>, <a class="el" href="structsimstr_1_1simple__str__nt.html" title="Класс, заявляющий, что ссылается на нуль-терминированную строку.">simple_str_nt</a>, sstring, а <a class="el" href="classsimstr_1_1lstring.html" title="Класс мутабельной, владеющей строки. Содержит внутренний буфер для строк заданного размера.">lstring&lt;N&gt;</a> вообще на каждое N это новый тип объекта. В std всё было просто - там только string, и соответственно, пользовались unordered_map&lt;string, Что-то там&gt;. И между прочим, в std столкнулись с той же проблемой: ключи const char*, а с C++17 и string_view (это как наш <a class="el" href="structsimstr_1_1simple__str.html" title="Простейший класс иммутабельной не владеющей строки.">simple_str</a>), искать в unordered_map&lt;string, Type&gt; - не очень хорошо, приходится каждый раз ключ преобразовывать в string, хотя можно обойтись и без этого. Поэтому начиная с С++20 в unordered_map таки добавили возможность гетерогенного поиска - на <a href="https://en.cppreference.com/w/cpp/container/unordered_map/find">https://en.cppreference.com/w/cpp/container/unordered_map/find</a> это синтаксисы (3) и (4). Правда, для этого требуются ритуальные танцы с бубном - требуется особый тип для хеширования (который, понятно, в стандарт уже не входит и его надо реализовывать самому), который умеет хешировать разные типы ключей, и содержит typename <code>is_transparent</code>. Собственно, на той же странице с ним пример и приведён. Часть проблемы это закрыло - поиска, но проблему вставки не решало - для вставки в unordered_map&lt;string, Type&gt; по прежнему требуется только string. И только в будущем С++26 мы ждём возможности гетерогенной вставки в виде try_emplace (<a href="https://en.cppreference.com/w/cpp/container/unordered_map/try_emplace">https://en.cppreference.com/w/cpp/container/unordered_map/try_emplace</a>) в синтаксисе (6), который позволит принимать ключи других типов и преобразовывать их в нужный тип только если вставка реально осуществляется. В своей строковой библиотеке я столкнулся с этой проблемой ещё до С++17, и так я как не настолько крут, чтобы влиять на стандарт, просто создал свой класс - наследник от unordered_map, с обёртками вокруг методов вставки/поиска. Ну и дополнительно добавил ещё два варианта хеширования/сравнения: без учёта регистра ASCII, без учёта регистра simple unicode. Таким образом, получился класс, который расширяет стандартный unordered_map возможностями по работе со строковыми ключами разных типов, позволяющий избежать лишних ненужных преобразований ключей при поиске и вставке. То, что при этом может улучшится производительность - не цель, а побочный эффект - приятный, если он есть, но и не смертельный, если его нет. </p>
+</div><hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li><a class="el" href="sstring_8h_source.html">sstring.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacesimstr.html">simstr</a></li><li class="navelem"><a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

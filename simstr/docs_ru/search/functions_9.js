@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['length_0',['length',['../structsimstr_1_1simple__str.html#a574c8578274b5cc7a3e9507e8669d343',1,'simstr::simple_str::length()'],['../classsimstr_1_1lstring.html#a4e9a64c776ee14ef49bb01e84eb87889',1,'simstr::lstring::length()'],['../classsimstr_1_1sstring.html#a8c22e6630eb8ec76c43da7c13f2adf83',1,'simstr::sstring::length()'],['../classsimstr_1_1chunked__string__builder.html#a3576a70031c6790f399076313d15d96e',1,'simstr::chunked_string_builder::length()']]],
+  ['length_0',['length',['../structsimstr_1_1simple__str.html#a574c8578274b5cc7a3e9507e8669d343',1,'simstr::simple_str::length()'],['../classsimstr_1_1lstring.html#a4e9a64c776ee14ef49bb01e84eb87889',1,'simstr::lstring::length()'],['../classsimstr_1_1sstring.html#a8c22e6630eb8ec76c43da7c13f2adf83',1,'simstr::sstring::length()'],['../classsimstr_1_1chunked__string__builder.html#a3576a70031c6790f399076313d15d96e',1,'simstr::chunked_string_builder::length()'],['../structsimstr_1_1str__src.html#a6bc62c66422b05f753437573b8a6cbb2',1,'simstr::str_src::length()']]],
   ['less_5fia_1',['less_ia',['../classsimstr_1_1str__src__algs.html#a44ede528e694988f26555e91cf9a1ca2',1,'simstr::str_src_algs']]],
   ['less_5fiu_2',['less_iu',['../classsimstr_1_1str__algs.html#a4e79e99462478b57d62873f7942ff2b6',1,'simstr::str_algs']]],
   ['lower_3',['lower',['../classsimstr_1_1str__mutable.html#ac0c4239efb3b35bfcb99b61feff08156',1,'simstr::str_mutable']]],

@@ -25,5 +25,7 @@ var searchData=
   ['hashstrmapuuiu_22',['hashStrMapUUIU',['../namespacesimstr.html#a23aa45c8506e69c74ce109617d892e69',1,'simstr']]],
   ['hashstrmapw_23',['hashStrMapW',['../namespacesimstr.html#aa30b610e5d5dcce51beab757a6c408b9',1,'simstr']]],
   ['hashstrmapwia_24',['hashStrMapWIA',['../namespacesimstr.html#a617db678b8f77967dc114be7706582a5',1,'simstr']]],
-  ['hashstrmapwiu_25',['hashStrMapWIU',['../namespacesimstr.html#a376c405d7404546a07f440f355038de5',1,'simstr']]]
+  ['hashstrmapwiu_25',['hashStrMapWIU',['../namespacesimstr.html#a376c405d7404546a07f440f355038de5',1,'simstr']]],
+  ['hex_20format_26',['Adding strings with numbers in hex format',['../index.html#autotoc_md46',1,'']]],
+  ['hexflags_27',['HexFlags',['../group___str_exprs.html#ga680097382d9bc271c361f85828ac741f',1,'simstr']]]
 ];

@@ -329,10 +329,14 @@ Load Average: 0.00, 0.00, 0.00
             benchmark::DoNotOptimize(str);
         }
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">stringa при том же размере, что и std::string,
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">stringa в отличии от std::string,
 вмещает в SSO 23 символа вместо 15, поэтому
 в конце теста std::string приходится аллоцировать память,
-а в stringa весь тест входит в SSO.</span></span></td><td class="benchmarkresult">63.7</td><td class="benchmarkresult">70.4</td><td class="benchmarkresult">66.4</td><td class="benchmarkresult">108</td><td class="benchmarkresult">211</td></tr>
+а в stringa весь тест входит в SSO.
+Unlike std::string, stringa
+holds 23 characters in SSO instead of 15, so
+at the end of the std::string test, memory has to be allocated,
+while in stringa , the entire test is included in SSO.</span></span></td><td class="benchmarkresult">63.7</td><td class="benchmarkresult">70.4</td><td class="benchmarkresult">66.4</td><td class="benchmarkresult">108</td><td class="benchmarkresult">211</td></tr>
 </tbody></table></div><script>bench_sets['Concatenate string + Number + "Literal"'] = {id:'bs1', tests:[
 {name:'Concat std::string and number by std to std::string',data:[226,207,266,331,925]},
 {name:'Concat std::string and number by StrExpr to std::string',data:[104,102,157,211,415]},
@@ -430,7 +434,10 @@ Load Average: 0.00, 0.00, 0.00
 }</span></span></td><td></td><td class="benchmarkresult">51.1</td><td class="benchmarkresult">39.8</td><td class="benchmarkresult">116</td><td class="benchmarkresult">122</td><td class="benchmarkresult">106</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">Find concat three simstr<span class="tooltiptext code">size_t find_pos_sim(ssa src, ssa name) {
     return src.find(lstringa&lt;200>{&quot;\n- &quot; + name + &quot; -\n&quot;});
-}</span></span></td><td></td><td class="benchmarkresult">19.6</td><td class="benchmarkresult">20.2</td><td class="benchmarkresult">22.2</td><td class="benchmarkresult">28.4</td><td class="benchmarkresult">73.7</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Если результат конкатенации меньше 207 символов,
+он собирается в буфере на стеке, без аллокации и деалокации.
+If the concatenation result is less than 207 characters,
+it is collected in a stack-based buffer, without allocation or deallocation.</span></span></td><td class="benchmarkresult">19.6</td><td class="benchmarkresult">20.2</td><td class="benchmarkresult">22.2</td><td class="benchmarkresult">28.4</td><td class="benchmarkresult">73.7</td></tr>
 </tbody></table></div><script>bench_sets['Find three concatenated string in string_view'] = {id:'bs4', tests:[
 {name:'Find concat three std::string',data:[116,130,208,225,178]},
 {name:'Find concat three strexpr',data:[51.1,39.8,116,122,106]},
@@ -515,7 +522,9 @@ Load Average: 0.00, 0.00, 0.00
 }</span></span></td><td></td><td class="benchmarkresult">207</td><td class="benchmarkresult">242</td><td class="benchmarkresult">318</td><td class="benchmarkresult">362</td><td class="benchmarkresult">451</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">Concat with replace exp<span class="tooltiptext code">std::string make_str_exp(std::string_view from, std::string_view pattern, std::string_view repl) {
     return &quot;&lt;&quot; + e_repl(from, pattern, repl) + &quot;>&quot;;
-}</span></span></td><td></td><td class="benchmarkresult">149</td><td class="benchmarkresult">135</td><td class="benchmarkresult">224</td><td class="benchmarkresult">223</td><td class="benchmarkresult">248</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">В simstr строковое выражение для замены подстрок
+есть "из коробки".
+simstr has a string expression for replacing substrings out of the box.</span></span></td><td class="benchmarkresult">149</td><td class="benchmarkresult">135</td><td class="benchmarkresult">224</td><td class="benchmarkresult">223</td><td class="benchmarkresult">248</td></tr>
 </tbody></table></div><script>bench_sets['Replace string by copy'] = {id:'bs6', tests:[
 {name:'Concat with replace str',data:[207,242,318,362,451]},
 {name:'Concat with replace exp',data:[149,135,224,223,248]}
@@ -529,7 +538,8 @@ void CreateEmpty(benchmark::State&amp; state) {
         T empty_string;
         benchmark::DoNotOptimize(empty_string);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Пустые строки, ничего необычного.</span></span></td><td class="benchmarkresult">1.12</td><td class="benchmarkresult">1.12</td><td class="benchmarkresult">1.11</td><td class="benchmarkresult">2.63</td><td class="benchmarkresult">2.18</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Пустые строки, ничего необычного.
+Empty lines, nothing unusual.</span></span></td><td class="benchmarkresult">1.12</td><td class="benchmarkresult">1.12</td><td class="benchmarkresult">1.11</td><td class="benchmarkresult">2.63</td><td class="benchmarkresult">2.18</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">std::string_view e;<span class="tooltiptext code">template&lt;typename T>
 void CreateEmpty(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -583,7 +593,9 @@ void CreateShortLiteral(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(empty_string);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Короткий литерал помещается во внутренний буфер std::string,
-время тратится только на копирование 10 байтов.</span></span></td><td class="benchmarkresult">1.84</td><td class="benchmarkresult">1.87</td><td class="benchmarkresult">1.85</td><td class="benchmarkresult">2.64</td><td class="benchmarkresult">2.37</td></tr>
+время тратится только на копирование 10 байтов.
+The short literal is placed in the internal std::string buffer;
+time is spent only copying 10 bytes.</span></span></td><td class="benchmarkresult">1.84</td><td class="benchmarkresult">1.87</td><td class="benchmarkresult">1.85</td><td class="benchmarkresult">2.64</td><td class="benchmarkresult">2.37</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">std::string_view e = &quot;Test text&quot;;<span class="tooltiptext code">template&lt;typename T>
 void CreateShortLiteral(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -591,7 +603,9 @@ void CreateShortLiteral(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(empty_string);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">И string_view, и ssa - по сути одно и то же:
-указатель на текст и его длина.</span></span></td><td class="benchmarkresult">0.750</td><td class="benchmarkresult">0.730</td><td class="benchmarkresult">0.728</td><td class="benchmarkresult">1.85</td><td class="benchmarkresult">1.29</td></tr>
+указатель на текст и его длина.
+Both string_view and ssa are essentially the same thing:
+a pointer to text and its length.</span></span></td><td class="benchmarkresult">0.750</td><td class="benchmarkresult">0.730</td><td class="benchmarkresult">0.728</td><td class="benchmarkresult">1.85</td><td class="benchmarkresult">1.29</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">ssa e              = &quot;Test text&quot;;<span class="tooltiptext code">template&lt;typename T>
 void CreateShortLiteral(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -606,7 +620,9 @@ void CreateShortLiteral(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(empty_string);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">stringa при инициализации константным литералом так же
-сохраняет только указатель на текст и его длину.</span></span></td><td class="benchmarkresult">1.85</td><td class="benchmarkresult">1.12</td><td class="benchmarkresult">1.85</td><td class="benchmarkresult">2.20</td><td class="benchmarkresult">2.63</td></tr>
+сохраняет только указатель на текст и его длину.
+When initialized with a constant literal, stringa also stores
+only a pointer to the text and its length.</span></span></td><td class="benchmarkresult">1.85</td><td class="benchmarkresult">1.12</td><td class="benchmarkresult">1.85</td><td class="benchmarkresult">2.20</td><td class="benchmarkresult">2.63</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;20> e     = &quot;Test text&quot;;<span class="tooltiptext code">template&lt;typename T>
 void CreateShortLiteral(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -614,7 +630,9 @@ void CreateShortLiteral(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(empty_string);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Внутреннего буфера хватает для размещения символов,
-время уходит только на копирование байтов.</span></span></td><td class="benchmarkresult">1.87</td><td class="benchmarkresult">1.87</td><td class="benchmarkresult">1.89</td><td class="benchmarkresult">2.59</td><td class="benchmarkresult">2.77</td></tr>
+время уходит только на копирование байтов.
+The internal buffer is sufficient to accommodate characters;
+time is spent only on copying bytes.</span></span></td><td class="benchmarkresult">1.87</td><td class="benchmarkresult">1.87</td><td class="benchmarkresult">1.89</td><td class="benchmarkresult">2.59</td><td class="benchmarkresult">2.77</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;40> e     = &quot;Test text&quot;;<span class="tooltiptext code">template&lt;typename T>
 void CreateShortLiteral(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -641,7 +659,10 @@ void CreateLongLiteral(benchmark::State&amp; state) {
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Вот тут уже литерал не помещается во внутренний буфер,
 возникает аллокация и копирование 30-и байтов.
-Но как же отстает аллокация под Windows от Linux'а, 20 vs 70 ns...</span></span></td><td class="benchmarkresult">18.8</td><td class="benchmarkresult">19.3</td><td class="benchmarkresult">74.9</td><td class="benchmarkresult">77.5</td><td class="benchmarkresult">16.5</td></tr>
+Но как же отстает аллокация под Windows от Linux'а, 20 vs 70 ns...
+Here, the literal doesn't fit into the internal buffer,
+and 30 bytes are allocated and copied.
+But how much slower is allocation under Windows than under Linux, 20 ns vs. 70 ns...</span></span></td><td class="benchmarkresult">18.8</td><td class="benchmarkresult">19.3</td><td class="benchmarkresult">74.9</td><td class="benchmarkresult">77.5</td><td class="benchmarkresult">16.5</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">std::string_view e = &quot;123456789012345678901234567890&quot;;<span class="tooltiptext code">template&lt;typename T>
 void CreateLongLiteral(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -649,7 +670,9 @@ void CreateLongLiteral(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(empty_string);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">string_view и ssa по прежнему ничего не делают, кроме
-запоминания указателя на текст и его размера.</span></span></td><td class="benchmarkresult">0.747</td><td class="benchmarkresult">0.744</td><td class="benchmarkresult">0.736</td><td class="benchmarkresult">1.83</td><td class="benchmarkresult">1.26</td></tr>
+запоминания указателя на текст и его размера.
+string_view and ssa still do nothing except
+remember the pointer to the text and its size.</span></span></td><td class="benchmarkresult">0.747</td><td class="benchmarkresult">0.744</td><td class="benchmarkresult">0.736</td><td class="benchmarkresult">1.83</td><td class="benchmarkresult">1.26</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">ssa e              = &quot;123456789012345678901234567890&quot;;<span class="tooltiptext code">template&lt;typename T>
 void CreateLongLiteral(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -663,7 +686,8 @@ void CreateLongLiteral(benchmark::State&amp; state) {
         T empty_string{LONG_TEXT};
         benchmark::DoNotOptimize(empty_string);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">stringa на константных литералах не отстает!</span></span></td><td class="benchmarkresult">1.88</td><td class="benchmarkresult">1.12</td><td class="benchmarkresult">1.85</td><td class="benchmarkresult">2.24</td><td class="benchmarkresult">2.67</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">stringa на константных литералах не отстает!
+stringa doesn't lag behind on constant literals!</span></span></td><td class="benchmarkresult">1.88</td><td class="benchmarkresult">1.12</td><td class="benchmarkresult">1.85</td><td class="benchmarkresult">2.24</td><td class="benchmarkresult">2.67</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;20> e     = &quot;123456789012345678901234567890&quot;;<span class="tooltiptext code">template&lt;typename T>
 void CreateLongLiteral(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -671,7 +695,8 @@ void CreateLongLiteral(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(empty_string);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">lstringa<20> может вместить в себя до 23 символов,
-Очевидно, что для 30-и символов уже нужна аллокация.</span></span></td><td class="benchmarkresult">21.0</td><td class="benchmarkresult">20.0</td><td class="benchmarkresult">76.8</td><td class="benchmarkresult">77.7</td><td class="benchmarkresult">16.9</td></tr>
+Очевидно, что для 30-и символов уже нужна аллокация.
+Obviously, 30 characters already require allocation.</span></span></td><td class="benchmarkresult">21.0</td><td class="benchmarkresult">20.0</td><td class="benchmarkresult">76.8</td><td class="benchmarkresult">77.7</td><td class="benchmarkresult">16.9</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;40> e     = &quot;123456789012345678901234567890&quot;;<span class="tooltiptext code">template&lt;typename T>
 void CreateLongLiteral(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -679,7 +704,9 @@ void CreateLongLiteral(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(empty_string);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">А в lstringa<40> влезает до 47 символов, так что просто
-копируется 30 байтов.</span></span></td><td class="benchmarkresult">2.55</td><td class="benchmarkresult">1.84</td><td class="benchmarkresult">2.53</td><td class="benchmarkresult">3.42</td><td class="benchmarkresult">3.01</td></tr>
+копируется 30 байтов.
+And lstringa<40> can hold up to 47 characters, so 30
+bytes are simply copied.</span></span></td><td class="benchmarkresult">2.55</td><td class="benchmarkresult">1.84</td><td class="benchmarkresult">2.53</td><td class="benchmarkresult">3.42</td><td class="benchmarkresult">3.01</td></tr>
 </tbody></table></div><script>bench_sets['Create Str from long literal (30 symbols)'] = {id:'bs9', tests:[
 {name:'std::string e      = "123456789012345678901234567890";',data:[18.8,19.3,74.9,77.5,16.5]},
 {name:'std::string_view e = "123456789012345678901234567890";',data:[0.747,0.744,0.736,1.83,1.26]},
@@ -699,7 +726,8 @@ void CopyShortString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(copy);
         benchmark::DoNotOptimize(x);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Строка в пределах SSO, так что просто копирует байты.</span></span></td><td class="benchmarkresult">4.83</td><td class="benchmarkresult">4.80</td><td class="benchmarkresult">1.87</td><td class="benchmarkresult">5.43</td><td class="benchmarkresult">2.27</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Строка в пределах SSO, так что просто копирует байты.
+The string is within the SSO, so it just copies the bytes.</span></span></td><td class="benchmarkresult">4.83</td><td class="benchmarkresult">4.80</td><td class="benchmarkresult">1.87</td><td class="benchmarkresult">5.43</td><td class="benchmarkresult">2.27</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">std::string_view e = &quot;Test text&quot;; auto c{e};<span class="tooltiptext code">template&lt;typename T>
 void CopyShortString(benchmark::State&amp; state) {
     T x{TEST_TEXT};
@@ -718,7 +746,9 @@ void CopyShortString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(x);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">ssa и string_view не владеют строкой, копируется
-только информация о строке.</span></span></td><td class="benchmarkresult">0.368</td><td class="benchmarkresult">0.376</td><td class="benchmarkresult">0.375</td><td class="benchmarkresult">2.92</td><td class="benchmarkresult">1.27</td></tr>
+только информация о строке.
+ssa and string_view don't own the string; only the
+string information is copied.</span></span></td><td class="benchmarkresult">0.368</td><td class="benchmarkresult">0.376</td><td class="benchmarkresult">0.375</td><td class="benchmarkresult">2.92</td><td class="benchmarkresult">1.27</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">stringa e          = &quot;Test text&quot;; auto c{e};<span class="tooltiptext code">template&lt;typename T>
 void CopyShortString(benchmark::State&amp; state) {
     T x{TEST_TEXT};
@@ -728,7 +758,9 @@ void CopyShortString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(x);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Копирование stringa происходит быстро,
-особенно если она инициализирована литералом.</span></span></td><td class="benchmarkresult">1.11</td><td class="benchmarkresult">1.37</td><td class="benchmarkresult">1.32</td><td class="benchmarkresult">4.13</td><td class="benchmarkresult">2.64</td></tr>
+особенно если она инициализирована литералом.
+Copying a stringa is fast,
+especially if it is initialized with a literal.</span></span></td><td class="benchmarkresult">1.11</td><td class="benchmarkresult">1.37</td><td class="benchmarkresult">1.32</td><td class="benchmarkresult">4.13</td><td class="benchmarkresult">2.64</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;20> e     = &quot;Test text&quot;; auto c{e};<span class="tooltiptext code">template&lt;typename T>
 void CopyShortString(benchmark::State&amp; state) {
     T x{TEST_TEXT};
@@ -737,7 +769,8 @@ void CopyShortString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(copy);
         benchmark::DoNotOptimize(x);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">В обоих случаях хватает внутреннего буфера.</span></span></td><td class="benchmarkresult">4.18</td><td class="benchmarkresult">4.43</td><td class="benchmarkresult">5.30</td><td class="benchmarkresult">7.74</td><td class="benchmarkresult">14.1</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">В обоих случаях хватает внутреннего буфера.
+In both cases, the internal buffer is sufficient.</span></span></td><td class="benchmarkresult">4.18</td><td class="benchmarkresult">4.43</td><td class="benchmarkresult">5.30</td><td class="benchmarkresult">7.74</td><td class="benchmarkresult">14.1</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;40> e     = &quot;Test text&quot;; auto c{e};<span class="tooltiptext code">template&lt;typename T>
 void CopyShortString(benchmark::State&amp; state) {
     T x{TEST_TEXT};
@@ -746,7 +779,8 @@ void CopyShortString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(copy);
         benchmark::DoNotOptimize(x);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Только копируются байты.</span></span></td><td class="benchmarkresult">4.47</td><td class="benchmarkresult">4.49</td><td class="benchmarkresult">5.22</td><td class="benchmarkresult">8.56</td><td class="benchmarkresult">14.2</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Только копируются байты.
+Only bytes are copied.</span></span></td><td class="benchmarkresult">4.47</td><td class="benchmarkresult">4.49</td><td class="benchmarkresult">5.22</td><td class="benchmarkresult">8.56</td><td class="benchmarkresult">14.2</td></tr>
 </tbody></table></div><script>bench_sets['Create copy of Str with 9 symbols'] = {id:'bs10', tests:[
 {name:'std::string e      = "Test text"; auto c{e};',data:[4.83,4.80,1.87,5.43,2.27]},
 {name:'std::string_view e = "Test text"; auto c{e};',data:[0.377,0.373,0.368,2.94,1.26]},
@@ -766,7 +800,9 @@ void CopyLongString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(copy);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Копирования длинной строки вызывает аллокацию,
-SSO уже не хватает. И снова как же отстаёт аллокация под Windows...</span></span></td><td class="benchmarkresult">19.8</td><td class="benchmarkresult">24.3</td><td class="benchmarkresult">81.3</td><td class="benchmarkresult">77.5</td><td class="benchmarkresult">34.3</td></tr>
+SSO уже не хватает. И снова как же отстаёт аллокация под Windows...
+Copying a long string causes allocations,
+SSO is no longer sufficient. And again, how allocation lags under Windows...</span></span></td><td class="benchmarkresult">19.8</td><td class="benchmarkresult">24.3</td><td class="benchmarkresult">81.3</td><td class="benchmarkresult">77.5</td><td class="benchmarkresult">34.3</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">std::string_view e = &quot;123456789012345678901234567890&quot;; auto c{e};<span class="tooltiptext code">template&lt;typename T>
 void CopyLongString(benchmark::State&amp; state) {
     T x = LONG_TEXT;
@@ -791,7 +827,9 @@ void CopyLongString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(copy);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">А вот у stringa копирование литерала не зависит от его длины,
-сравни с предыдущим бенчмарком.</span></span></td><td class="benchmarkresult">1.89</td><td class="benchmarkresult">1.11</td><td class="benchmarkresult">1.83</td><td class="benchmarkresult">3.02</td><td class="benchmarkresult">2.66</td></tr>
+сравни с предыдущим бенчмарком.
+But with stringa, literal copying doesn't depend on its length,
+compare with the previous benchmark.</span></span></td><td class="benchmarkresult">1.89</td><td class="benchmarkresult">1.11</td><td class="benchmarkresult">1.83</td><td class="benchmarkresult">3.02</td><td class="benchmarkresult">2.66</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;20> e     = &quot;123456789012345678901234567890&quot;; auto c{e};<span class="tooltiptext code">template&lt;typename T>
 void CopyLongString(benchmark::State&amp; state) {
     T x = LONG_TEXT;
@@ -799,7 +837,8 @@ void CopyLongString(benchmark::State&amp; state) {
         T copy{x};
         benchmark::DoNotOptimize(copy);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Не влезает, аллокация.</span></span></td><td class="benchmarkresult">21.0</td><td class="benchmarkresult">20.1</td><td class="benchmarkresult">76.1</td><td class="benchmarkresult">79.3</td><td class="benchmarkresult">17.2</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Не влезает, аллокация.
+Doesn't fit, allocation.</span></span></td><td class="benchmarkresult">21.0</td><td class="benchmarkresult">20.1</td><td class="benchmarkresult">76.1</td><td class="benchmarkresult">79.3</td><td class="benchmarkresult">17.2</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;40> e     = &quot;123456789012345678901234567890&quot;; auto c{e};<span class="tooltiptext code">template&lt;typename T>
 void CopyLongString(benchmark::State&amp; state) {
     T x = LONG_TEXT;
@@ -807,7 +846,8 @@ void CopyLongString(benchmark::State&amp; state) {
         T copy{x};
         benchmark::DoNotOptimize(copy);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Уложили во внутренний буфер.</span></span></td><td class="benchmarkresult">4.53</td><td class="benchmarkresult">4.52</td><td class="benchmarkresult">4.38</td><td class="benchmarkresult">6.63</td><td class="benchmarkresult">13.9</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Уложили во внутренний буфер.
+Placed in the internal buffer.</span></span></td><td class="benchmarkresult">4.53</td><td class="benchmarkresult">4.52</td><td class="benchmarkresult">4.38</td><td class="benchmarkresult">6.63</td><td class="benchmarkresult">13.9</td></tr>
 </tbody></table></div><script>bench_sets['Create copy of Str with 30 symbols'] = {id:'bs11', tests:[
 {name:'std::string e      = "123456789012345678901234567890"; auto c{e};',data:[19.8,24.3,81.3,77.5,34.3]},
 {name:'std::string_view e = "123456789012345678901234567890"; auto c{e};',data:[0.752,0.724,0.741,1.88,1.25]},
@@ -834,7 +874,9 @@ void Find(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(x);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Здесь "победила дружба", у всех типов по колонке примерно одинаково.
-Однако, Windows и Linux явно в разных весовых категориях.</span></span></td><td class="benchmarkresult">7.86</td><td class="benchmarkresult">7.33</td><td class="benchmarkresult">38.3</td><td class="benchmarkresult">40.7</td><td class="benchmarkresult">54.3</td></tr>
+Однако, Windows и Linux явно в разных весовых категориях.
+Here, "friendship wins," with all types scoring roughly equally.
+However, Windows and Linux are clearly in different weight classes.</span></span></td><td class="benchmarkresult">7.86</td><td class="benchmarkresult">7.33</td><td class="benchmarkresult">38.3</td><td class="benchmarkresult">40.7</td><td class="benchmarkresult">54.3</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">std::string_view::find;<span class="tooltiptext code">template&lt;typename T>
 void Find(benchmark::State&amp; state) {
     T x{LONG_TEXT LONG_TEXT LONG_TEXT TEST_TEXT};
@@ -940,7 +982,10 @@ void CopyDynString(benchmark::State&amp; state) {
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Явно виден скачок, где заканчивается SSO и начинается аллокация.
 Обратите внимание, что WASM - 32-битный, и там размер
-SSO у std::string меньше, насколько я помню, 11 символов + 0.</span></span></td><td class="benchmarkresult">23.6</td><td class="benchmarkresult">23.6</td><td class="benchmarkresult">80.4</td><td class="benchmarkresult">83.4</td><td class="benchmarkresult">35.4</td></tr>
+SSO у std::string меньше, насколько я помню, 11 символов + 0.
+The jump where SSO ends and allocation begins is clearly visible.
+Note that WASM is 32-bit, and the size of the SSO for std::string is
+smaller, as far as I remember: 11 characters + 0.</span></span></td><td class="benchmarkresult">23.6</td><td class="benchmarkresult">23.6</td><td class="benchmarkresult">80.4</td><td class="benchmarkresult">83.4</td><td class="benchmarkresult">35.4</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">std::string copy{str_with_len_N};/23<span class="tooltiptext code">template&lt;typename T>
 void CopyDynString(benchmark::State&amp; state) {
     T x(state.range(0), &#39;a&#39;);
@@ -949,7 +994,8 @@ void CopyDynString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(copy);
         benchmark::DoNotOptimize(x);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Дальше просто добавляется время на копирование байтов.</span></span></td><td class="benchmarkresult">24.0</td><td class="benchmarkresult">23.0</td><td class="benchmarkresult">78.0</td><td class="benchmarkresult">82.9</td><td class="benchmarkresult">36.3</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Дальше просто добавляется время на копирование байтов.
+Then the time for copying bytes is simply added.</span></span></td><td class="benchmarkresult">24.0</td><td class="benchmarkresult">23.0</td><td class="benchmarkresult">78.0</td><td class="benchmarkresult">82.9</td><td class="benchmarkresult">36.3</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">std::string copy{str_with_len_N};/24<span class="tooltiptext code">template&lt;typename T>
 void CopyDynString(benchmark::State&amp; state) {
     T x(state.range(0), &#39;a&#39;);
@@ -1030,7 +1076,8 @@ void CopyDynString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(copy);
         benchmark::DoNotOptimize(x);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Чем длиннее строка, тем дольше создаётся копия.</span></span></td><td class="benchmarkresult">153</td><td class="benchmarkresult">157</td><td class="benchmarkresult">178</td><td class="benchmarkresult">177</td><td class="benchmarkresult">130</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Чем длиннее строка, тем дольше создаётся копия.
+The longer the string, the longer it takes to create a copy.</span></span></td><td class="benchmarkresult">153</td><td class="benchmarkresult">157</td><td class="benchmarkresult">178</td><td class="benchmarkresult">177</td><td class="benchmarkresult">130</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">stringa copy{str_with_len_N};/15<span class="tooltiptext code">template&lt;typename T>
 void CopyDynString(benchmark::State&amp; state) {
     T x(state.range(0), &#39;a&#39;);
@@ -1040,7 +1087,9 @@ void CopyDynString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(x);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Здесь stringa инициализируется не литералом,
-а значит, должна сама хранить символы.</span></span></td><td class="benchmarkresult">1.10</td><td class="benchmarkresult">1.14</td><td class="benchmarkresult">1.28</td><td class="benchmarkresult">4.05</td><td class="benchmarkresult">2.64</td></tr>
+а значит, должна сама хранить символы.
+Here, stringa is not initialized with a literal,
+meaning it must store characters itself.</span></span></td><td class="benchmarkresult">1.10</td><td class="benchmarkresult">1.14</td><td class="benchmarkresult">1.28</td><td class="benchmarkresult">4.05</td><td class="benchmarkresult">2.64</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">stringa copy{str_with_len_N};/16<span class="tooltiptext code">template&lt;typename T>
 void CopyDynString(benchmark::State&amp; state) {
     T x(state.range(0), &#39;a&#39;);
@@ -1050,8 +1099,11 @@ void CopyDynString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(x);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Под WASM SSO у stringa составляет 15 символов. Кроме того,
-собиралось без поддержки потоков, поэтому возможно атомарный
-инкремент заменён на обычный, судя по времени.</span></span></td><td class="benchmarkresult">1.10</td><td class="benchmarkresult">1.10</td><td class="benchmarkresult">1.28</td><td class="benchmarkresult">4.03</td><td class="benchmarkresult">4.98</td></tr>
+собиралось без поддержки потоков, поэтому атомарный
+инкремент заменён на обычный, судя по времени.
+Under WASM, stringa has a 15-character SSO. Furthermore,
+it was built without thread support, so the atomic
+increment was replaced with a regular one, judging by the time.</span></span></td><td class="benchmarkresult">1.10</td><td class="benchmarkresult">1.10</td><td class="benchmarkresult">1.28</td><td class="benchmarkresult">4.03</td><td class="benchmarkresult">4.98</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">stringa copy{str_with_len_N};/23<span class="tooltiptext code">template&lt;typename T>
 void CopyDynString(benchmark::State&amp; state) {
     T x(state.range(0), &#39;a&#39;);
@@ -1061,7 +1113,9 @@ void CopyDynString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(x);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">SSO в stringa до 23 символов, и даже 23
-копируются быстрее, чем 15 в std::string.</span></span></td><td class="benchmarkresult">1.10</td><td class="benchmarkresult">1.11</td><td class="benchmarkresult">1.28</td><td class="benchmarkresult">4.10</td><td class="benchmarkresult">5.00</td></tr>
+копируются быстрее, чем 15 в std::string.
+SSO in stringa is up to 23 characters, and even 23
+copies faster than 15 in std::string.</span></span></td><td class="benchmarkresult">1.10</td><td class="benchmarkresult">1.11</td><td class="benchmarkresult">1.28</td><td class="benchmarkresult">4.10</td><td class="benchmarkresult">5.00</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">stringa copy{str_with_len_N};/24<span class="tooltiptext code">template&lt;typename T>
 void CopyDynString(benchmark::State&amp; state) {
     T x(state.range(0), &#39;a&#39;);
@@ -1071,7 +1125,9 @@ void CopyDynString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(x);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Всё, не влезаем в SSO, а значит, используем shared буфер.
-Добавляется время на атомарный инкремент счётчика.</span></span></td><td class="benchmarkresult">16.7</td><td class="benchmarkresult">16.2</td><td class="benchmarkresult">15.8</td><td class="benchmarkresult">18.5</td><td class="benchmarkresult">5.02</td></tr>
+Добавляется время на атомарный инкремент счётчика.
+That's it, we're not using SSO, so we're using a shared buffer.
+Time is added for the atomic counter increment.</span></span></td><td class="benchmarkresult">16.7</td><td class="benchmarkresult">16.2</td><td class="benchmarkresult">15.8</td><td class="benchmarkresult">18.5</td><td class="benchmarkresult">5.02</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">stringa copy{str_with_len_N};/32<span class="tooltiptext code">template&lt;typename T>
 void CopyDynString(benchmark::State&amp; state) {
     T x(state.range(0), &#39;a&#39;);
@@ -1144,7 +1200,9 @@ void CopyDynString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(x);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">И как видно, кроме инкремента нет накладных расходов,
-время копирования не зависит от длины строки.</span></span></td><td class="benchmarkresult">16.0</td><td class="benchmarkresult">16.5</td><td class="benchmarkresult">15.9</td><td class="benchmarkresult">18.3</td><td class="benchmarkresult">4.92</td></tr>
+время копирования не зависит от длины строки.
+And as you can see, there are no overhead costs other than the
+increment; copying time does not depend on the string length.</span></span></td><td class="benchmarkresult">16.0</td><td class="benchmarkresult">16.5</td><td class="benchmarkresult">15.9</td><td class="benchmarkresult">18.3</td><td class="benchmarkresult">4.92</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;16> copy{str_with_len_N};/15<span class="tooltiptext code">template&lt;typename T>
 void CopyDynString(benchmark::State&amp; state) {
     T x(state.range(0), &#39;a&#39;);
@@ -1154,7 +1212,9 @@ void CopyDynString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(x);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">lstringa<16> использует SSO до 23 символов.
-А в WASM 32-битная архитектура, SSO до 19 символов.</span></span></td><td class="benchmarkresult">4.12</td><td class="benchmarkresult">4.51</td><td class="benchmarkresult">4.88</td><td class="benchmarkresult">7.84</td><td class="benchmarkresult">14.1</td></tr>
+А в WASM 32-битная архитектура, SSO до 19 символов.
+lstringa<16> uses SSO up to 23 characters.
+WASM has a 32-bit architecture, so SSO is up to 19 characters.</span></span></td><td class="benchmarkresult">4.12</td><td class="benchmarkresult">4.51</td><td class="benchmarkresult">4.88</td><td class="benchmarkresult">7.84</td><td class="benchmarkresult">14.1</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;16> copy{str_with_len_N};/16<span class="tooltiptext code">template&lt;typename T>
 void CopyDynString(benchmark::State&amp; state) {
     T x(state.range(0), &#39;a&#39;);
@@ -1181,7 +1241,8 @@ void CopyDynString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(copy);
         benchmark::DoNotOptimize(x);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">И после начинает вести себя при копировании, как std::string.</span></span></td><td class="benchmarkresult">22.9</td><td class="benchmarkresult">24.2</td><td class="benchmarkresult">76.9</td><td class="benchmarkresult">82.1</td><td class="benchmarkresult">30.9</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">И после начинает вести себя при копировании, как std::string.
+And then it starts to behave like std::string when copied.</span></span></td><td class="benchmarkresult">22.9</td><td class="benchmarkresult">24.2</td><td class="benchmarkresult">76.9</td><td class="benchmarkresult">82.1</td><td class="benchmarkresult">30.9</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;16> copy{str_with_len_N};/32<span class="tooltiptext code">template&lt;typename T>
 void CopyDynString(benchmark::State&amp; state) {
     T x(state.range(0), &#39;a&#39;);
@@ -1335,7 +1396,9 @@ void CopyDynString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(x);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Даже 512 символов копируются быстрее, чем
-одна аллокация или атомарный инкремент.</span></span></td><td class="benchmarkresult">10.2</td><td class="benchmarkresult">20.6</td><td class="benchmarkresult">12.3</td><td class="benchmarkresult">14.3</td><td class="benchmarkresult">26.9</td></tr>
+одна аллокация или атомарный инкремент.
+Even 512 characters are copied faster than a single
+allocation or atomic increment.</span></span></td><td class="benchmarkresult">10.2</td><td class="benchmarkresult">20.6</td><td class="benchmarkresult">12.3</td><td class="benchmarkresult">14.3</td><td class="benchmarkresult">26.9</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;512> copy{str_with_len_N};/1024<span class="tooltiptext code">template&lt;typename T>
 void CopyDynString(benchmark::State&amp; state) {
     T x(state.range(0), &#39;a&#39;);
@@ -1344,7 +1407,8 @@ void CopyDynString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(copy);
         benchmark::DoNotOptimize(x);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">А дальше уже как у всех</span></span></td><td class="benchmarkresult">95.5</td><td class="benchmarkresult">96.9</td><td class="benchmarkresult">94.1</td><td class="benchmarkresult">97.2</td><td class="benchmarkresult">48.0</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">А дальше уже как у всех.
+And then it's like everyone else.</span></span></td><td class="benchmarkresult">95.5</td><td class="benchmarkresult">96.9</td><td class="benchmarkresult">94.1</td><td class="benchmarkresult">97.2</td><td class="benchmarkresult">48.0</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;512> copy{str_with_len_N};/2048<span class="tooltiptext code">template&lt;typename T>
 void CopyDynString(benchmark::State&amp; state) {
     T x(state.range(0), &#39;a&#39;);
@@ -1431,7 +1495,11 @@ void CopyDynString(benchmark::State&amp; state) {
 нет нужды в null терминированности. Ближайший аналог такого
 поведения "std::from_chars", но он к сожалению очень ограничен
 по возможностям. Здесь я попытался произвести тесты, близкие по
-логике к работе std::from_chars</span></span></td><td class="benchmarkresult">27.5</td><td class="benchmarkresult">27.4</td><td class="benchmarkresult">30.8</td><td class="benchmarkresult">32.2</td><td class="benchmarkresult">69.5</td></tr>
+логике к работе std::from_chars
+In simstr, a string fragment is sufficient for conversion to a number;
+there's no need for null termination. The closest analog to this behavior
+is "std::from_chars," but unfortunately, it is very limited in its capabilities.
+Here, I attempted to run tests that are similar in logic to std::from_chars.</span></span></td><td class="benchmarkresult">27.5</td><td class="benchmarkresult">27.4</td><td class="benchmarkresult">30.8</td><td class="benchmarkresult">32.2</td><td class="benchmarkresult">69.5</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">std::string_view s = &quot;123456789&quot;; std::from_chars(s.data(), s.data() + s.size(), res, 10);<span class="tooltiptext code">void ToIntFromChars10(benchmark::State&amp; state, const std::string_view&amp; s, int c) {
     for (auto _: state) {
         int res = 0;
@@ -1445,7 +1513,9 @@ void CopyDynString(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(res);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">from_chars требует точного указания основания счисления,
-не допускает знаков плюс, пробелов, префиксов 0x и т.п.</span></span></td><td class="benchmarkresult">15.1</td><td class="benchmarkresult">12.5</td><td class="benchmarkresult">13.5</td><td class="benchmarkresult">13.8</td><td class="benchmarkresult">28.4</td></tr>
+не допускает знаков плюс, пробелов, префиксов 0x и т.п.
+from_chars requires an exact radix specification and does not allow plus
+signs, spaces, 0x prefixes, etc.</span></span></td><td class="benchmarkresult">15.1</td><td class="benchmarkresult">12.5</td><td class="benchmarkresult">13.5</td><td class="benchmarkresult">13.8</td><td class="benchmarkresult">28.4</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">stringa s = &quot;123456789&quot;; int res = s.to_int&lt;int, true, 10, false><span class="tooltiptext code">template&lt;typename T>
 void ToIntSimStr10(benchmark::State&amp; state, T t, int c) {
     for (auto _: state) {
@@ -1460,7 +1530,9 @@ void ToIntSimStr10(benchmark::State&amp; state, T t, int c) {
         benchmark::DoNotOptimize(t);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Здесь для to_int заданы такие же ограничения - проверять переполнение,
-десятичная система, без лидирующих пробелов и знака плюс</span></span></td><td class="benchmarkresult">12.4</td><td class="benchmarkresult">8.24</td><td class="benchmarkresult">14.1</td><td class="benchmarkresult">15.7</td><td class="benchmarkresult">19.0</td></tr>
+десятичная система, без лидирующих пробелов и знака плюс
+Here, to_int has the same restrictions: check for overflow,
+decimal system, no leading spaces, and no plus sign.</span></span></td><td class="benchmarkresult">12.4</td><td class="benchmarkresult">8.24</td><td class="benchmarkresult">14.1</td><td class="benchmarkresult">15.7</td><td class="benchmarkresult">19.0</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">ssa s = &quot;123456789&quot;; int res = s.to_int&lt;int, true, 10, false><span class="tooltiptext code">template&lt;typename T>
 void ToIntSimStr10(benchmark::State&amp; state, T t, int c) {
     for (auto _: state) {
@@ -1510,7 +1582,8 @@ void ToIntSimStr10(benchmark::State&amp; state, T t, int c) {
     #endif
         benchmark::DoNotOptimize(res);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Всё то же, только для 16ричной системы</span></span></td><td class="benchmarkresult">24.1</td><td class="benchmarkresult">23.7</td><td class="benchmarkresult">33.5</td><td class="benchmarkresult">35.1</td><td class="benchmarkresult">54.6</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Всё то же, только для 16ричной системы
+Everything is the same, only for the hexadecimal system</span></span></td><td class="benchmarkresult">24.1</td><td class="benchmarkresult">23.7</td><td class="benchmarkresult">33.5</td><td class="benchmarkresult">35.1</td><td class="benchmarkresult">54.6</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">std::string_view s = &quot;abcDef&quot;; std::from_chars(s.data(), s.data() + s.size(), res, 16);<span class="tooltiptext code">void ToIntFromChars16(benchmark::State&amp; state, const std::string_view&amp; s, int c) {
     for (auto _: state) {
         int res = 0;
@@ -1587,7 +1660,8 @@ void ToIntSimStr16(benchmark::State&amp; state, T t, int c) {
     #endif
         benchmark::DoNotOptimize(res);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">А здесь уже парсинг произвольного числа.</span></span></td><td class="benchmarkresult">28.9</td><td class="benchmarkresult">29.3</td><td class="benchmarkresult">43.6</td><td class="benchmarkresult">45.3</td><td class="benchmarkresult">74.6</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">А здесь уже парсинг произвольного числа.
+And here we have parsing of an arbitrary number.</span></span></td><td class="benchmarkresult">28.9</td><td class="benchmarkresult">29.3</td><td class="benchmarkresult">43.6</td><td class="benchmarkresult">45.3</td><td class="benchmarkresult">74.6</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">stringa s = &quot;    123456789&quot;; int res = s.to_int&lt;int>; // Check overflow<span class="tooltiptext code">template&lt;typename T>
 void ToIntSimStr0(benchmark::State&amp; state, T t, int c) {
     for (auto _: state) {
@@ -1745,7 +1819,9 @@ void AppendLstringConstLiteral(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(result);
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Чем больше внутренний буфер, тем меньше раз требуется
-аллокация, тем быстрее результат.</span></span></td><td class="benchmarkresult">272</td><td class="benchmarkresult">267</td><td class="benchmarkresult">396</td><td class="benchmarkresult">531</td><td class="benchmarkresult">569</td></tr>
+аллокация, тем быстрее результат.
+The larger the internal buffer, the fewer allocations are
+required, and the faster the result.</span></span></td><td class="benchmarkresult">272</td><td class="benchmarkresult">267</td><td class="benchmarkresult">396</td><td class="benchmarkresult">531</td><td class="benchmarkresult">569</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;512> str; ... str += &quot;abbaabbaabbaabba&quot;;<span class="tooltiptext code">template&lt;unsigned N>
 void AppendLstringConstLiteral(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -2239,7 +2315,9 @@ void AppendSimStrStrNumStrF(benchmark::State&amp; state) {
             benchmark::DoNotOptimize(k);
         }
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">В simstr format с первого раза не помещается в такую строку без аллокации.</span></span></td><td class="benchmarkresult">1377</td><td class="benchmarkresult">1633</td><td class="benchmarkresult">2076</td><td class="benchmarkresult">2671</td><td class="benchmarkresult">3396</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">В simstr format с первого раза не помещается в такую строку без аллокации.
+In simstr format, the first time it doesn't fit into such a
+string without allocation.</span></span></td><td class="benchmarkresult">1377</td><td class="benchmarkresult">1633</td><td class="benchmarkresult">2076</td><td class="benchmarkresult">2671</td><td class="benchmarkresult">3396</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;32> str; str.format(&quot;test = {} times&quot;, k);<span class="tooltiptext code">template&lt;typename T>
 void AppendSimStrStrNumStrF(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -2256,7 +2334,8 @@ void AppendSimStrStrNumStrF(benchmark::State&amp; state) {
             benchmark::DoNotOptimize(k);
         }
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">А в такую помещается. Используйте сразу буфера подходящего размера.</span></span></td><td class="benchmarkresult">979</td><td class="benchmarkresult">1117</td><td class="benchmarkresult">1004</td><td class="benchmarkresult">1531</td><td class="benchmarkresult">2581</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">А в такую помещается. Используйте сразу буфера подходящего размера.
+And it fits in this one. Use buffers of the appropriate size right away.</span></span></td><td class="benchmarkresult">979</td><td class="benchmarkresult">1117</td><td class="benchmarkresult">1004</td><td class="benchmarkresult">1531</td><td class="benchmarkresult">2581</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;8> str = &quot;test = &quot; + k + &quot; times&quot;;<span class="tooltiptext code">template&lt;typename T>
 void AppendSimStrStrNumStr(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -2272,7 +2351,8 @@ void AppendSimStrStrNumStr(benchmark::State&amp; state) {
             benchmark::DoNotOptimize(k);
         }
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Результат не помещается в SSO, возникает аллокация.</span></span></td><td class="benchmarkresult">295</td><td class="benchmarkresult">313</td><td class="benchmarkresult">778</td><td class="benchmarkresult">880</td><td class="benchmarkresult">610</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Результат не помещается в SSO, возникает аллокация.
+The result does not fit into SSO, an allocation occurs.</span></span></td><td class="benchmarkresult">295</td><td class="benchmarkresult">313</td><td class="benchmarkresult">778</td><td class="benchmarkresult">880</td><td class="benchmarkresult">610</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">lstringa&lt;32> str = &quot;test = &quot; + k + &quot; times&quot;;<span class="tooltiptext code">template&lt;typename T>
 void AppendSimStrStrNumStr(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -2289,7 +2369,9 @@ void AppendSimStrStrNumStr(benchmark::State&amp; state) {
         }
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">А здесь и ниже - результат укладывается в SSO.
-Ещё раз - используйте сразу буфера подходящего размера.</span></span></td><td class="benchmarkresult">152</td><td class="benchmarkresult">153</td><td class="benchmarkresult">154</td><td class="benchmarkresult">187</td><td class="benchmarkresult">342</td></tr>
+Ещё раз - используйте сразу буфера подходящего размера.
+And here and below, the result fits within SSO.
+Once again, use appropriately sized buffers from the start.</span></span></td><td class="benchmarkresult">152</td><td class="benchmarkresult">153</td><td class="benchmarkresult">154</td><td class="benchmarkresult">187</td><td class="benchmarkresult">342</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">stringa str = &quot;test = &quot; + k + &quot; times&quot;;<span class="tooltiptext code">template&lt;typename T>
 void AppendSimStrStrNumStr(benchmark::State&amp; state) {
     for (auto _: state) {
@@ -2306,7 +2388,9 @@ void AppendSimStrStrNumStr(benchmark::State&amp; state) {
         }
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Под WASM размер SSO 15 символов, что явно не хватает для размещения
-результата, отсюда и такое время.</span></span></td><td class="benchmarkresult">150</td><td class="benchmarkresult">162</td><td class="benchmarkresult">152</td><td class="benchmarkresult">236</td><td class="benchmarkresult">562</td></tr>
+результата, отсюда и такое время.
+Under WASM, the SSO size is 15 characters, which is clearly not
+enough to accommodate the result, hence the long time.</span></span></td><td class="benchmarkresult">150</td><td class="benchmarkresult">162</td><td class="benchmarkresult">152</td><td class="benchmarkresult">236</td><td class="benchmarkresult">562</td></tr>
 </tbody></table></div><script>bench_sets['Append text, number, text'] = {id:'bs22', tests:[
 {name:'std::stringstream str; str << "test = " << k << " times";',data:[3102,2998,11067,11252,6369]},
 {name:'std::string str = "test = " + std::to_string(k) + " times";',data:[471,456,1078,1222,1655]},
@@ -2438,7 +2522,10 @@ void AppendSimStrStrNumStr(benchmark::State&amp; state) {
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Это наивная реализация, которая неверно отработает на
 таких заменах, как 'a'->'b' и 'b'->'a'. Но если замены не конфликтуют,
-то работает быстро.</span></span></td><td class="benchmarkresult">865</td><td class="benchmarkresult">852</td><td class="benchmarkresult">1153</td><td class="benchmarkresult">1298</td><td class="benchmarkresult">3588</td></tr>
+то работает быстро.
+This is a naive implementation that will fail to handle substitutions
+such as 'a'->'b' and 'b'->'a'. But if the substitutions don't conflict,
+it works quickly.</span></span></td><td class="benchmarkresult">865</td><td class="benchmarkresult">852</td><td class="benchmarkresult">1153</td><td class="benchmarkresult">1298</td><td class="benchmarkresult">3588</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">replace symbols with std::string find_first_of + replace<span class="tooltiptext code">void ReplaceSymbolsStdStringNaiveRight(benchmark::State&amp; state) {
     std::string_view source =
         &quot;abcdefg124 &lt; jhsfjsh sjdfsh jfhjd &amp;&amp; jdjdj >&quot;
@@ -2491,7 +2578,9 @@ void AppendSimStrStrNumStr(benchmark::State&amp; state) {
         benchmark::DoNotOptimize(source);
         benchmark::DoNotOptimize(repl);
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Дальше уже правильные реализации, не зависящие от конфликтующих замен.</span></span></td><td class="benchmarkresult">2400</td><td class="benchmarkresult">2378</td><td class="benchmarkresult">2047</td><td class="benchmarkresult">2231</td><td class="benchmarkresult">4762</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Дальше уже правильные реализации, не зависящие от конфликтующих замен.
+Further, there are correct implementations that do not depend on
+conflicting replacements.</span></span></td><td class="benchmarkresult">2400</td><td class="benchmarkresult">2378</td><td class="benchmarkresult">2047</td><td class="benchmarkresult">2231</td><td class="benchmarkresult">4762</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">replace symbols with std::string_view find_first_of + copy<span class="tooltiptext code">void ReplaceSymbolsStdString(benchmark::State&amp; state) {
     std::string_view source =
         &quot;abcdefg124 &lt; jhsfjsh sjdfsh jfhjd &amp;&amp; jdjdj >&quot;
@@ -3817,7 +3906,9 @@ void ReplaceAllEqualSimStringExpr(benchmark::State&amp; state) {
         }
     }
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Вставляем в hashStrMapA 10000 stringa длиной от 30 до 50
-символов, а потом ищем их в ней</span></span></td><td class="benchmarkresult">3625242</td><td class="benchmarkresult">3750693</td><td class="benchmarkresult">3693883</td><td class="benchmarkresult">4203983</td><td class="benchmarkresult">3162304</td></tr>
+символов, а потом ищем их в ней
+We insert 10,000 strings of length from 30 to 50 characters into
+hashStrMapA, and then search for them in it.</span></span></td><td class="benchmarkresult">3625242</td><td class="benchmarkresult">3750693</td><td class="benchmarkresult">3693883</td><td class="benchmarkresult">4203983</td><td class="benchmarkresult">3162304</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">std::unordered_map&lt;std::string, size_t> emplace &amp; find std::string;<span class="tooltiptext code">void HashMapStdStr(benchmark::State&amp; state) {
     for (auto _: state) {
         std::unordered_map&lt;std::string, size_t> store;
@@ -3840,7 +3931,8 @@ void ReplaceAllEqualSimStringExpr(benchmark::State&amp; state) {
             benchmark::DoNotOptimize(res);
         }
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">То же самое c std::string и std::unordered_map</span></span></td><td class="benchmarkresult">3517784</td><td class="benchmarkresult">3625926</td><td class="benchmarkresult">5258881</td><td class="benchmarkresult">5344121</td><td class="benchmarkresult">3370915</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">То же самое c std::string и std::unordered_map
+Same thing with std::string and std::unordered_map</span></span></td><td class="benchmarkresult">3517784</td><td class="benchmarkresult">3625926</td><td class="benchmarkresult">5258881</td><td class="benchmarkresult">5344121</td><td class="benchmarkresult">3370915</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">hashStrMapA&lt;size_t> emplace &amp; find ssa;<span class="tooltiptext code">void HashMapSimSsa(benchmark::State&amp; state) {
     for (auto _: state) {
         hashStrMapA&lt;size_t> store;
@@ -3864,7 +3956,8 @@ void ReplaceAllEqualSimStringExpr(benchmark::State&amp; state) {
             benchmark::DoNotOptimize(res);
         }
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Теперь вставляем stringa, а ищем ssa</span></span></td><td class="benchmarkresult">3618716</td><td class="benchmarkresult">3687972</td><td class="benchmarkresult">3418166</td><td class="benchmarkresult">4011248</td><td class="benchmarkresult">3151333</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Теперь вставляем stringa, а ищем ssa
+Now we insert stringa and search for ssa</span></span></td><td class="benchmarkresult">3618716</td><td class="benchmarkresult">3687972</td><td class="benchmarkresult">3418166</td><td class="benchmarkresult">4011248</td><td class="benchmarkresult">3151333</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">std::unordered_map&lt;std::string, size_t> emplace &amp; find std::string_view;<span class="tooltiptext code">void HashMapStdStrView(benchmark::State&amp; state) {
     for (auto _: state) {
         std::unordered_map&lt;std::string, size_t> store;
@@ -3888,7 +3981,8 @@ void ReplaceAllEqualSimStringExpr(benchmark::State&amp; state) {
             benchmark::DoNotOptimize(res);
         }
     }
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Вставляем std::string, а ищем std::string_view</span></span></td><td class="benchmarkresult">4166457</td><td class="benchmarkresult">3937773</td><td class="benchmarkresult">6295014</td><td class="benchmarkresult">6304499</td><td class="benchmarkresult">3797453</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Вставляем std::string, а ищем std::string_view
+We insert std::string and look for std::string_view</span></span></td><td class="benchmarkresult">4166457</td><td class="benchmarkresult">3937773</td><td class="benchmarkresult">6295014</td><td class="benchmarkresult">6304499</td><td class="benchmarkresult">3797453</td></tr>
 </tbody></table></div><script>bench_sets['Hash Map insert and find'] = {id:'bs28', tests:[
 {name:'hashStrMapA<size_t> emplace & find stringa;',data:[3625242,3750693,3693883,4203983,3162304]},
 {name:'std::unordered_map<std::string, size_t> emplace & find std::string;',data:[3517784,3625926,5258881,5344121,3370915]},
@@ -3931,7 +4025,11 @@ void ReplaceAllEqualSimStringExpr(benchmark::State&amp; state) {
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Обыденная задача, подобные часто могут встретится в работе:
 По неким данным сгенерировать текст. В этом случае по данным
 о неких функциях сформировать их полное имя с типами параметров и
-возвращаемого значения. Алгоритм на std::string.</span></span></td><td class="benchmarkresult">708</td><td class="benchmarkresult">966</td><td class="benchmarkresult">1533</td><td class="benchmarkresult">1645</td><td class="benchmarkresult">2652</td></tr>
+возвращаемого значения. Алгоритм на std::string.
+A common task, similar to this one, can often be encountered in work:
+Generate text from given data. In this case, using data
+on certain functions, generate their full names with parameter types and
+return values. The algorithm uses std::string.</span></span></td><td class="benchmarkresult">708</td><td class="benchmarkresult">966</td><td class="benchmarkresult">1533</td><td class="benchmarkresult">1645</td><td class="benchmarkresult">2652</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">Build func full name std::string 1;<span class="tooltiptext code">std::string build_full_name_std1() const {
     std::string str{has_ret_type_resolver ? &quot;any&quot;sv : type_names_sv[(unsigned)ret_type]};
     str += &quot; &quot; + std_name + &quot;(&quot;;
@@ -3961,7 +4059,9 @@ void ReplaceAllEqualSimStringExpr(benchmark::State&amp; state) {
     //std::cout &lt;&lt; &quot;Len=&quot; &lt;&lt; str.length() &lt;&lt; &quot;, Cap=&quot; &lt;&lt; str.capacity() &lt;&lt; &quot;\n&quot;;
     return str;
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Почти тот же алгоритм, но несколько последовательных
-+= к строке заменены на одно += + + +.</span></span></td><td class="benchmarkresult">846</td><td class="benchmarkresult">1010</td><td class="benchmarkresult">1602</td><td class="benchmarkresult">1711</td><td class="benchmarkresult">2955</td></tr>
++= к строке заменены на одно += + + +.
+Almost the same algorithm, but several consecutive
++= to a string are replaced with a single += + + +.</span></span></td><td class="benchmarkresult">846</td><td class="benchmarkresult">1010</td><td class="benchmarkresult">1602</td><td class="benchmarkresult">1711</td><td class="benchmarkresult">2955</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">Build func full name std::stream;<span class="tooltiptext code">std::string build_full_name_stream() const {
     std::ostringstream str;
     if (has_ret_type_resolver) {
@@ -3994,7 +4094,8 @@ void ReplaceAllEqualSimStringExpr(benchmark::State&amp; state) {
     }
     str &lt;&lt; &quot;)&quot;;
     return str.str();
-}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Строим имя функции через std::ostringstream и <<</span></span></td><td class="benchmarkresult">2571</td><td class="benchmarkresult">2613</td><td class="benchmarkresult">8228</td><td class="benchmarkresult">10110</td><td class="benchmarkresult">6584</td></tr>
+}</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Строим имя функции через std::ostringstream и <<
+We construct the function name through std::ostringstream and <<</span></span></td><td class="benchmarkresult">2571</td><td class="benchmarkresult">2613</td><td class="benchmarkresult">8228</td><td class="benchmarkresult">10110</td><td class="benchmarkresult">6584</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">Build func full name stringa;<span class="tooltiptext code">stringa build_full_name() const {
     lstringa&lt;512> str = e_choice(has_ret_type_resolver, &quot;any&quot;, type_names[(unsigned)ret_type]) + &quot; &quot; + name + &quot;(&quot;;
 
@@ -4010,7 +4111,9 @@ void ReplaceAllEqualSimStringExpr(benchmark::State&amp; state) {
     }
     return str + e_if(unlim_params, e_if(add_comma, &quot;, &quot;) + &quot;...&quot;) + &quot;)&quot;;
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Реализация на simstr строках и строковых выражениях.
-Инфа о параметрах добавляется в текущую строку</span></span></td><td class="benchmarkresult">508</td><td class="benchmarkresult">465</td><td class="benchmarkresult">818</td><td class="benchmarkresult">924</td><td class="benchmarkresult">1274</td></tr>
+Инфа о параметрах добавляется в текущую строку
+Implementation using simstr strings and string expressions.
+Parameter information is appended to the current line.</span></span></td><td class="benchmarkresult">508</td><td class="benchmarkresult">465</td><td class="benchmarkresult">818</td><td class="benchmarkresult">924</td><td class="benchmarkresult">1274</td></tr>
 <tr><td class="benchmarkname"><span class="tooltip">Build func full name stringa 1;<span class="tooltiptext code">stringa build_full_name1() const {
     lstringa&lt;512> str = e_choice(has_ret_type_resolver, &quot;any&quot;, type_names[(unsigned)ret_type]) + &quot; &quot; + name + &quot;(&quot;;
 
@@ -4024,7 +4127,11 @@ void ReplaceAllEqualSimStringExpr(benchmark::State&amp; state) {
 }</span></span></td><td><span class="tooltip info">&nbsp;>>&nbsp;<span class="tooltiptext">Реализация на simstr строках и строковых выражениях.
 Инфа о параметрах добавляется во временную строку, а потом
 разом добавляется в текущую строку. Позволяет операции в цикле
-записать в одну строку, но чуть проигрывает по времени выполнения.</span></span></td><td class="benchmarkresult">648</td><td class="benchmarkresult">682</td><td class="benchmarkresult">959</td><td class="benchmarkresult">1020</td><td class="benchmarkresult">1576</td></tr>
+записать в одну строку, но чуть проигрывает по времени выполнения.
+Implementation using simstr strings and string expressions.
+Parameter information is added to a temporary string, and then
+all at once to the current string. This allows loop operations
+to be written in a single string, but is slightly slower in execution time.</span></span></td><td class="benchmarkresult">648</td><td class="benchmarkresult">682</td><td class="benchmarkresult">959</td><td class="benchmarkresult">1020</td><td class="benchmarkresult">1576</td></tr>
 </tbody></table></div><script>bench_sets['Build Full Func Name'] = {id:'bs29', tests:[
 {name:'Build func full name std::string;',data:[708,966,1533,1645,2652]},
 {name:'Build func full name std::string 1;',data:[846,1010,1602,1711,2955]},

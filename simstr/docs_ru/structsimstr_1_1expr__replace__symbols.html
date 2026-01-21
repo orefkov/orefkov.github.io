@@ -113,7 +113,7 @@ $(function(){initNavTree('structsimstr_1_1expr__replace__symbols.html',''); init
 <p>Тип для строкового выражения, генерирующее строку, в которой заданные символы заменяются на заданные строки.  
  <a href="#details">Подробнее...</a></p>
 
-<p><code>#include &lt;<a class="el" href="sstring_8h_source.html">sstring.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="strexpr_8h_source.html">strexpr.h</a>&gt;</code></p>
 <div class="dynheader">
 Граф наследования:simstr::expr_replace_symbols&lt; K, UseVectorForReplace &gt;:</div>
 <div class="dyncontent">
@@ -126,9 +126,9 @@ $(function(){initNavTree('structsimstr_1_1expr__replace__symbols.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:a5e561adcb105cfbc2819e0c580d80d0e" id="r_a5e561adcb105cfbc2819e0c580d80d0e"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e561adcb105cfbc2819e0c580d80d0e">expr_replace_symbols</a> (<a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt; source, const std::vector&lt; std::pair&lt; K, <a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt; &gt; &gt; &amp;repl)</td></tr>
-<tr class="memdesc:a5e561adcb105cfbc2819e0c580d80d0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор выражения.  <br /></td></tr>
-<tr class="separator:a5e561adcb105cfbc2819e0c580d80d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fac129651136763915ab5cba6dd26dd" id="r_a1fac129651136763915ab5cba6dd26dd"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fac129651136763915ab5cba6dd26dd">expr_replace_symbols</a> (str_t source, const std::vector&lt; std::pair&lt; K, str_t &gt; &gt; &amp;repl)</td></tr>
+<tr class="memdesc:a1fac129651136763915ab5cba6dd26dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор выражения.  <br /></td></tr>
+<tr class="separator:a1fac129651136763915ab5cba6dd26dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename K, bool UseVectorForReplace = false&gt;<br />
@@ -140,10 +140,10 @@ struct simstr::expr_replace_symbols&lt; K, UseVectorForReplace &gt;</div><p>Ти
   </table>
   </dd>
 </dl>
-<p>Этот тип применяется, когда состав символов или соответствующих им замен не известен в compile time, а определяется в runtime. В конструктор передается вектор из пар <code>символ - строка замены</code>. Параметр <code>UseVectorForReplace</code> задаёт стратегию реализации. Дело в том, что работа любых строковых выражений разбита на две фазы - вызов <code>length()</code>, в котором подсчитывется количество символов в результате, и вызов <code>place()</code>, в котором результат помещается в предоставленный буфер. При <code>UseVectorForReplace == true</code> во время фазы подcчёта количества символов, позиции найденных вхождений сохраняются в векторе, и во время второй фазы поиск уже не выполняется, а позиции берутся из вектора. Это, с одной стороны, уменьшает время во второй фазе - не нужно снова выполнять поиск, но увеличивает время в первой фазе - добавление элементов в вектор не бесплатно, и требует времени. При <code>UseVectorForReplace == false</code> во время фазы подcчёта количества символов, в локальном массиве запоминается позиции первых 16 вхождений и их общее количество, а во время второй фазы, если вхождений больше 16, то поиск повторяется, но уже только с позиции 16го вхождения. Это может увеличить время во второй фазе, но сокращает время в первой фазе - не нужно добавлять элементы в вектор, не нужна динамическая аллокация. В разных сценариях использования более оптимальными могут быть та или иная стратегия, и вы можете сами решить, что в каждом конкретном случае больше подойдёт. </p>
+<p>Этот тип применяется, когда состав символов или соответствующих им замен не известен в compile time, а определяется в runtime. В конструктор передается вектор из пар <code>символ - строка замены</code>. Параметр <code>UseVectorForReplace</code> задаёт стратегию реализации. Дело в том, что работа любых строковых выражений разбита на две фазы - вызов <code>length()</code>, в котором подсчитывается количество символов в результате, и вызов <code>place()</code>, в котором результат помещается в предоставленный буфер. При <code>UseVectorForReplace == true</code> во время фазы подcчёта количества символов, позиции найденных вхождений сохраняются в векторе, и во время второй фазы поиск уже не выполняется, а позиции берутся из вектора. Это, с одной стороны, уменьшает время во второй фазе - не нужно снова выполнять поиск, но увеличивает время в первой фазе - добавление элементов в вектор не бесплатно, и требует времени. При <code>UseVectorForReplace == false</code> во время фазы подcчёта количества символов, в локальном массиве запоминаются позиции первых 16 вхождений и их общее количество, а во время второй фазы, если вхождений больше 16, то поиск повторяется, но уже только с позиции 16го вхождения. Это может увеличить время во второй фазе, но сокращает время в первой фазе - не нужно добавлять элементы в вектор, не нужна динамическая аллокация. В разных сценариях использования более оптимальными могут быть та или иная стратегия, и вы можете сами решить, что в каждом конкретном случае больше подойдёт. </p>
 </div><h2 class="groupheader">Конструктор(ы)</h2>
-<a id="a5e561adcb105cfbc2819e0c580d80d0e" name="a5e561adcb105cfbc2819e0c580d80d0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e561adcb105cfbc2819e0c580d80d0e">&#9670;&#160;</a></span>expr_replace_symbols()</h2>
+<a id="a1fac129651136763915ab5cba6dd26dd" name="a1fac129651136763915ab5cba6dd26dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fac129651136763915ab5cba6dd26dd">&#9670;&#160;</a></span>expr_replace_symbols()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,12 +156,12 @@ template&lt;typename K, bool UseVectorForReplace = false&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="structsimstr_1_1expr__replace__symbols.html">simstr::expr_replace_symbols</a>&lt; K, UseVectorForReplace &gt;::expr_replace_symbols </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">str_t</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; std::pair&lt; K, <a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>repl</em></span>&#160;)</td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; K, str_t &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>repl</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -180,7 +180,7 @@ template&lt;typename K, bool UseVectorForReplace = false&gt; </div>
   </dd>
 </dl>
 <p>Пример:</p>
-<div class="fragment"><div class="line">stringa result = <a class="code hl_function" href="#a5e561adcb105cfbc2819e0c580d80d0e">expr_replace_symbols&lt;u8s, true&gt;</a>{source, {</div>
+<div class="fragment"><div class="line">stringa result = <a class="code hl_function" href="#a1fac129651136763915ab5cba6dd26dd">expr_replace_symbols&lt;u8s, true&gt;</a>{source, {</div>
 <div class="line">    {<span class="charliteral">&#39;-&#39;</span>, <span class="stringliteral">&quot;&quot;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;&gt;&#39;</span>, <span class="stringliteral">&quot;&amp;gt;&quot;</span>},</div>
@@ -188,13 +188,13 @@ template&lt;typename K, bool UseVectorForReplace = false&gt; </div>
 <div class="line">    {<span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>},</div>
 <div class="line">}};</div>
-<div class="ttc" id="astructsimstr_1_1expr__replace__symbols_html_a5e561adcb105cfbc2819e0c580d80d0e"><div class="ttname"><a href="#a5e561adcb105cfbc2819e0c580d80d0e">simstr::expr_replace_symbols::expr_replace_symbols</a></div><div class="ttdeci">constexpr expr_replace_symbols(simple_str&lt; K &gt; source, const std::vector&lt; std::pair&lt; K, simple_str&lt; K &gt; &gt; &gt; &amp;repl)</div><div class="ttdoc">Конструктор выражения.</div><div class="ttdef"><b>Определения</b> sstring.h:4627</div></div>
+<div class="ttc" id="astructsimstr_1_1expr__replace__symbols_html_a1fac129651136763915ab5cba6dd26dd"><div class="ttname"><a href="#a1fac129651136763915ab5cba6dd26dd">simstr::expr_replace_symbols::expr_replace_symbols</a></div><div class="ttdeci">constexpr expr_replace_symbols(str_t source, const std::vector&lt; std::pair&lt; K, str_t &gt; &gt; &amp;repl)</div><div class="ttdoc">Конструктор выражения.</div><div class="ttdef"><b>Определения</b> strexpr.h:4952</div></div>
 </div><!-- fragment --><p> Пример приведен для наглядности использования. В данном случае и заменяемые символы, и строки замены известны в compile time, и в этом случае лучше применять e_repl_const_symbols, а этот класс используется, когда символы или замены задаются в runtime. </p>
 
 </div>
 </div>
 <hr/>Объявления и описания членов структуры находятся в файле:<ul>
-<li><a class="el" href="sstring_8h_source.html">sstring.h</a></li>
+<li><a class="el" href="strexpr_8h_source.html">strexpr.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

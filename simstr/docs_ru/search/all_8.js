@@ -26,5 +26,6 @@ var searchData=
   ['hashstrmapw_23',['hashStrMapW',['../namespacesimstr.html#aa30b610e5d5dcce51beab757a6c408b9',1,'simstr']]],
   ['hashstrmapwia_24',['hashStrMapWIA',['../namespacesimstr.html#a617db678b8f77967dc114be7706582a5',1,'simstr']]],
   ['hashstrmapwiu_25',['hashStrMapWIU',['../namespacesimstr.html#a376c405d7404546a07f440f355038de5',1,'simstr']]],
-  ['hexflags_26',['HexFlags',['../group___str_exprs.html#ga680097382d9bc271c361f85828ac741f',1,'simstr']]]
+  ['hex_20формате_26',['Сложение строк с числами в hex-формате',['../index.html#autotoc_md5',1,'']]],
+  ['hexflags_27',['HexFlags',['../group___str_exprs.html#ga680097382d9bc271c361f85828ac741f',1,'simstr']]]
 ];

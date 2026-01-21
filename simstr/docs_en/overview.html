@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.3.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.4.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -106,12 +106,12 @@ $(function(){initNavTree('overview.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Overview</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md43"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md57"></a>
 Strings in C++</h1>
 <p>(, what's wrong with you?)</p>
 <p><span class="obfuscator"><a href="overview_ru.md">On Russian | По-русски</a></span></p>
 <p><cite> In a 1991 retrospective on the history of C++, its creator Bjarne Stroustrup called the lack of a standard string type (and some other standard types) in C++ 1.0 the worst mistake he made in its development: "Their absence led to everyone reinventing the wheel and to an unnecessary diversity in the most fundamental classes" </cite></p>
-<h2><a class="anchor" id="autotoc_md44"></a>
+<h2><a class="anchor" id="autotoc_md58"></a>
 What was and is</h2>
 <p>In the introductory part, I want to briefly describe the current state of strings in C++, how we got to it, and why it is so. I will also describe the shortcomings of current implementations so that the solutions I use in my string library are clear.</p>
 <p>Actually, initially there was no standard type for strings in C++. The approach from C was used to work with strings – a string is a pointer to an array of bytes ending in zero. The disadvantages of such strings are that it is impossible to use the byte <code>0</code> in the string, i.e. it is not suitable for binary data, the resource management/ownership strategy is unclear, and the main disadvantage is that the length of the string has to be calculated each time, iterating over all its characters.</p>
@@ -124,12 +124,12 @@ What was and is</h2>
 </div><!-- fragment --><p>With such a string, many algorithms are significantly optimized. For example, when comparing two strings for equality, we may not even start comparing their characters if the lengths of the strings are not equal. Moreover, this data is absolutely sufficient for all methods that do not modify the string. Also note that such an object on modern 64-bit architectures is perfectly passed to functions by value – both of its fields fit into registers (well, except for Windows), which makes it easier for the compiler optimizer to work.</p>
 <p>Meanwhile, such a solution only made it into the standard in C++17, in the form of <code>std::string_view</code>. Apparently, only then could the committee be convinced that strings are different, and using only one universal object for strings – at the very least, can lead to a decrease in performance, and also violates the principle of "don't pay for what you
     don't use". Why are "strings different" and why is one type of string not enough for us, we will consider just below.</p>
-<h3><a class="anchor" id="autotoc_md45"></a>
+<h3><a class="anchor" id="autotoc_md59"></a>
 Resources</h3>
 <p>And the next question that arises with strings is resource ownership. Almost every major framework solved this problem on its own, inventing its own bicycles. We have <code>std::string</code>, in QT we have <code>QString</code>, in MFC - <code>CString</code>, in ATL - <code>CAtlString</code>, there are own strings in Folly, in general, "thousands of them", any game engine starts with writing its own strings.</p>
 <p>Many of these implementations in the aspect of resource management used the approach to improve performance <b>COW</b> – “Copy On Write”. In this case, the string object referred to a buffer shared between several objects with the characters of the string and a reference counter to this buffer, which allowed you to quickly create a copy of the string, and actually copy the characters only when it is modified.</p>
 <p>But they all coincided in one thing – the string was always assumed to be mutable, that is, we can modify the characters in the string buffer.</p>
-<h3><a class="anchor" id="autotoc_md46"></a>
+<h3><a class="anchor" id="autotoc_md60"></a>
 Mutability / immutability</h3>
 <p>Because of this, the <b>COW</b> approach died by C++11: for each operation that could modify the characters of the string, it was necessary to check whether we are referring to a shared buffer, and if so, copy the characters to another buffer. In a multithreaded environment, you also need to check whether you now need to free the old buffer, and of course, all this is smeared with locks or atomics, which is also not free. Therefore, starting with C++11, <code>std::string</code> does not use <b>COW</b>, and each copying of a string object also leads to copying all the characters of the string to another buffer.</p>
 <p>Naturally, each new buffer requires memory allocation, which they are trying to slightly optimize through <b>SSO</b> – “Small String Optimization”, when the string object contains a small buffer inside itself and the characters of short strings are located directly in it. But this already depends on the implementation: in some libraries they place up to 15 bytes in the string object, in some up to 23. However, this optimization is also a double-edged sword, and in various implementations it can complicate the movement of a string - if it stores a pointer to its internal buffer, it will have to be adjusted.</p>
@@ -146,7 +146,7 @@ Mutability / immutability</h3>
 <div class="line">}</div>
 </div><!-- fragment --><p> However, the generated machine code is significantly transformed, reaching the level of manual C-code – there it is simply compared that end – start == 5 and then a piece of the initial buffer is compared via memcmp with the string "hello" (with -O2 with constants 1819043176 ('hell') and 111 ('o')). No creation of a temporary object, no copying of bytes, no destructor, no stack unwinding for exceptions. You can verify this at <a href="https://godbolt.org/z/9fo188e7c">https://godbolt.org/z/9fo188e7c</a></p>
 <p>It would seem, well, <code>string_view</code> appeared in C++17, please, use it in the parameters of your functions instead of <code>const std::string&amp;</code>, and there will be happiness. But there is also a nuance here – everything works fine, as long as we don’t need to pass the string to a third-party C-API: string_view does not give guarantees of null-termination of the string, therefore its data() cannot be passed to a third-party C-API, and therefore you will still have to copy it to <code>std::string</code> first. And since <code>std::string</code> is needed, then it is more optimal to make <code>const std::string&amp;</code> the parameter of the function and further down the chain, all parameters will again become <code>const std::string&amp;</code>.</p>
-<h3><a class="anchor" id="autotoc_md47"></a>
+<h3><a class="anchor" id="autotoc_md61"></a>
 String concatenation</h3>
 <p>Next, after initializing a string, the most frequent mutable operation with them is most likely string concatenation, either in the form of simply adding strings, or adding a string to a string. And it is she who can easily cause both suboptimal performance with illiterate use, and memory overhead, even with competent use.</p>
 <p>Consider a simple code ( <a href="https://godbolt.org/z/odx7W1Pv7">https://godbolt.org/z/odx7W1Pv7</a> ) </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -180,39 +180,42 @@ String concatenation</h3>
 <li>Well, and there are questions to <code>std::string</code> that despite the fact that this is a class for strings, in fact, for working with strings it has an extremely meager functionality compared to what they are used to in other languages – for example, there is no replacement of substrings by a pattern (in other languages this is usually replace, but in C++ this function does something completely different), trim, split, join, upper, lower, etc. These functions have to be written by yourself every time, and it is not a fact that everyone will be able to do this optimally.</li>
 </ul>
 <p>I hope that after this small introduction you will better understand what problems I solved with my string library and how.</p>
-<h2><a class="anchor" id="autotoc_md48"></a>
+<h2><a class="anchor" id="autotoc_md62"></a>
 Simstr library</h2>
 <p>Actually, you can't say that "I reinvented my implementation of the class for strings." As I showed earlier, it is difficult, or even impossible, to write one single string class that is well suited for all scenarios of use. That is why I don’t have a string class, but a string library, which contains several different string types, from simpler to more complex, each of which has its own strengths and weaknesses, and the user needs to competently approach the question of which of these classes should be used in which case.</p>
 <p>I started developing the library itself little by little back in 2011-2012, when we already had move semantics, but not yet there was std::string_view. However, now the minimum standard version for the library to work is: <b>C++20</b> – concepts and &lt;format&gt; are used.</p>
 <p>First, I will talk about the library classes for the strings themselves, and then about how the string concatenation problem is optimally solved in it.</p>
 <p>Several general points:</p><ul>
-<li>All classes for working with strings are templated by the type of characters, but it is assumed that the characters can be char, char16_t, char32_t, wchar_t.</li>
+<li>All classes for working with strings are templated by the type of characters, but it is assumed that the characters can be <code>char</code>, <code>char8_t</code>, <code>char16_t</code>, <code>char32_t</code>, <code>wchar_t</code>.</li>
 <li>All strings have an explicit length.</li>
 <li>The string owner classes store them with a trailing zero at the end, which is not included in the length of the string.</li>
 <li>The string itself can contain zero characters, all algorithms work only through the length of the string, without paying attention to them.</li>
-<li>The string owner classes can be initialized with strings of another character type, performing conversion between UTF-8, UTF-16, UTF-32.</li>
+<li>The library considers different string types to be "compatible" if they have the same character size. That is, <code>char</code> and <code>char8_t</code> are always identical, and also in Linux <code>wchar_t</code> and <code>char32_t</code> are identical, and in Windows <code>wchar_t</code> and <code>char16_t</code>.</li>
+<li>The string owner classes can be initialized with strings of another character type, performing conversion between UTF-8, UTF-16, UTF-32. Moreover, if the strings are of different but compatible types, they are simply copied without conversion.</li>
 <li>Built-in tables for the first plane of Unicode are used to change the case of characters and compare strings case-insensitively (up to 0xFFFF). Strings are considered to be represented in UTF-8, UTF-16, UTF-32 encoding, respectively. However, string normalization is not done and situations where changing the case of a character leads to a change in their number are not handled. That is, the case conversion of characters corresponds to <code>std::towupper</code>, <code>std::towlower</code> for the unicode locale, only faster and can work with any type of characters. If you need strict work with unicode, use other tools, such as ICU.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md49"></a>
+<h3><a class="anchor" id="autotoc_md63"></a>
 String classes.</h3>
-<h4><a class="anchor" id="autotoc_md50"></a>
+<h4><a class="anchor" id="autotoc_md64"></a>
 The first simplest string class is called, of course, <code>simple_str</code> :)</h4>
 <p>(<a class="el" href="structsimstr_1_1simple__str.html" title="The simplest immutable non-owning string class.">simstr::simple_str</a>)</p>
 <p>The class simply represents a pointer to the beginning of a constant string and its length, in fact the same as <code>std::string_view</code>. It is intended for working with immutable strings, not owning them, that is, you must take care that the real string, represented through <code>simple_str</code> – is alive during its use.</p>
 <p>Implements all string methods that do not modify the string.</p>
 <p>Aliases:</p><ul>
 <li><code>ssa</code> for simple_str&lt;char&gt;</li>
+<li><code>ssb</code> for simple_str&lt;char8_t&gt;</li>
 <li><code>ssu</code> for simple_str&lt;char16_t&gt;</li>
 <li><code>ssw</code> for simple_str&lt;wchar_t&gt;</li>
 <li><code>ssuu</code> for simple_str&lt;char32_t&gt;</li>
 </ul>
 <p>It is used mainly for passing strings as a parameter to functions that do not modify the passed string, instead of <code>const std::string&amp;</code>, as well as for local variables when working with parts of strings.</p>
-<h4><a class="anchor" id="autotoc_md51"></a>
+<h4><a class="anchor" id="autotoc_md65"></a>
 The second class is <code>simple_str_nt</code></h4>
 <p>(<a class="el" href="structsimstr_1_1simple__str__nt.html" title="A class that claims to refer to a null-terminated string.">simstr::simple_str_nt</a>)</p>
 <p>In terms of structure and purpose, it coincides with <code>simple_str</code>, but guarantees null-termination of the string. That is, if the function needs to pass the passed parameter further as a C-string to some API without changes, it should use the <code>simple_str_nt</code> type for the parameter. All classes of owning strings (<a class="el" href="classsimstr_1_1sstring.html" title="Immutable owning string class.">simstr::sstring</a>, <a class="el" href="classsimstr_1_1lstring.html" title="The mutable, owning string class. Contains an internal buffer for text of a given size.">simstr::lstring</a>) can be converted to <code>simple_str_nt</code>, since they store strings with a trailing zero. This allows you to write functions with a single parameter type that accepts any type of owning string objects as input.</p>
 <p>Aliases:</p><ul>
 <li><code>stra</code> for simple_str_nt&lt;char&gt;</li>
+<li><code>strb</code> for simple_str_nt&lt;char8_t&gt;</li>
 <li><code>stru</code> for simple_str_nt&lt;char16_t&gt;</li>
 <li><code>strw</code> for simple_str_nt&lt;wchar_t&gt;</li>
 <li><code>struu</code> for simple_str_nt&lt;char32_t&gt;</li>
@@ -220,13 +223,14 @@ The second class is <code>simple_str_nt</code></h4>
 <p>Can be initialized with string literals: </p><div class="fragment"><div class="line">stra text = <span class="stringliteral">&quot;Text&quot;</span>;</div>
 </div><!-- fragment --><p> In this case, the length is calculated immediately at compile time. Similarly, <code>simple_str_nt</code> is created using <code>operator""_ss</code>:</p>
 <div class="fragment"><div class="line">stringa result = <span class="stringliteral">&quot;Count: &quot;</span>_ss + count;</div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md52"></a>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md66"></a>
 Sstring class (shared string).</h4>
 <p>(<a class="el" href="classsimstr_1_1sstring.html" title="Immutable owning string class.">simstr::sstring</a>)</p>
 <p>A class that can store an immutable string. That is, you can only assign a string to it entirely, you cannot modify the characters of the string.</p>
 <p>Owns the string, manages the memory for the characters of the string. Stores a trailing zero with the strings, and can be a source for <code>simple_str_nt</code>, for passing to C-API. Like <code>simple_str</code>, it implements all methods that do not modify the string.</p>
 <p>Aliases:</p><ul>
 <li><code>stringa</code> for sstring&lt;char&gt;</li>
+<li><code>stringb</code> for sstring&lt;char8_t&gt;</li>
 <li><code>stringu</code> for sstring&lt;char16_t&gt;</li>
 <li><code>stringw</code> for sstring&lt;wchar_t&gt;</li>
 <li><code>stringuu</code> for sstring&lt;char32_t&gt;</li>
@@ -250,7 +254,7 @@ Sstring class (shared string).</h4>
 <li><code>stringu</code> – class 24 bytes, SSO up to 11 characters.</li>
 <li><code>stringuu</code> – class 24 bytes, SSO up to 5 characters.</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md53"></a>
+<h4><a class="anchor" id="autotoc_md67"></a>
 Class lstring&lt;K, N, forShared&gt; (local string)</h4>
 <p>(<a class="el" href="classsimstr_1_1lstring.html" title="The mutable, owning string class. Contains an internal buffer for text of a given size.">simstr::lstring</a>)</p>
 <p>A class that stores a string and allows it to be modified. Owns the string, manages the memory for the characters of the string. Stores a trailing zero with the strings, and can be a source for <code>simple_str_nt</code>, for passing to C-API. Like all other classes, it implements all methods that do not modify the string.</p>
@@ -258,14 +262,16 @@ Class lstring&lt;K, N, forShared&gt; (local string)</h4>
 <p>If <code>forShare</code> == true and the characters do not fit into the local buffer, then a dynamic buffer is created with additional space, so that it matches the structure of the <code>sstring</code> buffer. Then, when moving <code>lstring</code> to <code>sstring</code> – only the pointer will move to the buffer, without unnecessary copying of characters.</p>
 <p>This class is convenient for working with strings as a local variable on the stack. Usually we assume the approximate size of the strings we will be working with, and we can create a local string with a buffer on the stack, and work with it. At the same time, without fear of buffer overflow, since in this case the string will switch to a dynamic buffer.</p>
 <p>Aliases:</p><ul>
-<li><code>lstringa&lt;N=16&gt;</code> for lsrting&lt;char, N, false&gt;</li>
-<li><code>lstringu&lt;N=16&gt;</code> for lsrting&lt;char16_t, N, false&gt;</li>
-<li><code>lstringw&lt;N=16&gt;</code> for lsrting&lt;wchar_t, N, false&gt;</li>
-<li><code>lstringuu&lt;N=16&gt;</code> for lsrting&lt;char32_t, N, false&gt;</li>
-<li><code>lstringsa&lt;N=16&gt;</code> for lsrting&lt;char, N, true&gt;</li>
-<li><code>lstringsu&lt;N=16&gt;</code> for lsrting&lt;char16_t, N, true&gt;</li>
-<li><code>lstringsw&lt;N=16&gt;</code> for lsrting&lt;wchar_t, N, true&gt;</li>
-<li><code>lstringsuu&lt;N=16&gt;</code> for lsrting&lt;char32_t, N, true&gt;</li>
+<li><code>lstringa&lt;N=15&gt;</code> for lsrting&lt;char, N, false&gt;</li>
+<li><code>lstringb&lt;N=15&gt;</code> for lsrting&lt;char8_t, N, false&gt;</li>
+<li><code>lstringu&lt;N=15&gt;</code> for lsrting&lt;char16_t, N, false&gt;</li>
+<li><code>lstringw&lt;N=15&gt;</code> for lsrting&lt;wchar_t, N, false&gt;</li>
+<li><code>lstringuu&lt;N=15&gt;</code> for lsrting&lt;char32_t, N, false&gt;</li>
+<li><code>lstringsa&lt;N=15&gt;</code> for lsrting&lt;char, N, true&gt;</li>
+<li><code>lstringsb&lt;N=15&gt;</code> for lsrting&lt;char8_t, N, true&gt;</li>
+<li><code>lstringsu&lt;N=15&gt;</code> for lsrting&lt;char16_t, N, true&gt;</li>
+<li><code>lstringsw&lt;N=15&gt;</code> for lsrting&lt;wchar_t, N, true&gt;</li>
+<li><code>lstringsuu&lt;N=15&gt;</code> for lsrting&lt;char32_t, N, true&gt;</li>
 </ul>
 <p>A small example of use with explanations: </p><div class="fragment"><div class="line"><span class="preprocessor">#ifdef _WIN32</span></div>
 <div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> path_separator = <span class="charliteral">&#39;\\&#39;</span>;</div>
@@ -349,15 +355,16 @@ Class lstring&lt;K, N, forShared&gt; (local string)</h4>
 <div class="line"><span class="comment">    or one, if the resulting string is longer than 23 characters, while this allocation will be immediately of the required size.</span></div>
 <div class="line"><span class="comment">    */</span></div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___str_exprs_html_gab54b64072b9629a32837d9197dfe51b5"><div class="ttname"><a href="group___str_exprs.html#gab54b64072b9629a32837d9197dfe51b5">simstr::e_c</a></div><div class="ttdeci">constexpr expr_pad&lt; K &gt; e_c(size_t l, K s)</div><div class="ttdoc">Generates a string of l characters s of type K.</div><div class="ttdef"><b>Definition</b> strexpr.h:813</div></div>
-<div class="ttc" id="astructsimstr_1_1simple__str_html_a574c8578274b5cc7a3e9507e8669d343"><div class="ttname"><a href="structsimstr_1_1simple__str.html#a574c8578274b5cc7a3e9507e8669d343">simstr::simple_str::length</a></div><div class="ttdeci">constexpr size_t length() const noexcept</div><div class="ttdoc">Get the length of the string.</div><div class="ttdef"><b>Definition</b> sstring.h:2268</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gab54b64072b9629a32837d9197dfe51b5"><div class="ttname"><a href="group___str_exprs.html#gab54b64072b9629a32837d9197dfe51b5">simstr::e_c</a></div><div class="ttdeci">constexpr expr_pad&lt; K &gt; e_c(size_t l, K s)</div><div class="ttdoc">Generates a string of l characters s of type K.</div><div class="ttdef"><b>Definition</b> strexpr.h:918</div></div>
+<div class="ttc" id="astructsimstr_1_1simple__str_html_a574c8578274b5cc7a3e9507e8669d343"><div class="ttname"><a href="structsimstr_1_1simple__str.html#a574c8578274b5cc7a3e9507e8669d343">simstr::simple_str::length</a></div><div class="ttdeci">constexpr size_t length() const noexcept</div><div class="ttdoc">Get the length of the string.</div><div class="ttdef"><b>Definition</b> sstring.h:406</div></div>
 </div><!-- fragment --><p>In this example, you probably noticed how strings are concatenated and wondered – how was the length of the entire result calculated with two additions in order to allocate the necessary space at once, without intermediate buffers?</p>
 <p>The answer to this question:</p>
-<h3><a class="anchor" id="autotoc_md54"></a>
+<h3><a class="anchor" id="autotoc_md68"></a>
 String Expressions</h3>
 <p>The fact is that there is no addition of string objects as such in the library. Addition is performed for "string expressions".</p>
 <p>A <em>string expression</em> is any object of arbitrary type that has <code>length</code> and <code>place</code> functions. The <code>length</code> function returns the length of the string, and the <code>place</code> function places the characters of the string into the buffer passed to it.</p>
 <p>Any owning string (<a class="el" href="classsimstr_1_1sstring.html" title="Immutable owning string class.">simstr::sstring</a>, <a class="el" href="classsimstr_1_1lstring.html" title="The mutable, owning string class. Contains an internal buffer for text of a given size.">simstr::lstring</a>) can be initialized with a string expression — it requests its length, allocates space for storing characters, and passes this space to the string expression, calling its place function.</p>
+<p>In addition, all string expressions included in <code>simstr</code> can be converted to standard strings (<code>std::basic_string</code>) compatible character types, which allows you to use fast concatenation where replacing <code>std::string</code> is not yet possible. Compatible character types are those that match in size. To get a standard string before C++23, using <code>resize</code>, and then fill it using <code>data()</code>, starting with C++23 the more optimal <code>resize_and_overwrite</code> is used.</p>
 <p>A template addition function is defined for string expressions: </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;StrExpr A, StrExprForType&lt;<span class="keyword">typename</span> A::symb_type&gt; B&gt;</div>
 <div class="line"><span class="keyword">inline</span> <span class="keyword">auto</span> operator + (<span class="keyword">const</span> A&amp; a, <span class="keyword">const</span> B&amp; b) {</div>
 <div class="line">    <span class="keywordflow">return</span> strexprjoin&lt;A, B&gt;{a, b};</div>
@@ -372,48 +379,60 @@ String Expressions</h3>
 <div class="line">    <span class="keyword">constexpr</span> symb_type* place(symb_type* p) <span class="keyword">const</span> <span class="keyword">noexcept</span> { <span class="keywordflow">return</span> b.place(a.place(p)); }</div>
 <div class="line">};</div>
 </div><!-- fragment --><p> Thus, the addition operation of string expressions creates an object that is also a string expression, to which the next addition operation can also be applied, and which recursively stores references to the component parts, each of which knows its size and knows how to place itself in the result buffer. And so on, to each resulting string expression, you can reapply <code>operator +</code>, forming a chain of several string expressions, and eventually "materialize" the last resulting object, which first calculates the size of the entire total memory for the final result, and then places the nested subexpressions into one buffer.</p>
+<p>The addition operation of string expressions allows you to concatenate string expressions of different but compatible types. That is, in one expression you can mix <code>""</code> and <code>u8""</code>, in Linux <code>L""</code> and <code>U""</code>, in Windows <code>L""</code> and <code>u""</code> character types. There are examples in <code>tests\test_str.cpp TEST(SimStr, StrPrintfU8)</code>.</p>
 <p>All string types in the library are themselves string expressions, that is, they can serve as terms in concatenations of string expressions.</p>
 <p>Also, <code>operator+</code> is defined for string expressions and string literals, string expressions and numbers (numbers are converted to decimal representation), and you can add the desired types yourself.</p>
 <p>Example: </p><div class="fragment"><div class="line">stringa text = header + <span class="stringliteral">&quot; count=&quot;</span> + count + <span class="stringliteral">&quot;, done&quot;</span>;</div>
-</div><!-- fragment --><p>There are several types of string expressions "out of the box" for performing various operations on strings:</p>
-<h4><a class="anchor" id="autotoc_md55"></a>
+</div><!-- fragment --><p>For standard strings (<code>std::basic_string</code> and <code>std::basic_string_view</code>) addition operators with strings have also been made expressions, so variables of these types also directly participate in concatenation operations. However, standard strings can only participate directly in string expressions when the other operand is also a string expression. If the other operand is not a string expression, use a unary <code>operator+</code> before standard strings to turn <code>std::basic_string</code> or <code>std::basic_string_view</code> to a string expression.</p>
+<p>Example: </p><div class="fragment"><div class="line">std::string make_text(<span class="keyword">const</span> std::string&amp; text, std::string_view what, <span class="keywordtype">int</span> count) {</div>
+<div class="line">    <span class="comment">//     + turns text into a string expression, and then they are added together</span></div>
+<div class="line">    <span class="keywordflow">return</span> +text + <span class="stringliteral">&quot; &quot;</span> + count + <span class="stringliteral">&quot; &quot;</span> + what + e_if(count &gt; 1, <span class="stringliteral">&quot;s&quot;</span>);</div>
+<div class="line">    <span class="comment">//                                 what participates directly as an operand with a string expression</span></div>
+<div class="line">}</div>
+<div class="line">std::string make_answer(<span class="keyword">const</span> std::string&amp; text, std::string_view what, <span class="keywordtype">int</span> count) {</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Answer is: &quot;</span> + +text + <span class="stringliteral">&quot; &quot;</span> + count + <span class="stringliteral">&quot; &quot;</span> + what + e_if(count &gt; 1, <span class="stringliteral">&quot;s&quot;</span>);</div>
+<div class="line">    <span class="comment">//                     + turns text into a string expression, and it can be added to the previous string literal</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p> That is, the unary <code>+</code> is only needed somewhere at the beginning of the expression if the other operand is not a string expression.</p>
+<p>There are several types of string expressions "out of the box" for performing various operations on strings:</p>
+<h4><a class="anchor" id="autotoc_md69"></a>
 expr_spaces&lt;CharacterType, NumberOfCharacters, Symbol = ' '&gt;{}</h4>
 <p>Returns a string of length NumberOfCharacters, filled with the specified character. The number of characters and the symbol are compile-time constants. For some cases, there is a shorthand notation: </p><pre class="fragment">e_spca(NumberOfCharacters) - string of char spaces
 e_spcw(NumberOfCharacters) - string of w_char spaces
-</pre><h4><a class="anchor" id="autotoc_md56"></a>
+</pre><h4><a class="anchor" id="autotoc_md70"></a>
 expr_pad&lt;CharacterType&gt;{NumberOfCharacters, Symbol = ' '}</h4>
 <p>Returns a string of length NumberOfCharacters, filled with the specified character. The number of characters and the symbol can be specified at runtime. Shorthand notation: </p><pre class="fragment">e_c(NumberOfCharacters, Symbol)
-</pre><h4><a class="anchor" id="autotoc_md57"></a>
+</pre><h4><a class="anchor" id="autotoc_md71"></a>
 e_repeat{Str, count}</h4>
 <p>Generates a repetition of a string literal or expression <code>Str</code> <code>count</code> times. </p><pre class="fragment">e_repeat("aa", 10);
-</pre><h4><a class="anchor" id="autotoc_md58"></a>
+</pre><h4><a class="anchor" id="autotoc_md72"></a>
 e_choice(bool Condition, StrExpr1, StrExpr2)</h4>
 <p>If Condition == true, the result will be StrExpr1, otherwise StrExpr2.</p>
-<h4><a class="anchor" id="autotoc_md59"></a>
+<h4><a class="anchor" id="autotoc_md73"></a>
 e_if(bool Condition, StrExpr1)</h4>
 <p>If Condition == true, the result will be StrExpr1, otherwise an empty string.</p>
-<h4><a class="anchor" id="autotoc_md60"></a>
+<h4><a class="anchor" id="autotoc_md74"></a>
 expr_num&lt;CharacterType&gt;(Integer)</h4>
 <p>Converts a number to decimal representation. Rarely used, since the "+" operator is overloaded for string expressions and numbers, and the number can simply be written as <code>text + number</code>;</p>
-<h4><a class="anchor" id="autotoc_md61"></a>
+<h4><a class="anchor" id="autotoc_md75"></a>
 expr_real&lt;CharacterType&gt;(RealNumber)</h4>
 <p>converts a number to decimal representation. Rarely used, since the "+" operator is overloaded for string expressions and numbers, and the number can simply be written as <code>text + number</code>;</p>
-<h4><a class="anchor" id="autotoc_md62"></a>
+<h4><a class="anchor" id="autotoc_md76"></a>
 e_join&lt;bool AfterLast = false, bool OnlyNotEmpty = false&gt;&gt;(container, "Separator")</h4>
 <p>Concatenates all strings in the container, using a separator. If AfterLast == true, then the separator is added after the last element of the container as well, otherwise only between elements. If OnlyNotEmpty == true, then empty strings are skipped without adding a separator.</p>
-<h4><a class="anchor" id="autotoc_md63"></a>
+<h4><a class="anchor" id="autotoc_md77"></a>
 e_repl(OriginalString, "Search", "Replace")</h4>
 <p>Replaces occurrences of "Search" in the original string with "Replace". Search and replace patterns are compile-time string literals.</p>
-<h4><a class="anchor" id="autotoc_md64"></a>
+<h4><a class="anchor" id="autotoc_md78"></a>
 expr_replaced&lt;CharacterType&gt;{OriginalString, Search, Replace}</h4>
 <p>Replaces occurrences of Search in the original string with Replace. Search and replace patterns can be any string objects at runtime.</p>
-<h4><a class="anchor" id="autotoc_md65"></a>
+<h4><a class="anchor" id="autotoc_md79"></a>
 empty_expr&lt;CharacterType&gt;</h4>
 <p>Returns an empty string. Abbreviated notation — eea, eeu, eew, eeuu. Used if the string formation starts with a number and a string literal: </p><div class="fragment"><div class="line">str = eea + count + <span class="stringliteral">&quot; times.&quot;</span>;</div>
 </div><!-- fragment --><p> since the addition operator is only defined for adding a string expression and a number. I also note that there is <code>operator""_ss</code>, which turns a string literal into a <code>simple_str_nt</code> object, which is already a string expression: </p><div class="fragment"><div class="line">str = <span class="stringliteral">&quot;Count = &quot;</span>_ss + count;</div>
 <div class="line">...</div>
 <div class="line">str = count + <span class="stringliteral">&quot; times.&quot;</span>_ss;</div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md66"></a>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md80"></a>
 Your own string expressions</h4>
 <p>You can create your own string expression types to optimally form strings for your specific purposes and algorithms. To do this, simply create a type with <code>length</code>, <code>place</code> and <code>typename symb_type</code> methods. Examples of creation and use from real projects:</p>
 <div class="fragment"><div class="line"><span class="comment">/* Form a string in JSON format, in 16-bit characters */</span></div>
@@ -592,7 +611,7 @@ Your own string expressions</h4>
 <div class="line">        <span class="keywordflow">break</span>;</div>
 <div class="line">......</div>
 </div><!-- fragment --><p>ATTENTION: usually the fields in string expression objects are references to the source data. And these references almost always lead to local or temporary objects. Therefore, it is extremely risky to return string expressions from functions — you need to check a hundred times that they do not contain references to local or temporary variables. Make it a rule — you can easily pass string expressions to functions, and it is dangerous to return them from functions. It is better to materialize a string expression into a string object containing the final string when returning. If desired, the type of the returned string can be specified by a template parameter.</p>
-<h3><a class="anchor" id="autotoc_md67"></a>
+<h3><a class="anchor" id="autotoc_md81"></a>
 Class chunked_string_builder</h3>
 <p>Designed for concatenating multiple strings. When you need to sequentially form a long text from many small pieces (for example, you are forming an html response etc.) - sequentially adding everything to one string object is extremely suboptimal - there will be many reallocations and copying of already accumulated characters. In this case, it is convenient to use chunked_string_builder - all it can do is add a string to the accumulated characters. However, it does this not in a single sequential memory buffer, but in separate buffers, no less than the specified alignment. When filling the next buffer, it simply creates another buffer and continues to add data to it.</p>
 <p>That is, suppose you set the alignment to 1024. Added several strings, filled the buffer with 100 characters. And you add a string of 3000 characters long. In this case, 924 characters will be copied to the first buffer, filling it to the end. For the remaining 2076, a buffer of 3072 characters will be created, and they will be copied into it, leaving space for 996 characters in it. Thus, each buffer is sequentially filled to the end and has a size that is a multiple of the specified alignment. This avoids reallocations and copying of processed characters.</p>

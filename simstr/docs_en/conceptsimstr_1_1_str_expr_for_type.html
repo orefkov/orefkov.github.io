@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.3.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.4.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -107,25 +107,26 @@ $(function(){initNavTree('conceptsimstr_1_1_str_expr_for_type.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
-<p>The concept of a string expression of a given character type.  
+<p>The concept of a string expression compatible with a given character type.  
 <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="strexpr_8h_source.html">strexpr.h</a>&gt;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> A, <span class="keyword">typename</span> K&gt;</div>
-<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a> =  <a class="code hl_concept" href="conceptsimstr_1_1_str_expr.html">StrExpr&lt;A&gt;</a> &amp;&amp; std::is_same_v&lt;K, typename A::symb_type&gt;</div>
-<div class="ttc" id="aconceptsimstr_1_1_str_expr_for_type_html"><div class="ttname"><a href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a></div><div class="ttdoc">The concept of a string expression of a given character type.</div><div class="ttdef"><b>Definition</b> strexpr.h:339</div></div>
-<div class="ttc" id="aconceptsimstr_1_1_str_expr_html"><div class="ttname"><a href="conceptsimstr_1_1_str_expr.html">simstr::StrExpr</a></div><div class="ttdoc">Concept of &quot;String Expressions&quot;.</div><div class="ttdef"><b>Definition</b> strexpr.h:321</div></div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a> =  <a class="code hl_concept" href="conceptsimstr_1_1_str_expr.html">StrExpr&lt;A&gt;</a> &amp;&amp; <a class="code hl_variable" href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27">is_equal_str_type_v&lt;K, typename A::symb_type&gt;</a></div>
+<div class="ttc" id="aconceptsimstr_1_1_str_expr_for_type_html"><div class="ttname"><a href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a></div><div class="ttdoc">The concept of a string expression compatible with a given character type.</div><div class="ttdef"><b>Definition</b> strexpr.h:413</div></div>
+<div class="ttc" id="aconceptsimstr_1_1_str_expr_html"><div class="ttname"><a href="conceptsimstr_1_1_str_expr.html">simstr::StrExpr</a></div><div class="ttdoc">Concept of &quot;String Expressions&quot;.</div><div class="ttdef"><b>Definition</b> strexpr.h:395</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga4cc5f9a930baa653948843b0d2284b27"><div class="ttname"><a href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27">simstr::is_equal_str_type_v</a></div><div class="ttdeci">constexpr bool is_equal_str_type_v</div><div class="ttdoc">Checks whether two types are compatible string types.</div><div class="ttdef"><b>Definition</b> strexpr.h:136</div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The concept of a string expression of a given character type. </p>
+<div class="textblock"><p>The concept of a string expression compatible with a given character type. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">A</td><td>- type being checked </td></tr>
-    <tr><td class="paramname">K</td><td>- character type to be checked</td></tr>
+    <tr><td class="paramname">A</td><td>- type being checked. </td></tr>
+    <tr><td class="paramname">K</td><td>- character type to be checked.</td></tr>
   </table>
   </dd>
 </dl>
-<p>Used to set restrictions on a string expression by character type </p>
+<p>Used to set restrictions on a string expression by character type. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

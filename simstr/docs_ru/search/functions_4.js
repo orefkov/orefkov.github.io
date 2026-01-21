@@ -23,6 +23,6 @@ var searchData=
   ['equal_20',['equal',['../classsimstr_1_1str__src__algs.html#a3b9b0cb780c465cb9b6bd925d712ff07',1,'simstr::str_src_algs']]],
   ['equal_5fia_21',['equal_ia',['../classsimstr_1_1str__src__algs.html#afa9fca49d189fd0d760ffe8aed1485f1',1,'simstr::str_src_algs']]],
   ['equal_5fiu_22',['equal_iu',['../classsimstr_1_1str__algs.html#adbf0990c46a280cd363da46bef12e02f',1,'simstr::str_algs']]],
-  ['expr_5freplace_5fsymbols_23',['expr_replace_symbols',['../structsimstr_1_1expr__replace__symbols.html#a5e561adcb105cfbc2819e0c580d80d0e',1,'simstr::expr_replace_symbols']]],
+  ['expr_5freplace_5fsymbols_23',['expr_replace_symbols',['../structsimstr_1_1expr__replace__symbols.html#a1fac129651136763915ab5cba6dd26dd',1,'simstr::expr_replace_symbols']]],
   ['expr_5freplaced_24',['expr_replaced',['../structsimstr_1_1expr__replaced.html#ab7a7dfe171a1c7060837f6d700984195',1,'simstr::expr_replaced']]]
 ];

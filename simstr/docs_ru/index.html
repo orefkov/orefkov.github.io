@@ -108,78 +108,236 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md0"></a>
 simstr - библиотека строковых объектов и функций</h1>
+<h2>Ускорь работу со строками в 2-10 раз!</h2>
 <p><a href="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml"><img src="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml/badge.svg" alt="CMake on multiple platforms" style="pointer-events: none;" class="inline"/></a></p>
 <p>Версия 1.4.0.</p>
 <p><span class="obfuscator"><a href="readme.md">On English | По-английски</a></span></p>
 <p>В этой библиотеке содержится современная реализация нескольких видов строковых объектов и различных алгоритмов для работы со строками.</p>
 <p>Цель библиотеки - сделать работу со строками в С++ такой же простой и лёгкой, как во множестве других языков, особенно скриптовых, но при этом сохранив оптимальность и производительность на уровне С и C++, и даже улучшив их.</p>
-<p>Не секрет, что работа со строками в С++ зачастую доставляет боль. Класс <code>std::string</code> часто неудобен либо неэффективен. Многих функций, обычно необходимых при работе со строками, просто нет, и их каждому приходится писать самому.</p>
+<p>Не секрет, что работа со строками в С++ зачастую доставляет боль. Класс <code>std::string</code> часто неудобен либо неэффективен. Многих функций, обычно необходимых при работе со строками, просто нет, и их каждому приходится писать самому. Даже элементарно конкатенировать <code>std::string</code> и <code>std::string_view</code> стало возможно только с C++26. Именно поэтому я начал примерно в 2012 году создавать для себя эту библиотеку, и теперь готов поделится ею со всеми C++ разработчиками.</p>
 <p>Эта библиотека не делалась как универсальный комбайн, который "может всё", я реализовывал то, что мне приходилось использовать в работе, стараясь сделать это наиболее эффективным способом, и скромно надеюсь, что кое-что у меня получилось и пригодится другим людям, либо напрямую, либо как источник идей.</p>
-<p>Библиотека не претендует на роль "поменял хедер и всё заработало лучше". Многие методы я старался делать совместимыми с <code>std::string</code> и <code>std::string_view</code>, но особо с этим не заморачивался. Переписывание старого кода на работу с simstr потребует некоторых усилий, но уверяю, что они окупятся. А новый код писать с её применением легко и доставляет удовольствие :)</p>
-<p>Основное отличие simstr от std::string - для работы со строками используется не единый универсальный класс, а несколько видов объектов, каждый из которых хорош для своих целей, и при этом хорошо взаимодействующих друг с другом. Если вы активно использовали std::string_view и понимали, в чём его преимущество и недостатки по сравнению с std::string, то подход simstr вам также будет понятен.</p>
+<p>Библиотека содержит две части:</p><ul>
+<li>Реализация <a href="https://orefkov.github.io/simstr/docs_ru/group___str_exprs.html#details"><em>"Строковых выражений"</em></a> и алгоритмов работы с константными строками.\ Для использования этой части достаточно просто взять файл <code>"include/simstr/strexpr.h"</code> и написать в своём коде <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;путь/к файлу/strexpr.h&quot;</span></div>
+</div><!-- fragment --> Это позволит вам для стандартных строковых типов (<code>std::basic_string</code>, <code>std::basic_string_view</code>) использовать мощные и быстрые <em>"строковые выражения"</em> для конкатенации и построения строк, а также упрощенные варианты классов <code>simple_str</code> и <code>simple_str_nt</code>, которые реализуют все те строковые алгоритмы библиотеки, которые не требуют хранения или модификации строк. Так как это header-only часть, она не включает в себя работу с UTF-кодировками и упрощённый Unicode.</li>
+<li>Полная версия, требующая подключения всей библиотеки (<code>"include/simstr/sstring.h"</code>), добавляет свои строковые типы с возможностями хранения и модификации строк, работает с UTF-кодировками и упрощённым Unicode.</li>
+</ul>
+<p>Библиотека не претендует на роль "поменял хедер и всё заработало лучше" - она прекрасно уживается вместе со стандартными строками и не меняет поведение уже существующего кода, работающего с ними. Многие методы в ней я старался делать совместимыми с <code>std::string</code> и <code>std::string_view</code>, но особо с этим не заморачивался. Переписывание вашего кода на работу с <code>simstr</code> потребует некоторых усилий, но уверяю, что они окупятся. А благодаря совместимости со стандартными строками эту работу можно делать поэтапно, небольшими кусками. Новый же код работы со строками создавать с её применением легко и доставляет удовольствие :)</p>
+<p>Основное отличие <code>simstr</code> от <code>std::string</code> - для работы со строками используется не единый универсальный класс, а несколько видов объектов, каждый из которых хорош для своих целей, и при этом хорошо взаимодействующих друг с другом. Если вы активно использовали <code>std::string_view</code> и понимали, в чём его преимущества и недостатки по сравнению с <code>std::string</code>, то подход <code>simstr</code> вам также будет понятен.</p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Основные возможности библиотеки</h2>
-<ul>
-<li>Строки <code>char</code>, <code>char8_t</code>, <code>char16_t</code>, <code>char32_t</code>, <code>wchar_t</code>.</li>
-<li>Прозрачное преобразование строк из одного типа символов в другой, с автоматической конвертацией между UTF-8, UTF-16, UTF-32, используя <a href="https://github.com/simdutf/simdutf">simdutf</a>. Строки "совместимых" типов преобразуются простым копированием: <code>char &lt;-&gt; char8_t</code>, <code>wchar_t &lt;-&gt; char32_t</code> в Linux, <code>wchar_t &lt;-&gt; char16_t</code> в Windows.</li>
-<li>Расширяемая система "Строковых выражений". Позволяет эффективно реализовать преобразование и сложение (конкатенацию) строк, литералов, чисел и возможно других объектов. За счёт расширяемости реализована и работа со стандартными строками (<code>std::basic_string</code>, <code>std::basic_string_view</code>), что позволяет применять быструю конкатенацию и там, где пока не получается отказаться от стандартных строк. Тоже позволяет смешивать в операциях строки совместимых типов символов.</li>
-<li>Строковые функции:<ul>
+<p>При использовании только <code>#include "simstr\strexpr.h"</code>:</p><ul>
+<li>Поддержка работы со строками <code>char</code>, <code>char8_t</code>, <code>char16_t</code>, <code>char32_t</code>, <code>wchar_t</code>.</li>
+<li>Мощная и расширяемая система <em>"Строковых выражений"</em>. Позволяет эффективно реализовать преобразование и сложение (конкатенацию) строк, строковых литералов, чисел (и возможно других объектов), добиваясь значительного ускорения строковых операций. Совместима как со строковыми объектами <code>simstr</code>, так и со стандартными строками (<code>std::basic_string</code>, <code>std::basic_string_view</code>), что позволяет применять быструю конкатенацию и там, где пока не получается отказаться от стандартных строк. Тоже позволяет смешивать в операциях строки совместимых типов символов.</li>
+<li>Константные строковые функции (не меняют исходную строку):<ul>
 <li>Получение подстрок.</li>
+<li>Сравнение строк, сравнение строк без учёта регистра ASCII-символов.</li>
 <li>Поиск подстрок и символов - с начала или с конца строки.</li>
 <li>Различный тримминг строк - справа, слева, везде, по пробельным символам, по заданным символам.</li>
-<li>Замена подстрок.</li>
-<li>Замена набора символов на набор соответствующих подстрок.</li>
+<li>Замена подстрок (созданием копии строки с заменой).</li>
+<li>Замена набора символов на набор соответствующих подстрок (созданием копии строки с заменой).</li>
 <li>Слияние (join) контейнеров строк в единую строку, с заданием разделителей и опций - "пропускать пустые", "разделитель после последней".</li>
 <li>Разбиение (split) строк на части по заданному разделителю. Разбиение возможно сразу в контейнер со строками, либо вызовом функтора для каждой подстроки, либо путем итерации с помощью итератора <code>Splitter</code>.</li>
 </ul>
 </li>
-<li>Интеграция с функциями форматирования <code>format</code> и <code>sprintf</code> (с автоматическим увеличением буфера). Форматирование возможно для строк <code>char</code>, <code>wchar_t</code> и строк, совместимых с <code>wchar_t</code> по размеру. То есть под Windows это <code>char16_t</code>, под Linux - <code>char32_t</code>. Писать свою библиотеку форматирования не входило в мои замыслы.</li>
 <li>Парсинг целых чисел с возможностью "тонкой" настройки при компиляции - можно задавать опции проверки переполнения, пропуск пробельных символов, конкретное основание счисления либо автовыбор по префиксам <code>0x</code>, <code>0</code>, <code>0b</code>, <code>0o</code>, допустимость знака <code>+</code>. Парсинг реализован для всех видов строк и символов.</li>
-<li>Парсинг double для всех типов символов.</li>
+<li>Парсинг double для <code>char</code> и <code>wchar_t</code>, а также совместимых с ними по размеру типов символов.</li>
+</ul>
+<p>При использовании полной версии библиотеки:</p><ul>
+<li>Всё то же, что и перечислено выше, плюс</li>
+<li>Дополнительные эффективные строковые объекты - <code>sstring</code> (shared string), <code>lstring</code> (local string).</li>
+<li><code>lstring</code> - поддерживает множество мутабельных операций со строками - различные замены, вставки, удаления и т.п. Позволяет задавать размер для внутреннего буфера символов, что может превращать <em>Small String Optimization</em> в <em>Big String Optimization</em> :).</li>
+<li>Прозрачное преобразование строк из одного типа символов в другой, с автоматической конвертацией между UTF-8, UTF-16, UTF-32, используя <a href="https://github.com/simdutf/simdutf">simdutf</a>. Строки "совместимых" типов преобразуются простым копированием: <code>char &lt;-&gt; char8_t</code>, <code>wchar_t &lt;-&gt; char32_t</code> в Linux, <code>wchar_t &lt;-&gt; char16_t</code> в Windows.</li>
+<li>Интеграция с функциями форматирования <code>format</code> и <code>sprintf</code> (с автоматическим увеличением буфера). Форматирование возможно для строк <code>char</code>, <code>wchar_t</code> и строк, совместимых с ними по размеру. То есть под Windows это <code>char8_t</code>, <code>char16_t</code>, под Linux - <code>char8_t</code>, <code>char32_t</code> (писать свою библиотеку форматирования для всех видов символов не входило в мои замыслы).</li>
 <li>Содержится минимальная поддержка Unicode при преобразовании <code>upper</code>, <code>lower</code> и регистро-независимом сравнении строк. Работает только для символов первой плоскости Unicode (до 0xFFFF), а при смене регистра не учитываются случаи, когда один code point может преобразовываться в несколько, то есть преобразование регистра символов соответствует <code>std::towupper</code>, <code>std::towlower</code> для unicode локали, только быстрее и может работать с любым видом символов.</li>
 <li>Реализован <code>hash map</code> для ключей строкового типа, на базе <code>std::unordered_map</code>, с возможностью более эффективного хранения и сравнения ключей по сравнению с ключами <code>std::string</code>. Поддерживается возможность регистро-независимого сравнения ключей (Ascii или минимальный Unicode (см. предыдущий пункт)).</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md2"></a>
-Основные объекты библиотеки</h2>
-<ul>
-<li>simple_str&lt;K&gt; - самая простая строка (или кусок строки), иммутабельная, не владеющая, аналог <code>std::string_view</code>.</li>
-<li>simple_str_nt&lt;K&gt; - то же самое, только заявляет, что заканчивается 0. Для работы со сторонними C-API.</li>
-<li>sstring&lt;K&gt; - shared string, иммутабельная, владеющая, с разделяемым буфером символов, поддержка SSO.</li>
-<li>lstring&lt;K, N&gt; - local string, мутабельная, владеющая, с задаваемым размером SSO буфера.</li>
-</ul>
+Строковые выражения</h2>
+<p>Это специальные объекты, которые эффективно реализуют конкатенацию строк, с помощью <code>operator+</code>. Главный принцип, за счёт которого достигается эффективная работа - сколько бы операндов не входило во всё выражение, никаких временных (промежуточных) строк не создаётся, общая длина всего результата подсчитывается только один раз, один раз выделяется память под буфер символов результата, после чего символы копируются сразу в буфер результата на своё место. Никаких перевыделений памяти, никакого передвигания символов в различных промежуточных буферах - всё максимально эффективно. Благодаря возможностям шаблонов C++ и перегрузке операторов, выражение пишется максимально приближённо к обычному синтаксису сложения строк. Кроме того, есть специальные перегрузки для сложения строковых объектов и строковых литералов, строк и чисел, для копирования с заменой, для слияния контейнеров строк и многое другое. Благодаря расширяемости этой системы - возможно создание новых вариантов построения строк, развитие постоянно продолжается.</p>
+<p>Все строковые объекты из <code>simstr</code> - сами являются строковыми выражениями, то есть их можно использовать в операциях конкатенации строковых выражений напрямую. Стандартные строки (<code>std::basic_string</code>, <code>std::basic_string_view</code>) - тоже могут служить операндами в операциях сложения со строковыми выражениями. Либо их можно легко преобразовать в строковое выражение, поставив перед ними унарный <code>+</code>.</p>
 <h2><a class="anchor" id="autotoc_md3"></a>
+Примеры использования</h2>
+<h3><a class="anchor" id="autotoc_md4"></a>
+Сложение строк с числами</h3>
+<div class="fragment"><div class="line">std::string s1 = <span class="stringliteral">&quot;start &quot;</span>;</div>
+<div class="line"><span class="keywordtype">int</span> i;</div>
+<div class="line">....</div>
+<div class="line"><span class="comment">// Было</span></div>
+<div class="line">    std::string str = s1 + std::to_string(i) + <span class="stringliteral">&quot; end&quot;</span>;</div>
+<div class="line"><span class="comment">// Стало</span></div>
+<div class="line">    std::string str = +s1 + i + <span class="stringliteral">&quot; end&quot;</span>;</div>
+</div><!-- fragment --><p> <code>+s1</code> - преобразует <code>std::string</code> в объект - строковое выражение, для которого есть эффективная конкатенация с числами и строковыми литералами.</p>
+<p>По бенчмаркам <a href="https://orefkov.github.io/simstr/results.html#bs70109915512075798510">ускорение 1.6 - 2 раза</a>.</p>
+<h3><a class="anchor" id="autotoc_md5"></a>
+Сложение строк с числами в hex-формате</h3>
+<div class="fragment"><div class="line">....</div>
+<div class="line"><span class="comment">// Было</span></div>
+<div class="line">    std::string str = s1 + std::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, i) + <span class="stringliteral">&quot; end&quot;</span>;</div>
+<div class="line"><span class="comment">// Стало</span></div>
+<div class="line">    std::string str = +s1 + e_hex&lt;HexFlags::Short&gt;(i) + <span class="stringliteral">&quot; end&quot;</span>;</div>
+</div><!-- fragment --><p> Ускорение в <a href="https://orefkov.github.io/simstr/results.html#bs146911715078927772520"><b>9 - 14 раз!!!</b></a></p>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Сложение нескольких литералов и поиск в <code>std::string_view</code></h3>
+<div class="fragment"><div class="line"><span class="comment">// Было так</span></div>
+<div class="line"><span class="keywordtype">size_t</span> find_pos(std::string_view src, std::string_view name) {</div>
+<div class="line">    <span class="comment">// before C++26 we can not concatenate string and string_view...</span></div>
+<div class="line">    <span class="keywordflow">return</span> src.find(<span class="stringliteral">&quot;\n- &quot;</span>s + std::string{name} + <span class="stringliteral">&quot; -\n&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// При использовании только &quot;strexpr.h&quot; стало так</span></div>
+<div class="line"><span class="keywordtype">size_t</span> find_pos(ssa src, ssa name) {</div>
+<div class="line">    <span class="keywordflow">return</span> src.find(std::string{<span class="stringliteral">&quot;\n- &quot;</span> + name + <span class="stringliteral">&quot; -\n&quot;</span>});</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// А при использовании полной библиотеки можно сделать так</span></div>
+<div class="line"><span class="keywordtype">size_t</span> find_pos(ssa src, ssa name) {</div>
+<div class="line">    <span class="comment">// В этом варианте если результат конкатенации вмещается в 207 символов - она производится в буфере на стеке,</span></div>
+<div class="line">    <span class="comment">// без алокации и освобождения памяти, ускорение в несколько раз. И только если результат длиннее 207 символов -</span></div>
+<div class="line">    <span class="comment">// будет всего одна аллокация, и конкатенация будет сразу в алоцированный буфер, без перекопирования символов.</span></div>
+<div class="line">    <span class="keywordflow">return</span> src.find(lstringa&lt;200&gt;{<span class="stringliteral">&quot;\n- &quot;</span> + name + <span class="stringliteral">&quot; -\n&quot;</span>});</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> <code>ssa</code> - псевдоним для <code>simple_str&lt;char&gt;</code> - аналог <code>std::string_view</code>, позволяет с минимальными расходами принимать параметром функции любой строковый объект, который не нужно модифицировать или передавать в C-API: <code>std::string</code>, <code>std::string_view</code>, <code>"строковый литерал"</code>, <code>simple_str_nt</code>, <code>sstring</code>, <code>lstring</code>. Также так как он при этом является ещё и "строковым выражением", то позволяет легко строить конкатенации с его участием.</p>
+<p>По замерам <a href="https://orefkov.github.io/simstr/results.html#bs68116594352702954700">ускорение 1.5 - 9 раз</a>.</p>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Сложение с условиями</h3>
+<div class="fragment"><div class="line"><span class="comment">// Было</span></div>
+<div class="line">std::string buildTypeName(std::string_view type_name, <span class="keywordtype">size_t</span> prec, <span class="keywordtype">size_t</span> scale) {</div>
+<div class="line">    std::string res{type_name};</div>
+<div class="line">    <span class="keywordflow">if</span> (prec) {</div>
+<div class="line">        res += <span class="stringliteral">&quot;(&quot;</span> + std::to_string(prec);</div>
+<div class="line">        <span class="keywordflow">if</span> (scale) {</div>
+<div class="line">            res += <span class="stringliteral">&quot;,&quot;</span> + std::to_string(scale);</div>
+<div class="line">        }</div>
+<div class="line">        res += <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> res;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Стало при использовании только strexpr.h и желании использовать только стандартные строки</span></div>
+<div class="line">std::string buildTypeName(std::string_view type_name, <span class="keywordtype">size_t</span> prec, <span class="keywordtype">size_t</span> scale) {</div>
+<div class="line">    <span class="keywordflow">if</span> (prec) {</div>
+<div class="line">        <span class="comment">//     + превращает type_name из string_view в строковое выражение</span></div>
+<div class="line">        <span class="keywordflow">return</span> +type_name + <span class="stringliteral">&quot;(&quot;</span> + prec + <a class="code hl_function" href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(scale, <span class="stringliteral">&quot;,&quot;</span>_ss + scale) + <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> type_name;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Стало при использовании только strexpr.h и simple_str строки</span></div>
+<div class="line">std::string buildTypeName(ssa type_name, <span class="keywordtype">size_t</span> prec, <span class="keywordtype">size_t</span> scale) {</div>
+<div class="line">    <span class="keywordflow">if</span> (prec) {</div>
+<div class="line">        <span class="comment">//     ssa уже является строковым выражением, + перед ним не нужен</span></div>
+<div class="line">        <span class="keywordflow">return</span> type_name + <span class="stringliteral">&quot;(&quot;</span> + prec + <a class="code hl_function" href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(scale, <span class="stringliteral">&quot;,&quot;</span>_ss + scale) + <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> type_name;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Стало при использовании полной библиотеки</span></div>
+<div class="line">stringa buildTypeName(ssa type_name, <span class="keywordtype">size_t</span> prec, <span class="keywordtype">size_t</span> scale) {</div>
+<div class="line">    <span class="keywordflow">if</span> (prec) {</div>
+<div class="line">        <span class="keywordflow">return</span> type_name + <span class="stringliteral">&quot;(&quot;</span> + prec + <a class="code hl_function" href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(scale, <span class="stringliteral">&quot;,&quot;</span>_ss + scale) + <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> type_name;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Создание условного строкового выражения expr_if.</div><div class="ttdef"><b>Определения</b> strexpr.h:1313</div></div>
+</div><!-- fragment --><p> При <code>prec != 0</code>, <a href="https://orefkov.github.io/simstr/results.html#bs145290966789248325200">ускорение 1.5 - 2.2 раза</a>.</p>
+<h3><a class="anchor" id="autotoc_md8"></a>
+Сложение с заменами</h3>
+<div class="fragment"><div class="line"><span class="comment">// Было</span></div>
+<div class="line"><span class="comment">// Стандартной аналога функции replace из других ЯП нет, напишем свою &quot;в лоб&quot;.</span></div>
+<div class="line">std::string str_replace(std::string_view from, std::string_view pattern, std::string_view repl) {</div>
+<div class="line">    std::string result;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> offset = 0;;) {</div>
+<div class="line">        <span class="keywordtype">size_t</span> pos = from.find(pattern, offset);</div>
+<div class="line">        <span class="keywordflow">if</span> (pos == std::string::npos) {</div>
+<div class="line">            result += from.substr(offset);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">        result += from.substr(offset, pos - offset);</div>
+<div class="line">        result += repl;</div>
+<div class="line">        offset = pos + pattern.length();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> result;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">std::string make_str_str(std::string_view from, std::string_view pattern, std::string_view repl) {</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;&quot;</span> + str_replace(from, pattern, repl) + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Стало - копирование с заменами</span></div>
+<div class="line">std::string make_str_exp(std::string_view from, std::string_view pattern, std::string_view repl) {</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;&quot;</span> + <a class="code hl_function" href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">e_repl</a>(from, pattern, repl) + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Получить строковое выражение, генерирующее строку с заменой всех вхождений заданной подстроки.</div><div class="ttdef"><b>Определения</b> strexpr.h:4471</div></div>
+</div><!-- fragment --><p> <a href="https://orefkov.github.io/simstr/results.html#bs54035654251116789780">Ускорение от 1.5 раз и выше</a> - в зависимости от содержимого строк.</p>
+<h3><a class="anchor" id="autotoc_md9"></a>
+Разбиение строк на части, парсинг чисел</h3>
+<div class="fragment"><div class="line"><span class="comment">// Было - разбить строку по разделителю и подсчитать сумму чисел</span></div>
+<div class="line"><span class="keywordtype">int</span> split_and_calc_total_str(std::string_view numbers, std::string_view delimiter) {</div>
+<div class="line">    <span class="keywordtype">int</span> total = 0;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> start = 0; start &lt; numbers.length(); ) {</div>
+<div class="line">        <span class="keywordtype">int</span> delim = numbers.find(delimiter, start);</div>
+<div class="line">        <span class="keywordflow">if</span> (delim == std::string::npos) {</div>
+<div class="line">            delim = numbers.size();</div>
+<div class="line">        }</div>
+<div class="line">        std::string part{numbers.substr(start, delim - start)};</div>
+<div class="line">        total += std::strtol(part.c_str(), <span class="keyword">nullptr</span>, 0);</div>
+<div class="line">        start = delim + delimiter.length();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> total;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Стало</span></div>
+<div class="line"><span class="keywordtype">int</span> split_and_calc_total_sim(ssa numbers, ssa delimiter) {</div>
+<div class="line">    <span class="keywordtype">int</span> total = 0;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> splitter = numbers.splitter(delimiter); !splitter.is_done();) {</div>
+<div class="line">        total += splitter.next().as_int&lt;<span class="keywordtype">int</span>&gt;();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> total;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> <a href="https://orefkov.github.io/simstr/results.html#bs7106975351756760120">Ускорение в 2-3 раза</a>.</p>
+<p>Помимо приведённых здесь отдельных примеров, можно посмотреть исходники:</p><ul>
+<li><a href="https://github.com/orefkov/simstr/blob/main/tests/test_str.cpp">тестов всей библиотеки</a></li>
+<li><a href="https://github.com/orefkov/simstr/blob/main/tests/test_expr_only.cpp">тестов только strexpr части</a></li>
+<li><a href="https://github.com/orefkov/simstr/blob/main/bench/bench_str.cpp">бенчмарков</a></li>
+<li><a href="https://github.com/orefkov/simstr/blob/main/bench/process_result.cpp">утилиты подготовки html</a> из результатов бенчмарков.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Основные объекты библиотеки</h2>
+<p>Доступны при любом использовании:</p><ul>
+<li><code>simple_str&lt;K&gt;</code> - самая простая строка (или кусок строки), иммутабельная, не владеющая, аналог <code>std::string_view</code>.</li>
+<li><code>simple_str_nt&lt;K&gt;</code> - то же самое, только заявляет, что заканчивается 0. Для работы со сторонними C-API.</li>
+</ul>
+<p>Доступны при использовании всей библиотеки:</p><ul>
+<li><code>sstring&lt;K&gt;</code> - shared string, иммутабельная, владеющая, с разделяемым буфером символов, поддержка SSO.</li>
+<li><code>lstring&lt;K, N&gt;</code> - local string, мутабельная, владеющая, с задаваемым размером SSO буфера.</li>
+</ul>
+<p>При подключении только <code><a class="el" href="strexpr_8h_source.html">strexpr.h</a></code> - типы <code>simple_str&lt;K&gt;</code> и <code>simple_str_nt&lt;K&gt;</code> не содержат методов для работы с UTF и Unicode.</p>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Статьи</h2>
 <ul>
 <li>Обзор и введение</li>
 <li><a href="https://habr.com/ru/articles/935590">Обзорная статья на Хабре</a></li>
 <li><a href="https://habr.com/ru/articles/936468/">Описание применяемой техники "Expression Templates"</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 Использование</h2>
-<p><code>simstr</code> состоит из трёх заголовочных файлов и двух исходников. Можно подключать как CMake проект через <code>add_subdirectory</code> (библиотека <code>simstr</code>), можно просто включить файлы в свой проект. Для сборки также требуется <a href="https://github.com/simdutf/simdutf">simdutf</a> (при использовании CMake скачивается автоматически).</p>
+<p>Библиотеку можно использовать частично, просто взяв файл <code>"include\simstr\strexpr.h"</code> и включив в свои исходники </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;include\simstr\strexpr.h&quot;</span></div>
+</div><!-- fragment --><p> Это подключит только строковые выражения и упрощённые реализации <code>simple_str</code> и <code>simple_str_nt</code>, без функций работы с UTF и Unicode.</p>
+<p>Полная же версия библиотеки <code>simstr</code> состоит из трёх заголовочных файлов и двух исходников. Можно подключать как CMake проект через <code>add_subdirectory</code> (библиотека <code>simstr</code>), можно просто включить файлы в свой проект. Для сборки также требуется <a href="https://github.com/simdutf/simdutf">simdutf</a> (при использовании CMake скачивается автоматически).</p>
 <p>Библиотека включена в <a href="https://vcpkg.io">vcpkg</a>, подключается как <code>orefkov-simstr</code>.</p>
 <p>Для работы <code>simstr</code> требуется компилятор стандарта не ниже С++20 - используются концепты и std::format. Работа проверялась под Windows на MSVC-19 и Clang-19, под Linux - на GCC-13 и Clang-21. Также проверялась работа в WASM, сборка в Emscripten 4.0.6, Clang-21.</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Удобная отладка</h2>
 <p>Вместе с библиотекой поставляются два файла, делающие просмотр simstr строковых объектов в отладчиках более удобным.\ Более подробно описано здесь.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Бенчмарки</h2>
 <p>Бенчмарки производятся с использованием фреймворка <a href="https://github.com/google/benchmark">Google benchmark</a>. Постарался сделать замеры для наиболее типичных операций, встречающихся в обычной работе. Я проводил замеры на своём оборудовании, под Windows и Linux (в WSL), с использованием компиляторов MSVC, Clang, GCC. Сторонние результаты приветствуются. Также проводил замеры в WASM, сборка в Emscripten. Обращаю внимание, что под WASM в Emscripten собирается 32-битная сборка, а значит, размеры буферов SSO в объектах меньше.</p>
 <ul>
 <li><a href="bench/bench_str.cpp">Исходный код бенчмарков</a></li>
-<li><a href="https://snegopat.ru/simstr/results.html">Результаты бенчмарков</a></li>
+<li><a href="https://orefkov.github.io/simstr/results.html">Результаты бенчмарков</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Примеры использования</h2>
-<p>Пока отдельных примеров использования не подготовлено, можно посмотреть тексты <a href="https://github.com/orefkov/simstr/blob/main/tests/test_str.cpp">тестов</a>, <a href="https://github.com/orefkov/simstr/blob/main/bench/bench_str.cpp">бенчмарков</a>, и <a href="https://github.com/orefkov/simstr/blob/main/bench/process_result.cpp">утилиты подготовки html</a> из результатов бенчмарков.</p>
 <p>Также simstr используется в моих проектах:</p><ul>
 <li><a href="https://github.com/orefkov/simjson">simjson</a> - библиотека для простой работы с JSON с использованием строк simstr.</li>
 <li><a href="https://github.com/orefkov/simrex">simrex</a> - обёртка для работы с регулярными выражениями <a href="https://github.com/kkos/oniguruma">Oniguruma</a> с использованием строк simstr.</li>
 <li><a href="https://github.com/orefkov/v8sqlite">v8sqlite</a> - внешняя компонента для 1С-Предприятия V8 для работы с sqlite.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Сгенерированная документация</h2>
-<p><a href="https://snegopat.ru/simstr/docs_ru/">Находится здесь</a>   </p>
+<p><a href="https://orefkov.github.io/simstr/docs_ru/">Находится здесь</a>   </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

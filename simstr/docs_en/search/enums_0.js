@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['intconvertresult_0',['IntConvertResult',['../namespacesimstr.html#a1b4b1f04b733739606d97f79caa02dd9',1,'simstr']]]
+  ['hexflags_0',['HexFlags',['../group___str_exprs.html#ga680097382d9bc271c361f85828ac741f',1,'simstr']]]
 ];

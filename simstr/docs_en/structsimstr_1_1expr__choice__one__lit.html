@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>simstr: simstr::expr_choice_one_lit&lt; A, N, Compare &gt; Struct Template Reference</title>
+<title>simstr: simstr::expr_choice_one_lit&lt; L, A, N, Compare &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.3.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.4.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -105,7 +105,7 @@ $(function(){initNavTree('structsimstr_1_1expr__choice__one__lit.html',''); init
 <div class="header">
   <div class="summary">
 <a href="structsimstr_1_1expr__choice__one__lit-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">simstr::expr_choice_one_lit&lt; A, N, Compare &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group___str_exprs.html">String Expressions</a></div></div></div>
+  <div class="headertitle"><div class="title">simstr::expr_choice_one_lit&lt; L, A, N, Compare &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group___str_exprs.html">String Expressions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -113,9 +113,18 @@ $(function(){initNavTree('structsimstr_1_1expr__choice__one__lit.html',''); init
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="strexpr_8h_source.html">strexpr.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for simstr::expr_choice_one_lit&lt; L, A, N, Compare &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structsimstr_1_1expr__choice__one__lit.png" usemap="#simstr::expr_5Fchoice_5Fone_5Flit_3C_20L_2C_20A_2C_20N_2C_20Compare_20_3E_map" alt=""/>
+  <map id="simstr::expr_5Fchoice_5Fone_5Flit_3C_20L_2C_20A_2C_20N_2C_20Compare_20_3E_map" name="simstr::expr_5Fchoice_5Fone_5Flit_3C_20L_2C_20A_2C_20N_2C_20Compare_20_3E_map">
+<area href="structsimstr_1_1expr__to__std__string.html" alt="simstr::expr_to_std_string&lt; expr_choice_one_lit&lt; L, A, N, Compare &gt; &gt;" shape="rect" coords="0,0,418,24"/>
+  </map>
+</div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;StrExpr A, size_t N, bool Compare&gt;<br />
-struct simstr::expr_choice_one_lit&lt; A, N, Compare &gt;</div><p>Conditional selection string expression. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename L, StrExprForType&lt; L &gt; A, size_t N, bool Compare&gt;<br />
+struct simstr::expr_choice_one_lit&lt; L, A, N, Compare &gt;</div><p>Conditional selection string expression. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">A</td><td>Branch type for true.</td></tr>
@@ -127,10 +136,10 @@ struct simstr::expr_choice_one_lit&lt; A, N, Compare &gt;</div><p>Conditional se
 <div class="line"><a class="code hl_function" href="group___str_exprs.html#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(condition, text, <a class="code hl_variable" href="group___str_exprs.html#gab19693e574a384f42220cf115ec86c75">eea</a> + <span class="stringliteral">&quot;empty&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="group___str_exprs.html#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(condition, text, <span class="stringliteral">&quot;empty&quot;</span>_ss);</div>
 <div class="line"><a class="code hl_function" href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(!condition, <span class="stringliteral">&quot;empty&quot;</span>_ss);</div>
-<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Creating a conditional string expression expr_if.</div><div class="ttdef"><b>Definition</b> strexpr.h:1182</div></div>
-<div class="ttc" id="agroup___str_exprs_html_ga9e9c377a32a2cc243efce977c4adffe3"><div class="ttname"><a href="group___str_exprs.html#ga9e9c377a32a2cc243efce977c4adffe3">simstr::e_t</a></div><div class="ttdeci">constexpr expr_literal&lt; typename const_lit&lt; T &gt;::symb_type, static_cast&lt; size_t &gt;(N - 1)&gt; e_t(T &amp;&amp;s)</div><div class="ttdoc">Converts a string literal to a string expression.</div><div class="ttdef"><b>Definition</b> strexpr.h:655</div></div>
-<div class="ttc" id="agroup___str_exprs_html_gab058a69a654cf3a0fce197e862a7400e"><div class="ttname"><a href="group___str_exprs.html#gab058a69a654cf3a0fce197e862a7400e">simstr::e_choice</a></div><div class="ttdeci">constexpr expr_choice&lt; A, B &gt; e_choice(bool c, const A &amp;a, const B &amp;b)</div><div class="ttdoc">Create a conditional string expression expr_choice.</div><div class="ttdef"><b>Definition</b> strexpr.h:1106</div></div>
-<div class="ttc" id="agroup___str_exprs_html_gab19693e574a384f42220cf115ec86c75"><div class="ttname"><a href="group___str_exprs.html#gab19693e574a384f42220cf115ec86c75">simstr::eea</a></div><div class="ttdeci">constexpr empty_expr&lt; u8s &gt; eea</div><div class="ttdoc">Empty string expression of type char.</div><div class="ttdef"><b>Definition</b> strexpr.h:522</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Creating a conditional string expression expr_if.</div><div class="ttdef"><b>Definition</b> strexpr.h:1313</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga9e9c377a32a2cc243efce977c4adffe3"><div class="ttname"><a href="group___str_exprs.html#ga9e9c377a32a2cc243efce977c4adffe3">simstr::e_t</a></div><div class="ttdeci">constexpr expr_literal&lt; typename const_lit&lt; T &gt;::symb_type, static_cast&lt; size_t &gt;(N - 1)&gt; e_t(T &amp;&amp;s)</div><div class="ttdoc">Converts a string literal to a string expression.</div><div class="ttdef"><b>Definition</b> strexpr.h:760</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gab058a69a654cf3a0fce197e862a7400e"><div class="ttname"><a href="group___str_exprs.html#gab058a69a654cf3a0fce197e862a7400e">simstr::e_choice</a></div><div class="ttdeci">constexpr expr_choice&lt; A, B &gt; e_choice(bool c, const A &amp;a, const B &amp;b)</div><div class="ttdoc">Create a conditional string expression expr_choice.</div><div class="ttdef"><b>Definition</b> strexpr.h:1235</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gab19693e574a384f42220cf115ec86c75"><div class="ttname"><a href="group___str_exprs.html#gab19693e574a384f42220cf115ec86c75">simstr::eea</a></div><div class="ttdeci">constexpr empty_expr&lt; u8s &gt; eea</div><div class="ttdoc">Empty string expression of type char.</div><div class="ttdef"><b>Definition</b> strexpr.h:619</div></div>
 </div><!-- fragment --><p> This, on the one hand, clutters up the code, on the other, makes it less optimal. These overloads use <a class="el" href="structsimstr_1_1expr__choice__one__lit.html" title="Conditional selection string expression.">expr_choice_one_lit</a> and <a class="el" href="structsimstr_1_1expr__choice__two__lit.html" title="Conditional selection string expression.">expr_choice_two_lit</a>, allowing you to write like this: </p><div class="fragment"><div class="line"><a class="code hl_function" href="group___str_exprs.html#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(condition, text, <span class="stringliteral">&quot;empty&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="group___str_exprs.html#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(condition, <span class="stringliteral">&quot;false&quot;</span>, <span class="stringliteral">&quot;true&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(!condition, <span class="stringliteral">&quot;empty&quot;</span>);</div>

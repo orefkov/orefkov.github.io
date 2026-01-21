@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.3.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.4.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -113,6 +113,15 @@ $(function(){initNavTree('structsimstr_1_1strexprjoin__c.html',''); initResizabl
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="strexpr_8h_source.html">strexpr.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for simstr::strexprjoin_c&lt; A, B, last &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structsimstr_1_1strexprjoin__c.png" usemap="#simstr::strexprjoin_5Fc_3C_20A_2C_20B_2C_20last_20_3E_map" alt=""/>
+  <map id="simstr::strexprjoin_5Fc_3C_20A_2C_20B_2C_20last_20_3E_map" name="simstr::strexprjoin_5Fc_3C_20A_2C_20B_2C_20last_20_3E_map">
+<area href="structsimstr_1_1expr__to__std__string.html" alt="simstr::expr_to_std_string&lt; strexprjoin_c&lt; A, B, true &gt; &gt;" shape="rect" coords="0,0,331,24"/>
+  </map>
+</div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;StrExpr A, StrExprForType&lt; typename A::symb_type &gt; B, bool last = true&gt;<br />
 struct simstr::strexprjoin_c&lt; A, B, last &gt;</div><p>Concatenation of a reference to a string expression and the value of the string expression. </p>
@@ -124,7 +133,7 @@ struct simstr::strexprjoin_c&lt; A, B, last &gt;</div><p>Concatenation of a refe
   </table>
   </dd>
 </dl>
-<p>To be able to add a string expression with non-string operands, we need to be able to return an object from <code>operator+</code> that will retain a reference to the operand, which is a string expression, and for a non-string operand will have a field with a string expression that processes the second operand. You can see an example in <a class="el" href="group___str_exprs.html#ga0421f6f954a1f0a4575cb282c1e36712" title="Concatenation operator for string expression and integer.">simstr::operator+</a>&lt;<a class="el" href="conceptsimstr_1_1_str_expr.html" title="Concept of &quot;String Expressions&quot;.">StrExpr</a> A, FromIntNumber T&gt;() </p>
+<p>To be able to add a string expression with non-string operands, we need to be able to return an object from <code>operator+</code> that will retain a reference to the operand, which is a string expression, and for a non-string operand will have a field with a string expression that processes the second operand. You can see an example in <a class="el" href="group___str_exprs.html#ga9742e8cdcccc67c0746578f3579127e2" title="An addition operator for two arbitrary string expressions of the same character type.">simstr::operator+</a>&lt;<a class="el" href="conceptsimstr_1_1_str_expr.html" title="Concept of &quot;String Expressions&quot;.">StrExpr</a> A, FromIntNumber T&gt;() </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="strexpr_8h_source.html">strexpr.h</a></li>
 </ul>

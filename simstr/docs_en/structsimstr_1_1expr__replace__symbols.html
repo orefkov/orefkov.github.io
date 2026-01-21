@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.3.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.4.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -113,13 +113,22 @@ $(function(){initNavTree('structsimstr_1_1expr__replace__symbols.html',''); init
 <p>A type for a string expression that generates a string in which the given characters are replaced by the given strings.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="sstring_8h_source.html">sstring.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="strexpr_8h_source.html">strexpr.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for simstr::expr_replace_symbols&lt; K, UseVectorForReplace &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structsimstr_1_1expr__replace__symbols.png" usemap="#simstr::expr_5Freplace_5Fsymbols_3C_20K_2C_20UseVectorForReplace_20_3E_map" alt=""/>
+  <map id="simstr::expr_5Freplace_5Fsymbols_3C_20K_2C_20UseVectorForReplace_20_3E_map" name="simstr::expr_5Freplace_5Fsymbols_3C_20K_2C_20UseVectorForReplace_20_3E_map">
+<area href="structsimstr_1_1expr__to__std__string.html" alt="simstr::expr_to_std_string&lt; expr_replace_symbols&lt; K, false &gt; &gt;" shape="rect" coords="0,0,372,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5e561adcb105cfbc2819e0c580d80d0e" id="r_a5e561adcb105cfbc2819e0c580d80d0e"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e561adcb105cfbc2819e0c580d80d0e">expr_replace_symbols</a> (<a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt; source, const std::vector&lt; std::pair&lt; K, <a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt; &gt; &gt; &amp;repl)</td></tr>
-<tr class="memdesc:a5e561adcb105cfbc2819e0c580d80d0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expression constructor.  <br /></td></tr>
-<tr class="separator:a5e561adcb105cfbc2819e0c580d80d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fac129651136763915ab5cba6dd26dd" id="r_a1fac129651136763915ab5cba6dd26dd"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fac129651136763915ab5cba6dd26dd">expr_replace_symbols</a> (str_t source, const std::vector&lt; std::pair&lt; K, str_t &gt; &gt; &amp;repl)</td></tr>
+<tr class="memdesc:a1fac129651136763915ab5cba6dd26dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expression constructor.  <br /></td></tr>
+<tr class="separator:a1fac129651136763915ab5cba6dd26dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename K, bool UseVectorForReplace = false&gt;<br />
@@ -133,8 +142,8 @@ struct simstr::expr_replace_symbols&lt; K, UseVectorForReplace &gt;</div><p>A ty
 </dl>
 <p>This type is used when the composition of symbols or their corresponding replacements is not known at compile time, and is defined at runtime. A vector of <code>character - replacement string</code> pairs is passed to the constructor. The <code>UseVectorForReplace</code> parameter specifies the implementation strategy. The point is that the work of any string expressions is divided into two phases - the <code>length()</code> call, which counts the number of characters in the result, and a call to <code>place()</code>, which places the result in the provided buffer. When <code>UseVectorForReplace == true</code> during the phase of counting the number of characters, the position of the found occurrences are stored in the vector, and during the second phase the search is no longer performed, and the positions are taken from the vector. This, on the one hand, reduces the time in the second phase - there is no need to search again, but it increases time in the first phase - adding elements to the vector is not free, and takes time. When <code>UseVectorForReplace == false</code> during the phase of counting the number of characters, positions in the local array are remembered the first 16 occurrences and their total number, and during the second phase, if there are more than 16 occurrences, then the search is repeated, but only from the position of the 16th occurrence. This may increase the time in the second phase, but reduces the time in the first phase - no need to add elements to the vector, no need for dynamic allocation. In different use cases, one or another strategy may be more optimal, and you can decide for yourself whichever is more suitable in each specific case. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5e561adcb105cfbc2819e0c580d80d0e" name="a5e561adcb105cfbc2819e0c580d80d0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e561adcb105cfbc2819e0c580d80d0e">&#9670;&#160;</a></span>expr_replace_symbols()</h2>
+<a id="a1fac129651136763915ab5cba6dd26dd" name="a1fac129651136763915ab5cba6dd26dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fac129651136763915ab5cba6dd26dd">&#9670;&#160;</a></span>expr_replace_symbols()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,12 +156,12 @@ template&lt;typename K, bool UseVectorForReplace = false&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="structsimstr_1_1expr__replace__symbols.html">simstr::expr_replace_symbols</a>&lt; K, UseVectorForReplace &gt;::expr_replace_symbols </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">str_t</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; std::pair&lt; K, <a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>repl</em></span>&#160;)</td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; K, str_t &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>repl</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -171,7 +180,7 @@ template&lt;typename K, bool UseVectorForReplace = false&gt; </div>
   </dd>
 </dl>
 <p>Example:</p>
-<div class="fragment"><div class="line">stringa result = <a class="code hl_function" href="#a5e561adcb105cfbc2819e0c580d80d0e">expr_replace_symbols&lt;u8s, true&gt;</a>{source, {</div>
+<div class="fragment"><div class="line">stringa result = <a class="code hl_function" href="#a1fac129651136763915ab5cba6dd26dd">expr_replace_symbols&lt;u8s, true&gt;</a>{source, {</div>
 <div class="line">    {<span class="charliteral">&#39;-&#39;</span>, <span class="stringliteral">&quot;&quot;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;&gt;&#39;</span>, <span class="stringliteral">&quot;&amp;gt;&quot;</span>},</div>
@@ -179,13 +188,13 @@ template&lt;typename K, bool UseVectorForReplace = false&gt; </div>
 <div class="line">    {<span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>},</div>
 <div class="line">}};</div>
-<div class="ttc" id="astructsimstr_1_1expr__replace__symbols_html_a5e561adcb105cfbc2819e0c580d80d0e"><div class="ttname"><a href="#a5e561adcb105cfbc2819e0c580d80d0e">simstr::expr_replace_symbols::expr_replace_symbols</a></div><div class="ttdeci">constexpr expr_replace_symbols(simple_str&lt; K &gt; source, const std::vector&lt; std::pair&lt; K, simple_str&lt; K &gt; &gt; &gt; &amp;repl)</div><div class="ttdoc">Expression constructor.</div><div class="ttdef"><b>Definition</b> sstring.h:6339</div></div>
+<div class="ttc" id="astructsimstr_1_1expr__replace__symbols_html_a1fac129651136763915ab5cba6dd26dd"><div class="ttname"><a href="#a1fac129651136763915ab5cba6dd26dd">simstr::expr_replace_symbols::expr_replace_symbols</a></div><div class="ttdeci">constexpr expr_replace_symbols(str_t source, const std::vector&lt; std::pair&lt; K, str_t &gt; &gt; &amp;repl)</div><div class="ttdoc">Expression constructor.</div><div class="ttdef"><b>Definition</b> strexpr.h:4952</div></div>
 </div><!-- fragment --><p> An example is provided for clarity of use. In this case, both the characters to be replaced and the replacement strings known at compile time, in which case it is better to use e_repl_const_symbols, and this class is used when characters or replacements are specified at runtime. </p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="sstring_8h_source.html">sstring.h</a></li>
+<li><a class="el" href="strexpr_8h_source.html">strexpr.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -8,10 +8,10 @@ var searchData=
   ['insert_5',['insert',['../classsimstr_1_1str__mutable.html#a81a87ca9286d27c944b0453df89e7f92',1,'simstr::str_mutable::insert(size_t to, str_piece other)'],['../classsimstr_1_1str__mutable.html#a01abc4c1daa39bb99451be642dc86f48',1,'simstr::str_mutable::insert(size_t to, const A &amp;expr)']]],
   ['is_5fascii_6',['is_ascii',['../classsimstr_1_1str__src__algs.html#aaeefcf45750a8260d5a57b3056a1521f',1,'simstr::str_src_algs']]],
   ['is_5fcontinuous_7',['is_continuous',['../classsimstr_1_1chunked__string__builder.html#ab3d8e89a6d9cd07b5ef35e2ff31b1166',1,'simstr::chunked_string_builder']]],
-  ['is_5fdone_8',['is_done',['../classsimstr_1_1_splitter.html#ae6c348bf7dd70322ce5d05edd72523cd',1,'simstr::Splitter']]],
-  ['is_5fempty_9',['is_empty',['../structsimstr_1_1simple__str.html#ab4c3531ce29d4b40a306c458279c7a63',1,'simstr::simple_str::is_empty()'],['../classsimstr_1_1lstring.html#ab3c7ea2f2356a1a299814a418949fdcc',1,'simstr::lstring::is_empty()'],['../classsimstr_1_1sstring.html#a35191ce33c60798706f8403507ea04f7',1,'simstr::sstring::is_empty()']]],
+  ['is_5fdone_8',['is_done',['../classsimstr_1_1_splitter_base.html#a4ba6176b0e6ec2230fe51d2022252801',1,'simstr::SplitterBase']]],
+  ['is_5fempty_9',['is_empty',['../structsimstr_1_1simple__str.html#ab4c3531ce29d4b40a306c458279c7a63',1,'simstr::simple_str::is_empty()'],['../classsimstr_1_1lstring.html#ab3c7ea2f2356a1a299814a418949fdcc',1,'simstr::lstring::is_empty()'],['../classsimstr_1_1sstring.html#a35191ce33c60798706f8403507ea04f7',1,'simstr::sstring::is_empty()'],['../structsimstr_1_1str__src.html#a410949035b02ddbbe8022b0510341034',1,'simstr::str_src::is_empty()']]],
   ['is_5fend_10',['is_end',['../structsimstr_1_1chunked__string__builder_1_1portion__store.html#aaaf570300b0a381cbf1ebd3215b34e35',1,'simstr::chunked_string_builder::portion_store']]],
   ['is_5flocal_11',['is_local',['../classsimstr_1_1lstring.html#a4289d6b43caed9e13a78c13bf12c4794',1,'simstr::lstring']]],
-  ['is_5fpart_5fof_12',['is_part_of',['../structsimstr_1_1simple__str.html#afdaedb195f21ec725e42544784bc2663',1,'simstr::simple_str']]],
-  ['is_5fsame_13',['is_same',['../structsimstr_1_1simple__str.html#ab6a66a7877b07e9f95d91c71077fdf48',1,'simstr::simple_str']]]
+  ['is_5fpart_5fof_12',['is_part_of',['../structsimstr_1_1simple__str.html#afdaedb195f21ec725e42544784bc2663',1,'simstr::simple_str::is_part_of()'],['../structsimstr_1_1str__src.html#aeded41f429cf838fd6e1728c93b7ee35',1,'simstr::str_src::is_part_of()']]],
+  ['is_5fsame_13',['is_same',['../structsimstr_1_1simple__str.html#ab6a66a7877b07e9f95d91c71077fdf48',1,'simstr::simple_str::is_same()'],['../structsimstr_1_1str__src.html#acef14081d16a68eb11984d3200d31a42',1,'simstr::str_src::is_same()']]]
 ];

@@ -95,9 +95,9 @@ var NAVTREEINDEX =
 "classsimstr_1_1str__algs.html#ab3f6c202d1c1723297d46a45d82c5808",
 "classsimstr_1_1str__src__algs.html#a9bded9dcb3da163cf73d690dd63a73d4",
 "namespacesimstr.html#a535ff50092fb0783922615ee0d3af5a2",
-"structsimstr_1_1simple__str.html#ad2c053de38bf2a0eab39cf1de5b0a21a",
-"structsimstr_1_1str__src.html#a15504449e8d2a8f77832046b559ae0a8",
-"structsimstr_1_1str__src__nt.html#a775a7c8e218ab3223f0248f225076b7c"
+"structsimstr_1_1simple__str.html#ac82f1096d596015340377b58704030cf",
+"structsimstr_1_1str__src.html#a108d9cd0dc24f5d395e838a3ef20d846",
+"structsimstr_1_1str__src__nt.html#a73806fa93c9ec619ba93d479d413ea0f"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

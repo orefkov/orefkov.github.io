@@ -5,7 +5,7 @@ var searchData=
   ['init_5fstr_5fexpr_2',['init_str_expr',['../classsimstr_1_1str__storable.html#a5d6ca99606646e8a2fb07f5808dae999',1,'simstr::str_storable']]],
   ['init_5fstr_5frepeat_3',['init_str_repeat',['../classsimstr_1_1str__storable.html#a92e0afaaca95e435c77ecc4ab3f26b8d',1,'simstr::str_storable']]],
   ['init_5fsymb_5frepeat_4',['init_symb_repeat',['../classsimstr_1_1str__storable.html#a47d5032575e4c90cdb9a8bcd0aa8c735',1,'simstr::str_storable']]],
-  ['insert_5',['insert',['../classsimstr_1_1str__mutable.html#a81a87ca9286d27c944b0453df89e7f92',1,'simstr::str_mutable::insert(size_t to, str_piece other)'],['../classsimstr_1_1str__mutable.html#a01abc4c1daa39bb99451be642dc86f48',1,'simstr::str_mutable::insert(size_t to, const A &amp;expr)']]],
+  ['insert_5',['insert',['../classsimstr_1_1str__mutable.html#a81a87ca9286d27c944b0453df89e7f92',1,'simstr::str_mutable::insert(size_t to, str_piece other)'],['../classsimstr_1_1str__mutable.html#a01abc4c1daa39bb99451be642dc86f48',1,'simstr::str_mutable::insert(size_t to, const A &amp;expr)'],['../namespacesimstr_1_1str.html#afb9af1b76a9815d827e9b46affccb49f',1,'simstr::str::insert()']]],
   ['is_5fascii_6',['is_ascii',['../classsimstr_1_1str__src__algs.html#aaeefcf45750a8260d5a57b3056a1521f',1,'simstr::str_src_algs']]],
   ['is_5fcontinuous_7',['is_continuous',['../classsimstr_1_1chunked__string__builder.html#ab3d8e89a6d9cd07b5ef35e2ff31b1166',1,'simstr::chunked_string_builder']]],
   ['is_5fdone_8',['is_done',['../classsimstr_1_1_splitter_base.html#a4ba6176b0e6ec2230fe51d2022252801',1,'simstr::SplitterBase']]],

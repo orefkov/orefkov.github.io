@@ -117,7 +117,7 @@ simstr - String object and function library</h1>
 <p>It's no secret that working with strings in C++ often causes pain. The <code>std::string</code> class is often inconvenient or inefficient. Many functions that are usually needed when working with strings are simply not there, and everyone has to write them themselves. Even concatenating <code>std::string</code> and <code>std::string_view</code> became possible only with C++26. That's why I started creating this library for myself around 2012, and now I'm ready to share it with all C++ developers.</p>
 <p>This library was not made as a universal combine that "can do everything", I implemented what I had to use in my work, trying to do it in the most efficient way, and I modestly hope that I have succeeded in something and will be useful to other people, either directly or as a source of ideas.</p>
 <p>The library contains two parts:</p><ul>
-<li>Implementation of <a href="https://orefkov.github.io/simstr/docs_en/group___str_exprs.html#details"><em>"String Expressions"</em></a> and algorithms for working with constant strings.\ To use this part, just take the file <code>"include/simstr/strexpr.h"</code> and write in your code <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;path/to/file/strexpr.h&quot;</span></div>
+<li>Implementation of <a href="https://orefkov.github.io/simstr/docs_en/overview.html#autotoc_md68"><em>"String Expressions"</em></a> and algorithms for working with constant strings.\ To use this part, just take the file <code>"include/simstr/strexpr.h"</code> and write in your code <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;path/to/file/strexpr.h&quot;</span></div>
 </div><!-- fragment --> This will allow you to use powerful and fast <em>"string expressions"</em> for concatenation and string construction for standard string types (<code>std::basic_string</code>, <code>std::basic_string_view</code>), as well as simplified versions of the <code>simple_str</code> and <code>simple_str_nt</code> classes, which implement all those string algorithms of the library that do not require storing or modifying strings. Since this is a header-only part, it does not include working with UTF encodings and simplified Unicode.</li>
 <li>The full version, which requires connecting the entire library (<code>"include/simstr/sstring.h"</code>), adds its own string types with the ability to store and modify strings, works with UTF encodings and simplified Unicode.</li>
 </ul>
@@ -262,7 +262,7 @@ Addition with replacements</h3>
 <div class="line">std::string make_str_exp(std::string_view from, std::string_view pattern, std::string_view repl) {</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;&quot;</span> + <a class="code hl_function" href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">e_repl</a>(from, pattern, repl) + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Get a string expression that generates a string with all occurrences of a given substring replaced.</div><div class="ttdef"><b>Definition</b> strexpr.h:4471</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Get a string expression that generates a string with all occurrences of a given substring replaced.</div><div class="ttdef"><b>Definition</b> strexpr.h:4472</div></div>
 </div><!-- fragment --><p> <a href="https://orefkov.github.io/simstr/results.html#bs54035654251116789780">Acceleration from 1.5 times and higher</a> - depending on the content of the strings.</p>
 <h3><a class="anchor" id="autotoc_md50"></a>
 Splitting strings into parts, parsing numbers</h3>
@@ -310,8 +310,8 @@ Main objects of the library</h2>
 Articles</h2>
 <ul>
 <li>Overview and introduction</li>
-<li><a href="https://habr.com/ru/articles/935590">Overview article on Habr</a></li>
-<li><a href="https://habr.com/ru/articles/936468/">Description of the "Expression Templates" technique used</a></li>
+<li><a href="https://habr.com/ru/articles/935590">Overview article on Habr</a> (On Russian)</li>
+<li><a href="https://habr.com/ru/articles/936468/">Description of the "Expression Templates" technique used</a> (On Russian)</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md53"></a>
 Usage</h2>

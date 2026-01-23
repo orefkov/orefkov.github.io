@@ -3,7 +3,7 @@ var searchData=
   ['c_0',['Strings in C++',['../overview.html#autotoc_md57',1,'']]],
   ['called_20of_20course_20tt_20simple_5fstr_20tt_20_3a_1',['The first simplest string class is called, of course, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md64',1,'']]],
   ['capacity_2',['capacity',['../classsimstr_1_1lstring.html#aeeea9e8d11fee04982ac6df01b4f6a7c',1,'simstr::lstring']]],
-  ['change_3',['change',['../classsimstr_1_1str__mutable.html#a5a03860f5d616ab4850daa1778e13f57',1,'simstr::str_mutable::change(size_t from, size_t len, str_piece other)'],['../classsimstr_1_1str__mutable.html#a537880538e549f94a3ce137d7cf33064',1,'simstr::str_mutable::change(size_t from, size_t len, const A &amp;expr)']]],
+  ['change_3',['change',['../classsimstr_1_1str__mutable.html#a5a03860f5d616ab4850daa1778e13f57',1,'simstr::str_mutable::change(size_t from, size_t len, str_piece other)'],['../classsimstr_1_1str__mutable.html#a537880538e549f94a3ce137d7cf33064',1,'simstr::str_mutable::change(size_t from, size_t len, const A &amp;expr)'],['../namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf',1,'simstr::str::change()']]],
   ['charactertype_4',['empty_expr&lt;CharacterType&gt;',['../overview.html#autotoc_md79',1,'']]],
   ['charactertype_20integer_5',['expr_num&lt;CharacterType&gt;(Integer)',['../overview.html#autotoc_md74',1,'']]],
   ['charactertype_20numberofcharacters_20symbol_6',['CharacterType NumberOfCharacters Symbol',['../overview.html#autotoc_md70',1,'expr_pad&lt;CharacterType&gt;{NumberOfCharacters, Symbol = &apos; &apos;}'],['../overview.html#autotoc_md69',1,'expr_spaces&lt;CharacterType, NumberOfCharacters, Symbol = &apos; &apos;&gt;{}']]],

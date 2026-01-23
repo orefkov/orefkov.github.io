@@ -11,7 +11,7 @@ var searchData=
   ['and_20function_20library_8',['simstr - String object and function library',['../index.html#autotoc_md41',1,'']]],
   ['and_20is_9',['What was and is',['../overview.html#autotoc_md58',1,'']]],
   ['and_20searching_20in_20tt_20std_3a_3astring_5fview_20tt_10',['Adding multiple literals and searching in &lt;tt&gt;std::string_view&lt;/tt&gt;',['../index.html#autotoc_md47',1,'']]],
-  ['append_11',['append',['../classsimstr_1_1str__mutable.html#a8bb338bd949c276a8bd4b9bbc8f9ef5a',1,'simstr::str_mutable::append(str_piece other)'],['../classsimstr_1_1str__mutable.html#a0275b9ec5edad56807286a9eabd613ff',1,'simstr::str_mutable::append(const A &amp;expr)']]],
+  ['append_11',['append',['../classsimstr_1_1str__mutable.html#a8bb338bd949c276a8bd4b9bbc8f9ef5a',1,'simstr::str_mutable::append(str_piece other)'],['../classsimstr_1_1str__mutable.html#a0275b9ec5edad56807286a9eabd613ff',1,'simstr::str_mutable::append(const A &amp;expr)'],['../namespacesimstr_1_1str.html#a351d8d1db18b0dca19992b164fb6253f',1,'simstr::str::append()']]],
   ['append_5fformatted_12',['append_formatted',['../classsimstr_1_1str__mutable.html#a39acae07e8fa0b0f40721cf7b7aa9129',1,'simstr::str_mutable']]],
   ['append_5fin_13',['append_in',['../classsimstr_1_1str__mutable.html#a740d3b2e75a7ad8c08a8363cbfa9b4df',1,'simstr::str_mutable::append_in(size_t pos, str_piece other)'],['../classsimstr_1_1str__mutable.html#ae66589c8ea0f96cc3dd33ca9bba3a65e',1,'simstr::str_mutable::append_in(size_t pos, const A &amp;expr)']]],
   ['append_5fprintf_14',['append_printf',['../classsimstr_1_1str__mutable.html#a256725807b06cfe2009cf378c4a687f5',1,'simstr::str_mutable']]],

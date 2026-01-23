@@ -273,21 +273,21 @@ template&lt;StdStrSource T, StrExprForType&lt; typename T::value_type &gt; A&gt;
 <tr class="memitem:ga4bd001ccf59de81ceb1493eff2d2214f"><td class="memTemplItemLeft" align="right" valign="top">constexpr expr_num&lt; K, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga4bd001ccf59de81ceb1493eff2d2214f">simstr::e_num</a> (T t)</td></tr>
 <tr class="memdesc:ga4bd001ccf59de81ceb1493eff2d2214f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразование целого числа в строковое выражение.  <br /></td></tr>
 <tr class="separator:ga4bd001ccf59de81ceb1493eff2d2214f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafcde8bf3ec1de77095e9dc62faf5cbcd" id="r_gafcde8bf3ec1de77095e9dc62faf5cbcd"><td class="memTemplParams" colspan="2">template&lt;StrExpr A, typename R&gt; <br />
+<tr class="memitem:ga1a42429815e770265b76a4211d55b2c5" id="r_ga1a42429815e770265b76a4211d55b2c5"><td class="memTemplParams" colspan="2">template&lt;StrExpr A, typename R&gt; <br />
 requires (std::is_same_v&lt;R, double&gt; || std::is_same_v&lt;R, float&gt;)</td></tr>
-<tr class="memitem:gafcde8bf3ec1de77095e9dc62faf5cbcd"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gafcde8bf3ec1de77095e9dc62faf5cbcd">simstr::operator+</a> (const A &amp;a, R s)</td></tr>
-<tr class="memdesc:gafcde8bf3ec1de77095e9dc62faf5cbcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор конкатенации для строкового выражения и вещественного числа (<code>float</code>, <code>double</code>).  <br /></td></tr>
-<tr class="separator:gafcde8bf3ec1de77095e9dc62faf5cbcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab9e6e4addf1532e84c9687460539a961" id="r_gab9e6e4addf1532e84c9687460539a961"><td class="memTemplParams" colspan="2">template&lt;StrExpr A, typename R&gt; <br />
+<tr class="memitem:ga1a42429815e770265b76a4211d55b2c5"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1strexprjoin__c.html">strexprjoin_c</a>&lt; A, expr_real&lt; typename A::symb_type &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga1a42429815e770265b76a4211d55b2c5">simstr::operator+</a> (const A &amp;a, R s)</td></tr>
+<tr class="memdesc:ga1a42429815e770265b76a4211d55b2c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор конкатенации для строкового выражения и вещественного числа (<code>float</code>, <code>double</code>).  <br /></td></tr>
+<tr class="separator:ga1a42429815e770265b76a4211d55b2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b067a24eabc409c0b323d4560cf063f" id="r_ga8b067a24eabc409c0b323d4560cf063f"><td class="memTemplParams" colspan="2">template&lt;StrExpr A, typename R&gt; <br />
 requires (std::is_same_v&lt;R, double&gt; || std::is_same_v&lt;R, float&gt;)</td></tr>
-<tr class="memitem:gab9e6e4addf1532e84c9687460539a961"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gab9e6e4addf1532e84c9687460539a961">simstr::operator+</a> (R s, const A &amp;a)</td></tr>
-<tr class="memdesc:gab9e6e4addf1532e84c9687460539a961"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор конкатенации для вещественного числа (<code>float</code>, <code>double</code>) и строкового выражения.  <br /></td></tr>
-<tr class="separator:gab9e6e4addf1532e84c9687460539a961"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab45824a2b0f4f492bdb72a49b843c8f0" id="r_gab45824a2b0f4f492bdb72a49b843c8f0"><td class="memTemplParams" colspan="2">template&lt;typename K&gt; <br />
+<tr class="memitem:ga8b067a24eabc409c0b323d4560cf063f"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1strexprjoin__c.html">strexprjoin_c</a>&lt; A, expr_real&lt; typename A::symb_type &gt;, false &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga8b067a24eabc409c0b323d4560cf063f">simstr::operator+</a> (R s, const A &amp;a)</td></tr>
+<tr class="memdesc:ga8b067a24eabc409c0b323d4560cf063f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор конкатенации для вещественного числа (<code>float</code>, <code>double</code>) и строкового выражения.  <br /></td></tr>
+<tr class="separator:ga8b067a24eabc409c0b323d4560cf063f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacea7fe28fcd6fdb6dcae8035eb3b8744" id="r_gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="memTemplParams" colspan="2">template&lt;typename K&gt; <br />
 requires is_one_of_char_v&lt;K&gt;</td></tr>
-<tr class="memitem:gab45824a2b0f4f492bdb72a49b843c8f0"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gab45824a2b0f4f492bdb72a49b843c8f0">simstr::e_num</a> (double t)</td></tr>
-<tr class="memdesc:gab45824a2b0f4f492bdb72a49b843c8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразование <code>double</code> числа в строковое выражение.  <br /></td></tr>
-<tr class="separator:gab45824a2b0f4f492bdb72a49b843c8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="memTemplItemLeft" align="right" valign="top">constexpr expr_real&lt; K &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gacea7fe28fcd6fdb6dcae8035eb3b8744">simstr::e_num</a> (double t)</td></tr>
+<tr class="memdesc:gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразование <code>double</code> числа в строковое выражение.  <br /></td></tr>
+<tr class="separator:gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6b1c21511e377e4f62d5ae01d818a824" id="r_ga6b1c21511e377e4f62d5ae01d818a824"><td class="memTemplParams" colspan="2">template&lt;unsigned Flags = 0, FromIntNumber T&gt; <br />
 requires std::is_unsigned_v&lt;T&gt;</td></tr>
 <tr class="memitem:ga6b1c21511e377e4f62d5ae01d818a824"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga6b1c21511e377e4f62d5ae01d818a824">simstr::e_hex</a> (T v)</td></tr>
@@ -558,7 +558,8 @@ template&lt;StrExpr A, StrExprForType&lt; typename A::symb_type &gt; B&gt; </div
 </dl>
 <p>Служит для возможности в одном выражении выбирать разные варианты в зависимости от условия. Примеры: </p><div class="fragment"><div class="line">columns_metadata.emplace_back(<a class="code hl_function" href="#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(name.is_empty(), <span class="stringliteral">&quot;?column?&quot;</span>, name) + <span class="stringliteral">&quot;::&quot;</span> + metadata_column.type.to_string());</div>
 <div class="ttc" id="agroup___str_exprs_html_gab058a69a654cf3a0fce197e862a7400e"><div class="ttname"><a href="#gab058a69a654cf3a0fce197e862a7400e">simstr::e_choice</a></div><div class="ttdeci">constexpr expr_choice&lt; A, B &gt; e_choice(bool c, const A &amp;a, const B &amp;b)</div><div class="ttdoc">Создание условного строкового выражения expr_choice.</div><div class="ttdef"><b>Определения</b> strexpr.h:1235</div></div>
-</div><!-- fragment --> <div class="fragment"><div class="line">lstringa&lt;512&gt; str = <a class="code hl_function" href="#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(!ret_type_resolver_, sql_value::type_name(ret_type_), <span class="stringliteral">&quot;any&quot;</span>) + <span class="stringliteral">&quot; &quot;</span> + name_ + <span class="stringliteral">&quot;(&quot;</span>;</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">lstringa&lt;512&gt; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a> = <a class="code hl_function" href="#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(!ret_type_resolver_, sql_value::type_name(ret_type_), <span class="stringliteral">&quot;any&quot;</span>) + <span class="stringliteral">&quot; &quot;</span> + name_ + <span class="stringliteral">&quot;(&quot;</span>;</div>
+<div class="ttc" id="anamespacesimstr_1_1str_html"><div class="ttname"><a href="namespacesimstr_1_1str.html">simstr::str</a></div><div class="ttdoc">Небольшое пространство для методов работы со стандартными строками.</div><div class="ttdef"><b>Определения</b> strexpr.h:1388</div></div>
 </div><!-- fragment --><p> Иначе такие операции приходилось бы разбивать на несколько модификаций строки или применению временных строк, что не оптимально и снизит производительность. (Это проверяется в бенчмарке "Build Full Func Name") </p>
 
 </div>
@@ -674,7 +675,7 @@ requires std::is_unsigned_v&lt;T&gt;</div>
 <div class="line"> </div>
 <div class="line">stringu textu = +u<span class="stringliteral">&quot;val = 0X&quot;</span>sv + <a class="code hl_function" href="#ga6b1c21511e377e4f62d5ae01d818a824">e_hex&lt;HexFlags::No0x | HexFlags::Short | HexFlags::Lcase&gt;</a>(0x12Au);</div>
 <div class="line">EXPECT_EQ(textu, u<span class="stringliteral">&quot;val = 0X12a&quot;</span>);</div>
-<div class="ttc" id="agroup___str_exprs_html_ga6b1c21511e377e4f62d5ae01d818a824"><div class="ttname"><a href="#ga6b1c21511e377e4f62d5ae01d818a824">simstr::e_hex</a></div><div class="ttdeci">constexpr auto e_hex(T v)</div><div class="ttdoc">Позволяет конкатенировать текст и беззнаковое число в 16-ричном виде.</div><div class="ttdef"><b>Определения</b> strexpr.h:1705</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga6b1c21511e377e4f62d5ae01d818a824"><div class="ttname"><a href="#ga6b1c21511e377e4f62d5ae01d818a824">simstr::e_hex</a></div><div class="ttdeci">constexpr auto e_hex(T v)</div><div class="ttdoc">Позволяет конкатенировать текст и беззнаковое число в 16-ричном виде.</div><div class="ttdef"><b>Определения</b> strexpr.h:1702</div></div>
 </div><!-- fragment --> </td></tr>
   </table>
   </dd>
@@ -728,23 +729,23 @@ template&lt;StrExpr A&gt; </div>
 <p>Служит для возможности в одном выражении генерировать в зависимости от условия либо указанный вариант, либо пустую строку. Примеры: </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> sql_func_info::build_full_name() {</div>
 <div class="line">    <span class="comment">// Временный буфер для результата, возьмём с запасом</span></div>
 <div class="line">    <span class="comment">// Temporary buffer for the result, take it with reserve</span></div>
-<div class="line">    lstringa&lt;512&gt; str = <a class="code hl_function" href="#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(!ret_type_resolver_, sql_value::type_name(ret_type_), <span class="stringliteral">&quot;any&quot;</span>) + <span class="stringliteral">&quot; &quot;</span> + name_ + <span class="stringliteral">&quot;(&quot;</span>;</div>
+<div class="line">    lstringa&lt;512&gt; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a> = <a class="code hl_function" href="#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(!ret_type_resolver_, sql_value::type_name(ret_type_), <span class="stringliteral">&quot;any&quot;</span>) + <span class="stringliteral">&quot; &quot;</span> + name_ + <span class="stringliteral">&quot;(&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">bool</span> add_comma = <span class="keyword">false</span>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; param : params_) {</div>
-<div class="line">        str += <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(add_comma, <span class="stringliteral">&quot;, &quot;</span>) + <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(param.optional_, <span class="stringliteral">&quot;[&quot;</span>);</div>
+<div class="line">        <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a> += <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(add_comma, <span class="stringliteral">&quot;, &quot;</span>) + <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(param.optional_, <span class="stringliteral">&quot;[&quot;</span>);</div>
 <div class="line">        <span class="comment">// Добавляет к str названия допустимых типов</span></div>
 <div class="line">        <span class="comment">// Adds the names of valid types to str</span></div>
-<div class="line">        param.allowed_types.to_string(str);</div>
+<div class="line">        param.allowed_types.to_string(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>);</div>
 <div class="line">        <span class="keywordflow">if</span> (param.optional_) {</div>
-<div class="line">            str += <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line">            <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a> += <span class="stringliteral">&quot;]&quot;</span>;</div>
 <div class="line">        }</div>
 <div class="line">        add_comma = <span class="keyword">true</span>;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">// Сохраним в stringa</span></div>
 <div class="line">    <span class="comment">// Save it in stringa</span></div>
-<div class="line">    full_name_ = str + <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(unlim_params_, <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(add_comma, <span class="stringliteral">&quot;, &quot;</span>) + <span class="stringliteral">&quot;...&quot;</span>) + <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line">    full_name_ = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a> + <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(unlim_params_, <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(add_comma, <span class="stringliteral">&quot;, &quot;</span>) + <span class="stringliteral">&quot;...&quot;</span>) + <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Создание условного строкового выражения expr_if.</div><div class="ttdef"><b>Определения</b> strexpr.h:1313</div></div>
 </div><!-- fragment --><p> Иначе такие операции приходилось бы разбивать на несколько модификаций строки или применению временных строк, что не оптимально и снизит производительность. (Этот пример проверяется в бенчмарке "Build Full Func Name") </p>
@@ -798,8 +799,8 @@ template&lt;bool tail = false, bool skip_empty = false, typename L, typename K =
 
 </div>
 </div>
-<a id="gab45824a2b0f4f492bdb72a49b843c8f0" name="gab45824a2b0f4f492bdb72a49b843c8f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab45824a2b0f4f492bdb72a49b843c8f0">&#9670;&#160;</a></span>e_num() <span class="overload">[1/2]</span></h2>
+<a id="gacea7fe28fcd6fdb6dcae8035eb3b8744" name="gacea7fe28fcd6fdb6dcae8035eb3b8744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacea7fe28fcd6fdb6dcae8035eb3b8744">&#9670;&#160;</a></span>e_num() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -811,7 +812,7 @@ requires is_one_of_char_v&lt;K&gt;</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto simstr::e_num </td>
+          <td class="memname">expr_real&lt; K &gt; simstr::e_num </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
           <td></td>
@@ -1172,7 +1173,7 @@ requires (sizeof...(Repl) % 2 == 0)</div>
 </dl>
 <p>Применяется для генерации замены символов на строки, в случае если все они известны в compile time. Пример:</p>
 <div class="fragment"><div class="line">out += <span class="stringliteral">&quot;&lt;div&gt;&quot;</span> + <a class="code hl_function" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a>(text, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>, <span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="stringliteral">&quot;&amp;#39;&quot;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>) + <span class="stringliteral">&quot;&lt;/div&gt;&quot;</span>;</div>
-<div class="ttc" id="agroup___str_exprs_html_gac0d4ca53513bcc0d1c0730940ec8a8a1"><div class="ttname"><a href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a></div><div class="ttdeci">auto e_repl_const_symbols(A &amp;&amp;src, Repl &amp;&amp;... other)</div><div class="ttdoc">Возвращает строковое выражение, генерирующее строку, в которой заданные символы заменены на заданные ...</div><div class="ttdef"><b>Определения</b> strexpr.h:4868</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gac0d4ca53513bcc0d1c0730940ec8a8a1"><div class="ttname"><a href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a></div><div class="ttdeci">auto e_repl_const_symbols(A &amp;&amp;src, Repl &amp;&amp;... other)</div><div class="ttdoc">Возвращает строковое выражение, генерирующее строку, в которой заданные символы заменены на заданные ...</div><div class="ttdef"><b>Определения</b> strexpr.h:4869</div></div>
 </div><!-- fragment --><p> В принципе, <code>e_repl_const_symbols</code> вполне безопасно возвращать из функции, если исходная строка внешняя по отношению к функции.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> repl_html_symbols(ssa text) {</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a>(text, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>, <span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="stringliteral">&quot;&amp;#39;&quot;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>);</div>
@@ -1459,8 +1460,8 @@ template&lt;typename K, StrExprForType&lt; K &gt; A&gt; </div>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="gafcde8bf3ec1de77095e9dc62faf5cbcd" name="gafcde8bf3ec1de77095e9dc62faf5cbcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafcde8bf3ec1de77095e9dc62faf5cbcd">&#9670;&#160;</a></span>operator+() <span class="overload">[5/13]</span></h2>
+<a id="ga1a42429815e770265b76a4211d55b2c5" name="ga1a42429815e770265b76a4211d55b2c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1a42429815e770265b76a4211d55b2c5">&#9670;&#160;</a></span>operator+() <span class="overload">[5/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1472,7 +1473,7 @@ requires (std::is_same_v&lt;R, double&gt; || std::is_same_v&lt;R, float&gt;)</di
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto simstr::operator+ </td>
+          <td class="memname"><a class="el" href="structsimstr_1_1strexprjoin__c.html">strexprjoin_c</a>&lt; A, expr_real&lt; typename A::symb_type &gt; &gt; simstr::operator+ </td>
           <td>(</td>
           <td class="paramtype">const A &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
@@ -1657,8 +1658,8 @@ template&lt;StrExpr A&gt; </div>
 
 </div>
 </div>
-<a id="gab9e6e4addf1532e84c9687460539a961" name="gab9e6e4addf1532e84c9687460539a961"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab9e6e4addf1532e84c9687460539a961">&#9670;&#160;</a></span>operator+() <span class="overload">[10/13]</span></h2>
+<a id="ga8b067a24eabc409c0b323d4560cf063f" name="ga8b067a24eabc409c0b323d4560cf063f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8b067a24eabc409c0b323d4560cf063f">&#9670;&#160;</a></span>operator+() <span class="overload">[10/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1670,7 +1671,7 @@ requires (std::is_same_v&lt;R, double&gt; || std::is_same_v&lt;R, float&gt;)</di
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto simstr::operator+ </td>
+          <td class="memname"><a class="el" href="structsimstr_1_1strexprjoin__c.html">strexprjoin_c</a>&lt; A, expr_real&lt; typename A::symb_type &gt;, false &gt; simstr::operator+ </td>
           <td>(</td>
           <td class="paramtype">R</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
         </tr>

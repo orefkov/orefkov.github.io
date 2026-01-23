@@ -1,5 +1,11 @@
 var namespacesimstr =
 [
+    [ "str", "namespacesimstr_1_1str.html", [
+      [ "append", "namespacesimstr_1_1str.html#a351d8d1db18b0dca19992b164fb6253f", null ],
+      [ "change", "namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf", null ],
+      [ "insert", "namespacesimstr_1_1str.html#afb9af1b76a9815d827e9b46affccb49f", null ],
+      [ "prepend", "namespacesimstr_1_1str.html#a5fb93ccbf4f2bc1ca6db244ef11c3047", null ]
+    ] ],
     [ "chunked_string_builder", "classsimstr_1_1chunked__string__builder.html", "classsimstr_1_1chunked__string__builder" ],
     [ "empty_expr", "structsimstr_1_1empty__expr.html", null ],
     [ "expr_choice", "structsimstr_1_1expr__choice.html", null ],
@@ -68,7 +74,7 @@ var namespacesimstr =
     [ "e_if", "group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751", null ],
     [ "e_if", "group___str_exprs.html#gacaea41c25b6dc26662221fd1c5fb705c", null ],
     [ "e_join", "group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52", null ],
-    [ "e_num", "group___str_exprs.html#gab45824a2b0f4f492bdb72a49b843c8f0", null ],
+    [ "e_num", "group___str_exprs.html#gacea7fe28fcd6fdb6dcae8035eb3b8744", null ],
     [ "e_num", "group___str_exprs.html#ga4bd001ccf59de81ceb1493eff2d2214f", null ],
     [ "e_repeat", "group___str_exprs.html#ga110a07b71eab2b667f78afc1068df0a9", null ],
     [ "e_repeat", "group___str_exprs.html#ga9d17e531ba0aa5e62e0480fa8b1a1497", null ],
@@ -108,13 +114,13 @@ var namespacesimstr =
     [ "operator+", "group___str_exprs.html#gae2c4277f5b85cd9742e02f648af92fb9", null ],
     [ "operator+", "group___str_exprs.html#ga0d03cfa41a4f78e843b88b0ce74be7c8", null ],
     [ "operator+", "group___str_exprs.html#ga9d8bc7652fac165ad43ae054fb083616", null ],
-    [ "operator+", "group___str_exprs.html#gafcde8bf3ec1de77095e9dc62faf5cbcd", null ],
+    [ "operator+", "group___str_exprs.html#ga1a42429815e770265b76a4211d55b2c5", null ],
     [ "operator+", "group___str_exprs.html#ga426dd6edd38c382f64fb4cc547896c80", null ],
     [ "operator+", "group___str_exprs.html#ga0421f6f954a1f0a4575cb282c1e36712", null ],
     [ "operator+", "group___str_exprs.html#ga356a058d98bfa4eca0a44e49745bde28", null ],
     [ "operator+", "group___str_exprs.html#gacd8a4a6047c5eb6bc13d23064f8778fe", null ],
     [ "operator+", "group___str_exprs.html#ga5befc2f161aca230425db4c66cc90ce5", null ],
-    [ "operator+", "group___str_exprs.html#gab9e6e4addf1532e84c9687460539a961", null ],
+    [ "operator+", "group___str_exprs.html#ga8b067a24eabc409c0b323d4560cf063f", null ],
     [ "operator+", "group___str_exprs.html#ga07c35bc9eecc1509118d73ef5e27d303", null ],
     [ "operator+", "group___str_exprs.html#gaff6edec79f617564db65f91039283f39", null ],
     [ "operator<<", "namespacesimstr.html#a73fd8761a377379d4ce6712c3f144e18", null ],

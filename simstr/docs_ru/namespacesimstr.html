@@ -104,6 +104,7 @@ $(function(){initNavTree('namespacesimstr.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Пространства имен</a> &#124;
 <a href="#nested-classes">Классы</a> &#124;
 <a href="#concepts">Концепты</a> &#124;
 <a href="#typedef-members">Определения типов</a> &#124;
@@ -117,6 +118,12 @@ $(function(){initNavTree('namespacesimstr.html',''); initResizable(true); });
 <p>Пространство имён для объектов библиотеки  
 <a href="#details">Подробнее...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesimstr_1_1str.html">str</a></td></tr>
+<tr class="memdesc:namespacesimstr_1_1str"><td class="mdescLeft">&#160;</td><td class="mdescRight">Небольшое пространство для методов работы со стандартными строками. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Классы</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1chunked__string__builder.html">chunked_string_builder</a></td></tr>
@@ -493,21 +500,21 @@ template&lt;StdStrSource T, StrExprForType&lt; typename T::value_type &gt; A&gt;
 <tr class="memitem:ga4bd001ccf59de81ceb1493eff2d2214f"><td class="memTemplItemLeft" align="right" valign="top">constexpr expr_num&lt; K, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#ga4bd001ccf59de81ceb1493eff2d2214f">e_num</a> (T t)</td></tr>
 <tr class="memdesc:ga4bd001ccf59de81ceb1493eff2d2214f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразование целого числа в строковое выражение.  <br /></td></tr>
 <tr class="separator:ga4bd001ccf59de81ceb1493eff2d2214f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafcde8bf3ec1de77095e9dc62faf5cbcd" id="r_gafcde8bf3ec1de77095e9dc62faf5cbcd"><td class="memTemplParams" colspan="2">template&lt;StrExpr A, typename R&gt; <br />
+<tr class="memitem:ga1a42429815e770265b76a4211d55b2c5" id="r_ga1a42429815e770265b76a4211d55b2c5"><td class="memTemplParams" colspan="2">template&lt;StrExpr A, typename R&gt; <br />
 requires (std::is_same_v&lt;R, double&gt; || std::is_same_v&lt;R, float&gt;)</td></tr>
-<tr class="memitem:gafcde8bf3ec1de77095e9dc62faf5cbcd"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#gafcde8bf3ec1de77095e9dc62faf5cbcd">operator+</a> (const A &amp;a, R s)</td></tr>
-<tr class="memdesc:gafcde8bf3ec1de77095e9dc62faf5cbcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор конкатенации для строкового выражения и вещественного числа (<code>float</code>, <code>double</code>).  <br /></td></tr>
-<tr class="separator:gafcde8bf3ec1de77095e9dc62faf5cbcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab9e6e4addf1532e84c9687460539a961" id="r_gab9e6e4addf1532e84c9687460539a961"><td class="memTemplParams" colspan="2">template&lt;StrExpr A, typename R&gt; <br />
+<tr class="memitem:ga1a42429815e770265b76a4211d55b2c5"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1strexprjoin__c.html">strexprjoin_c</a>&lt; A, expr_real&lt; typename A::symb_type &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#ga1a42429815e770265b76a4211d55b2c5">operator+</a> (const A &amp;a, R s)</td></tr>
+<tr class="memdesc:ga1a42429815e770265b76a4211d55b2c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор конкатенации для строкового выражения и вещественного числа (<code>float</code>, <code>double</code>).  <br /></td></tr>
+<tr class="separator:ga1a42429815e770265b76a4211d55b2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b067a24eabc409c0b323d4560cf063f" id="r_ga8b067a24eabc409c0b323d4560cf063f"><td class="memTemplParams" colspan="2">template&lt;StrExpr A, typename R&gt; <br />
 requires (std::is_same_v&lt;R, double&gt; || std::is_same_v&lt;R, float&gt;)</td></tr>
-<tr class="memitem:gab9e6e4addf1532e84c9687460539a961"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#gab9e6e4addf1532e84c9687460539a961">operator+</a> (R s, const A &amp;a)</td></tr>
-<tr class="memdesc:gab9e6e4addf1532e84c9687460539a961"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор конкатенации для вещественного числа (<code>float</code>, <code>double</code>) и строкового выражения.  <br /></td></tr>
-<tr class="separator:gab9e6e4addf1532e84c9687460539a961"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab45824a2b0f4f492bdb72a49b843c8f0" id="r_gab45824a2b0f4f492bdb72a49b843c8f0"><td class="memTemplParams" colspan="2">template&lt;typename K&gt; <br />
+<tr class="memitem:ga8b067a24eabc409c0b323d4560cf063f"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1strexprjoin__c.html">strexprjoin_c</a>&lt; A, expr_real&lt; typename A::symb_type &gt;, false &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#ga8b067a24eabc409c0b323d4560cf063f">operator+</a> (R s, const A &amp;a)</td></tr>
+<tr class="memdesc:ga8b067a24eabc409c0b323d4560cf063f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор конкатенации для вещественного числа (<code>float</code>, <code>double</code>) и строкового выражения.  <br /></td></tr>
+<tr class="separator:ga8b067a24eabc409c0b323d4560cf063f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacea7fe28fcd6fdb6dcae8035eb3b8744" id="r_gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="memTemplParams" colspan="2">template&lt;typename K&gt; <br />
 requires is_one_of_char_v&lt;K&gt;</td></tr>
-<tr class="memitem:gab45824a2b0f4f492bdb72a49b843c8f0"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#gab45824a2b0f4f492bdb72a49b843c8f0">e_num</a> (double t)</td></tr>
-<tr class="memdesc:gab45824a2b0f4f492bdb72a49b843c8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразование <code>double</code> числа в строковое выражение.  <br /></td></tr>
-<tr class="separator:gab45824a2b0f4f492bdb72a49b843c8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="memTemplItemLeft" align="right" valign="top">constexpr expr_real&lt; K &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#gacea7fe28fcd6fdb6dcae8035eb3b8744">e_num</a> (double t)</td></tr>
+<tr class="memdesc:gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразование <code>double</code> числа в строковое выражение.  <br /></td></tr>
+<tr class="separator:gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6b1c21511e377e4f62d5ae01d818a824" id="r_ga6b1c21511e377e4f62d5ae01d818a824"><td class="memTemplParams" colspan="2">template&lt;unsigned Flags = 0, FromIntNumber T&gt; <br />
 requires std::is_unsigned_v&lt;T&gt;</td></tr>
 <tr class="memitem:ga6b1c21511e377e4f62d5ae01d818a824"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#ga6b1c21511e377e4f62d5ae01d818a824">e_hex</a> (T v)</td></tr>

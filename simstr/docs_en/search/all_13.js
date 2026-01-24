@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['the_20first_20simplest_20string_20class_20is_20called_20of_20course_20tt_20simple_5fstr_20tt_20_3a_0',['The first simplest string class is called, of course, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md64',1,'']]],
-  ['the_20library_1',['the library',['../index.html#autotoc_md42',1,'Main features of the library'],['../index.html#autotoc_md51',1,'Main objects of the library']]],
-  ['the_20second_20class_20is_20tt_20simple_5fstr_5fnt_20tt_2',['The second class is &lt;tt&gt;simple_str_nt&lt;/tt&gt;',['../overview.html#autotoc_md65',1,'']]],
+  ['the_20first_20simplest_20string_20class_20is_20called_20of_20course_20tt_20simple_5fstr_20tt_20_3a_0',['The first simplest string class is called, of course, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md66',1,'']]],
+  ['the_20library_1',['the library',['../index.html#autotoc_md43',1,'Main features of the library'],['../index.html#autotoc_md52',1,'Main objects of the library']]],
+  ['the_20second_20class_20is_20tt_20simple_5fstr_5fnt_20tt_2',['The second class is &lt;tt&gt;simple_str_nt&lt;/tt&gt;',['../overview.html#autotoc_md67',1,'']]],
   ['to_5fdouble_3',['to_double',['../classsimstr_1_1str__algs.html#aa1af52e61e73c687a34ff6978304edc3',1,'simstr::str_algs::to_double()'],['../classsimstr_1_1str__src__algs.html#aba048f26826e186c9c233625c2db3934',1,'simstr::str_src_algs::to_double() const noexcept']]],
   ['to_5fdouble_5fhex_4',['to_double_hex',['../classsimstr_1_1str__src__algs.html#a037d07ad0ee024d983927cec3ee81908',1,'simstr::str_src_algs']]],
   ['to_5fint_5',['to_int',['../classsimstr_1_1str__src__algs.html#afa40ca4ad70df9ec0941599b88c443dc',1,'simstr::str_src_algs']]],
@@ -23,9 +23,9 @@ var searchData=
   ['trimmed_5fright_20',['trimmed_right',['../classsimstr_1_1str__src__algs.html#a0b3af5eab221e4645e6e91b7b1a6e7d2',1,'simstr::str_src_algs::trimmed_right() const'],['../classsimstr_1_1str__src__algs.html#ac82f1096d596015340377b58704030cf',1,'simstr::str_src_algs::trimmed_right(T &amp;&amp;pattern) const'],['../classsimstr_1_1str__src__algs.html#aa5a49ba436dd8d11037216dc97efcd4c',1,'simstr::str_src_algs::trimmed_right(str_piece pattern) const']]],
   ['trimmed_5fright_5fwith_5fspaces_21',['trimmed_right_with_spaces',['../classsimstr_1_1str__src__algs.html#ad41853e3d4d2579fe7557873592e7302',1,'simstr::str_src_algs::trimmed_right_with_spaces(T &amp;&amp;pattern) const'],['../classsimstr_1_1str__src__algs.html#ac21bff9dca83968de291faa2b6d59fa8',1,'simstr::str_src_algs::trimmed_right_with_spaces(str_piece pattern) const']]],
   ['trimmed_5fwith_5fspaces_22',['trimmed_with_spaces',['../classsimstr_1_1str__src__algs.html#ab950f20c494e2c60b22dfe95e410ec25',1,'simstr::str_src_algs::trimmed_with_spaces(T &amp;&amp;pattern) const'],['../classsimstr_1_1str__src__algs.html#a6c2541095cb5e5a262b8e20c4dc8428b',1,'simstr::str_src_algs::trimmed_with_spaces(str_piece pattern) const']]],
-  ['tt_23',['tt',['../index.html#autotoc_md47',1,'Adding multiple literals and searching in &lt;tt&gt;std::string_view&lt;/tt&gt;'],['../overview.html#autotoc_md65',1,'The second class is &lt;tt&gt;simple_str_nt&lt;/tt&gt;']]],
-  ['tt_20_3a_24',['The first simplest string class is called, of course, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md64',1,'']]],
-  ['tt_20simple_5fstr_20tt_20_3a_25',['The first simplest string class is called, of course, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md64',1,'']]],
-  ['tt_20simple_5fstr_5fnt_20tt_26',['The second class is &lt;tt&gt;simple_str_nt&lt;/tt&gt;',['../overview.html#autotoc_md65',1,'']]],
-  ['tt_20std_3a_3astring_5fview_20tt_27',['Adding multiple literals and searching in &lt;tt&gt;std::string_view&lt;/tt&gt;',['../index.html#autotoc_md47',1,'']]]
+  ['tt_23',['tt',['../index.html#autotoc_md48',1,'Adding multiple literals and searching in &lt;tt&gt;std::string_view&lt;/tt&gt;'],['../overview.html#autotoc_md67',1,'The second class is &lt;tt&gt;simple_str_nt&lt;/tt&gt;']]],
+  ['tt_20_3a_24',['The first simplest string class is called, of course, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md66',1,'']]],
+  ['tt_20simple_5fstr_20tt_20_3a_25',['The first simplest string class is called, of course, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md66',1,'']]],
+  ['tt_20simple_5fstr_5fnt_20tt_26',['The second class is &lt;tt&gt;simple_str_nt&lt;/tt&gt;',['../overview.html#autotoc_md67',1,'']]],
+  ['tt_20std_3a_3astring_5fview_20tt_27',['Adding multiple literals and searching in &lt;tt&gt;std::string_view&lt;/tt&gt;',['../index.html#autotoc_md48',1,'']]]
 ];

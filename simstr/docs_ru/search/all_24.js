@@ -1,6 +1,6 @@
 var searchData=
 [
   ['разбиение_20строк_20на_20части_20парсинг_20чисел_0',['Разбиение строк на части, парсинг чисел',['../index.html#autotoc_md9',1,'']]],
-  ['разделитель_1',['e_join&lt;bool ПослеПоследнего = false, bool ТолькоНеПустые = false&gt;(контейнер, &quot;Разделитель&quot;)',['../overview.html#autotoc_md35',1,'']]],
-  ['ресурсы_2',['Ресурсы',['../overview.html#autotoc_md18',1,'']]]
+  ['разделитель_1',['e_join&lt;bool ПослеПоследнего = false, bool ТолькоНеПустые = false&gt;(контейнер, &quot;Разделитель&quot;)',['../overview.html#autotoc_md36',1,'']]],
+  ['ресурсы_2',['Ресурсы',['../overview.html#autotoc_md19',1,'']]]
 ];

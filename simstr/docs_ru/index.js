@@ -13,9 +13,11 @@ var index =
       ] ],
       [ "Основные объекты библиотеки", "index.html#autotoc_md10", null ],
       [ "Статьи", "index.html#autotoc_md11", null ],
-      [ "Использование", "index.html#autotoc_md12", null ],
-      [ "Удобная отладка", "index.html#autotoc_md13", null ],
-      [ "Бенчмарки", "index.html#autotoc_md14", null ],
-      [ "Сгенерированная документация", "index.html#autotoc_md15", null ]
+      [ "Использование", "index.html#autotoc_md12", [
+        [ "Подключение через FetchContent", "index.html#autotoc_md13", null ]
+      ] ],
+      [ "Удобная отладка", "index.html#autotoc_md14", null ],
+      [ "Бенчмарки", "index.html#autotoc_md15", null ],
+      [ "Сгенерированная документация", "index.html#autotoc_md16", null ]
     ] ]
 ];

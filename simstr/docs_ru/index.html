@@ -234,7 +234,7 @@ simstr - библиотека строковых объектов и функц�
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> type_name;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Создание условного строкового выражения expr_if.</div><div class="ttdef"><b>Определения</b> strexpr.h:1313</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Создание условного строкового выражения expr_if.</div><div class="ttdef"><b>Определения</b> strexpr.h:1318</div></div>
 </div><!-- fragment --><p> При <code>prec != 0</code>, <a href="https://orefkov.github.io/simstr/results.html#bs145290966789248325200">ускорение 1.5 - 2.2 раза</a>.</p>
 <h3><a class="anchor" id="autotoc_md8"></a>
 Сложение с заменами</h3>
@@ -262,7 +262,7 @@ simstr - библиотека строковых объектов и функц�
 <div class="line">std::string make_str_exp(std::string_view from, std::string_view pattern, std::string_view repl) {</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;&quot;</span> + <a class="code hl_function" href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">e_repl</a>(from, pattern, repl) + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Получить строковое выражение, генерирующее строку с заменой всех вхождений заданной подстроки.</div><div class="ttdef"><b>Определения</b> strexpr.h:4472</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Получить строковое выражение, генерирующее строку с заменой всех вхождений заданной подстроки.</div><div class="ttdef"><b>Определения</b> strexpr.h:4474</div></div>
 </div><!-- fragment --><p> <a href="https://orefkov.github.io/simstr/results.html#bs54035654251116789780">Ускорение от 1.5 раз и выше</a> - в зависимости от содержимого строк.</p>
 <h3><a class="anchor" id="autotoc_md9"></a>
 Разбиение строк на части, парсинг чисел</h3>
@@ -318,12 +318,31 @@ simstr - библиотека строковых объектов и функц�
 <p>Библиотеку можно использовать частично, просто взяв файл <code>"include\simstr\strexpr.h"</code> и включив в свои исходники </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;include\simstr\strexpr.h&quot;</span></div>
 </div><!-- fragment --><p> Это подключит только строковые выражения и упрощённые реализации <code>simple_str</code> и <code>simple_str_nt</code>, без функций работы с UTF и Unicode.</p>
 <p>Полная же версия библиотеки <code>simstr</code> состоит из трёх заголовочных файлов и двух исходников. Можно подключать как CMake проект через <code>add_subdirectory</code> (библиотека <code>simstr</code>), можно просто включить файлы в свой проект. Для сборки также требуется <a href="https://github.com/simdutf/simdutf">simdutf</a> (при использовании CMake скачивается автоматически).</p>
-<p>Библиотека включена в <a href="https://vcpkg.io">vcpkg</a>, подключается как <code>orefkov-simstr</code>.</p>
+<h3><a class="anchor" id="autotoc_md13"></a>
+Подключение через FetchContent</h3>
+<div class="fragment"><div class="line">function(add_simstr)</div>
+<div class="line">    set(SIMSTR_BUILD_TESTS OFF)</div>
+<div class="line">    set(SIMSTR_BENCHMARKS OFF)</div>
+<div class="line">    FetchContent_Declare(</div>
+<div class="line">        <a class="code hl_namespace" href="namespacesimstr.html">simstr</a></div>
+<div class="line">        GIT_REPOSITORY https:<span class="comment">//github.com/orefkov/simstr.git</span></div>
+<div class="line">        GIT_SHALLOW TRUE</div>
+<div class="line">        GIT_TAG tags/rel1.4.0 # Укажите нужный релиз</div>
+<div class="line">        FIND_PACKAGE_ARGS NAMES <a class="code hl_namespace" href="namespacesimstr.html">simstr</a> 1.4.0</div>
+<div class="line">    )</div>
+<div class="line">    FetchContent_MakeAvailable(<a class="code hl_namespace" href="namespacesimstr.html">simstr</a>)</div>
+<div class="line">endfunction()</div>
+<div class="line"> </div>
+<div class="line">add_simstr()</div>
+<div class="line"> </div>
+<div class="line">target_link_libraries(&lt;your target&gt; PUBLIC <a class="code hl_namespace" href="namespacesimstr.html">simstr</a>::<a class="code hl_namespace" href="namespacesimstr.html">simstr</a>)</div>
+<div class="ttc" id="anamespacesimstr_html"><div class="ttname"><a href="namespacesimstr.html">simstr</a></div><div class="ttdoc">Пространство имён для объектов библиотеки</div><div class="ttdef"><b>Определения</b> sstring.cpp:10</div></div>
+</div><!-- fragment --><p>Библиотека также включена в <a href="https://vcpkg.io">vcpkg</a>, подключается как <code>orefkov-simstr</code>.</p>
 <p>Для работы <code>simstr</code> требуется компилятор стандарта не ниже С++20 - используются концепты и std::format. Работа проверялась под Windows на MSVC-19 и Clang-19, под Linux - на GCC-13 и Clang-21. Также проверялась работа в WASM, сборка в Emscripten 4.0.6, Clang-21.</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Удобная отладка</h2>
 <p>Вместе с библиотекой поставляются два файла, делающие просмотр simstr строковых объектов в отладчиках более удобным.\ Более подробно описано здесь.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Бенчмарки</h2>
 <p>Бенчмарки производятся с использованием фреймворка <a href="https://github.com/google/benchmark">Google benchmark</a>. Постарался сделать замеры для наиболее типичных операций, встречающихся в обычной работе. Я проводил замеры на своём оборудовании, под Windows и Linux (в WSL), с использованием компиляторов MSVC, Clang, GCC. Сторонние результаты приветствуются. Также проводил замеры в WASM, сборка в Emscripten. Обращаю внимание, что под WASM в Emscripten собирается 32-битная сборка, а значит, размеры буферов SSO в объектах меньше.</p>
 <ul>
@@ -335,7 +354,7 @@ simstr - библиотека строковых объектов и функц�
 <li><a href="https://github.com/orefkov/simrex">simrex</a> - обёртка для работы с регулярными выражениями <a href="https://github.com/kkos/oniguruma">Oniguruma</a> с использованием строк simstr.</li>
 <li><a href="https://github.com/orefkov/v8sqlite">v8sqlite</a> - внешняя компонента для 1С-Предприятия V8 для работы с sqlite.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Сгенерированная документация</h2>
 <p><a href="https://orefkov.github.io/simstr/docs_ru/">Находится здесь</a>   </p>
 </div></div><!-- PageDoc -->

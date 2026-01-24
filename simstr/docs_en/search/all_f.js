@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['object_20and_20function_20library_0',['simstr - String object and function library',['../index.html#autotoc_md41',1,'']]],
-  ['objects_20of_20the_20library_1',['Main objects of the library',['../index.html#autotoc_md51',1,'']]],
-  ['of_20course_20tt_20simple_5fstr_20tt_20_3a_2',['The first simplest string class is called, of course, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md64',1,'']]],
-  ['of_20the_20library_3',['of the library',['../index.html#autotoc_md42',1,'Main features of the library'],['../index.html#autotoc_md51',1,'Main objects of the library']]],
-  ['onlynotempty_20false_20container_20separator_4',['e_join&lt;bool AfterLast = false, bool OnlyNotEmpty = false&gt;(container, &quot;Separator&quot;)',['../overview.html#autotoc_md76',1,'']]],
+  ['object_20and_20function_20library_0',['simstr - String object and function library',['../index.html#autotoc_md42',1,'']]],
+  ['objects_20of_20the_20library_1',['Main objects of the library',['../index.html#autotoc_md52',1,'']]],
+  ['of_20course_20tt_20simple_5fstr_20tt_20_3a_2',['The first simplest string class is called, of course, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md66',1,'']]],
+  ['of_20the_20library_3',['of the library',['../index.html#autotoc_md43',1,'Main features of the library'],['../index.html#autotoc_md52',1,'Main objects of the library']]],
+  ['onlynotempty_20false_20container_20separator_4',['e_join&lt;bool AfterLast = false, bool OnlyNotEmpty = false&gt;(container, &quot;Separator&quot;)',['../overview.html#autotoc_md78',1,'']]],
   ['operator_20const_20k_20_2a_5',['operator const K *',['../classsimstr_1_1str__storable.html#af93a700258bc7492e53ceb2acf414315',1,'simstr::str_storable']]],
   ['operator_20k_2a_6',['operator K*',['../classsimstr_1_1str__mutable.html#a32cb440524f81da0e00cfa303cb4fab6',1,'simstr::str_mutable']]],
   ['operator_20s_5fstr_5fnt_7',['operator s_str_nt',['../classsimstr_1_1str__storable.html#abcae77eab91707d4b3fa578dde83d34a',1,'simstr::str_storable']]],
@@ -25,9 +25,9 @@ var searchData=
   ['operator_3d_22',['operator=',['../classsimstr_1_1lstring.html#ab19f351477923bb3ca090955866e4315',1,'simstr::lstring::operator=(const my_type &amp;other)'],['../classsimstr_1_1lstring.html#a44dda5e47ad2a1aba0861c7b1179a2e0',1,'simstr::lstring::operator=(my_type &amp;&amp;other) noexcept'],['../classsimstr_1_1lstring.html#ad1dbdd5c648b4b399b4b8c147fc99d43',1,'simstr::lstring::operator=(simple_str&lt; K &gt; other)'],['../classsimstr_1_1lstring.html#a2731727eb853928098f7051a0dca8995',1,'simstr::lstring::operator=(T &amp;&amp;other)'],['../classsimstr_1_1lstring.html#a895f17a8dd5ef18c2ea0120f785d84cb',1,'simstr::lstring::operator=(const StrExprForType&lt; K &gt; auto &amp;expr)'],['../classsimstr_1_1sstring.html#a760b4c4809190881aab635d1688999dc',1,'simstr::sstring::operator=(my_type other) noexcept'],['../classsimstr_1_1sstring.html#ac2c99f7d4fbb03a5238e2bc9d750591f',1,'simstr::sstring::operator=(simple_str&lt; K &gt; other)'],['../classsimstr_1_1sstring.html#a5f08dbc02e99f3cfff5011afeb389f61',1,'simstr::sstring::operator=(T &amp;&amp;other)'],['../classsimstr_1_1sstring.html#a28ef58e8b8305988a9ca634460109204',1,'simstr::sstring::operator=(const lstring&lt; K, N, forShared, A &gt; &amp;other)'],['../classsimstr_1_1sstring.html#ae39824f566fd5a9373af91c4e24d8897',1,'simstr::sstring::operator=(lstring&lt; K, N, true, Allocator &gt; &amp;&amp;other)'],['../classsimstr_1_1sstring.html#ace848e3ccdf857a365ad5e395f7f6528',1,'simstr::sstring::operator=(const StrExprForType&lt; K &gt; auto &amp;expr)']]],
   ['operator_3d_3d_23',['operator==',['../classsimstr_1_1str__src__algs.html#a1ddd0a1f9b25247465fb55c79b58826d',1,'simstr::str_src_algs::operator==(const base &amp;other) const noexcept'],['../classsimstr_1_1str__src__algs.html#ac19dc728f9d7edafbd85a52e70b46376',1,'simstr::str_src_algs::operator==(T &amp;&amp;other) const noexcept']]],
   ['operator_5b_5d_24',['operator[]',['../structsimstr_1_1simple__str.html#a1ab058c6d2bb0b8c36cafd7c82490943',1,'simstr::simple_str::operator[]()'],['../structsimstr_1_1str__src.html#aa424e8bd2802bbae38c39eacaf745fc5',1,'simstr::str_src::operator[]()']]],
-  ['originalstring_20search_20replace_25',['OriginalString Search Replace',['../overview.html#autotoc_md77',1,'e_repl(OriginalString, &quot;Search&quot;, &quot;Replace&quot;)'],['../overview.html#autotoc_md78',1,'expr_replaced&lt;CharacterType&gt;{OriginalString, Search, Replace}']]],
+  ['originalstring_20search_20replace_25',['OriginalString Search Replace',['../overview.html#autotoc_md79',1,'e_repl(OriginalString, &quot;Search&quot;, &quot;Replace&quot;)'],['../overview.html#autotoc_md80',1,'expr_replaced&lt;CharacterType&gt;{OriginalString, Search, Replace}']]],
   ['out_26',['out',['../classsimstr_1_1chunked__string__builder.html#ac865ed84503c831e6ffb1674738bece9',1,'simstr::chunked_string_builder']]],
   ['overflow_27',['Overflow',['../namespacesimstr.html#a1b4b1f04b733739606d97f79caa02dd9a129e8109f319870e328cc7a1d5b5cae3',1,'simstr']]],
   ['overview_28',['Overview',['../overview.html',1,'']]],
-  ['own_20string_20expressions_29',['Your own string expressions',['../overview.html#autotoc_md80',1,'']]]
+  ['own_20string_20expressions_29',['Your own string expressions',['../overview.html#autotoc_md82',1,'']]]
 ];

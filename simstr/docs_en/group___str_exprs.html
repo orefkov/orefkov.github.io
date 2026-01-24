@@ -157,7 +157,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1expr__stdstr.html">simstr::expr_stdstr&lt; K, T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type for using std::string and std::string_view as sources in string expressions.  <a href="structsimstr_1_1expr__stdstr.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1expr__replaced.html">simstr::expr_replaced&lt; K &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1expr__replaced.html">simstr::expr_replaced&lt; K, E &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A string expression that generates a string replacing all occurrences of the given substring.  <a href="structsimstr_1_1expr__replaced.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1expr__replace__symbols.html">simstr::expr_replace_symbols&lt; K, UseVectorForReplace &gt;</a></td></tr>
@@ -288,18 +288,17 @@ requires is_one_of_char_v&lt;K&gt;</td></tr>
 <tr class="memitem:gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="memTemplItemLeft" align="right" valign="top">constexpr expr_real&lt; K &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gacea7fe28fcd6fdb6dcae8035eb3b8744">simstr::e_num</a> (double t)</td></tr>
 <tr class="memdesc:gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a <code>double</code> number to a string expression.  <br /></td></tr>
 <tr class="separator:gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6b1c21511e377e4f62d5ae01d818a824" id="r_ga6b1c21511e377e4f62d5ae01d818a824"><td class="memTemplParams" colspan="2">template&lt;unsigned Flags = 0, FromIntNumber T&gt; <br />
-requires std::is_unsigned_v&lt;T&gt;</td></tr>
-<tr class="memitem:ga6b1c21511e377e4f62d5ae01d818a824"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga6b1c21511e377e4f62d5ae01d818a824">simstr::e_hex</a> (T v)</td></tr>
-<tr class="memdesc:ga6b1c21511e377e4f62d5ae01d818a824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows you to concatenate text and a unsigned number in hexadecimal.  <br /></td></tr>
-<tr class="separator:ga6b1c21511e377e4f62d5ae01d818a824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ae75ae56c754403fbf9f5b610a3326b" id="r_ga6ae75ae56c754403fbf9f5b610a3326b"><td class="memTemplParams" colspan="2">template&lt;unsigned Flags = 0, FromIntNumber T&gt; </td></tr>
+<tr class="memitem:ga6ae75ae56c754403fbf9f5b610a3326b"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga6ae75ae56c754403fbf9f5b610a3326b">simstr::e_hex</a> (T v)</td></tr>
+<tr class="memdesc:ga6ae75ae56c754403fbf9f5b610a3326b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows you to concatenate text and a unsigned number in hexadecimal.  <br /></td></tr>
+<tr class="separator:ga6ae75ae56c754403fbf9f5b610a3326b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga166596bf110c32b8c6bdb79917cd2384" id="r_ga166596bf110c32b8c6bdb79917cd2384"><td class="memTemplParams" colspan="2">template&lt;StrExpr A, typename Val, bool All, bool Ucase, bool Ox&gt; </td></tr>
 <tr class="memitem:ga166596bf110c32b8c6bdb79917cd2384"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1strexprjoin__c.html">strexprjoin_c</a>&lt; A, expr_hex&lt; typename A::symb_type, Val, All, Ucase, Ox &gt;, true &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga166596bf110c32b8c6bdb79917cd2384">simstr::operator+</a> (const A &amp;a, const expr_hex_src&lt; Val, All, Ucase, Ox &gt; &amp;b)</td></tr>
-<tr class="memdesc:ga166596bf110c32b8c6bdb79917cd2384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenation operator for a string expression and a hexadecimal representation of a number from <a class="el" href="#ga6b1c21511e377e4f62d5ae01d818a824" title="Allows you to concatenate text and a unsigned number in hexadecimal.">e_hex()</a>.  <br /></td></tr>
+<tr class="memdesc:ga166596bf110c32b8c6bdb79917cd2384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenation operator for a string expression and a hexadecimal representation of a number from <a class="el" href="#ga6ae75ae56c754403fbf9f5b610a3326b" title="Allows you to concatenate text and a unsigned number in hexadecimal.">e_hex()</a>.  <br /></td></tr>
 <tr class="separator:ga166596bf110c32b8c6bdb79917cd2384"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga356a058d98bfa4eca0a44e49745bde28" id="r_ga356a058d98bfa4eca0a44e49745bde28"><td class="memTemplParams" colspan="2">template&lt;StrExpr A, typename Val, bool All, bool Ucase, bool Ox&gt; </td></tr>
 <tr class="memitem:ga356a058d98bfa4eca0a44e49745bde28"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1strexprjoin__c.html">strexprjoin_c</a>&lt; A, expr_hex&lt; typename A::symb_type, Val, All, Ucase, Ox &gt;, false &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga356a058d98bfa4eca0a44e49745bde28">simstr::operator+</a> (const expr_hex_src&lt; Val, All, Ucase, Ox &gt; &amp;b, const A &amp;a)</td></tr>
-<tr class="memdesc:ga356a058d98bfa4eca0a44e49745bde28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenation operator for the hexadecimal representation of a number from <a class="el" href="#ga6b1c21511e377e4f62d5ae01d818a824" title="Allows you to concatenate text and a unsigned number in hexadecimal.">e_hex()</a> and a string expression.  <br /></td></tr>
+<tr class="memdesc:ga356a058d98bfa4eca0a44e49745bde28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenation operator for the hexadecimal representation of a number from <a class="el" href="#ga6ae75ae56c754403fbf9f5b610a3326b" title="Allows you to concatenate text and a unsigned number in hexadecimal.">e_hex()</a> and a string expression.  <br /></td></tr>
 <tr class="separator:ga356a058d98bfa4eca0a44e49745bde28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0d03cfa41a4f78e843b88b0ce74be7c8" id="r_ga0d03cfa41a4f78e843b88b0ce74be7c8"><td class="memTemplParams" colspan="2">template&lt;StrExpr A&gt; </td></tr>
 <tr class="memitem:ga0d03cfa41a4f78e843b88b0ce74be7c8"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1strexprjoin__c.html">strexprjoin_c</a>&lt; A, expr_hex&lt; typename A::symb_type, uintptr_t, true, true, true &gt;, true &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga0d03cfa41a4f78e843b88b0ce74be7c8">simstr::operator+</a> (const A &amp;a, const void *b)</td></tr>
@@ -326,16 +325,16 @@ requires (N &gt; 1)</td></tr>
 <tr class="memitem:gafb0987b3c98cd839334c33bc1c94bead"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a> (A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</td></tr>
 <tr class="memdesc:gafb0987b3c98cd839334c33bc1c94bead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string expression that generates a string with all occurrences of a given substring replaced.  <br /></td></tr>
 <tr class="separator:gafb0987b3c98cd839334c33bc1c94bead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4769af9b9f0a633aa26cc478b82a2951" id="r_ga4769af9b9f0a633aa26cc478b82a2951"><td class="memTemplParams" colspan="2">template&lt;StrSource A, typename K = src_str_t&lt;A&gt;, typename T, size_t N = const_lit_for&lt;K, T&gt;::Count, StrSource X&gt; <br />
-requires std::is_same_v&lt;K, src_str_t&lt;X&gt;&gt;</td></tr>
-<tr class="memitem:ga4769af9b9f0a633aa26cc478b82a2951"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga4769af9b9f0a633aa26cc478b82a2951">simstr::e_repl</a> (A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</td></tr>
-<tr class="memdesc:ga4769af9b9f0a633aa26cc478b82a2951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string expression that generates a string with all occurrences of a given substring replaced.  <br /></td></tr>
-<tr class="separator:ga4769af9b9f0a633aa26cc478b82a2951"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab4157ab546804b94d8504b5e9cf63954" id="r_gab4157ab546804b94d8504b5e9cf63954"><td class="memTemplParams" colspan="2">template&lt;StrSource A, typename K = src_str_t&lt;A&gt;, StrSource T, StrSource X&gt; <br />
-requires (std::is_same_v&lt;K, src_str_t&lt;T&gt;&gt; &amp;&amp; std::is_same_v&lt;K, src_str_t&lt;X&gt;&gt;)</td></tr>
-<tr class="memitem:gab4157ab546804b94d8504b5e9cf63954"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gab4157ab546804b94d8504b5e9cf63954">simstr::e_repl</a> (A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</td></tr>
-<tr class="memdesc:gab4157ab546804b94d8504b5e9cf63954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string expression that generates a string with all occurrences of a given substring replaced.  <br /></td></tr>
-<tr class="separator:gab4157ab546804b94d8504b5e9cf63954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6cc0ac8162caa4ae9c808b435397704a" id="r_ga6cc0ac8162caa4ae9c808b435397704a"><td class="memTemplParams" colspan="2">template&lt;StrSource A, typename K = src_str_t&lt;A&gt;, typename T, typename X&gt; <br />
+requires (std::is_constructible_v&lt;<a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt;K&gt;, T&gt; &amp;&amp; std::is_constructible_v&lt;<a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt;K&gt;, X&gt; &amp;&amp; (!is_const_lit_v&lt;T&gt; || !is_const_lit_v&lt;X&gt;))</td></tr>
+<tr class="memitem:ga6cc0ac8162caa4ae9c808b435397704a"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga6cc0ac8162caa4ae9c808b435397704a">simstr::e_repl</a> (A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</td></tr>
+<tr class="memdesc:ga6cc0ac8162caa4ae9c808b435397704a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string expression that generates a string with all occurrences of a given substring replaced.  <br /></td></tr>
+<tr class="separator:ga6cc0ac8162caa4ae9c808b435397704a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad6d0c57d07e6546628ca08398c5ebee6" id="r_gad6d0c57d07e6546628ca08398c5ebee6"><td class="memTemplParams" colspan="2">template&lt;StrSource A, typename K = src_str_t&lt;A&gt;, typename T, StrExprForType&lt; K &gt; E&gt; <br />
+requires std::is_constructible_v&lt;<a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt;K&gt;, T&gt;</td></tr>
+<tr class="memitem:gad6d0c57d07e6546628ca08398c5ebee6"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gad6d0c57d07e6546628ca08398c5ebee6">simstr::e_repl</a> (A &amp;&amp;w, T &amp;&amp;p, const E &amp;expr)</td></tr>
+<tr class="memdesc:gad6d0c57d07e6546628ca08398c5ebee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string expression that generates a string with all occurrences of a given substring replaced.  <br /></td></tr>
+<tr class="separator:gad6d0c57d07e6546628ca08398c5ebee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac0d4ca53513bcc0d1c0730940ec8a8a1" id="r_gac0d4ca53513bcc0d1c0730940ec8a8a1"><td class="memTemplParams" colspan="2">template&lt;bool UseVector = false, StrSource A, typename K = src_str_t&lt;A&gt;, typename ... Repl&gt; <br />
 requires (sizeof...(Repl) % 2 == 0)</td></tr>
 <tr class="memitem:gac0d4ca53513bcc0d1c0730940ec8a8a1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a> (A &amp;&amp;src, Repl &amp;&amp;... other)</td></tr>
@@ -558,9 +557,9 @@ template&lt;StrExpr A, StrExprForType&lt; typename A::symb_type &gt; B&gt; </div
 </dl>
 <p>Serves to allow you to select different options in one expression depending on the condition.</p>
 <p>Example: </p><div class="fragment"><div class="line">columns_metadata.emplace_back(<a class="code hl_function" href="#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(name.is_empty(), <span class="stringliteral">&quot;?column?&quot;</span>, name) + <span class="stringliteral">&quot;::&quot;</span> + metadata_column.type.to_string());</div>
-<div class="ttc" id="agroup___str_exprs_html_gab058a69a654cf3a0fce197e862a7400e"><div class="ttname"><a href="#gab058a69a654cf3a0fce197e862a7400e">simstr::e_choice</a></div><div class="ttdeci">constexpr expr_choice&lt; A, B &gt; e_choice(bool c, const A &amp;a, const B &amp;b)</div><div class="ttdoc">Create a conditional string expression expr_choice.</div><div class="ttdef"><b>Definition</b> strexpr.h:1235</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gab058a69a654cf3a0fce197e862a7400e"><div class="ttname"><a href="#gab058a69a654cf3a0fce197e862a7400e">simstr::e_choice</a></div><div class="ttdeci">constexpr expr_choice&lt; A, B &gt; e_choice(bool c, const A &amp;a, const B &amp;b)</div><div class="ttdoc">Create a conditional string expression expr_choice.</div><div class="ttdef"><b>Definition</b> strexpr.h:1240</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">lstringa&lt;512&gt; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a> = <a class="code hl_function" href="#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(!ret_type_resolver_, sql_value::type_name(ret_type_), <span class="stringliteral">&quot;any&quot;</span>) + <span class="stringliteral">&quot; &quot;</span> + name_ + <span class="stringliteral">&quot;(&quot;</span>;</div>
-<div class="ttc" id="anamespacesimstr_1_1str_html"><div class="ttname"><a href="namespacesimstr_1_1str.html">simstr::str</a></div><div class="ttdoc">Small namespace for standard string methods.</div><div class="ttdef"><b>Definition</b> strexpr.h:1388</div></div>
+<div class="ttc" id="anamespacesimstr_1_1str_html"><div class="ttname"><a href="namespacesimstr_1_1str.html">simstr::str</a></div><div class="ttdoc">Small namespace for standard string methods.</div><div class="ttdef"><b>Definition</b> strexpr.h:1393</div></div>
 </div><!-- fragment --><p> Otherwise, such operations would have to be split into several string modifications or the use of temporary strings, which is not optimal and will reduce performance. (This is checked in the "Build Full Func Name" benchmark) </p>
 
 </div>
@@ -641,14 +640,13 @@ template&lt;StrExpr A, typename K = typename A::symb_type&gt; </div>
 
 </div>
 </div>
-<a id="ga6b1c21511e377e4f62d5ae01d818a824" name="ga6b1c21511e377e4f62d5ae01d818a824"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6b1c21511e377e4f62d5ae01d818a824">&#9670;&#160;</a></span>e_hex()</h2>
+<a id="ga6ae75ae56c754403fbf9f5b610a3326b" name="ga6ae75ae56c754403fbf9f5b610a3326b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6ae75ae56c754403fbf9f5b610a3326b">&#9670;&#160;</a></span>e_hex()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;unsigned Flags = 0, FromIntNumber T&gt; <br />
-requires std::is_unsigned_v&lt;T&gt;</div>
+template&lt;unsigned Flags = 0, FromIntNumber T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -675,12 +673,12 @@ requires std::is_unsigned_v&lt;T&gt;</div>
   </table>
   </dd>
 </dl>
-<p>Example </p><div class="fragment"><div class="line">stringa text = +<span class="stringliteral">&quot;val = &quot;</span>sv + <a class="code hl_function" href="#ga6b1c21511e377e4f62d5ae01d818a824">e_hex</a>(10u);</div>
+<p>Example </p><div class="fragment"><div class="line">stringa text = +<span class="stringliteral">&quot;val = &quot;</span>sv + <a class="code hl_function" href="#ga6ae75ae56c754403fbf9f5b610a3326b">e_hex</a>(10u);</div>
 <div class="line">EXPECT_EQ(text, <span class="stringliteral">&quot;val = 0x0000000A&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">stringu textu = +u<span class="stringliteral">&quot;val = 0X&quot;</span>sv + <a class="code hl_function" href="#ga6b1c21511e377e4f62d5ae01d818a824">e_hex&lt;HexFlags::No0x | HexFlags::Short | HexFlags::Lcase&gt;</a>(0x12Au);</div>
+<div class="line">stringu textu = +u<span class="stringliteral">&quot;val = 0X&quot;</span>sv + <a class="code hl_function" href="#ga6ae75ae56c754403fbf9f5b610a3326b">e_hex&lt;HexFlags::No0x | HexFlags::Short | HexFlags::Lcase&gt;</a>(0x12Au);</div>
 <div class="line">EXPECT_EQ(textu, u<span class="stringliteral">&quot;val = 0X12a&quot;</span>);</div>
-<div class="ttc" id="agroup___str_exprs_html_ga6b1c21511e377e4f62d5ae01d818a824"><div class="ttname"><a href="#ga6b1c21511e377e4f62d5ae01d818a824">simstr::e_hex</a></div><div class="ttdeci">constexpr auto e_hex(T v)</div><div class="ttdoc">Allows you to concatenate text and a unsigned number in hexadecimal.</div><div class="ttdef"><b>Definition</b> strexpr.h:1702</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga6ae75ae56c754403fbf9f5b610a3326b"><div class="ttname"><a href="#ga6ae75ae56c754403fbf9f5b610a3326b">simstr::e_hex</a></div><div class="ttdeci">constexpr auto e_hex(T v)</div><div class="ttdoc">Allows you to concatenate text and a unsigned number in hexadecimal.</div><div class="ttdef"><b>Definition</b> strexpr.h:1704</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -749,7 +747,7 @@ template&lt;StrExpr A&gt; </div>
 <div class="line">    <span class="comment">// Save it in stringa</span></div>
 <div class="line">    full_name_ = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a> + <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(unlim_params_, <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(add_comma, <span class="stringliteral">&quot;, &quot;</span>) + <span class="stringliteral">&quot;...&quot;</span>) + <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Creating a conditional string expression expr_if.</div><div class="ttdef"><b>Definition</b> strexpr.h:1313</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Creating a conditional string expression expr_if.</div><div class="ttdef"><b>Definition</b> strexpr.h:1318</div></div>
 </div><!-- fragment --><p> Otherwise, such operations would have to be split into several string modifications or the use of temporary strings, which is not optimal and will reduce performance. (This example is tested in the "Build Full Func Name" benchmark) </p>
 
 </div>
@@ -976,8 +974,61 @@ requires (M &gt; 0)</div>
 
 </div>
 </div>
+<a id="gad6d0c57d07e6546628ca08398c5ebee6" name="gad6d0c57d07e6546628ca08398c5ebee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad6d0c57d07e6546628ca08398c5ebee6">&#9670;&#160;</a></span>e_repl() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;StrSource A, typename K = src_str_t&lt;A&gt;, typename T, StrExprForType&lt; K &gt; E&gt; <br />
+requires std::is_constructible_v&lt;<a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt;K&gt;, T&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto simstr::e_repl </td>
+          <td>(</td>
+          <td class="paramtype">A &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const E &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a string expression that generates a string with all occurrences of a given substring replaced. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">K</td><td>- the type of the symbol, inferred from the first argument. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>- starting string. </td></tr>
+    <tr><td class="paramname">p</td><td>- string object, searched substring, maybe runtime. </td></tr>
+    <tr><td class="paramname">expr</td><td>- string expression, what to replace with. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="gafb0987b3c98cd839334c33bc1c94bead" name="gafb0987b3c98cd839334c33bc1c94bead"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafb0987b3c98cd839334c33bc1c94bead">&#9670;&#160;</a></span>e_repl() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gafb0987b3c98cd839334c33bc1c94bead">&#9670;&#160;</a></span>e_repl() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1029,14 +1080,14 @@ requires (N &gt; 1)</div>
 
 </div>
 </div>
-<a id="ga4769af9b9f0a633aa26cc478b82a2951" name="ga4769af9b9f0a633aa26cc478b82a2951"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4769af9b9f0a633aa26cc478b82a2951">&#9670;&#160;</a></span>e_repl() <span class="overload">[2/3]</span></h2>
+<a id="ga6cc0ac8162caa4ae9c808b435397704a" name="ga6cc0ac8162caa4ae9c808b435397704a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6cc0ac8162caa4ae9c808b435397704a">&#9670;&#160;</a></span>e_repl() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;StrSource A, typename K = src_str_t&lt;A&gt;, typename T, size_t N = const_lit_for&lt;K, T&gt;::Count, StrSource X&gt; <br />
-requires std::is_same_v&lt;K, src_str_t&lt;X&gt;&gt;</div>
+template&lt;StrSource A, typename K = src_str_t&lt;A&gt;, typename T, typename X&gt; <br />
+requires (std::is_constructible_v&lt;<a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt;K&gt;, T&gt; &amp;&amp; std::is_constructible_v&lt;<a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt;K&gt;, X&gt; &amp;&amp; (!is_const_lit_v&lt;T&gt; || !is_const_lit_v&lt;X&gt;))</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1074,61 +1125,8 @@ requires std::is_same_v&lt;K, src_str_t&lt;X&gt;&gt;</div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">w</td><td>- starting string. </td></tr>
-    <tr><td class="paramname">p</td><td>- string literal, searched substring. </td></tr>
-    <tr><td class="paramname">r</td><td>- string object, maybe runtime. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="gab4157ab546804b94d8504b5e9cf63954" name="gab4157ab546804b94d8504b5e9cf63954"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab4157ab546804b94d8504b5e9cf63954">&#9670;&#160;</a></span>e_repl() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;StrSource A, typename K = src_str_t&lt;A&gt;, StrSource T, StrSource X&gt; <br />
-requires (std::is_same_v&lt;K, src_str_t&lt;T&gt;&gt; &amp;&amp; std::is_same_v&lt;K, src_str_t&lt;X&gt;&gt;)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto simstr::e_repl </td>
-          <td>(</td>
-          <td class="paramtype">A &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">X &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get a string expression that generates a string with all occurrences of a given substring replaced. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">K</td><td>- the type of the symbol, inferred from the first argument. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">w</td><td>- starting string. </td></tr>
-    <tr><td class="paramname">p</td><td>- string object, maybe runtime. </td></tr>
-    <tr><td class="paramname">r</td><td>- string object, maybe runtime. </td></tr>
+    <tr><td class="paramname">p</td><td>- string object, searched substring, maybe runtime. </td></tr>
+    <tr><td class="paramname">r</td><td>- string object, replace substring, maybe runtime. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1175,7 +1173,7 @@ requires (sizeof...(Repl) % 2 == 0)</div>
 </dl>
 <p>Used to generate character replacements for strings if all of them are known at compile time. Example:</p>
 <div class="fragment"><div class="line">out += <span class="stringliteral">&quot;&lt;div&gt;&quot;</span> + <a class="code hl_function" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a>(text, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>, <span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="stringliteral">&quot;&amp;#39;&quot;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>) + <span class="stringliteral">&quot;&lt;/div&gt;&quot;</span>;</div>
-<div class="ttc" id="agroup___str_exprs_html_gac0d4ca53513bcc0d1c0730940ec8a8a1"><div class="ttname"><a href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a></div><div class="ttdeci">auto e_repl_const_symbols(A &amp;&amp;src, Repl &amp;&amp;... other)</div><div class="ttdoc">Returns a string expression that generates a string containing the given characters replaced with giv...</div><div class="ttdef"><b>Definition</b> strexpr.h:4869</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gac0d4ca53513bcc0d1c0730940ec8a8a1"><div class="ttname"><a href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a></div><div class="ttdeci">auto e_repl_const_symbols(A &amp;&amp;src, Repl &amp;&amp;... other)</div><div class="ttdoc">Returns a string expression that generates a string containing the given characters replaced with giv...</div><div class="ttdef"><b>Definition</b> strexpr.h:4877</div></div>
 </div><!-- fragment --><p> In principle, <code>e_repl_const_symbols</code> is quite safe to return from a function if the source string external to function.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> repl_html_symbols(ssa text) {</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a>(text, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>, <span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="stringliteral">&quot;&amp;#39;&quot;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>);</div>
@@ -1219,7 +1217,7 @@ template&lt;size_t N&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string expression for N char spaces.</dd></dl>
 <p>Example: </p><div class="fragment"><div class="line">stringa text = <a class="code hl_function" href="#ga33e02268e25a635b4b7e14d0744b46c1">e_spca&lt;10&gt;</a>() + text + <a class="code hl_function" href="#ga33e02268e25a635b4b7e14d0744b46c1">e_spca&lt;10&gt;</a>();</div>
-<div class="ttc" id="agroup___str_exprs_html_ga33e02268e25a635b4b7e14d0744b46c1"><div class="ttname"><a href="#ga33e02268e25a635b4b7e14d0744b46c1">simstr::e_spca</a></div><div class="ttdeci">constexpr expr_spaces&lt; u8s, N &gt; e_spca()</div><div class="ttdoc">Generates a string of N char spaces.</div><div class="ttdef"><b>Definition</b> strexpr.h:855</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga33e02268e25a635b4b7e14d0744b46c1"><div class="ttname"><a href="#ga33e02268e25a635b4b7e14d0744b46c1">simstr::e_spca</a></div><div class="ttdeci">constexpr expr_spaces&lt; u8s, N &gt; e_spca()</div><div class="ttdoc">Generates a string of N char spaces.</div><div class="ttdef"><b>Definition</b> strexpr.h:860</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1257,7 +1255,7 @@ template&lt;size_t N&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string expression for N wchar_t spaces.</dd></dl>
 <p>Example: </p><div class="fragment"><div class="line">stringw text = <a class="code hl_function" href="#ga23b5d15132fcc706d1edc1364673a4ab">e_spcw&lt;10&gt;</a>() + text + <a class="code hl_function" href="#ga23b5d15132fcc706d1edc1364673a4ab">e_spcw&lt;10&gt;</a>();</div>
-<div class="ttc" id="agroup___str_exprs_html_ga23b5d15132fcc706d1edc1364673a4ab"><div class="ttname"><a href="#ga23b5d15132fcc706d1edc1364673a4ab">simstr::e_spcw</a></div><div class="ttdeci">constexpr expr_spaces&lt; uws, N &gt; e_spcw()</div><div class="ttdoc">Generates a string of N wchar_t spaces.</div><div class="ttdef"><b>Definition</b> strexpr.h:873</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga23b5d15132fcc706d1edc1364673a4ab"><div class="ttname"><a href="#ga23b5d15132fcc706d1edc1364673a4ab">simstr::e_spcw</a></div><div class="ttdeci">constexpr expr_spaces&lt; uws, N &gt; e_spcw()</div><div class="ttdoc">Generates a string of N wchar_t spaces.</div><div class="ttdef"><b>Definition</b> strexpr.h:878</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1376,7 +1374,7 @@ template&lt;StrExpr A, typename Val, bool All, bool Ucase, bool Ox&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Concatenation operator for a string expression and a hexadecimal representation of a number from <a class="el" href="#ga6b1c21511e377e4f62d5ae01d818a824" title="Allows you to concatenate text and a unsigned number in hexadecimal.">e_hex()</a>. </p>
+<p>Concatenation operator for a string expression and a hexadecimal representation of a number from <a class="el" href="#ga6ae75ae56c754403fbf9f5b610a3326b" title="Allows you to concatenate text and a unsigned number in hexadecimal.">e_hex()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>is a string expression. </td></tr>
@@ -1610,7 +1608,7 @@ template&lt;StrExpr A, typename Val, bool All, bool Ucase, bool Ox&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Concatenation operator for the hexadecimal representation of a number from <a class="el" href="#ga6b1c21511e377e4f62d5ae01d818a824" title="Allows you to concatenate text and a unsigned number in hexadecimal.">e_hex()</a> and a string expression. </p>
+<p>Concatenation operator for the hexadecimal representation of a number from <a class="el" href="#ga6ae75ae56c754403fbf9f5b610a3326b" title="Allows you to concatenate text and a unsigned number in hexadecimal.">e_hex()</a> and a string expression. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>- e_hex(number). </td></tr>

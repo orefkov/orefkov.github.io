@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>simstr: simstr::expr_replaced&lt; K &gt; Struct Template Reference</title>
+<title>simstr: simstr::expr_replaced&lt; K, E &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,7 +106,7 @@ $(function(){initNavTree('structsimstr_1_1expr__replaced.html',''); initResizabl
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="structsimstr_1_1expr__replaced-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">simstr::expr_replaced&lt; K &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group___str_exprs.html">String Expressions</a></div></div></div>
+  <div class="headertitle"><div class="title">simstr::expr_replaced&lt; K, E &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group___str_exprs.html">String Expressions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -115,24 +115,24 @@ $(function(){initNavTree('structsimstr_1_1expr__replaced.html',''); initResizabl
 
 <p><code>#include &lt;<a class="el" href="strexpr_8h_source.html">strexpr.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for simstr::expr_replaced&lt; K &gt;:</div>
+Inheritance diagram for simstr::expr_replaced&lt; K, E &gt;:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="structsimstr_1_1expr__replaced.png" usemap="#simstr::expr_5Freplaced_3C_20K_20_3E_map" alt=""/>
-  <map id="simstr::expr_5Freplaced_3C_20K_20_3E_map" name="simstr::expr_5Freplaced_3C_20K_20_3E_map">
+  <img src="structsimstr_1_1expr__replaced.png" usemap="#simstr::expr_5Freplaced_3C_20K_2C_20E_20_3E_map" alt=""/>
+  <map id="simstr::expr_5Freplaced_3C_20K_2C_20E_20_3E_map" name="simstr::expr_5Freplaced_3C_20K_2C_20E_20_3E_map">
 <area href="structsimstr_1_1expr__to__std__string.html" alt="simstr::expr_to_std_string&lt; expr_replaced&lt; K &gt; &gt;" shape="rect" coords="0,0,291,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab7a7dfe171a1c7060837f6d700984195" id="r_ab7a7dfe171a1c7060837f6d700984195"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7a7dfe171a1c7060837f6d700984195">expr_replaced</a> (<a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt; w, <a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt; p, <a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt; r)</td></tr>
-<tr class="memdesc:ab7a7dfe171a1c7060837f6d700984195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
-<tr class="separator:ab7a7dfe171a1c7060837f6d700984195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5251e2e79acad8706034c136675c6055" id="r_a5251e2e79acad8706034c136675c6055"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5251e2e79acad8706034c136675c6055">expr_replaced</a> (<a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt; w, <a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt; p, const K *r, size_t rl, const E &amp;e)</td></tr>
+<tr class="memdesc:a5251e2e79acad8706034c136675c6055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="separator:a5251e2e79acad8706034c136675c6055"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename K&gt;<br />
-struct simstr::expr_replaced&lt; K &gt;</div><p>A string expression that generates a string replacing all occurrences of the given substring. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename K, typename E = int&gt;<br />
+struct simstr::expr_replaced&lt; K, E &gt;</div><p>A string expression that generates a string replacing all occurrences of the given substring. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">K</td><td>- string type.</td></tr>
@@ -140,22 +140,22 @@ struct simstr::expr_replaced&lt; K &gt;</div><p>A string expression that generat
   </dd>
 </dl>
 <p><code>e_repl</code> only allows replacement using string literals. In the case when the required substring or replacement string is not known at compilation, and is set at runtime, this type should be used, for example:</p>
-<div class="fragment"><div class="line">stringa result = <span class="stringliteral">&quot;&lt;header&gt;&quot;</span> + <a class="code hl_function" href="#ab7a7dfe171a1c7060837f6d700984195">expr_replaced&lt;u8s&gt;</a>{source, pattern, repl} + <span class="stringliteral">&quot;&lt;/header&gt;&quot;</span>;</div>
-<div class="ttc" id="astructsimstr_1_1expr__replaced_html_ab7a7dfe171a1c7060837f6d700984195"><div class="ttname"><a href="#ab7a7dfe171a1c7060837f6d700984195">simstr::expr_replaced::expr_replaced</a></div><div class="ttdeci">constexpr expr_replaced(str_src&lt; K &gt; w, str_src&lt; K &gt; p, str_src&lt; K &gt; r)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> strexpr.h:4512</div></div>
+<div class="fragment"><div class="line">stringa result = <span class="stringliteral">&quot;&lt;header&gt;&quot;</span> + <a class="code hl_function" href="#a5251e2e79acad8706034c136675c6055">expr_replaced&lt;u8s&gt;</a>{source, pattern, repl} + <span class="stringliteral">&quot;&lt;/header&gt;&quot;</span>;</div>
+<div class="ttc" id="astructsimstr_1_1expr__replaced_html_a5251e2e79acad8706034c136675c6055"><div class="ttname"><a href="#a5251e2e79acad8706034c136675c6055">simstr::expr_replaced::expr_replaced</a></div><div class="ttdeci">constexpr expr_replaced(str_src&lt; K &gt; w, str_src&lt; K &gt; p, const K *r, size_t rl, const E &amp;e)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> strexpr.h:4516</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab7a7dfe171a1c7060837f6d700984195" name="ab7a7dfe171a1c7060837f6d700984195"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7a7dfe171a1c7060837f6d700984195">&#9670;&#160;</a></span>expr_replaced()</h2>
+<a id="a5251e2e79acad8706034c136675c6055" name="a5251e2e79acad8706034c136675c6055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5251e2e79acad8706034c136675c6055">&#9670;&#160;</a></span>expr_replaced()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K&gt; </div>
+template&lt;typename K, typename E = int&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structsimstr_1_1expr__replaced.html">simstr::expr_replaced</a>&lt; K &gt;::expr_replaced </td>
+          <td class="memname"><a class="el" href="structsimstr_1_1expr__replaced.html">simstr::expr_replaced</a>&lt; K, E &gt;::expr_replaced </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt;</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
         </tr>
@@ -167,7 +167,17 @@ template&lt;typename K&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt;</td>          <td class="paramname"><span class="paramname"><em>r</em></span>&#160;)</td>
+          <td class="paramtype">const K *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>rl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const E &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
         </tr>
       </table>
   </td>

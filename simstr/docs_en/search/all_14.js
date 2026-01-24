@@ -6,6 +6,7 @@ var searchData=
   ['upperred_5ffrom_3',['upperred_from',['../classsimstr_1_1str__storable.html#a3c53f8d59e980315bc0d44b5cf6b1e6d',1,'simstr::str_storable']]],
   ['upperred_5fonly_5fascii_4',['upperred_only_ascii',['../classsimstr_1_1str__src__algs.html#a517129dd2774440cd48c401b65bcf066',1,'simstr::str_src_algs']]],
   ['upperred_5fonly_5fascii_5ffrom_5',['upperred_only_ascii_from',['../classsimstr_1_1str__storable.html#a6cb647956eba06372b0cef5328a0bc91',1,'simstr::str_storable']]],
-  ['usage_6',['Usage',['../index.html#autotoc_md53',1,'']]],
-  ['usage_20examples_7',['Usage examples',['../index.html#autotoc_md44',1,'']]]
+  ['usage_6',['Usage',['../index.html#autotoc_md54',1,'']]],
+  ['usage_20examples_7',['Usage examples',['../index.html#autotoc_md45',1,'']]],
+  ['using_20fetchcontent_8',['Using FetchContent',['../index.html#autotoc_md55',1,'']]]
 ];

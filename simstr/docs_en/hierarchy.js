@@ -38,7 +38,7 @@ var hierarchy =
       [ "simstr::expr_replace_symbols< K, UseVectorForReplace >", "structsimstr_1_1expr__replace__symbols.html", null ]
     ] ],
     [ "simstr::expr_to_std_string< expr_replaced< K > >", "structsimstr_1_1expr__to__std__string.html", [
-      [ "simstr::expr_replaced< K >", "structsimstr_1_1expr__replaced.html", null ]
+      [ "simstr::expr_replaced< K, E >", "structsimstr_1_1expr__replaced.html", null ]
     ] ],
     [ "simstr::expr_to_std_string< expr_replaces< K, N, L > >", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "simstr::expr_to_std_string< expr_spaces< K, N > >", "structsimstr_1_1expr__to__std__string.html", [

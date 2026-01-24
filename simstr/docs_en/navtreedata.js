@@ -27,34 +27,34 @@ var NAVTREE =
   [ "simstr", "index.html", [
     [ "Simstr lib.", "index.html", "index" ],
     [ "Overview", "overview.html", [
-      [ "Strings in C++", "overview.html#autotoc_md57", [
-        [ "What was and is", "overview.html#autotoc_md58", [
-          [ "Resources", "overview.html#autotoc_md59", null ],
-          [ "Mutability / immutability", "overview.html#autotoc_md60", null ],
-          [ "String concatenation", "overview.html#autotoc_md61", null ]
+      [ "Strings in C++", "overview.html#autotoc_md59", [
+        [ "What was and is", "overview.html#autotoc_md60", [
+          [ "Resources", "overview.html#autotoc_md61", null ],
+          [ "Mutability / immutability", "overview.html#autotoc_md62", null ],
+          [ "String concatenation", "overview.html#autotoc_md63", null ]
         ] ],
-        [ "Simstr library", "overview.html#autotoc_md62", [
-          [ "String classes.", "overview.html#autotoc_md63", [
-            [ "The first simplest string class is called, of course, simple_str :)", "overview.html#autotoc_md64", null ],
-            [ "The second class is simple_str_nt", "overview.html#autotoc_md65", null ],
-            [ "Sstring class (shared string).", "overview.html#autotoc_md66", null ],
-            [ "Class lstring<K, N, forShared> (local string)", "overview.html#autotoc_md67", null ]
+        [ "Simstr library", "overview.html#autotoc_md64", [
+          [ "String classes.", "overview.html#autotoc_md65", [
+            [ "The first simplest string class is called, of course, simple_str :)", "overview.html#autotoc_md66", null ],
+            [ "The second class is simple_str_nt", "overview.html#autotoc_md67", null ],
+            [ "Sstring class (shared string).", "overview.html#autotoc_md68", null ],
+            [ "Class lstring<K, N, forShared> (local string)", "overview.html#autotoc_md69", null ]
           ] ],
-          [ "String Expressions", "overview.html#autotoc_md68", [
-            [ "expr_spaces<CharacterType, NumberOfCharacters, Symbol = ' '>{}", "overview.html#autotoc_md69", null ],
-            [ "expr_pad<CharacterType>{NumberOfCharacters, Symbol = ' '}", "overview.html#autotoc_md70", null ],
-            [ "e_repeat{Str, count}", "overview.html#autotoc_md71", null ],
-            [ "e_choice(bool Condition, StrExpr1, StrExpr2)", "overview.html#autotoc_md72", null ],
-            [ "e_if(bool Condition, StrExpr1)", "overview.html#autotoc_md73", null ],
-            [ "expr_num<CharacterType>(Integer)", "overview.html#autotoc_md74", null ],
-            [ "expr_real<CharacterType>(RealNumber)", "overview.html#autotoc_md75", null ],
-            [ "e_join<bool AfterLast = false, bool OnlyNotEmpty = false>>(container, \"Separator\")", "overview.html#autotoc_md76", null ],
-            [ "e_repl(OriginalString, \"Search\", \"Replace\")", "overview.html#autotoc_md77", null ],
-            [ "expr_replaced<CharacterType>{OriginalString, Search, Replace}", "overview.html#autotoc_md78", null ],
-            [ "empty_expr<CharacterType>", "overview.html#autotoc_md79", null ],
-            [ "Your own string expressions", "overview.html#autotoc_md80", null ]
+          [ "String Expressions", "overview.html#autotoc_md70", [
+            [ "expr_spaces<CharacterType, NumberOfCharacters, Symbol = ' '>{}", "overview.html#autotoc_md71", null ],
+            [ "expr_pad<CharacterType>{NumberOfCharacters, Symbol = ' '}", "overview.html#autotoc_md72", null ],
+            [ "e_repeat{Str, count}", "overview.html#autotoc_md73", null ],
+            [ "e_choice(bool Condition, StrExpr1, StrExpr2)", "overview.html#autotoc_md74", null ],
+            [ "e_if(bool Condition, StrExpr1)", "overview.html#autotoc_md75", null ],
+            [ "expr_num<CharacterType>(Integer)", "overview.html#autotoc_md76", null ],
+            [ "expr_real<CharacterType>(RealNumber)", "overview.html#autotoc_md77", null ],
+            [ "e_join<bool AfterLast = false, bool OnlyNotEmpty = false>>(container, \"Separator\")", "overview.html#autotoc_md78", null ],
+            [ "e_repl(OriginalString, \"Search\", \"Replace\")", "overview.html#autotoc_md79", null ],
+            [ "expr_replaced<CharacterType>{OriginalString, Search, Replace}", "overview.html#autotoc_md80", null ],
+            [ "empty_expr<CharacterType>", "overview.html#autotoc_md81", null ],
+            [ "Your own string expressions", "overview.html#autotoc_md82", null ]
           ] ],
-          [ "Class chunked_string_builder", "overview.html#autotoc_md81", null ]
+          [ "Class chunked_string_builder", "overview.html#autotoc_md83", null ]
         ] ]
       ] ]
     ] ],
@@ -94,10 +94,10 @@ var NAVTREEINDEX =
 "classsimstr_1_1sstring.html#a73806fa93c9ec619ba93d479d413ea0f",
 "classsimstr_1_1str__algs.html#ab3f6c202d1c1723297d46a45d82c5808",
 "classsimstr_1_1str__src__algs.html#a9bded9dcb3da163cf73d690dd63a73d4",
-"namespacesimstr.html#a535ff50092fb0783922615ee0d3af5a2",
-"structsimstr_1_1simple__str.html#ac82f1096d596015340377b58704030cf",
-"structsimstr_1_1str__src.html#a108d9cd0dc24f5d395e838a3ef20d846",
-"structsimstr_1_1str__src__nt.html#a73806fa93c9ec619ba93d479d413ea0f"
+"namespacesimstr.html#a485db8e1e2e6c369f85beae0a266d0e4",
+"structsimstr_1_1simple__str.html#ac4d712294186e2e181910677ba9c3ca7",
+"structsimstr_1_1str__src.html#a0e5e10ff025504ee5d60e8c77f439003",
+"structsimstr_1_1str__src__nt.html#a72a2c0b10e857c245f67a2abd7c1a2f0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

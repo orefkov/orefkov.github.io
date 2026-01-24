@@ -118,18 +118,27 @@ Functions</h2></td></tr>
 <tr class="memitem:ad452138126b5952824665736845ffedf"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad452138126b5952824665736845ffedf">change</a> (std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, size_t from, size_t count, const E &amp;expr)</td></tr>
 <tr class="memdesc:ad452138126b5952824665736845ffedf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace a portion of a standard string with the given string expression.  <br /></td></tr>
 <tr class="separator:ad452138126b5952824665736845ffedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a351d8d1db18b0dca19992b164fb6253f" id="r_a351d8d1db18b0dca19992b164fb6253f"><td class="memTemplParams" colspan="2">template&lt;typename K, typename A, <a class="el" href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a>&lt; K &gt; E&gt; </td></tr>
+<tr class="memitem:a351d8d1db18b0dca19992b164fb6253f" id="r_a351d8d1db18b0dca19992b164fb6253f"><td class="memTemplParams" colspan="2">template&lt;typename K, typename A, StrExprForType&lt; K &gt; E&gt; </td></tr>
 <tr class="memitem:a351d8d1db18b0dca19992b164fb6253f"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a351d8d1db18b0dca19992b164fb6253f">append</a> (std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, const E &amp;expr)</td></tr>
 <tr class="memdesc:a351d8d1db18b0dca19992b164fb6253f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a string expression to a standard string.  <br /></td></tr>
 <tr class="separator:a351d8d1db18b0dca19992b164fb6253f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fb93ccbf4f2bc1ca6db244ef11c3047" id="r_a5fb93ccbf4f2bc1ca6db244ef11c3047"><td class="memTemplParams" colspan="2">template&lt;typename K, typename A, <a class="el" href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a>&lt; K &gt; E&gt; </td></tr>
+<tr class="memitem:a5fb93ccbf4f2bc1ca6db244ef11c3047" id="r_a5fb93ccbf4f2bc1ca6db244ef11c3047"><td class="memTemplParams" colspan="2">template&lt;typename K, typename A, StrExprForType&lt; K &gt; E&gt; </td></tr>
 <tr class="memitem:a5fb93ccbf4f2bc1ca6db244ef11c3047"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5fb93ccbf4f2bc1ca6db244ef11c3047">prepend</a> (std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, const E &amp;expr)</td></tr>
 <tr class="memdesc:a5fb93ccbf4f2bc1ca6db244ef11c3047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a string expression at the beginning of a standard string.  <br /></td></tr>
 <tr class="separator:a5fb93ccbf4f2bc1ca6db244ef11c3047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb9af1b76a9815d827e9b46affccb49f" id="r_afb9af1b76a9815d827e9b46affccb49f"><td class="memTemplParams" colspan="2">template&lt;typename K, typename A, <a class="el" href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a>&lt; K &gt; E&gt; </td></tr>
+<tr class="memitem:afb9af1b76a9815d827e9b46affccb49f" id="r_afb9af1b76a9815d827e9b46affccb49f"><td class="memTemplParams" colspan="2">template&lt;typename K, typename A, StrExprForType&lt; K &gt; E&gt; </td></tr>
 <tr class="memitem:afb9af1b76a9815d827e9b46affccb49f"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afb9af1b76a9815d827e9b46affccb49f">insert</a> (std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, size_t from, const E &amp;expr)</td></tr>
 <tr class="memdesc:afb9af1b76a9815d827e9b46affccb49f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a string expression at the specified position in a standard string.  <br /></td></tr>
 <tr class="separator:afb9af1b76a9815d827e9b46affccb49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6f51f3eac15eafa21d00aa3b10c81f7" id="r_ad6f51f3eac15eafa21d00aa3b10c81f7"><td class="memTemplParams" colspan="2">template&lt;typename K, typename A, StrExprForType&lt; K &gt; E, typename T&gt; <br />
+requires (std::is_constructible_v&lt;<a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt;K&gt;, T&gt;)</td></tr>
+<tr class="memitem:ad6f51f3eac15eafa21d00aa3b10c81f7"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad6f51f3eac15eafa21d00aa3b10c81f7">replace</a> (std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, T &amp;&amp;pattern, const E &amp;repl, size_t offset=0, size_t max_count=-1)</td></tr>
+<tr class="memdesc:ad6f51f3eac15eafa21d00aa3b10c81f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function for searching for substrings in a standard string and replacing the found occurrences with a string expression.  <br /></td></tr>
+<tr class="separator:ad6f51f3eac15eafa21d00aa3b10c81f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0be21b9e8525cd67515fb5a2dc78c6ba" id="r_a0be21b9e8525cd67515fb5a2dc78c6ba"><td class="memTemplParams" colspan="2">template&lt;typename K, typename A&gt; </td></tr>
+<tr class="memitem:a0be21b9e8525cd67515fb5a2dc78c6ba"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0be21b9e8525cd67515fb5a2dc78c6ba">replace</a> (std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, <a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt; pattern, <a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt; repl, size_t offset=0, size_t max_count=-1)</td></tr>
+<tr class="memdesc:a0be21b9e8525cd67515fb5a2dc78c6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for searching for substrings in a standard string and replacing found occurrences with another substring.  <br /></td></tr>
+<tr class="separator:a0be21b9e8525cd67515fb5a2dc78c6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Small namespace for standard string methods. </p>
@@ -140,7 +149,7 @@ Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, typename A, <a class="el" href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a>&lt; K &gt; E&gt; </div>
+template&lt;typename K, typename A, StrExprForType&lt; K &gt; E&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; simstr::str::append </td>
@@ -238,7 +247,7 @@ template&lt;typename K, typename A, StrExprForType&lt; K &gt; E&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, typename A, <a class="el" href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a>&lt; K &gt; E&gt; </div>
+template&lt;typename K, typename A, StrExprForType&lt; K &gt; E&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; simstr::str::insert </td>
@@ -287,7 +296,7 @@ template&lt;typename K, typename A, <a class="el" href="conceptsimstr_1_1_str_ex
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, typename A, <a class="el" href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a>&lt; K &gt; E&gt; </div>
+template&lt;typename K, typename A, StrExprForType&lt; K &gt; E&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; simstr::str::prepend </td>
@@ -321,6 +330,126 @@ template&lt;typename K, typename A, <a class="el" href="conceptsimstr_1_1_str_ex
 <dl class="section return"><dt>Returns</dt><dd>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; - reference to the passed string.</dd></dl>
 <p>The method gets the length of the string expression, increases the size of the string, shifts its contents and materializes the string expression at the beginning of the string, without using intermediate buffers. Before C++23, resize was used; since C++23, resize_and_overwrite was used.</p>
 <p>IMPORTANT!!! Parts of a string expression must not reference the string itself, otherwise the result is undefined!!! </p>
+
+</div>
+</div>
+<a id="a0be21b9e8525cd67515fb5a2dc78c6ba" name="a0be21b9e8525cd67515fb5a2dc78c6ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be21b9e8525cd67515fb5a2dc78c6ba">&#9670;&#160;</a></span>replace() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename A&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; simstr::str::replace </td>
+          <td>(</td>
+          <td class="paramtype">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt;</td>          <td class="paramname"><span class="paramname"><em>repl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_count</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function for searching for substrings in a standard string and replacing found occurrences with another substring. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">K</td><td>- the character type of the string. </td></tr>
+    <tr><td class="paramname">A</td><td>- the type of the string allocator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>- the string in which we replace occurrences of substrings. </td></tr>
+    <tr><td class="paramname">pattern</td><td>- the searched substring (any type that converts to <a class="el" href="structsimstr_1_1simple__str.html" title="The simplest immutable non-owning string class.">simple_str</a>). </td></tr>
+    <tr><td class="paramname">repl</td><td>- replacement string (any type convertible to <a class="el" href="structsimstr_1_1simple__str.html" title="The simplest immutable non-owning string class.">simple_str</a>). </td></tr>
+    <tr><td class="paramname">offset</td><td>- the starting offset for the search. </td></tr>
+    <tr><td class="paramname">max_count</td><td>- maximum number of replacements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; - reference to the modified string. </dd></dl>
+
+</div>
+</div>
+<a id="ad6f51f3eac15eafa21d00aa3b10c81f7" name="ad6f51f3eac15eafa21d00aa3b10c81f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6f51f3eac15eafa21d00aa3b10c81f7">&#9670;&#160;</a></span>replace() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename A, StrExprForType&lt; K &gt; E, typename T&gt; <br />
+requires (std::is_constructible_v&lt;<a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt;K&gt;, T&gt;)</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; simstr::str::replace </td>
+          <td>(</td>
+          <td class="paramtype">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const E &amp;</td>          <td class="paramname"><span class="paramname"><em>repl</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_count</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A function for searching for substrings in a standard string and replacing the found occurrences with a string expression. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">K</td><td>- the string character type. </td></tr>
+    <tr><td class="paramname">A</td><td>- the string allocator type. </td></tr>
+    <tr><td class="paramname">E</td><td>- the string expression type. </td></tr>
+    <tr><td class="paramname">T</td><td>- the search substring type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>- the string in which to replace substring occurrences. </td></tr>
+    <tr><td class="paramname">pattern</td><td>- the search substring (any type convertible to <a class="el" href="structsimstr_1_1simple__str.html" title="The simplest immutable non-owning string class.">simple_str</a>). </td></tr>
+    <tr><td class="paramname">repl</td><td>- the string expression to replace. </td></tr>
+    <tr><td class="paramname">offset</td><td>- the starting offset for the search. </td></tr>
+    <tr><td class="paramname">max_count</td><td>- the maximum number of replacements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; - a reference to the string being modified.</dd></dl>
+<p>Parts of the string expression must not reference the string being modified itself. If the search substring is not found, the string expression is not even evaluated. Then, when performing a replacement, the string expression is evaluated only once at the first replacement location, and characters from the first location are simply copied to subsequent replacement locations. This saves memory and time if you need to replace with some kind of "composite" string. </p>
 
 </div>
 </div>

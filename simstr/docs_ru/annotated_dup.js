@@ -10,6 +10,7 @@ var annotated_dup =
       [ "expr_pad", "structsimstr_1_1expr__pad.html", null ],
       [ "expr_replace_symbols", "structsimstr_1_1expr__replace__symbols.html", "structsimstr_1_1expr__replace__symbols" ],
       [ "expr_replaced", "structsimstr_1_1expr__replaced.html", "structsimstr_1_1expr__replaced" ],
+      [ "expr_replaced_e", "structsimstr_1_1expr__replaced__e.html", "structsimstr_1_1expr__replaced__e" ],
       [ "expr_spaces", "structsimstr_1_1expr__spaces.html", null ],
       [ "expr_stdstr", "structsimstr_1_1expr__stdstr.html", null ],
       [ "expr_to_std_string", "structsimstr_1_1expr__to__std__string.html", null ],

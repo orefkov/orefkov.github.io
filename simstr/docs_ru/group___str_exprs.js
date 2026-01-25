@@ -12,8 +12,11 @@ var group___str_exprs =
     [ "simstr::expr_choice_one_lit< L, A, N, Compare >", "structsimstr_1_1expr__choice__one__lit.html", null ],
     [ "simstr::expr_choice_two_lit< K, N, P, M >", "structsimstr_1_1expr__choice__two__lit.html", null ],
     [ "simstr::expr_stdstr< K, T >", "structsimstr_1_1expr__stdstr.html", null ],
-    [ "simstr::expr_replaced< K, E >", "structsimstr_1_1expr__replaced.html", [
-      [ "expr_replaced", "structsimstr_1_1expr__replaced.html#a5251e2e79acad8706034c136675c6055", null ]
+    [ "simstr::expr_replaced< K >", "structsimstr_1_1expr__replaced.html", [
+      [ "expr_replaced", "structsimstr_1_1expr__replaced.html#ab7a7dfe171a1c7060837f6d700984195", null ]
+    ] ],
+    [ "simstr::expr_replaced_e< K, E >", "structsimstr_1_1expr__replaced__e.html", [
+      [ "expr_replaced_e", "structsimstr_1_1expr__replaced__e.html#a4c44795d3312117271508cd89e5a58e7", null ]
     ] ],
     [ "simstr::expr_replace_symbols< K, UseVectorForReplace >", "structsimstr_1_1expr__replace__symbols.html", [
       [ "expr_replace_symbols", "structsimstr_1_1expr__replace__symbols.html#a1fac129651136763915ab5cba6dd26dd", null ]

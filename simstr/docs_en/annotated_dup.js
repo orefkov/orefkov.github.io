@@ -2,10 +2,14 @@ var annotated_dup =
 [
     [ "simstr", "namespacesimstr.html", [
       [ "chunked_string_builder", "classsimstr_1_1chunked__string__builder.html", "classsimstr_1_1chunked__string__builder" ],
+      [ "convert_to_strexpr< K, const T * >", "structsimstr_1_1convert__to__strexpr_3_01_k_00_01const_01_t_01_5_01_4.html", null ],
+      [ "convert_to_strexpr< K, expr_hex_src< Val, All, Ucase, Ox > >", "structsimstr_1_1convert__to__strexpr_3_01_k_00_01expr__hex__src_3_01_val_00_01_all_00_01_ucase_00_01_ox_01_4_01_4.html", null ],
+      [ "convert_to_strexpr< K, T >", "structsimstr_1_1convert__to__strexpr_3_01_k_00_01_t_01_4.html", null ],
       [ "empty_expr", "structsimstr_1_1empty__expr.html", null ],
       [ "expr_choice", "structsimstr_1_1expr__choice.html", null ],
       [ "expr_choice_one_lit", "structsimstr_1_1expr__choice__one__lit.html", null ],
       [ "expr_choice_two_lit", "structsimstr_1_1expr__choice__two__lit.html", null ],
+      [ "expr_concat", "structsimstr_1_1expr__concat.html", null ],
       [ "expr_if", "structsimstr_1_1expr__if.html", null ],
       [ "expr_pad", "structsimstr_1_1expr__pad.html", null ],
       [ "expr_replace_symbols", "structsimstr_1_1expr__replace__symbols.html", "structsimstr_1_1expr__replace__symbols" ],

@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['бенчмарки_0',['Бенчмарки',['../index.html#autotoc_md15',1,'']]],
-  ['библиотека_20simstr_1',['Библиотека simstr',['../overview.html#autotoc_md22',1,'Библиотека simstr'],['../index.html',1,'Библиотека simstr.']]],
-  ['библиотека_20строковых_20объектов_20и_20функций_2',['simstr - библиотека строковых объектов и функций',['../index.html#autotoc_md0',1,'']]],
-  ['библиотеки_3',['библиотеки',['../index.html#autotoc_md1',1,'Основные возможности библиотеки'],['../index.html#autotoc_md10',1,'Основные объекты библиотеки']]],
-  ['было_20и_20есть_4',['Что было и есть',['../overview.html#autotoc_md18',1,'']]]
+  ['upper_0',['upper',['../classsimstr_1_1str__mutable.html#ad1b975226e92b0e57796dd14fed5248f',1,'simstr::str_mutable']]],
+  ['upper_5fonly_5fascii_1',['upper_only_ascii',['../classsimstr_1_1str__mutable.html#a1c7b47cfc00189c51a5683fd34095192',1,'simstr::str_mutable']]],
+  ['upperred_2',['upperred',['../classsimstr_1_1str__algs.html#a6ae3ef69a372dab777c952f22c492689',1,'simstr::str_algs']]],
+  ['upperred_5ffrom_3',['upperred_from',['../classsimstr_1_1str__storable.html#a3c53f8d59e980315bc0d44b5cf6b1e6d',1,'simstr::str_storable']]],
+  ['upperred_5fonly_5fascii_4',['upperred_only_ascii',['../classsimstr_1_1str__src__algs.html#a517129dd2774440cd48c401b65bcf066',1,'simstr::str_src_algs']]],
+  ['upperred_5fonly_5fascii_5ffrom_5',['upperred_only_ascii_from',['../classsimstr_1_1str__storable.html#a6cb647956eba06372b0cef5328a0bc91',1,'simstr::str_storable']]]
 ];

@@ -1,5 +1,8 @@
 var hierarchy =
 [
+    [ "simstr::convert_to_strexpr< K, const T * >", "structsimstr_1_1convert__to__strexpr_3_01_k_00_01const_01_t_01_5_01_4.html", null ],
+    [ "simstr::convert_to_strexpr< K, expr_hex_src< Val, All, Ucase, Ox > >", "structsimstr_1_1convert__to__strexpr_3_01_k_00_01expr__hex__src_3_01_val_00_01_all_00_01_ucase_00_01_ox_01_4_01_4.html", null ],
+    [ "simstr::convert_to_strexpr< K, T >", "structsimstr_1_1convert__to__strexpr_3_01_k_00_01_t_01_4.html", null ],
     [ "simstr::expr_stdstr< K, T >", "structsimstr_1_1expr__stdstr.html", null ],
     [ "simstr::expr_to_std_string< Impl >", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "simstr::expr_to_std_string< chunked_string_builder< K > >", "structsimstr_1_1expr__to__std__string.html", [
@@ -18,6 +21,9 @@ var hierarchy =
     [ "simstr::expr_to_std_string< expr_choice_two_lit< K, N, P, M > >", "structsimstr_1_1expr__to__std__string.html", [
       [ "simstr::expr_choice_two_lit< K, N, P, M >", "structsimstr_1_1expr__choice__two__lit.html", null ]
     ] ],
+    [ "simstr::expr_to_std_string< expr_concat< K, G, Arg, Args... > >", "structsimstr_1_1expr__to__std__string.html", [
+      [ "simstr::expr_concat< K, G, Arg, Args >", "structsimstr_1_1expr__concat.html", null ]
+    ] ],
     [ "simstr::expr_to_std_string< expr_fill< K, A, Left > >", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "simstr::expr_to_std_string< expr_hex< K, Val, All, Ucase, Ox > >", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "simstr::expr_to_std_string< expr_if< A > >", "structsimstr_1_1expr__to__std__string.html", [
@@ -26,6 +32,7 @@ var hierarchy =
     [ "simstr::expr_to_std_string< expr_join< K, T, I, tail, skip_empty > >", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "simstr::expr_to_std_string< expr_literal< K, N > >", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "simstr::expr_to_std_string< expr_literal_join< first, K, N, A > >", "structsimstr_1_1expr__to__std__string.html", null ],
+    [ "simstr::expr_to_std_string< expr_num< char, int > >", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "simstr::expr_to_std_string< expr_num< K, T > >", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "simstr::expr_to_std_string< expr_pad< K > >", "structsimstr_1_1expr__to__std__string.html", [
       [ "simstr::expr_pad< K >", "structsimstr_1_1expr__pad.html", null ]
@@ -47,6 +54,7 @@ var hierarchy =
     [ "simstr::expr_to_std_string< expr_spaces< K, N > >", "structsimstr_1_1expr__to__std__string.html", [
       [ "simstr::expr_spaces< K, N, S >", "structsimstr_1_1expr__spaces.html", null ]
     ] ],
+    [ "simstr::expr_to_std_string< expr_subst< K, Pt, Args... > >", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "simstr::expr_to_std_string< expr_utf< From, To > >", "structsimstr_1_1expr__to__std__string.html", [
       [ "simstr::expr_utf< From, To >", "structsimstr_1_1expr__utf.html", null ]
     ] ],

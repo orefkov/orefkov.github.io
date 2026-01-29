@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.5.0</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -160,22 +160,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa2732ccf421fcd1ba606addcca7e6e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of the string in characters.  <br /></td></tr>
 <tr class="separator:aa2732ccf421fcd1ba606addcca7e6e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f2af1ee80a32a77ad30cffbf6987107" id="r_a1f2af1ee80a32a77ad30cffbf6987107"><td class="memTemplParams" colspan="2">template&lt;typename D = K&gt; <br />
-requires <a class="el" href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27">is_equal_str_type_v</a>&lt;K, D&gt;</td></tr>
+requires is_equal_str_type_v&lt;K, D&gt;</td></tr>
 <tr class="memitem:a1f2af1ee80a32a77ad30cffbf6987107"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::basic_string_view&lt; D &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1f2af1ee80a32a77ad30cffbf6987107">to_sv</a> () const noexcept</td></tr>
 <tr class="memdesc:a1f2af1ee80a32a77ad30cffbf6987107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert to std::basic_string_view.  <br /></td></tr>
 <tr class="separator:a1f2af1ee80a32a77ad30cffbf6987107"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4c6b4c365f05e609a7b22cbf37b39c6" id="r_ab4c6b4c365f05e609a7b22cbf37b39c6"><td class="memTemplParams" colspan="2">template&lt;typename D, typename Traits&gt; <br />
-requires <a class="el" href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27">is_equal_str_type_v</a>&lt;K, D&gt;</td></tr>
+requires is_equal_str_type_v&lt;K, D&gt;</td></tr>
 <tr class="memitem:ab4c6b4c365f05e609a7b22cbf37b39c6"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab4c6b4c365f05e609a7b22cbf37b39c6">operator std::basic_string_view&lt; D, Traits &gt;</a> () const</td></tr>
 <tr class="memdesc:ab4c6b4c365f05e609a7b22cbf37b39c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert to std::basic_string_view.  <br /></td></tr>
 <tr class="separator:ab4c6b4c365f05e609a7b22cbf37b39c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc816f095922a510dfe466db1905fc63" id="r_adc816f095922a510dfe466db1905fc63"><td class="memTemplParams" colspan="2">template&lt;typename D = K, typename Traits = std::char_traits&lt;D&gt;, typename Allocator = std::allocator&lt;D&gt;&gt; <br />
-requires <a class="el" href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27">is_equal_str_type_v</a>&lt;K, D&gt;</td></tr>
+requires is_equal_str_type_v&lt;K, D&gt;</td></tr>
 <tr class="memitem:adc816f095922a510dfe466db1905fc63"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::basic_string&lt; D, Traits, Allocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adc816f095922a510dfe466db1905fc63">to_string</a> () const</td></tr>
 <tr class="memdesc:adc816f095922a510dfe466db1905fc63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert to std::basic_string.  <br /></td></tr>
 <tr class="separator:adc816f095922a510dfe466db1905fc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9959513e8a072c51620248c4a29f4196" id="r_a9959513e8a072c51620248c4a29f4196"><td class="memTemplParams" colspan="2">template&lt;typename D, typename Traits, typename Allocator&gt; <br />
-requires <a class="el" href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27">is_equal_str_type_v</a>&lt;K, D&gt;</td></tr>
+requires is_equal_str_type_v&lt;K, D&gt;</td></tr>
 <tr class="memitem:a9959513e8a072c51620248c4a29f4196"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9959513e8a072c51620248c4a29f4196">operator std::basic_string&lt; D, Traits, Allocator &gt;</a> () const</td></tr>
 <tr class="memdesc:a9959513e8a072c51620248c4a29f4196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert to std::basic_string.  <br /></td></tr>
 <tr class="separator:a9959513e8a072c51620248c4a29f4196"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1903,7 +1903,7 @@ template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 <div class="memtemplate">
 template&lt;typename D, typename Traits, typename Allocator&gt; <br />
-requires <a class="el" href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27">is_equal_str_type_v</a>&lt;K, D&gt;</div>
+requires is_equal_str_type_v&lt;K, D&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1936,7 +1936,7 @@ requires <a class="el" href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2
 template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 <div class="memtemplate">
 template&lt;typename D, typename Traits&gt; <br />
-requires <a class="el" href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27">is_equal_str_type_v</a>&lt;K, D&gt;</div>
+requires is_equal_str_type_v&lt;K, D&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2831,7 +2831,7 @@ template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 <div class="memtemplate">
 template&lt;typename D = K, typename Traits = std::char_traits&lt;D&gt;, typename Allocator = std::allocator&lt;D&gt;&gt; <br />
-requires <a class="el" href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27">is_equal_str_type_v</a>&lt;K, D&gt;</div>
+requires is_equal_str_type_v&lt;K, D&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2864,7 +2864,7 @@ requires <a class="el" href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2
 template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 <div class="memtemplate">
 template&lt;typename D = K&gt; <br />
-requires <a class="el" href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27">is_equal_str_type_v</a>&lt;K, D&gt;</div>
+requires is_equal_str_type_v&lt;K, D&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_3a_0',['The first simplest string class is called, of course, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md66',1,'']]]
+  ['1_0',['Method 1',['../group___convert_to_str_expr.html',1,'']]]
 ];

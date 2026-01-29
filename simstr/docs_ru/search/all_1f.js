@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['литералов_20и_20поиск_20в_20tt_20std_3a_3astring_5fview_20tt_0',['Сложение нескольких литералов и поиск в &lt;tt&gt;std::string_view&lt;/tt&gt;',['../index.html#autotoc_md6',1,'']]]
+  ['естественно_20tt_20simple_5fstr_20tt_20_3a_0',['Первый самый простой класс строки называется, естественно, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md24',1,'']]],
+  ['есть_1',['Что было и есть',['../overview.html#autotoc_md18',1,'']]]
 ];

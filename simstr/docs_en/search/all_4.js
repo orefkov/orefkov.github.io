@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['data_0',['data',['../classsimstr_1_1chunked__string__builder.html#af0b7cc558b6f119079ecf436f7d4c3ab',1,'simstr::chunked_string_builder']]],
-  ['debugging_1',['Convenient debugging',['../index.html#autotoc_md56',1,'']]],
-  ['define_5fsize_2',['define_size',['../classsimstr_1_1lstring.html#a1567876cf258412f403b78241c242fd8',1,'simstr::lstring']]],
-  ['documentation_3',['Generated documentation',['../index.html#autotoc_md58',1,'']]]
+  ['_3a_0',['The first simplest string class is called, of course, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md66',1,'']]]
 ];

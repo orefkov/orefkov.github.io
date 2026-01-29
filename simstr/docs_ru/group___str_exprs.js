@@ -1,5 +1,6 @@
 var group___str_exprs =
 [
+    [ "simstr::is_equal_str_type_v", "conceptsimstr_1_1is__equal__str__type__v.html", null ],
     [ "simstr::StrExpr", "conceptsimstr_1_1_str_expr.html", null ],
     [ "simstr::StrExprForType", "conceptsimstr_1_1_str_expr_for_type.html", null ],
     [ "simstr::strexprjoin< A, B >", "structsimstr_1_1strexprjoin.html", null ],
@@ -30,6 +31,7 @@ var group___str_exprs =
     [ "simstr::e_choice", "group___str_exprs.html#ga83da2cba80aa8121f4a43727a2914a35", null ],
     [ "simstr::e_choice", "group___str_exprs.html#gad305cec2225b216a16282ce343ef4162", null ],
     [ "simstr::e_choice", "group___str_exprs.html#ga081bd71800edf88c06cbfbbd9aba4107", null ],
+    [ "simstr::e_concat", "group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c", null ],
     [ "simstr::e_fill_left", "group___str_exprs.html#ga29b819f35d451888d14bae0217478561", null ],
     [ "simstr::e_fill_right", "group___str_exprs.html#gaa35d4285042cb44083773109576055f7", null ],
     [ "simstr::e_hex", "group___str_exprs.html#ga6ae75ae56c754403fbf9f5b610a3326b", null ],
@@ -46,26 +48,16 @@ var group___str_exprs =
     [ "simstr::e_repl_const_symbols", "group___str_exprs.html#gac0d4ca53513bcc0d1c0730940ec8a8a1", null ],
     [ "simstr::e_spca", "group___str_exprs.html#ga33e02268e25a635b4b7e14d0744b46c1", null ],
     [ "simstr::e_spcw", "group___str_exprs.html#ga23b5d15132fcc706d1edc1364673a4ab", null ],
+    [ "simstr::e_subst", "group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846", null ],
     [ "simstr::e_t", "group___str_exprs.html#ga9e9c377a32a2cc243efce977c4adffe3", null ],
     [ "simstr::operator+", "group___str_exprs.html#ga9742e8cdcccc67c0746578f3579127e2", null ],
-    [ "simstr::operator+", "group___str_exprs.html#ga166596bf110c32b8c6bdb79917cd2384", null ],
-    [ "simstr::operator+", "group___str_exprs.html#gae2c4277f5b85cd9742e02f648af92fb9", null ],
-    [ "simstr::operator+", "group___str_exprs.html#ga0d03cfa41a4f78e843b88b0ce74be7c8", null ],
     [ "simstr::operator+", "group___str_exprs.html#ga9d8bc7652fac165ad43ae054fb083616", null ],
-    [ "simstr::operator+", "group___str_exprs.html#ga1a42429815e770265b76a4211d55b2c5", null ],
     [ "simstr::operator+", "group___str_exprs.html#ga426dd6edd38c382f64fb4cc547896c80", null ],
-    [ "simstr::operator+", "group___str_exprs.html#ga0421f6f954a1f0a4575cb282c1e36712", null ],
-    [ "simstr::operator+", "group___str_exprs.html#ga356a058d98bfa4eca0a44e49745bde28", null ],
-    [ "simstr::operator+", "group___str_exprs.html#gacd8a4a6047c5eb6bc13d23064f8778fe", null ],
-    [ "simstr::operator+", "group___str_exprs.html#ga5befc2f161aca230425db4c66cc90ce5", null ],
-    [ "simstr::operator+", "group___str_exprs.html#ga8b067a24eabc409c0b323d4560cf063f", null ],
     [ "simstr::operator+", "group___str_exprs.html#ga07c35bc9eecc1509118d73ef5e27d303", null ],
-    [ "simstr::operator+", "group___str_exprs.html#gaff6edec79f617564db65f91039283f39", null ],
     [ "std::operator+", "group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327", null ],
     [ "simstr::eea", "group___str_exprs.html#gab19693e574a384f42220cf115ec86c75", null ],
     [ "simstr::eeb", "group___str_exprs.html#gac54de64d6d9cf03f0186e944c924350f", null ],
     [ "simstr::eeu", "group___str_exprs.html#gab96ac61f552b627d623bf4958337242a", null ],
     [ "simstr::eeuu", "group___str_exprs.html#ga470627498bd16d6b5337607650d1c699", null ],
-    [ "simstr::eew", "group___str_exprs.html#ga2ebc01b80560370b2f318d897bb6000a", null ],
-    [ "simstr::is_equal_str_type_v", "group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27", null ]
+    [ "simstr::eew", "group___str_exprs.html#ga2ebc01b80560370b2f318d897bb6000a", null ]
 ];

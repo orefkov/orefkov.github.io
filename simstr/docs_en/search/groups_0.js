@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['expressions_0',['String Expressions',['../group___str_exprs.html',1,'']]]
+  ['converting_20types_20to_20string_20expressions_0',['Converting types to string expressions',['../group___convert_to_str_expr.html',1,'']]]
 ];

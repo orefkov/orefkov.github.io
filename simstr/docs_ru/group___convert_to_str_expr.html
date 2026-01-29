@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>simstr: Конвертация типов в в строковые выражения</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.0</span>
+   </div>
+   <div id="projectbrief">Yet another strings library</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group___convert_to_str_expr.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Конвертация типов в в строковые выражения</div></div>
+</div><!--header-->
+<div class="contents">
+<p>Различные способы конвертации типов в строковые выражения. Если вы реализуете один (и только один) из способов преобразования вашего типа в строковое выражение, то сможете использовать ваш тип напрямую в операциях конкатенации со строковыми выражениями и как аргументы в функциях <code>e_concat</code> и <code>e_subst</code>. </p>
+
+
+<h3><a id="method1" name="method1"></a>Способ 1</h3><div class="textblock">Просто реализуйте в своём типе требования, чтобы он являлся строковым выражением. </p><dl class="section user"><dt>Пример:</dt><dd></dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>add_exclamation {</div>
+<div class="line">    ssa text_;</div>
+<div class="line">    <span class="keywordtype">unsigned</span> count_;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// symb_type</span></div>
+<div class="line">    <span class="keyword">using </span>symb_type = char;</div>
+<div class="line">    <span class="comment">// length</span></div>
+<div class="line">    <span class="keywordtype">size_t</span> length() const noexcept {</div>
+<div class="line">        <span class="keywordflow">return</span> text_.<a class="code hl_function" href="structsimstr_1_1simple__str.html#a574c8578274b5cc7a3e9507e8669d343">length</a>() + count_;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="comment">// place</span></div>
+<div class="line">    <span class="keywordtype">char</span>* place(<span class="keywordtype">char</span>* ptr) <span class="keyword">const</span> <span class="keyword">noexcept</span>{</div>
+<div class="line">        ptr = text_.place(ptr);</div>
+<div class="line">        std::char_traits&lt;char&gt;::assign(ptr, count_, <span class="charliteral">&#39;!&#39;</span>);</div>
+<div class="line">        <span class="keywordflow">return</span> ptr + count_;</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">TEST(ToStrExpr, CheckExclamation) {</div>
+<div class="line">    std::string test = <span class="stringliteral">&quot;Msg is &lt;&quot;</span> + add_exclamation{<span class="stringliteral">&quot;Happy Birthday&quot;</span>, 5} + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
+<div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;Msg is &lt;Happy Birthday!!!!!&gt;&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    add_exclamation msg{<span class="stringliteral">&quot;Happy Birthday&quot;</span>, 3};</div>
+<div class="line">    test = <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Msg is &lt;&quot;</span>, msg, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;Msg is &lt;Happy Birthday!!!&gt;&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> add_exclamation cmsg{<span class="stringliteral">&quot;Happy Birthday&quot;</span>, 0};</div>
+<div class="line">    test = <a class="code hl_function" href="group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846">e_subst</a>(S_FRM(<span class="stringliteral">&quot;Msg is &lt;{}&gt;&quot;</span>), cmsg);</div>
+<div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;Msg is &lt;Happy Birthday&gt;&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div>
+
+<h3><a id="method2" name="method2"></a>Способ 2</h3><div class="textblock">Создайте тип-обёртку, который является строковым выражением и может инициализироваться вашим типом. После задайте их соответствие с помощью специализации шаблона <code>convert_to_strexpr</code>. </p><dl class="section user"><dt>Пример:</dt><dd></dd></dl>
+<div class="fragment"><div class="line"> </div>
+<div class="line"><span class="comment">// Тип / Type</span></div>
+<div class="line"><span class="keyword">struct </span>car_info {</div>
+<div class="line">    std::string model;</div>
+<div class="line">    <span class="keywordtype">int</span> year;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Обёртка для превращения его в строковое выражение</span></div>
+<div class="line"><span class="comment">// Wrapper to turn it into a string expression</span></div>
+<div class="line"><span class="keyword">struct </span>car_info_expr {</div>
+<div class="line">    <span class="keyword">const</span> car_info&amp; car_;</div>
+<div class="line">    expr_num&lt;char, int&gt; year;</div>
+<div class="line"> </div>
+<div class="line">    car_info_expr(<span class="keyword">const</span> car_info&amp; car) : car_(car), year(car.year){}</div>
+<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> ssa ModelTag = <span class="stringliteral">&quot;Model: &quot;</span>;</div>
+<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> ssa YearTag = <span class="stringliteral">&quot;, Year: &quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">using </span>symb_type = char;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">size_t</span> length()<span class="keyword"> const </span>{</div>
+<div class="line">        <span class="keywordflow">return</span> ModelTag.<a class="code hl_function" href="structsimstr_1_1simple__str.html#a574c8578274b5cc7a3e9507e8669d343">length</a>() + car_.model.length() + YearTag.length() + year.length();</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">char</span>* place(<span class="keywordtype">char</span>* ptr)<span class="keyword"> const </span>{</div>
+<div class="line">        ptr = ModelTag.place(ptr);</div>
+<div class="line">        std::char_traits&lt;char&gt;::copy(ptr, car_.model.data(), car_.model.length());</div>
+<div class="line">        ptr += car_.model.length();</div>
+<div class="line">        ptr = YearTag.place(ptr);</div>
+<div class="line">        <span class="keywordflow">return</span> year.place(ptr);</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">// namespace simstr::tests</span></div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesimstr.html">simstr</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Специализируем шаблон, задавая соответствие типа и его обёртки</span></div>
+<div class="line"><span class="comment">// Specialize the template by specifying a match between the type and its wrapper</span></div>
+<div class="line"><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><span class="keyword">struct </span>convert_to_strexpr&lt;char, tests::car_info&gt; {</div>
+<div class="line">    <span class="comment">// Указываем тип, который будет &quot;обёрткой&quot; для нашего типа</span></div>
+<div class="line">    <span class="comment">// Specify the type that will be a &quot;wrapper&quot; for our type</span></div>
+<div class="line">    <span class="keyword">using </span>type = tests::car_info_expr;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">// namespace simstr</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>simstr::tests {</div>
+<div class="line"> </div>
+<div class="line">TEST(ToStrExpr, CheckCarInfo) {</div>
+<div class="line">    car_info ci{<span class="stringliteral">&quot;Ford&quot;</span>, 2020};</div>
+<div class="line">    std::string test = <span class="stringliteral">&quot;Car is &lt;&quot;</span>_ss + ci + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
+<div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;Car is &lt;Model: Ford, Year: 2020&gt;&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    ci.year++;</div>
+<div class="line">    test = <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Car is &lt;&quot;</span>, ci, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;Car is &lt;Model: Ford, Year: 2021&gt;&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    ci.year++;</div>
+<div class="line">    test = <a class="code hl_function" href="group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846">e_subst</a>(S_FRM(<span class="stringliteral">&quot;Car is &lt;{}&gt;&quot;</span>), ci);</div>
+<div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;Car is &lt;Model: Ford, Year: 2022&gt;&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div>
+
+<h3><a id="method3" name="method3"></a>Способ 3</h3><div class="textblock">Специализируйте шаблон <code>convert_to_strexpr</code> для вашего типа и создайте в нём статическую функцию <code>convert</code>, принимающую ваш объект и возвращающую строковое выражение, строковый объект simstr или std::basic_string. </p><dl class="section user"><dt>Пример:</dt><dd></dd></dl>
+<div class="fragment"><div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>animal {</div>
+<div class="line">    std::string name_;</div>
+<div class="line">    std::string sound_;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">//namespace simstr::tests</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesimstr.html">simstr</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Специализируем шаблон, задавая соответствие типа и его обёртки</span></div>
+<div class="line"><span class="comment">// Specialize the template by specifying a match between the type and its wrapper</span></div>
+<div class="line"><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><span class="keyword">struct </span>convert_to_strexpr&lt;char, tests::animal&gt; {</div>
+<div class="line">    <span class="comment">// Создаём функцию `convert`, которая вернёт строковое представление объекта</span></div>
+<div class="line">    <span class="comment">// Create a function `convert`, that will return a string representation of the object</span></div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> convert(<span class="keyword">const</span> tests::animal&amp; a) {</div>
+<div class="line">        <span class="comment">// Так делать нельзя - операция + складывает в выражение ссылки на временные объекты,</span></div>
+<div class="line">        <span class="comment">// которые разрушаются после &quot;;&quot;, и возвращать такой объект нельзя.</span></div>
+<div class="line">        <span class="comment">// This can&#39;t be done - the operator+ adds references to temporary objects to the expression,</span></div>
+<div class="line">        <span class="comment">// which are destroyed after &quot;;&quot;, and such an object cannot be returned.</span></div>
+<div class="line">        <span class="comment">//return &quot;Animal: &quot; + a.name_ + &quot;, Sound: &quot; + a.sound_;</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// А вот такой можно - он не хранит ссылки на временные объекты</span></div>
+<div class="line">        <span class="comment">// But this one is possible - it doesn&#39;t store references to temporary objects</span></div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Animal: &quot;</span>, a.name_, <span class="stringliteral">&quot;, Sound: &quot;</span>, a.sound_);</div>
+<div class="line">        <span class="comment">// Также можно возвращать просто std::string, stringa, lstringa</span></div>
+<div class="line">        <span class="comment">// You can also return just std::string, stringa, lstringa</span></div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">//namespace simstr</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>simstr::tests {</div>
+<div class="line"> </div>
+<div class="line">TEST(ToStrExpr, CheckAnimal) {</div>
+<div class="line">    animal cat{<span class="stringliteral">&quot;Cat&quot;</span>, <span class="stringliteral">&quot;Meow&quot;</span>};</div>
+<div class="line"> </div>
+<div class="line">    std::string test = <span class="stringliteral">&quot;&lt;&quot;</span>_ss + cat + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
+<div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;&lt;Animal: Cat, Sound: Meow&gt;&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> animal dog{<span class="stringliteral">&quot;Dog&quot;</span>, <span class="stringliteral">&quot;Woof&quot;</span>};</div>
+<div class="line">    test = <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span>, dog, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;&lt;Animal: Dog, Sound: Woof&gt;&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    test = <a class="code hl_function" href="group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846">e_subst</a>(S_FRM(<span class="stringliteral">&quot;\\_{}_/&quot;</span>), animal{<span class="stringliteral">&quot;Snake&quot;</span>, <span class="stringliteral">&quot;Pssstt&quot;</span>});</div>
+<div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;\\_Animal: Snake, Sound: Pssstt_/&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div>
+
+<h3><a id="method4" name="method4"></a>Способ 4</h3><div class="textblock">Просто в своём типе сделайте функцию <code>template&lt;typename K&gt; auto to_strexpr()const</code>, которая возвращает строковое выражение или строковый объект. </p><dl class="section user"><dt>Пример:</dt><dd></dd></dl>
+<div class="fragment"><div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>test {</div>
+<div class="line">    <span class="keywordtype">int</span> number;</div>
+<div class="line">    <span class="keywordtype">int</span> from;</div>
+<div class="line">    <span class="comment">// Сделаем две отдельные реализации: для char (попроще) и для остальных типов (там придётся возвращать не литералы, а simple_str, и требуется копия)</span></div>
+<div class="line">    <span class="comment">// Let&#39;s make two separate implementations: for char (simpler) and for other types (there we&#39;ll have to return not literals, but simple_str, and a copy is required)</span></div>
+<div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> K&gt; <span class="keyword">requires</span> (std::is_same_v&lt;K, char&gt;)</div>
+<div class="line">    <span class="keyword">auto</span> to_strexpr() <span class="keyword">const</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;test &quot;</span>, number, <span class="stringliteral">&quot; from &quot;</span>, from);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> K&gt; <span class="keyword">requires</span> (!std::is_same_v&lt;K, char&gt;)</div>
+<div class="line">    <span class="keyword">auto</span> to_strexpr() <span class="keyword">const</span> {</div>
+<div class="line">        <span class="comment">// uni_string возвращает локальный объект, а ссылку на них нельзя возвращать из функции,</span></div>
+<div class="line">        <span class="comment">// поэтому в e_concat надо форсировать сохранение по копии, а не по ссылке.</span></div>
+<div class="line">        <span class="comment">// uni_string returns a local object, and references to them cannot be returned from a function,</span></div>
+<div class="line">        <span class="comment">// so in e_concat we need to force saving by copy, not by reference.</span></div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(force_copy{empty_expr&lt;K&gt;{}}, force_copy{uni_string(K, <span class="stringliteral">&quot;test &quot;</span>)}, number, force_copy{uni_string(K, <span class="stringliteral">&quot; from &quot;</span>)}, from);</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">TEST(ToStrExpr, CheckTest) {</div>
+<div class="line">    test t1{1, 10};</div>
+<div class="line"> </div>
+<div class="line">    std::string t = <span class="stringliteral">&quot;Begin &lt;&quot;</span>_ss + t1 + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
+<div class="line">    EXPECT_EQ(t, <span class="stringliteral">&quot;Begin &lt;test 1 from 10&gt;&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> test t2{8, 12};</div>
+<div class="line"> </div>
+<div class="line">    t = <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span>, t2, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line">    EXPECT_EQ(t, <span class="stringliteral">&quot;&lt;test 8 from 12&gt;&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    t = <a class="code hl_function" href="group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846">e_subst</a>(S_FRM(<span class="stringliteral">&quot;&lt;{}&gt;&quot;</span>), test{99, 100});</div>
+<div class="line">    EXPECT_EQ(t, <span class="stringliteral">&quot;&lt;test 99 from 100&gt;&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Проверим работу для не char</span></div>
+<div class="line">    <span class="comment">// Let&#39;s check the work for non-char</span></div>
+<div class="line">    std::wstring wt = L<span class="stringliteral">&quot;aaa &quot;</span>_ss + test{99, 100};</div>
+<div class="line">    EXPECT_EQ(wt, L<span class="stringliteral">&quot;aaa test 99 from 100&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    std::u16string ut = u<span class="stringliteral">&quot;aaa &quot;</span>_ss + test{99, 100};</div>
+<div class="line">    EXPECT_EQ(ut, u<span class="stringliteral">&quot;aaa test 99 from 100&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

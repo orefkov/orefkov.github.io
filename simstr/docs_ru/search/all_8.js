@@ -1,31 +1,5 @@
 var searchData=
 [
-  ['hashstrmap_0',['hashStrMap',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20k_2c_20t_2c_20h_2c_20e_20_3e_1',['hashStrMap&lt; K, T, H, E &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20u16s_2c_20t_2c_20strhash_3c_20u16s_20_3e_2c_20streql_3c_20u16s_20_3e_20_3e_2',['hashStrMap&lt; u16s, T, strhash&lt; u16s &gt;, streql&lt; u16s &gt; &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20u16s_2c_20t_2c_20strhashia_3c_20u16s_20_3e_2c_20streqlia_3c_20u16s_20_3e_20_3e_3',['hashStrMap&lt; u16s, T, strhashia&lt; u16s &gt;, streqlia&lt; u16s &gt; &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20u16s_2c_20t_2c_20strhashiu_3c_20u16s_20_3e_2c_20streqliu_3c_20u16s_20_3e_20_3e_4',['hashStrMap&lt; u16s, T, strhashiu&lt; u16s &gt;, streqliu&lt; u16s &gt; &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20u32s_2c_20t_2c_20strhash_3c_20u32s_20_3e_2c_20streql_3c_20u32s_20_3e_20_3e_5',['hashStrMap&lt; u32s, T, strhash&lt; u32s &gt;, streql&lt; u32s &gt; &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20u32s_2c_20t_2c_20strhashia_3c_20u32s_20_3e_2c_20streqlia_3c_20u32s_20_3e_20_3e_6',['hashStrMap&lt; u32s, T, strhashia&lt; u32s &gt;, streqlia&lt; u32s &gt; &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20u32s_2c_20t_2c_20strhashiu_3c_20u32s_20_3e_2c_20streqliu_3c_20u32s_20_3e_20_3e_7',['hashStrMap&lt; u32s, T, strhashiu&lt; u32s &gt;, streqliu&lt; u32s &gt; &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20u8s_2c_20t_2c_20strhash_3c_20u8s_20_3e_2c_20streql_3c_20u8s_20_3e_20_3e_8',['hashStrMap&lt; u8s, T, strhash&lt; u8s &gt;, streql&lt; u8s &gt; &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20u8s_2c_20t_2c_20strhashia_3c_20u8s_20_3e_2c_20streqlia_3c_20u8s_20_3e_20_3e_9',['hashStrMap&lt; u8s, T, strhashia&lt; u8s &gt;, streqlia&lt; u8s &gt; &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20u8s_2c_20t_2c_20strhashiu_3c_20u8s_20_3e_2c_20streqliu_3c_20u8s_20_3e_20_3e_10',['hashStrMap&lt; u8s, T, strhashiu&lt; u8s &gt;, streqliu&lt; u8s &gt; &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20wchar_5ft_2c_20t_2c_20strhash_3c_20wchar_5ft_20_3e_2c_20streql_3c_20wchar_5ft_20_3e_20_3e_11',['hashStrMap&lt; wchar_t, T, strhash&lt; wchar_t &gt;, streql&lt; wchar_t &gt; &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20wchar_5ft_2c_20t_2c_20strhashia_3c_20wchar_5ft_20_3e_2c_20streqlia_3c_20wchar_5ft_20_3e_20_3e_12',['hashStrMap&lt; wchar_t, T, strhashia&lt; wchar_t &gt;, streqlia&lt; wchar_t &gt; &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmap_3c_20wchar_5ft_2c_20t_2c_20strhashiu_3c_20wchar_5ft_20_3e_2c_20streqliu_3c_20wchar_5ft_20_3e_20_3e_13',['hashStrMap&lt; wchar_t, T, strhashiu&lt; wchar_t &gt;, streqliu&lt; wchar_t &gt; &gt;',['../classsimstr_1_1hash_str_map.html',1,'simstr']]],
-  ['hashstrmapa_14',['hashStrMapA',['../namespacesimstr.html#a71efaa1a1996bef96e81b7b088589e1a',1,'simstr']]],
-  ['hashstrmapaia_15',['hashStrMapAIA',['../namespacesimstr.html#a1790ec609099f364a6956dfa22333aa5',1,'simstr']]],
-  ['hashstrmapaiu_16',['hashStrMapAIU',['../namespacesimstr.html#ac78f2af21d02b2a7fbe3a5111d5e5d3e',1,'simstr']]],
-  ['hashstrmapu_17',['hashStrMapU',['../namespacesimstr.html#a030877384507e9a42a658adcba5876ff',1,'simstr']]],
-  ['hashstrmapuia_18',['hashStrMapUIA',['../namespacesimstr.html#a9e4e4388c264efd467d0b166e2665e54',1,'simstr']]],
-  ['hashstrmapuiu_19',['hashStrMapUIU',['../namespacesimstr.html#a9aaf34e22c3875c278584649bac17a1d',1,'simstr']]],
-  ['hashstrmapuu_20',['hashStrMapUU',['../namespacesimstr.html#af867baf0fff130ca193369781ccd7c02',1,'simstr']]],
-  ['hashstrmapuuia_21',['hashStrMapUUIA',['../namespacesimstr.html#a2c04ab386fa351971da18cf50a7d1c0c',1,'simstr']]],
-  ['hashstrmapuuiu_22',['hashStrMapUUIU',['../namespacesimstr.html#a23aa45c8506e69c74ce109617d892e69',1,'simstr']]],
-  ['hashstrmapw_23',['hashStrMapW',['../namespacesimstr.html#aa30b610e5d5dcce51beab757a6c408b9',1,'simstr']]],
-  ['hashstrmapwia_24',['hashStrMapWIA',['../namespacesimstr.html#a617db678b8f77967dc114be7706582a5',1,'simstr']]],
-  ['hashstrmapwiu_25',['hashStrMapWIU',['../namespacesimstr.html#a376c405d7404546a07f440f355038de5',1,'simstr']]],
-  ['hex_20формате_26',['Сложение строк с числами в hex-формате',['../index.html#autotoc_md5',1,'']]],
-  ['hexflags_27',['HexFlags',['../group___str_exprs.html#ga680097382d9bc271c361f85828ac741f',1,'simstr']]]
+  ['data_0',['data',['../classsimstr_1_1chunked__string__builder.html#af0b7cc558b6f119079ecf436f7d4c3ab',1,'simstr::chunked_string_builder']]],
+  ['define_5fsize_1',['define_size',['../classsimstr_1_1lstring.html#a1567876cf258412f403b78241c242fd8',1,'simstr::lstring']]]
 ];

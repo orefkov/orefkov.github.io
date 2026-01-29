@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.5.0</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -113,10 +113,10 @@ $(function(){initNavTree('conceptsimstr_1_1_str_expr_for_type.html',''); initRes
 <p><code>#include &lt;<a class="el" href="strexpr_8h_source.html">strexpr.h</a>&gt;</code></p>
 <h2 class="groupheader">Определение концепта</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> A, <span class="keyword">typename</span> K&gt;</div>
-<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a> =  <a class="code hl_concept" href="conceptsimstr_1_1_str_expr.html">StrExpr&lt;A&gt;</a> &amp;&amp; <a class="code hl_variable" href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27">is_equal_str_type_v&lt;K, typename A::symb_type&gt;</a></div>
-<div class="ttc" id="aconceptsimstr_1_1_str_expr_for_type_html"><div class="ttname"><a href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a></div><div class="ttdoc">Концепт строкового выражения, совместимого с заданным типом символов.</div><div class="ttdef"><b>Определения</b> strexpr.h:418</div></div>
-<div class="ttc" id="aconceptsimstr_1_1_str_expr_html"><div class="ttname"><a href="conceptsimstr_1_1_str_expr.html">simstr::StrExpr</a></div><div class="ttdoc">Концепт &quot;Строковых выражений&quot;.</div><div class="ttdef"><b>Определения</b> strexpr.h:400</div></div>
-<div class="ttc" id="agroup___str_exprs_html_ga4cc5f9a930baa653948843b0d2284b27"><div class="ttname"><a href="group___str_exprs.html#ga4cc5f9a930baa653948843b0d2284b27">simstr::is_equal_str_type_v</a></div><div class="ttdeci">constexpr bool is_equal_str_type_v</div><div class="ttdoc">Проверка, являются ли два типа совместимыми строковыми типами.</div><div class="ttdef"><b>Определения</b> strexpr.h:136</div></div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a> =  <a class="code hl_concept" href="conceptsimstr_1_1_str_expr.html">StrExpr&lt;A&gt;</a> &amp;&amp; <a class="code hl_concept" href="conceptsimstr_1_1is__equal__str__type__v.html">is_equal_str_type_v&lt;K, typename std::remove_cvref_t&lt;A&gt;::symb_type</a>&gt;</div>
+<div class="ttc" id="aconceptsimstr_1_1_str_expr_for_type_html"><div class="ttname"><a href="conceptsimstr_1_1_str_expr_for_type.html">simstr::StrExprForType</a></div><div class="ttdoc">Концепт строкового выражения, совместимого с заданным типом символов.</div><div class="ttdef"><b>Определения</b> strexpr.h:488</div></div>
+<div class="ttc" id="aconceptsimstr_1_1_str_expr_html"><div class="ttname"><a href="conceptsimstr_1_1_str_expr.html">simstr::StrExpr</a></div><div class="ttdoc">Концепт &quot;Строковых выражений&quot;.</div><div class="ttdef"><b>Определения</b> strexpr.h:470</div></div>
+<div class="ttc" id="aconceptsimstr_1_1is__equal__str__type__v_html"><div class="ttname"><a href="conceptsimstr_1_1is__equal__str__type__v.html">simstr::is_equal_str_type_v</a></div><div class="ttdoc">Проверка, являются ли два типа совместимыми строковыми типами.</div><div class="ttdef"><b>Определения</b> strexpr.h:136</div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Концепт строкового выражения, совместимого с заданным типом символов. </p>
 <dl class="tparams"><dt>Параметры шаблона</dt><dd>

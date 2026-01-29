@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['k_20n_20forshared_20local_20string_0',['Класс lstring&lt;K, N, forShared&gt; (local string)',['../overview.html#autotoc_md27',1,'']]]
+  ['get_5fportion_0',['get_portion',['../classsimstr_1_1chunked__string__builder.html#a1b255030f75dfcf6bb20de886d729d31',1,'simstr::chunked_string_builder']]]
 ];

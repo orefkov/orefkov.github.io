@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.0</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.1</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -175,11 +175,16 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>~sstring</b> ()<
 <tr class="memitem:a895058580f91a0295acda313b9e23c12"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a895058580f91a0295acda313b9e23c12">sstring</a> (<a class="el" href="classsimstr_1_1lstring.html">lstring</a>&lt; K, N, true, Allocator &gt; &amp;&amp;src)</td></tr>
 <tr class="memdesc:a895058580f91a0295acda313b9e23c12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор перемещения из lstring с совместимым с sstring внешним буфером.  <br /></td></tr>
 <tr class="separator:a895058580f91a0295acda313b9e23c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a873059081053f7d9c9ab251d3ed7721d" id="r_a873059081053f7d9c9ab251d3ed7721d"><td class="memTemplParams" colspan="2">template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count, typename... Args&gt; <br />
+<tr class="memitem:adf279cf1c436d040f8abfd885d8eb09b" id="r_adf279cf1c436d040f8abfd885d8eb09b"><td class="memTemplParams" colspan="2">template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count, typename... Args&gt; <br />
 requires std::is_constructible_v&lt;allocator_t, Args...&gt;</td></tr>
-<tr class="memitem:a873059081053f7d9c9ab251d3ed7721d"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a873059081053f7d9c9ab251d3ed7721d">sstring</a> (T &amp;&amp;s, Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a873059081053f7d9c9ab251d3ed7721d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация из строкового литерала.  <br /></td></tr>
-<tr class="separator:a873059081053f7d9c9ab251d3ed7721d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf279cf1c436d040f8abfd885d8eb09b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adf279cf1c436d040f8abfd885d8eb09b">sstring</a> (T &amp;&amp;s, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:adf279cf1c436d040f8abfd885d8eb09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация из строкового литерала.  <br /></td></tr>
+<tr class="separator:adf279cf1c436d040f8abfd885d8eb09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1b0e88f285b4642e6f42b427dfc9bfa" id="r_ac1b0e88f285b4642e6f42b427dfc9bfa"><td class="memTemplParams" colspan="2">template&lt;typename O&gt; <br />
+requires (!std::is_same_v&lt;O, K&gt;)</td></tr>
+<tr class="memitem:ac1b0e88f285b4642e6f42b427dfc9bfa"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac1b0e88f285b4642e6f42b427dfc9bfa">sstring</a> (<a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; O &gt; init)</td></tr>
+<tr class="memdesc:ac1b0e88f285b4642e6f42b427dfc9bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация из строкового источника с другим типом символов. Конвертирует через UTF.  <br /></td></tr>
+<tr class="separator:ac1b0e88f285b4642e6f42b427dfc9bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a760b4c4809190881aab635d1688999dc" id="r_a760b4c4809190881aab635d1688999dc"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classsimstr_1_1sstring.html">my_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a760b4c4809190881aab635d1688999dc">operator=</a> (<a class="el" href="classsimstr_1_1sstring.html">my_type</a> other) noexcept</td></tr>
 <tr class="memdesc:a760b4c4809190881aab635d1688999dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присвоения другой строки того же типа.  <br /></td></tr>
 <tr class="separator:a760b4c4809190881aab635d1688999dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -571,7 +576,7 @@ class simstr::sstring&lt; K, Allocator &gt;</div><p>Класс иммутабе�
 </ul>
 </div><h2 class="groupheader">Конструктор(ы)</h2>
 <a id="aea69c6325884ae95e7d1989d5f9a0209" name="aea69c6325884ae95e7d1989d5f9a0209"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea69c6325884ae95e7d1989d5f9a0209">&#9670;&#160;</a></span>sstring() <span class="overload">[1/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aea69c6325884ae95e7d1989d5f9a0209">&#9670;&#160;</a></span>sstring() <span class="overload">[1/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -609,7 +614,7 @@ requires (std::is_constructible_v&lt;allocator_t, Args...&gt; &amp;&amp; sizeof.
 </div>
 </div>
 <a id="a352a1e2de2de7c2d75a82075f9c9db3d" name="a352a1e2de2de7c2d75a82075f9c9db3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a352a1e2de2de7c2d75a82075f9c9db3d">&#9670;&#160;</a></span>sstring() <span class="overload">[2/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a352a1e2de2de7c2d75a82075f9c9db3d">&#9670;&#160;</a></span>sstring() <span class="overload">[2/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -652,7 +657,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 </div>
 </div>
 <a id="a618a19b34ef8db3e8ac3aa903175ccd3" name="a618a19b34ef8db3e8ac3aa903175ccd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a618a19b34ef8db3e8ac3aa903175ccd3">&#9670;&#160;</a></span>sstring() <span class="overload">[3/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a618a19b34ef8db3e8ac3aa903175ccd3">&#9670;&#160;</a></span>sstring() <span class="overload">[3/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -701,7 +706,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 </div>
 </div>
 <a id="a3ef46eb3fb57583ad6f71a3452f630ca" name="a3ef46eb3fb57583ad6f71a3452f630ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ef46eb3fb57583ad6f71a3452f630ca">&#9670;&#160;</a></span>sstring() <span class="overload">[4/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ef46eb3fb57583ad6f71a3452f630ca">&#9670;&#160;</a></span>sstring() <span class="overload">[4/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -750,7 +755,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 </div>
 </div>
 <a id="ae5cb8a560660d8ecbe923fe129b91085" name="ae5cb8a560660d8ecbe923fe129b91085"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5cb8a560660d8ecbe923fe129b91085">&#9670;&#160;</a></span>sstring() <span class="overload">[5/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5cb8a560660d8ecbe923fe129b91085">&#9670;&#160;</a></span>sstring() <span class="overload">[5/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -794,7 +799,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 </div>
 </div>
 <a id="afc7bf5c4af291131936a6e22eaa831c2" name="afc7bf5c4af291131936a6e22eaa831c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc7bf5c4af291131936a6e22eaa831c2">&#9670;&#160;</a></span>sstring() <span class="overload">[6/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afc7bf5c4af291131936a6e22eaa831c2">&#9670;&#160;</a></span>sstring() <span class="overload">[6/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -861,7 +866,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 </div>
 </div>
 <a id="a40ab876fcbc688f999e75704f13e01be" name="a40ab876fcbc688f999e75704f13e01be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40ab876fcbc688f999e75704f13e01be">&#9670;&#160;</a></span>sstring() <span class="overload">[7/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ab876fcbc688f999e75704f13e01be">&#9670;&#160;</a></span>sstring() <span class="overload">[7/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -896,7 +901,7 @@ template&lt;typename K, Allocatorable Allocator = allocator_string&gt; </div>
 </div>
 </div>
 <a id="abb8546ee3cde089fc614033c2fb3a22c" name="abb8546ee3cde089fc614033c2fb3a22c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb8546ee3cde089fc614033c2fb3a22c">&#9670;&#160;</a></span>sstring() <span class="overload">[8/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abb8546ee3cde089fc614033c2fb3a22c">&#9670;&#160;</a></span>sstring() <span class="overload">[8/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -931,7 +936,7 @@ template&lt;typename K, Allocatorable Allocator = allocator_string&gt; </div>
 </div>
 </div>
 <a id="a895058580f91a0295acda313b9e23c12" name="a895058580f91a0295acda313b9e23c12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a895058580f91a0295acda313b9e23c12">&#9670;&#160;</a></span>sstring() <span class="overload">[9/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a895058580f91a0295acda313b9e23c12">&#9670;&#160;</a></span>sstring() <span class="overload">[9/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -968,8 +973,8 @@ template&lt;size_t N&gt; </div>
 
 </div>
 </div>
-<a id="a873059081053f7d9c9ab251d3ed7721d" name="a873059081053f7d9c9ab251d3ed7721d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a873059081053f7d9c9ab251d3ed7721d">&#9670;&#160;</a></span>sstring() <span class="overload">[10/10]</span></h2>
+<a id="adf279cf1c436d040f8abfd885d8eb09b" name="adf279cf1c436d040f8abfd885d8eb09b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf279cf1c436d040f8abfd885d8eb09b">&#9670;&#160;</a></span>sstring() <span class="overload">[10/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -995,7 +1000,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1009,6 +1014,44 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
   </dd>
 </dl>
 <p>В этом случае просто запоминаем указатель на строку и её длину. </p>
+
+</div>
+</div>
+<a id="ac1b0e88f285b4642e6f42b427dfc9bfa" name="ac1b0e88f285b4642e6f42b427dfc9bfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1b0e88f285b4642e6f42b427dfc9bfa">&#9670;&#160;</a></span>sstring() <span class="overload">[11/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, Allocatorable Allocator = allocator_string&gt; </div>
+<div class="memtemplate">
+template&lt;typename O&gt; <br />
+requires (!std::is_same_v&lt;O, K&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classsimstr_1_1sstring.html">simstr::sstring</a>&lt; K, Allocator &gt;::sstring </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; O &gt;</td>          <td class="paramname"><span class="paramname"><em>init</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Инициализация из строкового источника с другим типом символов. Конвертирует через UTF. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">O</td><td>- тип жругих символов. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2725,7 +2768,7 @@ template&lt;typename... T&gt; </div>
 <p>Функция служит для слияния контейнера строк в одну строку с разделителем. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
 <div class="line">ssa delim = get_current_delimiter();</div>
 <div class="line"><span class="keyword">auto</span> line = <a class="code hl_function" href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">lstringa&lt;200&gt;::join</a>(strings, delimiter);</div>
-<div class="ttc" id="aclasssimstr_1_1str__storable_html_a9b002a3618bbfcebc945cef197a397a1"><div class="ttname"><a href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimiter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Определения</b> sstring.h:1203</div></div>
+<div class="ttc" id="aclasssimstr_1_1str__storable_html_a9b002a3618bbfcebc945cef197a397a1"><div class="ttname"><a href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimiter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Определения</b> sstring.h:1199</div></div>
 </div><!-- fragment --><p> Стоит отметить, что при заранее известном разделителе лучше пользоваться строковым выражением <code>e_join</code>. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
 <div class="line">lstringa&lt;200&gt; line{<a class="code hl_function" href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">e_join</a>(strings, <span class="stringliteral">&quot;/&quot;</span>)};</div>
 <div class="ttc" id="agroup___str_exprs_html_gafd2e6b8a52bfe20c0b86d25f9f78cb52"><div class="ttname"><a href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a></div><div class="ttdeci">constexpr auto e_join(const T &amp;s, L &amp;&amp;d)</div><div class="ttdoc">Получить строковое выражение, конкатенирующее строки в контейнере в одну строку с заданным разделител...</div><div class="ttdef"><b>Определения</b> strexpr.h:2035</div></div>

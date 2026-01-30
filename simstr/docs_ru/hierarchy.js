@@ -176,6 +176,9 @@ var hierarchy =
         [ "simstr::simple_str< From >", "structsimstr_1_1simple__str.html", null ]
       ] ]
     ] ],
+    [ "simstr::str_src_algs< K, simple_str< K >, cestring< K, N >, Mutable >", "classsimstr_1_1str__src__algs.html", [
+      [ "simstr::str_algs< K, simple_str< K >, cestring< K, N >, true >", "classsimstr_1_1str__algs.html", null ]
+    ] ],
     [ "simstr::str_src_algs< K, simple_str< K >, lstring< K, N, false, allocator_string >, Mutable >", "classsimstr_1_1str__src__algs.html", [
       [ "simstr::str_algs< K, simple_str< K >, lstring< K, N, false, allocator_string >, true >", "classsimstr_1_1str__algs.html", [
         [ "simstr::lstring< K, N, forShared, Allocator >", "classsimstr_1_1lstring.html", null ]
@@ -217,10 +220,12 @@ var hierarchy =
       [ "simstr::sstring< u16s >", "classsimstr_1_1sstring.html", null ],
       [ "simstr::sstring< u32s >", "classsimstr_1_1sstring.html", null ]
     ] ],
+    [ "simstr::str_storable< K, cestring< K, N >, no_alloc >", "classsimstr_1_1str__storable.html", null ],
     [ "simstr::str_storable< K, lstring< K, N, false, allocator_string >, allocator_string >", "classsimstr_1_1str__storable.html", [
       [ "simstr::lstring< K, N, forShared, Allocator >", "classsimstr_1_1lstring.html", null ]
     ] ],
     [ "simstr::str_storable< K, my_type, Allocator >", "classsimstr_1_1str__storable.html", null ],
+    [ "simstr::str_storable< K, my_type, no_alloc >", "classsimstr_1_1str__storable.html", null ],
     [ "simstr::str_storable< K, sstring< K, allocator_string >, allocator_string >", "classsimstr_1_1str__storable.html", [
       [ "simstr::sstring< K, Allocator >", "classsimstr_1_1sstring.html", null ]
     ] ]

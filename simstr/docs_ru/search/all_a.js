@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['false_20контейнер_20разделитель_0',['e_join&lt;bool ПослеПоследнего = false, bool ТолькоНеПустые = false&gt;(контейнер, &quot;Разделитель&quot;)',['../overview.html#autotoc_md36',1,'']]],
-  ['false_20bool_20тольконепустые_20false_20контейнер_20разделитель_1',['e_join&lt;bool ПослеПоследнего = false, bool ТолькоНеПустые = false&gt;(контейнер, &quot;Разделитель&quot;)',['../overview.html#autotoc_md36',1,'']]],
-  ['fetchcontent_2',['Подключение через FetchContent',['../index.html#autotoc_md13',1,'']]],
+  ['false_20контейнер_20разделитель_0',['e_join&lt;bool ПослеПоследнего = false, bool ТолькоНеПустые = false&gt;(контейнер, &quot;Разделитель&quot;)',['../overview.html#autotoc_md38',1,'']]],
+  ['false_20bool_20тольконепустые_20false_20контейнер_20разделитель_1',['e_join&lt;bool ПослеПоследнего = false, bool ТолькоНеПустые = false&gt;(контейнер, &quot;Разделитель&quot;)',['../overview.html#autotoc_md38',1,'']]],
+  ['fetchcontent_2',['Подключение через FetchContent',['../index.html#autotoc_md16',1,'']]],
   ['fill_3',['fill',['../classsimstr_1_1str__mutable.html#a53aa57efa783f3d9484a4c9b09bd4f70',1,'simstr::str_mutable']]],
   ['find_4',['find',['../classsimstr_1_1str__src__algs.html#ab38e5cc7893a20e69cdf03d88232b49c',1,'simstr::str_src_algs::find(str_piece pattern, size_t offset=0) const noexcept'],['../classsimstr_1_1str__src__algs.html#a129d72cc64be6029f10bbe1f8385f3ea',1,'simstr::str_src_algs::find(K s, size_t offset=0) const noexcept']]],
   ['find_5fall_5',['find_all',['../classsimstr_1_1str__src__algs.html#aa6d568443f3ed5752279098b9a488655',1,'simstr::str_src_algs']]],
@@ -35,7 +35,7 @@ var searchData=
   ['formatter_3c_20simstr_3a_3asstring_3c_20char8_5ft_20_3e_2c_20char_20_3e_32',['formatter&lt; simstr::sstring&lt; char8_t &gt;, char &gt;',['../structstd_1_1formatter_3_01simstr_1_1sstring_3_01char8__t_01_4_00_01char_01_4.html',1,'std']]],
   ['formatter_3c_20simstr_3a_3asstring_3c_20k_20_3e_2c_20k_20_3e_33',['formatter&lt; simstr::sstring&lt; K &gt;, K &gt;',['../structstd_1_1formatter_3_01simstr_1_1sstring_3_01_k_01_4_00_01_k_01_4.html',1,'std']]],
   ['formatter_3c_20simstr_3a_3asstring_3c_20simstr_3a_3awchar_5ftype_20_3e_2c_20wchar_5ft_20_3e_34',['formatter&lt; simstr::sstring&lt; simstr::wchar_type &gt;, wchar_t &gt;',['../structstd_1_1formatter_3_01simstr_1_1sstring_3_01simstr_1_1wchar__type_01_4_00_01wchar__t_01_4.html',1,'std']]],
-  ['forshared_20local_20string_35',['Класс lstring&lt;K, N, forShared&gt; (local string)',['../overview.html#autotoc_md27',1,'']]],
+  ['forshared_20local_20string_35',['Класс lstring&lt;K, N, forShared&gt; (local string)',['../overview.html#autotoc_md29',1,'']]],
   ['from_5fto_36',['from_to',['../classsimstr_1_1str__src__algs.html#a5659e7fb47dfb6bd6736a1b454ffde92',1,'simstr::str_src_algs']]],
   ['from_5futf_5fconvertible_37',['from_utf_convertible',['../classsimstr_1_1from__utf__convertible.html',1,'simstr']]],
   ['from_5futf_5fconvertible_3c_20k_2c_20lstring_3c_20k_2c_20n_2c_20false_2c_20allocator_5fstring_20_3e_20_3e_38',['from_utf_convertible&lt; K, lstring&lt; K, N, false, allocator_string &gt; &gt;',['../classsimstr_1_1from__utf__convertible.html',1,'simstr']]],

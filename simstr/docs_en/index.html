@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.0</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.1</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -106,28 +106,33 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Simstr lib. </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md42"></a>
-simstr - String object and function library</h1>
-<h2>Speed up your work with strings by 2-10 times!</h2>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md44"></a>
+simstr - String Object and Function Library</h1>
+<p><span class="obfuscator"><a href="readme_ru.md">Russian | По-русски</a></span></p>
 <p><a href="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml"><img src="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml/badge.svg" alt="CMake on multiple platforms" style="pointer-events: none;" class="inline"/></a></p>
-<p>Version 1.6.0.</p>
-<p><span class="obfuscator"><a href="readme_ru.md">On Russian | По-русски</a></span></p>
-<p>This library contains a modern implementation of several types of string objects and various algorithms for working with strings.</p>
-<p>The goal of the library is to make working with strings in C++ as simple and easy as in many other languages, especially scripting languages, while maintaining optimal performance at the level of C and C++, and even improving them.</p>
-<p>It's no secret that working with strings in C++ often causes pain. The <code>std::string</code> class is often inconvenient or inefficient. Many functions that are usually needed when working with strings are simply not there, and everyone has to write them themselves. Even concatenating <code>std::string</code> and <code>std::string_view</code> became possible only with C++26. That's why I started creating this library for myself around 2012, and now I'm ready to share it with all C++ developers.</p>
+<p>Version 1.6.1.</p>
+<h2>Speed up your work with strings by 2-10 times!</h2>
+<p>This library contains a modern implementation of several types of string objects and various algorithms for working with strings. </p>
+<h2><a class="anchor" id="autotoc_md45"></a>
+Generated Documentation</h2>
+<p><a href="https://orefkov.github.io/simstr/docs_en/">Located here</a></p>
+<h2><a class="anchor" id="autotoc_md46"></a>
+Brief Description</h2>
+<p>The goal of the library is to make working with strings in C++ as simple and easy as in many other languages, especially scripting languages, while maintaining optimality and performance at the level of C and C++, and even improving them.</p>
+<p>It's no secret that working with strings in C++ often causes pain. The <code>std::string</code> class is often inconvenient or inefficient. Many functions that are usually necessary when working with strings are simply not there, and everyone has to write them themselves. Even concatenating <code>std::string</code> and <code>std::string_view</code> became possible only with C++26. That's why I started creating this library for myself around 2012, and now I'm ready to share it with all C++ developers.</p>
 <p>This library was not made as a universal combine that "can do everything", I implemented what I had to use in my work, trying to do it in the most efficient way, and I modestly hope that I have succeeded in something and will be useful to other people, either directly or as a source of ideas.</p>
 <p>The library contains two parts:</p><ul>
-<li>Implementation of <a href="https://orefkov.github.io/simstr/docs_en/overview.html#autotoc_md68"><em>"String Expressions"</em></a> and algorithms for working with constant strings.\ To use this part, just take the file <code>"include/simstr/strexpr.h"</code> and write in your code <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;path/to/file/strexpr.h&quot;</span></div>
+<li>Implementation of <a href="https://orefkov.github.io/simstr/docs_ru/overview.html#autotoc_md27"><em>"String Expressions"</em></a> and algorithms for working with constant strings.\ To use this part, just take the file <code>"include/simstr/strexpr.h"</code> and write in your code <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;path/to file/strexpr.h&quot;</span></div>
 </div><!-- fragment --> This will allow you to use powerful and fast <em>"string expressions"</em> for concatenation and string construction for standard string types (<code>std::basic_string</code>, <code>std::basic_string_view</code>), as well as simplified versions of the <code>simple_str</code> and <code>simple_str_nt</code> classes, which implement all those string algorithms of the library that do not require storing or modifying strings. Since this is a header-only part, it does not include working with UTF encodings and simplified Unicode.</li>
-<li>The full version, which requires connecting the entire library (<code>"include/simstr/sstring.h"</code>), adds its own string types with the ability to store and modify strings, works with UTF encodings and simplified Unicode.</li>
+<li>The full version, requiring the connection of the entire library (<code>"include/simstr/sstring.h"</code>), adds its string types with the ability to store and modify strings, works with UTF encodings and simplified Unicode.</li>
 </ul>
-<p>The library does not pretend to be "changed the header and everything worked better" - it gets along well with standard strings and does not change the behavior of existing code working with them. I tried to make many methods in it compatible with <code>std::string</code> and <code>std::string_view</code>, but I didn't bother with this much. Rewriting your code to work with <code>simstr</code> will require some effort, but I assure you that it will pay off. And thanks to compatibility with standard strings, this work can be done in stages, in small pieces. Creating new code for working with strings with its use is easy and enjoyable :)</p>
+<p>The library does not pretend to be a "changed header and everything worked better" - it gets along well with standard strings and does not change the behavior of existing code working with them. I tried to make many methods in it compatible with <code>std::string</code> and <code>std::string_view</code>, but I didn't bother with this much. Rewriting your code to work with <code>simstr</code> will require some effort, but I assure you that it will pay off. And thanks to compatibility with standard strings, this work can be done in stages, in small pieces. Creating new code for working with strings with its use is easy and enjoyable :)</p>
 <p>The main difference between <code>simstr</code> and <code>std::string</code> is that not a single universal class is used for working with strings, but several types of objects, each of which is good for its own purposes, and at the same time interact well with each other. If you actively used <code>std::string_view</code> and understood its advantages and disadvantages compared to <code>std::string</code>, then the <code>simstr</code> approach will also be clear to you.</p>
-<h2><a class="anchor" id="autotoc_md43"></a>
-Main features of the library</h2>
+<h2><a class="anchor" id="autotoc_md47"></a>
+Key Features of the Library</h2>
 <p>When using only <code>#include "simstr/strexpr.h"</code>:</p><ul>
 <li>Support for working with strings <code>char</code>, <code>char8_t</code>, <code>char16_t</code>, <code>char32_t</code>, <code>wchar_t</code>.</li>
-<li>Powerful and extensible <em>"String Expressions"</em> system. Allows you to efficiently implement the conversion and addition (concatenation) of strings, string literals, numbers (and possibly other objects), achieving significant acceleration of string operations. Compatible with both <code>simstr</code> string objects and standard strings (<code>std::basic_string</code>, <code>std::basic_string_view</code>), which allows you to use fast concatenation even where it is not yet possible to abandon standard strings. Also allows you to mix strings of compatible character types in operations.</li>
+<li>Powerful and extensible <em>"String Expressions"</em> system. Allows you to efficiently implement the conversion and addition (concatenation) of strings, string literals, numbers (and possibly other objects), achieving significant acceleration of string operations. Compatible with both <code>simstr</code> string objects and standard strings (<code>std::basic_string</code>, <code>std::basic_string_view</code>), which allows you to apply fast concatenation even where it is not yet possible to abandon standard strings. Also allows you to mix strings of compatible character types in operations.</li>
 <li>Constant string functions (do not change the original string):<ul>
 <li>Getting substrings.</li>
 <li>Comparing strings, comparing strings ignoring the case of ASCII characters.</li>
@@ -135,16 +140,16 @@ Main features of the library</h2>
 <li>Various trimming of strings - right, left, everywhere, by whitespace characters, by specified characters.</li>
 <li>Replacing substrings (creating a copy of the string with the replacement).</li>
 <li>Replacing a set of characters with a set of corresponding substrings (creating a copy of the string with the replacement).</li>
-<li>Merging (join) containers of strings into a single string, with specifying delimiters and options - "skip empty", "delimiter after last".</li>
+<li>Merging (join) containers of strings into a single string, with specifying separators and options - "skip empty", "separator after last".</li>
 <li>Splitting strings into parts by a specified delimiter. Splitting is possible immediately into a container with strings, or by calling a functor for each substring, or by iterating using the <code>Splitter</code> iterator.</li>
 </ul>
 </li>
 <li>Functions for modifying standard strings with string expressions:<ul>
-<li>str::append, str::prepend, str::insert, str::change - modify str::string with string expressions, for example, <code>str::append(text, "count = "_ss + count + " times")</code>.</li>
-<li>str::replace - replaces occurrences of the searched substring with the replacement string or string expression. If the substring is not found, the string expression is not even evaluated.</li>
+<li>str::append, str::prepend, str::insert, str::change - change str::string with string expressions, for example <code>str::append(text, "count = "_ss + count)</code>.</li>
+<li>str::replace - replaces occurrences of the search substring with a replacement string or string expression. If the substring is not found, the string expression is not even evaluated.</li>
 </ul>
 </li>
-<li>Parsing integers with the possibility of "fine" tuning at compile time - you can set options for checking overflow, skipping whitespace characters, a specific base or auto-selection by prefixes <code>0x</code>, <code>0</code>, <code>0b</code>, <code>0o</code>, admissibility of the <code>+</code> sign. Parsing is implemented for all types of strings and characters.</li>
+<li>Parsing integers with the possibility of "fine" tuning at compile time - you can set options for checking overflow, skipping whitespace characters, a specific radix or auto-selection by prefixes <code>0x</code>, <code>0</code>, <code>0b</code>, <code>0o</code>, the admissibility of the <code>+</code> sign. Parsing is implemented for all types of strings and characters.</li>
 <li>Parsing double for <code>char</code> and <code>wchar_t</code>, as well as character types compatible with them in size.</li>
 </ul>
 <p>When using the full version of the library:</p><ul>
@@ -154,15 +159,24 @@ Main features of the library</h2>
 <li>Transparent conversion of strings from one character type to another, with automatic conversion between UTF-8, UTF-16, UTF-32, using <a href="https://github.com/simdutf/simdutf">simdutf</a>. Strings of "compatible" types are converted by simple copying: <code>char &lt;-&gt; char8_t</code>, <code>wchar_t &lt;-&gt; char32_t</code> in Linux, <code>wchar_t &lt;-&gt; char16_t</code> in Windows.</li>
 <li>Integration with <code>format</code> and <code>sprintf</code> formatting functions (with automatic buffer increase). Formatting is possible for <code>char</code>, <code>wchar_t</code> strings and strings compatible with them in size. That is, under Windows it is <code>char8_t</code>, <code>char16_t</code>, under Linux - <code>char8_t</code>, <code>char32_t</code> (writing my own formatting library for all types of characters was not part of my plans).</li>
 <li>Contains minimal Unicode support when converting <code>upper</code>, <code>lower</code> and case-insensitive string comparison. Works only for characters of the first Unicode plane (up to 0xFFFF), and when changing the case, cases are not taken into account when one code point can be converted into several, that is, the case conversion of characters corresponds to <code>std::towupper</code>, <code>std::towlower</code> for the unicode locale, only faster and can work with any type of characters.</li>
-<li>Implemented <code>hash map</code> for string type keys, based on <code>std::unordered_map</code>, with the possibility of more efficient storage and comparison of keys compared to <code>std::string</code> keys. The possibility of case-insensitive comparison of keys is supported (Ascii or minimal Unicode (see previous paragraph)).</li>
+<li>Implemented <code>hash map</code> for string type keys, based on <code>std::unordered_map</code>, with the possibility of more efficient storage and comparison of keys compared to <code>std::string</code> keys. Supports the possibility of case-insensitive comparison of keys (Ascii or minimal Unicode (see previous paragraph)).</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md44"></a>
-String expressions</h2>
-<p>These are special objects that efficiently implement string concatenation using <code>operator+</code>. The main principle, due to which efficient work is achieved - no matter how many operands are included in the entire expression, no temporary (intermediate) strings are created, the total length of the entire result is calculated only once, memory is allocated for the character buffer of the result only once, after which the characters are copied immediately to the buffer of the result to its place. No memory reallocations, no moving characters in various intermediate buffers - everything is as efficient as possible. Thanks to the capabilities of C++ templates and operator overloading, the expression is written as close as possible to the usual string addition syntax. In addition, there are special overloads for adding string objects and string literals, strings and numbers, for copying with replacement, for merging containers of strings and much more. Thanks to the extensibility of this system, it is possible to create new options for building strings, development is constantly ongoing.</p>
-<p>All string objects from <code>simstr</code> are themselves string expressions, that is, they can be used in concatenation operations of string expressions directly. Standard strings (<code>std::basic_string</code>, <code>std::basic_string_view</code>) can also serve as operands in addition operations with string expressions. Or they can be easily converted into a string expression by placing a unary <code>+</code> in front of them.</p>
-<h2><a class="anchor" id="autotoc_md45"></a>
-Usage examples</h2>
-<h3><a class="anchor" id="autotoc_md46"></a>
+<h2><a class="anchor" id="autotoc_md48"></a>
+Benchmarks</h2>
+<p>Benchmarks are performed using the <a href="https://github.com/google/benchmark">Google benchmark</a> framework. I tried to make measurements for the most typical operations that occur in normal work. I took measurements on my equipment, under Windows and Linux (in WSL), using MSVC, Clang, GCC compilers. Third-party results are welcome. I also took measurements in WASM, built in Emscripten. I draw attention to the fact that a 32-bit build is built under WASM in Emscripten, which means that the sizes of SSO buffers in objects are smaller.</p>
+<p>On the <a href="https://github.com/orefkov/simstr/releases">release page</a> you can download binary builds of benchmarks and run them on your equipment.</p>
+<p>You can also run the <a href="https://orefkov.github.io/simstr/bench/benchStr.html">Emscripten build of benchmarks</a> directly in the browser. (Before following the link, it is better to open "Developer Tools" (usually <b>F12</b>) in advance to see the console Javascript, since the page will not be updated until the benchmarks are completed, and all output will be visible in the console).</p>
+<ul>
+<li><a href="bench/bench_str.cpp">Benchmark source code</a></li>
+<li><a href="https://orefkov.github.io/simstr/results.html">Benchmark results</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md49"></a>
+String Expressions</h2>
+<p>These are special objects that efficiently implement string concatenation using <code>operator+</code>. The main principle, due to which efficient work is achieved - no matter how many operands are included in the entire expression, no temporary (intermediate) strings are created, the total length of the entire result is calculated only once, memory is allocated for the result character buffer only once, after which the characters are copied directly to the result buffer to its place. No memory reallocations, no moving characters in various intermediate buffers - everything is as efficient as possible. Thanks to the capabilities of C++ templates and operator overloading, the expression is written as close as possible to the usual syntax for adding strings. In addition, there are special overloads for adding string objects and string literals, strings and numbers, for copying with replacement, for merging containers of strings and much more. Thanks to the extensibility of this system, it is possible to create new options for building strings, and development is constantly ongoing.</p>
+<p>All string objects from <code>simstr</code> are themselves string expressions, that is, they can be used in concatenation operations string expressions directly. Standard strings (<code>std::basic_string</code>, <code>std::basic_string_view</code>) can also serve as operands in addition operations with string expressions. Or they can be easily converted into a string expression by placing them in front of them unary <code>+</code>.</p>
+<h2><a class="anchor" id="autotoc_md50"></a>
+Usage Examples</h2>
+<h3><a class="anchor" id="autotoc_md51"></a>
 Adding strings with numbers</h3>
 <div class="fragment"><div class="line">std::string s1 = <span class="stringliteral">&quot;start &quot;</span>;</div>
 <div class="line"><span class="keywordtype">int</span> i;</div>
@@ -171,17 +185,17 @@ Adding strings with numbers</h3>
 <div class="line">    std::string str = s1 + std::to_string(i) + <span class="stringliteral">&quot; end&quot;</span>;</div>
 <div class="line"><span class="comment">// Became</span></div>
 <div class="line">    std::string str = +s1 + i + <span class="stringliteral">&quot; end&quot;</span>;</div>
-</div><!-- fragment --><p> <code>+s1</code> - converts <code>std::string</code> into an object - a string expression, for which there is an efficient concatenation with numbers and string literals.</p>
-<p>According to benchmarks, <a href="https://orefkov.github.io/simstr/results.html#bs70109915512075798510">acceleration is 1.6 - 2 times</a>.</p>
-<h3><a class="anchor" id="autotoc_md47"></a>
+</div><!-- fragment --><p> <code>+s1</code> - converts <code>std::string</code> into an object - a string expression for which there is an efficient concatenation with numbers and string literals.</p>
+<p>According to benchmarks, <a href="https://orefkov.github.io/simstr/results.html#bs70109915512075798510">acceleration 1.6 - 2 times</a>.</p>
+<h3><a class="anchor" id="autotoc_md52"></a>
 Adding strings with numbers in hex format</h3>
 <div class="fragment"><div class="line">....</div>
 <div class="line"><span class="comment">// Was</span></div>
 <div class="line">    std::string str = s1 + std::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, i) + <span class="stringliteral">&quot; end&quot;</span>;</div>
 <div class="line"><span class="comment">// Became</span></div>
 <div class="line">    std::string str = +s1 + e_hex&lt;HexFlags::Short&gt;(i) + <span class="stringliteral">&quot; end&quot;</span>;</div>
-</div><!-- fragment --><p> Acceleration in <a href="https://orefkov.github.io/simstr/results.html#bs146911715078927772520"><b>9 - 14 times!!!</b></a></p>
-<h3><a class="anchor" id="autotoc_md48"></a>
+</div><!-- fragment --><p> Acceleration by <a href="https://orefkov.github.io/simstr/results.html#bs146911715078927772520"><b>9 - 14 times!!!</b></a></p>
+<h3><a class="anchor" id="autotoc_md53"></a>
 Adding multiple literals and searching in <code>std::string_view</code></h3>
 <div class="fragment"><div class="line"><span class="comment">// It was like this</span></div>
 <div class="line"><span class="keywordtype">size_t</span> find_pos(std::string_view src, std::string_view name) {</div>
@@ -196,13 +210,13 @@ Adding multiple literals and searching in <code>std::string_view</code></h3>
 <div class="line"><span class="comment">// And when using the full library, you can do this</span></div>
 <div class="line"><span class="keywordtype">size_t</span> find_pos(ssa src, ssa name) {</div>
 <div class="line">    <span class="comment">// In this version, if the result of the concatenation fits into 207 characters, it is produced in a buffer on the stack,</span></div>
-<div class="line">    <span class="comment">// without allocation and deallocation of memory, acceleration is several times. And only if the result is longer than 207 characters -</span></div>
+<div class="line">    <span class="comment">// without allocation and deallocation of memory, acceleration several times. And only if the result is longer than 207 characters -</span></div>
 <div class="line">    <span class="comment">// there will be only one allocation, and the concatenation will be immediately into the allocated buffer, without copying characters.</span></div>
 <div class="line">    <span class="keywordflow">return</span> src.find(lstringa&lt;200&gt;{<span class="stringliteral">&quot;\n- &quot;</span> + name + <span class="stringliteral">&quot; -\n&quot;</span>});</div>
 <div class="line">}</div>
-</div><!-- fragment --><p> <code>ssa</code> - alias for <code>simple_str&lt;char&gt;</code> - analogue of <code>std::string_view</code>, allows you to accept any string object as a function parameter with minimal costs, which does not need to be modified or passed to the C-API: <code>std::string</code>, <code>std::string_view</code>, <code>"string literal"</code>, <code>simple_str_nt</code>, <code>sstring</code>, <code>lstring</code>. Also, since it is also a "string expression", it allows you to easily build concatenations with its participation.</p>
-<p>According to measurements, <a href="https://orefkov.github.io/simstr/results.html#bs68116594352702954700">acceleration is 1.5 - 9 times</a>.</p>
-<h3><a class="anchor" id="autotoc_md49"></a>
+</div><!-- fragment --><p> <code>ssa</code> - alias for <code>simple_str&lt;char&gt;</code> - analogue of <code>std::string_view</code>, allows you to accept as a function parameter with minimal costs any string object that does not need to be modified or passed to the C-API: <code>std::string</code>, <code>std::string_view</code>, <code>"string literal"</code>, <code>simple_str_nt</code>, <code>sstring</code>, <code>lstring</code>. Also, since it is also a "string expression", it allows you to easily build concatenations with its participation.</p>
+<p>According to measurements, <a href="https://orefkov.github.io/simstr/results.html#bs68116594352702954700">acceleration 1.5 - 9 times</a>.</p>
+<h3><a class="anchor" id="autotoc_md54"></a>
 Addition with conditions</h3>
 <div class="fragment"><div class="line"><span class="comment">// Was</span></div>
 <div class="line">std::string buildTypeName(std::string_view type_name, <span class="keywordtype">size_t</span> prec, <span class="keywordtype">size_t</span> scale) {</div>
@@ -227,7 +241,7 @@ Addition with conditions</h3>
 <div class="line"><span class="comment">// Became when using only strexpr.h and simple_str string</span></div>
 <div class="line">std::string buildTypeName(ssa type_name, <span class="keywordtype">size_t</span> prec, <span class="keywordtype">size_t</span> scale) {</div>
 <div class="line">    <span class="keywordflow">if</span> (prec) {</div>
-<div class="line">        <span class="comment">//     ssa is already a string expression, + before it is not needed</span></div>
+<div class="line">        <span class="comment">//     ssa is already a string expression, + in front of it is not needed</span></div>
 <div class="line">        <span class="keywordflow">return</span> type_name + <span class="stringliteral">&quot;(&quot;</span> + prec + <a class="code hl_function" href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(scale, <span class="stringliteral">&quot;,&quot;</span>_ss + scale) + <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> type_name;</div>
@@ -240,8 +254,8 @@ Addition with conditions</h3>
 <div class="line">    <span class="keywordflow">return</span> type_name;</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Creating a conditional string expression expr_if.</div><div class="ttdef"><b>Definition</b> strexpr.h:1513</div></div>
-</div><!-- fragment --><p> When <code>prec != 0</code>, <a href="https://orefkov.github.io/simstr/results.html#bs145290966789248325200">acceleration is 1.5 - 2.2 times</a>.</p>
-<h3><a class="anchor" id="autotoc_md50"></a>
+</div><!-- fragment --><p> When <code>prec != 0</code>, <a href="https://orefkov.github.io/simstr/results.html#bs145290966789248325200">acceleration 1.5 - 2.2 times</a>.</p>
+<h3><a class="anchor" id="autotoc_md55"></a>
 Addition with replacements</h3>
 <div class="fragment"><div class="line"><span class="comment">// Was</span></div>
 <div class="line"><span class="comment">// There is no standard analogue of the replace function from other programming languages, let&#39;s write our own &quot;head-on&quot;.</span></div>
@@ -269,7 +283,7 @@ Addition with replacements</h3>
 <div class="line">}</div>
 <div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Get a string expression that generates a string with all occurrences of a given substring replaced.</div><div class="ttdef"><b>Definition</b> strexpr.h:4570</div></div>
 </div><!-- fragment --><p> <a href="https://orefkov.github.io/simstr/results.html#bs54035654251116789780">Acceleration from 1.5 times and higher</a> - depending on the content of the strings.</p>
-<h3><a class="anchor" id="autotoc_md51"></a>
+<h3><a class="anchor" id="autotoc_md56"></a>
 Splitting strings into parts, parsing numbers</h3>
 <div class="fragment"><div class="line"><span class="comment">// Was - split the string by delimiter and calculate the sum of numbers</span></div>
 <div class="line"><span class="keywordtype">int</span> split_and_calc_total_str(std::string_view numbers, std::string_view delimiter) {</div>
@@ -293,38 +307,39 @@ Splitting strings into parts, parsing numbers</h3>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> total;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p> <a href="https://orefkov.github.io/simstr/results.html#bs7106975351756760120">Acceleration in 2-3 times</a>.</p>
+</div><!-- fragment --><p> <a href="https://orefkov.github.io/simstr/results.html#bs7106975351756760120">Acceleration by 2-3 times</a>.</p>
 <p>In addition to the individual examples given here, you can look at the sources:</p><ul>
 <li><a href="https://github.com/orefkov/simstr/blob/main/tests/test_str.cpp">tests of the entire library</a></li>
 <li><a href="https://github.com/orefkov/simstr/blob/main/tests/test_expr_only.cpp">tests of only the strexpr part</a></li>
+<li><a href="https://github.com/orefkov/simstr/blob/main/tests/test_tostrexpr.cpp">examples of using your types in string expressions</a></li>
 <li><a href="https://github.com/orefkov/simstr/blob/main/bench/bench_str.cpp">benchmarks</a></li>
 <li><a href="https://github.com/orefkov/simstr/blob/main/bench/process_result.cpp">utility for preparing html</a> from benchmark results.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md52"></a>
-Main objects of the library</h2>
+<h2><a class="anchor" id="autotoc_md57"></a>
+Main Objects of the Library</h2>
 <p>Available with any use:</p><ul>
 <li><code>simple_str&lt;K&gt;</code> - the simplest string (or piece of string), immutable, not owning, analogue of <code>std::string_view</code>.</li>
 <li><code>simple_str_nt&lt;K&gt;</code> - the same, only declares that it ends with 0. For working with third-party C-API.</li>
 </ul>
 <p>Available when using the entire library:</p><ul>
-<li><code>sstring&lt;K&gt;</code> - shared string, immutable, owning, with shared character buffer, SSO support.</li>
+<li><code>sstring&lt;K&gt;</code> - shared string, immutable, owning, with a shared character buffer, SSO support.</li>
 <li><code>lstring&lt;K, N&gt;</code> - local string, mutable, owning, with a specified size of the SSO buffer.</li>
 </ul>
 <p>When connecting only <code><a class="el" href="strexpr_8h_source.html">strexpr.h</a></code> - the types <code>simple_str&lt;K&gt;</code> and <code>simple_str_nt&lt;K&gt;</code> do not contain methods for working with UTF and Unicode.</p>
-<h2><a class="anchor" id="autotoc_md53"></a>
+<h2><a class="anchor" id="autotoc_md58"></a>
 Articles</h2>
 <ul>
 <li>Overview and introduction</li>
-<li><a href="https://habr.com/ru/articles/935590">Overview article on Habr</a> (On Russian)</li>
-<li><a href="https://habr.com/ru/articles/936468/">Description of the "Expression Templates" technique used</a> (On Russian)</li>
+<li><a href="https://habr.com/ru/articles/935590">Overview article on Habr</a> (on Russian)</li>
+<li><a href="https://habr.com/ru/articles/936468/">Description of the applied technique "Expression Templates"</a>(on Russian)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md54"></a>
+<h2><a class="anchor" id="autotoc_md59"></a>
 Usage</h2>
-<p>The library can be used partially, just by taking the file <code>"include/simstr/strexpr.h"</code> and including it in your sources </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;include/simstr/strexpr.h&quot;</span></div>
+<p>The library can be used partially, simply by taking the file <code>"include/simstr/strexpr.h"</code> and including it in your sources </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;include/simstr/strexpr.h&quot;</span></div>
 </div><!-- fragment --><p> This will only connect string expressions and simplified implementations of <code>simple_str</code> and <code>simple_str_nt</code>, without UTF and Unicode functions.</p>
 <p>The full version of the <code>simstr</code> library consists of three header files and two source files. You can connect as a CMake project via <code>add_subdirectory</code> (the <code>simstr</code> library), you can simply include the files in your project. Building also requires <a href="https://github.com/simdutf/simdutf">simdutf</a> (when using CMake it is downloaded automatically).</p>
-<h3><a class="anchor" id="autotoc_md55"></a>
-Using FetchContent</h3>
+<h3><a class="anchor" id="autotoc_md60"></a>
+Connection via FetchContent</h3>
 <div class="fragment"><div class="line">function(add_simstr)</div>
 <div class="line">    set(SIMSTR_BUILD_TESTS OFF)</div>
 <div class="line">    set(SIMSTR_BENCHMARKS OFF)</div>
@@ -332,8 +347,8 @@ Using FetchContent</h3>
 <div class="line">        <a class="code hl_namespace" href="namespacesimstr.html">simstr</a></div>
 <div class="line">        GIT_REPOSITORY https:<span class="comment">//github.com/orefkov/simstr.git</span></div>
 <div class="line">        GIT_SHALLOW TRUE</div>
-<div class="line">        GIT_TAG tags/rel1.6.0 # Укажите нужный релиз</div>
-<div class="line">        FIND_PACKAGE_ARGS NAMES <a class="code hl_namespace" href="namespacesimstr.html">simstr</a> 1.6.0</div>
+<div class="line">        GIT_TAG tags/rel1.6.1 # Specify the desired release</div>
+<div class="line">        FIND_PACKAGE_ARGS NAMES <a class="code hl_namespace" href="namespacesimstr.html">simstr</a> 1.6.1</div>
 <div class="line">    )</div>
 <div class="line">    FetchContent_MakeAvailable(<a class="code hl_namespace" href="namespacesimstr.html">simstr</a>)</div>
 <div class="line">endfunction()</div>
@@ -343,25 +358,17 @@ Using FetchContent</h3>
 <div class="line">target_link_libraries(&lt;your target&gt; PUBLIC <a class="code hl_namespace" href="namespacesimstr.html">simstr</a>::<a class="code hl_namespace" href="namespacesimstr.html">simstr</a>)</div>
 <div class="ttc" id="anamespacesimstr_html"><div class="ttname"><a href="namespacesimstr.html">simstr</a></div><div class="ttdoc">Library namespace.</div><div class="ttdef"><b>Definition</b> sstring.cpp:12</div></div>
 </div><!-- fragment --><p>The library is also included in <a href="https://vcpkg.io">vcpkg</a>, connected as <code>orefkov-simstr</code>.</p>
-<p><code>simstr</code> requires a compiler of at least the C++20 standard - concepts and std::format are used. The work was tested under Windows on MSVC-19 and Clang-19, under Linux - on GCC-13 and Clang-21. The work in WASM was also tested, built in Emscripten 4.0.6, Clang-21.</p>
-<h2><a class="anchor" id="autotoc_md56"></a>
-Convenient debugging</h2>
-<p>Together with the library, two files are supplied that make viewing simstr string objects in debuggers more convenient.\ More details are described here.</p>
-<h2><a class="anchor" id="autotoc_md57"></a>
-Benchmarks</h2>
-<p>Benchmarks are performed using the <a href="https://github.com/google/benchmark">Google benchmark</a> framework. I tried to take measurements for the most typical operations that occur in normal work. I took measurements on my equipment, under Windows and Linux (in WSL), using MSVC, Clang, GCC compilers. Third-party results are welcome. I also took measurements in WASM, built in Emscripten. I draw your attention to the fact that a 32-bit build is assembled under WASM in Emscripten, which means that the sizes of SSO buffers in objects are smaller.</p>
-<ul>
-<li><a href="bench/bench_str.cpp">Source code of benchmarks</a></li>
-<li><a href="https://orefkov.github.io/simstr/results.html">Benchmark results</a></li>
-</ul>
-<p>Also, simstr is used in my projects:</p><ul>
+<p>For <code>simstr</code> to work, a compiler of the standard no lower than C++20 is required - concepts and std::format are used. The work was checked under Windows on MSVC-19 and Clang-19, under Linux - on GCC-13 and Clang-21. The work in WASM was also checked, built in Emscripten 4.0.6, Clang-21.</p>
+<h2><a class="anchor" id="autotoc_md61"></a>
+Convenient Debugging</h2>
+<p>Along with the library, two files are supplied that make viewing simstr string objects in debuggers more convenient.\ More details are described here.</p>
+<h2><a class="anchor" id="autotoc_md62"></a>
+Where it is already used</h2>
+<p>Simstr is also used in my projects:</p><ul>
 <li><a href="https://github.com/orefkov/simjson">simjson</a> - a library for simple work with JSON using simstr strings.</li>
-<li><a href="https://github.com/orefkov/simrex">simrex</a> - wrapper for working with regular expressions <a href="https://github.com/kkos/oniguruma">Oniguruma</a> using simstr strings.</li>
-<li><a href="https://github.com/orefkov/v8sqlite">v8sqlite</a> - external component for 1C-Enterprise V8 for working with sqlite.</li>
+<li><a href="https://github.com/orefkov/simrex">simrex</a> - a wrapper for working with regular expressions <a href="https://github.com/kkos/oniguruma">Oniguruma</a> using simstr strings.</li>
+<li><a href="https://github.com/orefkov/v8sqlite">v8sqlite</a> - an external component for 1C-Enterprise V8 for working with sqlite.   </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md58"></a>
-Generated documentation</h2>
-<p><a href="https://orefkov.github.io/simstr/docs_en/">Located here</a>   </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

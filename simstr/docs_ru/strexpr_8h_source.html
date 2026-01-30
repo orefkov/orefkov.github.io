@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.0</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.1</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -107,7 +107,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * ver. 1.6.0</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * ver. 1.6.1</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * (c) Проект &quot;SimStr&quot;, Александр Орефков orefkov@gmail.com</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * База для строковых конкатенаций через выражения времени компиляции</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * (c) Project &quot;SimStr&quot;, Aleksandr Orefkov orefkov@gmail.com</span></div>
@@ -1073,7 +1073,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l01636" name="l01636"></a><span class="lineno"> 1636</span> </div>
 <div class="line"><a id="l01637" name="l01637"></a><span class="lineno"> 1637</span>    <span class="keyword">enum</span> { bufSize = 24 };</div>
 <div class="line"><a id="l01638" name="l01638"></a><span class="lineno"> 1638</span>    <span class="keyword">mutable</span> T value;</div>
-<div class="line"><a id="l01639" name="l01639"></a><span class="lineno"> 1639</span>    <span class="keyword">mutable</span> K buf[bufSize] = {};</div>
+<div class="line"><a id="l01639" name="l01639"></a><span class="lineno"> 1639</span>    <span class="keyword">mutable</span> K buf[bufSize];</div>
 <div class="line"><a id="l01640" name="l01640"></a><span class="lineno"> 1640</span> </div>
 <div class="line"><a id="l01641" name="l01641"></a><span class="lineno"> 1641</span>    <span class="keyword">constexpr</span> expr_num(T t) : value(t) {}</div>
 <div class="line"><a id="l01642" name="l01642"></a><span class="lineno"> 1642</span>    <span class="keyword">constexpr</span> expr_num(expr_num&lt;K, T&gt;&amp;&amp; t) : value(t.value) {}</div>
@@ -1154,7 +1154,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l01759" name="l01759"></a><span class="lineno"> 1759</span><span class="keyword">struct </span>expr_hex : <a class="code hl_struct" href="structsimstr_1_1expr__to__std__string.html">expr_to_std_string</a>&lt;expr_hex&lt;K, Val, All, Ucase, Ox&gt;&gt; {</div>
 <div class="line"><a id="l01760" name="l01760"></a><span class="lineno"> 1760</span>    <span class="keyword">using </span>symb_type = K;</div>
 <div class="line"><a id="l01761" name="l01761"></a><span class="lineno"> 1761</span>    <span class="keyword">mutable</span> need_sign&lt;K, std::is_signed_v&lt;Val&gt;, Val&gt; v_;</div>
-<div class="line"><a id="l01762" name="l01762"></a><span class="lineno"> 1762</span>    <span class="keyword">mutable</span> K buf_[<span class="keyword">sizeof</span>(Val) * 2] = {};</div>
+<div class="line"><a id="l01762" name="l01762"></a><span class="lineno"> 1762</span>    <span class="keyword">mutable</span> K buf_[<span class="keyword">sizeof</span>(Val) * 2]{};</div>
 <div class="line"><a id="l01763" name="l01763"></a><span class="lineno"> 1763</span> </div>
 <div class="line"><a id="l01764" name="l01764"></a><span class="lineno"> 1764</span>    <span class="keyword">explicit</span> <span class="keyword">constexpr</span> expr_hex(Val v) : v_(v){}</div>
 <div class="line"><a id="l01765" name="l01765"></a><span class="lineno"> 1765</span>    <span class="keyword">constexpr</span> expr_hex(<span class="keyword">const</span> expr_hex_src&lt;Val, All, Ucase, Ox&gt;&amp; v) : v_(v.v_){}</div>
@@ -2146,7 +2146,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l03224" name="l03224"></a><span class="lineno"><a class="line" href="classsimstr_1_1str__src__algs.html#aad5ad9c702f21003a272469cb1edcbf3"> 3224</a></span>    <span class="keyword">constexpr</span> std::pair&lt;size_t, size_t&gt; <a class="code hl_function" href="classsimstr_1_1str__src__algs.html#aad5ad9c702f21003a272469cb1edcbf3">find_first_of_idx</a>(str_piece pattern, <span class="keywordtype">size_t</span> offset = 0) const noexcept {</div>
 <div class="line"><a id="l03225" name="l03225"></a><span class="lineno"> 3225</span>        <span class="keyword">const</span> K* text = _str();</div>
 <div class="line"><a id="l03226" name="l03226"></a><span class="lineno"> 3226</span>        <span class="keywordtype">size_t</span> fnd = std::basic_string_view&lt;K&gt;{text, _len()}.find_first_of(std::basic_string_view&lt;K&gt;{pattern.str, pattern.len}, offset);</div>
-<div class="line"><a id="l03227" name="l03227"></a><span class="lineno"> 3227</span>        <span class="keywordflow">return</span> {fnd, fnd == std::string::npos ? fnd : pattern.find(text[fnd]) };</div>
+<div class="line"><a id="l03227" name="l03227"></a><span class="lineno"> 3227</span>        <span class="keywordflow">return</span> {fnd, fnd == std::basic_string&lt;K&gt;::npos ? fnd : pattern.find(text[fnd]) };</div>
 <div class="line"><a id="l03228" name="l03228"></a><span class="lineno"> 3228</span>    }</div>
 </div>
 <div class="line"><a id="l03229" name="l03229"></a><span class="lineno"> 3229</span></div>
@@ -2166,7 +2166,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l03265" name="l03265"></a><span class="lineno"><a class="line" href="classsimstr_1_1str__src__algs.html#ab630d62252bf1210f573a8c7222942c8"> 3265</a></span>    <span class="keyword">constexpr</span> std::pair&lt;size_t, size_t&gt; <a class="code hl_function" href="classsimstr_1_1str__src__algs.html#ab630d62252bf1210f573a8c7222942c8">find_last_of_idx</a>(str_piece pattern, <span class="keywordtype">size_t</span> offset = str::npos) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l03266" name="l03266"></a><span class="lineno"> 3266</span>        <span class="keyword">const</span> K* text = _str();</div>
 <div class="line"><a id="l03267" name="l03267"></a><span class="lineno"> 3267</span>        <span class="keywordtype">size_t</span> fnd = std::basic_string_view&lt;K&gt;{text, _len()}.find_last_of(std::basic_string_view&lt;K&gt;{pattern.str, pattern.len}, offset);</div>
-<div class="line"><a id="l03268" name="l03268"></a><span class="lineno"> 3268</span>        <span class="keywordflow">return</span> {fnd, fnd == std::string::npos ? fnd : pattern.find(text[fnd]) };</div>
+<div class="line"><a id="l03268" name="l03268"></a><span class="lineno"> 3268</span>        <span class="keywordflow">return</span> {fnd, fnd == std::basic_string&lt;K&gt;::npos ? fnd : pattern.find(text[fnd]) };</div>
 <div class="line"><a id="l03269" name="l03269"></a><span class="lineno"> 3269</span>    }</div>
 </div>
 <div class="line"><a id="l03270" name="l03270"></a><span class="lineno"> 3270</span></div>

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['parsing_20numbers_0',['Splitting strings into parts, parsing numbers',['../index.html#autotoc_md51',1,'']]],
-  ['parts_20parsing_20numbers_1',['Splitting strings into parts, parsing numbers',['../index.html#autotoc_md51',1,'']]],
+  ['parsing_20numbers_0',['Splitting strings into parts, parsing numbers',['../index.html#autotoc_md56',1,'']]],
+  ['parts_20parsing_20numbers_1',['Splitting strings into parts, parsing numbers',['../index.html#autotoc_md56',1,'']]],
   ['place_2',['place',['../classsimstr_1_1str__src__algs.html#af893677739e0d24418f6acc0a29090cc',1,'simstr::str_src_algs']]],
   ['portion_5fstore_3',['portion_store',['../structsimstr_1_1chunked__string__builder_1_1portion__store.html',1,'simstr::chunked_string_builder']]],
   ['prefix_5fin_4',['prefix_in',['../classsimstr_1_1str__src__algs.html#ae37c68155961c5c7b1609aa1b873b8d3',1,'simstr::str_src_algs']]],

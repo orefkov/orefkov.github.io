@@ -27,34 +27,34 @@ var NAVTREE =
   [ "simstr", "index.html", [
     [ "Библиотека simstr.", "index.html", "index" ],
     [ "Обзор", "overview.html", [
-      [ "Строки в С++", "overview.html#autotoc_md17", [
-        [ "Что было и есть", "overview.html#autotoc_md18", [
-          [ "Ресурсы", "overview.html#autotoc_md19", null ],
-          [ "Мутабельность / иммутабельность", "overview.html#autotoc_md20", null ],
-          [ "Конкатенация строк", "overview.html#autotoc_md21", null ]
+      [ "Строки в С++", "overview.html#autotoc_md19", [
+        [ "Что было и есть", "overview.html#autotoc_md20", [
+          [ "Ресурсы", "overview.html#autotoc_md21", null ],
+          [ "Мутабельность / иммутабельность", "overview.html#autotoc_md22", null ],
+          [ "Конкатенация строк", "overview.html#autotoc_md23", null ]
         ] ],
-        [ "Библиотека simstr", "overview.html#autotoc_md22", [
-          [ "Классы строк.", "overview.html#autotoc_md23", [
-            [ "Первый самый простой класс строки называется, естественно, simple_str :)", "overview.html#autotoc_md24", null ],
-            [ "Второй класс — simple_str_nt", "overview.html#autotoc_md25", null ],
-            [ "Класс sstring (shared string).", "overview.html#autotoc_md26", null ],
-            [ "Класс lstring<K, N, forShared> (local string)", "overview.html#autotoc_md27", null ]
+        [ "Библиотека simstr", "overview.html#autotoc_md24", [
+          [ "Классы строк.", "overview.html#autotoc_md25", [
+            [ "Первый самый простой класс строки называется, естественно, simple_str :)", "overview.html#autotoc_md26", null ],
+            [ "Второй класс — simple_str_nt", "overview.html#autotoc_md27", null ],
+            [ "Класс sstring (shared string).", "overview.html#autotoc_md28", null ],
+            [ "Класс lstring<K, N, forShared> (local string)", "overview.html#autotoc_md29", null ]
           ] ],
-          [ "Строковые выражения", "overview.html#autotoc_md28", [
-            [ "expr_spaces<ТипСимвола, КоличествоСимволов, Символ = ' '>{}", "overview.html#autotoc_md29", null ],
-            [ "expr_pad<ТипСимвола>{КоличествоСимволов, Символ = ' '}", "overview.html#autotoc_md30", null ],
-            [ "e_repeat{Str, count}", "overview.html#autotoc_md31", null ],
-            [ "e_choice(bool Condition, StrExpr1, StrExpr2)", "overview.html#autotoc_md32", null ],
-            [ "e_if(bool Condition, StrExpr1)", "overview.html#autotoc_md33", null ],
-            [ "expr_num<ТипСимвола>(ЦелоеЧисло)", "overview.html#autotoc_md34", null ],
-            [ "expr_real<ТипСимвола>(ВещественноеЧисло)", "overview.html#autotoc_md35", null ],
-            [ "e_join<bool ПослеПоследнего = false, bool ТолькоНеПустые = false>>(контейнер, \"Разделитель\")", "overview.html#autotoc_md36", null ],
-            [ "e_repl(ИсходнаяСтрока, \"Искать\", \"Заменять\")", "overview.html#autotoc_md37", null ],
-            [ "expr_replaced<ТипСимвола>{ИсходнаяСтрока, Искать, Заменять}", "overview.html#autotoc_md38", null ],
-            [ "empty_expr<ТипСимвола>", "overview.html#autotoc_md39", null ],
-            [ "Свои строковые выражения", "overview.html#autotoc_md40", null ]
+          [ "Строковые выражения", "overview.html#autotoc_md30", [
+            [ "expr_spaces<ТипСимвола, КоличествоСимволов, Символ = ' '>{}", "overview.html#autotoc_md31", null ],
+            [ "expr_pad<ТипСимвола>{КоличествоСимволов, Символ = ' '}", "overview.html#autotoc_md32", null ],
+            [ "e_repeat{Str, count}", "overview.html#autotoc_md33", null ],
+            [ "e_choice(bool Condition, StrExpr1, StrExpr2)", "overview.html#autotoc_md34", null ],
+            [ "e_if(bool Condition, StrExpr1)", "overview.html#autotoc_md35", null ],
+            [ "expr_num<ТипСимвола>(ЦелоеЧисло)", "overview.html#autotoc_md36", null ],
+            [ "expr_real<ТипСимвола>(ВещественноеЧисло)", "overview.html#autotoc_md37", null ],
+            [ "e_join<bool ПослеПоследнего = false, bool ТолькоНеПустые = false>>(контейнер, \"Разделитель\")", "overview.html#autotoc_md38", null ],
+            [ "e_repl(ИсходнаяСтрока, \"Искать\", \"Заменять\")", "overview.html#autotoc_md39", null ],
+            [ "expr_replaced<ТипСимвола>{ИсходнаяСтрока, Искать, Заменять}", "overview.html#autotoc_md40", null ],
+            [ "empty_expr<ТипСимвола>", "overview.html#autotoc_md41", null ],
+            [ "Свои строковые выражения", "overview.html#autotoc_md42", null ]
           ] ],
-          [ "Класс chunked_string_builder", "overview.html#autotoc_md41", null ]
+          [ "Класс chunked_string_builder", "overview.html#autotoc_md43", null ]
         ] ]
       ] ]
     ] ],
@@ -92,12 +92,12 @@ var NAVTREEINDEX =
 "annotated.html",
 "classsimstr_1_1lstring.html#a9959513e8a072c51620248c4a29f4196",
 "classsimstr_1_1sstring.html#a73806fa93c9ec619ba93d479d413ea0f",
-"classsimstr_1_1str__algs.html#ab3f6c202d1c1723297d46a45d82c5808",
-"classsimstr_1_1str__src__algs.html#a9bded9dcb3da163cf73d690dd63a73d4",
-"namespacesimstr.html#a5e9eb8724ed875305019a64d0522706a",
-"structsimstr_1_1simple__str.html#ac029fd5412ed114bfefbdddba2c50167",
-"structsimstr_1_1str__src.html",
-"structsimstr_1_1str__src__nt.html#a6782d50bb09e6ab83b3bf96b0e1c9986"
+"classsimstr_1_1str__algs.html#ab38e5cc7893a20e69cdf03d88232b49c",
+"classsimstr_1_1str__src__algs.html#a9b9958a7ba764ec2ee03fd5f205e3bcd",
+"namespacesimstr.html#a46fe7e669051cea6d5406e8b61ba10fa",
+"structsimstr_1_1simple__str.html#ab7910e7f7cb59cad7452f79ee8f1921a",
+"structsimstr_1_1simple__str__nt.html#afa9fca49d189fd0d760ffe8aed1485f1",
+"structsimstr_1_1str__src__nt.html#a643bf839edef0abbd43c3f3654e8e700"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

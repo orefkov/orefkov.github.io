@@ -20,9 +20,9 @@ var searchData=
   ['trimmed_5fright_17',['trimmed_right',['../classsimstr_1_1str__src__algs.html#a0b3af5eab221e4645e6e91b7b1a6e7d2',1,'simstr::str_src_algs::trimmed_right() const'],['../classsimstr_1_1str__src__algs.html#ac82f1096d596015340377b58704030cf',1,'simstr::str_src_algs::trimmed_right(T &amp;&amp;pattern) const'],['../classsimstr_1_1str__src__algs.html#aa5a49ba436dd8d11037216dc97efcd4c',1,'simstr::str_src_algs::trimmed_right(str_piece pattern) const']]],
   ['trimmed_5fright_5fwith_5fspaces_18',['trimmed_right_with_spaces',['../classsimstr_1_1str__src__algs.html#ad41853e3d4d2579fe7557873592e7302',1,'simstr::str_src_algs::trimmed_right_with_spaces(T &amp;&amp;pattern) const'],['../classsimstr_1_1str__src__algs.html#ac21bff9dca83968de291faa2b6d59fa8',1,'simstr::str_src_algs::trimmed_right_with_spaces(str_piece pattern) const']]],
   ['trimmed_5fwith_5fspaces_19',['trimmed_with_spaces',['../classsimstr_1_1str__src__algs.html#ab950f20c494e2c60b22dfe95e410ec25',1,'simstr::str_src_algs::trimmed_with_spaces(T &amp;&amp;pattern) const'],['../classsimstr_1_1str__src__algs.html#a6c2541095cb5e5a262b8e20c4dc8428b',1,'simstr::str_src_algs::trimmed_with_spaces(str_piece pattern) const']]],
-  ['tt_20',['tt',['../overview.html#autotoc_md25',1,'Второй класс — &lt;tt&gt;simple_str_nt&lt;/tt&gt;'],['../index.html#autotoc_md6',1,'Сложение нескольких литералов и поиск в &lt;tt&gt;std::string_view&lt;/tt&gt;']]],
-  ['tt_20_3a_21',['Первый самый простой класс строки называется, естественно, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md24',1,'']]],
-  ['tt_20simple_5fstr_20tt_20_3a_22',['Первый самый простой класс строки называется, естественно, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md24',1,'']]],
-  ['tt_20simple_5fstr_5fnt_20tt_23',['Второй класс — &lt;tt&gt;simple_str_nt&lt;/tt&gt;',['../overview.html#autotoc_md25',1,'']]],
-  ['tt_20std_3a_3astring_5fview_20tt_24',['Сложение нескольких литералов и поиск в &lt;tt&gt;std::string_view&lt;/tt&gt;',['../index.html#autotoc_md6',1,'']]]
+  ['tt_20',['tt',['../overview.html#autotoc_md27',1,'Второй класс — &lt;tt&gt;simple_str_nt&lt;/tt&gt;'],['../index.html#autotoc_md9',1,'Сложение нескольких литералов и поиск в &lt;tt&gt;std::string_view&lt;/tt&gt;']]],
+  ['tt_20_3a_21',['Первый самый простой класс строки называется, естественно, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md26',1,'']]],
+  ['tt_20simple_5fstr_20tt_20_3a_22',['Первый самый простой класс строки называется, естественно, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md26',1,'']]],
+  ['tt_20simple_5fstr_5fnt_20tt_23',['Второй класс — &lt;tt&gt;simple_str_nt&lt;/tt&gt;',['../overview.html#autotoc_md27',1,'']]],
+  ['tt_20std_3a_3astring_5fview_20tt_24',['Сложение нескольких литералов и поиск в &lt;tt&gt;std::string_view&lt;/tt&gt;',['../index.html#autotoc_md9',1,'']]]
 ];

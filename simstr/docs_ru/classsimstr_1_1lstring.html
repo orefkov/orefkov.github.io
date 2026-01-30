@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.0</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.1</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -204,7 +204,7 @@ requires (std::is_constructible_v&lt;Allocator, Args...&gt; &amp;&amp; (std::is_
 <tr class="memdesc:a2731727eb853928098f7051a0dca8995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присваивания строкового литерала.  <br /></td></tr>
 <tr class="separator:a2731727eb853928098f7051a0dca8995"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a895f17a8dd5ef18c2ea0120f785d84cb" id="r_a895f17a8dd5ef18c2ea0120f785d84cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsimstr_1_1lstring.html">my_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a895f17a8dd5ef18c2ea0120f785d84cb">operator=</a> (const StrExprForType&lt; K &gt; auto &amp;expr)</td></tr>
-<tr class="memdesc:a895f17a8dd5ef18c2ea0120f785d84cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присаивания строкового выражения.  <br /></td></tr>
+<tr class="memdesc:a895f17a8dd5ef18c2ea0120f785d84cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присваивания строкового выражения.  <br /></td></tr>
 <tr class="separator:a895f17a8dd5ef18c2ea0120f785d84cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e9a64c776ee14ef49bb01e84eb87889" id="r_a4e9a64c776ee14ef49bb01e84eb87889"><td class="memItemLeft" align="right" valign="top"><a id="a4e9a64c776ee14ef49bb01e84eb87889" name="a4e9a64c776ee14ef49bb01e84eb87889"></a>
 constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>length</b> () const noexcept</td></tr>
@@ -3533,7 +3533,7 @@ template&lt;typename K, typename Impl&gt; </div>
 <p>Функция служит для слияния контейнера строк в одну строку с разделителем. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
 <div class="line">ssa delim = get_current_delimiter();</div>
 <div class="line"><span class="keyword">auto</span> line = <a class="code hl_function" href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">lstringa&lt;200&gt;::join</a>(strings, delimiter);</div>
-<div class="ttc" id="aclasssimstr_1_1str__storable_html_a9b002a3618bbfcebc945cef197a397a1"><div class="ttname"><a href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimiter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Определения</b> sstring.h:1203</div></div>
+<div class="ttc" id="aclasssimstr_1_1str__storable_html_a9b002a3618bbfcebc945cef197a397a1"><div class="ttname"><a href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimiter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Определения</b> sstring.h:1199</div></div>
 </div><!-- fragment --><p> Стоит отметить, что при заранее известном разделителе лучше пользоваться строковым выражением <code>e_join</code>. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
 <div class="line">lstringa&lt;200&gt; line{<a class="code hl_function" href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">e_join</a>(strings, <span class="stringliteral">&quot;/&quot;</span>)};</div>
 <div class="ttc" id="agroup___str_exprs_html_gafd2e6b8a52bfe20c0b86d25f9f78cb52"><div class="ttname"><a href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a></div><div class="ttdeci">constexpr auto e_join(const T &amp;s, L &amp;&amp;d)</div><div class="ttdoc">Получить строковое выражение, конкатенирующее строки в контейнере в одну строку с заданным разделител...</div><div class="ttdef"><b>Определения</b> strexpr.h:2035</div></div>
@@ -4360,7 +4360,7 @@ template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocato
 </table>
 </div><div class="memdoc">
 
-<p>Оператор присаивания строкового выражения. </p>
+<p>Оператор присваивания строкового выражения. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">expr</td><td>- строковое выражение, материализуемое в буфер строки. </td></tr>

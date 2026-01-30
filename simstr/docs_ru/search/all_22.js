@@ -1,13 +1,12 @@
 var searchData=
 [
-  ['классы_20строк_0',['Классы строк.',['../overview.html#autotoc_md23',1,'']]],
-  ['класс_20chunked_5fstring_5fbuilder_1',['Класс chunked_string_builder',['../overview.html#autotoc_md41',1,'']]],
-  ['класс_20lstring_20k_20n_20forshared_20local_20string_2',['Класс lstring&lt;K, N, forShared&gt; (local string)',['../overview.html#autotoc_md27',1,'']]],
-  ['класс_20sstring_20shared_20string_3',['Класс sstring (shared string).',['../overview.html#autotoc_md26',1,'']]],
-  ['количествосимволов_20символ_4',['КоличествоСимволов Символ',['../overview.html#autotoc_md30',1,'expr_pad&lt;ТипСимвола&gt;{КоличествоСимволов, Символ = &apos; &apos;}'],['../overview.html#autotoc_md29',1,'expr_spaces&lt;ТипСимвола, КоличествоСимволов, Символ = &apos; &apos;&gt;{}']]],
-  ['конвертация_20типов_20в_20в_20строковые_20выражения_5',['Конвертация типов в в строковые выражения',['../group___convert_to_str_expr.html',1,'']]],
-  ['конкатенация_20строк_6',['Конкатенация строк',['../overview.html#autotoc_md21',1,'']]],
-  ['класс_20строки_20называется_20естественно_20tt_20simple_5fstr_20tt_20_3a_7',['Первый самый простой класс строки называется, естественно, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md24',1,'']]],
-  ['класс_20—_20tt_20simple_5fstr_5fnt_20tt_8',['Второй класс — &lt;tt&gt;simple_str_nt&lt;/tt&gt;',['../overview.html#autotoc_md25',1,'']]],
-  ['контейнер_20разделитель_9',['e_join&lt;bool ПослеПоследнего = false, bool ТолькоНеПустые = false&gt;(контейнер, &quot;Разделитель&quot;)',['../overview.html#autotoc_md36',1,'']]]
+  ['искать_20заменять_0',['Искать Заменять',['../overview.html#autotoc_md39',1,'e_repl(ИсходнаяСтрока, &quot;Искать&quot;, &quot;Заменять&quot;)'],['../overview.html#autotoc_md40',1,'expr_replaced&lt;ТипСимвола&gt;{ИсходнаяСтрока, Искать, Заменять}']]],
+  ['использование_1',['Использование',['../index.html#autotoc_md15',1,'']]],
+  ['исходнаястрока_20искать_20заменять_2',['ИсходнаяСтрока Искать Заменять',['../overview.html#autotoc_md39',1,'e_repl(ИсходнаяСтрока, &quot;Искать&quot;, &quot;Заменять&quot;)'],['../overview.html#autotoc_md40',1,'expr_replaced&lt;ТипСимвола&gt;{ИсходнаяСтрока, Искать, Заменять}']]],
+  ['иммутабельность_3',['Мутабельность / иммутабельность',['../overview.html#autotoc_md22',1,'']]],
+  ['использования_4',['Примеры использования',['../index.html#autotoc_md6',1,'']]],
+  ['используется_5',['Где уже используется',['../index.html#autotoc_md18',1,'']]],
+  ['и_20есть_6',['Что было и есть',['../overview.html#autotoc_md20',1,'']]],
+  ['и_20поиск_20в_20tt_20std_3a_3astring_5fview_20tt_7',['Сложение нескольких литералов и поиск в &lt;tt&gt;std::string_view&lt;/tt&gt;',['../index.html#autotoc_md9',1,'']]],
+  ['и_20функций_8',['simstr - библиотека строковых объектов и функций',['../index.html#autotoc_md0',1,'']]]
 ];

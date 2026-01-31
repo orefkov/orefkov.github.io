@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.2</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -355,7 +355,7 @@ Class lstring&lt;K, N, forShared&gt; (local string)</h4>
 <div class="line"><span class="comment">    or one, if the resulting string is longer than 23 characters, while this allocation will be immediately of the required size.</span></div>
 <div class="line"><span class="comment">    */</span></div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___str_exprs_html_gab54b64072b9629a32837d9197dfe51b5"><div class="ttname"><a href="group___str_exprs.html#gab54b64072b9629a32837d9197dfe51b5">simstr::e_c</a></div><div class="ttdeci">constexpr expr_pad&lt; K &gt; e_c(size_t l, K s)</div><div class="ttdoc">Generates a string of l characters s of type K.</div><div class="ttdef"><b>Definition</b> strexpr.h:1118</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gab54b64072b9629a32837d9197dfe51b5"><div class="ttname"><a href="group___str_exprs.html#gab54b64072b9629a32837d9197dfe51b5">simstr::e_c</a></div><div class="ttdeci">constexpr expr_pad&lt; K &gt; e_c(size_t l, K s)</div><div class="ttdoc">Generates a string of l characters s of type K.</div><div class="ttdef"><b>Definition</b> strexpr.h:1121</div></div>
 <div class="ttc" id="astructsimstr_1_1simple__str_html_a574c8578274b5cc7a3e9507e8669d343"><div class="ttname"><a href="structsimstr_1_1simple__str.html#a574c8578274b5cc7a3e9507e8669d343">simstr::simple_str::length</a></div><div class="ttdeci">constexpr size_t length() const noexcept</div><div class="ttdoc">Get the length of the string.</div><div class="ttdef"><b>Definition</b> sstring.h:411</div></div>
 </div><!-- fragment --><p>In this example, you probably noticed how strings are concatenated and wondered – how was the length of the entire result calculated with two additions in order to allocate the necessary space at once, without intermediate buffers?</p>
 <p>The answer to this question:</p>

@@ -40,7 +40,8 @@ var searchData=
   ['expr_5fto_5fstd_5fstring_3c_20expr_5fspaces_3c_20k_2c_20n_20_3e_20_3e_37',['expr_to_std_string&lt; expr_spaces&lt; K, N &gt; &gt;',['../structsimstr_1_1expr__to__std__string.html',1,'simstr']]],
   ['expr_5fto_5fstd_5fstring_3c_20expr_5fsubst_3c_20k_2c_20pt_2c_20args_2e_2e_2e_20_3e_20_3e_38',['expr_to_std_string&lt; expr_subst&lt; K, Pt, Args... &gt; &gt;',['../structsimstr_1_1expr__to__std__string.html',1,'simstr']]],
   ['expr_5fto_5fstd_5fstring_3c_20expr_5futf_3c_20from_2c_20to_20_3e_20_3e_39',['expr_to_std_string&lt; expr_utf&lt; From, To &gt; &gt;',['../structsimstr_1_1expr__to__std__string.html',1,'simstr']]],
-  ['expr_5fto_5fstd_5fstring_3c_20strexprjoin_3c_20a_2c_20b_20_3e_20_3e_40',['expr_to_std_string&lt; strexprjoin&lt; A, B &gt; &gt;',['../structsimstr_1_1expr__to__std__string.html',1,'simstr']]],
-  ['expr_5fto_5fstd_5fstring_3c_20strexprjoin_5fc_3c_20a_2c_20b_2c_20true_20_3e_20_3e_41',['expr_to_std_string&lt; strexprjoin_c&lt; A, B, true &gt; &gt;',['../structsimstr_1_1expr__to__std__string.html',1,'simstr']]],
-  ['expr_5futf_42',['expr_utf',['../structsimstr_1_1expr__utf.html',1,'simstr']]]
+  ['expr_5fto_5fstd_5fstring_3c_20expr_5fvsubst_3c_20k_2c_20args_2e_2e_2e_20_3e_20_3e_40',['expr_to_std_string&lt; expr_vsubst&lt; K, Args... &gt; &gt;',['../structsimstr_1_1expr__to__std__string.html',1,'simstr']]],
+  ['expr_5fto_5fstd_5fstring_3c_20strexprjoin_3c_20a_2c_20b_20_3e_20_3e_41',['expr_to_std_string&lt; strexprjoin&lt; A, B &gt; &gt;',['../structsimstr_1_1expr__to__std__string.html',1,'simstr']]],
+  ['expr_5fto_5fstd_5fstring_3c_20strexprjoin_5fc_3c_20a_2c_20b_2c_20true_20_3e_20_3e_42',['expr_to_std_string&lt; strexprjoin_c&lt; A, B, true &gt; &gt;',['../structsimstr_1_1expr__to__std__string.html',1,'simstr']]],
+  ['expr_5futf_43',['expr_utf',['../structsimstr_1_1expr__utf.html',1,'simstr']]]
 ];

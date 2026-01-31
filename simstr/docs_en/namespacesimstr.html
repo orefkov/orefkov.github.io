@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.2</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -574,6 +574,11 @@ requires (sizeof...(Args) &gt; 0)</td></tr>
 <tr class="memitem:gaf2ceca070cdd5c451f68404178072846"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846">e_subst</a> (T &amp;&amp;str_pattern, const details::subst_params&lt; typename const_lit&lt; T &gt;::symb_type, std::type_identity_t&lt; T &gt;, std::type_identity_t&lt; Args &gt;... &gt; &amp;pattern, Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:gaf2ceca070cdd5c451f68404178072846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a string expression that substitutes the values ​​of the passed string expressions into the specified places in a string literal.  <br /></td></tr>
 <tr class="separator:gaf2ceca070cdd5c451f68404178072846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05501d45ac941faafdda12f73d333445" id="r_ga05501d45ac941faafdda12f73d333445"><td class="memTemplParams" colspan="2">template&lt;StrSourceNoLiteral T, typename... Args&gt; <br />
+requires (sizeof...(Args) &gt; 0)</td></tr>
+<tr class="memitem:ga05501d45ac941faafdda12f73d333445"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#ga05501d45ac941faafdda12f73d333445">e_vsubst</a> (T &amp;&amp;str_pattern, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:ga05501d45ac941faafdda12f73d333445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a string expression that substitutes the values ​​of the passed string expressions into the specified positions in the pattern string, specified at runtime.  <br /></td></tr>
+<tr class="separator:ga05501d45ac941faafdda12f73d333445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>

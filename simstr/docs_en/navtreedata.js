@@ -94,7 +94,7 @@ var NAVTREEINDEX =
 "classsimstr_1_1sstring.html#a73806fa93c9ec619ba93d479d413ea0f",
 "classsimstr_1_1str__algs.html#ab38e5cc7893a20e69cdf03d88232b49c",
 "classsimstr_1_1str__src__algs.html#a9b9958a7ba764ec2ee03fd5f205e3bcd",
-"namespacesimstr.html#a46fe7e669051cea6d5406e8b61ba10fa",
+"namespacesimstr.html#a376c405d7404546a07f440f355038de5",
 "structsimstr_1_1simple__str.html#ab7910e7f7cb59cad7452f79ee8f1921a",
 "structsimstr_1_1simple__str__nt.html#afa9fca49d189fd0d760ffe8aed1485f1",
 "structsimstr_1_1str__src__nt.html#a643bf839edef0abbd43c3f3654e8e700"

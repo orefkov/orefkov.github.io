@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.2</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -312,6 +312,11 @@ requires (sizeof...(Args) &gt; 0)</td></tr>
 <tr class="memitem:gaf2ceca070cdd5c451f68404178072846"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaf2ceca070cdd5c451f68404178072846">simstr::e_subst</a> (T &amp;&amp;str_pattern, const details::subst_params&lt; typename const_lit&lt; T &gt;::symb_type, std::type_identity_t&lt; T &gt;, std::type_identity_t&lt; Args &gt;... &gt; &amp;pattern, Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:gaf2ceca070cdd5c451f68404178072846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a string expression that substitutes the values ​​of the passed string expressions into the specified places in a string literal.  <br /></td></tr>
 <tr class="separator:gaf2ceca070cdd5c451f68404178072846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05501d45ac941faafdda12f73d333445" id="r_ga05501d45ac941faafdda12f73d333445"><td class="memTemplParams" colspan="2">template&lt;StrSourceNoLiteral T, typename... Args&gt; <br />
+requires (sizeof...(Args) &gt; 0)</td></tr>
+<tr class="memitem:ga05501d45ac941faafdda12f73d333445"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga05501d45ac941faafdda12f73d333445">simstr::e_vsubst</a> (T &amp;&amp;str_pattern, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:ga05501d45ac941faafdda12f73d333445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a string expression that substitutes the values ​​of the passed string expressions into the specified positions in the pattern string, specified at runtime.  <br /></td></tr>
+<tr class="separator:ga05501d45ac941faafdda12f73d333445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga22ea6d3c42a2de8611842e367c1bc327" id="r_ga22ea6d3c42a2de8611842e367c1bc327"><td class="memTemplParams" colspan="2">template&lt;simstr::StdStrSource T&gt; </td></tr>
 <tr class="memitem:ga22ea6d3c42a2de8611842e367c1bc327"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structsimstr_1_1expr__stdstr.html">simstr::expr_stdstr</a>&lt; typename T::value_type, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga22ea6d3c42a2de8611842e367c1bc327">std::operator+</a> (const T &amp;str)</td></tr>
 <tr class="memdesc:ga22ea6d3c42a2de8611842e367c1bc327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unary operator + for converting standard strings to string expressions.  <br /></td></tr>
@@ -526,9 +531,9 @@ template&lt;StrExpr A, StrExprForType&lt; typename A::symb_type &gt; B&gt; </div
 </dl>
 <p>Serves to allow you to select different options in one expression depending on the condition.</p>
 <p>Example: </p><div class="fragment"><div class="line">columns_metadata.emplace_back(<a class="code hl_function" href="#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(name.is_empty(), <span class="stringliteral">&quot;?column?&quot;</span>, name) + <span class="stringliteral">&quot;::&quot;</span> + metadata_column.type.to_string());</div>
-<div class="ttc" id="agroup___str_exprs_html_gab058a69a654cf3a0fce197e862a7400e"><div class="ttname"><a href="#gab058a69a654cf3a0fce197e862a7400e">simstr::e_choice</a></div><div class="ttdeci">constexpr expr_choice&lt; A, B &gt; e_choice(bool c, const A &amp;a, const B &amp;b)</div><div class="ttdoc">Create a conditional string expression expr_choice.</div><div class="ttdef"><b>Definition</b> strexpr.h:1435</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gab058a69a654cf3a0fce197e862a7400e"><div class="ttname"><a href="#gab058a69a654cf3a0fce197e862a7400e">simstr::e_choice</a></div><div class="ttdeci">constexpr expr_choice&lt; A, B &gt; e_choice(bool c, const A &amp;a, const B &amp;b)</div><div class="ttdoc">Create a conditional string expression expr_choice.</div><div class="ttdef"><b>Definition</b> strexpr.h:1438</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">lstringa&lt;512&gt; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a> = <a class="code hl_function" href="#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(!ret_type_resolver_, sql_value::type_name(ret_type_), <span class="stringliteral">&quot;any&quot;</span>) + <span class="stringliteral">&quot; &quot;</span> + name_ + <span class="stringliteral">&quot;(&quot;</span>;</div>
-<div class="ttc" id="anamespacesimstr_1_1str_html"><div class="ttname"><a href="namespacesimstr_1_1str.html">simstr::str</a></div><div class="ttdoc">Small namespace for standard string methods.</div><div class="ttdef"><b>Definition</b> strexpr.h:1569</div></div>
+<div class="ttc" id="anamespacesimstr_1_1str_html"><div class="ttname"><a href="namespacesimstr_1_1str.html">simstr::str</a></div><div class="ttdoc">Small namespace for standard string methods.</div><div class="ttdef"><b>Definition</b> strexpr.h:1572</div></div>
 </div><!-- fragment --><p> Otherwise, such operations would have to be split into several string modifications or the use of temporary strings, which is not optimal and will reduce performance. (This is checked in the "Build Full Func Name" benchmark) </p>
 
 </div>
@@ -582,7 +587,7 @@ requires (sizeof...(Args) &gt; 1)</div>
 <p>"Glues" the passed arguments, inserting the specified "glue" between them. The connector and arguments can be string literals, string expressions, standard strings. Arguments can also be any type for which there is a conversion to a string expression. (see <a class="el" href="group___convert_to_str_expr.html">Converting types to string expressions</a>). For arguments that are themselves string expressions, <code>e_concat</code> stores only a reference to them. This is usually not a problem if the reference is not to a temporary object, or the string expression is materialized now, before ';'. If you need to return <code>e_concat</code> as a string expression from a function, you can force it to preserve string expression arguments over a copy by wrapping them in <code>force_copy{}</code>. See tests/test_tostrexpr.cpp, Method4 for an example. Example </p><div class="fragment"><div class="line">std::string t = <a class="code hl_function" href="#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, text, <span class="stringliteral">&quot; = &quot;</span>, count, <span class="stringliteral">&quot; times.&quot;</span>);</div>
 <div class="line">....</div>
 <div class="line">std::string t = <span class="stringliteral">&quot;msg=&quot;</span> + <a class="code hl_function" href="#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;, &quot;</span>, text1, text3, text3, count1, count2);</div>
-<div class="ttc" id="agroup___str_exprs_html_ga89b223a93ea1043282b6910ff8e3162c"><div class="ttname"><a href="#ga89b223a93ea1043282b6910ff8e3162c">simstr::e_concat</a></div><div class="ttdeci">constexpr expr_concat&lt; K, to_str_exp_t&lt; K, T &gt;, to_str_exp_t&lt; K, Args &gt;... &gt; e_concat(T &amp;&amp;glue, Args &amp;&amp;...args)</div><div class="ttdoc">Create a string expression concatenating the specified string expressions using the specified delimit...</div><div class="ttdef"><b>Definition</b> strexpr.h:5441</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga89b223a93ea1043282b6910ff8e3162c"><div class="ttname"><a href="#ga89b223a93ea1043282b6910ff8e3162c">simstr::e_concat</a></div><div class="ttdeci">constexpr expr_concat&lt; K, to_str_exp_t&lt; K, T &gt;, to_str_exp_t&lt; K, Args &gt;... &gt; e_concat(T &amp;&amp;glue, Args &amp;&amp;...args)</div><div class="ttdoc">Create a string expression concatenating the specified string expressions using the specified delimit...</div><div class="ttdef"><b>Definition</b> strexpr.h:5444</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -700,7 +705,7 @@ template&lt;unsigned Flags = 0, FromIntNumber T&gt; </div>
 <div class="line"> </div>
 <div class="line">stringu textu = +u<span class="stringliteral">&quot;val = 0X&quot;</span>sv + <a class="code hl_function" href="#ga6ae75ae56c754403fbf9f5b610a3326b">e_hex&lt;HexFlags::No0x | HexFlags::Short | HexFlags::Lcase&gt;</a>(0x12Au);</div>
 <div class="line">EXPECT_EQ(textu, u<span class="stringliteral">&quot;val = 0X12a&quot;</span>);</div>
-<div class="ttc" id="agroup___str_exprs_html_ga6ae75ae56c754403fbf9f5b610a3326b"><div class="ttname"><a href="#ga6ae75ae56c754403fbf9f5b610a3326b">simstr::e_hex</a></div><div class="ttdeci">constexpr auto e_hex(T v)</div><div class="ttdoc">Allows you to concatenate text and a unsigned number in hexadecimal.</div><div class="ttdef"><b>Definition</b> strexpr.h:1844</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga6ae75ae56c754403fbf9f5b610a3326b"><div class="ttname"><a href="#ga6ae75ae56c754403fbf9f5b610a3326b">simstr::e_hex</a></div><div class="ttdeci">constexpr auto e_hex(T v)</div><div class="ttdoc">Allows you to concatenate text and a unsigned number in hexadecimal.</div><div class="ttdef"><b>Definition</b> strexpr.h:1847</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -769,7 +774,7 @@ template&lt;StrExpr A&gt; </div>
 <div class="line">    <span class="comment">// Save it in stringa</span></div>
 <div class="line">    full_name_ = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a> + <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(unlim_params_, <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(add_comma, <span class="stringliteral">&quot;, &quot;</span>) + <span class="stringliteral">&quot;...&quot;</span>) + <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Creating a conditional string expression expr_if.</div><div class="ttdef"><b>Definition</b> strexpr.h:1513</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Creating a conditional string expression expr_if.</div><div class="ttdef"><b>Definition</b> strexpr.h:1516</div></div>
 </div><!-- fragment --><p> Otherwise, such operations would have to be split into several string modifications or the use of temporary strings, which is not optimal and will reduce performance. (This example is tested in the "Build Full Func Name" benchmark) </p>
 
 </div>
@@ -1195,7 +1200,7 @@ requires (sizeof...(Repl) % 2 == 0)</div>
 </dl>
 <p>Used to generate character replacements for strings if all of them are known at compile time. Example:</p>
 <div class="fragment"><div class="line">out += <span class="stringliteral">&quot;&lt;div&gt;&quot;</span> + <a class="code hl_function" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a>(text, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>, <span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="stringliteral">&quot;&amp;#39;&quot;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>) + <span class="stringliteral">&quot;&lt;/div&gt;&quot;</span>;</div>
-<div class="ttc" id="agroup___str_exprs_html_gac0d4ca53513bcc0d1c0730940ec8a8a1"><div class="ttname"><a href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a></div><div class="ttdeci">auto e_repl_const_symbols(A &amp;&amp;src, Repl &amp;&amp;... other)</div><div class="ttdoc">Returns a string expression that generates a string containing the given characters replaced with giv...</div><div class="ttdef"><b>Definition</b> strexpr.h:5063</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gac0d4ca53513bcc0d1c0730940ec8a8a1"><div class="ttname"><a href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a></div><div class="ttdeci">auto e_repl_const_symbols(A &amp;&amp;src, Repl &amp;&amp;... other)</div><div class="ttdoc">Returns a string expression that generates a string containing the given characters replaced with giv...</div><div class="ttdef"><b>Definition</b> strexpr.h:5066</div></div>
 </div><!-- fragment --><p> In principle, <code>e_repl_const_symbols</code> is quite safe to return from a function if the source string external to function.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> repl_html_symbols(ssa text) {</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a>(text, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>, <span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="stringliteral">&quot;&amp;#39;&quot;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>);</div>
@@ -1239,7 +1244,7 @@ template&lt;size_t N&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string expression for N char spaces.</dd></dl>
 <p>Example: </p><div class="fragment"><div class="line">stringa text = <a class="code hl_function" href="#ga33e02268e25a635b4b7e14d0744b46c1">e_spca&lt;10&gt;</a>() + text + <a class="code hl_function" href="#ga33e02268e25a635b4b7e14d0744b46c1">e_spca&lt;10&gt;</a>();</div>
-<div class="ttc" id="agroup___str_exprs_html_ga33e02268e25a635b4b7e14d0744b46c1"><div class="ttname"><a href="#ga33e02268e25a635b4b7e14d0744b46c1">simstr::e_spca</a></div><div class="ttdeci">constexpr expr_spaces&lt; u8s, N &gt; e_spca()</div><div class="ttdoc">Generates a string of N char spaces.</div><div class="ttdef"><b>Definition</b> strexpr.h:1055</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga33e02268e25a635b4b7e14d0744b46c1"><div class="ttname"><a href="#ga33e02268e25a635b4b7e14d0744b46c1">simstr::e_spca</a></div><div class="ttdeci">constexpr expr_spaces&lt; u8s, N &gt; e_spca()</div><div class="ttdoc">Generates a string of N char spaces.</div><div class="ttdef"><b>Definition</b> strexpr.h:1058</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1277,7 +1282,7 @@ template&lt;size_t N&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string expression for N wchar_t spaces.</dd></dl>
 <p>Example: </p><div class="fragment"><div class="line">stringw text = <a class="code hl_function" href="#ga23b5d15132fcc706d1edc1364673a4ab">e_spcw&lt;10&gt;</a>() + text + <a class="code hl_function" href="#ga23b5d15132fcc706d1edc1364673a4ab">e_spcw&lt;10&gt;</a>();</div>
-<div class="ttc" id="agroup___str_exprs_html_ga23b5d15132fcc706d1edc1364673a4ab"><div class="ttname"><a href="#ga23b5d15132fcc706d1edc1364673a4ab">simstr::e_spcw</a></div><div class="ttdeci">constexpr expr_spaces&lt; uws, N &gt; e_spcw()</div><div class="ttdoc">Generates a string of N wchar_t spaces.</div><div class="ttdef"><b>Definition</b> strexpr.h:1073</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga23b5d15132fcc706d1edc1364673a4ab"><div class="ttname"><a href="#ga23b5d15132fcc706d1edc1364673a4ab">simstr::e_spcw</a></div><div class="ttdeci">constexpr expr_spaces&lt; uws, N &gt; e_spcw()</div><div class="ttdoc">Generates a string of N wchar_t spaces.</div><div class="ttdef"><b>Definition</b> strexpr.h:1076</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1333,7 +1338,7 @@ requires (sizeof...(Args) &gt; 0)</div>
   </dd>
 </dl>
 <p>The function creates a string expression, which, when materialized, generates text from the sample, substituting it in placeholders values ​​of the passed arguments. The pattern string is specified by a string literal, a compile-time constant. Insertion locations are indicated by either <code>{}</code> or <code>{number}</code>. In case without spectacle number, the parameters are submitted to the order of order. In case of the index number, the parameters are submitted in accordance with with the specified serial number. The numbering of parameters starts from 1. You cannot mix parameters without a number and with a number - only used one of the options for all substitutions. In the case of specifying numbers, one parameter can participate in several substitutions. All passed parameters must participate in substitutions. To insert curly braces themselves, they must be doubled - <code>{{</code>, <code>}}</code>. The sample string is processed during compilation, and an array is immediately created for it with information about insertions - which parts of the string to copy in the result, where to insert the passed values. Because the compiler cannot deduced the type for an object with this information directly from a string literal, it has to be specified twice - the first time as a parameter for type deducing, the second time as a parameter for the constructor the type deduced from the first parameter. To simplify specifying a sample, use the macro <code>S_FRM("sample{}")</code>, which simply repeats the parameter twice. The function is not a replacement for <code>std::format</code>, does not work with the sample specified at runtime, and does not support any formatting options for substituted values. All passed arguments must be able to convert themselves to string expressions (see <a class="el" href="group___convert_to_str_expr.html">Converting types to string expressions</a>). Example: </p><div class="fragment"><div class="line">lstringu&lt;100&gt; u16t = <a class="code hl_function" href="#gaf2ceca070cdd5c451f68404178072846">e_subst</a>(S_FRM(u<span class="stringliteral">&quot;Test {} from {}, {}.&quot;</span>), from, total, success ? u<span class="stringliteral">&quot;success&quot;</span>_ss : u<span class="stringliteral">&quot;fail&quot;</span>_ss);</div>
-<div class="ttc" id="agroup___str_exprs_html_gaf2ceca070cdd5c451f68404178072846"><div class="ttname"><a href="#gaf2ceca070cdd5c451f68404178072846">simstr::e_subst</a></div><div class="ttdeci">constexpr auto e_subst(T &amp;&amp;str_pattern, const details::subst_params&lt; typename const_lit&lt; T &gt;::symb_type, std::type_identity_t&lt; T &gt;, std::type_identity_t&lt; Args &gt;... &gt; &amp;pattern, Args &amp;&amp;...args)</div><div class="ttdoc">Creates a string expression that substitutes the values ​​of the passed string expressions into the s...</div><div class="ttdef"><b>Definition</b> strexpr.h:5686</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gaf2ceca070cdd5c451f68404178072846"><div class="ttname"><a href="#gaf2ceca070cdd5c451f68404178072846">simstr::e_subst</a></div><div class="ttdeci">constexpr auto e_subst(T &amp;&amp;str_pattern, const details::subst_params&lt; typename const_lit&lt; T &gt;::symb_type, std::type_identity_t&lt; T &gt;, std::type_identity_t&lt; Args &gt;... &gt; &amp;pattern, Args &amp;&amp;...args)</div><div class="ttdoc">Creates a string expression that substitutes the values ​​of the passed string expressions into the s...</div><div class="ttdef"><b>Definition</b> strexpr.h:5780</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1379,6 +1384,55 @@ template&lt;typename T, size_t N = const_lit&lt;T&gt;::Count&gt; </div>
 </ul>
 <p>All these methods work and give the same result. Which one to use is a matter of taste. </p>
 
+</div>
+</div>
+<a id="ga05501d45ac941faafdda12f73d333445" name="ga05501d45ac941faafdda12f73d333445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05501d45ac941faafdda12f73d333445">&#9670;&#160;</a></span>e_vsubst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;StrSourceNoLiteral T, typename... Args&gt; <br />
+requires (sizeof...(Args) &gt; 0)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto simstr::e_vsubst </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>str_pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a string expression that substitutes the values ​​of the passed string expressions into the specified positions in the pattern string, specified at runtime. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>- the type of the pattern string, deduced from the argument. </td></tr>
+    <tr><td class="paramname">Args...</td><td>- the types of the passed arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str_pattern</td><td>- the pattern string object into which the values ​​of the passed arguments will be substituted. </td></tr>
+    <tr><td class="paramname">args...</td><td>- the arguments to be substituted into the specified positions in the pattern. As in <code>e_concat</code>, these can be string literals, string expressions, standard strings, and any types that can be converted to string expressions.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The function creates a string expression that, when materialized, generates text from the pattern, substituting the values ​​of the passed arguments into the substitution positions. The pattern string is specified at runtime by a string object that is parsed at runtime. Insertion points are designated either as <code>{}</code> or <code>{number}</code>. If no number is specified, parameters are substituted in the order passed to the function. If a number is specified, parameters are substituted according to the specified ordinal number. Parameter numbering starts with 1. You cannot mix parameters with and without numbers; only one of the options is used for all substitutions. If numbers are specified, one parameter can participate in multiple substitutions. All passed parameters must participate in substitutions. If a string parsing error occurs, a <code>parse_subst_string_error</code> exception will be thrown. To insert the curly braces themselves, they must be doubled - <code>{{</code>, <code>}}</code>. This function is not a replacement for <code>std::vformat</code>, does not work with the pattern specified at compile-time, and does not support any formatting options for substituted values. All passed arguments must be able to convert themselves to string expressions. (See <a class="el" href="group___convert_to_str_expr.html">Converting Types to String Expressions</a>). Example: </p><div class="fragment"><div class="line">lstringu&lt;100&gt; u16t = <a class="code hl_function" href="#gaf2ceca070cdd5c451f68404178072846">e_subst</a>(S_FRM(u<span class="stringliteral">&quot;Test {} from {}, {}.&quot;</span>), from, total, success ? u<span class="stringliteral">&quot;success&quot;</span>_ss : u<span class="stringliteral">&quot;fail&quot;</span>_ss);</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ga9742e8cdcccc67c0746578f3579127e2" name="ga9742e8cdcccc67c0746578f3579127e2"></a>

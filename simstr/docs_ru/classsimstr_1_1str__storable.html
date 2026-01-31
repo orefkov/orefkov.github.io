@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.2</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -548,7 +548,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 <div class="ttc" id="aclasssimstr_1_1str__storable_html_a9b002a3618bbfcebc945cef197a397a1"><div class="ttname"><a href="#a9b002a3618bbfcebc945cef197a397a1">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimiter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Определения</b> sstring.h:1199</div></div>
 </div><!-- fragment --><p> Стоит отметить, что при заранее известном разделителе лучше пользоваться строковым выражением <code>e_join</code>. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
 <div class="line">lstringa&lt;200&gt; line{<a class="code hl_function" href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">e_join</a>(strings, <span class="stringliteral">&quot;/&quot;</span>)};</div>
-<div class="ttc" id="agroup___str_exprs_html_gafd2e6b8a52bfe20c0b86d25f9f78cb52"><div class="ttname"><a href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a></div><div class="ttdeci">constexpr auto e_join(const T &amp;s, L &amp;&amp;d)</div><div class="ttdoc">Получить строковое выражение, конкатенирующее строки в контейнере в одну строку с заданным разделител...</div><div class="ttdef"><b>Определения</b> strexpr.h:2035</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gafd2e6b8a52bfe20c0b86d25f9f78cb52"><div class="ttname"><a href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a></div><div class="ttdeci">constexpr auto e_join(const T &amp;s, L &amp;&amp;d)</div><div class="ttdoc">Получить строковое выражение, конкатенирующее строки в контейнере в одну строку с заданным разделител...</div><div class="ttdef"><b>Определения</b> strexpr.h:2038</div></div>
 </div><!-- fragment --><p> В этом случае компилятор может лучше оптимизировать код слияния строк. </p>
 
 </div>

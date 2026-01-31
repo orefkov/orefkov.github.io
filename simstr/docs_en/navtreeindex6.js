@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"structsimstr_1_1simple__str.html#ab7910e7f7cb59cad7452f79ee8f1921a":[3,0,0,22,87],
 "structsimstr_1_1simple__str.html#ab7910e7f7cb59cad7452f79ee8f1921a":[5,0,0,21,87],
 "structsimstr_1_1simple__str.html#ab950f20c494e2c60b22dfe95e410ec25":[3,0,0,22,96],
 "structsimstr_1_1simple__str.html#ab950f20c494e2c60b22dfe95e410ec25":[5,0,0,21,96],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "structsimstr_1_1simple__str__nt.html#af893677739e0d24418f6acc0a29090cc":[3,0,0,23,60],
 "structsimstr_1_1simple__str__nt.html#af893677739e0d24418f6acc0a29090cc":[5,0,0,22,60],
 "structsimstr_1_1simple__str__nt.html#afa40ca4ad70df9ec0941599b88c443dc":[3,0,0,23,78],
-"structsimstr_1_1simple__str__nt.html#afa40ca4ad70df9ec0941599b88c443dc":[5,0,0,22,78],
-"structsimstr_1_1simple__str__nt.html#afa9fca49d189fd0d760ffe8aed1485f1":[3,0,0,23,17]
+"structsimstr_1_1simple__str__nt.html#afa40ca4ad70df9ec0941599b88c443dc":[5,0,0,22,78]
 };

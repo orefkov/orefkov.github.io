@@ -58,6 +58,7 @@ var hierarchy =
     [ "simstr::expr_to_std_string< expr_utf< From, To > >", "structsimstr_1_1expr__to__std__string.html", [
       [ "simstr::expr_utf< From, To >", "structsimstr_1_1expr__utf.html", null ]
     ] ],
+    [ "simstr::expr_to_std_string< expr_vsubst< K, Args... > >", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "simstr::expr_to_std_string< strexprjoin< A, B > >", "structsimstr_1_1expr__to__std__string.html", [
       [ "simstr::strexprjoin< A, B >", "structsimstr_1_1strexprjoin.html", null ]
     ] ],

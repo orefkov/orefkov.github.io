@@ -96,6 +96,7 @@ var namespacesimstr =
     [ "e_subst", "group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846", null ],
     [ "e_t", "group___str_exprs.html#ga9e9c377a32a2cc243efce977c4adffe3", null ],
     [ "e_utf", "namespacesimstr.html#a68179a3d25c85c1bab488b570df3b1f2", null ],
+    [ "e_vsubst", "group___str_exprs.html#ga05501d45ac941faafdda12f73d333445", null ],
     [ "operator\"\"_h", "namespacesimstr.html#ab6365fc9cbc877e83333d71c9387bf92", null ],
     [ "operator\"\"_h", "namespacesimstr.html#a075447008b510f5cbaad22257445c54c", null ],
     [ "operator\"\"_h", "namespacesimstr.html#a0df8d5833d6274ee7d071c21374a5bf0", null ],

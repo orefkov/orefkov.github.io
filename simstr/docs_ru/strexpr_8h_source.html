@@ -3979,320 +3979,320 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l05783" name="l05783"></a><span class="lineno"> 5783</span> </div>
 <div class="line"><a id="l05784" name="l05784"></a><span class="lineno"> 5784</span><span class="preprocessor">#define S_FRM(s) s, s</span></div>
 <div class="line"><a id="l05785" name="l05785"></a><span class="lineno"> 5785</span></div>
-<div class="line"><a id="l05826" name="l05826"></a><span class="lineno"> 5826</span><span class="keyword">template</span>&lt;StrSourceNoLiteral T, <span class="keyword">typename</span>...Args&gt; <span class="keyword">requires</span> (<span class="keyword">sizeof</span>...(Args) &gt; 0)</div>
-<div class="foldopen" id="foldopen05827" data-start="{" data-end="}">
-<div class="line"><a id="l05827" name="l05827"></a><span class="lineno"><a class="line" href="group___str_exprs.html#ga05501d45ac941faafdda12f73d333445"> 5827</a></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="group___str_exprs.html#ga05501d45ac941faafdda12f73d333445">e_vsubst</a>(T&amp;&amp; str_pattern, Args&amp;&amp;...args) {</div>
-<div class="line"><a id="l05828" name="l05828"></a><span class="lineno"> 5828</span>    <span class="keywordflow">return</span> expr_vsubst&lt;symb_type_from_src_t&lt;T&gt;, Args...&gt;{str_pattern, std::forward&lt;Args&gt;(args)...};</div>
-<div class="line"><a id="l05829" name="l05829"></a><span class="lineno"> 5829</span>}</div>
+<div class="line"><a id="l05828" name="l05828"></a><span class="lineno"> 5828</span><span class="keyword">template</span>&lt;StrSourceNoLiteral T, <span class="keyword">typename</span>...Args&gt; <span class="keyword">requires</span> (<span class="keyword">sizeof</span>...(Args) &gt; 0)</div>
+<div class="foldopen" id="foldopen05829" data-start="{" data-end="}">
+<div class="line"><a id="l05829" name="l05829"></a><span class="lineno"><a class="line" href="group___str_exprs.html#ga05501d45ac941faafdda12f73d333445"> 5829</a></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="group___str_exprs.html#ga05501d45ac941faafdda12f73d333445">e_vsubst</a>(T&amp;&amp; str_pattern, Args&amp;&amp;...args) {</div>
+<div class="line"><a id="l05830" name="l05830"></a><span class="lineno"> 5830</span>    <span class="keywordflow">return</span> expr_vsubst&lt;symb_type_from_src_t&lt;T&gt;, Args...&gt;{str_pattern, std::forward&lt;Args&gt;(args)...};</div>
+<div class="line"><a id="l05831" name="l05831"></a><span class="lineno"> 5831</span>}</div>
 </div>
-<div class="line"><a id="l05830" name="l05830"></a><span class="lineno"> 5830</span></div>
-<div class="line"><a id="l05835" name="l05835"></a><span class="lineno"> 5835</span><span class="keyword">namespace </span>str {</div>
-<div class="line"><a id="l05836" name="l05836"></a><span class="lineno"> 5836</span></div>
-<div class="line"><a id="l05869" name="l05869"></a><span class="lineno"> 5869</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, StrExprForType&lt;K&gt; E&gt;</div>
-<div class="foldopen" id="foldopen05870" data-start="{" data-end="}">
-<div class="line"><a id="l05870" name="l05870"></a><span class="lineno"><a class="line" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf"> 5870</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">change</a>(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <span class="keywordtype">size_t</span> from, <span class="keywordtype">size_t</span> count, <span class="keyword">const</span> E&amp; expr) {</div>
-<div class="line"><a id="l05871" name="l05871"></a><span class="lineno"> 5871</span>    <span class="keywordtype">size_t</span> expr_length = expr.length();</div>
-<div class="line"><a id="l05872" name="l05872"></a><span class="lineno"> 5872</span>    <span class="keywordflow">if</span> (!expr_length) {</div>
-<div class="line"><a id="l05873" name="l05873"></a><span class="lineno"> 5873</span>        <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.erase(from, count);</div>
-<div class="line"><a id="l05874" name="l05874"></a><span class="lineno"> 5874</span>        <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
-<div class="line"><a id="l05875" name="l05875"></a><span class="lineno"> 5875</span>    }</div>
-<div class="line"><a id="l05876" name="l05876"></a><span class="lineno"> 5876</span>    <span class="keywordtype">size_t</span> str_length = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.length();</div>
-<div class="line"><a id="l05877" name="l05877"></a><span class="lineno"> 5877</span>    <span class="keywordflow">if</span> (from &gt; str_length) {</div>
-<div class="line"><a id="l05878" name="l05878"></a><span class="lineno"> 5878</span>        from = str_length;</div>
-<div class="line"><a id="l05879" name="l05879"></a><span class="lineno"> 5879</span>    }</div>
-<div class="line"><a id="l05880" name="l05880"></a><span class="lineno"> 5880</span>    <span class="keywordflow">if</span> (from + count &gt; str_length) {</div>
-<div class="line"><a id="l05881" name="l05881"></a><span class="lineno"> 5881</span>        count = str_length - from;</div>
-<div class="line"><a id="l05882" name="l05882"></a><span class="lineno"> 5882</span>    }</div>
-<div class="line"><a id="l05883" name="l05883"></a><span class="lineno"> 5883</span>    <span class="keywordtype">size_t</span> new_length = str_length - count + expr_length;</div>
-<div class="line"><a id="l05884" name="l05884"></a><span class="lineno"> 5884</span>    <span class="keywordtype">size_t</span> tail_length = str_length - count - from;</div>
-<div class="line"><a id="l05885" name="l05885"></a><span class="lineno"> 5885</span> </div>
-<div class="line"><a id="l05886" name="l05886"></a><span class="lineno"> 5886</span>    <span class="keywordflow">if</span> (new_length &lt;= str_length) {</div>
-<div class="line"><a id="l05887" name="l05887"></a><span class="lineno"> 5887</span>        K* data = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.data();</div>
-<div class="line"><a id="l05888" name="l05888"></a><span class="lineno"> 5888</span>        expr.place((<span class="keyword">typename</span> E::symb_type*)data + from);</div>
-<div class="line"><a id="l05889" name="l05889"></a><span class="lineno"> 5889</span>        <span class="keywordflow">if</span> (expr_length &lt; count) {</div>
-<div class="line"><a id="l05890" name="l05890"></a><span class="lineno"> 5890</span>            <span class="keywordflow">if</span> (tail_length) {</div>
-<div class="line"><a id="l05891" name="l05891"></a><span class="lineno"> 5891</span>                std::char_traits&lt;K&gt;::move(data + from + expr_length, data + from + count, tail_length);</div>
-<div class="line"><a id="l05892" name="l05892"></a><span class="lineno"> 5892</span>            }</div>
-<div class="line"><a id="l05893" name="l05893"></a><span class="lineno"> 5893</span>            <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.resize(new_length);</div>
-<div class="line"><a id="l05894" name="l05894"></a><span class="lineno"> 5894</span>        }</div>
-<div class="line"><a id="l05895" name="l05895"></a><span class="lineno"> 5895</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l05896" name="l05896"></a><span class="lineno"> 5896</span>        <span class="keyword">auto</span> fill = [&amp;](K* data, size_t) -&gt; <span class="keywordtype">size_t</span> {</div>
-<div class="line"><a id="l05897" name="l05897"></a><span class="lineno"> 5897</span>            <span class="keywordflow">if</span> (tail_length) {</div>
-<div class="line"><a id="l05898" name="l05898"></a><span class="lineno"> 5898</span>                std::char_traits&lt;K&gt;::move(data + from + expr_length, data + from + count, tail_length);</div>
-<div class="line"><a id="l05899" name="l05899"></a><span class="lineno"> 5899</span>            }</div>
-<div class="line"><a id="l05900" name="l05900"></a><span class="lineno"> 5900</span>            expr.place((<span class="keyword">typename</span> E::symb_type*)data + from);</div>
-<div class="line"><a id="l05901" name="l05901"></a><span class="lineno"> 5901</span>            <span class="keywordflow">return</span> new_length;</div>
-<div class="line"><a id="l05902" name="l05902"></a><span class="lineno"> 5902</span>        };</div>
-<div class="line"><a id="l05903" name="l05903"></a><span class="lineno"> 5903</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">requires</span>{<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.resize_and_overwrite(new_length, fill);}) {</div>
-<div class="line"><a id="l05904" name="l05904"></a><span class="lineno"> 5904</span>            <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.resize_and_overwrite(new_length, fill);</div>
-<div class="line"><a id="l05905" name="l05905"></a><span class="lineno"> 5905</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">requires</span>{<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>._Resize_and_overwrite(new_length, fill);}) {</div>
-<div class="line"><a id="l05906" name="l05906"></a><span class="lineno"> 5906</span>            <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>._Resize_and_overwrite(new_length, fill);</div>
-<div class="line"><a id="l05907" name="l05907"></a><span class="lineno"> 5907</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l05908" name="l05908"></a><span class="lineno"> 5908</span>            <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.resize(new_length);</div>
-<div class="line"><a id="l05909" name="l05909"></a><span class="lineno"> 5909</span>            fill(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.data(), 0);</div>
-<div class="line"><a id="l05910" name="l05910"></a><span class="lineno"> 5910</span>        }</div>
-<div class="line"><a id="l05911" name="l05911"></a><span class="lineno"> 5911</span>    }</div>
-<div class="line"><a id="l05912" name="l05912"></a><span class="lineno"> 5912</span>    <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
-<div class="line"><a id="l05913" name="l05913"></a><span class="lineno"> 5913</span>}</div>
+<div class="line"><a id="l05832" name="l05832"></a><span class="lineno"> 5832</span></div>
+<div class="line"><a id="l05837" name="l05837"></a><span class="lineno"> 5837</span><span class="keyword">namespace </span>str {</div>
+<div class="line"><a id="l05838" name="l05838"></a><span class="lineno"> 5838</span></div>
+<div class="line"><a id="l05871" name="l05871"></a><span class="lineno"> 5871</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, StrExprForType&lt;K&gt; E&gt;</div>
+<div class="foldopen" id="foldopen05872" data-start="{" data-end="}">
+<div class="line"><a id="l05872" name="l05872"></a><span class="lineno"><a class="line" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf"> 5872</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">change</a>(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <span class="keywordtype">size_t</span> from, <span class="keywordtype">size_t</span> count, <span class="keyword">const</span> E&amp; expr) {</div>
+<div class="line"><a id="l05873" name="l05873"></a><span class="lineno"> 5873</span>    <span class="keywordtype">size_t</span> expr_length = expr.length();</div>
+<div class="line"><a id="l05874" name="l05874"></a><span class="lineno"> 5874</span>    <span class="keywordflow">if</span> (!expr_length) {</div>
+<div class="line"><a id="l05875" name="l05875"></a><span class="lineno"> 5875</span>        <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.erase(from, count);</div>
+<div class="line"><a id="l05876" name="l05876"></a><span class="lineno"> 5876</span>        <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
+<div class="line"><a id="l05877" name="l05877"></a><span class="lineno"> 5877</span>    }</div>
+<div class="line"><a id="l05878" name="l05878"></a><span class="lineno"> 5878</span>    <span class="keywordtype">size_t</span> str_length = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.length();</div>
+<div class="line"><a id="l05879" name="l05879"></a><span class="lineno"> 5879</span>    <span class="keywordflow">if</span> (from &gt; str_length) {</div>
+<div class="line"><a id="l05880" name="l05880"></a><span class="lineno"> 5880</span>        from = str_length;</div>
+<div class="line"><a id="l05881" name="l05881"></a><span class="lineno"> 5881</span>    }</div>
+<div class="line"><a id="l05882" name="l05882"></a><span class="lineno"> 5882</span>    <span class="keywordflow">if</span> (from + count &gt; str_length) {</div>
+<div class="line"><a id="l05883" name="l05883"></a><span class="lineno"> 5883</span>        count = str_length - from;</div>
+<div class="line"><a id="l05884" name="l05884"></a><span class="lineno"> 5884</span>    }</div>
+<div class="line"><a id="l05885" name="l05885"></a><span class="lineno"> 5885</span>    <span class="keywordtype">size_t</span> new_length = str_length - count + expr_length;</div>
+<div class="line"><a id="l05886" name="l05886"></a><span class="lineno"> 5886</span>    <span class="keywordtype">size_t</span> tail_length = str_length - count - from;</div>
+<div class="line"><a id="l05887" name="l05887"></a><span class="lineno"> 5887</span> </div>
+<div class="line"><a id="l05888" name="l05888"></a><span class="lineno"> 5888</span>    <span class="keywordflow">if</span> (new_length &lt;= str_length) {</div>
+<div class="line"><a id="l05889" name="l05889"></a><span class="lineno"> 5889</span>        K* data = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.data();</div>
+<div class="line"><a id="l05890" name="l05890"></a><span class="lineno"> 5890</span>        expr.place((<span class="keyword">typename</span> E::symb_type*)data + from);</div>
+<div class="line"><a id="l05891" name="l05891"></a><span class="lineno"> 5891</span>        <span class="keywordflow">if</span> (expr_length &lt; count) {</div>
+<div class="line"><a id="l05892" name="l05892"></a><span class="lineno"> 5892</span>            <span class="keywordflow">if</span> (tail_length) {</div>
+<div class="line"><a id="l05893" name="l05893"></a><span class="lineno"> 5893</span>                std::char_traits&lt;K&gt;::move(data + from + expr_length, data + from + count, tail_length);</div>
+<div class="line"><a id="l05894" name="l05894"></a><span class="lineno"> 5894</span>            }</div>
+<div class="line"><a id="l05895" name="l05895"></a><span class="lineno"> 5895</span>            <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.resize(new_length);</div>
+<div class="line"><a id="l05896" name="l05896"></a><span class="lineno"> 5896</span>        }</div>
+<div class="line"><a id="l05897" name="l05897"></a><span class="lineno"> 5897</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l05898" name="l05898"></a><span class="lineno"> 5898</span>        <span class="keyword">auto</span> fill = [&amp;](K* data, size_t) -&gt; <span class="keywordtype">size_t</span> {</div>
+<div class="line"><a id="l05899" name="l05899"></a><span class="lineno"> 5899</span>            <span class="keywordflow">if</span> (tail_length) {</div>
+<div class="line"><a id="l05900" name="l05900"></a><span class="lineno"> 5900</span>                std::char_traits&lt;K&gt;::move(data + from + expr_length, data + from + count, tail_length);</div>
+<div class="line"><a id="l05901" name="l05901"></a><span class="lineno"> 5901</span>            }</div>
+<div class="line"><a id="l05902" name="l05902"></a><span class="lineno"> 5902</span>            expr.place((<span class="keyword">typename</span> E::symb_type*)data + from);</div>
+<div class="line"><a id="l05903" name="l05903"></a><span class="lineno"> 5903</span>            <span class="keywordflow">return</span> new_length;</div>
+<div class="line"><a id="l05904" name="l05904"></a><span class="lineno"> 5904</span>        };</div>
+<div class="line"><a id="l05905" name="l05905"></a><span class="lineno"> 5905</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">requires</span>{<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.resize_and_overwrite(new_length, fill);}) {</div>
+<div class="line"><a id="l05906" name="l05906"></a><span class="lineno"> 5906</span>            <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.resize_and_overwrite(new_length, fill);</div>
+<div class="line"><a id="l05907" name="l05907"></a><span class="lineno"> 5907</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">requires</span>{<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>._Resize_and_overwrite(new_length, fill);}) {</div>
+<div class="line"><a id="l05908" name="l05908"></a><span class="lineno"> 5908</span>            <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>._Resize_and_overwrite(new_length, fill);</div>
+<div class="line"><a id="l05909" name="l05909"></a><span class="lineno"> 5909</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l05910" name="l05910"></a><span class="lineno"> 5910</span>            <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.resize(new_length);</div>
+<div class="line"><a id="l05911" name="l05911"></a><span class="lineno"> 5911</span>            fill(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.data(), 0);</div>
+<div class="line"><a id="l05912" name="l05912"></a><span class="lineno"> 5912</span>        }</div>
+<div class="line"><a id="l05913" name="l05913"></a><span class="lineno"> 5913</span>    }</div>
+<div class="line"><a id="l05914" name="l05914"></a><span class="lineno"> 5914</span>    <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
+<div class="line"><a id="l05915" name="l05915"></a><span class="lineno"> 5915</span>}</div>
 </div>
-<div class="line"><a id="l05914" name="l05914"></a><span class="lineno"> 5914</span></div>
-<div class="line"><a id="l05942" name="l05942"></a><span class="lineno"> 5942</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, StrExprForType&lt;K&gt; E&gt;</div>
-<div class="foldopen" id="foldopen05943" data-start="{" data-end="}">
-<div class="line"><a id="l05943" name="l05943"></a><span class="lineno"><a class="line" href="namespacesimstr_1_1str.html#a351d8d1db18b0dca19992b164fb6253f"> 5943</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_function" href="namespacesimstr_1_1str.html#a351d8d1db18b0dca19992b164fb6253f">append</a>(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <span class="keyword">const</span> E&amp; expr) {</div>
-<div class="line"><a id="l05944" name="l05944"></a><span class="lineno"> 5944</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">change</a>(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.length(), 0, expr);</div>
-<div class="line"><a id="l05945" name="l05945"></a><span class="lineno"> 5945</span>}</div>
+<div class="line"><a id="l05916" name="l05916"></a><span class="lineno"> 5916</span></div>
+<div class="line"><a id="l05944" name="l05944"></a><span class="lineno"> 5944</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, StrExprForType&lt;K&gt; E&gt;</div>
+<div class="foldopen" id="foldopen05945" data-start="{" data-end="}">
+<div class="line"><a id="l05945" name="l05945"></a><span class="lineno"><a class="line" href="namespacesimstr_1_1str.html#a351d8d1db18b0dca19992b164fb6253f"> 5945</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_function" href="namespacesimstr_1_1str.html#a351d8d1db18b0dca19992b164fb6253f">append</a>(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <span class="keyword">const</span> E&amp; expr) {</div>
+<div class="line"><a id="l05946" name="l05946"></a><span class="lineno"> 5946</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">change</a>(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.length(), 0, expr);</div>
+<div class="line"><a id="l05947" name="l05947"></a><span class="lineno"> 5947</span>}</div>
 </div>
-<div class="line"><a id="l05946" name="l05946"></a><span class="lineno"> 5946</span></div>
-<div class="line"><a id="l05975" name="l05975"></a><span class="lineno"> 5975</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, StrExprForType&lt;K&gt; E&gt;</div>
-<div class="foldopen" id="foldopen05976" data-start="{" data-end="}">
-<div class="line"><a id="l05976" name="l05976"></a><span class="lineno"><a class="line" href="namespacesimstr_1_1str.html#a5fb93ccbf4f2bc1ca6db244ef11c3047"> 5976</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_function" href="namespacesimstr_1_1str.html#a5fb93ccbf4f2bc1ca6db244ef11c3047">prepend</a>(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <span class="keyword">const</span> E&amp; expr) {</div>
-<div class="line"><a id="l05977" name="l05977"></a><span class="lineno"> 5977</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">change</a>(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, 0, 0, expr);</div>
-<div class="line"><a id="l05978" name="l05978"></a><span class="lineno"> 5978</span>}</div>
+<div class="line"><a id="l05948" name="l05948"></a><span class="lineno"> 5948</span></div>
+<div class="line"><a id="l05977" name="l05977"></a><span class="lineno"> 5977</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, StrExprForType&lt;K&gt; E&gt;</div>
+<div class="foldopen" id="foldopen05978" data-start="{" data-end="}">
+<div class="line"><a id="l05978" name="l05978"></a><span class="lineno"><a class="line" href="namespacesimstr_1_1str.html#a5fb93ccbf4f2bc1ca6db244ef11c3047"> 5978</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_function" href="namespacesimstr_1_1str.html#a5fb93ccbf4f2bc1ca6db244ef11c3047">prepend</a>(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <span class="keyword">const</span> E&amp; expr) {</div>
+<div class="line"><a id="l05979" name="l05979"></a><span class="lineno"> 5979</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">change</a>(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, 0, 0, expr);</div>
+<div class="line"><a id="l05980" name="l05980"></a><span class="lineno"> 5980</span>}</div>
 </div>
-<div class="line"><a id="l05979" name="l05979"></a><span class="lineno"> 5979</span></div>
-<div class="line"><a id="l06010" name="l06010"></a><span class="lineno"> 6010</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, StrExprForType&lt;K&gt; E&gt;</div>
-<div class="foldopen" id="foldopen06011" data-start="{" data-end="}">
-<div class="line"><a id="l06011" name="l06011"></a><span class="lineno"><a class="line" href="namespacesimstr_1_1str.html#afb9af1b76a9815d827e9b46affccb49f"> 6011</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_function" href="namespacesimstr_1_1str.html#afb9af1b76a9815d827e9b46affccb49f">insert</a>(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <span class="keywordtype">size_t</span> from, <span class="keyword">const</span> E&amp; expr) {</div>
-<div class="line"><a id="l06012" name="l06012"></a><span class="lineno"> 6012</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">change</a>(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, from, 0, expr);</div>
-<div class="line"><a id="l06013" name="l06013"></a><span class="lineno"> 6013</span>}</div>
+<div class="line"><a id="l05981" name="l05981"></a><span class="lineno"> 5981</span></div>
+<div class="line"><a id="l06012" name="l06012"></a><span class="lineno"> 6012</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, StrExprForType&lt;K&gt; E&gt;</div>
+<div class="foldopen" id="foldopen06013" data-start="{" data-end="}">
+<div class="line"><a id="l06013" name="l06013"></a><span class="lineno"><a class="line" href="namespacesimstr_1_1str.html#afb9af1b76a9815d827e9b46affccb49f"> 6013</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_function" href="namespacesimstr_1_1str.html#afb9af1b76a9815d827e9b46affccb49f">insert</a>(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <span class="keywordtype">size_t</span> from, <span class="keyword">const</span> E&amp; expr) {</div>
+<div class="line"><a id="l06014" name="l06014"></a><span class="lineno"> 6014</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">change</a>(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, from, 0, expr);</div>
+<div class="line"><a id="l06015" name="l06015"></a><span class="lineno"> 6015</span>}</div>
 </div>
-<div class="line"><a id="l06014" name="l06014"></a><span class="lineno"> 6014</span> </div>
-<div class="line"><a id="l06015" name="l06015"></a><span class="lineno"> 6015</span><span class="keyword">namespace </span>details {</div>
 <div class="line"><a id="l06016" name="l06016"></a><span class="lineno"> 6016</span> </div>
-<div class="line"><a id="l06017" name="l06017"></a><span class="lineno"> 6017</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, <span class="keyword">typename</span> E&gt;</div>
-<div class="line"><a id="l06018" name="l06018"></a><span class="lineno"> 6018</span><span class="keyword">struct </span>replace_grow_helper {</div>
-<div class="line"><a id="l06019" name="l06019"></a><span class="lineno"> 6019</span>    <span class="keyword">using </span>my_type = std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;;</div>
-<div class="line"><a id="l06020" name="l06020"></a><span class="lineno"> 6020</span> </div>
-<div class="line"><a id="l06021" name="l06021"></a><span class="lineno"> 6021</span>    replace_grow_helper(my_type&amp; src, <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> p, <span class="keyword">const</span> K* r, <span class="keywordtype">size_t</span> rl, <span class="keywordtype">size_t</span> mc, <span class="keywordtype">size_t</span> d, <span class="keyword">const</span> E&amp; e)</div>
-<div class="line"><a id="l06022" name="l06022"></a><span class="lineno"> 6022</span>        : <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>(src), source(src), pattern(p), repl(const_cast&lt;K*&gt;(r)), replLen(rl), maxCount(mc), delta(d), expr(e) {}</div>
-<div class="line"><a id="l06023" name="l06023"></a><span class="lineno"> 6023</span>    my_type&amp; str;</div>
-<div class="line"><a id="l06024" name="l06024"></a><span class="lineno"> 6024</span> </div>
-<div class="line"><a id="l06025" name="l06025"></a><span class="lineno"> 6025</span>    <span class="keyword">const</span> str_src&lt;K&gt; source;</div>
-<div class="line"><a id="l06026" name="l06026"></a><span class="lineno"> 6026</span>    <span class="keyword">const</span> str_src&lt;K&gt; pattern;</div>
-<div class="line"><a id="l06027" name="l06027"></a><span class="lineno"> 6027</span>    K* repl;</div>
-<div class="line"><a id="l06028" name="l06028"></a><span class="lineno"> 6028</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> replLen;</div>
-<div class="line"><a id="l06029" name="l06029"></a><span class="lineno"> 6029</span> </div>
-<div class="line"><a id="l06030" name="l06030"></a><span class="lineno"> 6030</span>    <span class="keywordtype">size_t</span> maxCount;</div>
-<div class="line"><a id="l06031" name="l06031"></a><span class="lineno"> 6031</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> delta;</div>
-<div class="line"><a id="l06032" name="l06032"></a><span class="lineno"> 6032</span>    <span class="keywordtype">size_t</span> all_delta{};</div>
-<div class="line"><a id="l06033" name="l06033"></a><span class="lineno"> 6033</span>    <span class="keyword">const</span> E&amp; expr;</div>
-<div class="line"><a id="l06034" name="l06034"></a><span class="lineno"> 6034</span> </div>
-<div class="line"><a id="l06035" name="l06035"></a><span class="lineno"> 6035</span>    K* reserve_for_copy{};</div>
-<div class="line"><a id="l06036" name="l06036"></a><span class="lineno"> 6036</span>    <span class="keywordtype">size_t</span> end_of_piece{};</div>
-<div class="line"><a id="l06037" name="l06037"></a><span class="lineno"> 6037</span>    <span class="keywordtype">size_t</span> total_length{};</div>
-<div class="line"><a id="l06038" name="l06038"></a><span class="lineno"> 6038</span> </div>
-<div class="line"><a id="l06039" name="l06039"></a><span class="lineno"> 6039</span>    std::optional&lt;my_type&gt; dst;</div>
+<div class="line"><a id="l06017" name="l06017"></a><span class="lineno"> 6017</span><span class="keyword">namespace </span>details {</div>
+<div class="line"><a id="l06018" name="l06018"></a><span class="lineno"> 6018</span> </div>
+<div class="line"><a id="l06019" name="l06019"></a><span class="lineno"> 6019</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, <span class="keyword">typename</span> E&gt;</div>
+<div class="line"><a id="l06020" name="l06020"></a><span class="lineno"> 6020</span><span class="keyword">struct </span>replace_grow_helper {</div>
+<div class="line"><a id="l06021" name="l06021"></a><span class="lineno"> 6021</span>    <span class="keyword">using </span>my_type = std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;;</div>
+<div class="line"><a id="l06022" name="l06022"></a><span class="lineno"> 6022</span> </div>
+<div class="line"><a id="l06023" name="l06023"></a><span class="lineno"> 6023</span>    replace_grow_helper(my_type&amp; src, <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> p, <span class="keyword">const</span> K* r, <span class="keywordtype">size_t</span> rl, <span class="keywordtype">size_t</span> mc, <span class="keywordtype">size_t</span> d, <span class="keyword">const</span> E&amp; e)</div>
+<div class="line"><a id="l06024" name="l06024"></a><span class="lineno"> 6024</span>        : <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>(src), source(src), pattern(p), repl(const_cast&lt;K*&gt;(r)), replLen(rl), maxCount(mc), delta(d), expr(e) {}</div>
+<div class="line"><a id="l06025" name="l06025"></a><span class="lineno"> 6025</span>    my_type&amp; str;</div>
+<div class="line"><a id="l06026" name="l06026"></a><span class="lineno"> 6026</span> </div>
+<div class="line"><a id="l06027" name="l06027"></a><span class="lineno"> 6027</span>    <span class="keyword">const</span> str_src&lt;K&gt; source;</div>
+<div class="line"><a id="l06028" name="l06028"></a><span class="lineno"> 6028</span>    <span class="keyword">const</span> str_src&lt;K&gt; pattern;</div>
+<div class="line"><a id="l06029" name="l06029"></a><span class="lineno"> 6029</span>    K* repl;</div>
+<div class="line"><a id="l06030" name="l06030"></a><span class="lineno"> 6030</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> replLen;</div>
+<div class="line"><a id="l06031" name="l06031"></a><span class="lineno"> 6031</span> </div>
+<div class="line"><a id="l06032" name="l06032"></a><span class="lineno"> 6032</span>    <span class="keywordtype">size_t</span> maxCount;</div>
+<div class="line"><a id="l06033" name="l06033"></a><span class="lineno"> 6033</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> delta;</div>
+<div class="line"><a id="l06034" name="l06034"></a><span class="lineno"> 6034</span>    <span class="keywordtype">size_t</span> all_delta{};</div>
+<div class="line"><a id="l06035" name="l06035"></a><span class="lineno"> 6035</span>    <span class="keyword">const</span> E&amp; expr;</div>
+<div class="line"><a id="l06036" name="l06036"></a><span class="lineno"> 6036</span> </div>
+<div class="line"><a id="l06037" name="l06037"></a><span class="lineno"> 6037</span>    K* reserve_for_copy{};</div>
+<div class="line"><a id="l06038" name="l06038"></a><span class="lineno"> 6038</span>    <span class="keywordtype">size_t</span> end_of_piece{};</div>
+<div class="line"><a id="l06039" name="l06039"></a><span class="lineno"> 6039</span>    <span class="keywordtype">size_t</span> total_length{};</div>
 <div class="line"><a id="l06040" name="l06040"></a><span class="lineno"> 6040</span> </div>
-<div class="line"><a id="l06041" name="l06041"></a><span class="lineno"> 6041</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7">replace</a>(<span class="keywordtype">size_t</span> offset) {</div>
-<div class="line"><a id="l06042" name="l06042"></a><span class="lineno"> 6042</span>        <span class="keywordtype">size_t</span> found[16] = {offset};</div>
-<div class="line"><a id="l06043" name="l06043"></a><span class="lineno"> 6043</span>        maxCount--;</div>
-<div class="line"><a id="l06044" name="l06044"></a><span class="lineno"> 6044</span> </div>
-<div class="line"><a id="l06045" name="l06045"></a><span class="lineno"> 6045</span>        offset += pattern.len;</div>
-<div class="line"><a id="l06046" name="l06046"></a><span class="lineno"> 6046</span>        all_delta += delta;</div>
-<div class="line"><a id="l06047" name="l06047"></a><span class="lineno"> 6047</span>        <span class="keywordtype">size_t</span> idx = 1;</div>
-<div class="line"><a id="l06048" name="l06048"></a><span class="lineno"> 6048</span>        <span class="keywordflow">for</span> (; idx &lt; std::size(found) &amp;&amp; maxCount &gt; 0; idx++, maxCount--) {</div>
-<div class="line"><a id="l06049" name="l06049"></a><span class="lineno"> 6049</span>            found[idx] = source.find(pattern, offset);</div>
-<div class="line"><a id="l06050" name="l06050"></a><span class="lineno"> 6050</span>            <span class="keywordflow">if</span> (found[idx] == npos) {</div>
-<div class="line"><a id="l06051" name="l06051"></a><span class="lineno"> 6051</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l06052" name="l06052"></a><span class="lineno"> 6052</span>            }</div>
-<div class="line"><a id="l06053" name="l06053"></a><span class="lineno"> 6053</span>            offset = found[idx] + pattern.len;</div>
-<div class="line"><a id="l06054" name="l06054"></a><span class="lineno"> 6054</span>            all_delta += delta;</div>
-<div class="line"><a id="l06055" name="l06055"></a><span class="lineno"> 6055</span>        }</div>
-<div class="line"><a id="l06056" name="l06056"></a><span class="lineno"> 6056</span>        <span class="keywordflow">if</span> (idx == std::size(found) &amp;&amp; maxCount &gt; 0 &amp;&amp; (offset = source.find(pattern, offset)) != str::npos) {</div>
-<div class="line"><a id="l06057" name="l06057"></a><span class="lineno"> 6057</span>            <a class="code hl_function" href="namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7">replace</a>(offset); <span class="comment">// здесь произойдут замены в оставшемся хвосте | replacements will be made here in the remaining tail</span></div>
-<div class="line"><a id="l06058" name="l06058"></a><span class="lineno"> 6058</span>        }</div>
-<div class="line"><a id="l06059" name="l06059"></a><span class="lineno"> 6059</span>        <span class="comment">// Теперь делаем свои замены</span></div>
-<div class="line"><a id="l06060" name="l06060"></a><span class="lineno"> 6060</span>        <span class="comment">// Now we make our replacements</span></div>
-<div class="line"><a id="l06061" name="l06061"></a><span class="lineno"> 6061</span>        <span class="keywordflow">if</span> (!reserve_for_copy) {</div>
-<div class="line"><a id="l06062" name="l06062"></a><span class="lineno"> 6062</span>            <span class="comment">// Только начинаем</span></div>
-<div class="line"><a id="l06063" name="l06063"></a><span class="lineno"> 6063</span>            <span class="comment">// Just getting started</span></div>
-<div class="line"><a id="l06064" name="l06064"></a><span class="lineno"> 6064</span>            end_of_piece = source.length();</div>
-<div class="line"><a id="l06065" name="l06065"></a><span class="lineno"> 6065</span>            total_length = end_of_piece + all_delta;</div>
-<div class="line"><a id="l06066" name="l06066"></a><span class="lineno"> 6066</span>            my_type* dst_str{};</div>
-<div class="line"><a id="l06067" name="l06067"></a><span class="lineno"> 6067</span>            <span class="keywordflow">if</span> (total_length &lt;= str.capacity()) {</div>
-<div class="line"><a id="l06068" name="l06068"></a><span class="lineno"> 6068</span>                <span class="comment">// Строка поместится в старое место | The line will be placed in the old location.</span></div>
-<div class="line"><a id="l06069" name="l06069"></a><span class="lineno"> 6069</span>                dst_str = &amp;str;</div>
-<div class="line"><a id="l06070" name="l06070"></a><span class="lineno"> 6070</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l06071" name="l06071"></a><span class="lineno"> 6071</span>                <span class="comment">// Будем создавать в другом буфере | We will create in another buffer.</span></div>
-<div class="line"><a id="l06072" name="l06072"></a><span class="lineno"> 6072</span>                dst_str = &amp;dst.emplace();</div>
-<div class="line"><a id="l06073" name="l06073"></a><span class="lineno"> 6073</span>            }</div>
-<div class="line"><a id="l06074" name="l06074"></a><span class="lineno"> 6074</span>            <span class="keyword">auto</span> fill = [<span class="keyword">this</span>](K* p, size_t) -&gt; <span class="keywordtype">size_t</span> {</div>
-<div class="line"><a id="l06075" name="l06075"></a><span class="lineno"> 6075</span>                reserve_for_copy = p;</div>
-<div class="line"><a id="l06076" name="l06076"></a><span class="lineno"> 6076</span>                <span class="keywordflow">return</span> total_length;</div>
-<div class="line"><a id="l06077" name="l06077"></a><span class="lineno"> 6077</span>            };</div>
-<div class="line"><a id="l06078" name="l06078"></a><span class="lineno"> 6078</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">requires</span>{dst_str-&gt;_Resize_and_overwrite(total_length, fill);}) {</div>
-<div class="line"><a id="l06079" name="l06079"></a><span class="lineno"> 6079</span>                dst_str-&gt;_Resize_and_overwrite(total_length, fill);</div>
-<div class="line"><a id="l06080" name="l06080"></a><span class="lineno"> 6080</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">requires</span>{dst_str-&gt;resize_and_overwrite(total_length, fill);}) {</div>
-<div class="line"><a id="l06081" name="l06081"></a><span class="lineno"> 6081</span>                dst_str-&gt;resize_and_overwrite(total_length, fill);</div>
-<div class="line"><a id="l06082" name="l06082"></a><span class="lineno"> 6082</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l06083" name="l06083"></a><span class="lineno"> 6083</span>                dst_str-&gt;resize(total_length);</div>
-<div class="line"><a id="l06084" name="l06084"></a><span class="lineno"> 6084</span>                reserve_for_copy = dst_str-&gt;data();</div>
-<div class="line"><a id="l06085" name="l06085"></a><span class="lineno"> 6085</span>            }</div>
-<div class="line"><a id="l06086" name="l06086"></a><span class="lineno"> 6086</span>        }</div>
-<div class="line"><a id="l06087" name="l06087"></a><span class="lineno"> 6087</span>        <span class="keyword">const</span> K* src_start = str.c_str();</div>
-<div class="line"><a id="l06088" name="l06088"></a><span class="lineno"> 6088</span>        <span class="keywordflow">while</span>(idx-- &gt; 0) {</div>
-<div class="line"><a id="l06089" name="l06089"></a><span class="lineno"> 6089</span>            <span class="keywordtype">size_t</span> pos = found[idx] + pattern.len;</div>
-<div class="line"><a id="l06090" name="l06090"></a><span class="lineno"> 6090</span>            <span class="keywordtype">size_t</span> lenOfPiece = end_of_piece - pos;</div>
-<div class="line"><a id="l06091" name="l06091"></a><span class="lineno"> 6091</span>            ch_traits&lt;K&gt;::move(reserve_for_copy + pos + all_delta, src_start + pos, lenOfPiece);</div>
-<div class="line"><a id="l06092" name="l06092"></a><span class="lineno"> 6092</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;E, int&gt;) {</div>
-<div class="line"><a id="l06093" name="l06093"></a><span class="lineno"> 6093</span>                ch_traits&lt;K&gt;::copy(reserve_for_copy + pos + all_delta - replLen, repl, replLen);</div>
-<div class="line"><a id="l06094" name="l06094"></a><span class="lineno"> 6094</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l06095" name="l06095"></a><span class="lineno"> 6095</span>                <span class="keywordflow">if</span> (!repl) {</div>
-<div class="line"><a id="l06096" name="l06096"></a><span class="lineno"> 6096</span>                    repl = reserve_for_copy + pos + all_delta - replLen;</div>
-<div class="line"><a id="l06097" name="l06097"></a><span class="lineno"> 6097</span>                    expr.place(repl);</div>
-<div class="line"><a id="l06098" name="l06098"></a><span class="lineno"> 6098</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l06099" name="l06099"></a><span class="lineno"> 6099</span>                    ch_traits&lt;K&gt;::copy(reserve_for_copy + pos + all_delta - replLen, repl, replLen);</div>
-<div class="line"><a id="l06100" name="l06100"></a><span class="lineno"> 6100</span>                }</div>
-<div class="line"><a id="l06101" name="l06101"></a><span class="lineno"> 6101</span>            }</div>
-<div class="line"><a id="l06102" name="l06102"></a><span class="lineno"> 6102</span>            all_delta -= delta;</div>
-<div class="line"><a id="l06103" name="l06103"></a><span class="lineno"> 6103</span>            end_of_piece = found[idx];</div>
-<div class="line"><a id="l06104" name="l06104"></a><span class="lineno"> 6104</span>        }</div>
-<div class="line"><a id="l06105" name="l06105"></a><span class="lineno"> 6105</span>        <span class="keywordflow">if</span> (!all_delta &amp;&amp; reserve_for_copy != src_start) {</div>
-<div class="line"><a id="l06106" name="l06106"></a><span class="lineno"> 6106</span>            ch_traits&lt;K&gt;::copy(reserve_for_copy, src_start, found[0]);</div>
-<div class="line"><a id="l06107" name="l06107"></a><span class="lineno"> 6107</span>            str = std::move(*dst);</div>
-<div class="line"><a id="l06108" name="l06108"></a><span class="lineno"> 6108</span>        }</div>
-<div class="line"><a id="l06109" name="l06109"></a><span class="lineno"> 6109</span>    }</div>
-<div class="line"><a id="l06110" name="l06110"></a><span class="lineno"> 6110</span>};</div>
-<div class="line"><a id="l06111" name="l06111"></a><span class="lineno"> 6111</span> </div>
-<div class="line"><a id="l06112" name="l06112"></a><span class="lineno"> 6112</span>} <span class="comment">// namespace details</span></div>
-<div class="line"><a id="l06113" name="l06113"></a><span class="lineno"> 6113</span></div>
-<div class="line"><a id="l06148" name="l06148"></a><span class="lineno"> 6148</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, StrExprForType&lt;K&gt; E, <span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l06149" name="l06149"></a><span class="lineno"> 6149</span><span class="keyword">requires</span> (std::is_constructible_v&lt;str_src&lt;K&gt;, T&gt;)</div>
-<div class="foldopen" id="foldopen06150" data-start="{" data-end="}">
-<div class="line"><a id="l06150" name="l06150"></a><span class="lineno"><a class="line" href="namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7"> 6150</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_function" href="namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7">replace</a>(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, T&amp;&amp; pattern, <span class="keyword">const</span> E&amp; repl, <span class="keywordtype">size_t</span> offset = 0, <span class="keywordtype">size_t</span> max_count = -1) {</div>
-<div class="line"><a id="l06151" name="l06151"></a><span class="lineno"> 6151</span>    <span class="keywordflow">if</span> (!max_count) {</div>
-<div class="line"><a id="l06152" name="l06152"></a><span class="lineno"> 6152</span>        <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
-<div class="line"><a id="l06153" name="l06153"></a><span class="lineno"> 6153</span>    }</div>
-<div class="line"><a id="l06154" name="l06154"></a><span class="lineno"> 6154</span>    <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> src = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
-<div class="line"><a id="l06155" name="l06155"></a><span class="lineno"> 6155</span>    <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> spattern{std::forward&lt;T&gt;(pattern)};</div>
-<div class="line"><a id="l06156" name="l06156"></a><span class="lineno"> 6156</span>    offset = src.find(pattern, offset);</div>
-<div class="line"><a id="l06157" name="l06157"></a><span class="lineno"> 6157</span>    <span class="keywordflow">if</span> (offset == npos) {</div>
-<div class="line"><a id="l06158" name="l06158"></a><span class="lineno"> 6158</span>        <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
-<div class="line"><a id="l06159" name="l06159"></a><span class="lineno"> 6159</span>    }</div>
-<div class="line"><a id="l06160" name="l06160"></a><span class="lineno"> 6160</span>    <span class="keywordtype">size_t</span> replLen = repl.length();</div>
-<div class="line"><a id="l06161" name="l06161"></a><span class="lineno"> 6161</span>    K* replStart{};</div>
-<div class="line"><a id="l06162" name="l06162"></a><span class="lineno"> 6162</span>    <span class="keywordflow">if</span> (spattern.len == replLen) {</div>
-<div class="line"><a id="l06163" name="l06163"></a><span class="lineno"> 6163</span>        <span class="comment">// Заменяем inplace на подстроку такой же длины</span></div>
-<div class="line"><a id="l06164" name="l06164"></a><span class="lineno"> 6164</span>        <span class="comment">// Replace inplace with a substring of the same length</span></div>
-<div class="line"><a id="l06165" name="l06165"></a><span class="lineno"> 6165</span>        K* ptr = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.data();</div>
-<div class="line"><a id="l06166" name="l06166"></a><span class="lineno"> 6166</span>        replStart = ptr + offset;</div>
-<div class="line"><a id="l06167" name="l06167"></a><span class="lineno"> 6167</span>        repl.place(replStart);</div>
-<div class="line"><a id="l06168" name="l06168"></a><span class="lineno"> 6168</span> </div>
-<div class="line"><a id="l06169" name="l06169"></a><span class="lineno"> 6169</span>        <span class="keywordflow">while</span> (--max_count) {</div>
-<div class="line"><a id="l06170" name="l06170"></a><span class="lineno"> 6170</span>            offset = src.find(spattern, offset + replLen);</div>
-<div class="line"><a id="l06171" name="l06171"></a><span class="lineno"> 6171</span>            <span class="keywordflow">if</span> (offset == npos)</div>
-<div class="line"><a id="l06172" name="l06172"></a><span class="lineno"> 6172</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l06173" name="l06173"></a><span class="lineno"> 6173</span>            ch_traits&lt;K&gt;::copy(ptr + offset, replStart, replLen);</div>
-<div class="line"><a id="l06174" name="l06174"></a><span class="lineno"> 6174</span>        }</div>
-<div class="line"><a id="l06175" name="l06175"></a><span class="lineno"> 6175</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (spattern.len &gt; replLen) {</div>
-<div class="line"><a id="l06176" name="l06176"></a><span class="lineno"> 6176</span>        <span class="comment">// Заменяем на более короткий кусок, длина текста уменьшится, идём слева направо</span></div>
-<div class="line"><a id="l06177" name="l06177"></a><span class="lineno"> 6177</span>        <span class="comment">// Replace with a shorter piece, the length of the text will decrease, go from left to right</span></div>
-<div class="line"><a id="l06178" name="l06178"></a><span class="lineno"> 6178</span>        K* ptr = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.data();</div>
-<div class="line"><a id="l06179" name="l06179"></a><span class="lineno"> 6179</span>        replStart = ptr + offset;</div>
-<div class="line"><a id="l06180" name="l06180"></a><span class="lineno"> 6180</span>        repl.place(replStart);</div>
-<div class="line"><a id="l06181" name="l06181"></a><span class="lineno"> 6181</span>        <span class="keywordtype">size_t</span> posWrite = offset + replLen;</div>
-<div class="line"><a id="l06182" name="l06182"></a><span class="lineno"> 6182</span>        offset += spattern.len;</div>
-<div class="line"><a id="l06183" name="l06183"></a><span class="lineno"> 6183</span> </div>
-<div class="line"><a id="l06184" name="l06184"></a><span class="lineno"> 6184</span>        <span class="keywordflow">while</span> (--max_count) {</div>
-<div class="line"><a id="l06185" name="l06185"></a><span class="lineno"> 6185</span>            <span class="keywordtype">size_t</span> idx = src.find(spattern, offset);</div>
-<div class="line"><a id="l06186" name="l06186"></a><span class="lineno"> 6186</span>            <span class="keywordflow">if</span> (idx == npos)</div>
-<div class="line"><a id="l06187" name="l06187"></a><span class="lineno"> 6187</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l06188" name="l06188"></a><span class="lineno"> 6188</span>            <span class="keywordtype">size_t</span> lenOfPiece = idx - offset;</div>
-<div class="line"><a id="l06189" name="l06189"></a><span class="lineno"> 6189</span>            ch_traits&lt;K&gt;::move(ptr + posWrite, ptr + offset, lenOfPiece);</div>
-<div class="line"><a id="l06190" name="l06190"></a><span class="lineno"> 6190</span>            posWrite += lenOfPiece;</div>
-<div class="line"><a id="l06191" name="l06191"></a><span class="lineno"> 6191</span>            ch_traits&lt;K&gt;::copy(ptr + posWrite, replStart, replLen);</div>
-<div class="line"><a id="l06192" name="l06192"></a><span class="lineno"> 6192</span>            posWrite += replLen;</div>
-<div class="line"><a id="l06193" name="l06193"></a><span class="lineno"> 6193</span>            offset = idx + spattern.len;</div>
-<div class="line"><a id="l06194" name="l06194"></a><span class="lineno"> 6194</span>        }</div>
-<div class="line"><a id="l06195" name="l06195"></a><span class="lineno"> 6195</span>        <span class="keywordtype">size_t</span> tailLen = src.len - offset;</div>
-<div class="line"><a id="l06196" name="l06196"></a><span class="lineno"> 6196</span>        ch_traits&lt;K&gt;::move(ptr + posWrite, ptr + offset, tailLen);</div>
-<div class="line"><a id="l06197" name="l06197"></a><span class="lineno"> 6197</span>        <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.resize(posWrite + tailLen);</div>
-<div class="line"><a id="l06198" name="l06198"></a><span class="lineno"> 6198</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l06199" name="l06199"></a><span class="lineno"> 6199</span>        details::replace_grow_helper&lt;K, A, E&gt;(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, spattern, <span class="keyword">nullptr</span>, replLen, max_count, replLen - spattern.len, repl).replace(offset);</div>
-<div class="line"><a id="l06200" name="l06200"></a><span class="lineno"> 6200</span>    }</div>
-<div class="line"><a id="l06201" name="l06201"></a><span class="lineno"> 6201</span>    <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
-<div class="line"><a id="l06202" name="l06202"></a><span class="lineno"> 6202</span>}</div>
+<div class="line"><a id="l06041" name="l06041"></a><span class="lineno"> 6041</span>    std::optional&lt;my_type&gt; dst;</div>
+<div class="line"><a id="l06042" name="l06042"></a><span class="lineno"> 6042</span> </div>
+<div class="line"><a id="l06043" name="l06043"></a><span class="lineno"> 6043</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7">replace</a>(<span class="keywordtype">size_t</span> offset) {</div>
+<div class="line"><a id="l06044" name="l06044"></a><span class="lineno"> 6044</span>        <span class="keywordtype">size_t</span> found[16] = {offset};</div>
+<div class="line"><a id="l06045" name="l06045"></a><span class="lineno"> 6045</span>        maxCount--;</div>
+<div class="line"><a id="l06046" name="l06046"></a><span class="lineno"> 6046</span> </div>
+<div class="line"><a id="l06047" name="l06047"></a><span class="lineno"> 6047</span>        offset += pattern.len;</div>
+<div class="line"><a id="l06048" name="l06048"></a><span class="lineno"> 6048</span>        all_delta += delta;</div>
+<div class="line"><a id="l06049" name="l06049"></a><span class="lineno"> 6049</span>        <span class="keywordtype">size_t</span> idx = 1;</div>
+<div class="line"><a id="l06050" name="l06050"></a><span class="lineno"> 6050</span>        <span class="keywordflow">for</span> (; idx &lt; std::size(found) &amp;&amp; maxCount &gt; 0; idx++, maxCount--) {</div>
+<div class="line"><a id="l06051" name="l06051"></a><span class="lineno"> 6051</span>            found[idx] = source.find(pattern, offset);</div>
+<div class="line"><a id="l06052" name="l06052"></a><span class="lineno"> 6052</span>            <span class="keywordflow">if</span> (found[idx] == npos) {</div>
+<div class="line"><a id="l06053" name="l06053"></a><span class="lineno"> 6053</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l06054" name="l06054"></a><span class="lineno"> 6054</span>            }</div>
+<div class="line"><a id="l06055" name="l06055"></a><span class="lineno"> 6055</span>            offset = found[idx] + pattern.len;</div>
+<div class="line"><a id="l06056" name="l06056"></a><span class="lineno"> 6056</span>            all_delta += delta;</div>
+<div class="line"><a id="l06057" name="l06057"></a><span class="lineno"> 6057</span>        }</div>
+<div class="line"><a id="l06058" name="l06058"></a><span class="lineno"> 6058</span>        <span class="keywordflow">if</span> (idx == std::size(found) &amp;&amp; maxCount &gt; 0 &amp;&amp; (offset = source.find(pattern, offset)) != str::npos) {</div>
+<div class="line"><a id="l06059" name="l06059"></a><span class="lineno"> 6059</span>            <a class="code hl_function" href="namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7">replace</a>(offset); <span class="comment">// здесь произойдут замены в оставшемся хвосте | replacements will be made here in the remaining tail</span></div>
+<div class="line"><a id="l06060" name="l06060"></a><span class="lineno"> 6060</span>        }</div>
+<div class="line"><a id="l06061" name="l06061"></a><span class="lineno"> 6061</span>        <span class="comment">// Теперь делаем свои замены</span></div>
+<div class="line"><a id="l06062" name="l06062"></a><span class="lineno"> 6062</span>        <span class="comment">// Now we make our replacements</span></div>
+<div class="line"><a id="l06063" name="l06063"></a><span class="lineno"> 6063</span>        <span class="keywordflow">if</span> (!reserve_for_copy) {</div>
+<div class="line"><a id="l06064" name="l06064"></a><span class="lineno"> 6064</span>            <span class="comment">// Только начинаем</span></div>
+<div class="line"><a id="l06065" name="l06065"></a><span class="lineno"> 6065</span>            <span class="comment">// Just getting started</span></div>
+<div class="line"><a id="l06066" name="l06066"></a><span class="lineno"> 6066</span>            end_of_piece = source.length();</div>
+<div class="line"><a id="l06067" name="l06067"></a><span class="lineno"> 6067</span>            total_length = end_of_piece + all_delta;</div>
+<div class="line"><a id="l06068" name="l06068"></a><span class="lineno"> 6068</span>            my_type* dst_str{};</div>
+<div class="line"><a id="l06069" name="l06069"></a><span class="lineno"> 6069</span>            <span class="keywordflow">if</span> (total_length &lt;= str.capacity()) {</div>
+<div class="line"><a id="l06070" name="l06070"></a><span class="lineno"> 6070</span>                <span class="comment">// Строка поместится в старое место | The line will be placed in the old location.</span></div>
+<div class="line"><a id="l06071" name="l06071"></a><span class="lineno"> 6071</span>                dst_str = &amp;str;</div>
+<div class="line"><a id="l06072" name="l06072"></a><span class="lineno"> 6072</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l06073" name="l06073"></a><span class="lineno"> 6073</span>                <span class="comment">// Будем создавать в другом буфере | We will create in another buffer.</span></div>
+<div class="line"><a id="l06074" name="l06074"></a><span class="lineno"> 6074</span>                dst_str = &amp;dst.emplace();</div>
+<div class="line"><a id="l06075" name="l06075"></a><span class="lineno"> 6075</span>            }</div>
+<div class="line"><a id="l06076" name="l06076"></a><span class="lineno"> 6076</span>            <span class="keyword">auto</span> fill = [<span class="keyword">this</span>](K* p, size_t) -&gt; <span class="keywordtype">size_t</span> {</div>
+<div class="line"><a id="l06077" name="l06077"></a><span class="lineno"> 6077</span>                reserve_for_copy = p;</div>
+<div class="line"><a id="l06078" name="l06078"></a><span class="lineno"> 6078</span>                <span class="keywordflow">return</span> total_length;</div>
+<div class="line"><a id="l06079" name="l06079"></a><span class="lineno"> 6079</span>            };</div>
+<div class="line"><a id="l06080" name="l06080"></a><span class="lineno"> 6080</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">requires</span>{dst_str-&gt;_Resize_and_overwrite(total_length, fill);}) {</div>
+<div class="line"><a id="l06081" name="l06081"></a><span class="lineno"> 6081</span>                dst_str-&gt;_Resize_and_overwrite(total_length, fill);</div>
+<div class="line"><a id="l06082" name="l06082"></a><span class="lineno"> 6082</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">requires</span>{dst_str-&gt;resize_and_overwrite(total_length, fill);}) {</div>
+<div class="line"><a id="l06083" name="l06083"></a><span class="lineno"> 6083</span>                dst_str-&gt;resize_and_overwrite(total_length, fill);</div>
+<div class="line"><a id="l06084" name="l06084"></a><span class="lineno"> 6084</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l06085" name="l06085"></a><span class="lineno"> 6085</span>                dst_str-&gt;resize(total_length);</div>
+<div class="line"><a id="l06086" name="l06086"></a><span class="lineno"> 6086</span>                reserve_for_copy = dst_str-&gt;data();</div>
+<div class="line"><a id="l06087" name="l06087"></a><span class="lineno"> 6087</span>            }</div>
+<div class="line"><a id="l06088" name="l06088"></a><span class="lineno"> 6088</span>        }</div>
+<div class="line"><a id="l06089" name="l06089"></a><span class="lineno"> 6089</span>        <span class="keyword">const</span> K* src_start = str.c_str();</div>
+<div class="line"><a id="l06090" name="l06090"></a><span class="lineno"> 6090</span>        <span class="keywordflow">while</span>(idx-- &gt; 0) {</div>
+<div class="line"><a id="l06091" name="l06091"></a><span class="lineno"> 6091</span>            <span class="keywordtype">size_t</span> pos = found[idx] + pattern.len;</div>
+<div class="line"><a id="l06092" name="l06092"></a><span class="lineno"> 6092</span>            <span class="keywordtype">size_t</span> lenOfPiece = end_of_piece - pos;</div>
+<div class="line"><a id="l06093" name="l06093"></a><span class="lineno"> 6093</span>            ch_traits&lt;K&gt;::move(reserve_for_copy + pos + all_delta, src_start + pos, lenOfPiece);</div>
+<div class="line"><a id="l06094" name="l06094"></a><span class="lineno"> 6094</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;E, int&gt;) {</div>
+<div class="line"><a id="l06095" name="l06095"></a><span class="lineno"> 6095</span>                ch_traits&lt;K&gt;::copy(reserve_for_copy + pos + all_delta - replLen, repl, replLen);</div>
+<div class="line"><a id="l06096" name="l06096"></a><span class="lineno"> 6096</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l06097" name="l06097"></a><span class="lineno"> 6097</span>                <span class="keywordflow">if</span> (!repl) {</div>
+<div class="line"><a id="l06098" name="l06098"></a><span class="lineno"> 6098</span>                    repl = reserve_for_copy + pos + all_delta - replLen;</div>
+<div class="line"><a id="l06099" name="l06099"></a><span class="lineno"> 6099</span>                    expr.place(repl);</div>
+<div class="line"><a id="l06100" name="l06100"></a><span class="lineno"> 6100</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l06101" name="l06101"></a><span class="lineno"> 6101</span>                    ch_traits&lt;K&gt;::copy(reserve_for_copy + pos + all_delta - replLen, repl, replLen);</div>
+<div class="line"><a id="l06102" name="l06102"></a><span class="lineno"> 6102</span>                }</div>
+<div class="line"><a id="l06103" name="l06103"></a><span class="lineno"> 6103</span>            }</div>
+<div class="line"><a id="l06104" name="l06104"></a><span class="lineno"> 6104</span>            all_delta -= delta;</div>
+<div class="line"><a id="l06105" name="l06105"></a><span class="lineno"> 6105</span>            end_of_piece = found[idx];</div>
+<div class="line"><a id="l06106" name="l06106"></a><span class="lineno"> 6106</span>        }</div>
+<div class="line"><a id="l06107" name="l06107"></a><span class="lineno"> 6107</span>        <span class="keywordflow">if</span> (!all_delta &amp;&amp; reserve_for_copy != src_start) {</div>
+<div class="line"><a id="l06108" name="l06108"></a><span class="lineno"> 6108</span>            ch_traits&lt;K&gt;::copy(reserve_for_copy, src_start, found[0]);</div>
+<div class="line"><a id="l06109" name="l06109"></a><span class="lineno"> 6109</span>            str = std::move(*dst);</div>
+<div class="line"><a id="l06110" name="l06110"></a><span class="lineno"> 6110</span>        }</div>
+<div class="line"><a id="l06111" name="l06111"></a><span class="lineno"> 6111</span>    }</div>
+<div class="line"><a id="l06112" name="l06112"></a><span class="lineno"> 6112</span>};</div>
+<div class="line"><a id="l06113" name="l06113"></a><span class="lineno"> 6113</span> </div>
+<div class="line"><a id="l06114" name="l06114"></a><span class="lineno"> 6114</span>} <span class="comment">// namespace details</span></div>
+<div class="line"><a id="l06115" name="l06115"></a><span class="lineno"> 6115</span></div>
+<div class="line"><a id="l06150" name="l06150"></a><span class="lineno"> 6150</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, StrExprForType&lt;K&gt; E, <span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l06151" name="l06151"></a><span class="lineno"> 6151</span><span class="keyword">requires</span> (std::is_constructible_v&lt;str_src&lt;K&gt;, T&gt;)</div>
+<div class="foldopen" id="foldopen06152" data-start="{" data-end="}">
+<div class="line"><a id="l06152" name="l06152"></a><span class="lineno"><a class="line" href="namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7"> 6152</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_function" href="namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7">replace</a>(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, T&amp;&amp; pattern, <span class="keyword">const</span> E&amp; repl, <span class="keywordtype">size_t</span> offset = 0, <span class="keywordtype">size_t</span> max_count = -1) {</div>
+<div class="line"><a id="l06153" name="l06153"></a><span class="lineno"> 6153</span>    <span class="keywordflow">if</span> (!max_count) {</div>
+<div class="line"><a id="l06154" name="l06154"></a><span class="lineno"> 6154</span>        <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
+<div class="line"><a id="l06155" name="l06155"></a><span class="lineno"> 6155</span>    }</div>
+<div class="line"><a id="l06156" name="l06156"></a><span class="lineno"> 6156</span>    <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> src = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
+<div class="line"><a id="l06157" name="l06157"></a><span class="lineno"> 6157</span>    <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> spattern{std::forward&lt;T&gt;(pattern)};</div>
+<div class="line"><a id="l06158" name="l06158"></a><span class="lineno"> 6158</span>    offset = src.find(pattern, offset);</div>
+<div class="line"><a id="l06159" name="l06159"></a><span class="lineno"> 6159</span>    <span class="keywordflow">if</span> (offset == npos) {</div>
+<div class="line"><a id="l06160" name="l06160"></a><span class="lineno"> 6160</span>        <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
+<div class="line"><a id="l06161" name="l06161"></a><span class="lineno"> 6161</span>    }</div>
+<div class="line"><a id="l06162" name="l06162"></a><span class="lineno"> 6162</span>    <span class="keywordtype">size_t</span> replLen = repl.length();</div>
+<div class="line"><a id="l06163" name="l06163"></a><span class="lineno"> 6163</span>    K* replStart{};</div>
+<div class="line"><a id="l06164" name="l06164"></a><span class="lineno"> 6164</span>    <span class="keywordflow">if</span> (spattern.len == replLen) {</div>
+<div class="line"><a id="l06165" name="l06165"></a><span class="lineno"> 6165</span>        <span class="comment">// Заменяем inplace на подстроку такой же длины</span></div>
+<div class="line"><a id="l06166" name="l06166"></a><span class="lineno"> 6166</span>        <span class="comment">// Replace inplace with a substring of the same length</span></div>
+<div class="line"><a id="l06167" name="l06167"></a><span class="lineno"> 6167</span>        K* ptr = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.data();</div>
+<div class="line"><a id="l06168" name="l06168"></a><span class="lineno"> 6168</span>        replStart = ptr + offset;</div>
+<div class="line"><a id="l06169" name="l06169"></a><span class="lineno"> 6169</span>        repl.place(replStart);</div>
+<div class="line"><a id="l06170" name="l06170"></a><span class="lineno"> 6170</span> </div>
+<div class="line"><a id="l06171" name="l06171"></a><span class="lineno"> 6171</span>        <span class="keywordflow">while</span> (--max_count) {</div>
+<div class="line"><a id="l06172" name="l06172"></a><span class="lineno"> 6172</span>            offset = src.find(spattern, offset + replLen);</div>
+<div class="line"><a id="l06173" name="l06173"></a><span class="lineno"> 6173</span>            <span class="keywordflow">if</span> (offset == npos)</div>
+<div class="line"><a id="l06174" name="l06174"></a><span class="lineno"> 6174</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l06175" name="l06175"></a><span class="lineno"> 6175</span>            ch_traits&lt;K&gt;::copy(ptr + offset, replStart, replLen);</div>
+<div class="line"><a id="l06176" name="l06176"></a><span class="lineno"> 6176</span>        }</div>
+<div class="line"><a id="l06177" name="l06177"></a><span class="lineno"> 6177</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (spattern.len &gt; replLen) {</div>
+<div class="line"><a id="l06178" name="l06178"></a><span class="lineno"> 6178</span>        <span class="comment">// Заменяем на более короткий кусок, длина текста уменьшится, идём слева направо</span></div>
+<div class="line"><a id="l06179" name="l06179"></a><span class="lineno"> 6179</span>        <span class="comment">// Replace with a shorter piece, the length of the text will decrease, go from left to right</span></div>
+<div class="line"><a id="l06180" name="l06180"></a><span class="lineno"> 6180</span>        K* ptr = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.data();</div>
+<div class="line"><a id="l06181" name="l06181"></a><span class="lineno"> 6181</span>        replStart = ptr + offset;</div>
+<div class="line"><a id="l06182" name="l06182"></a><span class="lineno"> 6182</span>        repl.place(replStart);</div>
+<div class="line"><a id="l06183" name="l06183"></a><span class="lineno"> 6183</span>        <span class="keywordtype">size_t</span> posWrite = offset + replLen;</div>
+<div class="line"><a id="l06184" name="l06184"></a><span class="lineno"> 6184</span>        offset += spattern.len;</div>
+<div class="line"><a id="l06185" name="l06185"></a><span class="lineno"> 6185</span> </div>
+<div class="line"><a id="l06186" name="l06186"></a><span class="lineno"> 6186</span>        <span class="keywordflow">while</span> (--max_count) {</div>
+<div class="line"><a id="l06187" name="l06187"></a><span class="lineno"> 6187</span>            <span class="keywordtype">size_t</span> idx = src.find(spattern, offset);</div>
+<div class="line"><a id="l06188" name="l06188"></a><span class="lineno"> 6188</span>            <span class="keywordflow">if</span> (idx == npos)</div>
+<div class="line"><a id="l06189" name="l06189"></a><span class="lineno"> 6189</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l06190" name="l06190"></a><span class="lineno"> 6190</span>            <span class="keywordtype">size_t</span> lenOfPiece = idx - offset;</div>
+<div class="line"><a id="l06191" name="l06191"></a><span class="lineno"> 6191</span>            ch_traits&lt;K&gt;::move(ptr + posWrite, ptr + offset, lenOfPiece);</div>
+<div class="line"><a id="l06192" name="l06192"></a><span class="lineno"> 6192</span>            posWrite += lenOfPiece;</div>
+<div class="line"><a id="l06193" name="l06193"></a><span class="lineno"> 6193</span>            ch_traits&lt;K&gt;::copy(ptr + posWrite, replStart, replLen);</div>
+<div class="line"><a id="l06194" name="l06194"></a><span class="lineno"> 6194</span>            posWrite += replLen;</div>
+<div class="line"><a id="l06195" name="l06195"></a><span class="lineno"> 6195</span>            offset = idx + spattern.len;</div>
+<div class="line"><a id="l06196" name="l06196"></a><span class="lineno"> 6196</span>        }</div>
+<div class="line"><a id="l06197" name="l06197"></a><span class="lineno"> 6197</span>        <span class="keywordtype">size_t</span> tailLen = src.len - offset;</div>
+<div class="line"><a id="l06198" name="l06198"></a><span class="lineno"> 6198</span>        ch_traits&lt;K&gt;::move(ptr + posWrite, ptr + offset, tailLen);</div>
+<div class="line"><a id="l06199" name="l06199"></a><span class="lineno"> 6199</span>        <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.resize(posWrite + tailLen);</div>
+<div class="line"><a id="l06200" name="l06200"></a><span class="lineno"> 6200</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l06201" name="l06201"></a><span class="lineno"> 6201</span>        details::replace_grow_helper&lt;K, A, E&gt;(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, spattern, <span class="keyword">nullptr</span>, replLen, max_count, replLen - spattern.len, repl).replace(offset);</div>
+<div class="line"><a id="l06202" name="l06202"></a><span class="lineno"> 6202</span>    }</div>
+<div class="line"><a id="l06203" name="l06203"></a><span class="lineno"> 6203</span>    <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
+<div class="line"><a id="l06204" name="l06204"></a><span class="lineno"> 6204</span>}</div>
 </div>
-<div class="line"><a id="l06203" name="l06203"></a><span class="lineno"> 6203</span></div>
-<div class="line"><a id="l06224" name="l06224"></a><span class="lineno"> 6224</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A&gt;</div>
-<div class="foldopen" id="foldopen06225" data-start="{" data-end="}">
-<div class="line"><a id="l06225" name="l06225"></a><span class="lineno"><a class="line" href="namespacesimstr_1_1str.html#a0be21b9e8525cd67515fb5a2dc78c6ba"> 6225</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_function" href="namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7">replace</a>(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> pattern, <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> repl, <span class="keywordtype">size_t</span> offset = 0, <span class="keywordtype">size_t</span> max_count = -1) {</div>
-<div class="line"><a id="l06226" name="l06226"></a><span class="lineno"> 6226</span>    <span class="keywordflow">if</span> (!max_count) {</div>
-<div class="line"><a id="l06227" name="l06227"></a><span class="lineno"> 6227</span>        <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
-<div class="line"><a id="l06228" name="l06228"></a><span class="lineno"> 6228</span>    }</div>
-<div class="line"><a id="l06229" name="l06229"></a><span class="lineno"> 6229</span>    <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> src = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
-<div class="line"><a id="l06230" name="l06230"></a><span class="lineno"> 6230</span>    offset = src.find(pattern, offset);</div>
-<div class="line"><a id="l06231" name="l06231"></a><span class="lineno"> 6231</span>    <span class="keywordflow">if</span> (offset == npos) {</div>
-<div class="line"><a id="l06232" name="l06232"></a><span class="lineno"> 6232</span>        <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
-<div class="line"><a id="l06233" name="l06233"></a><span class="lineno"> 6233</span>    }</div>
-<div class="line"><a id="l06234" name="l06234"></a><span class="lineno"> 6234</span>    <span class="keywordflow">if</span> (pattern.len == repl.len) {</div>
-<div class="line"><a id="l06235" name="l06235"></a><span class="lineno"> 6235</span>        <span class="comment">// Заменяем inplace на подстроку такой же длины</span></div>
-<div class="line"><a id="l06236" name="l06236"></a><span class="lineno"> 6236</span>        <span class="comment">// Replace inplace with a substring of the same length</span></div>
-<div class="line"><a id="l06237" name="l06237"></a><span class="lineno"> 6237</span>        K* ptr = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.data();</div>
-<div class="line"><a id="l06238" name="l06238"></a><span class="lineno"> 6238</span>        <span class="keywordflow">while</span> (max_count--) {</div>
-<div class="line"><a id="l06239" name="l06239"></a><span class="lineno"> 6239</span>            ch_traits&lt;K&gt;::copy(ptr + offset, repl.str, repl.len);</div>
-<div class="line"><a id="l06240" name="l06240"></a><span class="lineno"> 6240</span>            offset = src.find(pattern, offset + repl.len);</div>
-<div class="line"><a id="l06241" name="l06241"></a><span class="lineno"> 6241</span>            <span class="keywordflow">if</span> (offset == npos)</div>
-<div class="line"><a id="l06242" name="l06242"></a><span class="lineno"> 6242</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l06243" name="l06243"></a><span class="lineno"> 6243</span>        }</div>
-<div class="line"><a id="l06244" name="l06244"></a><span class="lineno"> 6244</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pattern.len &gt; repl.len) {</div>
-<div class="line"><a id="l06245" name="l06245"></a><span class="lineno"> 6245</span>        <span class="comment">// Заменяем на более короткий кусок, длина текста уменьшится, идём слева направо</span></div>
-<div class="line"><a id="l06246" name="l06246"></a><span class="lineno"> 6246</span>        <span class="comment">// Replace with a shorter piece, the length of the text will decrease, go from left to right</span></div>
-<div class="line"><a id="l06247" name="l06247"></a><span class="lineno"> 6247</span>        K* ptr = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.data();</div>
-<div class="line"><a id="l06248" name="l06248"></a><span class="lineno"> 6248</span>        ch_traits&lt;K&gt;::copy(ptr + offset, repl.str, repl.len);</div>
-<div class="line"><a id="l06249" name="l06249"></a><span class="lineno"> 6249</span>        <span class="keywordtype">size_t</span> posWrite = offset + repl.len;</div>
-<div class="line"><a id="l06250" name="l06250"></a><span class="lineno"> 6250</span>        offset += pattern.len;</div>
-<div class="line"><a id="l06251" name="l06251"></a><span class="lineno"> 6251</span> </div>
-<div class="line"><a id="l06252" name="l06252"></a><span class="lineno"> 6252</span>        <span class="keywordflow">while</span> (--max_count) {</div>
-<div class="line"><a id="l06253" name="l06253"></a><span class="lineno"> 6253</span>            <span class="keywordtype">size_t</span> idx = src.find(pattern, offset);</div>
-<div class="line"><a id="l06254" name="l06254"></a><span class="lineno"> 6254</span>            <span class="keywordflow">if</span> (idx == npos)</div>
-<div class="line"><a id="l06255" name="l06255"></a><span class="lineno"> 6255</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l06256" name="l06256"></a><span class="lineno"> 6256</span>            <span class="keywordtype">size_t</span> lenOfPiece = idx - offset;</div>
-<div class="line"><a id="l06257" name="l06257"></a><span class="lineno"> 6257</span>            ch_traits&lt;K&gt;::move(ptr + posWrite, ptr + offset, lenOfPiece);</div>
-<div class="line"><a id="l06258" name="l06258"></a><span class="lineno"> 6258</span>            posWrite += lenOfPiece;</div>
-<div class="line"><a id="l06259" name="l06259"></a><span class="lineno"> 6259</span>            ch_traits&lt;K&gt;::copy(ptr + posWrite, repl.str, repl.len);</div>
-<div class="line"><a id="l06260" name="l06260"></a><span class="lineno"> 6260</span>            posWrite += repl.len;</div>
-<div class="line"><a id="l06261" name="l06261"></a><span class="lineno"> 6261</span>            offset = idx + pattern.len;</div>
-<div class="line"><a id="l06262" name="l06262"></a><span class="lineno"> 6262</span>        }</div>
-<div class="line"><a id="l06263" name="l06263"></a><span class="lineno"> 6263</span>        <span class="keywordtype">size_t</span> tailLen = src.len - offset;</div>
-<div class="line"><a id="l06264" name="l06264"></a><span class="lineno"> 6264</span>        ch_traits&lt;K&gt;::move(ptr + posWrite, ptr + offset, tailLen);</div>
-<div class="line"><a id="l06265" name="l06265"></a><span class="lineno"> 6265</span>        <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.resize(posWrite + tailLen);</div>
-<div class="line"><a id="l06266" name="l06266"></a><span class="lineno"> 6266</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l06267" name="l06267"></a><span class="lineno"> 6267</span>        details::replace_grow_helper&lt;K, A, int&gt;(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, pattern, repl.str, repl.len, max_count, repl.len - pattern.len, 0).replace(offset);</div>
-<div class="line"><a id="l06268" name="l06268"></a><span class="lineno"> 6268</span>    }</div>
-<div class="line"><a id="l06269" name="l06269"></a><span class="lineno"> 6269</span>    <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
-<div class="line"><a id="l06270" name="l06270"></a><span class="lineno"> 6270</span>}</div>
+<div class="line"><a id="l06205" name="l06205"></a><span class="lineno"> 6205</span></div>
+<div class="line"><a id="l06226" name="l06226"></a><span class="lineno"> 6226</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A&gt;</div>
+<div class="foldopen" id="foldopen06227" data-start="{" data-end="}">
+<div class="line"><a id="l06227" name="l06227"></a><span class="lineno"><a class="line" href="namespacesimstr_1_1str.html#a0be21b9e8525cd67515fb5a2dc78c6ba"> 6227</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_function" href="namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7">replace</a>(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> pattern, <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> repl, <span class="keywordtype">size_t</span> offset = 0, <span class="keywordtype">size_t</span> max_count = -1) {</div>
+<div class="line"><a id="l06228" name="l06228"></a><span class="lineno"> 6228</span>    <span class="keywordflow">if</span> (!max_count) {</div>
+<div class="line"><a id="l06229" name="l06229"></a><span class="lineno"> 6229</span>        <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
+<div class="line"><a id="l06230" name="l06230"></a><span class="lineno"> 6230</span>    }</div>
+<div class="line"><a id="l06231" name="l06231"></a><span class="lineno"> 6231</span>    <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> src = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
+<div class="line"><a id="l06232" name="l06232"></a><span class="lineno"> 6232</span>    offset = src.find(pattern, offset);</div>
+<div class="line"><a id="l06233" name="l06233"></a><span class="lineno"> 6233</span>    <span class="keywordflow">if</span> (offset == npos) {</div>
+<div class="line"><a id="l06234" name="l06234"></a><span class="lineno"> 6234</span>        <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
+<div class="line"><a id="l06235" name="l06235"></a><span class="lineno"> 6235</span>    }</div>
+<div class="line"><a id="l06236" name="l06236"></a><span class="lineno"> 6236</span>    <span class="keywordflow">if</span> (pattern.len == repl.len) {</div>
+<div class="line"><a id="l06237" name="l06237"></a><span class="lineno"> 6237</span>        <span class="comment">// Заменяем inplace на подстроку такой же длины</span></div>
+<div class="line"><a id="l06238" name="l06238"></a><span class="lineno"> 6238</span>        <span class="comment">// Replace inplace with a substring of the same length</span></div>
+<div class="line"><a id="l06239" name="l06239"></a><span class="lineno"> 6239</span>        K* ptr = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.data();</div>
+<div class="line"><a id="l06240" name="l06240"></a><span class="lineno"> 6240</span>        <span class="keywordflow">while</span> (max_count--) {</div>
+<div class="line"><a id="l06241" name="l06241"></a><span class="lineno"> 6241</span>            ch_traits&lt;K&gt;::copy(ptr + offset, repl.str, repl.len);</div>
+<div class="line"><a id="l06242" name="l06242"></a><span class="lineno"> 6242</span>            offset = src.find(pattern, offset + repl.len);</div>
+<div class="line"><a id="l06243" name="l06243"></a><span class="lineno"> 6243</span>            <span class="keywordflow">if</span> (offset == npos)</div>
+<div class="line"><a id="l06244" name="l06244"></a><span class="lineno"> 6244</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l06245" name="l06245"></a><span class="lineno"> 6245</span>        }</div>
+<div class="line"><a id="l06246" name="l06246"></a><span class="lineno"> 6246</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pattern.len &gt; repl.len) {</div>
+<div class="line"><a id="l06247" name="l06247"></a><span class="lineno"> 6247</span>        <span class="comment">// Заменяем на более короткий кусок, длина текста уменьшится, идём слева направо</span></div>
+<div class="line"><a id="l06248" name="l06248"></a><span class="lineno"> 6248</span>        <span class="comment">// Replace with a shorter piece, the length of the text will decrease, go from left to right</span></div>
+<div class="line"><a id="l06249" name="l06249"></a><span class="lineno"> 6249</span>        K* ptr = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.data();</div>
+<div class="line"><a id="l06250" name="l06250"></a><span class="lineno"> 6250</span>        ch_traits&lt;K&gt;::copy(ptr + offset, repl.str, repl.len);</div>
+<div class="line"><a id="l06251" name="l06251"></a><span class="lineno"> 6251</span>        <span class="keywordtype">size_t</span> posWrite = offset + repl.len;</div>
+<div class="line"><a id="l06252" name="l06252"></a><span class="lineno"> 6252</span>        offset += pattern.len;</div>
+<div class="line"><a id="l06253" name="l06253"></a><span class="lineno"> 6253</span> </div>
+<div class="line"><a id="l06254" name="l06254"></a><span class="lineno"> 6254</span>        <span class="keywordflow">while</span> (--max_count) {</div>
+<div class="line"><a id="l06255" name="l06255"></a><span class="lineno"> 6255</span>            <span class="keywordtype">size_t</span> idx = src.find(pattern, offset);</div>
+<div class="line"><a id="l06256" name="l06256"></a><span class="lineno"> 6256</span>            <span class="keywordflow">if</span> (idx == npos)</div>
+<div class="line"><a id="l06257" name="l06257"></a><span class="lineno"> 6257</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l06258" name="l06258"></a><span class="lineno"> 6258</span>            <span class="keywordtype">size_t</span> lenOfPiece = idx - offset;</div>
+<div class="line"><a id="l06259" name="l06259"></a><span class="lineno"> 6259</span>            ch_traits&lt;K&gt;::move(ptr + posWrite, ptr + offset, lenOfPiece);</div>
+<div class="line"><a id="l06260" name="l06260"></a><span class="lineno"> 6260</span>            posWrite += lenOfPiece;</div>
+<div class="line"><a id="l06261" name="l06261"></a><span class="lineno"> 6261</span>            ch_traits&lt;K&gt;::copy(ptr + posWrite, repl.str, repl.len);</div>
+<div class="line"><a id="l06262" name="l06262"></a><span class="lineno"> 6262</span>            posWrite += repl.len;</div>
+<div class="line"><a id="l06263" name="l06263"></a><span class="lineno"> 6263</span>            offset = idx + pattern.len;</div>
+<div class="line"><a id="l06264" name="l06264"></a><span class="lineno"> 6264</span>        }</div>
+<div class="line"><a id="l06265" name="l06265"></a><span class="lineno"> 6265</span>        <span class="keywordtype">size_t</span> tailLen = src.len - offset;</div>
+<div class="line"><a id="l06266" name="l06266"></a><span class="lineno"> 6266</span>        ch_traits&lt;K&gt;::move(ptr + posWrite, ptr + offset, tailLen);</div>
+<div class="line"><a id="l06267" name="l06267"></a><span class="lineno"> 6267</span>        <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>.resize(posWrite + tailLen);</div>
+<div class="line"><a id="l06268" name="l06268"></a><span class="lineno"> 6268</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l06269" name="l06269"></a><span class="lineno"> 6269</span>        details::replace_grow_helper&lt;K, A, int&gt;(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, pattern, repl.str, repl.len, max_count, repl.len - pattern.len, 0).replace(offset);</div>
+<div class="line"><a id="l06270" name="l06270"></a><span class="lineno"> 6270</span>    }</div>
+<div class="line"><a id="l06271" name="l06271"></a><span class="lineno"> 6271</span>    <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>;</div>
+<div class="line"><a id="l06272" name="l06272"></a><span class="lineno"> 6272</span>}</div>
 </div>
-<div class="line"><a id="l06271" name="l06271"></a><span class="lineno"> 6271</span> </div>
-<div class="line"><a id="l06272" name="l06272"></a><span class="lineno"> 6272</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, <span class="keyword">typename</span> T, <span class="keyword">typename</span> M&gt;</div>
-<div class="line"><a id="l06273" name="l06273"></a><span class="lineno"> 6273</span><span class="keyword">requires</span> (std::is_constructible_v&lt;str_src&lt;K&gt;, T&gt; &amp;&amp; std::is_constructible_v&lt;str_src&lt;K&gt;, M&gt;)</div>
-<div class="line"><a id="l06274" name="l06274"></a><span class="lineno"> 6274</span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; replace(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, T&amp;&amp; pattern, M&amp;&amp; repl, <span class="keywordtype">size_t</span> offset = 0, <span class="keywordtype">size_t</span> max_count = -1) {</div>
-<div class="line"><a id="l06275" name="l06275"></a><span class="lineno"> 6275</span>    <span class="keywordflow">return</span> replace(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a>{std::forward&lt;T&gt;(pattern)}, str_src&lt;K&gt;{std::forward&lt;M&gt;(repl)}, offset, max_count);</div>
-<div class="line"><a id="l06276" name="l06276"></a><span class="lineno"> 6276</span>}</div>
-<div class="line"><a id="l06277" name="l06277"></a><span class="lineno"> 6277</span> </div>
-<div class="line"><a id="l06278" name="l06278"></a><span class="lineno"> 6278</span>} <span class="comment">// namespace str</span></div>
+<div class="line"><a id="l06273" name="l06273"></a><span class="lineno"> 6273</span> </div>
+<div class="line"><a id="l06274" name="l06274"></a><span class="lineno"> 6274</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, <span class="keyword">typename</span> T, <span class="keyword">typename</span> M&gt;</div>
+<div class="line"><a id="l06275" name="l06275"></a><span class="lineno"> 6275</span><span class="keyword">requires</span> (std::is_constructible_v&lt;str_src&lt;K&gt;, T&gt; &amp;&amp; std::is_constructible_v&lt;str_src&lt;K&gt;, M&gt;)</div>
+<div class="line"><a id="l06276" name="l06276"></a><span class="lineno"> 6276</span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; replace(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, T&amp;&amp; pattern, M&amp;&amp; repl, <span class="keywordtype">size_t</span> offset = 0, <span class="keywordtype">size_t</span> max_count = -1) {</div>
+<div class="line"><a id="l06277" name="l06277"></a><span class="lineno"> 6277</span>    <span class="keywordflow">return</span> replace(<a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a>, <a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a>{std::forward&lt;T&gt;(pattern)}, str_src&lt;K&gt;{std::forward&lt;M&gt;(repl)}, offset, max_count);</div>
+<div class="line"><a id="l06278" name="l06278"></a><span class="lineno"> 6278</span>}</div>
 <div class="line"><a id="l06279" name="l06279"></a><span class="lineno"> 6279</span> </div>
-<div class="line"><a id="l06280" name="l06280"></a><span class="lineno"> 6280</span>} <span class="comment">// namespace simstr</span></div>
+<div class="line"><a id="l06280" name="l06280"></a><span class="lineno"> 6280</span>} <span class="comment">// namespace str</span></div>
 <div class="line"><a id="l06281" name="l06281"></a><span class="lineno"> 6281</span> </div>
-<div class="line"><a id="l06282" name="l06282"></a><span class="lineno"> 6282</span><span class="keyword">namespace </span>std {</div>
-<div class="line"><a id="l06302" name="l06302"></a><span class="lineno"> 6302</span><span class="keyword">template</span>&lt;simstr::StdStrSource T&gt;</div>
-<div class="foldopen" id="foldopen06303" data-start="{" data-end="}">
-<div class="line"><a id="l06303" name="l06303"></a><span class="lineno"><a class="line" href="group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327"> 6303</a></span><a class="code hl_struct" href="structsimstr_1_1expr__stdstr.html">simstr::expr_stdstr&lt;typename T::value_type, T&gt;</a> <a class="code hl_function" href="group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327">operator+</a>(<span class="keyword">const</span> T&amp; str) {</div>
-<div class="line"><a id="l06304" name="l06304"></a><span class="lineno"> 6304</span>    <span class="keywordflow">return</span> {str};</div>
-<div class="line"><a id="l06305" name="l06305"></a><span class="lineno"> 6305</span>}</div>
+<div class="line"><a id="l06282" name="l06282"></a><span class="lineno"> 6282</span>} <span class="comment">// namespace simstr</span></div>
+<div class="line"><a id="l06283" name="l06283"></a><span class="lineno"> 6283</span> </div>
+<div class="line"><a id="l06284" name="l06284"></a><span class="lineno"> 6284</span><span class="keyword">namespace </span>std {</div>
+<div class="line"><a id="l06304" name="l06304"></a><span class="lineno"> 6304</span><span class="keyword">template</span>&lt;simstr::StdStrSource T&gt;</div>
+<div class="foldopen" id="foldopen06305" data-start="{" data-end="}">
+<div class="line"><a id="l06305" name="l06305"></a><span class="lineno"><a class="line" href="group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327"> 6305</a></span><a class="code hl_struct" href="structsimstr_1_1expr__stdstr.html">simstr::expr_stdstr&lt;typename T::value_type, T&gt;</a> <a class="code hl_function" href="group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327">operator+</a>(<span class="keyword">const</span> T&amp; str) {</div>
+<div class="line"><a id="l06306" name="l06306"></a><span class="lineno"> 6306</span>    <span class="keywordflow">return</span> {str};</div>
+<div class="line"><a id="l06307" name="l06307"></a><span class="lineno"> 6307</span>}</div>
 </div>
-<div class="line"><a id="l06306" name="l06306"></a><span class="lineno"> 6306</span></div>
-<div class="line"><a id="l06335" name="l06335"></a><span class="lineno"> 6335</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, simstr::StrExprForType&lt;K&gt; E&gt;</div>
-<div class="line"><a id="l06336" name="l06336"></a><span class="lineno"> 6336</span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; operator |=(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; str, <span class="keyword">const</span> E&amp; expr) {</div>
-<div class="line"><a id="l06337" name="l06337"></a><span class="lineno"> 6337</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">simstr::str::change</a>(str, str.length(), 0, expr);</div>
-<div class="line"><a id="l06338" name="l06338"></a><span class="lineno"> 6338</span>}</div>
-<div class="line"><a id="l06339" name="l06339"></a><span class="lineno"> 6339</span></div>
-<div class="line"><a id="l06368" name="l06368"></a><span class="lineno"> 6368</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, simstr::StrExprForType&lt;K&gt; E&gt;</div>
-<div class="line"><a id="l06369" name="l06369"></a><span class="lineno"> 6369</span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; operator ^=(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; str, <span class="keyword">const</span> E&amp; expr) {</div>
-<div class="line"><a id="l06370" name="l06370"></a><span class="lineno"> 6370</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">simstr::str::change</a>(str, 0, 0, expr);</div>
-<div class="line"><a id="l06371" name="l06371"></a><span class="lineno"> 6371</span>}</div>
-<div class="line"><a id="l06372" name="l06372"></a><span class="lineno"> 6372</span> </div>
-<div class="line"><a id="l06373" name="l06373"></a><span class="lineno"> 6373</span>} <span class="comment">// namespace std</span></div>
+<div class="line"><a id="l06308" name="l06308"></a><span class="lineno"> 6308</span></div>
+<div class="line"><a id="l06337" name="l06337"></a><span class="lineno"> 6337</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, simstr::StrExprForType&lt;K&gt; E&gt;</div>
+<div class="line"><a id="l06338" name="l06338"></a><span class="lineno"> 6338</span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; operator |=(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; str, <span class="keyword">const</span> E&amp; expr) {</div>
+<div class="line"><a id="l06339" name="l06339"></a><span class="lineno"> 6339</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">simstr::str::change</a>(str, str.length(), 0, expr);</div>
+<div class="line"><a id="l06340" name="l06340"></a><span class="lineno"> 6340</span>}</div>
+<div class="line"><a id="l06341" name="l06341"></a><span class="lineno"> 6341</span></div>
+<div class="line"><a id="l06370" name="l06370"></a><span class="lineno"> 6370</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, simstr::StrExprForType&lt;K&gt; E&gt;</div>
+<div class="line"><a id="l06371" name="l06371"></a><span class="lineno"> 6371</span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; operator ^=(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; str, <span class="keyword">const</span> E&amp; expr) {</div>
+<div class="line"><a id="l06372" name="l06372"></a><span class="lineno"> 6372</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">simstr::str::change</a>(str, 0, 0, expr);</div>
+<div class="line"><a id="l06373" name="l06373"></a><span class="lineno"> 6373</span>}</div>
+<div class="line"><a id="l06374" name="l06374"></a><span class="lineno"> 6374</span> </div>
+<div class="line"><a id="l06375" name="l06375"></a><span class="lineno"> 6375</span>} <span class="comment">// namespace std</span></div>
 <div class="ttc" id="aclasssimstr_1_1_splitter_base_html"><div class="ttname"><a href="classsimstr_1_1_splitter_base.html">simstr::SplitterBase</a></div><div class="ttdoc">Класс для последовательного получения подстрок по заданному разделителю.</div><div class="ttdef"><b>Определения</b> strexpr.h:2469</div></div>
 <div class="ttc" id="aclasssimstr_1_1_splitter_base_html_a4ba6176b0e6ec2230fe51d2022252801"><div class="ttname"><a href="classsimstr_1_1_splitter_base.html#a4ba6176b0e6ec2230fe51d2022252801">simstr::SplitterBase::is_done</a></div><div class="ttdeci">constexpr bool is_done() const</div><div class="ttdoc">Узнать, не закончились ли подстроки.</div><div class="ttdef"><b>Определения</b> strexpr.h:2480</div></div>
 <div class="ttc" id="aclasssimstr_1_1_splitter_base_html_a95ab08d028e2a33a90b13eae2c744c29"><div class="ttname"><a href="classsimstr_1_1_splitter_base.html#a95ab08d028e2a33a90b13eae2c744c29">simstr::SplitterBase::next</a></div><div class="ttdeci">constexpr str_t next()</div><div class="ttdoc">Получить следующую подстроку.</div><div class="ttdef"><b>Определения</b> strexpr.h:2489</div></div>
@@ -4376,9 +4376,9 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="aconceptsimstr_1_1_str_expr_html"><div class="ttname"><a href="conceptsimstr_1_1_str_expr.html">simstr::StrExpr</a></div><div class="ttdoc">Концепт &quot;Строковых выражений&quot;.</div><div class="ttdef"><b>Определения</b> strexpr.h:473</div></div>
 <div class="ttc" id="aconceptsimstr_1_1_str_type_html"><div class="ttname"><a href="conceptsimstr_1_1_str_type.html">simstr::StrType</a></div><div class="ttdoc">Базовая концепция строкового объекта.</div><div class="ttdef"><b>Определения</b> strexpr.h:277</div></div>
 <div class="ttc" id="aconceptsimstr_1_1is__equal__str__type__v_html"><div class="ttname"><a href="conceptsimstr_1_1is__equal__str__type__v.html">simstr::is_equal_str_type_v</a></div><div class="ttdoc">Проверка, являются ли два типа совместимыми строковыми типами.</div><div class="ttdef"><b>Определения</b> strexpr.h:136</div></div>
-<div class="ttc" id="agroup___str_exprs_html_ga05501d45ac941faafdda12f73d333445"><div class="ttname"><a href="group___str_exprs.html#ga05501d45ac941faafdda12f73d333445">simstr::e_vsubst</a></div><div class="ttdeci">constexpr auto e_vsubst(T &amp;&amp;str_pattern, Args &amp;&amp;...args)</div><div class="ttdoc">Создает строковое выражение, которое подставляет в заданные места в строке-образце,...</div><div class="ttdef"><b>Определения</b> strexpr.h:5827</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga05501d45ac941faafdda12f73d333445"><div class="ttname"><a href="group___str_exprs.html#ga05501d45ac941faafdda12f73d333445">simstr::e_vsubst</a></div><div class="ttdeci">constexpr auto e_vsubst(T &amp;&amp;str_pattern, Args &amp;&amp;...args)</div><div class="ttdoc">Создает строковое выражение, которое подставляет в заданные места в строке-образце,...</div><div class="ttdef"><b>Определения</b> strexpr.h:5829</div></div>
 <div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Создание условного строкового выражения expr_if.</div><div class="ttdef"><b>Определения</b> strexpr.h:1516</div></div>
-<div class="ttc" id="agroup___str_exprs_html_ga22ea6d3c42a2de8611842e367c1bc327"><div class="ttname"><a href="group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327">std::operator+</a></div><div class="ttdeci">simstr::expr_stdstr&lt; typename T::value_type, T &gt; operator+(const T &amp;str)</div><div class="ttdoc">Унарный оператор+ для преобразования стандартных строк в строковые выражения.</div><div class="ttdef"><b>Определения</b> strexpr.h:6303</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga22ea6d3c42a2de8611842e367c1bc327"><div class="ttname"><a href="group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327">std::operator+</a></div><div class="ttdeci">simstr::expr_stdstr&lt; typename T::value_type, T &gt; operator+(const T &amp;str)</div><div class="ttdoc">Унарный оператор+ для преобразования стандартных строк в строковые выражения.</div><div class="ttdef"><b>Определения</b> strexpr.h:6305</div></div>
 <div class="ttc" id="agroup___str_exprs_html_ga23b5d15132fcc706d1edc1364673a4ab"><div class="ttname"><a href="group___str_exprs.html#ga23b5d15132fcc706d1edc1364673a4ab">simstr::e_spcw</a></div><div class="ttdeci">constexpr expr_spaces&lt; uws, N &gt; e_spcw()</div><div class="ttdoc">Генерирует строку из N wchar_t пробелов.</div><div class="ttdef"><b>Определения</b> strexpr.h:1076</div></div>
 <div class="ttc" id="agroup___str_exprs_html_ga29b819f35d451888d14bae0217478561"><div class="ttname"><a href="group___str_exprs.html#ga29b819f35d451888d14bae0217478561">simstr::e_fill_left</a></div><div class="ttdeci">expr_fill&lt; K, A, true &gt; e_fill_left(const A &amp;a, size_t width, K symbol=K(&#39; &#39;))</div><div class="ttdoc">Создает выражение, которое дополняет указанное строковое выражение до заданной длины заданным символо...</div><div class="ttdef"><b>Определения</b> strexpr.h:1934</div></div>
 <div class="ttc" id="agroup___str_exprs_html_ga2ebc01b80560370b2f318d897bb6000a"><div class="ttname"><a href="group___str_exprs.html#ga2ebc01b80560370b2f318d897bb6000a">simstr::eew</a></div><div class="ttdeci">constexpr empty_expr&lt; uws &gt; eew</div><div class="ttdoc">Пустое строковое выражение типа wchar_t.</div><div class="ttdef"><b>Определения</b> strexpr.h:834</div></div>
@@ -4404,11 +4404,11 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="agroup___str_exprs_html_gafd2e6b8a52bfe20c0b86d25f9f78cb52"><div class="ttname"><a href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a></div><div class="ttdeci">constexpr auto e_join(const T &amp;s, L &amp;&amp;d)</div><div class="ttdoc">Получить строковое выражение, конкатенирующее строки в контейнере в одну строку с заданным разделител...</div><div class="ttdef"><b>Определения</b> strexpr.h:2038</div></div>
 <div class="ttc" id="agroup___str_exprs_html_gga680097382d9bc271c361f85828ac741fad4ddbe11a4c8e3daca5795ad268df0c4"><div class="ttname"><a href="group___str_exprs.html#gga680097382d9bc271c361f85828ac741fad4ddbe11a4c8e3daca5795ad268df0c4">simstr::Short</a></div><div class="ttdeci">@ Short</div><div class="ttdoc">without leading zeroes</div><div class="ttdef"><b>Определения</b> strexpr.h:1824</div></div>
 <div class="ttc" id="anamespacesimstr_1_1str_html"><div class="ttname"><a href="namespacesimstr_1_1str.html">simstr::str</a></div><div class="ttdoc">Небольшое пространство для методов работы со стандартными строками.</div><div class="ttdef"><b>Определения</b> strexpr.h:1572</div></div>
-<div class="ttc" id="anamespacesimstr_1_1str_html_a351d8d1db18b0dca19992b164fb6253f"><div class="ttname"><a href="namespacesimstr_1_1str.html#a351d8d1db18b0dca19992b164fb6253f">simstr::str::append</a></div><div class="ttdeci">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; append(std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, const E &amp;expr)</div><div class="ttdoc">Добавить к стандартной строке строковое выражение.</div><div class="ttdef"><b>Определения</b> strexpr.h:5943</div></div>
-<div class="ttc" id="anamespacesimstr_1_1str_html_a5fb93ccbf4f2bc1ca6db244ef11c3047"><div class="ttname"><a href="namespacesimstr_1_1str.html#a5fb93ccbf4f2bc1ca6db244ef11c3047">simstr::str::prepend</a></div><div class="ttdeci">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; prepend(std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, const E &amp;expr)</div><div class="ttdoc">Вставить строковое выражение в начало стандартной строки.</div><div class="ttdef"><b>Определения</b> strexpr.h:5976</div></div>
-<div class="ttc" id="anamespacesimstr_1_1str_html_ad452138126b5952824665736845ffedf"><div class="ttname"><a href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">simstr::str::change</a></div><div class="ttdeci">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; change(std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, size_t from, size_t count, const E &amp;expr)</div><div class="ttdoc">Изменить часть стандартной строки на заданное строковое выражение.</div><div class="ttdef"><b>Определения</b> strexpr.h:5870</div></div>
-<div class="ttc" id="anamespacesimstr_1_1str_html_ad6f51f3eac15eafa21d00aa3b10c81f7"><div class="ttname"><a href="namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7">simstr::str::replace</a></div><div class="ttdeci">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; replace(std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, T &amp;&amp;pattern, const E &amp;repl, size_t offset=0, size_t max_count=-1)</div><div class="ttdoc">Функция поиска подстрок в стандартной строке и замены найденных вхождений на значение строкового выра...</div><div class="ttdef"><b>Определения</b> strexpr.h:6150</div></div>
-<div class="ttc" id="anamespacesimstr_1_1str_html_afb9af1b76a9815d827e9b46affccb49f"><div class="ttname"><a href="namespacesimstr_1_1str.html#afb9af1b76a9815d827e9b46affccb49f">simstr::str::insert</a></div><div class="ttdeci">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; insert(std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, size_t from, const E &amp;expr)</div><div class="ttdoc">Вставить строковое выражение в указанную позицию стандартной строки.</div><div class="ttdef"><b>Определения</b> strexpr.h:6011</div></div>
+<div class="ttc" id="anamespacesimstr_1_1str_html_a351d8d1db18b0dca19992b164fb6253f"><div class="ttname"><a href="namespacesimstr_1_1str.html#a351d8d1db18b0dca19992b164fb6253f">simstr::str::append</a></div><div class="ttdeci">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; append(std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, const E &amp;expr)</div><div class="ttdoc">Добавить к стандартной строке строковое выражение.</div><div class="ttdef"><b>Определения</b> strexpr.h:5945</div></div>
+<div class="ttc" id="anamespacesimstr_1_1str_html_a5fb93ccbf4f2bc1ca6db244ef11c3047"><div class="ttname"><a href="namespacesimstr_1_1str.html#a5fb93ccbf4f2bc1ca6db244ef11c3047">simstr::str::prepend</a></div><div class="ttdeci">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; prepend(std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, const E &amp;expr)</div><div class="ttdoc">Вставить строковое выражение в начало стандартной строки.</div><div class="ttdef"><b>Определения</b> strexpr.h:5978</div></div>
+<div class="ttc" id="anamespacesimstr_1_1str_html_ad452138126b5952824665736845ffedf"><div class="ttname"><a href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">simstr::str::change</a></div><div class="ttdeci">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; change(std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, size_t from, size_t count, const E &amp;expr)</div><div class="ttdoc">Изменить часть стандартной строки на заданное строковое выражение.</div><div class="ttdef"><b>Определения</b> strexpr.h:5872</div></div>
+<div class="ttc" id="anamespacesimstr_1_1str_html_ad6f51f3eac15eafa21d00aa3b10c81f7"><div class="ttname"><a href="namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7">simstr::str::replace</a></div><div class="ttdeci">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; replace(std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, T &amp;&amp;pattern, const E &amp;repl, size_t offset=0, size_t max_count=-1)</div><div class="ttdoc">Функция поиска подстрок в стандартной строке и замены найденных вхождений на значение строкового выра...</div><div class="ttdef"><b>Определения</b> strexpr.h:6152</div></div>
+<div class="ttc" id="anamespacesimstr_1_1str_html_afb9af1b76a9815d827e9b46affccb49f"><div class="ttname"><a href="namespacesimstr_1_1str.html#afb9af1b76a9815d827e9b46affccb49f">simstr::str::insert</a></div><div class="ttdeci">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; insert(std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, size_t from, const E &amp;expr)</div><div class="ttdoc">Вставить строковое выражение в указанную позицию стандартной строки.</div><div class="ttdef"><b>Определения</b> strexpr.h:6013</div></div>
 <div class="ttc" id="anamespacesimstr_html"><div class="ttname"><a href="namespacesimstr.html">simstr</a></div><div class="ttdoc">Пространство имён для объектов библиотеки</div><div class="ttdef"><b>Определения</b> sstring.cpp:12</div></div>
 <div class="ttc" id="anamespacesimstr_html_a1b4b1f04b733739606d97f79caa02dd9"><div class="ttname"><a href="namespacesimstr.html#a1b4b1f04b733739606d97f79caa02dd9">simstr::IntConvertResult</a></div><div class="ttdeci">IntConvertResult</div><div class="ttdoc">Перечисление с возможными результатами преобразования строки в целое число</div><div class="ttdef"><b>Определения</b> strexpr.h:2105</div></div>
 <div class="ttc" id="anamespacesimstr_html_a1b4b1f04b733739606d97f79caa02dd9a129e8109f319870e328cc7a1d5b5cae3"><div class="ttname"><a href="namespacesimstr.html#a1b4b1f04b733739606d97f79caa02dd9a129e8109f319870e328cc7a1d5b5cae3">simstr::IntConvertResult::Overflow</a></div><div class="ttdeci">@ Overflow</div><div class="ttdoc">Переполнение, число не помещается в заданный тип</div><div class="ttdef"><b>Определения</b> strexpr.h:2108</div></div>

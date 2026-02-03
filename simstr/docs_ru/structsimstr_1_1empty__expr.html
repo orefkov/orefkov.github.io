@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.2</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.3</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -138,8 +138,8 @@ struct simstr::empty_expr&lt; K &gt;</div><p>"Пустое" строковое �
 <li>eeuu для пустой строки char32_t</li>
 </ul>
 <p>Пример: </p><div class="fragment"><div class="line">result = shost + <a class="code hl_function" href="group___str_exprs.html#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(sserv.is_empty(), <a class="code hl_variable" href="group___str_exprs.html#gab19693e574a384f42220cf115ec86c75">eea</a>, <span class="stringliteral">&quot;:&quot;</span> + sserv);</div>
-<div class="ttc" id="agroup___str_exprs_html_gab058a69a654cf3a0fce197e862a7400e"><div class="ttname"><a href="group___str_exprs.html#gab058a69a654cf3a0fce197e862a7400e">simstr::e_choice</a></div><div class="ttdeci">constexpr expr_choice&lt; A, B &gt; e_choice(bool c, const A &amp;a, const B &amp;b)</div><div class="ttdoc">Создание условного строкового выражения expr_choice.</div><div class="ttdef"><b>Определения</b> strexpr.h:1438</div></div>
-<div class="ttc" id="agroup___str_exprs_html_gab19693e574a384f42220cf115ec86c75"><div class="ttname"><a href="group___str_exprs.html#gab19693e574a384f42220cf115ec86c75">simstr::eea</a></div><div class="ttdeci">constexpr empty_expr&lt; u8s &gt; eea</div><div class="ttdoc">Пустое строковое выражение типа char.</div><div class="ttdef"><b>Определения</b> strexpr.h:822</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gab058a69a654cf3a0fce197e862a7400e"><div class="ttname"><a href="group___str_exprs.html#gab058a69a654cf3a0fce197e862a7400e">simstr::e_choice</a></div><div class="ttdeci">constexpr expr_choice&lt; A, B &gt; e_choice(bool c, const A &amp;a, const B &amp;b)</div><div class="ttdoc">Создание условного строкового выражения expr_choice.</div><div class="ttdef"><b>Определения</b> strexpr.h:1435</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gab19693e574a384f42220cf115ec86c75"><div class="ttname"><a href="group___str_exprs.html#gab19693e574a384f42220cf115ec86c75">simstr::eea</a></div><div class="ttdeci">constexpr empty_expr&lt; u8s &gt; eea</div><div class="ttdoc">Пустое строковое выражение типа char.</div><div class="ttdef"><b>Определения</b> strexpr.h:819</div></div>
 </div><!-- fragment --><div class="fragment"><div class="line">result += <span class="stringliteral">&quot;E&quot;</span> + <a class="code hl_function" href="group___str_exprs.html#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(adjusted_exponent &gt; 0, <span class="stringliteral">&quot;+&quot;</span>_ss, <a class="code hl_variable" href="group___str_exprs.html#gab19693e574a384f42220cf115ec86c75">eea</a>) + adjusted_exponent;</div>
 </div><!-- fragment --> </div><hr/>Объявления и описания членов структуры находятся в файле:<ul>
 <li><a class="el" href="strexpr_8h_source.html">strexpr.h</a></li>

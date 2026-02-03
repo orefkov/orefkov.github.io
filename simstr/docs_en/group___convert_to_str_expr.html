@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.2</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.3</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -106,7 +106,7 @@ $(function(){initNavTree('group___convert_to_str_expr.html',''); initResizable(t
   <div class="headertitle"><div class="title">Converting types to string expressions</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Various ways to convert types to string expressions. If you implement one (and only one) of the ways to convert your type to a string expression, then you can use your type directly in concatenation operations with string expressions and how arguments in the <code>e_concat</code> and <code>e_subst</code> functions. </p>
+<p>Various ways to convert types to string expressions. If you implement one (and only one) of the ways to convert your type to a string expression, then you can use your type directly in concatenation operations with string expressions and how arguments in the <code><a class="el" href="structsimstr_1_1e__concat.html" title="String expression concatenating the specified string expressions using the specified delimiter.">e_concat</a></code> and <code><a class="el" href="structsimstr_1_1e__subst.html" title="String expression that substitutes the values ​​of the passed string expressions into the specified p...">e_subst</a></code> functions. </p>
 
 
 <h3><a id="method1" name="method1"></a>Method 1</h3><div class="textblock">Just implement the requirement in your type that it be a string expression. </p><dl class="section user"><dt>Example:</dt><dd></dd></dl>
@@ -133,11 +133,11 @@ $(function(){initNavTree('group___convert_to_str_expr.html',''); initResizable(t
 <div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;Msg is &lt;Happy Birthday!!!!!&gt;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    add_exclamation msg{<span class="stringliteral">&quot;Happy Birthday&quot;</span>, 3};</div>
-<div class="line">    test = <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Msg is &lt;&quot;</span>, msg, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line">    test = e_concat(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Msg is &lt;&quot;</span>, msg, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
 <div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;Msg is &lt;Happy Birthday!!!&gt;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">const</span> add_exclamation cmsg{<span class="stringliteral">&quot;Happy Birthday&quot;</span>, 0};</div>
-<div class="line">    test = <a class="code hl_function" href="group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846">e_subst</a>(S_FRM(<span class="stringliteral">&quot;Msg is &lt;{}&gt;&quot;</span>), cmsg);</div>
+<div class="line">    test = e_subst(<span class="stringliteral">&quot;Msg is &lt;{}&gt;&quot;</span>, cmsg);</div>
 <div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;Msg is &lt;Happy Birthday&gt;&quot;</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div>
@@ -199,11 +199,11 @@ $(function(){initNavTree('group___convert_to_str_expr.html',''); initResizable(t
 <div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;Car is &lt;Model: Ford, Year: 2020&gt;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    ci.year++;</div>
-<div class="line">    test = <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Car is &lt;&quot;</span>, ci, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line">    test = e_concat(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Car is &lt;&quot;</span>, ci, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
 <div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;Car is &lt;Model: Ford, Year: 2021&gt;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    ci.year++;</div>
-<div class="line">    test = <a class="code hl_function" href="group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846">e_subst</a>(S_FRM(<span class="stringliteral">&quot;Car is &lt;{}&gt;&quot;</span>), ci);</div>
+<div class="line">    test = e_subst(<span class="stringliteral">&quot;Car is &lt;{}&gt;&quot;</span>, ci);</div>
 <div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;Car is &lt;Model: Ford, Year: 2022&gt;&quot;</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div>
@@ -234,7 +234,7 @@ $(function(){initNavTree('group___convert_to_str_expr.html',''); initResizable(t
 <div class="line"> </div>
 <div class="line">        <span class="comment">// А вот такой можно - он не хранит ссылки на временные объекты</span></div>
 <div class="line">        <span class="comment">// But this one is possible - it doesn&#39;t store references to temporary objects</span></div>
-<div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Animal: &quot;</span>, a.name_, <span class="stringliteral">&quot;, Sound: &quot;</span>, a.sound_);</div>
+<div class="line">        <span class="keywordflow">return</span> e_concat(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Animal: &quot;</span>, a.name_, <span class="stringliteral">&quot;, Sound: &quot;</span>, a.sound_);</div>
 <div class="line">        <span class="comment">// Также можно возвращать просто std::string, stringa, lstringa</span></div>
 <div class="line">        <span class="comment">// You can also return just std::string, stringa, lstringa</span></div>
 <div class="line">    }</div>
@@ -251,10 +251,10 @@ $(function(){initNavTree('group___convert_to_str_expr.html',''); initResizable(t
 <div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;&lt;Animal: Cat, Sound: Meow&gt;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">const</span> animal dog{<span class="stringliteral">&quot;Dog&quot;</span>, <span class="stringliteral">&quot;Woof&quot;</span>};</div>
-<div class="line">    test = <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span>, dog, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line">    test = e_concat(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span>, dog, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
 <div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;&lt;Animal: Dog, Sound: Woof&gt;&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">    test = <a class="code hl_function" href="group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846">e_subst</a>(S_FRM(<span class="stringliteral">&quot;\\_{}_/&quot;</span>), animal{<span class="stringliteral">&quot;Snake&quot;</span>, <span class="stringliteral">&quot;Pssstt&quot;</span>});</div>
+<div class="line">    test = e_subst(<span class="stringliteral">&quot;\\_{}_/&quot;</span>, animal{<span class="stringliteral">&quot;Snake&quot;</span>, <span class="stringliteral">&quot;Pssstt&quot;</span>});</div>
 <div class="line">    EXPECT_EQ(test, <span class="stringliteral">&quot;\\_Animal: Snake, Sound: Pssstt_/&quot;</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div>
@@ -268,7 +268,7 @@ $(function(){initNavTree('group___convert_to_str_expr.html',''); initResizable(t
 <div class="line">    <span class="comment">// Let&#39;s make two separate implementations: for char (simpler) and for other types (there we&#39;ll have to return not literals, but simple_str, and a copy is required)</span></div>
 <div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> K&gt; <span class="keyword">requires</span> (std::is_same_v&lt;K, char&gt;)</div>
 <div class="line">    <span class="keyword">auto</span> to_strexpr() <span class="keyword">const</span> {</div>
-<div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;test &quot;</span>, number, <span class="stringliteral">&quot; from &quot;</span>, from);</div>
+<div class="line">        <span class="keywordflow">return</span> e_concat(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;test &quot;</span>, number, <span class="stringliteral">&quot; from &quot;</span>, from);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> K&gt; <span class="keyword">requires</span> (!std::is_same_v&lt;K, char&gt;)</div>
@@ -277,7 +277,7 @@ $(function(){initNavTree('group___convert_to_str_expr.html',''); initResizable(t
 <div class="line">        <span class="comment">// поэтому в e_concat надо форсировать сохранение по копии, а не по ссылке.</span></div>
 <div class="line">        <span class="comment">// uni_string returns a local object, and references to them cannot be returned from a function,</span></div>
 <div class="line">        <span class="comment">// so in e_concat we need to force saving by copy, not by reference.</span></div>
-<div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(force_copy{empty_expr&lt;K&gt;{}}, force_copy{uni_string(K, <span class="stringliteral">&quot;test &quot;</span>)}, number, force_copy{uni_string(K, <span class="stringliteral">&quot; from &quot;</span>)}, from);</div>
+<div class="line">        <span class="keywordflow">return</span> e_concat(force_copy{empty_expr&lt;K&gt;{}}, force_copy{uni_string(K, <span class="stringliteral">&quot;test &quot;</span>)}, number, force_copy{uni_string(K, <span class="stringliteral">&quot; from &quot;</span>)}, from);</div>
 <div class="line">    }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -289,10 +289,10 @@ $(function(){initNavTree('group___convert_to_str_expr.html',''); initResizable(t
 <div class="line"> </div>
 <div class="line">    <span class="keyword">const</span> test t2{8, 12};</div>
 <div class="line"> </div>
-<div class="line">    t = <a class="code hl_function" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span>, t2, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line">    t = e_concat(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span>, t2, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
 <div class="line">    EXPECT_EQ(t, <span class="stringliteral">&quot;&lt;test 8 from 12&gt;&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">    t = <a class="code hl_function" href="group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846">e_subst</a>(S_FRM(<span class="stringliteral">&quot;&lt;{}&gt;&quot;</span>), test{99, 100});</div>
+<div class="line">    t = e_subst(<span class="stringliteral">&quot;&lt;{}&gt;&quot;</span>, test{99, 100});</div>
 <div class="line">    EXPECT_EQ(t, <span class="stringliteral">&quot;&lt;test 99 from 100&gt;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Проверим работу для не char</span></div>

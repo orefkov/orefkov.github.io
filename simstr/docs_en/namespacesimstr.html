@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.2</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.3</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -138,6 +138,15 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1convert__to__strexpr_3_01_k_00_01_t_01_4.html">convert_to_strexpr&lt; K, T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A template specialization for converting integers to string expressions, allowing their use in concatenation operations with string expressions.  <a href="structsimstr_1_1convert__to__strexpr_3_01_k_00_01_t_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1e__concat.html">e_concat</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">String expression concatenating the specified string expressions using the specified delimiter.  <a href="structsimstr_1_1e__concat.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1e__subst.html">e_subst</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">String expression that substitutes the values ​​of the passed string expressions into the specified places in a string literal.  <a href="structsimstr_1_1e__subst.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1e__vsubst.html">e_vsubst</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">String expression that substitutes the values ​​of the passed string expressions into the specified positions in the pattern string, specified at runtime.  <a href="structsimstr_1_1e__vsubst.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1empty__expr.html">empty_expr</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An "empty" string expression.  <a href="structsimstr_1_1empty__expr.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,9 +158,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1expr__choice__two__lit.html">expr_choice_two_lit</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditional selection string expression.  <a href="structsimstr_1_1expr__choice__two__lit.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1expr__concat.html">expr_concat</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A string expression for concatenating more than one string expression, specifying a separator. Created when calling the <code>e_concat</code> function.  <a href="structsimstr_1_1expr__concat.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimstr_1_1expr__if.html">expr_if</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditional selection string expression.  <a href="structsimstr_1_1expr__if.html#details">More...</a><br /></td></tr>
@@ -508,6 +514,17 @@ template&lt;typename T, size_t N = const_lit&lt;T&gt;::Count&gt; </td></tr>
 <tr class="memitem:ga4bd001ccf59de81ceb1493eff2d2214f"><td class="memTemplItemLeft" align="right" valign="top">constexpr expr_num&lt; K, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#ga4bd001ccf59de81ceb1493eff2d2214f">e_num</a> (T t)</td></tr>
 <tr class="memdesc:ga4bd001ccf59de81ceb1493eff2d2214f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an integer to a string expression.  <br /></td></tr>
 <tr class="separator:ga4bd001ccf59de81ceb1493eff2d2214f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac127100019d8bb5561ca5c3f9ecb7c90" id="r_gac127100019d8bb5561ca5c3f9ecb7c90"><td class="memTemplParams" colspan="2">template&lt;unsigned R, auto fp = f::df, FromIntNumber T&gt; <br />
+requires good_int_flags&lt;flags_checker&lt;R, T, decltype(fp)&gt;, false&gt;</td></tr>
+<tr class="memitem:gac127100019d8bb5561ca5c3f9ecb7c90"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#gac127100019d8bb5561ca5c3f9ecb7c90">e_int</a> (T v)</td></tr>
+<tr class="memdesc:gac127100019d8bb5561ca5c3f9ecb7c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an object that is converted to a string expression that generates a string representation of a number.  <br /></td></tr>
+<tr class="separator:gac127100019d8bb5561ca5c3f9ecb7c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc601d33cf7721d2e7000c0f5957a999" id="r_adc601d33cf7721d2e7000c0f5957a999"><td class="memTemplParams" colspan="2"><a id="adc601d33cf7721d2e7000c0f5957a999" name="adc601d33cf7721d2e7000c0f5957a999"></a>
+template&lt;unsigned R, auto fp = f::df, FromIntNumber T&gt; <br />
+requires good_int_flags&lt;flags_checker&lt;R, T, decltype(fp)&gt;, true&gt;</td></tr>
+<tr class="memitem:adc601d33cf7721d2e7000c0f5957a999"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>e_int</b> (T v, unsigned w)</td></tr>
+<tr class="memdesc:adc601d33cf7721d2e7000c0f5957a999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <code>e_int(num)</code>, only the field width is additionally specified. <br /></td></tr>
+<tr class="separator:adc601d33cf7721d2e7000c0f5957a999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacea7fe28fcd6fdb6dcae8035eb3b8744" id="r_gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="memTemplParams" colspan="2">template&lt;typename K&gt; <br />
 requires is_one_of_char_v&lt;K&gt;</td></tr>
 <tr class="memitem:gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="memTemplItemLeft" align="right" valign="top">constexpr expr_real&lt; K &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#gacea7fe28fcd6fdb6dcae8035eb3b8744">e_num</a> (double t)</td></tr>
@@ -564,21 +581,6 @@ requires (sizeof...(Repl) % 2 == 0)</td></tr>
 <tr class="memitem:gac0d4ca53513bcc0d1c0730940ec8a8a1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a> (A &amp;&amp;src, Repl &amp;&amp;... other)</td></tr>
 <tr class="memdesc:gac0d4ca53513bcc0d1c0730940ec8a8a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string expression that generates a string containing the given characters replaced with given substrings.  <br /></td></tr>
 <tr class="separator:gac0d4ca53513bcc0d1c0730940ec8a8a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga89b223a93ea1043282b6910ff8e3162c" id="r_ga89b223a93ea1043282b6910ff8e3162c"><td class="memTemplParams" colspan="2">template&lt;typename T, typename K = symb_type_from_src_t&lt;T&gt;, typename ... Args&gt; <br />
-requires (sizeof...(Args) &gt; 1)</td></tr>
-<tr class="memitem:ga89b223a93ea1043282b6910ff8e3162c"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1expr__concat.html">expr_concat</a>&lt; K, to_str_exp_t&lt; K, T &gt;, to_str_exp_t&lt; K, Args &gt;... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c">e_concat</a> (T &amp;&amp;glue, Args &amp;&amp;...args)</td></tr>
-<tr class="memdesc:ga89b223a93ea1043282b6910ff8e3162c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string expression concatenating the specified string expressions using the specified delimiter.  <br /></td></tr>
-<tr class="separator:ga89b223a93ea1043282b6910ff8e3162c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf2ceca070cdd5c451f68404178072846" id="r_gaf2ceca070cdd5c451f68404178072846"><td class="memTemplParams" colspan="2">template&lt;typename T, typename... Args&gt; <br />
-requires (sizeof...(Args) &gt; 0)</td></tr>
-<tr class="memitem:gaf2ceca070cdd5c451f68404178072846"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846">e_subst</a> (T &amp;&amp;str_pattern, const details::subst_params&lt; typename const_lit&lt; T &gt;::symb_type, std::type_identity_t&lt; T &gt;, std::type_identity_t&lt; Args &gt;... &gt; &amp;pattern, Args &amp;&amp;...args)</td></tr>
-<tr class="memdesc:gaf2ceca070cdd5c451f68404178072846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a string expression that substitutes the values ​​of the passed string expressions into the specified places in a string literal.  <br /></td></tr>
-<tr class="separator:gaf2ceca070cdd5c451f68404178072846"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga05501d45ac941faafdda12f73d333445" id="r_ga05501d45ac941faafdda12f73d333445"><td class="memTemplParams" colspan="2">template&lt;StrSourceNoLiteral T, typename... Args&gt; <br />
-requires (sizeof...(Args) &gt; 0)</td></tr>
-<tr class="memitem:ga05501d45ac941faafdda12f73d333445"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#ga05501d45ac941faafdda12f73d333445">e_vsubst</a> (T &amp;&amp;str_pattern, Args &amp;&amp;...args)</td></tr>
-<tr class="memdesc:ga05501d45ac941faafdda12f73d333445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a string expression that substitutes the values ​​of the passed string expressions into the specified positions in the pattern string, specified at runtime.  <br /></td></tr>
-<tr class="separator:ga05501d45ac941faafdda12f73d333445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>

@@ -22,6 +22,15 @@ var group___str_exprs =
     [ "simstr::expr_replace_symbols< K, UseVectorForReplace >", "structsimstr_1_1expr__replace__symbols.html", [
       [ "expr_replace_symbols", "structsimstr_1_1expr__replace__symbols.html#a1fac129651136763915ab5cba6dd26dd", null ]
     ] ],
+    [ "simstr::e_concat< K, G, Arg, Args >", "structsimstr_1_1e__concat.html", [
+      [ "e_concat", "structsimstr_1_1e__concat.html#a48f139874eb45fd9d8b0162b5c7fd9a6", null ]
+    ] ],
+    [ "simstr::e_subst< K, PtLen, Args >", "structsimstr_1_1e__subst.html", [
+      [ "e_subst", "structsimstr_1_1e__subst.html#aaa9c67121015a8b8c3fd5df753a34d84", null ]
+    ] ],
+    [ "simstr::e_vsubst< K, Args >", "structsimstr_1_1e__vsubst.html", [
+      [ "e_vsubst", "structsimstr_1_1e__vsubst.html#ae4990a1f69eed96beee4884ee5a0ee03", null ]
+    ] ],
     [ "simstr::HexFlags", "group___str_exprs.html#ga680097382d9bc271c361f85828ac741f", [
       [ "simstr::Short", "group___str_exprs.html#gga680097382d9bc271c361f85828ac741fad4ddbe11a4c8e3daca5795ad268df0c4", null ]
     ] ],
@@ -31,12 +40,12 @@ var group___str_exprs =
     [ "simstr::e_choice", "group___str_exprs.html#ga83da2cba80aa8121f4a43727a2914a35", null ],
     [ "simstr::e_choice", "group___str_exprs.html#gad305cec2225b216a16282ce343ef4162", null ],
     [ "simstr::e_choice", "group___str_exprs.html#ga081bd71800edf88c06cbfbbd9aba4107", null ],
-    [ "simstr::e_concat", "group___str_exprs.html#ga89b223a93ea1043282b6910ff8e3162c", null ],
     [ "simstr::e_fill_left", "group___str_exprs.html#ga29b819f35d451888d14bae0217478561", null ],
     [ "simstr::e_fill_right", "group___str_exprs.html#gaa35d4285042cb44083773109576055f7", null ],
     [ "simstr::e_hex", "group___str_exprs.html#ga6ae75ae56c754403fbf9f5b610a3326b", null ],
     [ "simstr::e_if", "group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751", null ],
     [ "simstr::e_if", "group___str_exprs.html#gacaea41c25b6dc26662221fd1c5fb705c", null ],
+    [ "simstr::e_int", "group___str_exprs.html#gac127100019d8bb5561ca5c3f9ecb7c90", null ],
     [ "simstr::e_join", "group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52", null ],
     [ "simstr::e_num", "group___str_exprs.html#gacea7fe28fcd6fdb6dcae8035eb3b8744", null ],
     [ "simstr::e_num", "group___str_exprs.html#ga4bd001ccf59de81ceb1493eff2d2214f", null ],
@@ -48,9 +57,7 @@ var group___str_exprs =
     [ "simstr::e_repl_const_symbols", "group___str_exprs.html#gac0d4ca53513bcc0d1c0730940ec8a8a1", null ],
     [ "simstr::e_spca", "group___str_exprs.html#ga33e02268e25a635b4b7e14d0744b46c1", null ],
     [ "simstr::e_spcw", "group___str_exprs.html#ga23b5d15132fcc706d1edc1364673a4ab", null ],
-    [ "simstr::e_subst", "group___str_exprs.html#gaf2ceca070cdd5c451f68404178072846", null ],
     [ "simstr::e_t", "group___str_exprs.html#ga9e9c377a32a2cc243efce977c4adffe3", null ],
-    [ "simstr::e_vsubst", "group___str_exprs.html#ga05501d45ac941faafdda12f73d333445", null ],
     [ "simstr::operator+", "group___str_exprs.html#ga9742e8cdcccc67c0746578f3579127e2", null ],
     [ "simstr::operator+", "group___str_exprs.html#ga9d8bc7652fac165ad43ae054fb083616", null ],
     [ "simstr::operator+", "group___str_exprs.html#ga426dd6edd38c382f64fb4cc547896c80", null ],

@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.4</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -296,6 +296,10 @@ requires is_one_of_char_v&lt;K&gt;</td></tr>
 <tr class="memitem:gafd2e6b8a52bfe20c0b86d25f9f78cb52"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a> (const T &amp;s, L &amp;&amp;d)</td></tr>
 <tr class="memdesc:gafd2e6b8a52bfe20c0b86d25f9f78cb52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string expression concatenating the strings in the container into a single string with the given delimiter.limiter.limiter.  <br /></td></tr>
 <tr class="separator:gafd2e6b8a52bfe20c0b86d25f9f78cb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d2a732759ca764c945829a44128307b" id="r_ga2d2a732759ca764c945829a44128307b"><td class="memTemplParams" colspan="2">template&lt;char... Chars&gt; </td></tr>
+<tr class="memitem:ga2d2a732759ca764c945829a44128307b"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga2d2a732759ca764c945829a44128307b">simstr::operator&quot;&quot;_fmt</a> ()</td></tr>
+<tr class="memdesc:ga2d2a732759ca764c945829a44128307b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a set of radix and flags that can be applied to integers numbers to set formatting parameters using the division operator: <code>num / 0xFormatOptions_fmt</code>. Formatting parameters are set as follows: first comes <code>0x</code>, then the radix written in decimal form. Next may be symbols indicating various flags:  <br /></td></tr>
+<tr class="separator:ga2d2a732759ca764c945829a44128307b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafb0987b3c98cd839334c33bc1c94bead" id="r_gafb0987b3c98cd839334c33bc1c94bead"><td class="memTemplParams" colspan="2">template&lt;StrSource A, typename K = symb_type_from_src_t&lt;A&gt;, typename T, size_t N = const_lit_for&lt;K, T&gt;::Count, typename X, size_t L = const_lit_for&lt;K, X&gt;::Count&gt; <br />
 requires (N &gt; 1)</td></tr>
 <tr class="memitem:gafb0987b3c98cd839334c33bc1c94bead"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a> (A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</td></tr>
@@ -651,7 +655,7 @@ template&lt;unsigned Flags = 0, FromIntNumber T&gt; </div>
 <div class="line"> </div>
 <div class="line">stringu textu = +u<span class="stringliteral">&quot;val = 0X&quot;</span>sv + <a class="code hl_function" href="#ga6ae75ae56c754403fbf9f5b610a3326b">e_hex&lt;HexFlags::No0x | HexFlags::Short | HexFlags::Lcase&gt;</a>(0x12Au);</div>
 <div class="line">EXPECT_EQ(textu, u<span class="stringliteral">&quot;val = 0X12a&quot;</span>);</div>
-<div class="ttc" id="agroup___str_exprs_html_ga6ae75ae56c754403fbf9f5b610a3326b"><div class="ttname"><a href="#ga6ae75ae56c754403fbf9f5b610a3326b">simstr::e_hex</a></div><div class="ttdeci">constexpr auto e_hex(T v)</div><div class="ttdoc">Allows you to concatenate text and a unsigned number in hexadecimal.</div><div class="ttdef"><b>Definition</b> strexpr.h:2341</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga6ae75ae56c754403fbf9f5b610a3326b"><div class="ttname"><a href="#ga6ae75ae56c754403fbf9f5b610a3326b">simstr::e_hex</a></div><div class="ttdeci">constexpr auto e_hex(T v)</div><div class="ttdoc">Allows you to concatenate text and a unsigned number in hexadecimal.</div><div class="ttdef"><b>Definition</b> strexpr.h:2497</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -768,22 +772,47 @@ requires good_int_flags&lt;flags_checker&lt;R, T, decltype(fp)&gt;, false&gt;</d
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the source for the string expression expr_integer_src.</dd></dl>
 <p>number formatting parameters are specified by a set of constants, via &rsquo;|'.</p><ul>
-<li>f::l: when setting the field width, align to the left.</li>
-<li>f::r: when setting the field width, align to the right.</li>
-<li>f::с: when setting the field width, align to the center.</li>
-<li>f::p: print number system prefix, 0b for 2, 0 for 8, 0x for 16.</li>
-<li>f::z: pad the number to the specified width with zeros on the right. Not compatible with alignment options.</li>
-<li>f::u: For number systems greater than 10, output characters in uppercase.</li>
-<li>f::sp: For signed number types, print '+' before the number for positive values.</li>
-<li>f::ss: For signed number types, print a space before the number for positive values.</li>
-<li>f::f&lt;'c'&gt;: Specifies a placeholder character when specifying the field width. Default is space.</li>
-<li>f::w&lt;N&gt;: Sets the field width. When specifying the width, you can either specify the desired alignment (r, l, c), or zero padding (z), but not both. If none of these are specified, right alignment is applied. The number is padded to the given width if it is shorter. If it is longer, then the entire number is displayed.</li>
-<li>f::wp: Same as f::w&lt;-1&gt;. In this case, the width must be passed as an additional argument e_int.</li>
+<li>f::l when setting the field width, align to the left.</li>
+<li>f::r when setting the field width, align to the right.</li>
+<li>f::с when setting the field width, align to the center.</li>
+<li>f::p print number system prefix, 0b for 2, 0 for 8, 0x for 16.</li>
+<li>f::P print number system prefix, 0B for 2, 0 for 8, 0X for 16.</li>
+<li>f::z pad the number to the specified width with zeros on the right. Not compatible with alignment options.</li>
+<li>f::u For number systems greater than 10, output characters in uppercase.</li>
+<li>f::sp For signed number types, print '+' before the number for positive values.</li>
+<li>f::ss For signed number types, print a space before the number for positive values.</li>
+<li>f::f&lt;'c'&gt; Specifies a placeholder character when specifying the field width. Default is space.</li>
+<li>f::w&lt;N&gt; Sets the field width. When specifying the width, you can either specify the desired alignment (r, l, c), or zero padding (z), but not both. If none of these are specified, right alignment is applied. The number is padded to the given width if it is shorter. If it is longer, then the entire number is displayed.</li>
+<li>f::wp Same as f::w&lt;-1&gt;. In this case, the width must be passed as an additional argument e_int. <br  />
+ Example: <div class="fragment"><div class="line">stringu u16t = u<span class="stringliteral">&quot;Number &quot;</span>_ss + num</div>
+<div class="line">    + <span class="stringliteral">&quot; in octal is &quot;</span> + <a class="code hl_function" href="#gac127100019d8bb5561ca5c3f9ecb7c90">e_int&lt;8, f::w&lt;16&gt;</a> | f::z&gt;(num)</div>
+<div class="line">    + <span class="stringliteral">&quot;, in binary is &quot;</span> + <a class="code hl_function" href="#gac127100019d8bb5561ca5c3f9ecb7c90">e_int</a>&lt;2, f::w&lt;32&gt; | f::p | f::z&gt;(num);</div>
+<div class="ttc" id="agroup___str_exprs_html_gac127100019d8bb5561ca5c3f9ecb7c90"><div class="ttname"><a href="#gac127100019d8bb5561ca5c3f9ecb7c90">simstr::e_int</a></div><div class="ttdeci">constexpr auto e_int(T v)</div><div class="ttdoc">Creates an object that is converted to a string expression that generates a string representation of ...</div><div class="ttdef"><b>Definition</b> strexpr.h:2329</div></div>
+</div><!-- fragment --></li>
 </ul>
-<p>Example: </p><div class="fragment"><div class="line">stringu u16t = u<span class="stringliteral">&quot;Number &quot;</span>_ss + num + <span class="stringliteral">&quot; in octal is &quot;</span> + <a class="code hl_function" href="#gac127100019d8bb5561ca5c3f9ecb7c90">e_int&lt;8, f::w&lt;16&gt;</a> | f::z&gt;(num) +</div>
-<div class="line">     <span class="stringliteral">&quot;, in bin is &quot;</span> + <a class="code hl_function" href="#gac127100019d8bb5561ca5c3f9ecb7c90">e_int</a>&lt;2, f::w&lt;32&gt; | f::p | f::z&gt;(num);</div>
-<div class="ttc" id="agroup___str_exprs_html_gac127100019d8bb5561ca5c3f9ecb7c90"><div class="ttname"><a href="#gac127100019d8bb5561ca5c3f9ecb7c90">simstr::e_int</a></div><div class="ttdeci">constexpr auto e_int(T v)</div><div class="ttdoc">Creates an object that is converted to a string expression that generates a string representation of ...</div><div class="ttdef"><b>Definition</b> strexpr.h:2178</div></div>
-</div><!-- fragment --> 
+<p>Creates a set of radix and flags that can be applied to integers numbers to set formatting parameters using the division operator: <code>num / 0xFormatOptions_fmt</code>. Formatting parameters are set as follows: first comes <code>0x</code>, then the radix written in decimal form. Next may be symbols indicating various flags:</p><ul>
+<li>b when setting the field width, align to the left, analogous to f::l.</li>
+<li>d when setting the field width, align to the right, analogous to f::r.</li>
+<li>c when setting the field width, align to the center, analogous to f::c.</li>
+<li>a display the number system prefix, 0b for 2, 0 for 8, 0x for 16, analogous to f::p.</li>
+<li>A display the number system prefix, 0B for 2, 0 for 8, 0X for 16, analogous to f::P.</li>
+<li>0 pad the number to the specified width with zeros on the right. Not compatible with alignment options, similar to f::z.</li>
+<li>E For number systems greater than 10, display characters in uppercase, analogous to f::u.</li>
+<li>e For signed number types, for positive values, print '+' before the number, analogous to f::sp.</li>
+<li>f For signed number types, for positive values, print a space before the number, analogous to f::ss.</li>
+<li>FCodeInhex Sets the code of the filler character when specifying the field width, analogous to f::f&lt;'c'&gt;.</li>
+<li>Number in decimal form, not starting from 0. Sets the field width, analogous to f::w&lt;N&gt;. When specifying the width, you can either specify the desired alignment (b, c, d), or zero padding (0), but not both. If none of these are specified, right alignment is applied. The number is padded to the given width if it is shorter. If it is longer, then the entire number is displayed.</li>
+<li>' delimiter, skipped. Since after <code>F</code> all characters are perceived as hex code of the delimiter character, if necessary, use it it is better to put it at the end of format literal, or separate with '. <br  />
+ Example: <div class="fragment"><div class="line">stringu u16t = u<span class="stringliteral">&quot;Number &quot;</span>_ss + num</div>
+<div class="line">    + <span class="stringliteral">&quot; in octal is &quot;</span> + num / 0x8&#39;016_fmt      <span class="comment">// same as e_int&lt;8, f::w&lt;16&gt; | f::z&gt;(num)</span></div>
+<div class="line">    + <span class="stringliteral">&quot;, in binary is &quot;</span> + num / 0x2a032_fmt;   <span class="comment">// same as e_int&lt;2, f::w&lt;32&gt; | f::p | f::z&gt;(num);</span></div>
+<div class="line"> ....</div>
+<div class="line">stringa text = <span class="stringliteral">&quot;Count is &quot;</span>_ss + count / 0x16A08E_fmt; <span class="comment">// same as e_int&lt;16, f::P | f::z | f::w&lt;8&gt; | f::u&gt;(count)</span></div>
+<div class="line"> ....</div>
+<div class="line">stringa text = <span class="stringliteral">&quot;Number &quot;</span>_ss + count / 0x16c20EF5F_fmt; <span class="comment">// same as e_int&lt;16, f::c | f::w&lt;20&gt; | f::u | f::f&lt;&#39;_&#39;&gt;&gt;(count)</span></div>
+</div><!-- fragment --> </li>
+</ul>
+
 </div>
 </div>
 <a id="gafd2e6b8a52bfe20c0b86d25f9f78cb52" name="gafd2e6b8a52bfe20c0b86d25f9f78cb52"></a>
@@ -1207,7 +1236,7 @@ requires (sizeof...(Repl) % 2 == 0)</div>
 </dl>
 <p>Used to generate character replacements for strings if all of them are known at compile time. Example:</p>
 <div class="fragment"><div class="line">out += <span class="stringliteral">&quot;&lt;div&gt;&quot;</span> + <a class="code hl_function" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a>(text, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>, <span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="stringliteral">&quot;&amp;#39;&quot;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>) + <span class="stringliteral">&quot;&lt;/div&gt;&quot;</span>;</div>
-<div class="ttc" id="agroup___str_exprs_html_gac0d4ca53513bcc0d1c0730940ec8a8a1"><div class="ttname"><a href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a></div><div class="ttdeci">auto e_repl_const_symbols(A &amp;&amp;src, Repl &amp;&amp;... other)</div><div class="ttdoc">Returns a string expression that generates a string containing the given characters replaced with giv...</div><div class="ttdef"><b>Definition</b> strexpr.h:5560</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gac0d4ca53513bcc0d1c0730940ec8a8a1"><div class="ttname"><a href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a></div><div class="ttdeci">auto e_repl_const_symbols(A &amp;&amp;src, Repl &amp;&amp;... other)</div><div class="ttdoc">Returns a string expression that generates a string containing the given characters replaced with giv...</div><div class="ttdef"><b>Definition</b> strexpr.h:5781</div></div>
 </div><!-- fragment --><p> In principle, <code>e_repl_const_symbols</code> is quite safe to return from a function if the source string external to function.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> repl_html_symbols(ssa text) {</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a>(text, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>, <span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="stringliteral">&quot;&amp;#39;&quot;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>);</div>
@@ -1334,6 +1363,57 @@ template&lt;typename T, size_t N = const_lit&lt;T&gt;::Count&gt; </div>
 <li>Convert another operand to a string expression: <code>result = "text" + e_num&lt;u8s&gt;(intVar)</code>.</li>
 </ul>
 <p>All these methods work and give the same result. Which one to use is a matter of taste. </p>
+
+</div>
+</div>
+<a id="ga2d2a732759ca764c945829a44128307b" name="ga2d2a732759ca764c945829a44128307b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2d2a732759ca764c945829a44128307b">&#9670;&#160;</a></span>operator&quot;&quot;_fmt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;char... Chars&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto simstr::literals::operator&quot;&quot;_fmt </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel consteval">consteval</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a set of radix and flags that can be applied to integers numbers to set formatting parameters using the division operator: <code>num / 0xFormatOptions_fmt</code>. Formatting parameters are set as follows: first comes <code>0x</code>, then the radix written in decimal form. Next may be symbols indicating various flags: </p>
+<ul>
+<li>b when setting the field width, align to the left, analogous to f::l.</li>
+<li>d when setting the field width, align to the right, analogous to f::r.</li>
+<li>c when setting the field width, align to the center, analogous to f::c.</li>
+<li>a display the number system prefix, 0b for 2, 0 for 8, 0x for 16, analogous to f::p.</li>
+<li>A display the number system prefix, 0B for 2, 0 for 8, 0X for 16, analogous to f::P.</li>
+<li>0 pad the number to the specified width with zeros on the right. Not compatible with alignment options, similar to f::z.</li>
+<li>E For number systems greater than 10, display characters in uppercase, analogous to f::u.</li>
+<li>e For signed number types, for positive values, print '+' before the number, analogous to f::sp.</li>
+<li>f For signed number types, for positive values, print a space before the number, analogous to f::ss.</li>
+<li>FCodeInhex Sets the code of the filler character when specifying the field width, analogous to f::f&lt;'c'&gt;.</li>
+<li>Number in decimal form, not starting from 0. Sets the field width, analogous to f::w&lt;N&gt;. When specifying the width, you can either specify the desired alignment (b, c, d), or zero padding (0), but not both. If none of these are specified, right alignment is applied. The number is padded to the given width if it is shorter. If it is longer, then the entire number is displayed.</li>
+<li>' delimiter, skipped. Since after <code>F</code> all characters are perceived as hex code of the delimiter character, if necessary, use it it is better to put it at the end of format literal, or separate with '. <br  />
+ Example: <div class="fragment"><div class="line">stringu u16t = u<span class="stringliteral">&quot;Number &quot;</span>_ss + num</div>
+<div class="line">    + <span class="stringliteral">&quot; in octal is &quot;</span> + num / 0x8&#39;016_fmt      <span class="comment">// same as e_int&lt;8, f::w&lt;16&gt; | f::z&gt;(num)</span></div>
+<div class="line">    + <span class="stringliteral">&quot;, in binary is &quot;</span> + num / 0x2a032_fmt;   <span class="comment">// same as e_int&lt;2, f::w&lt;32&gt; | f::p | f::z&gt;(num);</span></div>
+<div class="line"> ....</div>
+<div class="line">stringa text = <span class="stringliteral">&quot;Count is &quot;</span>_ss + count / 0x16A08E_fmt; <span class="comment">// same as e_int&lt;16, f::P | f::z | f::w&lt;8&gt; | f::u&gt;(count)</span></div>
+<div class="line"> ....</div>
+<div class="line">stringa text = <span class="stringliteral">&quot;Number &quot;</span>_ss + count / 0x16c20EF5F_fmt; <span class="comment">// same as e_int&lt;16, f::c | f::w&lt;20&gt; | f::u | f::f&lt;&#39;_&#39;&gt;&gt;(count)</span></div>
+</div><!-- fragment --> </li>
+</ul>
 
 </div>
 </div>

@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.4</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -110,7 +110,7 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 simstr - String Object and Function Library</h1>
 <p><span class="obfuscator"><a href="readme_ru.md">Russian | По-русски</a></span></p>
 <p><a href="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml"><img src="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml/badge.svg" alt="CMake on multiple platforms" style="pointer-events: none;" class="inline"/></a></p>
-<p>Version 1.6.3.</p>
+<p>Version 1.6.4.</p>
 <h2>Speed up your work with strings by 2-10 times!</h2>
 <p>This library contains a modern implementation of several types of string objects and various algorithms for working with strings. </p>
 <h2><a class="anchor" id="autotoc_md45"></a>
@@ -281,7 +281,7 @@ Addition with replacements</h3>
 <div class="line">std::string make_str_exp(std::string_view from, std::string_view pattern, std::string_view repl) {</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;&quot;</span> + <a class="code hl_function" href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">e_repl</a>(from, pattern, repl) + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Get a string expression that generates a string with all occurrences of a given substring replaced.</div><div class="ttdef"><b>Definition</b> strexpr.h:5067</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Get a string expression that generates a string with all occurrences of a given substring replaced.</div><div class="ttdef"><b>Definition</b> strexpr.h:5288</div></div>
 </div><!-- fragment --><p> <a href="https://orefkov.github.io/simstr/results.html#bs54035654251116789780">Acceleration from 1.5 times and higher</a> - depending on the content of the strings.</p>
 <h3><a class="anchor" id="autotoc_md56"></a>
 Splitting strings into parts, parsing numbers</h3>
@@ -347,8 +347,8 @@ Connection via FetchContent</h3>
 <div class="line">        <a class="code hl_namespace" href="namespacesimstr.html">simstr</a></div>
 <div class="line">        GIT_REPOSITORY https:<span class="comment">//github.com/orefkov/simstr.git</span></div>
 <div class="line">        GIT_SHALLOW TRUE</div>
-<div class="line">        GIT_TAG tags/rel1.6.3 # Specify the desired release</div>
-<div class="line">        FIND_PACKAGE_ARGS NAMES <a class="code hl_namespace" href="namespacesimstr.html">simstr</a> 1.6.3</div>
+<div class="line">        GIT_TAG tags/rel1.6.4 # Specify the desired release</div>
+<div class="line">        FIND_PACKAGE_ARGS NAMES <a class="code hl_namespace" href="namespacesimstr.html">simstr</a> 1.6.4</div>
 <div class="line">    )</div>
 <div class="line">    FetchContent_MakeAvailable(<a class="code hl_namespace" href="namespacesimstr.html">simstr</a>)</div>
 <div class="line">endfunction()</div>

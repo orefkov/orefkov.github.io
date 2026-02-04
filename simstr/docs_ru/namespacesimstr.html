@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.3</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.4</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -546,6 +546,10 @@ requires is_one_of_char_v&lt;K&gt;</td></tr>
 <tr class="memitem:gafd2e6b8a52bfe20c0b86d25f9f78cb52"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">e_join</a> (const T &amp;s, L &amp;&amp;d)</td></tr>
 <tr class="memdesc:gafd2e6b8a52bfe20c0b86d25f9f78cb52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить строковое выражение, конкатенирующее строки в контейнере в одну строку с заданным разделителем.  <br /></td></tr>
 <tr class="separator:gafd2e6b8a52bfe20c0b86d25f9f78cb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d2a732759ca764c945829a44128307b" id="r_ga2d2a732759ca764c945829a44128307b"><td class="memTemplParams" colspan="2">template&lt;char... Chars&gt; </td></tr>
+<tr class="memitem:ga2d2a732759ca764c945829a44128307b"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___str_exprs.html#ga2d2a732759ca764c945829a44128307b">operator&quot;&quot;_fmt</a> ()</td></tr>
+<tr class="memdesc:ga2d2a732759ca764c945829a44128307b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает набор из основания системы счисления и флагов, который может быть применён к целым числам для задания параметров форматирования с помощью оператора деления: <code>num / 0xПараметрыФорматирования_fmt</code>. Параметры форматирования задаются следующим образом: сначала идёт <code>0x</code>, затем основание счисления, записанное в десятичном виде. Далее могут идти символы, обозначающие различные флаги:  <br /></td></tr>
+<tr class="separator:ga2d2a732759ca764c945829a44128307b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16991abbc007bfa3e438caed37dc780d" id="r_a16991abbc007bfa3e438caed37dc780d"><td class="memItemLeft" align="right" valign="top">SS_CONSTEVAL <a class="el" href="structsimstr_1_1str__src__nt.html">str_src_nt</a>&lt; u8s &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16991abbc007bfa3e438caed37dc780d">operator&quot;&quot;_ss</a> (const u8s *ptr, size_t l)</td></tr>
 <tr class="memdesc:a16991abbc007bfa3e438caed37dc780d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор литерал в <a class="el" href="structsimstr_1_1str__src.html" title="Простейший класс иммутабельной не владеющей строки.">str_src</a>.  <br /></td></tr>
 <tr class="separator:a16991abbc007bfa3e438caed37dc780d"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -98,6 +98,7 @@ var namespacesimstr =
     [ "e_spcw", "group___str_exprs.html#ga23b5d15132fcc706d1edc1364673a4ab", null ],
     [ "e_t", "group___str_exprs.html#ga9e9c377a32a2cc243efce977c4adffe3", null ],
     [ "e_utf", "namespacesimstr.html#a68179a3d25c85c1bab488b570df3b1f2", null ],
+    [ "operator\"\"_fmt", "namespacesimstr.html#ga2d2a732759ca764c945829a44128307b", null ],
     [ "operator\"\"_h", "namespacesimstr.html#ab6365fc9cbc877e83333d71c9387bf92", null ],
     [ "operator\"\"_h", "namespacesimstr.html#a075447008b510f5cbaad22257445c54c", null ],
     [ "operator\"\"_h", "namespacesimstr.html#a0df8d5833d6274ee7d071c21374a5bf0", null ],

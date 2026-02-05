@@ -2,7 +2,8 @@
 (and not just strings)
 
 All practicing programmers have to concatenate strings.
-Precisely concatenate, we don’t have some JavaScript or PHP, in C++ we have this fancy word for it.Programmers in other languages ​​simply "add" strings together without much thought, without even thinking about this operation. After all, what could be simpler than
+Precisely concatenate, we don’t have some JavaScript or PHP, in C++ we have this fancy word for it.Programmers in other languages ​​simply "add" strings
+together without much thought, without even thinking about this operation. After all, what could be simpler than
 ```js
 return "The answer is " + str_answer + ", count is " + count;
 ```
@@ -34,7 +35,8 @@ It sounds like "Hurray!", but it's somehow not loud enough...
 Because an experienced developer sees that 5 (five!) temporary intermediate `std::string` objects are created here,
 into which characters are sequentially transferred from one object to another.
 
-It's good if the resulting strings are small and fall under SSO (as we know, standard x64 strings of 32 bytes can store up to 15 characters without memory allocation). It's good that standard strings are written intelligently,
+It's good if the resulting strings are small and fall under SSO (as we know, standard x64 strings of 32 bytes can store up to 15 characters without memory allocation).
+It's good that standard strings are written intelligently,
 and take full advantage of the power of rvalue references, using `append` and `std::move` when adding to temporary objects.
 This allows for some optimization. But even if it wanted to, the compiler can't throw away these five
 temporary objects and is required to call at least five destructors for them, checking whether they are empty and whether it needs to
@@ -86,10 +88,10 @@ But does he have the right to exclaim "Eureka"? No, and once again, no.
 Look at the sheer volume of code he had to write for such a simple operation.
 If you were to write every string addition in a program like this, you might not even have time to write it.
 
-And this is still a simple case. Numbers may need to be output in more than just decimal format. Strings may need to be used for more than just `char` - the standard actually has five character types for strings,
-and `std::to_char` only exists for `char`. You may also need to "concatenate" strings from a container
-into a single string, or replace substrings with other substrings during addition. Or, depending
-on conditions, append one or another to a string.
+And this is still a simple case. Numbers may need to be output in more than just decimal format. Strings may need to be used for more than
+just `char` - the standard actually has five character types for strings, and `std::to_char` only exists for `char`.
+You may also need to "concatenate" strings from a container into a single string, or replace substrings with other substrings during addition.
+Or, depending on conditions, append one or another to a string.
 
 Is there a way to write all these concatenations as easily as simple string addition,
 but still as efficiently as manual optimization?
@@ -119,13 +121,13 @@ do_make_answer<make_answer_stream>       448 ns 261  ns 2677297
 do_make_answer<make_answer_append>      69.3 ns 40.3 ns 17245060
 do_make_answer<make_answer_strexpr>     56.0 ns 32.6 ns 21401276
 ```
-Now it's time to shout "Eureka!" The code, which turned out to be as simple as any JavaScript, turned out to be the fastest, outperforming our manually optimized code by about 20%.
-And all thanks to the [simstr string library](https://github.com/orefkov/simstr) and the "string expression" technique it uses.
+Now it's time to shout "Eureka!" The code, which turned out to be as simple as any JavaScript, turned out to be the fastest, outperforming our manually
+optimized code by about 20%. And all thanks to the [simstr string library](https://github.com/orefkov/simstr) and the "string expression" technique it uses.
 
 ## How does it work?
 The thing is that the simstr library doesn't actually use either "concatenation" or "addition" of strings.
-It uses "string expressions" to add strings together. This is the basis for the fast addition technique. The second is that in C++, intermediate temporary objects live until the end of an expression,
-until the semicolon. Let's take a closer look.
+It uses "string expressions" to add strings together. This is the basis for the fast addition technique. The second is that in C++, intermediate temporary
+objects live until the end of an expression, until the semicolon. Let's take a closer look.
 
 A string expression isn't a string, but an "instruction" on how to assemble a string.
 You could call it a "string generator." It's an object of any type that satisfies the concept of `StrExpr`:
@@ -176,26 +178,25 @@ constexpr strexprjoin<A, B> operator+(const A&a, const B& b) {
 Now, when we add two string expressions of any type, a temporary object of type
 `strexprjoin<A,B>` is created, which stores references to its terms—the string expressions—and which
 exists until the end of the expression, up to the semicolon. Most importantly, this object also satisfies the concept
-of a string expression, meaning it is itself a string expression, and the addition operation can be applied to it again, chained together, creating a new `strexprjoin` object that references the previous chain
-of expressions and the new term. Thus, the end result is a temporary object that stores references
+of a string expression, meaning it is itself a string expression, and the addition operation can be applied to it again, chained together, creating a new
+`strexprjoin` object that references the previous chain of expressions and the new term. Thus, the end result is a temporary object that stores references
 to all the terms of the expression.
 
 All owned string types in simstr can be initialized from any string expression.
-They request its length, allocate space, and materialize the expression into that space. Mutable string types in simstr can also be used for insertions and replacements, similarly
-obtaining the required length, allocating space, and placing the expression's characters into that space.
+They request its length, allocate space, and materialize the expression into that space. Mutable string types in simstr can also be used for insertions and
+replacements, similarly obtaining the required length, allocating space, and placing the expression's characters into that space.
 
 For compatibility with standard strings, "string expression" objects contain a conversion operator
 to a standard string, performing the same algorithm—calculating the length, allocating space, and placing characters.
 When used in C++20, `resize()` and `data()` are used for this; starting with C++23, `resize_and_overwrite()` is used.
 
-Also, all string types in `simstr` satisfy the concept of a string expression, so they can
-directly serve as addends in addition operations with other string expressions. In this case, they simply
-copy themselves to the specified location.
+Also, all string types in `simstr` satisfy the concept of a string expression, so they can directly serve as addends in addition operations
+with other string expressions. In this case, they simply copy themselves to the specified location.
 
 But string expressions aren't limited to simply copying strings. After all, they are "generators." We can, for example, create
-a type that generates a specified number of specified characters. Or one that converts a number to a string. Or, depending on the condition, returning the result of one or another string expression.
-The library also overloads the operations for adding a string expression to a string literal, or a number,
-as well as standard strings.
+a type that generates a specified number of specified characters. Or one that converts a number to a string.
+Or, depending on the condition, returning the result of one or another string expression.
+The library also overloads the operations for adding a string expression to a string literal, or a number, as well as standard strings.
 
 Look at the code from the example above in more detail:
 ```cpp
@@ -207,13 +208,13 @@ The `ssa` type is `simstr::simple_str<char>` - an analogue of `std::string_view`
 It can be initialized from any `simstr` string objects, from string literals, as well as
 `std::basic_string` and `std::basic_string_view`. Therefore, using it as a function parameter instead of
 `std::string_view` won't break existing code; as you can see, the function can be called just fine with `std::string_view`.
-However, this type is also a string expression, and therefore can be concatenated
-with a string literal. Thus, `"The answer is " + str_answer` creates a new temporary object—a string expression. Adding `", count is "` to it creates a new string object, storing a reference
-to the previous one and to the string literal. Finally, a number is added to it, creating a string
-expression subobject that converts the number to a string. Finally, the conversion method to `std::string` is called on this resulting object, which materializes the string expression into the resulting string.
+However, this type is also a string expression, and therefore can be concatenated with a string literal. Thus, `"The answer is " + str_answer`
+creates a new temporary object—a string expression. Adding `", count is "` to it creates a new string object, storing a reference
+to the previous one and to the string literal. Finally, a number is added to it, creating a string expression subobject that converts the
+number to a string. Finally, the conversion method to `std::string` is called on this resulting object, which materializes the string expression
+into the resulting string.
 
-The simstr library isn't limited to implementing efficient string concatenation.
-It also contains many other useful algorithms.
+The simstr library isn't limited to implementing efficient string concatenation. It also contains many other useful algorithms.
 
 Benchmarks for various use cases can be found [here](https://orefkov.github.io/simstr/results.html).
 

@@ -108,18 +108,18 @@ std::string make_answer_strexpr(ssa str_answer, int count) {
 }
 ```
 And now let's finally look at
-[the results of all measurements with Compiler Explorer](https://godbolt.org/z/c5YjfoP88).
+[the results of all measurements with Compiler Explorer](https://godbolt.org/z/TYePsjTPv).
 ```
-Run on (2 X 2298.96 MHz CPU s)
-Load Average: 0.87, 0.76, 0.51
+Run on (2 X 2303.05 MHz CPU s)
+Load Average: 0.28, 0.33, 0.41
 ------------------------------------------------------------------------------
-Benchmark Time CPU Iterations
+Benchmark                                    Time             CPU   Iterations
 ------------------------------------------------------------------------------
-do_make_answer<make_answer_str>         95.7 ns 95.7 ns 7399596
-do_make_answer<make_answer_format>       163 ns 95.7 ns 7426769
-do_make_answer<make_answer_stream>       448 ns 261  ns 2677297
-do_make_answer<make_answer_append>      69.3 ns 40.3 ns 17245060
-do_make_answer<make_answer_strexpr>     56.0 ns 32.6 ns 21401276
+do_make_answer<make_answer_str>            130 ns         95.4 ns      7369631
+do_make_answer<make_answer_format>         368 ns          165 ns      7422333
+do_make_answer<make_answer_stream>         748 ns          422 ns      1546946
+do_make_answer<make_answer_append>         111 ns         60.3 ns      9724967
+do_make_answer<make_answer_strexpr>       79.5 ns         32.9 ns     21483240
 ```
 Now it's time to shout "Eureka!" The code, which turned out to be as simple as any JavaScript, turned out to be the fastest, outperforming our manually
 optimized code by about 20%. And all thanks to the [simstr string library](https://github.com/orefkov/simstr) and the "string expression" technique it uses.

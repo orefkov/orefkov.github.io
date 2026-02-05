@@ -253,7 +253,7 @@ simstr - библиотека строковых объектов и функц�
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> type_name;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Создание условного строкового выражения expr_if.</div><div class="ttdef"><b>Определения</b> strexpr.h:1513</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Создание условного строкового выражения expr_if.</div><div class="ttdef"><b>Определения</b> strexpr.h:1507</div></div>
 </div><!-- fragment --><p> При <code>prec != 0</code>, <a href="https://orefkov.github.io/simstr/results.html#bs145290966789248325200">ускорение 1.5 - 2.2 раза</a>.</p>
 <h3><a class="anchor" id="autotoc_md11"></a>
 Сложение с заменами</h3>
@@ -281,7 +281,7 @@ simstr - библиотека строковых объектов и функц�
 <div class="line">std::string make_str_exp(std::string_view from, std::string_view pattern, std::string_view repl) {</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;&quot;</span> + <a class="code hl_function" href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">e_repl</a>(from, pattern, repl) + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Получить строковое выражение, генерирующее строку с заменой всех вхождений заданной подстроки.</div><div class="ttdef"><b>Определения</b> strexpr.h:5288</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Получить строковое выражение, генерирующее строку с заменой всех вхождений заданной подстроки.</div><div class="ttdef"><b>Определения</b> strexpr.h:5301</div></div>
 </div><!-- fragment --><p> <a href="https://orefkov.github.io/simstr/results.html#bs54035654251116789780">Ускорение от 1.5 раз и выше</a> - в зависимости от содержимого строк.</p>
 <h3><a class="anchor" id="autotoc_md12"></a>
 Разбиение строк на части, парсинг чисел</h3>
@@ -330,6 +330,7 @@ simstr - библиотека строковых объектов и функц�
 Статьи</h2>
 <ul>
 <li>Обзор и введение</li>
+<li><a href="https://orefkov.github.io/simstr/articles/fast_concat_ru.html">Так как же всё-таки быстро конкатенировать строки?</a></li>
 <li><a href="https://habr.com/ru/articles/935590">Обзорная статья на Хабре</a></li>
 <li><a href="https://habr.com/ru/articles/936468/">Описание применяемой техники "Expression Templates"</a></li>
 </ul>

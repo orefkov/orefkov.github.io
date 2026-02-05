@@ -58,7 +58,7 @@ var group___str_exprs =
     [ "simstr::e_spca", "group___str_exprs.html#ga33e02268e25a635b4b7e14d0744b46c1", null ],
     [ "simstr::e_spcw", "group___str_exprs.html#ga23b5d15132fcc706d1edc1364673a4ab", null ],
     [ "simstr::e_t", "group___str_exprs.html#ga9e9c377a32a2cc243efce977c4adffe3", null ],
-    [ "simstr::literals::operator\"\"_fmt", "group___str_exprs.html#ga2d2a732759ca764c945829a44128307b", null ],
+    [ "simstr::literals::operator\"\"_fmt", "group___str_exprs.html#gaf15a081168adaeea745b16a254c0230c", null ],
     [ "simstr::operator+", "group___str_exprs.html#ga9742e8cdcccc67c0746578f3579127e2", null ],
     [ "simstr::operator+", "group___str_exprs.html#ga9d8bc7652fac165ad43ae054fb083616", null ],
     [ "simstr::operator+", "group___str_exprs.html#ga426dd6edd38c382f64fb4cc547896c80", null ],

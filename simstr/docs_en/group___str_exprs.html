@@ -296,10 +296,10 @@ requires is_one_of_char_v&lt;K&gt;</td></tr>
 <tr class="memitem:gafd2e6b8a52bfe20c0b86d25f9f78cb52"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a> (const T &amp;s, L &amp;&amp;d)</td></tr>
 <tr class="memdesc:gafd2e6b8a52bfe20c0b86d25f9f78cb52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string expression concatenating the strings in the container into a single string with the given delimiter.limiter.limiter.  <br /></td></tr>
 <tr class="separator:gafd2e6b8a52bfe20c0b86d25f9f78cb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2d2a732759ca764c945829a44128307b" id="r_ga2d2a732759ca764c945829a44128307b"><td class="memTemplParams" colspan="2">template&lt;char... Chars&gt; </td></tr>
-<tr class="memitem:ga2d2a732759ca764c945829a44128307b"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga2d2a732759ca764c945829a44128307b">simstr::operator&quot;&quot;_fmt</a> ()</td></tr>
-<tr class="memdesc:ga2d2a732759ca764c945829a44128307b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a set of radix and flags that can be applied to integers numbers to set formatting parameters using the division operator: <code>num / 0xFormatOptions_fmt</code>. Formatting parameters are set as follows: first comes <code>0x</code>, then the radix written in decimal form. Next may be symbols indicating various flags:  <br /></td></tr>
-<tr class="separator:ga2d2a732759ca764c945829a44128307b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf15a081168adaeea745b16a254c0230c" id="r_gaf15a081168adaeea745b16a254c0230c"><td class="memTemplParams" colspan="2">template&lt;char... Chars&gt; </td></tr>
+<tr class="memitem:gaf15a081168adaeea745b16a254c0230c"><td class="memTemplItemLeft" align="right" valign="top">SS_CONSTEVAL auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaf15a081168adaeea745b16a254c0230c">simstr::operator&quot;&quot;_fmt</a> ()</td></tr>
+<tr class="memdesc:gaf15a081168adaeea745b16a254c0230c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a set of radix and flags that can be applied to integers numbers to set formatting parameters using the division operator: <code>num / 0xFormatOptions_fmt</code>. Formatting parameters are set as follows: first comes <code>0x</code>, then the radix written in decimal form. Next may be symbols indicating various flags:  <br /></td></tr>
+<tr class="separator:gaf15a081168adaeea745b16a254c0230c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafb0987b3c98cd839334c33bc1c94bead" id="r_gafb0987b3c98cd839334c33bc1c94bead"><td class="memTemplParams" colspan="2">template&lt;StrSource A, typename K = symb_type_from_src_t&lt;A&gt;, typename T, size_t N = const_lit_for&lt;K, T&gt;::Count, typename X, size_t L = const_lit_for&lt;K, X&gt;::Count&gt; <br />
 requires (N &gt; 1)</td></tr>
 <tr class="memitem:gafb0987b3c98cd839334c33bc1c94bead"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a> (A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</td></tr>
@@ -534,9 +534,9 @@ template&lt;StrExpr A, StrExprForType&lt; typename A::symb_type &gt; B&gt; </div
 </dl>
 <p>Serves to allow you to select different options in one expression depending on the condition.</p>
 <p>Example: </p><div class="fragment"><div class="line">columns_metadata.emplace_back(<a class="code hl_function" href="#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(name.is_empty(), <span class="stringliteral">&quot;?column?&quot;</span>, name) + <span class="stringliteral">&quot;::&quot;</span> + metadata_column.type.to_string());</div>
-<div class="ttc" id="agroup___str_exprs_html_gab058a69a654cf3a0fce197e862a7400e"><div class="ttname"><a href="#gab058a69a654cf3a0fce197e862a7400e">simstr::e_choice</a></div><div class="ttdeci">constexpr expr_choice&lt; A, B &gt; e_choice(bool c, const A &amp;a, const B &amp;b)</div><div class="ttdoc">Create a conditional string expression expr_choice.</div><div class="ttdef"><b>Definition</b> strexpr.h:1435</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gab058a69a654cf3a0fce197e862a7400e"><div class="ttname"><a href="#gab058a69a654cf3a0fce197e862a7400e">simstr::e_choice</a></div><div class="ttdeci">constexpr expr_choice&lt; A, B &gt; e_choice(bool c, const A &amp;a, const B &amp;b)</div><div class="ttdoc">Create a conditional string expression expr_choice.</div><div class="ttdef"><b>Definition</b> strexpr.h:1429</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">lstringa&lt;512&gt; <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a> = <a class="code hl_function" href="#gab058a69a654cf3a0fce197e862a7400e">e_choice</a>(!ret_type_resolver_, sql_value::type_name(ret_type_), <span class="stringliteral">&quot;any&quot;</span>) + <span class="stringliteral">&quot; &quot;</span> + name_ + <span class="stringliteral">&quot;(&quot;</span>;</div>
-<div class="ttc" id="anamespacesimstr_1_1str_html"><div class="ttname"><a href="namespacesimstr_1_1str.html">simstr::str</a></div><div class="ttdoc">Small namespace for standard string methods.</div><div class="ttdef"><b>Definition</b> strexpr.h:1569</div></div>
+<div class="ttc" id="anamespacesimstr_1_1str_html"><div class="ttname"><a href="namespacesimstr_1_1str.html">simstr::str</a></div><div class="ttdoc">Small namespace for standard string methods.</div><div class="ttdef"><b>Definition</b> strexpr.h:1563</div></div>
 </div><!-- fragment --><p> Otherwise, such operations would have to be split into several string modifications or the use of temporary strings, which is not optimal and will reduce performance. (This is checked in the "Build Full Func Name" benchmark) </p>
 
 </div>
@@ -655,7 +655,7 @@ template&lt;unsigned Flags = 0, FromIntNumber T&gt; </div>
 <div class="line"> </div>
 <div class="line">stringu textu = +u<span class="stringliteral">&quot;val = 0X&quot;</span>sv + <a class="code hl_function" href="#ga6ae75ae56c754403fbf9f5b610a3326b">e_hex&lt;HexFlags::No0x | HexFlags::Short | HexFlags::Lcase&gt;</a>(0x12Au);</div>
 <div class="line">EXPECT_EQ(textu, u<span class="stringliteral">&quot;val = 0X12a&quot;</span>);</div>
-<div class="ttc" id="agroup___str_exprs_html_ga6ae75ae56c754403fbf9f5b610a3326b"><div class="ttname"><a href="#ga6ae75ae56c754403fbf9f5b610a3326b">simstr::e_hex</a></div><div class="ttdeci">constexpr auto e_hex(T v)</div><div class="ttdoc">Allows you to concatenate text and a unsigned number in hexadecimal.</div><div class="ttdef"><b>Definition</b> strexpr.h:2497</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga6ae75ae56c754403fbf9f5b610a3326b"><div class="ttname"><a href="#ga6ae75ae56c754403fbf9f5b610a3326b">simstr::e_hex</a></div><div class="ttdeci">constexpr auto e_hex(T v)</div><div class="ttdoc">Allows you to concatenate text and a unsigned number in hexadecimal.</div><div class="ttdef"><b>Definition</b> strexpr.h:2510</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -724,7 +724,7 @@ template&lt;StrExpr A&gt; </div>
 <div class="line">    <span class="comment">// Save it in stringa</span></div>
 <div class="line">    full_name_ = <a class="code hl_namespace" href="namespacesimstr_1_1str.html">str</a> + <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(unlim_params_, <a class="code hl_function" href="#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(add_comma, <span class="stringliteral">&quot;, &quot;</span>) + <span class="stringliteral">&quot;...&quot;</span>) + <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Creating a conditional string expression expr_if.</div><div class="ttdef"><b>Definition</b> strexpr.h:1513</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Creating a conditional string expression expr_if.</div><div class="ttdef"><b>Definition</b> strexpr.h:1507</div></div>
 </div><!-- fragment --><p> Otherwise, such operations would have to be split into several string modifications or the use of temporary strings, which is not optimal and will reduce performance. (This example is tested in the "Build Full Func Name" benchmark) </p>
 
 </div>
@@ -787,10 +787,8 @@ requires good_int_flags&lt;flags_checker&lt;R, T, decltype(fp)&gt;, false&gt;</d
  Example: <div class="fragment"><div class="line">stringu u16t = u<span class="stringliteral">&quot;Number &quot;</span>_ss + num</div>
 <div class="line">    + <span class="stringliteral">&quot; in octal is &quot;</span> + <a class="code hl_function" href="#gac127100019d8bb5561ca5c3f9ecb7c90">e_int&lt;8, f::w&lt;16&gt;</a> | f::z&gt;(num)</div>
 <div class="line">    + <span class="stringliteral">&quot;, in binary is &quot;</span> + <a class="code hl_function" href="#gac127100019d8bb5561ca5c3f9ecb7c90">e_int</a>&lt;2, f::w&lt;32&gt; | f::p | f::z&gt;(num);</div>
-<div class="ttc" id="agroup___str_exprs_html_gac127100019d8bb5561ca5c3f9ecb7c90"><div class="ttname"><a href="#gac127100019d8bb5561ca5c3f9ecb7c90">simstr::e_int</a></div><div class="ttdeci">constexpr auto e_int(T v)</div><div class="ttdoc">Creates an object that is converted to a string expression that generates a string representation of ...</div><div class="ttdef"><b>Definition</b> strexpr.h:2329</div></div>
-</div><!-- fragment --></li>
-</ul>
-<p>Creates a set of radix and flags that can be applied to integers numbers to set formatting parameters using the division operator: <code>num / 0xFormatOptions_fmt</code>. Formatting parameters are set as follows: first comes <code>0x</code>, then the radix written in decimal form. Next may be symbols indicating various flags:</p><ul>
+<div class="ttc" id="agroup___str_exprs_html_gac127100019d8bb5561ca5c3f9ecb7c90"><div class="ttname"><a href="#gac127100019d8bb5561ca5c3f9ecb7c90">simstr::e_int</a></div><div class="ttdeci">constexpr auto e_int(T v)</div><div class="ttdoc">Creates an object that is converted to a string expression that generates a string representation of ...</div><div class="ttdef"><b>Definition</b> strexpr.h:2342</div></div>
+</div><!-- fragment --> It is also possible to write this function in a shortened form: <code>num / 0xFormatOptions_fmt</code>. Formatting parameters are set as follows: first comes <code>0x</code>, then the radix written in decimal form. Next may be symbols indicating various flags:</li>
 <li>b when setting the field width, align to the left, analogous to f::l.</li>
 <li>d when setting the field width, align to the right, analogous to f::r.</li>
 <li>c when setting the field width, align to the center, analogous to f::c.</li>
@@ -1236,7 +1234,7 @@ requires (sizeof...(Repl) % 2 == 0)</div>
 </dl>
 <p>Used to generate character replacements for strings if all of them are known at compile time. Example:</p>
 <div class="fragment"><div class="line">out += <span class="stringliteral">&quot;&lt;div&gt;&quot;</span> + <a class="code hl_function" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a>(text, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>, <span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="stringliteral">&quot;&amp;#39;&quot;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>) + <span class="stringliteral">&quot;&lt;/div&gt;&quot;</span>;</div>
-<div class="ttc" id="agroup___str_exprs_html_gac0d4ca53513bcc0d1c0730940ec8a8a1"><div class="ttname"><a href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a></div><div class="ttdeci">auto e_repl_const_symbols(A &amp;&amp;src, Repl &amp;&amp;... other)</div><div class="ttdoc">Returns a string expression that generates a string containing the given characters replaced with giv...</div><div class="ttdef"><b>Definition</b> strexpr.h:5781</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gac0d4ca53513bcc0d1c0730940ec8a8a1"><div class="ttname"><a href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a></div><div class="ttdeci">auto e_repl_const_symbols(A &amp;&amp;src, Repl &amp;&amp;... other)</div><div class="ttdoc">Returns a string expression that generates a string containing the given characters replaced with giv...</div><div class="ttdef"><b>Definition</b> strexpr.h:5794</div></div>
 </div><!-- fragment --><p> In principle, <code>e_repl_const_symbols</code> is quite safe to return from a function if the source string external to function.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> repl_html_symbols(ssa text) {</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a>(text, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>, <span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="stringliteral">&quot;&amp;#39;&quot;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>);</div>
@@ -1280,7 +1278,7 @@ template&lt;size_t N&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string expression for N char spaces.</dd></dl>
 <p>Example: </p><div class="fragment"><div class="line">stringa text = <a class="code hl_function" href="#ga33e02268e25a635b4b7e14d0744b46c1">e_spca&lt;10&gt;</a>() + text + <a class="code hl_function" href="#ga33e02268e25a635b4b7e14d0744b46c1">e_spca&lt;10&gt;</a>();</div>
-<div class="ttc" id="agroup___str_exprs_html_ga33e02268e25a635b4b7e14d0744b46c1"><div class="ttname"><a href="#ga33e02268e25a635b4b7e14d0744b46c1">simstr::e_spca</a></div><div class="ttdeci">constexpr expr_spaces&lt; u8s, N &gt; e_spca()</div><div class="ttdoc">Generates a string of N char spaces.</div><div class="ttdef"><b>Definition</b> strexpr.h:1055</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga33e02268e25a635b4b7e14d0744b46c1"><div class="ttname"><a href="#ga33e02268e25a635b4b7e14d0744b46c1">simstr::e_spca</a></div><div class="ttdeci">constexpr expr_spaces&lt; u8s, N &gt; e_spca()</div><div class="ttdoc">Generates a string of N char spaces.</div><div class="ttdef"><b>Definition</b> strexpr.h:1049</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1318,7 +1316,7 @@ template&lt;size_t N&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string expression for N wchar_t spaces.</dd></dl>
 <p>Example: </p><div class="fragment"><div class="line">stringw text = <a class="code hl_function" href="#ga23b5d15132fcc706d1edc1364673a4ab">e_spcw&lt;10&gt;</a>() + text + <a class="code hl_function" href="#ga23b5d15132fcc706d1edc1364673a4ab">e_spcw&lt;10&gt;</a>();</div>
-<div class="ttc" id="agroup___str_exprs_html_ga23b5d15132fcc706d1edc1364673a4ab"><div class="ttname"><a href="#ga23b5d15132fcc706d1edc1364673a4ab">simstr::e_spcw</a></div><div class="ttdeci">constexpr expr_spaces&lt; uws, N &gt; e_spcw()</div><div class="ttdoc">Generates a string of N wchar_t spaces.</div><div class="ttdef"><b>Definition</b> strexpr.h:1073</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga23b5d15132fcc706d1edc1364673a4ab"><div class="ttname"><a href="#ga23b5d15132fcc706d1edc1364673a4ab">simstr::e_spcw</a></div><div class="ttdeci">constexpr expr_spaces&lt; uws, N &gt; e_spcw()</div><div class="ttdoc">Generates a string of N wchar_t spaces.</div><div class="ttdef"><b>Definition</b> strexpr.h:1067</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1366,29 +1364,21 @@ template&lt;typename T, size_t N = const_lit&lt;T&gt;::Count&gt; </div>
 
 </div>
 </div>
-<a id="ga2d2a732759ca764c945829a44128307b" name="ga2d2a732759ca764c945829a44128307b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2d2a732759ca764c945829a44128307b">&#9670;&#160;</a></span>operator&quot;&quot;_fmt()</h2>
+<a id="gaf15a081168adaeea745b16a254c0230c" name="gaf15a081168adaeea745b16a254c0230c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf15a081168adaeea745b16a254c0230c">&#9670;&#160;</a></span>operator&quot;&quot;_fmt()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;char... Chars&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto simstr::literals::operator&quot;&quot;_fmt </td>
+          <td class="memname">SS_CONSTEVAL auto simstr::literals::operator&quot;&quot;_fmt </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel consteval">consteval</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Creates a set of radix and flags that can be applied to integers numbers to set formatting parameters using the division operator: <code>num / 0xFormatOptions_fmt</code>. Formatting parameters are set as follows: first comes <code>0x</code>, then the radix written in decimal form. Next may be symbols indicating various flags: </p>

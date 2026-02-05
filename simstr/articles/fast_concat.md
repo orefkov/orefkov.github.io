@@ -89,7 +89,7 @@ Look at the sheer volume of code he had to write for such a simple operation.
 If you were to write every string addition in a program like this, you might not even have time to write it.
 
 And this is still a simple case. Numbers may need to be output in more than just decimal format. Strings may need to be used for more than
-just `char` - the standard actually has five character types for strings, and `std::to_char` only exists for `char`.
+just `char` - the standard actually has five character types for strings, and `std::to_chars` only exists for `char`.
 You may also need to "concatenate" strings from a container into a single string, or replace substrings with other substrings during addition.
 Or, depending on conditions, append one or another to a string.
 
@@ -178,7 +178,7 @@ constexpr strexprjoin<A, B> operator+(const A&a, const B& b) {
 Now, when we add two string expressions of any type, a temporary object of type
 `strexprjoin<A,B>` is created, which stores references to its terms—the string expressions—and which
 exists until the end of the expression, up to the semicolon. Most importantly, this object also satisfies the concept
-of a string expression, meaning it is itself a string expression, and the addition operation can be applied to it again, chained together, creating a new
+`StrExpr`, meaning it is itself a string expression, and the addition operation can be applied to it again, chained together, creating a new
 `strexprjoin` object that references the previous chain of expressions and the new term. Thus, the end result is a temporary object that stores references
 to all the terms of the expression.
 
@@ -213,6 +213,15 @@ creates a new temporary object—a string expression. Adding `", count is "` to 
 to the previous one and to the string literal. Finally, a number is added to it, creating a string expression subobject that converts the
 number to a string. Finally, the conversion method to `std::string` is called on this resulting object, which materializes the string expression
 into the resulting string.
+
+Some might argue that in this method we are not getting rid of temporary intermediate objects.
+Yes, that's true. But all these objects are simple and primitive - often they simply consist of references to other objects.
+They are all created on the stack, have trivial constructors and destructors, do not use dynamic memory,
+their entire lives are clearly visible to the compiler, and it does a great job of optimizing their use.
+Look, for example, how beautifully [GCC was able to optimize a small concatenation](https://godbolt.org/z/r1GMc4xKM) -
+there was no trace of these intermediate objects left, and he simply inserted a copy of the characters into the string buffer.
+You can also compare it with code generation using the classical concatenation method - there is more code, clearly visible
+all destructors of intermediate `std::string`. Clang so far copes with optimization a little worse, but not critically.
 
 The simstr library isn't limited to implementing efficient string concatenation. It also contains many other useful algorithms.
 

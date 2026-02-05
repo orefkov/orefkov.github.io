@@ -2,8 +2,9 @@
 (and not just strings)
 
 All practicing programmers have to concatenate strings.
-Precisely concatenate, we don’t have some JavaScript or PHP, in C++ we have this fancy word for it.Programmers in other languages ​​simply "add" strings
-together without much thought, without even thinking about this operation. After all, what could be simpler than
+Precisely "concatenate." We're not using some JavaScript or PHP. In C++, we have this fancy word for it.
+Programmers in other languages ​​simply "add" strings together without much thought, without even thinking about this operation.
+After all, what could be simpler than
 ```js
 return "The answer is " + str_answer + ", count is " + count;
 ```
@@ -45,7 +46,7 @@ the resulting object, and such a check is simply a waste of time. Let's not forg
 provide for exceptions by generating code to clean up these temporary objects during stack unwinding.
 
 Yes, if this code isn't running in a critical execution region, then modern processors will tolerate anything, but this
-is not the path of an experienced master. A master strives for perfection. So, he starts trying out different options and taking measurements.
+is not the path of an experienced string fu master. A a sting fu master seeks perfection. So, he starts trying out different options and taking measurements.
 
 So, maybe the problem is that there are too many temporary objects and character movements between them?
 Let's try to do everything in one go, since we have std::stringstream and std::format:
@@ -182,9 +183,10 @@ exists until the end of the expression, up to the semicolon. Most importantly, t
 `strexprjoin` object that references the previous chain of expressions and the new term. Thus, the end result is a temporary object that stores references
 to all the terms of the expression.
 
-All owned string types in simstr can be initialized from any string expression.
-They request its length, allocate space, and materialize the expression into that space. Mutable string types in simstr can also be used for insertions and
-replacements, similarly obtaining the required length, allocating space, and placing the expression's characters into that space.
+All types in simstr that handle strings can be initialized from any string expression.
+They request its length, allocate space, and materialize the expression into that space.
+Mutable string types in simstr also support string expressions for insertions and replacements, similarly obtaining the required length,
+preparing a location, and placing the expression characters into that location.
 
 For compatibility with standard strings, "string expression" objects contain a conversion operator
 to a standard string, performing the same algorithm—calculating the length, allocating space, and placing characters.

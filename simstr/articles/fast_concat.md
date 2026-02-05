@@ -46,7 +46,8 @@ the resulting object, and such a check is simply a waste of time. Let's not forg
 provide for exceptions by generating code to clean up these temporary objects during stack unwinding.
 
 Yes, if this code isn't running in a critical execution region, then modern processors will tolerate anything, but this
-is not the path of an experienced string fu master. A a sting fu master seeks perfection. So, he starts trying out different options and taking measurements.
+is not the path of an experienced string fu master. A true string fu master seeks perfection.
+So, he starts trying out different options and taking measurements.
 
 So, maybe the problem is that there are too many temporary objects and character movements between them?
 Let's try to do everything in one go, since we have std::stringstream and std::format:

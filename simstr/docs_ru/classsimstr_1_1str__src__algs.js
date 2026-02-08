@@ -78,5 +78,6 @@ var classsimstr_1_1str__src__algs =
     [ "trimmed_right_with_spaces", "classsimstr_1_1str__src__algs.html#ad41853e3d4d2579fe7557873592e7302", null ],
     [ "trimmed_with_spaces", "classsimstr_1_1str__src__algs.html#a6c2541095cb5e5a262b8e20c4dc8428b", null ],
     [ "trimmed_with_spaces", "classsimstr_1_1str__src__algs.html#ab950f20c494e2c60b22dfe95e410ec25", null ],
+    [ "until", "classsimstr_1_1str__src__algs.html#a411f3accc2e800d55e6b26c9c9220926", null ],
     [ "upperred_only_ascii", "classsimstr_1_1str__src__algs.html#a517129dd2774440cd48c401b65bcf066", null ]
 ];

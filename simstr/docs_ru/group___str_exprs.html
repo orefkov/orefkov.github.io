@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.4</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.5</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -282,7 +282,7 @@ requires is_one_of_char_v&lt;K&gt;</td></tr>
 <tr class="separator:gacea7fe28fcd6fdb6dcae8035eb3b8744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6ae75ae56c754403fbf9f5b610a3326b" id="r_ga6ae75ae56c754403fbf9f5b610a3326b"><td class="memTemplParams" colspan="2">template&lt;unsigned Flags = 0, FromIntNumber T&gt; </td></tr>
 <tr class="memitem:ga6ae75ae56c754403fbf9f5b610a3326b"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga6ae75ae56c754403fbf9f5b610a3326b">simstr::e_hex</a> (T v)</td></tr>
-<tr class="memdesc:ga6ae75ae56c754403fbf9f5b610a3326b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Позволяет конкатенировать текст и беззнаковое число в 16-ричном виде.  <br /></td></tr>
+<tr class="memdesc:ga6ae75ae56c754403fbf9f5b610a3326b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает объект, который может преобразовываться в строковое выражение, генерирующее 16ричное представление числа.  <br /></td></tr>
 <tr class="separator:ga6ae75ae56c754403fbf9f5b610a3326b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga29b819f35d451888d14bae0217478561" id="r_ga29b819f35d451888d14bae0217478561"><td class="memTemplParams" colspan="2">template&lt;StrExpr A, typename K = typename A::symb_type&gt; </td></tr>
 <tr class="memitem:ga29b819f35d451888d14bae0217478561"><td class="memTemplItemLeft" align="right" valign="top">expr_fill&lt; K, A, true &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga29b819f35d451888d14bae0217478561">simstr::e_fill_left</a> (const A &amp;a, size_t width, K symbol=K(' '))</td></tr>
@@ -641,21 +641,42 @@ template&lt;unsigned Flags = 0, FromIntNumber T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Позволяет конкатенировать текст и беззнаковое число в 16-ричном виде. </p>
+<p>Создает объект, который может преобразовываться в строковое выражение, генерирующее 16ричное представление числа. </p>
 <dl class="tparams"><dt>Параметры шаблона</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Flags</td><td>- флаги форматирования, побитовое ИЛИ из <a class="el" href="#ga680097382d9bc271c361f85828ac741f" title="Флаги для функции e_hex.">HexFlags</a>. </td></tr>
-    <tr><td class="paramname">T</td><td>- тип числа, выводится автоматически. Пример <div class="fragment"><div class="line">stringa text = +<span class="stringliteral">&quot;val = &quot;</span>sv + <a class="code hl_function" href="#ga6ae75ae56c754403fbf9f5b610a3326b">e_hex</a>(10u);</div>
-<div class="line">EXPECT_EQ(text, <span class="stringliteral">&quot;val = 0x0000000A&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line">stringu textu = +u<span class="stringliteral">&quot;val = 0X&quot;</span>sv + <a class="code hl_function" href="#ga6ae75ae56c754403fbf9f5b610a3326b">e_hex&lt;HexFlags::No0x | HexFlags::Short | HexFlags::Lcase&gt;</a>(0x12Au);</div>
-<div class="line">EXPECT_EQ(textu, u<span class="stringliteral">&quot;val = 0X12a&quot;</span>);</div>
-<div class="ttc" id="agroup___str_exprs_html_ga6ae75ae56c754403fbf9f5b610a3326b"><div class="ttname"><a href="#ga6ae75ae56c754403fbf9f5b610a3326b">simstr::e_hex</a></div><div class="ttdeci">constexpr auto e_hex(T v)</div><div class="ttdoc">Позволяет конкатенировать текст и беззнаковое число в 16-ричном виде.</div><div class="ttdef"><b>Определения</b> strexpr.h:2510</div></div>
-</div><!-- fragment --> </td></tr>
+    <tr><td class="paramname">T</td><td>- тип числа, выводится автоматически. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>- число.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Это более быстрое преобразование в строку в 16ричном виде, чем через <code>e_int</code>, однако с меньшими возможностями форматирования. По умолчанию создается представление в виде <code>0x000012AB</code>, то есть префикс <code>0x</code> и дополнения нулями до ширины по размеру типа числа (2 символа на байт). Можно указать флаги:</p><ul>
+<li><a class="el" href="#gga680097382d9bc271c361f85828ac741fad4ddbe11a4c8e3daca5795ad268df0c4" title="without leading zeroes">HexFlags::Short</a> - не дополнять нулями до фиксированной ширины.</li>
+<li>HexFlags::Lcase - выводить символы в нижнем регистре.</li>
+<li>HexFlags::No0x - не выводить префикс.</li>
+</ul>
+<p>Кроме того, возможна краткая запись этого выражения в виде <code>num / N_f16</code> N обозначает флаги форматирования</p><ul>
+<li>1 - <a class="el" href="#gga680097382d9bc271c361f85828ac741fad4ddbe11a4c8e3daca5795ad268df0c4" title="without leading zeroes">HexFlags::Short</a></li>
+<li>2 - HexFlags::Lcase</li>
+<li>3 - HexFlags::No0x</li>
+</ul>
+<p>Пример </p><div class="fragment"><div class="line">stringa text = +<span class="stringliteral">&quot;val = &quot;</span>sv + <a class="code hl_function" href="#ga6ae75ae56c754403fbf9f5b610a3326b">e_hex</a>(10);</div>
+<div class="line">EXPECT_EQ(text, <span class="stringliteral">&quot;val = 0x0000000A&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">stringu textu = +u<span class="stringliteral">&quot;val = 0X&quot;</span>sv + <a class="code hl_function" href="#ga6ae75ae56c754403fbf9f5b610a3326b">e_hex&lt;HexFlags::No0x | HexFlags::Short | HexFlags::Lcase&gt;</a>(0x12A);</div>
+<div class="line">EXPECT_EQ(textu, u<span class="stringliteral">&quot;val = 0X12a&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">text = <span class="stringliteral">&quot;Num in hex: &quot;</span> + num / 0_f16;      <span class="comment">// same as e_hex(num);</span></div>
+<div class="line">text = <span class="stringliteral">&quot;Num in hex: &quot;</span> + num / 13_f16;     <span class="comment">// same as e_hex&lt;HexFlags::Short | HexFlags::No0x&gt;(num);</span></div>
+<div class="line">text = <span class="stringliteral">&quot;Num in hex: &quot;</span> + num / 123_f16;    <span class="comment">// same as e_hex&lt;HexFlags::Short | HexFlags::No0x | HexFlags::Lcase&gt;(num);</span></div>
+<div class="line">text = <span class="stringliteral">&quot;Num in hex: &quot;</span> + num / 2_f16;      <span class="comment">// same as e_hex&lt;HexFlags::No0x | HexFlags::Lcase&gt;(num);</span></div>
+<div class="ttc" id="agroup___str_exprs_html_ga6ae75ae56c754403fbf9f5b610a3326b"><div class="ttname"><a href="#ga6ae75ae56c754403fbf9f5b610a3326b">simstr::e_hex</a></div><div class="ttdeci">constexpr auto e_hex(T v)</div><div class="ttdoc">Создает объект, который может преобразовываться в строковое выражение, генерирующее 16ричное представ...</div><div class="ttdef"><b>Определения</b> strexpr.h:2545</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ga1f2bd93f7c79b2c59ddf5adb18246751" name="ga1f2bd93f7c79b2c59ddf5adb18246751"></a>
@@ -775,7 +796,7 @@ requires good_int_flags&lt;flags_checker&lt;R, T, decltype(fp)&gt;, false&gt;</d
 <li>f::с при задании ширины поля выравнивать по центру.</li>
 <li>f::p выводить префикс системы счисления, 0b для 2, 0 для 8, 0x для 16.</li>
 <li>f::P выводить префикс системы счисления, 0B для 2, 0 для 8, 0X для 16.</li>
-<li>f::z дополнять число до заданной ширины нулями справа. Не совместимо с опциями выравнивания.</li>
+<li>f::z дополнять число до заданной ширины нулями слева. Не совместимо с опциями выравнивания.</li>
 <li>f::u Для систем счисления более 10, выводить символы в верхнем регистре.</li>
 <li>f::sp Для знаковых типов чисел для положительных значений выводить '+' перед числом.</li>
 <li>f::ss Для знаковых типов чисел для положительных значений выводить пробел перед числом.</li>
@@ -785,30 +806,30 @@ requires good_int_flags&lt;flags_checker&lt;R, T, decltype(fp)&gt;, false&gt;</d
  Пример: <div class="fragment"><div class="line">stringu u16t = u<span class="stringliteral">&quot;Number &quot;</span>_ss + num</div>
 <div class="line">    + <span class="stringliteral">&quot; in octal is &quot;</span> + <a class="code hl_function" href="#gac127100019d8bb5561ca5c3f9ecb7c90">e_int&lt;8, f::w&lt;16&gt;</a> | f::z&gt;(num)</div>
 <div class="line">    + <span class="stringliteral">&quot;, in binary is &quot;</span> + <a class="code hl_function" href="#gac127100019d8bb5561ca5c3f9ecb7c90">e_int</a>&lt;2, f::w&lt;32&gt; | f::p | f::z&gt;(num);</div>
-<div class="ttc" id="agroup___str_exprs_html_gac127100019d8bb5561ca5c3f9ecb7c90"><div class="ttname"><a href="#gac127100019d8bb5561ca5c3f9ecb7c90">simstr::e_int</a></div><div class="ttdeci">constexpr auto e_int(T v)</div><div class="ttdoc">Создает объект, который преобразовывается в строковое выражение, генерирующее строковое представление...</div><div class="ttdef"><b>Определения</b> strexpr.h:2342</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gac127100019d8bb5561ca5c3f9ecb7c90"><div class="ttname"><a href="#gac127100019d8bb5561ca5c3f9ecb7c90">simstr::e_int</a></div><div class="ttdeci">constexpr auto e_int(T v)</div><div class="ttdoc">Создает объект, который преобразовывается в строковое выражение, генерирующее строковое представление...</div><div class="ttdef"><b>Определения</b> strexpr.h:2344</div></div>
 </div><!-- fragment --> Возможна также сокращённая запись этой функции в виде <code>num / 0xПараметрыФорматирования_fmt</code>. Параметры форматирования задаются следующим образом: сначала идёт <code>0x</code>, затем основание счисления, записанное в десятичном виде. Далее могут идти символы, обозначающие различные флаги:</li>
 <li>b при задании ширины поля выравнивать влево, аналог f::l.</li>
 <li>d при задании ширины поля выравнивать вправо, аналог f::r.</li>
 <li>с при задании ширины поля выравнивать по центру, аналог f::c.</li>
 <li>a выводить префикс системы счисления, 0b для 2, 0 для 8, 0x для 16, аналог f::p.</li>
 <li>A выводить префикс системы счисления, 0B для 2, 0 для 8, 0X для 16, аналог f::P.</li>
-<li>0 дополнять число до заданной ширины нулями справа. Не совместимо с опциями выравнивания, аналог f::z.</li>
+<li>0 дополнять число до заданной ширины нулями слева. Не совместимо с опциями выравнивания, аналог f::z.</li>
 <li>E Для систем счисления более 10, выводить символы в верхнем регистре, аналог f::u.</li>
 <li>e Для знаковых типов чисел для положительных значений выводить '+' перед числом, аналог f::sp.</li>
 <li>f Для знаковых типов чисел для положительных значений выводить пробел перед числом, аналог f::ss.</li>
 <li>FКодCимволаВhex Задаёт код символа-заполнителя при указании ширины поля, аналог f::f&lt;'c'&gt;.</li>
 <li>Число в десятичном виде, начинающееся не с 0. Задаёт ширину поля, аналог f::w&lt;N&gt;. При указании ширины можно либо указать желаемое выравнивание (b, c, d), либо дополнение нулями (0), но не оба сразу. Если ничего из этого не указано, применяется выравнивание вправо. Число дополняется до заданной ширины, если оно короче. Если длиннее, то выводится всё число.</li>
-<li>' разделитель, пропускается. Так как после <code>F</code> все символы воспринимаются как hex код символа разделителя, при необходимости его использования лучше ставить его в конце литерала форматирования, или отделять '. <br  />
- Пример: <div class="fragment"><div class="line">stringu u16t = u<span class="stringliteral">&quot;Number &quot;</span>_ss + num</div>
+<li>' разделитель, пропускается.</li>
+</ul>
+<p>Так как после <code>F</code> все символы воспринимаются как hex код символа разделителя, при необходимости его использования лучше ставить его в конце литерала форматирования, или отделять '. <br  />
+ Пример: </p><div class="fragment"><div class="line">stringu u16t = u<span class="stringliteral">&quot;Number &quot;</span>_ss + num</div>
 <div class="line">    + <span class="stringliteral">&quot; in octal is &quot;</span> + num / 0x8&#39;016_fmt      <span class="comment">// same as e_int&lt;8, f::w&lt;16&gt; | f::z&gt;(num)</span></div>
 <div class="line">    + <span class="stringliteral">&quot;, in binary is &quot;</span> + num / 0x2a032_fmt;   <span class="comment">// same as e_int&lt;2, f::w&lt;32&gt; | f::p | f::z&gt;(num);</span></div>
 <div class="line"> ....</div>
 <div class="line">stringa text = <span class="stringliteral">&quot;Count is &quot;</span>_ss + count / 0x16A08E_fmt; <span class="comment">// same as e_int&lt;16, f::P | f::z | f::w&lt;8&gt; | f::u&gt;(count)</span></div>
 <div class="line"> ....</div>
 <div class="line">stringa text = <span class="stringliteral">&quot;Number &quot;</span>_ss + count / 0x16c20EF5F_fmt; <span class="comment">// same as e_int&lt;16, f::c | f::w&lt;20&gt; | f::u | f::f&lt;&#39;_&#39;&gt;&gt;(count)</span></div>
-</div><!-- fragment --> </li>
-</ul>
-
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="gafd2e6b8a52bfe20c0b86d25f9f78cb52" name="gafd2e6b8a52bfe20c0b86d25f9f78cb52"></a>
@@ -1232,7 +1253,7 @@ requires (sizeof...(Repl) % 2 == 0)</div>
 </dl>
 <p>Применяется для генерации замены символов на строки, в случае если все они известны в compile time. Пример:</p>
 <div class="fragment"><div class="line">out += <span class="stringliteral">&quot;&lt;div&gt;&quot;</span> + <a class="code hl_function" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a>(text, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>, <span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="stringliteral">&quot;&amp;#39;&quot;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>) + <span class="stringliteral">&quot;&lt;/div&gt;&quot;</span>;</div>
-<div class="ttc" id="agroup___str_exprs_html_gac0d4ca53513bcc0d1c0730940ec8a8a1"><div class="ttname"><a href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a></div><div class="ttdeci">auto e_repl_const_symbols(A &amp;&amp;src, Repl &amp;&amp;... other)</div><div class="ttdoc">Возвращает строковое выражение, генерирующее строку, в которой заданные символы заменены на заданные ...</div><div class="ttdef"><b>Определения</b> strexpr.h:5794</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gac0d4ca53513bcc0d1c0730940ec8a8a1"><div class="ttname"><a href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">simstr::e_repl_const_symbols</a></div><div class="ttdeci">auto e_repl_const_symbols(A &amp;&amp;src, Repl &amp;&amp;... other)</div><div class="ttdoc">Возвращает строковое выражение, генерирующее строку, в которой заданные символы заменены на заданные ...</div><div class="ttdef"><b>Определения</b> strexpr.h:5872</div></div>
 </div><!-- fragment --><p> В принципе, <code>e_repl_const_symbols</code> вполне безопасно возвращать из функции, если исходная строка внешняя по отношению к функции.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> repl_html_symbols(ssa text) {</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="#gac0d4ca53513bcc0d1c0730940ec8a8a1">e_repl_const_symbols</a>(text, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="stringliteral">&quot;&amp;quot;&quot;</span>, <span class="charliteral">&#39;&lt;&#39;</span>, <span class="stringliteral">&quot;&amp;lt;&quot;</span>, <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="stringliteral">&quot;&amp;#39;&quot;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="stringliteral">&quot;&amp;amp;&quot;</span>);</div>
@@ -1386,23 +1407,23 @@ template&lt;char... Chars&gt; </div>
 <li>c при задании ширины поля выравнивать по центру, аналог f::c.</li>
 <li>a выводить префикс системы счисления, 0b для 2, 0 для 8, 0x для 16, аналог f::p.</li>
 <li>A выводить префикс системы счисления, 0B для 2, 0 для 8, 0X для 16, аналог f::P.</li>
-<li>0 дополнять число до заданной ширины нулями справа. Не совместимо с опциями выравнивания, аналог f::z.</li>
+<li>0 дополнять число до заданной ширины нулями слева. Не совместимо с опциями выравнивания, аналог f::z.</li>
 <li>E Для систем счисления более 10, выводить символы в верхнем регистре, аналог f::u.</li>
 <li>e Для знаковых типов чисел для положительных значений выводить '+' перед числом, аналог f::sp.</li>
 <li>f Для знаковых типов чисел для положительных значений выводить пробел перед числом, аналог f::ss.</li>
 <li>FКодCимволаВhex Задаёт код символа-заполнителя при указании ширины поля, аналог f::f&lt;'c'&gt;.</li>
 <li>Число в десятичном виде, начинающееся не с 0. Задаёт ширину поля, аналог f::w&lt;N&gt;. При указании ширины можно либо указать желаемое выравнивание (b, c, d), либо дополнение нулями (0), но не оба сразу. Если ничего из этого не указано, применяется выравнивание вправо. Число дополняется до заданной ширины, если оно короче. Если длиннее, то выводится всё число.</li>
-<li>' разделитель, пропускается. Так как после <code>F</code> все символы воспринимаются как hex код символа разделителя, при необходимости его использования лучше ставить его в конце литерала форматирования, или отделять '. <br  />
- Пример: <div class="fragment"><div class="line">stringu u16t = u<span class="stringliteral">&quot;Number &quot;</span>_ss + num</div>
+<li>' разделитель, пропускается.</li>
+</ul>
+<p>Так как после <code>F</code> все символы воспринимаются как hex код символа разделителя, при необходимости его использования лучше ставить его в конце литерала форматирования, или отделять '. <br  />
+ Пример: </p><div class="fragment"><div class="line">stringu u16t = u<span class="stringliteral">&quot;Number &quot;</span>_ss + num</div>
 <div class="line">    + <span class="stringliteral">&quot; in octal is &quot;</span> + num / 0x8&#39;016_fmt      <span class="comment">// same as e_int&lt;8, f::w&lt;16&gt; | f::z&gt;(num)</span></div>
 <div class="line">    + <span class="stringliteral">&quot;, in binary is &quot;</span> + num / 0x2a032_fmt;   <span class="comment">// same as e_int&lt;2, f::w&lt;32&gt; | f::p | f::z&gt;(num);</span></div>
 <div class="line"> ....</div>
 <div class="line">stringa text = <span class="stringliteral">&quot;Count is &quot;</span>_ss + count / 0x16A08E_fmt; <span class="comment">// same as e_int&lt;16, f::P | f::z | f::w&lt;8&gt; | f::u&gt;(count)</span></div>
 <div class="line"> ....</div>
 <div class="line">stringa text = <span class="stringliteral">&quot;Number &quot;</span>_ss + count / 0x16c20EF5F_fmt; <span class="comment">// same as e_int&lt;16, f::c | f::w&lt;20&gt; | f::u | f::f&lt;&#39;_&#39;&gt;&gt;(count)</span></div>
-</div><!-- fragment --> </li>
-</ul>
-
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ga9742e8cdcccc67c0746578f3579127e2" name="ga9742e8cdcccc67c0746578f3579127e2"></a>

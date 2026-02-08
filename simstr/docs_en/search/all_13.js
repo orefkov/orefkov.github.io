@@ -30,5 +30,6 @@ var searchData=
   ['out_27',['out',['../classsimstr_1_1chunked__string__builder.html#ac865ed84503c831e6ffb1674738bece9',1,'simstr::chunked_string_builder']]],
   ['overflow_28',['Overflow',['../namespacesimstr.html#a1b4b1f04b733739606d97f79caa02dd9a129e8109f319870e328cc7a1d5b5cae3',1,'simstr']]],
   ['overview_29',['Overview',['../overview.html',1,'']]],
-  ['own_20string_20expressions_30',['Your own string expressions',['../overview.html#autotoc_md86',1,'']]]
+  ['overwrite_30',['overwrite',['../namespacesimstr_1_1str.html#aec96a97ee3953ecfb534fab49b11955f',1,'simstr::str']]],
+  ['own_20string_20expressions_31',['Your own string expressions',['../overview.html#autotoc_md86',1,'']]]
 ];

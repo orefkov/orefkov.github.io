@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.4</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.5</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -130,6 +130,10 @@ Functions</h2></td></tr>
 <tr class="memitem:afb9af1b76a9815d827e9b46affccb49f"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afb9af1b76a9815d827e9b46affccb49f">insert</a> (std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, size_t from, const E &amp;expr)</td></tr>
 <tr class="memdesc:afb9af1b76a9815d827e9b46affccb49f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a string expression at the specified position in a standard string.  <br /></td></tr>
 <tr class="separator:afb9af1b76a9815d827e9b46affccb49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec96a97ee3953ecfb534fab49b11955f" id="r_aec96a97ee3953ecfb534fab49b11955f"><td class="memTemplParams" colspan="2">template&lt;typename K, typename A, StrExprForType&lt; K &gt; E&gt; </td></tr>
+<tr class="memitem:aec96a97ee3953ecfb534fab49b11955f"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aec96a97ee3953ecfb534fab49b11955f">overwrite</a> (std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, const E &amp;expr)</td></tr>
+<tr class="memdesc:aec96a97ee3953ecfb534fab49b11955f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewrite the entire string with the given string expression, resizing the string if necessary.  <br /></td></tr>
+<tr class="separator:aec96a97ee3953ecfb534fab49b11955f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6f51f3eac15eafa21d00aa3b10c81f7" id="r_ad6f51f3eac15eafa21d00aa3b10c81f7"><td class="memTemplParams" colspan="2">template&lt;typename K, typename A, StrExprForType&lt; K &gt; E, typename T&gt; <br />
 requires (std::is_constructible_v&lt;<a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt;K&gt;, T&gt;)</td></tr>
 <tr class="memitem:ad6f51f3eac15eafa21d00aa3b10c81f7"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad6f51f3eac15eafa21d00aa3b10c81f7">replace</a> (std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, T &amp;&amp;pattern, const E &amp;repl, size_t offset=0, size_t max_count=-1)</td></tr>
@@ -286,6 +290,49 @@ template&lt;typename K, typename A, StrExprForType&lt; K &gt; E&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; - a reference to the passed string.</dd></dl>
 <p>The method gets the length of the string expression, increases the size of the string, shifts its contents and materializes the string expression to the desired location, without using intermediate buffers. Before C++23, resize was used; since C++23, resize_and_overwrite was used.</p>
+<p>IMPORTANT!!! Parts of a string expression must not reference the string itself, otherwise the result is undefined!!! </p>
+
+</div>
+</div>
+<a id="aec96a97ee3953ecfb534fab49b11955f" name="aec96a97ee3953ecfb534fab49b11955f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec96a97ee3953ecfb534fab49b11955f">&#9670;&#160;</a></span>overwrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename A, StrExprForType&lt; K &gt; E&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; simstr::str::overwrite </td>
+          <td>(</td>
+          <td class="paramtype">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const E &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rewrite the entire string with the given string expression, resizing the string if necessary. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">K</td><td>- character type. </td></tr>
+    <tr><td class="paramname">A</td><td>- allocator type. </td></tr>
+    <tr><td class="paramname">E</td><td>- string expression type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>- string. </td></tr>
+    <tr><td class="paramname">expr</td><td>- string expression to insert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; - a reference to the passed string.</dd></dl>
+<p>The method replaces the contents of a string with the result of a string expression.</p>
 <p>IMPORTANT!!! Parts of a string expression must not reference the string itself, otherwise the result is undefined!!! </p>
 
 </div>

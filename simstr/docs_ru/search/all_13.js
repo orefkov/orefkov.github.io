@@ -22,5 +22,6 @@ var searchData=
   ['operator_3d_3d_19',['operator==',['../classsimstr_1_1str__src__algs.html#a1ddd0a1f9b25247465fb55c79b58826d',1,'simstr::str_src_algs::operator==(const base &amp;other) const noexcept'],['../classsimstr_1_1str__src__algs.html#ac19dc728f9d7edafbd85a52e70b46376',1,'simstr::str_src_algs::operator==(T &amp;&amp;other) const noexcept']]],
   ['operator_5b_5d_20',['operator[]',['../structsimstr_1_1simple__str.html#a1ab058c6d2bb0b8c36cafd7c82490943',1,'simstr::simple_str::operator[]()'],['../structsimstr_1_1str__src.html#aa424e8bd2802bbae38c39eacaf745fc5',1,'simstr::str_src::operator[]()']]],
   ['out_21',['out',['../classsimstr_1_1chunked__string__builder.html#ac865ed84503c831e6ffb1674738bece9',1,'simstr::chunked_string_builder']]],
-  ['overflow_22',['Overflow',['../namespacesimstr.html#a1b4b1f04b733739606d97f79caa02dd9a129e8109f319870e328cc7a1d5b5cae3',1,'simstr']]]
+  ['overflow_22',['Overflow',['../namespacesimstr.html#a1b4b1f04b733739606d97f79caa02dd9a129e8109f319870e328cc7a1d5b5cae3',1,'simstr']]],
+  ['overwrite_23',['overwrite',['../namespacesimstr_1_1str.html#aec96a97ee3953ecfb534fab49b11955f',1,'simstr::str']]]
 ];

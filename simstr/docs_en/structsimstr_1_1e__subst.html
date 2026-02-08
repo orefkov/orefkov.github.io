@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.4</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.5</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -172,7 +172,7 @@ template&lt;typename K, size_t PtLen, typename ... Args&gt; </div>
   </dd>
 </dl>
 <p>The function creates a string expression, which, when materialized, generates text from the sample, substituting it in placeholders values ​​of the passed arguments. The pattern string is specified by a string literal, a compile-time constant. Insertion locations are indicated by either <code>{}</code> or <code>{number}</code>. In case without spectacle number, the parameters are submitted to the order of order. In case of the index number, the parameters are submitted in accordance with with the specified serial number. The numbering of parameters starts from 1. You cannot mix parameters without a number and with a number - only used one of the options for all substitutions. In the case of specifying numbers, one parameter can participate in several substitutions. All passed parameters must participate in substitutions. To insert curly braces themselves, they must be doubled - <code>{{</code>, <code>}}</code>. The sample string is processed during compilation, and an array is immediately created for it with information about insertions - which parts of the string to copy in the result, where to insert the passed values. The function is not a replacement for <code>std::format</code>, does not work with the sample specified at runtime, and does not support any formatting options for substituted values. All passed arguments must be able to convert themselves to string expressions (see <a class="el" href="group___convert_to_str_expr.html">Converting types to string expressions</a>). Example: </p><div class="fragment"><div class="line">lstringu&lt;100&gt; u16t = <a class="code hl_function" href="#aaa9c67121015a8b8c3fd5df753a34d84">e_subst</a>(u<span class="stringliteral">&quot;Test {} from {}, {}.&quot;</span>, from, total, success ? u<span class="stringliteral">&quot;success&quot;</span>_ss : u<span class="stringliteral">&quot;fail&quot;</span>_ss);</div>
-<div class="ttc" id="astructsimstr_1_1e__subst_html_aaa9c67121015a8b8c3fd5df753a34d84"><div class="ttname"><a href="#aaa9c67121015a8b8c3fd5df753a34d84">simstr::e_subst::e_subst</a></div><div class="ttdeci">constexpr e_subst(const details::subst_params&lt; K, PtLen, NParams &gt; &amp;subst, Args &amp;&amp;...args)</div><div class="ttdoc">Creates a string expression that substitutes the values ​​of the passed string expressions into the s...</div><div class="ttdef"><b>Definition</b> strexpr.h:6355</div></div>
+<div class="ttc" id="astructsimstr_1_1e__subst_html_aaa9c67121015a8b8c3fd5df753a34d84"><div class="ttname"><a href="#aaa9c67121015a8b8c3fd5df753a34d84">simstr::e_subst::e_subst</a></div><div class="ttdeci">constexpr e_subst(const details::subst_params&lt; K, PtLen, NParams &gt; &amp;subst, Args &amp;&amp;...args)</div><div class="ttdoc">Creates a string expression that substitutes the values ​​of the passed string expressions into the s...</div><div class="ttdef"><b>Definition</b> strexpr.h:6433</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

@@ -4,6 +4,7 @@ var namespacesimstr =
       [ "append", "namespacesimstr_1_1str.html#a351d8d1db18b0dca19992b164fb6253f", null ],
       [ "change", "namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf", null ],
       [ "insert", "namespacesimstr_1_1str.html#afb9af1b76a9815d827e9b46affccb49f", null ],
+      [ "overwrite", "namespacesimstr_1_1str.html#aec96a97ee3953ecfb534fab49b11955f", null ],
       [ "prepend", "namespacesimstr_1_1str.html#a5fb93ccbf4f2bc1ca6db244ef11c3047", null ],
       [ "replace", "namespacesimstr_1_1str.html#a0be21b9e8525cd67515fb5a2dc78c6ba", null ],
       [ "replace", "namespacesimstr_1_1str.html#ad6f51f3eac15eafa21d00aa3b10c81f7", null ]

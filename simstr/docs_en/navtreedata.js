@@ -90,14 +90,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classsimstr_1_1lstring.html#a9959513e8a072c51620248c4a29f4196",
-"classsimstr_1_1sstring.html#a73806fa93c9ec619ba93d479d413ea0f",
-"classsimstr_1_1str__algs.html#ab38e5cc7893a20e69cdf03d88232b49c",
-"classsimstr_1_1str__src__algs.html#a9b9958a7ba764ec2ee03fd5f205e3bcd",
-"namespacesimstr.html#a46fe7e669051cea6d5406e8b61ba10fa",
-"structsimstr_1_1simple__str.html#ab630d62252bf1210f573a8c7222942c8",
-"structsimstr_1_1simple__str__nt.html#af893677739e0d24418f6acc0a29090cc",
-"structsimstr_1_1str__src__nt.html#a63742e2c0e55c85b0569f6a0004e5418"
+"classsimstr_1_1lstring.html#a992a3ed434bc8ecc755076da742f8e5b",
+"classsimstr_1_1sstring.html#a6d9409e48b2f182546b7f7186af2477e",
+"classsimstr_1_1str__algs.html#aab67ba06c8637f93984e45cf349c3eb8",
+"classsimstr_1_1str__src__algs.html#a8bcde5878d3d7fd5138d38ff2f1df4d2",
+"namespacesimstr.html#a1b4b1f04b733739606d97f79caa02dd9ac15b8c76611746ee6c491a03f31855df",
+"structsimstr_1_1simple__str.html#aadf998cb7041ac3fcd4b31496a1d7832",
+"structsimstr_1_1simple__str__nt.html#adffb295777b82a1475a4fc0d9754481b",
+"structsimstr_1_1str__src__nt.html#a44ede528e694988f26555e91cf9a1ca2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

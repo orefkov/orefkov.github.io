@@ -97,6 +97,7 @@ var structsimstr_1_1simple__str =
     [ "trimmed_right_with_spaces", "structsimstr_1_1simple__str.html#ad41853e3d4d2579fe7557873592e7302", null ],
     [ "trimmed_with_spaces", "structsimstr_1_1simple__str.html#a6c2541095cb5e5a262b8e20c4dc8428b", null ],
     [ "trimmed_with_spaces", "structsimstr_1_1simple__str.html#ab950f20c494e2c60b22dfe95e410ec25", null ],
+    [ "until", "structsimstr_1_1simple__str.html#a411f3accc2e800d55e6b26c9c9220926", null ],
     [ "upperred", "structsimstr_1_1simple__str.html#a6ae3ef69a372dab777c952f22c492689", null ],
     [ "upperred_only_ascii", "structsimstr_1_1simple__str.html#a517129dd2774440cd48c401b65bcf066", null ]
 ];

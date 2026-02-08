@@ -169,6 +169,7 @@ var classsimstr_1_1lstring =
     [ "trimmed_right_with_spaces", "classsimstr_1_1lstring.html#ad41853e3d4d2579fe7557873592e7302", null ],
     [ "trimmed_with_spaces", "classsimstr_1_1lstring.html#a6c2541095cb5e5a262b8e20c4dc8428b", null ],
     [ "trimmed_with_spaces", "classsimstr_1_1lstring.html#ab950f20c494e2c60b22dfe95e410ec25", null ],
+    [ "until", "classsimstr_1_1lstring.html#a411f3accc2e800d55e6b26c9c9220926", null ],
     [ "upper", "classsimstr_1_1lstring.html#ad1b975226e92b0e57796dd14fed5248f", null ],
     [ "upper_only_ascii", "classsimstr_1_1lstring.html#a1c7b47cfc00189c51a5683fd34095192", null ],
     [ "upperred", "classsimstr_1_1lstring.html#a6ae3ef69a372dab777c952f22c492689", null ],

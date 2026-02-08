@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.4</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.5</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -291,6 +291,9 @@ constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> (
 <tr class="memitem:a5659e7fb47dfb6bd6736a1b454ffde92" id="r_a5659e7fb47dfb6bd6736a1b454ffde92"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a5659e7fb47dfb6bd6736a1b454ffde92">from_to</a> (size_t from, size_t to) const noexcept</td></tr>
 <tr class="memdesc:a5659e7fb47dfb6bd6736a1b454ffde92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить подстроку <a class="el" href="structsimstr_1_1str__src.html" title="Простейший класс иммутабельной не владеющей строки.">str_src</a> с позиции от from до позиции to (не включая её).  <br /></td></tr>
 <tr class="separator:a5659e7fb47dfb6bd6736a1b454ffde92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a411f3accc2e800d55e6b26c9c9220926" id="r_a411f3accc2e800d55e6b26c9c9220926"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a411f3accc2e800d55e6b26c9c9220926">until</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> pattern, size_t offset=0) const noexcept</td></tr>
+<tr class="memdesc:a411f3accc2e800d55e6b26c9c9220926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить подстроку <a class="el" href="structsimstr_1_1str__src.html" title="Простейший класс иммутабельной не владеющей строки.">str_src</a> от начала и до первого найденного вхождения указанной подстроки.  <br /></td></tr>
+<tr class="separator:a411f3accc2e800d55e6b26c9c9220926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a992a3ed434bc8ecc755076da742f8e5b" id="r_a992a3ed434bc8ecc755076da742f8e5b"><td class="memItemLeft" align="right" valign="top"><a id="a992a3ed434bc8ecc755076da742f8e5b" name="a992a3ed434bc8ecc755076da742f8e5b"></a>
 constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!</b> () const noexcept</td></tr>
 <tr class="memdesc:a992a3ed434bc8ecc755076da742f8e5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка на пустоту. <br /></td></tr>
@@ -2768,10 +2771,10 @@ template&lt;typename... T&gt; </div>
 <p>Функция служит для слияния контейнера строк в одну строку с разделителем. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
 <div class="line">ssa delim = get_current_delimiter();</div>
 <div class="line"><span class="keyword">auto</span> line = <a class="code hl_function" href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">lstringa&lt;200&gt;::join</a>(strings, delimiter);</div>
-<div class="ttc" id="aclasssimstr_1_1str__storable_html_a9b002a3618bbfcebc945cef197a397a1"><div class="ttname"><a href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimiter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Определения</b> sstring.h:1199</div></div>
+<div class="ttc" id="aclasssimstr_1_1str__storable_html_a9b002a3618bbfcebc945cef197a397a1"><div class="ttname"><a href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimiter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Определения</b> sstring.h:1198</div></div>
 </div><!-- fragment --><p> Стоит отметить, что при заранее известном разделителе лучше пользоваться строковым выражением <code>e_join</code>. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
 <div class="line">lstringa&lt;200&gt; line{<a class="code hl_function" href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">e_join</a>(strings, <span class="stringliteral">&quot;/&quot;</span>)};</div>
-<div class="ttc" id="agroup___str_exprs_html_gafd2e6b8a52bfe20c0b86d25f9f78cb52"><div class="ttname"><a href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a></div><div class="ttdeci">constexpr auto e_join(const T &amp;s, L &amp;&amp;d)</div><div class="ttdoc">Получить строковое выражение, конкатенирующее строки в контейнере в одну строку с заданным разделител...</div><div class="ttdef"><b>Определения</b> strexpr.h:2701</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gafd2e6b8a52bfe20c0b86d25f9f78cb52"><div class="ttname"><a href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a></div><div class="ttdeci">constexpr auto e_join(const T &amp;s, L &amp;&amp;d)</div><div class="ttdoc">Получить строковое выражение, конкатенирующее строки в контейнере в одну строку с заданным разделител...</div><div class="ttdef"><b>Определения</b> strexpr.h:2764</div></div>
 </div><!-- fragment --><p> В этом случае компилятор может лучше оптимизировать код слияния строк. </p>
 
 </div>
@@ -5001,6 +5004,44 @@ template&lt;typename... T&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>R - строка, с удалёнными в начале и в конце символами, содержащимися в литерале и пробельными символами. </dd></dl>
+
+</div>
+</div>
+<a id="a411f3accc2e800d55e6b26c9c9220926" name="a411f3accc2e800d55e6b26c9c9220926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a411f3accc2e800d55e6b26c9c9220926">&#9670;&#160;</a></span>until()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, <a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt;, <a class="el" href="classsimstr_1_1sstring.html">sstring</a>&lt; K, allocator_string &gt;, Mutable &gt;::until </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a></td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получить подстроку <a class="el" href="structsimstr_1_1str__src.html" title="Простейший класс иммутабельной не владеющей строки.">str_src</a> от начала и до первого найденного вхождения указанной подстроки. </p>
+<p>Если не найдено, вернёт всю строку. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">offset</td><td>- позиция для начала поиска. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Подстроку, <a class="el" href="structsimstr_1_1str__src.html" title="Простейший класс иммутабельной не владеющей строки.">str_src</a>. </dd></dl>
 
 </div>
 </div>

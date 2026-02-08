@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.4</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.5</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -226,6 +226,9 @@ requires is_equal_str_type_v&lt;K, D&gt;</td></tr>
 <tr class="memitem:a5659e7fb47dfb6bd6736a1b454ffde92" id="r_a5659e7fb47dfb6bd6736a1b454ffde92"><td class="memItemLeft" align="right" valign="top">constexpr str_piece&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a5659e7fb47dfb6bd6736a1b454ffde92">from_to</a> (size_t from, size_t to) const noexcept</td></tr>
 <tr class="memdesc:a5659e7fb47dfb6bd6736a1b454ffde92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the substring <a class="el" href="structsimstr_1_1str__src.html" title="The simplest class of an immutable non-owning string.">str_src</a> from position from to position to (not including it).  <br /></td></tr>
 <tr class="separator:a5659e7fb47dfb6bd6736a1b454ffde92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a411f3accc2e800d55e6b26c9c9220926" id="r_a411f3accc2e800d55e6b26c9c9220926"><td class="memItemLeft" align="right" valign="top">constexpr str_piece&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a411f3accc2e800d55e6b26c9c9220926">until</a> (str_piece pattern, size_t offset=0) const noexcept</td></tr>
+<tr class="memdesc:a411f3accc2e800d55e6b26c9c9220926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the substring <a class="el" href="structsimstr_1_1str__src.html" title="The simplest class of an immutable non-owning string.">str_src</a> from the beginning to the first found occurrence of the specified substring.  <br /></td></tr>
+<tr class="separator:a411f3accc2e800d55e6b26c9c9220926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a992a3ed434bc8ecc755076da742f8e5b" id="r_a992a3ed434bc8ecc755076da742f8e5b"><td class="memItemLeft" align="right" valign="top"><a id="a992a3ed434bc8ecc755076da742f8e5b" name="a992a3ed434bc8ecc755076da742f8e5b"></a>
 constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!</b> () const noexcept</td></tr>
 <tr class="memdesc:a992a3ed434bc8ecc755076da742f8e5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for emptiness. <br /></td></tr>
@@ -3801,6 +3804,46 @@ requires is_const_pattern&lt;N&gt;</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>R - a string with the characters contained in the literal removed at the beginning and at the end and whitespace characters. </dd></dl>
+
+</div>
+</div>
+<a id="a411f3accc2e800d55e6b26c9c9220926" name="a411f3accc2e800d55e6b26c9c9220926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a411f3accc2e800d55e6b26c9c9220926">&#9670;&#160;</a></span>until()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">str_piece <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, StrRef, Impl, Mutable &gt;::until </td>
+          <td>(</td>
+          <td class="paramtype">str_piece</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the substring <a class="el" href="structsimstr_1_1str__src.html" title="The simplest class of an immutable non-owning string.">str_src</a> from the beginning to the first found occurrence of the specified substring. </p>
+<p>If not found, returns the entire string. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">offset</td><td>- position to start the search. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Substring, <a class="el" href="structsimstr_1_1str__src.html" title="The simplest class of an immutable non-owning string.">str_src</a>. </dd></dl>
 
 </div>
 </div>

@@ -1,0 +1,885 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>simjson: Исходный файл json.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">simjson<span id="projectnumber">&#160;1.2.4</span>
+   </div>
+   <div id="projectbrief">Простая библиотека для работы с JSON из simstr</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('json_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">json.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * (c) Проект &quot;SimJson&quot;, Александр Орефков orefkov@gmail.com</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * ver. 1.0</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Классы для работы с JSON</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * (c) Project &quot;SimJson&quot;, Aleksandr Orefkov orefkov@gmail.com</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * ver. 1.0</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Classes for working with JSON</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;simstr/sstring.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef __has_declspec_attribute</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define __has_declspec_attribute(x) 0</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifdef SIMJSON_IN_SHARED</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">    #if defined(_MSC_VER) || (defined(__clang__) &amp;&amp; __has_declspec_attribute(dllexport))</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">        #ifdef SIMJSON_EXPORT</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">            #define SIMJSON_API __declspec(dllexport)</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">        #else</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">            #define SIMJSON_API __declspec(dllimport)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">        #endif</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">    #elif (defined(__GNUC__) || defined(__GNUG__)) &amp;&amp; defined(SIMSTR_EXPORT)</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">        #define SIMJSON_API __attribute__((visibility(&quot;default&quot;)))</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">    #else</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">        #define SIMJSON_API</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">    #endif</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">    #define SIMJSON_API</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesimjson.html">simjson</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">using namespace </span>simstr;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">using namespace </span>simstr::literals;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">class </span>Json {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">enum</span> Type {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        Undefined,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        Null,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        Boolean,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        Text,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        Integer,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        Real,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        Object,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        Array</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    };</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">struct </span>null_t {};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">struct </span>emptyString_t {};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">struct </span>emptyObject_t {};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">struct </span>emptyArray_t {};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> null_t null;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> emptyString_t emptyString;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> emptyObject_t emptyObject;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> emptyArray_t emptyArray;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">enum class</span> JsonParseResult {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    Success,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    Pending,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    NoNeedMore,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    Error,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">struct </span>StreamedJsonParserBase {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">unsigned</span> line_{};</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">unsigned</span> col_{};</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">int</span> state_ {};</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    u16s currentUnicode_[2]{};</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">int</span> idxUnicode_{};</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>};</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">namespace </span>jt {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K&gt;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">using </span>KeyType = StoreType&lt;K, strhash&lt;K&gt;&gt;;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> K&gt;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">concept </span>JsonType = std::is_integral_v&lt;std::remove_cvref_t&lt;T&gt;&gt; ||</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    std::is_floating_point_v&lt;std::remove_cvref_t&lt;T&gt;&gt; ||</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    std::is_constructible_v&lt;sstring&lt;K&gt;, T&gt;;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> K&gt;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">concept </span>JsonKeyType = std::convertible_to&lt;T, simple_str&lt;K&gt;&gt; ||</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    std::same_as&lt;std::remove_cvref_t&lt;T&gt;, KeyType&lt;K&gt;&gt;;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> K&gt;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">concept </span>JsonArraySource = <span class="keyword">requires</span>(<span class="keyword">const</span> T&amp; t) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    { t.empty() } -&gt; std::same_as&lt;bool&gt;;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    { t.size() } -&gt; std::same_as&lt;size_t&gt;;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    { *t.begin() } -&gt; JsonType&lt;K&gt;;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    { *t.end() } -&gt; JsonType&lt;K&gt;;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>};</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> K&gt;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">concept </span>JsonObjectSource = <span class="keyword">requires</span>(<span class="keyword">const</span> T&amp; t) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    { t.empty() } -&gt; std::same_as&lt;bool&gt;;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    { t.size() } -&gt; std::same_as&lt;size_t&gt;;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    { t.begin()-&gt;first } -&gt; JsonKeyType&lt;K&gt;;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    { t.end()-&gt;first } -&gt; JsonKeyType&lt;K&gt;;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    { t.begin()-&gt;second } -&gt; JsonType&lt;K&gt;;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    { t.end()-&gt;second } -&gt; JsonType&lt;K&gt;;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>};</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>} <span class="comment">// namespace jt</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K&gt;</div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="};">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html">  129</a></span><span class="keyword">class </span><a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a3c641bdd8fc530ccdb78bd811c08319d">JsonValueTempl</a> : <span class="keyword">public</span> Json {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">using </span>strType = sstring&lt;K&gt;;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keyword">using </span>ssType = simple_str&lt;K&gt;;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keyword">using </span>json_value = <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a3c641bdd8fc530ccdb78bd811c08319d">JsonValueTempl&lt;K&gt;</a>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keyword">using </span>obj_type = hashStrMap&lt;K, JsonValueTempl&lt;K&gt;&gt;;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keyword">using </span>arr_type = std::vector&lt;JsonValueTempl&lt;K&gt;&gt;;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keyword">using </span>json_object = std::shared_ptr&lt;obj_type&gt;;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keyword">using </span>json_array = std::shared_ptr&lt;arr_type&gt;;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a3c641bdd8fc530ccdb78bd811c08319d">  142</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a3c641bdd8fc530ccdb78bd811c08319d">JsonValueTempl</a>() : type_(Undefined) {}</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a6e1c78c9fbcfcc2cfbc12868400c6c0a">  145</a></span>    SIMJSON_API <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a6e1c78c9fbcfcc2cfbc12868400c6c0a">JsonValueTempl</a>(<span class="keyword">const</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a3c641bdd8fc530ccdb78bd811c08319d">JsonValueTempl</a>&amp; other);</div>
+<div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#abd52ac0f880b5be797ed0bfd484a022e">  148</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#abd52ac0f880b5be797ed0bfd484a022e">JsonValueTempl</a>(<a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a3c641bdd8fc530ccdb78bd811c08319d">JsonValueTempl</a>&amp;&amp; other) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        type_ = other.type_;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">switch</span> (other.type_) {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">case</span> Json::Text:</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            <span class="keyword">new</span> (&amp;val_.text) strType(std::move(other.val_.text));</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keywordflow">case</span> Json::Object:</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keyword">new</span> (&amp;val_.object) json_object(std::move(other.val_.object));</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">case</span> Json::Array:</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <span class="keyword">new</span> (&amp;val_.array) json_array(std::move(other.val_.array));</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            memcpy(&amp;val_, &amp;other.val_, <span class="keyword">sizeof</span>(val_));</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        other.type_ = Undefined;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
+</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a56253b29e31414a8127cfdd0abfd0774">  167</a></span>    SIMJSON_API <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a56253b29e31414a8127cfdd0abfd0774">~JsonValueTempl</a>();</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a9197a24de695cda2215745f8c9093920">  171</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a9197a24de695cda2215745f8c9093920">JsonValueTempl</a>(int8_t v) : type_(Integer) { val_.integer = v; }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a6a1cf2cdf70f1a4524cede720b704772">  174</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a6a1cf2cdf70f1a4524cede720b704772">JsonValueTempl</a>(int16_t v) : type_(Integer) { val_.integer = v; }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#aae02c060dd24a0095defa7002fc0fad4">  177</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#aae02c060dd24a0095defa7002fc0fad4">JsonValueTempl</a>(int32_t v) : type_(Integer) { val_.integer = v; }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#ac3c0b4d954039f28e6b4de4a1998ab63">  180</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#ac3c0b4d954039f28e6b4de4a1998ab63">JsonValueTempl</a>(int64_t v) : type_(Integer) { val_.integer = v; }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a602ab72f08bd27a85169926db2899ece">  183</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a602ab72f08bd27a85169926db2899ece">JsonValueTempl</a>(<span class="keywordtype">bool</span> v) : type_(Boolean) { val_.boolean = v; }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a296566ad042d3033e716b0e3bd346551">  186</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a296566ad042d3033e716b0e3bd346551">JsonValueTempl</a>(<span class="keywordtype">double</span> v) : type_(Real) { val_.real = v; }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span></div>
+<div class="foldopen" id="foldopen00190" data-start="{" data-end="}">
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a7b07738b5786efdf22a973f006351ae3">  190</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a7b07738b5786efdf22a973f006351ae3">JsonValueTempl</a>(strType t) : type_(Text) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="keyword">new</span> (&amp;val_.text) strType(std::move(t));</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
+</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span></div>
+<div class="foldopen" id="foldopen00195" data-start="{" data-end="}">
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a2dc05b5e75676e19e7176c01b7592aba">  195</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a2dc05b5e75676e19e7176c01b7592aba">JsonValueTempl</a>(ssType t) : type_(Text) {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keyword">new</span> (&amp;val_.text) strType(t);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    }</div>
+</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keyword">template</span>&lt;StrExprForType&lt;K&gt; A&gt;</div>
+<div class="foldopen" id="foldopen00201" data-start="{" data-end="}">
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a094d2e0edf70bea320ccc9022a76472e">  201</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a094d2e0edf70bea320ccc9022a76472e">JsonValueTempl</a>(<span class="keyword">const</span> A&amp; e) : type_(Text) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keyword">new</span> (&amp;val_.text) strType(e);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    }</div>
+</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    template&lt;typename T, size_t N = const_lit_for&lt;K, T&gt;::Count&gt;</div>
+<div class="foldopen" id="foldopen00207" data-start="{" data-end="}">
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a6de00d317c47bf5c1d67f55e567fa46e">  207</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a6de00d317c47bf5c1d67f55e567fa46e">JsonValueTempl</a>(T&amp;&amp; str) : type_(Text) {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keyword">new</span> (&amp;val_.text) strType(std::forward&lt;T&gt;(str));</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    }</div>
+</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a3c63b9d9d3a2a968d5d86a304ce83055">  212</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a3c63b9d9d3a2a968d5d86a304ce83055">JsonValueTempl</a>(<span class="keyword">const</span> null_t&amp;) : type_(Null) {}</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a0254579e66b86774d6b357bafc44bf4f">  215</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a0254579e66b86774d6b357bafc44bf4f">JsonValueTempl</a>(<span class="keyword">const</span> emptyString_t&amp;) : type_(Text) { <span class="keyword">new</span> (&amp;val_.text) strType; }</div>
+<div class="foldopen" id="foldopen00218" data-start="{" data-end="}">
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a8dfe731067c8887b4975e310ff55b4eb">  218</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a8dfe731067c8887b4975e310ff55b4eb">JsonValueTempl</a>(<span class="keyword">const</span> emptyObject_t&amp;) : type_(Object) {</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <span class="keyword">new</span> (&amp;val_.object) json_object(std::make_shared&lt;obj_type&gt;());</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    }</div>
+</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span></div>
+<div class="foldopen" id="foldopen00223" data-start="{" data-end="}">
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a22e732a7fb6fb656c986a53d2726179a">  223</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a22e732a7fb6fb656c986a53d2726179a">JsonValueTempl</a>(<span class="keyword">const</span> emptyArray_t&amp;) : type_(Array) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keyword">new</span> (&amp;val_.array) json_array(std::make_shared&lt;arr_type&gt;());</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    }</div>
+</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#addf3e5b896dd976ca4adeb39dad5d7c8">  228</a></span>    SIMJSON_API <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#addf3e5b896dd976ca4adeb39dad5d7c8">JsonValueTempl</a>(Type <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#af4db80daa5ef26b273a31558c9979a52">type</a>);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keyword">struct </span>KeyInit : std::pair&lt;const jt::KeyType&lt;K&gt;, json_value&gt; {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <span class="keyword">using </span>base = std::pair&lt;const jt::KeyType&lt;K&gt;, json_value&gt;;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        KeyInit(<span class="keyword">const</span> jt::KeyType&lt;K&gt;&amp; k, <span class="keyword">const</span> json_value&amp; v) : base(k, v){}</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        KeyInit(ssType k, <span class="keyword">const</span> json_value&amp; v) : base(obj_type::toStoreType(k), v){}</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    };</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keyword">using </span>ObjectInit = std::initializer_list&lt;KeyInit&gt;;</div>
+<div class="foldopen" id="foldopen00241" data-start="{" data-end="}">
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a7d0efdbb7dd5bcfe8d5ceb7b80c2a074">  241</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a7d0efdbb7dd5bcfe8d5ceb7b80c2a074">JsonValueTempl</a>(ObjectInit&amp;&amp; init) : type_(Object) {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        <span class="keyword">new</span> (&amp;val_.object) json_object(std::make_shared&lt;obj_type&gt;(std::move(<span class="keyword">reinterpret_cast&lt;</span>std::initializer_list&lt;std::pair&lt;const jt::KeyType&lt;K&gt;, json_value<span class="keyword">&gt;</span>&gt;&amp;&gt;(init))));</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    }</div>
+</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keyword">using </span>ArrayInit = std::initializer_list&lt;json_value&gt;;</div>
+<div class="foldopen" id="foldopen00250" data-start="{" data-end="}">
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a837bf06df6fb5659d5b06c6c92e48e1d">  250</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a837bf06df6fb5659d5b06c6c92e48e1d">JsonValueTempl</a>(ArrayInit&amp;&amp; init) : type_(Array) {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keyword">new</span> (&amp;val_.array) json_array(std::make_shared&lt;arr_type&gt;(std::move(init)));</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    }</div>
+</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span></div>
+<div class="foldopen" id="foldopen00259" data-start="{" data-end="}">
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#ad390df0443218f292c12c1b4d6693ffb">  259</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#ad390df0443218f292c12c1b4d6693ffb">JsonValueTempl</a>(jt::JsonArraySource&lt;K&gt; <span class="keyword">auto</span> <span class="keyword">const</span>&amp; obj) : <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a3c641bdd8fc530ccdb78bd811c08319d">JsonValueTempl</a>(emptyArray) {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <span class="keywordflow">if</span> (!obj.empty()) {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            auto&amp; arr = *as_array();</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            arr.reserve(obj.size());</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            for (const auto&amp; e : obj) {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                arr.emplace_back(e);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            }</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        }</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    }</div>
+</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span></div>
+<div class="foldopen" id="foldopen00274" data-start="{" data-end="}">
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a0b5877949774b0a200b90c07ee71b78d">  274</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a0b5877949774b0a200b90c07ee71b78d">JsonValueTempl</a>(jt::JsonObjectSource&lt;K&gt; <span class="keyword">auto</span> <span class="keyword">const</span>&amp; obj) : <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a3c641bdd8fc530ccdb78bd811c08319d">JsonValueTempl</a>(emptyObject) {</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">if</span> (!obj.empty()) {</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            auto&amp; me = *as_object();</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            for (const auto&amp; [f, s] : obj) {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                me.emplace(f, s);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            }</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        }</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    }</div>
+</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="keyword">struct </span>Clone {</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        <span class="keyword">const</span> json_value&amp; from;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    };</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a80ac280835b18bcce181582bce5623fd">  294</a></span>    SIMJSON_API <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a80ac280835b18bcce181582bce5623fd">JsonValueTempl</a>(<span class="keyword">const</span> Clone&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#ac7b0e8dcc09cb145e437f4f86b605a92">clone</a>);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#af4db80daa5ef26b273a31558c9979a52">  297</a></span>    Type <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#af4db80daa5ef26b273a31558c9979a52">type</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> type_; }</div>
+<div class="foldopen" id="foldopen00300" data-start="{" data-end="}">
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#ac7b0e8dcc09cb145e437f4f86b605a92">  300</a></span>    json_value <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#ac7b0e8dcc09cb145e437f4f86b605a92">clone</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <span class="keywordflow">return</span> Clone{*<span class="keyword">this</span>};</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    }</div>
+</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="comment">// Проверка типов</span></div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="comment">// Type checking</span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a9d78557a3e56a483bc2c101cc7e7bcdf">  309</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a9d78557a3e56a483bc2c101cc7e7bcdf">is_undefined</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> type_ == Undefined; };</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#adbe41d3e2f79f48cb4d18151e164692b">  312</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#adbe41d3e2f79f48cb4d18151e164692b">is_null</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> type_ == Null; };</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a17e6bcb391f61adc041b765250ad17fc">  315</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a17e6bcb391f61adc041b765250ad17fc">is_boolean</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> type_ == Boolean; }</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a36ca92537b6b91ad165dbb3d857f4df6">  318</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a36ca92537b6b91ad165dbb3d857f4df6">is_integer</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> type_ == Integer; }</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#adfe49e4db1c9f8c5849bb1c9d1a06474">  321</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#adfe49e4db1c9f8c5849bb1c9d1a06474">is_real</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> type_ == Real; }</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a9776da822fdc8e0553db511c18295057">  324</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a9776da822fdc8e0553db511c18295057">is_text</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> type_ == Text; }</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a08c16d1ae047ac747a08b40472883165">  327</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a08c16d1ae047ac747a08b40472883165">is_array</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> type_ == Array; }</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a41031c38d2e6e4ebe79506fd18692b29">  330</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a41031c38d2e6e4ebe79506fd18692b29">is_object</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> type_ == Object; }</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <span class="comment">// -----------------------------   Boolean -----------------------------------------------</span></div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span></div>
+<div class="foldopen" id="foldopen00338" data-start="{" data-end="}">
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a388cf73af257c8d7919ef3cadbf1cd53">  338</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a388cf73af257c8d7919ef3cadbf1cd53">as_boolean</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        assert(type_ == Boolean);</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        <span class="keywordflow">return</span> val_.boolean;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    }</div>
+</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span></div>
+<div class="foldopen" id="foldopen00349" data-start="{" data-end="}">
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a26c55486ff4adfe5d913898bc3558eb8">  349</a></span>    std::optional&lt;bool&gt; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a26c55486ff4adfe5d913898bc3558eb8">boolean</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        <span class="keywordflow">if</span> (type_ == Boolean) {</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>            <span class="keywordflow">return</span> val_.boolean;</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        }</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    }</div>
+</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span></div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Exc, <span class="keyword">typename</span> ... Args&gt; <span class="keyword">requires</span> (std::is_constructible_v&lt;Exc, Args...&gt;)</div>
+<div class="foldopen" id="foldopen00358" data-start="{" data-end="}">
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#ae14260b49ec3a34e95ec73f897f098a7">  358</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#ae14260b49ec3a34e95ec73f897f098a7">boolean_or_throw</a>(Args&amp;&amp;...args) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        <span class="keywordflow">if</span> (type_ == Boolean) {</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>            <span class="keywordflow">return</span> val_.boolean;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        }</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>        <span class="keywordflow">throw</span> Exc(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    }</div>
+</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span></div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a810ee50f7884ce75a58ca4a3d9163778">  366</a></span>    SIMJSON_API <span class="keywordtype">bool</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a810ee50f7884ce75a58ca4a3d9163778">to_boolean</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    <span class="comment">// ---------------------------------------- Integer -------------------------------------</span></div>
+<div class="foldopen" id="foldopen00371" data-start="{" data-end="}">
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a29e90b0d3ac210336235b12822659a5c">  371</a></span>    int64_t <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a29e90b0d3ac210336235b12822659a5c">as_integer</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>        assert(type_ == Integer);</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>        <span class="keywordflow">return</span> val_.integer;</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    }</div>
+</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span></div>
+<div class="foldopen" id="foldopen00377" data-start="{" data-end="}">
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a9d40d8f2ea528b6ce60304c12df68c8c">  377</a></span>    std::optional&lt;int64_t&gt; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a9d40d8f2ea528b6ce60304c12df68c8c">integer</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>        <span class="keywordflow">if</span> (type_ == Integer) {</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>            <span class="keywordflow">return</span> val_.integer;</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>        }</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    }</div>
+</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span></div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Exc, <span class="keyword">typename</span> ... Args&gt; <span class="keyword">requires</span> (std::is_constructible_v&lt;Exc, Args...&gt;)</div>
+<div class="foldopen" id="foldopen00386" data-start="{" data-end="}">
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a1567de682c2ed029d3450c7885e98b2d">  386</a></span>    int64_t <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a1567de682c2ed029d3450c7885e98b2d">integer_or_throw</a>(Args&amp;&amp;...args) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        <span class="keywordflow">if</span> (type_ == Integer) {</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>            <span class="keywordflow">return</span> val_.integer;</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        }</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>        <span class="keywordflow">throw</span> Exc(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    }</div>
+</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span></div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a82c0c24b312784f698987b04ad8db8e7">  400</a></span>    SIMJSON_API std::optional&lt;int64_t&gt; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a82c0c24b312784f698987b04ad8db8e7">to_integer</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Exc, <span class="keyword">typename</span> ... Args&gt; <span class="keyword">requires</span> (std::is_constructible_v&lt;Exc, Args...&gt;)</div>
+<div class="foldopen" id="foldopen00404" data-start="{" data-end="}">
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a9680f072ea8a511a304ca740e81c7972">  404</a></span>    int64_t <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a9680f072ea8a511a304ca740e81c7972">to_integer_or_throw</a>(Args&amp;&amp;...args) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> val = <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a82c0c24b312784f698987b04ad8db8e7">to_integer</a>()) {</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>            <span class="keywordflow">return</span> *val;</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>        }</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>        <span class="keywordflow">throw</span> Exc(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>    }</div>
+</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>    <span class="comment">// -------------------------------------- Real --------------------------------------------</span></div>
+<div class="foldopen" id="foldopen00413" data-start="{" data-end="}">
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#ade7c020e71892164e928f43a2bca9f17">  413</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#ade7c020e71892164e928f43a2bca9f17">as_real</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        assert(type_ == Real);</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>        <span class="keywordflow">return</span> val_.real;</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>    }</div>
+</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span></div>
+<div class="foldopen" id="foldopen00419" data-start="{" data-end="}">
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a36a9c717d3bea898a61fb00c76bb6f87">  419</a></span>    std::optional&lt;double&gt; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a36a9c717d3bea898a61fb00c76bb6f87">real</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        <span class="keywordflow">if</span> (type_ == Real) {</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>            <span class="keywordflow">return</span> val_.real;</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>        }</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>    }</div>
+</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span></div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Exc, <span class="keyword">typename</span> ... Args&gt; <span class="keyword">requires</span> (std::is_constructible_v&lt;Exc, Args...&gt;)</div>
+<div class="foldopen" id="foldopen00428" data-start="{" data-end="}">
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a3a09475c9beddb1898ab557e9069ce74">  428</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a3a09475c9beddb1898ab557e9069ce74">real_or_throw</a>(Args&amp;&amp;...args) {</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>        <span class="keywordflow">if</span> (type_ == Real) {</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>            <span class="keywordflow">return</span> val_.real;</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>        }</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        <span class="keywordflow">throw</span> Exc(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>    }</div>
+</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span></div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#aea6fd486626c586eded4feb20bc68070">  437</a></span>    SIMJSON_API <span class="keywordtype">double</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#aea6fd486626c586eded4feb20bc68070">to_real</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>    <span class="comment">// --------------------------------------- Number -----------------------------</span></div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>    <span class="comment">// В нашей реализации в отличии от чистого json числа могут быть int64_t или double.</span></div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>    <span class="comment">// Поэтому добавим ещё логику для работы только с обоими вариантами чисел.</span></div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>    <span class="comment">// In our implementation, unlike pure json, numbers can be int64_t or double.</span></div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    <span class="comment">// Therefore, let&#39;s add some more logic to work only with both variants of numbers.</span></div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span></div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a05266528db32c8ac8c86aa90e9590bda">  446</a></span>    std::optional&lt;int64_t&gt; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a05266528db32c8ac8c86aa90e9590bda">number_int</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Exc, <span class="keyword">typename</span> ... Args&gt; <span class="keyword">requires</span> (std::is_constructible_v&lt;Exc, Args...&gt;)</div>
+<div class="foldopen" id="foldopen00450" data-start="{" data-end="}">
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#ae55006b82c37b20f94cea8a86a08a636">  450</a></span>    int64_t <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#ae55006b82c37b20f94cea8a86a08a636">number_int_or_throw</a>(Args&amp;&amp;...args) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> val = <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a05266528db32c8ac8c86aa90e9590bda">number_int</a>()) {</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>            <span class="keywordflow">return</span> *val;</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>        }</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>        <span class="keywordflow">throw</span> Exc(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>    }</div>
+</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span></div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a0b67012745902956d218f7cd9a79b7b8">  458</a></span>    SIMJSON_API std::optional&lt;double&gt; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a0b67012745902956d218f7cd9a79b7b8">number_real</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Exc, <span class="keyword">typename</span> ... Args&gt; <span class="keyword">requires</span> (std::is_constructible_v&lt;Exc, Args...&gt;)</div>
+<div class="foldopen" id="foldopen00462" data-start="{" data-end="}">
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a17cfd102dc39b4ee7cba01d305aa0219">  462</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a17cfd102dc39b4ee7cba01d305aa0219">number_real_or_throw</a>(Args&amp;&amp;...args) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> val = <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a0b67012745902956d218f7cd9a79b7b8">number_real</a>()) {</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>            <span class="keywordflow">return</span> *val;</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>        }</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>        <span class="keywordflow">throw</span> Exc(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>    }</div>
+</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span> </div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>    <span class="comment">// --------------------------------------- Text -----------------------------</span></div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span></div>
+<div class="foldopen" id="foldopen00473" data-start="{" data-end="}">
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#ab9c333cd09a2c25a427ca8d399464dd6">  473</a></span>    <span class="keyword">const</span> strType&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#ab9c333cd09a2c25a427ca8d399464dd6">as_text</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>        assert(type_ == Text);</div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>        <span class="keywordflow">return</span> val_.text;</div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>    }</div>
+</div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span></div>
+<div class="foldopen" id="foldopen00480" data-start="{" data-end="}">
+<div class="line"><a id="l00480" name="l00480"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a553864bc2fda5c489829b96e9985d518">  480</a></span>    std::optional&lt;strType&gt; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a553864bc2fda5c489829b96e9985d518">text</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span>        <span class="keywordflow">if</span> (type_ == Text) {</div>
+<div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span>            <span class="keywordflow">return</span> val_.text;</div>
+<div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span>        }</div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>    }</div>
+</div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span></div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Exc, <span class="keyword">typename</span> ... Args&gt; <span class="keyword">requires</span> (std::is_constructible_v&lt;Exc, Args...&gt;)</div>
+<div class="foldopen" id="foldopen00489" data-start="{" data-end="}">
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#ad5ae989e7fcc76f3b9344cb216009884">  489</a></span>    <span class="keyword">const</span> strType&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#ad5ae989e7fcc76f3b9344cb216009884">text_or_throw</a>(Args&amp;&amp;...args) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>        <span class="keywordflow">if</span> (type_ == Text) {</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>            <span class="keywordflow">return</span> val_.text;</div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>        }</div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>        <span class="keywordflow">throw</span> Exc(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>    }</div>
+</div>
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span></div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Exc, <span class="keyword">typename</span> ... Args&gt; <span class="keyword">requires</span> (std::is_constructible_v&lt;Exc, Args...&gt;)</div>
+<div class="foldopen" id="foldopen00498" data-start="{" data-end="}">
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a7f7b1860f5bc4cf244bd08063af2bd41">  498</a></span>    <span class="keyword">const</span> strType&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a7f7b1860f5bc4cf244bd08063af2bd41">not_empty_text_or_throw</a>(Args&amp;&amp;...args) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>        <span class="keywordflow">if</span> (type_ == Text &amp;&amp; !val_.text.template trimmed&lt;ssType&gt;().is_empty()) {</div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>            <span class="keywordflow">return</span> val_.text;</div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>        }</div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>        <span class="keywordflow">throw</span> Exc(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>    }</div>
+</div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span></div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a924c273bb4125900b59cfde0d2003c8b">  507</a></span>    SIMJSON_API strType <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a924c273bb4125900b59cfde0d2003c8b">to_text</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span></div>
+<div class="foldopen" id="foldopen00511" data-start="{" data-end="}">
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a811256341a28bb403f06c9adc2df504e">  511</a></span>    json_object&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a811256341a28bb403f06c9adc2df504e">as_object</a>() {</div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>        assert(type_ == Object);</div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>        <span class="keywordflow">return</span> val_.object;</div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>    }</div>
+</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span></div>
+<div class="foldopen" id="foldopen00517" data-start="{" data-end="}">
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a8751c30e9007a2e64c5988f347f56b9a">  517</a></span>    <span class="keyword">const</span> json_object&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a8751c30e9007a2e64c5988f347f56b9a">as_object</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>        assert(type_ == Object);</div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>        <span class="keywordflow">return</span> val_.object;</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>    }</div>
+</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span></div>
+<div class="foldopen" id="foldopen00523" data-start="{" data-end="}">
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a82bcaf03b4c520cc40fe937790e49549">  523</a></span>    json_array&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a82bcaf03b4c520cc40fe937790e49549">as_array</a>() {</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>        assert(type_ == Array);</div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>        <span class="keywordflow">return</span> val_.array;</div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>    }</div>
+</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span></div>
+<div class="foldopen" id="foldopen00529" data-start="{" data-end="}">
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a2354b91380320f14f6c05c844d825f10">  529</a></span>    <span class="keyword">const</span> json_array&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a2354b91380320f14f6c05c844d825f10">as_array</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>        assert(type_ == Array);</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>        <span class="keywordflow">return</span> val_.array;</div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>    }</div>
+</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span></div>
+<div class="foldopen" id="foldopen00535" data-start="{" data-end="}">
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a4cffe820dec7c59e37998bf718509e45">  535</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a4cffe820dec7c59e37998bf718509e45">swap</a>(json_value&amp; other) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>        <span class="keywordtype">char</span> tmp[<span class="keyword">sizeof</span>(*this)];</div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>        memcpy(tmp, <span class="keyword">this</span>, <span class="keyword">sizeof</span>(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>        memcpy((<span class="keywordtype">void</span>*)<span class="keyword">this</span>, &amp;other, <span class="keyword">sizeof</span>(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>        memcpy((<span class="keywordtype">void</span>*)&amp;other, tmp, <span class="keyword">sizeof</span>(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>    }</div>
+</div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span></div>
+<div class="foldopen" id="foldopen00544" data-start="{" data-end="}">
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a2ca4ce01bb04a75d5cb8bd01bad9f784">  544</a></span>    <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a3c641bdd8fc530ccdb78bd811c08319d">JsonValueTempl</a>&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a2ca4ce01bb04a75d5cb8bd01bad9f784">operator=</a>(json_value t) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>        <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a4cffe820dec7c59e37998bf718509e45">swap</a>(t);</div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>    }</div>
+</div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span></div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>    <span class="keyword">template</span>&lt;jt::JsonKeyType&lt;K&gt; T&gt;</div>
+<div class="foldopen" id="foldopen00561" data-start="{" data-end="}">
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a367f86e24b5452f21fba976d6a53df00">  561</a></span>    <span class="keyword">const</span> json_value&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a367f86e24b5452f21fba976d6a53df00">at</a>(T&amp;&amp; key)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        <span class="keywordflow">if</span> (type_ == Object) {</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>            <span class="keywordflow">if</span> (<span class="keyword">auto</span> it = <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a811256341a28bb403f06c9adc2df504e">as_object</a>()-&gt;find(std::forward&lt;T&gt;(key)); it != <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a811256341a28bb403f06c9adc2df504e">as_object</a>()-&gt;end())</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>                <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>        }</div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>        <span class="keywordflow">return</span> UNDEFINED;</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    }</div>
+</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span></div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>    <span class="keyword">template</span>&lt;jt::JsonKeyType&lt;K&gt; T&gt;</div>
+<div class="foldopen" id="foldopen00581" data-start="{" data-end="}">
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#ab04d6c0554fa9ecd8e88e1ce8a358514">  581</a></span>    <span class="keyword">const</span> json_value&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#ab04d6c0554fa9ecd8e88e1ce8a358514">operator[]</a>(T&amp;&amp; key)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a367f86e24b5452f21fba976d6a53df00">at</a>(std::forward&lt;T&gt;(key));</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>    }</div>
+</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span></div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>...Args&gt; <span class="keyword">requires</span> (jt::JsonKeyType&lt;T, K&gt; || std::convertible_to&lt;T, size_t&gt;)</div>
+<div class="foldopen" id="foldopen00605" data-start="{" data-end="}">
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a1e267c5df191e65e69a1e3aa421a3d4f">  605</a></span>    <span class="keyword">const</span> json_value&amp; <span class="keyword">operator</span>()(T&amp;&amp; key, Args&amp;&amp;...args) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>        <span class="keyword">const</span> json_value&amp; res = <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a367f86e24b5452f21fba976d6a53df00">at</a>(std::forward&lt;T&gt;(key));</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>...(Args) == 0) {</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>            <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (jt::JsonKeyType&lt;std::tuple_element_t&lt;0, std::tuple&lt;Args...&gt;&gt;, K&gt;) {</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>                <span class="keywordflow">return</span> res.<a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a41031c38d2e6e4ebe79506fd18692b29">is_object</a>() ? res(std::forward&lt;Args&gt;(args)...) : UNDEFINED;</div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>                <span class="keywordflow">return</span> res.<a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a08c16d1ae047ac747a08b40472883165">is_array</a>() ? res(std::forward&lt;Args&gt;(args)...) : UNDEFINED;</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>            }</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>        }</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    }</div>
+</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span></div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>    <span class="keyword">template</span>&lt;jt::JsonKeyType&lt;K&gt; T&gt;</div>
+<div class="foldopen" id="foldopen00632" data-start="{" data-end="}">
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a7fcbef8c420c032337ab89f27e0a4665">  632</a></span>    json_value&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a7fcbef8c420c032337ab89f27e0a4665">operator[]</a>(T&amp;&amp; key) {</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>        <span class="keywordflow">if</span> (type_ != Object) {</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>            assert(<span class="keyword">this</span> != &amp;UNDEFINED);</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>            *<span class="keyword">this</span> = emptyObject;</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>        }</div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a811256341a28bb403f06c9adc2df504e">as_object</a>()-&gt;try_emplace(std::forward&lt;T&gt;(key)).first-&gt;second;</div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>    }</div>
+</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span></div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>    <span class="keyword">template</span>&lt;jt::JsonKeyType&lt;K&gt; Key, <span class="keyword">typename</span> ... Args&gt;</div>
+<div class="foldopen" id="foldopen00660" data-start="{" data-end="}">
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a5fb29d6c4dfaa349a12bcc8a863cb452">  660</a></span>    json_value&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a5fb29d6c4dfaa349a12bcc8a863cb452">set</a>(Key&amp;&amp; key, Args&amp;&amp; ... args) {</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>        <span class="keywordflow">if</span> (type_ != Object) {</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>            assert(<span class="keyword">this</span> != &amp;UNDEFINED);</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>            *<span class="keyword">this</span> = emptyObject;</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>        }</div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a811256341a28bb403f06c9adc2df504e">as_object</a>()-&gt;emplace(std::forward&lt;Key&gt;(key), std::forward&lt;Args&gt;(args)...).first-&gt;second;</div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>    }</div>
+</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span></div>
+<div class="foldopen" id="foldopen00669" data-start="{" data-end="}">
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#af6516ce3c64790a0cd3d497181790c4a">  669</a></span>    <span class="keyword">const</span> json_value&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#af6516ce3c64790a0cd3d497181790c4a">at</a>(<span class="keywordtype">size_t</span> idx)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>        <span class="keywordflow">if</span> (type_ == Array) {</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; arr = *<a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a82bcaf03b4c520cc40fe937790e49549">as_array</a>();</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>            <span class="keywordflow">if</span> (idx &lt; arr.size()) {</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>                <span class="keywordflow">return</span> arr[idx];</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>            }</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>        }</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>        <span class="keywordflow">return</span> UNDEFINED;</div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>    }</div>
+</div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span></div>
+<div class="foldopen" id="foldopen00680" data-start="{" data-end="}">
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a1041f64ce23427a133d06ba7a7b81d08">  680</a></span>    <span class="keyword">const</span> json_value&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a1041f64ce23427a133d06ba7a7b81d08">operator[]</a>(<span class="keywordtype">size_t</span> idx)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a367f86e24b5452f21fba976d6a53df00">at</a>(idx);</div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>    }</div>
+</div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span></div>
+<div class="foldopen" id="foldopen00697" data-start="{" data-end="}">
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a0b076c40f55c779c316977967abe389f">  697</a></span>    json_value&amp; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a0b076c40f55c779c316977967abe389f">operator[]</a>(<span class="keywordtype">size_t</span> idx) {</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>        <span class="keywordflow">if</span> (type_ != Array) {</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>            assert(<span class="keyword">this</span> != &amp;UNDEFINED);</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>            *<span class="keyword">this</span> = emptyArray;</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>        }</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>        <span class="keyword">auto</span>&amp; arr = *<a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a82bcaf03b4c520cc40fe937790e49549">as_array</a>();</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>        <span class="keywordflow">if</span> (idx == -1) {</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>            idx = arr.size();</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>        }</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>        <span class="keywordflow">if</span> (idx &gt;= arr.size()) {</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>            arr.resize(idx + 1);</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>        }</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>        <span class="keywordflow">return</span> arr[idx];</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>    }</div>
+</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span></div>
+<div class="foldopen" id="foldopen00713" data-start="{" data-end="}">
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#aec91ba9d420aabd8c248ce096594981d">  713</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#aec91ba9d420aabd8c248ce096594981d">size</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>        <span class="keywordflow">if</span> (type_ == Array) {</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a82bcaf03b4c520cc40fe937790e49549">as_array</a>()-&gt;size();</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type_ == Object) {</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a811256341a28bb403f06c9adc2df504e">as_object</a>()-&gt;size();</div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>        }</div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>    }</div>
+</div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span></div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a723e67323867b3aa77e2c239a848d5cc">  741</a></span>    SIMJSON_API <span class="keywordtype">void</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a723e67323867b3aa77e2c239a848d5cc">merge</a>(<span class="keyword">const</span> json_value&amp; other, <span class="keywordtype">bool</span> replace = <span class="keyword">true</span>, <span class="keywordtype">bool</span> append_arrays = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#adc790dbd285952b63ae0957cff168926">  756</a></span>    <span class="keyword">static</span> std::tuple&lt;json_value, JsonParseResult, unsigned, unsigned&gt; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#adc790dbd285952b63ae0957cff168926">parse</a>(ssType jsonString);</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a639c50beeaff6af0fcea9eef2d456d2d">  777</a></span>    SIMJSON_API <span class="keywordtype">void</span> <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a639c50beeaff6af0fcea9eef2d456d2d">store</a>(lstring&lt;K, 0, true&gt;&amp; stream, <span class="keywordtype">bool</span> prettify = <span class="keyword">false</span>, <span class="keywordtype">bool</span> order_keys = <span class="keyword">false</span>, K indent_symbol = <span class="charliteral">&#39; &#39;</span>, <span class="keywordtype">unsigned</span> indent_count = 2) <span class="keyword">const</span>;</div>
+<div class="foldopen" id="foldopen00798" data-start="{" data-end="}">
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#a45b71f8e79439edc0ebb6055d5dc6ea4">  798</a></span>    lstring&lt;K, 0, true&gt; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a45b71f8e79439edc0ebb6055d5dc6ea4">store</a>(<span class="keywordtype">bool</span> prettify = <span class="keyword">false</span>, <span class="keywordtype">bool</span> order_keys = <span class="keyword">false</span>, K indent_symbol = <span class="charliteral">&#39; &#39;</span>, <span class="keywordtype">unsigned</span> indent_count = 2)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>        lstring&lt;K, 0, true&gt; res;</div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>        <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a639c50beeaff6af0fcea9eef2d456d2d">store</a>(res, prettify, order_keys, indent_symbol, indent_count);</div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>    }</div>
+</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span> </div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>    SIMJSON_API <span class="keyword">static</span> <span class="keyword">const</span> json_value <a class="code hl_variable" href="namespacesimjson.html#a42bf98743fddb019642369c025670ecc">UNDEFINED</a>;</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span> </div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>    <span class="comment">// Тип значения</span></div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>    Type type_;</div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>    <span class="comment">// Хранимое значение</span></div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>    <span class="keyword">union </span>Value {</div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>        Value() : boolean(false){}</div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>        ~Value(){}</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>        <span class="keywordtype">bool</span> boolean;</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>        int64_t integer;</div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>        <span class="keywordtype">double</span> real;</div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>        strType text;</div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>        json_object object;</div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>        json_array array;</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>    } val_;</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>};</div>
+</div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span></div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K&gt;</div>
+<div class="foldopen" id="foldopen00831" data-start="{" data-end="};">
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno"><a class="line" href="structsimjson_1_1_streamed_json_parser.html">  831</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structsimjson_1_1_streamed_json_parser.html">StreamedJsonParser</a> : StreamedJsonParserBase {</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span> </div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>    <a class="code hl_class" href="classsimjson_1_1_json_value_templ.html">JsonValueTempl&lt;K&gt;</a> result_;</div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span> </div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>    <span class="keyword">using </span>strType = <span class="keyword">typename</span> JsonValueTempl&lt;K&gt;::strType;</div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>    <span class="keyword">using </span>ssType = <span class="keyword">typename</span> JsonValueTempl&lt;K&gt;::ssType;</div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span> </div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>    <span class="keywordtype">void</span> reset() {</div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>        this-&gt;<a class="code hl_struct" href="structsimjson_1_1_streamed_json_parser.html">~StreamedJsonParser&lt;K&gt;</a>();</div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>        <span class="keyword">new</span> (<span class="keyword">this</span>) <a class="code hl_struct" href="structsimjson_1_1_streamed_json_parser.html">StreamedJsonParser&lt;K&gt;</a>;</div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>    }</div>
+<div class="foldopen" id="foldopen00850" data-start="{" data-end="}">
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno"><a class="line" href="structsimjson_1_1_streamed_json_parser.html#a0c140a6bfa37587d4d04fc06d6da0769">  850</a></span>    JsonParseResult <a class="code hl_function" href="structsimjson_1_1_streamed_json_parser.html#a0c140a6bfa37587d4d04fc06d6da0769">parseAll</a>(ssType text) {</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>        <span class="keywordflow">return</span> process&lt;true, true&gt;(text);</div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>    }</div>
+</div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span></div>
+<div class="foldopen" id="foldopen00863" data-start="{" data-end="}">
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno"><a class="line" href="structsimjson_1_1_streamed_json_parser.html#ab7b9b2a0ccad738d75d40d13c011cbf1">  863</a></span>    JsonParseResult <a class="code hl_function" href="structsimjson_1_1_streamed_json_parser.html#ab7b9b2a0ccad738d75d40d13c011cbf1">processChunk</a>(ssType chunk, <span class="keywordtype">bool</span> last) {</div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>        <span class="keywordflow">return</span> last ? process&lt;false, true&gt;(chunk) : process&lt;false, false&gt;(chunk);</div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>    }</div>
+</div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span> </div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span> </div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>    <span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> All, <span class="keywordtype">bool</span> Last&gt;</div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>    SIMJSON_API JsonParseResult process(ssType chunk);</div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span> </div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> isWhiteSpace(K symbol) {</div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>        <span class="keywordflow">return</span> symbol == <span class="charliteral">&#39; &#39;</span> || symbol == <span class="charliteral">&#39;\t&#39;</span> || symbol == <span class="charliteral">&#39;\n&#39;</span> || symbol == <span class="charliteral">&#39;\r&#39;</span>;</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    }</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span> </div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>    strType getText();</div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>    <span class="keywordtype">bool</span> processUnicode(K symbol);</div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span> </div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>    <span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> Compound, <span class="keywordtype">int</span> NewState, <span class="keyword">typename</span> ... Args&gt;</div>
+<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>    JsonValueTempl&lt;K&gt;* addValue(JsonValueTempl&lt;K&gt;* current, Args&amp;&amp; ... args);</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span> </div>
+<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>    JsonValueTempl&lt;K&gt;* popStack();</div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span> </div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>    <span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> asInt, <span class="keywordtype">bool</span> All&gt;</div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>    JsonValueTempl&lt;K&gt;* addNumber(JsonValueTempl&lt;K&gt;* current);</div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span> </div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>    <span class="keyword">const</span> K* ptr_{};</div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>    <span class="keyword">const</span> K* startProcess_ {};</div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>    std::vector&lt;JsonValueTempl&lt;K&gt;*&gt; stack_{&amp;result_};</div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>    chunked_string_builder&lt;K&gt; text_{512};</div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>};</div>
+</div>
+<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span> </div>
+<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K&gt;</div>
+<div class="foldopen" id="foldopen00894" data-start="{" data-end="}">
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno"><a class="line" href="classsimjson_1_1_json_value_templ.html#adc790dbd285952b63ae0957cff168926">  894</a></span>std::tuple&lt;JsonValueTempl&lt;K&gt;, JsonParseResult, unsigned, <span class="keywordtype">unsigned</span>&gt; <a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#adc790dbd285952b63ae0957cff168926">JsonValueTempl&lt;K&gt;::parse</a>(ssType jsonString) {</div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>    <a class="code hl_struct" href="structsimjson_1_1_streamed_json_parser.html">StreamedJsonParser&lt;K&gt;</a> parser;</div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>    <span class="keyword">auto</span> res = parser.<a class="code hl_function" href="structsimjson_1_1_streamed_json_parser.html#a0c140a6bfa37587d4d04fc06d6da0769">parseAll</a>(jsonString);</div>
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>    <span class="keywordflow">return</span> {std::move(parser.result_), res, parser.line_, parser.col_};</div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>}</div>
+</div>
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span></div>
+<div class="line"><a id="l00902" name="l00902"></a><span class="lineno"><a class="line" href="namespacesimjson.html#ac98d90080fe73cac268301221ce8d738">  902</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacesimjson.html#ac98d90080fe73cac268301221ce8d738">JsonValue</a> = <a class="code hl_class" href="classsimjson_1_1_json_value_templ.html">JsonValueTempl&lt;u8s&gt;</a>;</div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno"><a class="line" href="namespacesimjson.html#a5990da17e30e1cc701bf7ac95d4c9171">  905</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacesimjson.html#a5990da17e30e1cc701bf7ac95d4c9171">JsonValueW</a> = <a class="code hl_class" href="classsimjson_1_1_json_value_templ.html">JsonValueTempl&lt;uws&gt;</a>;</div>
+<div class="line"><a id="l00908" name="l00908"></a><span class="lineno"><a class="line" href="namespacesimjson.html#a291a88227b40e817cb8397b24a539b37">  908</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacesimjson.html#a291a88227b40e817cb8397b24a539b37">JsonValueU</a> = <a class="code hl_class" href="classsimjson_1_1_json_value_templ.html">JsonValueTempl&lt;u16s&gt;</a>;</div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno"><a class="line" href="namespacesimjson.html#ae234fc2bc3714685c8ce8bccf7cfed62">  911</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacesimjson.html#ae234fc2bc3714685c8ce8bccf7cfed62">JsonValueUU</a> = <a class="code hl_class" href="classsimjson_1_1_json_value_templ.html">JsonValueTempl&lt;u32s&gt;</a>;</div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span></div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span><span class="preprocessor">#if defined (SIMJSON_EXPORT) || !defined (SIMJSON_IN_SHARED)</span></div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K&gt;</div>
+<div class="line"><a id="l00917" name="l00917"></a><span class="lineno"><a class="line" href="namespacesimjson.html#a42bf98743fddb019642369c025670ecc">  917</a></span><span class="keyword">inline</span> SIMJSON_API <span class="keyword">const</span> <a class="code hl_class" href="classsimjson_1_1_json_value_templ.html">JsonValueTempl&lt;K&gt;</a> JsonValueTempl&lt;K&gt;::UNDEFINED;</div>
+<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span></div>
+<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>SIMJSON_API stringa <a class="code hl_function" href="namespacesimjson.html#ab98127a20ac2936165ad35d29923d6aa">get_file_content</a>(stra filePath);</div>
+<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span> </div>
+<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>} <span class="comment">// namespace simjson</span></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html">simjson::JsonValueTempl</a></div><div class="ttdoc">Класс для представления json значения.</div><div class="ttdef"><b>Определения</b> json.h:129</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a0254579e66b86774d6b357bafc44bf4f"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a0254579e66b86774d6b357bafc44bf4f">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(const emptyString_t &amp;)</div><div class="ttdef"><b>Определения</b> json.h:215</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a05266528db32c8ac8c86aa90e9590bda"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a05266528db32c8ac8c86aa90e9590bda">simjson::JsonValueTempl::number_int</a></div><div class="ttdeci">std::optional&lt; int64_t &gt; number_int() const</div><div class="ttdef"><b>Определения</b> json.cpp:309</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a08c16d1ae047ac747a08b40472883165"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a08c16d1ae047ac747a08b40472883165">simjson::JsonValueTempl::is_array</a></div><div class="ttdeci">bool is_array() const</div><div class="ttdef"><b>Определения</b> json.h:327</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a094d2e0edf70bea320ccc9022a76472e"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a094d2e0edf70bea320ccc9022a76472e">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(const A &amp;e)</div><div class="ttdef"><b>Определения</b> json.h:201</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a0b076c40f55c779c316977967abe389f"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a0b076c40f55c779c316977967abe389f">simjson::JsonValueTempl::operator[]</a></div><div class="ttdeci">json_value &amp; operator[](size_t idx)</div><div class="ttdoc">Обращение к элементу массива по индексу.</div><div class="ttdef"><b>Определения</b> json.h:697</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a0b5877949774b0a200b90c07ee71b78d"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a0b5877949774b0a200b90c07ee71b78d">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(jt::JsonObjectSource&lt; K &gt; auto const &amp;obj)</div><div class="ttdoc">Конструктор из любого стандартного контейнера с парами, содержащими строковый ключ в first и значение...</div><div class="ttdef"><b>Определения</b> json.h:274</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a0b67012745902956d218f7cd9a79b7b8"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a0b67012745902956d218f7cd9a79b7b8">simjson::JsonValueTempl::number_real</a></div><div class="ttdeci">SIMJSON_API std::optional&lt; double &gt; number_real() const</div><div class="ttdef"><b>Определения</b> json.cpp:320</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a1041f64ce23427a133d06ba7a7b81d08"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a1041f64ce23427a133d06ba7a7b81d08">simjson::JsonValueTempl::operator[]</a></div><div class="ttdeci">const json_value &amp; operator[](size_t idx) const</div><div class="ttdef"><b>Определения</b> json.h:680</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a1567de682c2ed029d3450c7885e98b2d"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a1567de682c2ed029d3450c7885e98b2d">simjson::JsonValueTempl::integer_or_throw</a></div><div class="ttdeci">int64_t integer_or_throw(Args &amp;&amp;...args) const</div><div class="ttdef"><b>Определения</b> json.h:386</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a17cfd102dc39b4ee7cba01d305aa0219"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a17cfd102dc39b4ee7cba01d305aa0219">simjson::JsonValueTempl::number_real_or_throw</a></div><div class="ttdeci">double number_real_or_throw(Args &amp;&amp;...args) const</div><div class="ttdef"><b>Определения</b> json.h:462</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a17e6bcb391f61adc041b765250ad17fc"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a17e6bcb391f61adc041b765250ad17fc">simjson::JsonValueTempl::is_boolean</a></div><div class="ttdeci">bool is_boolean() const</div><div class="ttdef"><b>Определения</b> json.h:315</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a22e732a7fb6fb656c986a53d2726179a"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a22e732a7fb6fb656c986a53d2726179a">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(const emptyArray_t &amp;)</div><div class="ttdef"><b>Определения</b> json.h:223</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a2354b91380320f14f6c05c844d825f10"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a2354b91380320f14f6c05c844d825f10">simjson::JsonValueTempl::as_array</a></div><div class="ttdeci">const json_array &amp; as_array() const</div><div class="ttdef"><b>Определения</b> json.h:529</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a26c55486ff4adfe5d913898bc3558eb8"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a26c55486ff4adfe5d913898bc3558eb8">simjson::JsonValueTempl::boolean</a></div><div class="ttdeci">std::optional&lt; bool &gt; boolean() const</div><div class="ttdoc">Получить boolean, если хранится boolean, или ничего.</div><div class="ttdef"><b>Определения</b> json.h:349</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a296566ad042d3033e716b0e3bd346551"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a296566ad042d3033e716b0e3bd346551">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(double v)</div><div class="ttdef"><b>Определения</b> json.h:186</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a29e90b0d3ac210336235b12822659a5c"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a29e90b0d3ac210336235b12822659a5c">simjson::JsonValueTempl::as_integer</a></div><div class="ttdeci">int64_t as_integer() const</div><div class="ttdef"><b>Определения</b> json.h:371</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a2ca4ce01bb04a75d5cb8bd01bad9f784"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a2ca4ce01bb04a75d5cb8bd01bad9f784">simjson::JsonValueTempl::operator=</a></div><div class="ttdeci">JsonValueTempl &amp; operator=(json_value t) noexcept</div><div class="ttdef"><b>Определения</b> json.h:544</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a2dc05b5e75676e19e7176c01b7592aba"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a2dc05b5e75676e19e7176c01b7592aba">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(ssType t)</div><div class="ttdef"><b>Определения</b> json.h:195</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a367f86e24b5452f21fba976d6a53df00"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a367f86e24b5452f21fba976d6a53df00">simjson::JsonValueTempl::at</a></div><div class="ttdeci">const json_value &amp; at(T &amp;&amp;key) const</div><div class="ttdoc">Обращение к свойству константного объекта по ключу.</div><div class="ttdef"><b>Определения</b> json.h:561</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a36a9c717d3bea898a61fb00c76bb6f87"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a36a9c717d3bea898a61fb00c76bb6f87">simjson::JsonValueTempl::real</a></div><div class="ttdeci">std::optional&lt; double &gt; real() const</div><div class="ttdef"><b>Определения</b> json.h:419</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a36ca92537b6b91ad165dbb3d857f4df6"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a36ca92537b6b91ad165dbb3d857f4df6">simjson::JsonValueTempl::is_integer</a></div><div class="ttdeci">bool is_integer() const</div><div class="ttdef"><b>Определения</b> json.h:318</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a388cf73af257c8d7919ef3cadbf1cd53"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a388cf73af257c8d7919ef3cadbf1cd53">simjson::JsonValueTempl::as_boolean</a></div><div class="ttdeci">bool as_boolean() const</div><div class="ttdoc">Получить значение как boolean. В отладочной версии проверяется, что значение действительно boolean.</div><div class="ttdef"><b>Определения</b> json.h:338</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a3a09475c9beddb1898ab557e9069ce74"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a3a09475c9beddb1898ab557e9069ce74">simjson::JsonValueTempl::real_or_throw</a></div><div class="ttdeci">double real_or_throw(Args &amp;&amp;...args)</div><div class="ttdef"><b>Определения</b> json.h:428</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a3c63b9d9d3a2a968d5d86a304ce83055"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a3c63b9d9d3a2a968d5d86a304ce83055">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(const null_t &amp;)</div><div class="ttdef"><b>Определения</b> json.h:212</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a3c641bdd8fc530ccdb78bd811c08319d"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a3c641bdd8fc530ccdb78bd811c08319d">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl()</div><div class="ttdef"><b>Определения</b> json.h:142</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a41031c38d2e6e4ebe79506fd18692b29"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a41031c38d2e6e4ebe79506fd18692b29">simjson::JsonValueTempl::is_object</a></div><div class="ttdeci">bool is_object() const</div><div class="ttdef"><b>Определения</b> json.h:330</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a45b71f8e79439edc0ebb6055d5dc6ea4"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a45b71f8e79439edc0ebb6055d5dc6ea4">simjson::JsonValueTempl::store</a></div><div class="ttdeci">lstring&lt; K, 0, true &gt; store(bool prettify=false, bool order_keys=false, K indent_symbol=&#39; &#39;, unsigned indent_count=2) const</div><div class="ttdoc">Сериализовать json-значение в строку.</div><div class="ttdef"><b>Определения</b> json.h:798</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a4cffe820dec7c59e37998bf718509e45"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a4cffe820dec7c59e37998bf718509e45">simjson::JsonValueTempl::swap</a></div><div class="ttdeci">void swap(json_value &amp;other) noexcept</div><div class="ttdef"><b>Определения</b> json.h:535</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a553864bc2fda5c489829b96e9985d518"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a553864bc2fda5c489829b96e9985d518">simjson::JsonValueTempl::text</a></div><div class="ttdeci">std::optional&lt; strType &gt; text() const</div><div class="ttdef"><b>Определения</b> json.h:480</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a56253b29e31414a8127cfdd0abfd0774"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a56253b29e31414a8127cfdd0abfd0774">simjson::JsonValueTempl::~JsonValueTempl</a></div><div class="ttdeci">SIMJSON_API ~JsonValueTempl()</div><div class="ttdef"><b>Определения</b> json.cpp:154</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a5fb29d6c4dfaa349a12bcc8a863cb452"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a5fb29d6c4dfaa349a12bcc8a863cb452">simjson::JsonValueTempl::set</a></div><div class="ttdeci">json_value &amp; set(Key &amp;&amp;key, Args &amp;&amp;... args)</div><div class="ttdoc">Установка значения свойству json-объекта по ключу.</div><div class="ttdef"><b>Определения</b> json.h:660</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a602ab72f08bd27a85169926db2899ece"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a602ab72f08bd27a85169926db2899ece">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(bool v)</div><div class="ttdef"><b>Определения</b> json.h:183</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a639c50beeaff6af0fcea9eef2d456d2d"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a639c50beeaff6af0fcea9eef2d456d2d">simjson::JsonValueTempl::store</a></div><div class="ttdeci">SIMJSON_API void store(lstring&lt; K, 0, true &gt; &amp;stream, bool prettify=false, bool order_keys=false, K indent_symbol=&#39; &#39;, unsigned indent_count=2) const</div><div class="ttdoc">Сериализовать json-значение в строку.</div><div class="ttdef"><b>Определения</b> json.cpp:500</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a6a1cf2cdf70f1a4524cede720b704772"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a6a1cf2cdf70f1a4524cede720b704772">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(int16_t v)</div><div class="ttdef"><b>Определения</b> json.h:174</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a6de00d317c47bf5c1d67f55e567fa46e"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a6de00d317c47bf5c1d67f55e567fa46e">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(T &amp;&amp;str)</div><div class="ttdef"><b>Определения</b> json.h:207</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a6e1c78c9fbcfcc2cfbc12868400c6c0a"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a6e1c78c9fbcfcc2cfbc12868400c6c0a">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">SIMJSON_API JsonValueTempl(const JsonValueTempl &amp;other)</div><div class="ttdef"><b>Определения</b> json.cpp:128</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a723e67323867b3aa77e2c239a848d5cc"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a723e67323867b3aa77e2c239a848d5cc">simjson::JsonValueTempl::merge</a></div><div class="ttdeci">SIMJSON_API void merge(const json_value &amp;other, bool replace=true, bool append_arrays=false)</div><div class="ttdoc">Слияние с другим JSON.</div><div class="ttdef"><b>Определения</b> json.cpp:376</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a7b07738b5786efdf22a973f006351ae3"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a7b07738b5786efdf22a973f006351ae3">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(strType t)</div><div class="ttdef"><b>Определения</b> json.h:190</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a7d0efdbb7dd5bcfe8d5ceb7b80c2a074"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a7d0efdbb7dd5bcfe8d5ceb7b80c2a074">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(ObjectInit &amp;&amp;init)</div><div class="ttdoc">Конструктор из инициализатора для создания json::object. JsonValue v = {{&quot;key1&quot;_h,...</div><div class="ttdef"><b>Определения</b> json.h:241</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a7f7b1860f5bc4cf244bd08063af2bd41"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a7f7b1860f5bc4cf244bd08063af2bd41">simjson::JsonValueTempl::not_empty_text_or_throw</a></div><div class="ttdeci">const strType &amp; not_empty_text_or_throw(Args &amp;&amp;...args) const</div><div class="ttdef"><b>Определения</b> json.h:498</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a7fcbef8c420c032337ab89f27e0a4665"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a7fcbef8c420c032337ab89f27e0a4665">simjson::JsonValueTempl::operator[]</a></div><div class="ttdeci">json_value &amp; operator[](T &amp;&amp;key)</div><div class="ttdoc">Обращение к свойству объекта по ключу.</div><div class="ttdef"><b>Определения</b> json.h:632</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a80ac280835b18bcce181582bce5623fd"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a80ac280835b18bcce181582bce5623fd">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">SIMJSON_API JsonValueTempl(const Clone &amp;clone)</div><div class="ttdoc">Конструктор клонирования. В этом случае для объектов и массивов создаются &quot;глубокие&quot; копии.</div><div class="ttdef"><b>Определения</b> json.cpp:197</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a810ee50f7884ce75a58ca4a3d9163778"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a810ee50f7884ce75a58ca4a3d9163778">simjson::JsonValueTempl::to_boolean</a></div><div class="ttdeci">SIMJSON_API bool to_boolean() const</div><div class="ttdef"><b>Определения</b> json.cpp:224</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a811256341a28bb403f06c9adc2df504e"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a811256341a28bb403f06c9adc2df504e">simjson::JsonValueTempl::as_object</a></div><div class="ttdeci">json_object &amp; as_object()</div><div class="ttdef"><b>Определения</b> json.h:511</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a82bcaf03b4c520cc40fe937790e49549"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a82bcaf03b4c520cc40fe937790e49549">simjson::JsonValueTempl::as_array</a></div><div class="ttdeci">json_array &amp; as_array()</div><div class="ttdef"><b>Определения</b> json.h:523</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a82c0c24b312784f698987b04ad8db8e7"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a82c0c24b312784f698987b04ad8db8e7">simjson::JsonValueTempl::to_integer</a></div><div class="ttdeci">SIMJSON_API std::optional&lt; int64_t &gt; to_integer() const</div><div class="ttdoc">Получить значение, конвертированное в integer, или ничего. Логика работы как в javascript 1 * val....</div><div class="ttdef"><b>Определения</b> json.cpp:251</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a837bf06df6fb5659d5b06c6c92e48e1d"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a837bf06df6fb5659d5b06c6c92e48e1d">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(ArrayInit &amp;&amp;init)</div><div class="ttdoc">Конструктор из инициализатора для создания json::array. JsonValue json = {&quot;key1&quot;, 12,...</div><div class="ttdef"><b>Определения</b> json.h:250</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a8751c30e9007a2e64c5988f347f56b9a"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a8751c30e9007a2e64c5988f347f56b9a">simjson::JsonValueTempl::as_object</a></div><div class="ttdeci">const json_object &amp; as_object() const</div><div class="ttdef"><b>Определения</b> json.h:517</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a8dfe731067c8887b4975e310ff55b4eb"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a8dfe731067c8887b4975e310ff55b4eb">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(const emptyObject_t &amp;)</div><div class="ttdef"><b>Определения</b> json.h:218</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a9197a24de695cda2215745f8c9093920"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a9197a24de695cda2215745f8c9093920">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(int8_t v)</div><div class="ttdef"><b>Определения</b> json.h:171</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a924c273bb4125900b59cfde0d2003c8b"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a924c273bb4125900b59cfde0d2003c8b">simjson::JsonValueTempl::to_text</a></div><div class="ttdeci">SIMJSON_API strType to_text() const</div><div class="ttdef"><b>Определения</b> json.cpp:331</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a9680f072ea8a511a304ca740e81c7972"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a9680f072ea8a511a304ca740e81c7972">simjson::JsonValueTempl::to_integer_or_throw</a></div><div class="ttdeci">int64_t to_integer_or_throw(Args &amp;&amp;...args) const</div><div class="ttdef"><b>Определения</b> json.h:404</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a9776da822fdc8e0553db511c18295057"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a9776da822fdc8e0553db511c18295057">simjson::JsonValueTempl::is_text</a></div><div class="ttdeci">bool is_text() const</div><div class="ttdef"><b>Определения</b> json.h:324</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a9d40d8f2ea528b6ce60304c12df68c8c"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a9d40d8f2ea528b6ce60304c12df68c8c">simjson::JsonValueTempl::integer</a></div><div class="ttdeci">std::optional&lt; int64_t &gt; integer() const</div><div class="ttdef"><b>Определения</b> json.h:377</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a9d78557a3e56a483bc2c101cc7e7bcdf"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a9d78557a3e56a483bc2c101cc7e7bcdf">simjson::JsonValueTempl::is_undefined</a></div><div class="ttdeci">bool is_undefined() const</div><div class="ttdef"><b>Определения</b> json.h:309</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_aae02c060dd24a0095defa7002fc0fad4"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#aae02c060dd24a0095defa7002fc0fad4">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(int32_t v)</div><div class="ttdef"><b>Определения</b> json.h:177</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_ab04d6c0554fa9ecd8e88e1ce8a358514"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#ab04d6c0554fa9ecd8e88e1ce8a358514">simjson::JsonValueTempl::operator[]</a></div><div class="ttdeci">const json_value &amp; operator[](T &amp;&amp;key) const</div><div class="ttdoc">Обращение к свойству константного объекта по ключу.</div><div class="ttdef"><b>Определения</b> json.h:581</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_ab9c333cd09a2c25a427ca8d399464dd6"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#ab9c333cd09a2c25a427ca8d399464dd6">simjson::JsonValueTempl::as_text</a></div><div class="ttdeci">const strType &amp; as_text() const</div><div class="ttdef"><b>Определения</b> json.h:473</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_abd52ac0f880b5be797ed0bfd484a022e"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#abd52ac0f880b5be797ed0bfd484a022e">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(JsonValueTempl &amp;&amp;other) noexcept</div><div class="ttdef"><b>Определения</b> json.h:148</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_ac3c0b4d954039f28e6b4de4a1998ab63"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#ac3c0b4d954039f28e6b4de4a1998ab63">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(int64_t v)</div><div class="ttdef"><b>Определения</b> json.h:180</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_ac7b0e8dcc09cb145e437f4f86b605a92"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#ac7b0e8dcc09cb145e437f4f86b605a92">simjson::JsonValueTempl&lt; u8s &gt;::clone</a></div><div class="ttdeci">json_value clone() const</div><div class="ttdef"><b>Определения</b> json.h:300</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_ad390df0443218f292c12c1b4d6693ffb"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#ad390df0443218f292c12c1b4d6693ffb">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">JsonValueTempl(jt::JsonArraySource&lt; K &gt; auto const &amp;obj)</div><div class="ttdoc">Конструктор из любого стандартного контейнера-массива, содержащего значения JSON.</div><div class="ttdef"><b>Определения</b> json.h:259</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_ad5ae989e7fcc76f3b9344cb216009884"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#ad5ae989e7fcc76f3b9344cb216009884">simjson::JsonValueTempl::text_or_throw</a></div><div class="ttdeci">const strType &amp; text_or_throw(Args &amp;&amp;...args) const</div><div class="ttdef"><b>Определения</b> json.h:489</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_adbe41d3e2f79f48cb4d18151e164692b"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#adbe41d3e2f79f48cb4d18151e164692b">simjson::JsonValueTempl::is_null</a></div><div class="ttdeci">bool is_null() const</div><div class="ttdef"><b>Определения</b> json.h:312</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_adc790dbd285952b63ae0957cff168926"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#adc790dbd285952b63ae0957cff168926">simjson::JsonValueTempl::parse</a></div><div class="ttdeci">static std::tuple&lt; json_value, JsonParseResult, unsigned, unsigned &gt; parse(ssType jsonString)</div><div class="ttdoc">Распарсить текст в json.</div><div class="ttdef"><b>Определения</b> json.h:894</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_addf3e5b896dd976ca4adeb39dad5d7c8"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#addf3e5b896dd976ca4adeb39dad5d7c8">simjson::JsonValueTempl::JsonValueTempl</a></div><div class="ttdeci">SIMJSON_API JsonValueTempl(Type type)</div><div class="ttdef"><b>Определения</b> json.cpp:171</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_ade7c020e71892164e928f43a2bca9f17"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#ade7c020e71892164e928f43a2bca9f17">simjson::JsonValueTempl::as_real</a></div><div class="ttdeci">double as_real() const</div><div class="ttdef"><b>Определения</b> json.h:413</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_adfe49e4db1c9f8c5849bb1c9d1a06474"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#adfe49e4db1c9f8c5849bb1c9d1a06474">simjson::JsonValueTempl::is_real</a></div><div class="ttdeci">bool is_real() const</div><div class="ttdef"><b>Определения</b> json.h:321</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_ae14260b49ec3a34e95ec73f897f098a7"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#ae14260b49ec3a34e95ec73f897f098a7">simjson::JsonValueTempl::boolean_or_throw</a></div><div class="ttdeci">bool boolean_or_throw(Args &amp;&amp;...args) const</div><div class="ttdef"><b>Определения</b> json.h:358</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_ae55006b82c37b20f94cea8a86a08a636"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#ae55006b82c37b20f94cea8a86a08a636">simjson::JsonValueTempl::number_int_or_throw</a></div><div class="ttdeci">int64_t number_int_or_throw(Args &amp;&amp;...args) const</div><div class="ttdef"><b>Определения</b> json.h:450</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_aea6fd486626c586eded4feb20bc68070"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#aea6fd486626c586eded4feb20bc68070">simjson::JsonValueTempl::to_real</a></div><div class="ttdeci">SIMJSON_API double to_real() const</div><div class="ttdef"><b>Определения</b> json.cpp:293</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_aec91ba9d420aabd8c248ce096594981d"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#aec91ba9d420aabd8c248ce096594981d">simjson::JsonValueTempl::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdef"><b>Определения</b> json.h:713</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_af4db80daa5ef26b273a31558c9979a52"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#af4db80daa5ef26b273a31558c9979a52">simjson::JsonValueTempl&lt; u8s &gt;::type</a></div><div class="ttdeci">Type type() const</div><div class="ttdef"><b>Определения</b> json.h:297</div></div>
+<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_af6516ce3c64790a0cd3d497181790c4a"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#af6516ce3c64790a0cd3d497181790c4a">simjson::JsonValueTempl::at</a></div><div class="ttdeci">const json_value &amp; at(size_t idx) const</div><div class="ttdef"><b>Определения</b> json.h:669</div></div>
+<div class="ttc" id="anamespacesimjson_html"><div class="ttname"><a href="namespacesimjson.html">simjson</a></div><div class="ttdoc">Пространство имён для объектов библиотеки</div><div class="ttdef"><b>Определения</b> json.cpp:19</div></div>
+<div class="ttc" id="anamespacesimjson_html_a291a88227b40e817cb8397b24a539b37"><div class="ttname"><a href="namespacesimjson.html#a291a88227b40e817cb8397b24a539b37">simjson::JsonValueU</a></div><div class="ttdeci">JsonValueTempl&lt; u16s &gt; JsonValueU</div><div class="ttdef"><b>Определения</b> json.h:908</div></div>
+<div class="ttc" id="anamespacesimjson_html_a42bf98743fddb019642369c025670ecc"><div class="ttname"><a href="namespacesimjson.html#a42bf98743fddb019642369c025670ecc">simjson::UNDEFINED</a></div><div class="ttdeci">SIMJSON_API const JsonValueTempl&lt; K &gt; JsonValueTempl&lt; K &gt;::UNDEFINED</div><div class="ttdef"><b>Определения</b> json.h:917</div></div>
+<div class="ttc" id="anamespacesimjson_html_a5990da17e30e1cc701bf7ac95d4c9171"><div class="ttname"><a href="namespacesimjson.html#a5990da17e30e1cc701bf7ac95d4c9171">simjson::JsonValueW</a></div><div class="ttdeci">JsonValueTempl&lt; uws &gt; JsonValueW</div><div class="ttdef"><b>Определения</b> json.h:905</div></div>
+<div class="ttc" id="anamespacesimjson_html_ab98127a20ac2936165ad35d29923d6aa"><div class="ttname"><a href="namespacesimjson.html#ab98127a20ac2936165ad35d29923d6aa">simjson::get_file_content</a></div><div class="ttdeci">stringa get_file_content(stra filePath)</div><div class="ttdoc">Прочитать файл в строку.</div><div class="ttdef"><b>Определения</b> json.cpp:1132</div></div>
+<div class="ttc" id="anamespacesimjson_html_ac98d90080fe73cac268301221ce8d738"><div class="ttname"><a href="namespacesimjson.html#ac98d90080fe73cac268301221ce8d738">simjson::JsonValue</a></div><div class="ttdeci">JsonValueTempl&lt; u8s &gt; JsonValue</div><div class="ttdef"><b>Определения</b> json.h:902</div></div>
+<div class="ttc" id="anamespacesimjson_html_ae234fc2bc3714685c8ce8bccf7cfed62"><div class="ttname"><a href="namespacesimjson.html#ae234fc2bc3714685c8ce8bccf7cfed62">simjson::JsonValueUU</a></div><div class="ttdeci">JsonValueTempl&lt; u32s &gt; JsonValueUU</div><div class="ttdef"><b>Определения</b> json.h:911</div></div>
+<div class="ttc" id="astructsimjson_1_1_streamed_json_parser_html"><div class="ttname"><a href="structsimjson_1_1_streamed_json_parser.html">simjson::StreamedJsonParser</a></div><div class="ttdoc">Парсер текста в JsonValue. Позволяет парсить JSON порциями текста. Например, данные приходят пакетами...</div><div class="ttdef"><b>Определения</b> json.h:831</div></div>
+<div class="ttc" id="astructsimjson_1_1_streamed_json_parser_html_a0c140a6bfa37587d4d04fc06d6da0769"><div class="ttname"><a href="structsimjson_1_1_streamed_json_parser.html#a0c140a6bfa37587d4d04fc06d6da0769">simjson::StreamedJsonParser::parseAll</a></div><div class="ttdeci">JsonParseResult parseAll(ssType text)</div><div class="ttdoc">Распарсить весь текст за один раз.</div><div class="ttdef"><b>Определения</b> json.h:850</div></div>
+<div class="ttc" id="astructsimjson_1_1_streamed_json_parser_html_ab7b9b2a0ccad738d75d40d13c011cbf1"><div class="ttname"><a href="structsimjson_1_1_streamed_json_parser.html#ab7b9b2a0ccad738d75d40d13c011cbf1">simjson::StreamedJsonParser::processChunk</a></div><div class="ttdeci">JsonParseResult processChunk(ssType chunk, bool last)</div><div class="ttdoc">Распарсить порцию текста.</div><div class="ttdef"><b>Определения</b> json.h:863</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6de844340c5db4c3bde34e44ffa4105a.html">simjson</a></li><li class="navelem"><b>json.h</b></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

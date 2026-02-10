@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['operator_28_29_0',['operator()',['../classsimjson_1_1_json_value_templ.html#a1e267c5df191e65e69a1e3aa421a3d4f',1,'simjson::JsonValueTempl']]],
-  ['operator_3d_1',['operator=',['../classsimjson_1_1_json_value_templ.html#a2ca4ce01bb04a75d5cb8bd01bad9f784',1,'simjson::JsonValueTempl']]],
-  ['operator_5b_5d_2',['operator[]',['../classsimjson_1_1_json_value_templ.html#ab04d6c0554fa9ecd8e88e1ce8a358514',1,'simjson::JsonValueTempl::operator[](T &amp;&amp;key) const'],['../classsimjson_1_1_json_value_templ.html#a7fcbef8c420c032337ab89f27e0a4665',1,'simjson::JsonValueTempl::operator[](T &amp;&amp;key)'],['../classsimjson_1_1_json_value_templ.html#a1041f64ce23427a133d06ba7a7b81d08',1,'simjson::JsonValueTempl::operator[](size_t idx) const'],['../classsimjson_1_1_json_value_templ.html#a0b076c40f55c779c316977967abe389f',1,'simjson::JsonValueTempl::operator[](size_t idx)']]]
+  ['data_0',['data',['../classsimstr_1_1chunked__string__builder.html#af0b7cc558b6f119079ecf436f7d4c3ab',1,'simstr::chunked_string_builder']]],
+  ['define_5fsize_1',['define_size',['../classsimstr_1_1lstring.html#a1567876cf258412f403b78241c242fd8',1,'simstr::lstring']]]
 ];

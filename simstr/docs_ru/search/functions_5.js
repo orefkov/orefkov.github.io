@@ -18,7 +18,7 @@ var searchData=
   ['find_5for_5fall_15',['find_or_all',['../classsimstr_1_1str__src__algs.html#ac029fd5412ed114bfefbdddba2c50167',1,'simstr::str_src_algs::find_or_all(str_piece pattern, size_t offset=0) const noexcept'],['../classsimstr_1_1str__src__algs.html#a762c55d09b34ba2b7b5f9f10783da662',1,'simstr::str_src_algs::find_or_all(K s, size_t offset=0) const noexcept']]],
   ['find_5for_5fthrow_16',['find_or_throw',['../classsimstr_1_1str__src__algs.html#a40ab0482ea5f02bc0c3097bed6c9a5fa',1,'simstr::str_src_algs']]],
   ['for_5fall_5ffinded_17',['for_all_finded',['../classsimstr_1_1str__src__algs.html#a8185ccf8fc2297b628cce3c83b6a0b4c',1,'simstr::str_src_algs']]],
-  ['format_18',['format',['../classsimstr_1_1str__mutable.html#a3bfceeaa8961165845fa25fc652e31b0',1,'simstr::str_mutable::format()'],['../classsimstr_1_1sstring.html#abe90e471e553d7b9e367459ce2e686ce',1,'simstr::sstring::format()']]],
+  ['format_18',['format',['../classsimstr_1_1str__mutable.html#a3bfceeaa8961165845fa25fc652e31b0',1,'simstr::str_mutable::format()'],['../classsimstr_1_1sstring.html#a577bf1ac46d957ea3a438f358c46b971',1,'simstr::sstring::format()']]],
   ['format_5ffrom_19',['format_from',['../classsimstr_1_1str__mutable.html#ae8ca9bf60dd607b6b8721ec84abba5d5',1,'simstr::str_mutable']]],
   ['from_5fto_20',['from_to',['../classsimstr_1_1str__src__algs.html#a5659e7fb47dfb6bd6736a1b454ffde92',1,'simstr::str_src_algs']]]
 ];

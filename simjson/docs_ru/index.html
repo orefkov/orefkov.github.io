@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>simjson: Библиотека simjson.</title>
+<title>simstr: Библиотека simstr.</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,9 +32,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simjson<span id="projectnumber">&#160;1.2.4</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.6</span>
    </div>
-   <div id="projectbrief">Простая библиотека для работы с JSON из simstr</div>
+   <div id="projectbrief">Yet another strings library</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -103,185 +103,274 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Библиотека simjson. </div></div>
+  <div class="headertitle"><div class="title">Библиотека simstr. </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md0"></a>
-simjson - простейшая библиотека для работы с JSON</h1>
-<p><a href="https://github.com/orefkov/simjson/actions/workflows/cmake-multi-platform.yml"><img src="https://github.com/orefkov/simjson/actions/workflows/cmake-multi-platform.yml/badge.svg" alt="CMake on multiple platforms" style="pointer-events: none;" class="inline"/></a></p>
-<p>Предназначена для работы с JSON при использовании библиотеки <a href="https://github.com/orefkov/simstr">simstr</a>.</p>
-<p>Версия 1.2.4.</p>
+simstr - библиотека строковых объектов и функций</h1>
 <p><span class="obfuscator"><a href="readme.md">On English | По-английски</a></span></p>
-<p>В этой библиотеке содержится простая реализация простого объекта JsonValue для работы с JSON с использованием строковых объектов библиотеки <em>simstr</em>, так как другие библиотеки работают в основном с <code>std::string</code> или сырыми <code>const char*</code>. Задача как-то соревноваться по производительности или оптимальности с другими библиотеками не ставилась, я её применяю в-основном для работы с небольшими конфиг-файлами - прочитать, изменить, записать, однако и с большими файлами она вполне успешно справляется.</p>
-<p>Для json-объектов используется <code>std::unordered_map</code>, в лице <code>hashStrMap&lt;K, JsonValueTemp&lt;K&gt;&gt;</code>, для массивов - <code>std::vector&lt;JsonValueTemp&lt;K&gt;&gt;</code>, строки хранятся в <code>sstring&lt;K&gt;</code>.</p>
+<p><a href="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml"><img src="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml/badge.svg" alt="CMake on multiple platforms" style="pointer-events: none;" class="inline"/></a></p>
+<p>Версия 1.6.6.</p>
+<h2>Ускорь работу со строками в 2-10 раз!</h2>
+<p>В этой библиотеке содержится современная реализация нескольких видов строковых объектов и различных алгоритмов для работы со строками. </p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Сгенерированная документация</h2>
-<p><a href="https://orefkov.github.io/simjson/docs_ru/">Находится здесь</a></p>
+<p><a href="https://orefkov.github.io/simstr/docs_ru/">Находится здесь</a></p>
 <h2><a class="anchor" id="autotoc_md2"></a>
-Основные возможности библиотеки</h2>
-<ul>
-<li>Работает со всеми строками simstr.</li>
-<li>Поддерживает работу со строками <code>char</code>, <code>char16_t</code>, <code>char32_t</code>, <code>wchar_t</code>.</li>
-<li>Удобное создание, чтение и модификация json значений.</li>
-<li>Копирование таких JSON-значений, как массивы и объекты производится по ссылке (копируется только <code>shared_ptr</code>).</li>
-<li>Возможно "глубокое" копирование aka клонирование, JSON-значений, в этом случае для массивов и объектов создаётся полная копия.</li>
-<li>"Слияние" одного JSON объекта с другим, с возможностью задать приоритет.</li>
-<li>Расширенная работа с числами - позволяет использовать int64_t и double.</li>
-<li>Парсинг строки в Json, с поддержкой порционного парсинга.</li>
-<li>Сериализация json в строку, с опциями - сортировка ключей, "читаемый" вывод, количество отступов и символ отступа при "читаемом" выводе.</li>
+Краткое описание</h2>
+<p>Цель библиотеки - сделать работу со строками в С++ такой же простой и лёгкой, как во множестве других языков, особенно скриптовых, но при этом сохранив оптимальность и производительность на уровне С и C++, и даже улучшив их.</p>
+<p>Не секрет, что работа со строками в С++ зачастую доставляет боль. Класс <code>std::string</code> часто неудобен либо неэффективен. Многих функций, обычно необходимых при работе со строками, просто нет, и их каждому приходится писать самому. Даже элементарно конкатенировать <code>std::string</code> и <code>std::string_view</code> стало возможно только с C++26. Именно поэтому я начал примерно в 2012 году создавать для себя эту библиотеку, и теперь готов поделится ею со всеми C++ разработчиками.</p>
+<p>Эта библиотека не делалась как универсальный комбайн, который "может всё", я реализовывал то, что мне приходилось использовать в работе, стараясь сделать это наиболее эффективным способом, и скромно надеюсь, что кое-что у меня получилось и пригодится другим людям, либо напрямую, либо как источник идей.</p>
+<p>Библиотека содержит две части:</p><ul>
+<li>Реализация <a href="https://orefkov.github.io/simstr/docs_ru/overview.html#autotoc_md27"><em>"Строковых выражений"</em></a> и алгоритмов работы с константными строками.\ Для использования этой части достаточно просто взять файл <code>"include/simstr/strexpr.h"</code> и написать в своём коде <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;путь/к файлу/strexpr.h&quot;</span></div>
+</div><!-- fragment --> Это позволит вам для стандартных строковых типов (<code>std::basic_string</code>, <code>std::basic_string_view</code>) использовать мощные и быстрые <em>"строковые выражения"</em> для конкатенации и построения строк, а также упрощенные варианты классов <code>simple_str</code> и <code>simple_str_nt</code>, которые реализуют все те строковые алгоритмы библиотеки, которые не требуют хранения или модификации строк. Так как это header-only часть, она не включает в себя работу с UTF-кодировками и упрощённый Unicode.</li>
+<li>Полная версия, требующая подключения всей библиотеки (<code>"include/simstr/sstring.h"</code>), добавляет свои строковые типы с возможностями хранения и модификации строк, работает с UTF-кодировками и упрощённым Unicode.</li>
 </ul>
+<p>Библиотека не претендует на роль "поменял хедер и всё заработало лучше" - она прекрасно уживается вместе со стандартными строками и не меняет поведение уже существующего кода, работающего с ними. Многие методы в ней я старался делать совместимыми с <code>std::string</code> и <code>std::string_view</code>, но особо с этим не заморачивался. Переписывание вашего кода на работу с <code>simstr</code> потребует некоторых усилий, но уверяю, что они окупятся. А благодаря совместимости со стандартными строками эту работу можно делать поэтапно, небольшими кусками. Новый же код работы со строками создавать с её применением легко и доставляет удовольствие :)</p>
+<p>Основное отличие <code>simstr</code> от <code>std::string</code> - для работы со строками используется не единый универсальный класс, а несколько видов объектов, каждый из которых хорош для своих целей, и при этом хорошо взаимодействующих друг с другом. Если вы активно использовали <code>std::string_view</code> и понимали, в чём его преимущества и недостатки по сравнению с <code>std::string</code>, то подход <code>simstr</code> вам также будет понятен.</p>
 <h2><a class="anchor" id="autotoc_md3"></a>
-Основные объекты библиотеки</h2>
-<ul>
-<li>JsonValueTempl&lt;K&gt; - тип Json значения, параметр К задаёт тип используемых символов в строке. Алиасы:<ul>
-<li>JsonValue - для строк char</li>
-<li>JsonValueU - для строк char16_t</li>
-<li>JsonValueUU - для строк char32_t</li>
-<li>JsonValueW - для строк wchar_t</li>
+Основные возможности библиотеки</h2>
+<p>При использовании только <code>#include "simstr/strexpr.h"</code>:</p><ul>
+<li>Поддержка работы со строками <code>char</code>, <code>char8_t</code>, <code>char16_t</code>, <code>char32_t</code>, <code>wchar_t</code>.</li>
+<li>Мощная и расширяемая система <em>"Строковых выражений"</em>. Позволяет эффективно реализовать преобразование и сложение (конкатенацию) строк, строковых литералов, чисел (и возможно других объектов), добиваясь значительного ускорения строковых операций. Совместима как со строковыми объектами <code>simstr</code>, так и со стандартными строками (<code>std::basic_string</code>, <code>std::basic_string_view</code>), что позволяет применять быструю конкатенацию и там, где пока не получается отказаться от стандартных строк. Тоже позволяет смешивать в операциях строки совместимых типов символов.</li>
+<li>Константные строковые функции (не меняют исходную строку):<ul>
+<li>Получение подстрок.</li>
+<li>Сравнение строк, сравнение строк без учёта регистра ASCII-символов.</li>
+<li>Поиск подстрок и символов - с начала или с конца строки.</li>
+<li>Различный тримминг строк - справа, слева, везде, по пробельным символам, по заданным символам.</li>
+<li>Замена подстрок (созданием копии строки с заменой).</li>
+<li>Замена набора символов на набор соответствующих подстрок (созданием копии строки с заменой).</li>
+<li>Слияние (join) контейнеров строк в единую строку, с заданием разделителей и опций - "пропускать пустые", "разделитель после последней".</li>
+<li>Разбиение (split) строк на части по заданному разделителю. Разбиение возможно сразу в контейнер со строками, либо вызовом функтора для каждой подстроки, либо путем итерации с помощью итератора <code>Splitter</code>.</li>
 </ul>
 </li>
-<li>StreamedJsonParser&lt;K&gt; - парсер строки в JSON, поддерживающий "порционный" парсинг.\ Например, данные приходят порциями из сети, вы их по мере поступления скармливаете парсеру, пока он или не распарсит, или выдаст ошибку.</li>
+<li>Функции модификации стандартных строк строковыми выражениями:<ul>
+<li>str::append, str::prepend, str::insert, str::change - меняют str::string строковыми выражениями, например <code>str::append(text, "count = "_ss + count)</code>.</li>
+<li>str::replace - заменяет вхождения искомой подстроки на строку замены или строковое выражение. Если подстрока не найдена, строковое выражение даже не вычисляется.</li>
+</ul>
+</li>
+<li>Парсинг целых чисел с возможностью "тонкой" настройки при компиляции - можно задавать опции проверки переполнения, пропуск пробельных символов, конкретное основание счисления либо автовыбор по префиксам <code>0x</code>, <code>0</code>, <code>0b</code>, <code>0o</code>, допустимость знака <code>+</code>. Парсинг реализован для всех видов строк и символов.</li>
+<li>Парсинг double для <code>char</code> и <code>wchar_t</code>, а также совместимых с ними по размеру типов символов.</li>
+</ul>
+<p>При использовании полной версии библиотеки:</p><ul>
+<li>Всё то же, что и перечислено выше, плюс</li>
+<li>Дополнительные эффективные строковые объекты - <code>sstring</code> (shared string), <code>lstring</code> (local string).</li>
+<li><code>lstring</code> - поддерживает множество мутабельных операций со строками - различные замены, вставки, удаления и т.п. Позволяет задавать размер для внутреннего буфера символов, что может превращать <em>Small String Optimization</em> в <em>Big String Optimization</em> :).</li>
+<li>Прозрачное преобразование строк из одного типа символов в другой, с автоматической конвертацией между UTF-8, UTF-16, UTF-32, используя <a href="https://github.com/simdutf/simdutf">simdutf</a>. Строки "совместимых" типов преобразуются простым копированием: <code>char &lt;-&gt; char8_t</code>, <code>wchar_t &lt;-&gt; char32_t</code> в Linux, <code>wchar_t &lt;-&gt; char16_t</code> в Windows.</li>
+<li>Интеграция с функциями форматирования <code>format</code> и <code>sprintf</code> (с автоматическим увеличением буфера). Форматирование возможно для строк <code>char</code>, <code>wchar_t</code> и строк, совместимых с ними по размеру. То есть под Windows это <code>char8_t</code>, <code>char16_t</code>, под Linux - <code>char8_t</code>, <code>char32_t</code> (писать свою библиотеку форматирования для всех видов символов не входило в мои замыслы).</li>
+<li>Содержится минимальная поддержка Unicode при преобразовании <code>upper</code>, <code>lower</code> и регистро-независимом сравнении строк. Работает только для символов первой плоскости Unicode (до 0xFFFF), а при смене регистра не учитываются случаи, когда один code point может преобразовываться в несколько, то есть преобразование регистра символов соответствует <code>std::towupper</code>, <code>std::towlower</code> для unicode локали, только быстрее и может работать с любым видом символов.</li>
+<li>Реализован <code>hash map</code> для ключей строкового типа, на базе <code>std::unordered_map</code>, с возможностью более эффективного хранения и сравнения ключей по сравнению с ключами <code>std::string</code>. Поддерживается возможность регистро-независимого сравнения ключей (Ascii или минимальный Unicode (см. предыдущий пункт)).</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md4"></a>
-Использование</h2>
-<p><code>simjson</code> состоит из заголовочного файла и одного исходника. Можно подключать как CMake проект через <code>add_subdirectory</code> (библиотека <code>simjson</code>), можно просто включить файлы в свой проект. Для сборки также требуется <a href="https://github.com/orefkov/simstr">simstr</a> (при использовании CMake скачивается автоматически).</p>
-<p>Для работы <code>simjson</code> требуется компилятор с поддержкой стандарта не ниже С++20 (используются концепты).</p>
+Бенчмарки</h2>
+<p>Бенчмарки производятся с использованием фреймворка <a href="https://github.com/google/benchmark">Google benchmark</a>. Постарался сделать замеры для наиболее типичных операций, встречающихся в обычной работе. Я проводил замеры на своём оборудовании, под Windows и Linux (в WSL), с использованием компиляторов MSVC, Clang, GCC. Сторонние результаты приветствуются. Также проводил замеры в WASM, сборка в Emscripten. Обращаю внимание, что под WASM в Emscripten собирается 32-битная сборка, а значит, размеры буферов SSO в объектах меньше.</p>
+<p>На <a href="https://github.com/orefkov/simstr/releases">странице релизов</a> вы можете скачать бинарные сборки бенчмарков и запустить их на своём оборудовании.</p>
+<p>Также вы можете запустить <a href="https://orefkov.github.io/simstr/bench/benchStr.html">Emscripten сборку бенчмарков</a> прямо в браузере.</p>
+<ul>
+<li><a href="bench/bench_str.cpp">Исходный код бенчмарков</a></li>
+<li><a href="https://orefkov.github.io/simstr/results.html">Результаты бенчмарков</a></li>
+</ul>
 <h2><a class="anchor" id="autotoc_md5"></a>
+Строковые выражения</h2>
+<p>Это специальные объекты, которые эффективно реализуют конкатенацию строк, с помощью <code>operator+</code>. Главный принцип, за счёт которого достигается эффективная работа - сколько бы операндов не входило во всё выражение, никаких временных (промежуточных) строк не создаётся, общая длина всего результата подсчитывается только один раз, один раз выделяется память под буфер символов результата, после чего символы копируются сразу в буфер результата на своё место. Никаких перевыделений памяти, никакого передвигания символов в различных промежуточных буферах - всё максимально эффективно. Благодаря возможностям шаблонов C++ и перегрузке операторов, выражение пишется максимально приближённо к обычному синтаксису сложения строк. Кроме того, есть специальные перегрузки для сложения строковых объектов и строковых литералов, строк и чисел, для копирования с заменой, для слияния контейнеров строк и многое другое. Благодаря расширяемости этой системы - возможно создание новых вариантов построения строк, развитие постоянно продолжается.</p>
+<p>Все строковые объекты из <code>simstr</code> - сами являются строковыми выражениями, то есть их можно использовать в операциях конкатенации строковых выражений напрямую. Стандартные строки (<code>std::basic_string</code>, <code>std::basic_string_view</code>) - тоже могут служить операндами в операциях сложения со строковыми выражениями. Либо их можно легко преобразовать в строковое выражение, поставив перед ними унарный <code>+</code>.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Примеры использования</h2>
-<h3><a class="anchor" id="autotoc_md6"></a>
-Создание, чтение</h3>
-<div class="fragment"><div class="line"><span class="comment">// Простой json, равный 1.</span></div>
-<div class="line">JsonValue json = 1; <span class="comment">// int64</span></div>
-<div class="line">stringa text = json.<a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a639c50beeaff6af0fcea9eef2d456d2d">store</a>(); <span class="comment">// &quot;1&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Инициализация объекта, &quot;&quot;_h - несколько оптимизирует ключ, вычисляя хэш при компиляции</span></div>
-<div class="line">JsonValue obj = {</div>
-<div class="line">    {<span class="stringliteral">&quot;Key1&quot;</span>_h, 1},</div>
-<div class="line">    {<span class="stringliteral">&quot;Key2&quot;</span>_h, <span class="keyword">true</span>},</div>
-<div class="line">    {<span class="stringliteral">&quot;Key3&quot;</span>, {1, 2, Json::null, <span class="stringliteral">&quot;test&quot;</span>, <span class="keyword">false</span>}}, <span class="comment">// тут будет массив [1, 2, null, &quot;test&quot;, false]</span></div>
-<div class="line">    {<span class="stringliteral">&quot;Key4&quot;</span>_h, {</div>
-<div class="line">        {<span class="stringliteral">&quot;subkey1&quot;</span>_h, <span class="keyword">true</span>},</div>
-<div class="line">        {<span class="stringliteral">&quot;subkey2&quot;</span>, <span class="stringliteral">&quot;subkey&quot;</span>},</div>
-<div class="line">    }},</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Пустой объект</span></div>
-<div class="line"><a class="code hl_typedef" href="namespacesimjson.html#ac98d90080fe73cac268301221ce8d738">JsonValue</a> test;</div>
-<div class="line"><span class="comment">// Сохраняем ключи, сразу несколько уровней</span></div>
-<div class="line">test[<span class="stringliteral">&quot;a&quot;</span>_h][<span class="stringliteral">&quot;b&quot;</span>_h][<span class="stringliteral">&quot;c&quot;</span>_h] = 10;</div>
-<div class="line">text = json.<a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a639c50beeaff6af0fcea9eef2d456d2d">store</a>(); <span class="comment">// {&quot;a&quot;:{&quot;b&quot;:{&quot;c&quot;:10}}}</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Преобразует json-объект в массив</span></div>
-<div class="line">test[0] = <span class="stringliteral">&quot;value&quot;</span>;</div>
-<div class="line">test[-1] = <span class="keyword">true</span>;  <span class="comment">// При использовании -1 - значение добавляется в конец массива</span></div>
-<div class="line">test[10] = <span class="keyword">false</span>; <span class="comment">// Увеличит размер массива до 11</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Прочитать значение</span></div>
-<div class="line"><a class="code hl_typedef" href="namespacesimjson.html#ac98d90080fe73cac268301221ce8d738">JsonValue</a> config;</div>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Сложение строк с числами</h3>
+<div class="fragment"><div class="line">std::string s1 = <span class="stringliteral">&quot;start &quot;</span>;</div>
+<div class="line"><span class="keywordtype">int</span> i;</div>
 <div class="line">....</div>
-<div class="line">stringa log_path = config(<span class="stringliteral">&quot;instance&quot;</span>_h, <span class="stringliteral">&quot;base&quot;</span>_h, <span class="stringliteral">&quot;log&quot;</span>_h, <span class="stringliteral">&quot;path&quot;</span>_h).<a class="code hl_function" href="classsimjson_1_1_json_value_templ.html#a553864bc2fda5c489829b96e9985d518">text</a>().value_or(<span class="stringliteral">&quot;./log.txt&quot;</span>);</div>
-<div class="line">stringa work_dir = config(<span class="stringliteral">&quot;instance&quot;</span>_h, <span class="stringliteral">&quot;base&quot;</span>_h, <span class="stringliteral">&quot;work_dir&quot;</span>_h).text_or_throw&lt;std::runtime_error&gt;(</div>
-<div class="line">  <span class="stringliteral">&quot;not specified work dir&quot;</span>);</div>
-<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a553864bc2fda5c489829b96e9985d518"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a553864bc2fda5c489829b96e9985d518">simjson::JsonValueTempl::text</a></div><div class="ttdeci">std::optional&lt; strType &gt; text() const</div><div class="ttdef"><b>Определения</b> json.h:480</div></div>
-<div class="ttc" id="aclasssimjson_1_1_json_value_templ_html_a639c50beeaff6af0fcea9eef2d456d2d"><div class="ttname"><a href="classsimjson_1_1_json_value_templ.html#a639c50beeaff6af0fcea9eef2d456d2d">simjson::JsonValueTempl::store</a></div><div class="ttdeci">SIMJSON_API void store(lstring&lt; K, 0, true &gt; &amp;stream, bool prettify=false, bool order_keys=false, K indent_symbol=&#39; &#39;, unsigned indent_count=2) const</div><div class="ttdoc">Сериализовать json-значение в строку.</div><div class="ttdef"><b>Определения</b> json.cpp:500</div></div>
-<div class="ttc" id="anamespacesimjson_html_ac98d90080fe73cac268301221ce8d738"><div class="ttname"><a href="namespacesimjson.html#ac98d90080fe73cac268301221ce8d738">simjson::JsonValue</a></div><div class="ttdeci">JsonValueTempl&lt; u8s &gt; JsonValue</div><div class="ttdef"><b>Определения</b> json.h:902</div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md7"></a>
-Пример: Задание дефолтных значений, чтение из файла и объединение с дефолтными значениями.</h3>
-<div class="fragment"><div class="line">JsonValue json_config = {</div>
-<div class="line">    {<span class="stringliteral">&quot;section1&quot;</span>_h, {</div>
-<div class="line">        {<span class="stringliteral">&quot;sub1&quot;</span>_h, {</div>
-<div class="line">            {<span class="stringliteral">&quot;path&quot;</span>_h, <span class="stringliteral">&quot;.&quot;</span>},</div>
-<div class="line">            {<span class="stringliteral">&quot;workers&quot;</span>_h, 10},</div>
-<div class="line">        }},</div>
-<div class="line">        {<span class="stringliteral">&quot;sub2&quot;</span>_h, {</div>
-<div class="line">            {<span class="stringliteral">&quot;check&quot;</span>_h, <span class="keyword">true</span>},</div>
-<div class="line">        }},</div>
-<div class="line">        {<span class="stringliteral">&quot;key1&quot;</span>_h, <span class="keyword">true</span>},</div>
-<div class="line">        {<span class="stringliteral">&quot;key2&quot;</span>_h, <span class="keyword">false</span>},</div>
-<div class="line">    }},</div>
-<div class="line">    {<span class="stringliteral">&quot;section2&quot;</span>_h, {</div>
-<div class="line">        {<span class="stringliteral">&quot;key1&quot;</span>_h, <span class="keyword">false</span>},</div>
-<div class="line">        {<span class="stringliteral">&quot;key2&quot;</span>_h, <span class="keyword">true</span>},</div>
-<div class="line">    }},</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">inline</span> <span class="keywordtype">bool</span> is_file_exist(stra path) {</div>
-<div class="line">    <span class="keyword">auto</span> status = std::filesystem::status(path.to_sv());</div>
-<div class="line">    <span class="keywordflow">return</span> std::filesystem::status_known(status) &amp;&amp; std::filesystem::is_regular_file(status);</div>
+<div class="line"><span class="comment">// Было</span></div>
+<div class="line">    std::string str = s1 + std::to_string(i) + <span class="stringliteral">&quot; end&quot;</span>;</div>
+<div class="line"><span class="comment">// Стало</span></div>
+<div class="line">    std::string str = +s1 + i + <span class="stringliteral">&quot; end&quot;</span>;</div>
+</div><!-- fragment --><p> <code>+s1</code> - преобразует <code>std::string</code> в объект - строковое выражение, для которого есть эффективная конкатенация с числами и строковыми литералами.</p>
+<p>По бенчмаркам <a href="https://orefkov.github.io/simstr/results.html#bs70109915512075798510">ускорение 1.6 - 2 раза</a>.</p>
+<h3><a class="anchor" id="autotoc_md8"></a>
+Сложение строк с числами в hex-формате</h3>
+<div class="fragment"><div class="line">....</div>
+<div class="line"><span class="comment">// Было</span></div>
+<div class="line">    std::string str = s1 + std::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, i) + <span class="stringliteral">&quot; end&quot;</span>;</div>
+<div class="line"><span class="comment">// Стало</span></div>
+<div class="line">    std::string str = +s1 + e_hex&lt;HexFlags::Short&gt;(i) + <span class="stringliteral">&quot; end&quot;</span>;</div>
+</div><!-- fragment --><p> Ускорение в <a href="https://orefkov.github.io/simstr/results.html#bs146911715078927772520"><b>9 - 14 раз!!!</b></a></p>
+<h3><a class="anchor" id="autotoc_md9"></a>
+Сложение нескольких литералов и поиск в <code>std::string_view</code></h3>
+<div class="fragment"><div class="line"><span class="comment">// Было так</span></div>
+<div class="line"><span class="keywordtype">size_t</span> find_pos(std::string_view src, std::string_view name) {</div>
+<div class="line">    <span class="comment">// before C++26 we can not concatenate string and string_view...</span></div>
+<div class="line">    <span class="keywordflow">return</span> src.find(<span class="stringliteral">&quot;\n- &quot;</span>s + std::string{name} + <span class="stringliteral">&quot; -\n&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// При использовании только &quot;strexpr.h&quot; стало так</span></div>
+<div class="line"><span class="keywordtype">size_t</span> find_pos(ssa src, ssa name) {</div>
+<div class="line">    <span class="keywordflow">return</span> src.find(std::string{<span class="stringliteral">&quot;\n- &quot;</span> + name + <span class="stringliteral">&quot; -\n&quot;</span>});</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> read_config_from_file(ssa folder, ssa file_name) {</div>
-<div class="line">    stringa path_checked = folder + e_if(folder(-1) != PATH_SEPARATOR, PATH_SEPARATOR);</div>
-<div class="line">    <span class="keywordflow">if</span> (!file_name.is_empty()) {</div>
-<div class="line">        lstringa&lt;MAX_PATH&gt; fullPath = path_checked + file_name;</div>
-<div class="line">        stringa config;</div>
-<div class="line">        <span class="keywordflow">if</span> (is_file_exist(fullPath)) {</div>
-<div class="line">            config = <a class="code hl_function" href="namespacesimjson.html#ab98127a20ac2936165ad35d29923d6aa">get_file_content</a>(fullPath);</div>
-<div class="line"> </div>
-<div class="line">            <span class="keyword">auto</span> [readed, error, line, col] = JsonValue::parse(config);</div>
-<div class="line"> </div>
-<div class="line">            <span class="keywordflow">if</span> (error != JsonParseResult::Success) {</div>
-<div class="line">                std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in parse config file &quot;</span> &lt;&lt; fullPath &lt;&lt;</div>
-<div class="line">                  <span class="stringliteral">&quot; at line &quot;</span> &lt;&lt; line &lt;&lt; <span class="stringliteral">&quot;, col &quot;</span> &lt;&lt; col &lt;&lt; std::endl;</div>
-<div class="line">                <span class="keywordflow">throw</span> std::runtime_error{<span class="stringliteral">&quot;Error parse config file&quot;</span>};</div>
-<div class="line">            }</div>
-<div class="line">            json_config.merge(readed);</div>
+<div class="line"><span class="comment">// А при использовании полной библиотеки можно сделать так</span></div>
+<div class="line"><span class="keywordtype">size_t</span> find_pos(ssa src, ssa name) {</div>
+<div class="line">    <span class="comment">// В этом варианте если результат конкатенации вмещается в 207 символов - она производится в буфере на стеке,</span></div>
+<div class="line">    <span class="comment">// без алокации и освобождения памяти, ускорение в несколько раз. И только если результат длиннее 207 символов -</span></div>
+<div class="line">    <span class="comment">// будет всего одна аллокация, и конкатенация будет сразу в алоцированный буфер, без перекопирования символов.</span></div>
+<div class="line">    <span class="keywordflow">return</span> src.find(lstringa&lt;200&gt;{<span class="stringliteral">&quot;\n- &quot;</span> + name + <span class="stringliteral">&quot; -\n&quot;</span>});</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> <code>ssa</code> - псевдоним для <code>simple_str&lt;char&gt;</code> - аналог <code>std::string_view</code>, позволяет с минимальными расходами принимать параметром функции любой строковый объект, который не нужно модифицировать или передавать в C-API: <code>std::string</code>, <code>std::string_view</code>, <code>"строковый литерал"</code>, <code>simple_str_nt</code>, <code>sstring</code>, <code>lstring</code>. Также так как он при этом является ещё и "строковым выражением", то позволяет легко строить конкатенации с его участием.</p>
+<p>По замерам <a href="https://orefkov.github.io/simstr/results.html#bs68116594352702954700">ускорение 1.5 - 9 раз</a>.</p>
+<h3><a class="anchor" id="autotoc_md10"></a>
+Сложение с условиями</h3>
+<div class="fragment"><div class="line"><span class="comment">// Было</span></div>
+<div class="line">std::string buildTypeName(std::string_view type_name, <span class="keywordtype">size_t</span> prec, <span class="keywordtype">size_t</span> scale) {</div>
+<div class="line">    std::string res{type_name};</div>
+<div class="line">    <span class="keywordflow">if</span> (prec) {</div>
+<div class="line">        res += <span class="stringliteral">&quot;(&quot;</span> + std::to_string(prec);</div>
+<div class="line">        <span class="keywordflow">if</span> (scale) {</div>
+<div class="line">            res += <span class="stringliteral">&quot;,&quot;</span> + std::to_string(scale);</div>
 <div class="line">        }</div>
-<div class="line">        <span class="comment">// У нас в дефолтном конфиге могли появится новые ключи, и хотелось бы их дефолтные значения</span></div>
-<div class="line">        <span class="comment">// также скинуть в файл, чтобы проще потом редактировать.</span></div>
-<div class="line">        stringa new_config = json_config.store(<span class="keyword">true</span>, <span class="keyword">true</span>, <span class="charliteral">&#39; &#39;</span>, 4);</div>
-<div class="line">        <span class="keywordflow">if</span> (new_config != config) {</div>
-<div class="line">            <span class="comment">// В дефолтном конфиге добавились новые ключи</span></div>
-<div class="line">            std::ofstream file(fullPath.c_str(), std::ios::binary | std::ios::trunc);</div>
-<div class="line">            <span class="keywordflow">if</span> (!file.is_open()) {</div>
-<div class="line">                std::cerr &lt;&lt; <span class="stringliteral">&quot;Error in create config file &quot;</span> &lt;&lt; fullPath &lt;&lt; std::endl;</div>
-<div class="line">            } <span class="keywordflow">else</span> {</div>
-<div class="line">                file.write(new_config.c_str(), new_config.length());</div>
-<div class="line">            }</div>
-<div class="line">        }</div>
+<div class="line">        res += <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line">    }</div>
-<div class="line">    json_config[<span class="stringliteral">&quot;runtime&quot;</span>_h][<span class="stringliteral">&quot;location&quot;</span>_h][<span class="stringliteral">&quot;base_dir&quot;</span>_h] = std::move(path_checked);</div>
+<div class="line">    <span class="keywordflow">return</span> res;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacesimjson_html_ab98127a20ac2936165ad35d29923d6aa"><div class="ttname"><a href="namespacesimjson.html#ab98127a20ac2936165ad35d29923d6aa">simjson::get_file_content</a></div><div class="ttdeci">stringa get_file_content(stra filePath)</div><div class="ttdoc">Прочитать файл в строку.</div><div class="ttdef"><b>Определения</b> json.cpp:1132</div></div>
-</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md8"></a>
-Пример - инициализация из стандартных контейнеров</h3>
-<div class="fragment"><div class="line"><span class="comment">// Массивы</span></div>
-<div class="line">std::vector&lt;int&gt; vals = {1, 2, 3, 4};</div>
-<div class="line">JsonValue json = vals;</div>
-<div class="line">EXPECT_EQ(json.type(), Json::Array);</div>
-<div class="line">EXPECT_EQ(json.store(), <span class="stringliteral">&quot;[1,2,3,4]&quot;</span>);</div>
+<div class="line"><span class="comment">// Стало при использовании только strexpr.h и желании использовать только стандартные строки</span></div>
+<div class="line">std::string buildTypeName(std::string_view type_name, <span class="keywordtype">size_t</span> prec, <span class="keywordtype">size_t</span> scale) {</div>
+<div class="line">    <span class="keywordflow">if</span> (prec) {</div>
+<div class="line">        <span class="comment">//     + превращает type_name из string_view в строковое выражение</span></div>
+<div class="line">        <span class="keywordflow">return</span> +type_name + <span class="stringliteral">&quot;(&quot;</span> + prec + <a class="code hl_function" href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(scale, <span class="stringliteral">&quot;,&quot;</span>_ss + scale) + <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> type_name;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Стало при использовании только strexpr.h и simple_str строки</span></div>
+<div class="line">std::string buildTypeName(ssa type_name, <span class="keywordtype">size_t</span> prec, <span class="keywordtype">size_t</span> scale) {</div>
+<div class="line">    <span class="keywordflow">if</span> (prec) {</div>
+<div class="line">        <span class="comment">//     ssa уже является строковым выражением, + перед ним не нужен</span></div>
+<div class="line">        <span class="keywordflow">return</span> type_name + <span class="stringliteral">&quot;(&quot;</span> + prec + <a class="code hl_function" href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(scale, <span class="stringliteral">&quot;,&quot;</span>_ss + scale) + <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> type_name;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Стало при использовании полной библиотеки</span></div>
+<div class="line">stringa buildTypeName(ssa type_name, <span class="keywordtype">size_t</span> prec, <span class="keywordtype">size_t</span> scale) {</div>
+<div class="line">    <span class="keywordflow">if</span> (prec) {</div>
+<div class="line">        <span class="keywordflow">return</span> type_name + <span class="stringliteral">&quot;(&quot;</span> + prec + <a class="code hl_function" href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">e_if</a>(scale, <span class="stringliteral">&quot;,&quot;</span>_ss + scale) + <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> type_name;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Создание условного строкового выражения expr_if.</div><div class="ttdef"><b>Определения</b> strexpr.h:1544</div></div>
+</div><!-- fragment --><p> При <code>prec != 0</code>, <a href="https://orefkov.github.io/simstr/results.html#bs145290966789248325200">ускорение 1.5 - 2.2 раза</a>.</p>
+<h3><a class="anchor" id="autotoc_md11"></a>
+Сложение с заменами</h3>
+<div class="fragment"><div class="line"><span class="comment">// Было</span></div>
+<div class="line"><span class="comment">// Стандартной аналога функции replace из других ЯП нет, напишем свою &quot;в лоб&quot;.</span></div>
+<div class="line">std::string str_replace(std::string_view from, std::string_view pattern, std::string_view repl) {</div>
+<div class="line">    std::string result;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> offset = 0;;) {</div>
+<div class="line">        <span class="keywordtype">size_t</span> pos = from.find(pattern, offset);</div>
+<div class="line">        <span class="keywordflow">if</span> (pos == std::string::npos) {</div>
+<div class="line">            result += from.substr(offset);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">        result += from.substr(offset, pos - offset);</div>
+<div class="line">        result += repl;</div>
+<div class="line">        offset = pos + pattern.length();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> result;</div>
+<div class="line">}</div>
 <div class="line"> </div>
-<div class="line">JsonValue json1 = std::array&lt;int, 4&gt;{4, 3, 2, 1};</div>
-<div class="line">EXPECT_EQ(json1.type(), Json::Array);</div>
-<div class="line">EXPECT_EQ(json1.store(), <span class="stringliteral">&quot;[4,3,2,1]&quot;</span>);</div>
+<div class="line">std::string make_str_str(std::string_view from, std::string_view pattern, std::string_view repl) {</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;&quot;</span> + str_replace(from, pattern, repl) + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Стало - копирование с заменами</span></div>
+<div class="line">std::string make_str_exp(std::string_view from, std::string_view pattern, std::string_view repl) {</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;&quot;</span> + <a class="code hl_function" href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">e_repl</a>(from, pattern, repl) + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Получить строковое выражение, генерирующее строку с заменой всех вхождений заданной подстроки.</div><div class="ttdef"><b>Определения</b> strexpr.h:5416</div></div>
+</div><!-- fragment --><p> <a href="https://orefkov.github.io/simstr/results.html#bs54035654251116789780">Ускорение от 1.5 раз и выше</a> - в зависимости от содержимого строк.</p>
+<h3><a class="anchor" id="autotoc_md12"></a>
+Разбиение строк на части, парсинг чисел</h3>
+<div class="fragment"><div class="line"><span class="comment">// Было - разбить строку по разделителю и подсчитать сумму чисел</span></div>
+<div class="line"><span class="keywordtype">int</span> split_and_calc_total_str(std::string_view numbers, std::string_view delimiter) {</div>
+<div class="line">    <span class="keywordtype">int</span> total = 0;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> start = 0; start &lt; numbers.length(); ) {</div>
+<div class="line">        <span class="keywordtype">int</span> delim = numbers.find(delimiter, start);</div>
+<div class="line">        <span class="keywordflow">if</span> (delim == std::string::npos) {</div>
+<div class="line">            delim = numbers.size();</div>
+<div class="line">        }</div>
+<div class="line">        std::string part{numbers.substr(start, delim - start)};</div>
+<div class="line">        total += std::strtol(part.c_str(), <span class="keyword">nullptr</span>, 0);</div>
+<div class="line">        start = delim + delimiter.length();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> total;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// Стало</span></div>
+<div class="line"><span class="keywordtype">int</span> split_and_calc_total_sim(ssa numbers, ssa delimiter) {</div>
+<div class="line">    <span class="keywordtype">int</span> total = 0;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> splitter = numbers.splitter(delimiter); !splitter.is_done();) {</div>
+<div class="line">        total += splitter.next().as_int&lt;<span class="keywordtype">int</span>&gt;();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> total;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> <a href="https://orefkov.github.io/simstr/results.html#bs7106975351756760120">Ускорение в 2-3 раза</a>.</p>
+<p>Помимо приведённых здесь отдельных примеров, можно посмотреть исходники:</p><ul>
+<li><a href="https://github.com/orefkov/simstr/blob/main/tests/test_str.cpp">тестов всей библиотеки</a></li>
+<li><a href="https://github.com/orefkov/simstr/blob/main/tests/test_expr_only.cpp">тестов только strexpr части</a></li>
+<li><a href="https://github.com/orefkov/simstr/blob/main/tests/test_tostrexpr.cpp">примеры использования своих типов в строковых выражениях</a></li>
+<li><a href="https://github.com/orefkov/simstr/blob/main/bench/bench_str.cpp">бенчмарков</a></li>
+<li><a href="https://github.com/orefkov/simstr/blob/main/bench/process_result.cpp">утилиты подготовки html</a> из результатов бенчмарков.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Основные объекты библиотеки</h2>
+<p>Доступны при любом использовании:</p><ul>
+<li><code>simple_str&lt;K&gt;</code> - самая простая строка (или кусок строки), иммутабельная, не владеющая, аналог <code>std::string_view</code>.</li>
+<li><code>simple_str_nt&lt;K&gt;</code> - то же самое, только заявляет, что заканчивается 0. Для работы со сторонними C-API.</li>
+</ul>
+<p>Доступны при использовании всей библиотеки:</p><ul>
+<li><code>sstring&lt;K&gt;</code> - shared string, иммутабельная, владеющая, с разделяемым буфером символов, поддержка SSO.</li>
+<li><code>lstring&lt;K, N&gt;</code> - local string, мутабельная, владеющая, с задаваемым размером SSO буфера.</li>
+</ul>
+<p>При подключении только <code><a class="el" href="strexpr_8h_source.html">strexpr.h</a></code> - типы <code>simple_str&lt;K&gt;</code> и <code>simple_str_nt&lt;K&gt;</code> не содержат методов для работы с UTF и Unicode.</p>
+<h2><a class="anchor" id="autotoc_md14"></a>
+Статьи</h2>
+<ul>
+<li>Обзор и введение</li>
+<li><a href="https://orefkov.github.io/simstr/articles/fast_concat_ru.html">Так как же всё-таки быстро конкатенировать строки?</a></li>
+<li><a href="https://habr.com/ru/articles/935590">Обзорная статья на Хабре</a></li>
+<li><a href="https://habr.com/ru/articles/936468/">Описание применяемой техники "Expression Templates"</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Использование</h2>
+<p>Библиотеку можно использовать частично, просто взяв файл <code>"include/simstr/strexpr.h"</code> и включив в свои исходники </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;include/simstr/strexpr.h&quot;</span></div>
+</div><!-- fragment --><p> Это подключит только строковые выражения и упрощённые реализации <code>simple_str</code> и <code>simple_str_nt</code>, без функций работы с UTF и Unicode.</p>
+<p>Полная же версия библиотеки <code>simstr</code> состоит из трёх заголовочных файлов и двух исходников. Можно подключать как CMake проект через <code>add_subdirectory</code> (библиотека <code>simstr</code>), можно просто включить файлы в свой проект. Для сборки также требуется <a href="https://github.com/simdutf/simdutf">simdutf</a> (при использовании CMake скачивается автоматически).</p>
+<h3><a class="anchor" id="autotoc_md16"></a>
+Подключение через FetchContent</h3>
+<div class="fragment"><div class="line">function(add_simstr)</div>
+<div class="line">    set(SIMSTR_BUILD_TESTS OFF)</div>
+<div class="line">    set(SIMSTR_BENCHMARKS OFF)</div>
+<div class="line">    FetchContent_Declare(</div>
+<div class="line">        <a class="code hl_namespace" href="namespacesimstr.html">simstr</a></div>
+<div class="line">        GIT_REPOSITORY https:<span class="comment">//github.com/orefkov/simstr.git</span></div>
+<div class="line">        GIT_SHALLOW TRUE</div>
+<div class="line">        GIT_TAG tags/rel1.6.6 # Укажите нужный релиз</div>
+<div class="line">        FIND_PACKAGE_ARGS NAMES <a class="code hl_namespace" href="namespacesimstr.html">simstr</a> 1.6.6</div>
+<div class="line">    )</div>
+<div class="line">    FetchContent_MakeAvailable(<a class="code hl_namespace" href="namespacesimstr.html">simstr</a>)</div>
+<div class="line">endfunction()</div>
 <div class="line"> </div>
-<div class="line">std::list&lt;stringa&gt; texts = {<span class="stringliteral">&quot;one&quot;</span>, <span class="stringliteral">&quot;two&quot;</span>, <span class="stringliteral">&quot;three&quot;</span>};</div>
-<div class="line"><a class="code hl_typedef" href="namespacesimjson.html#ac98d90080fe73cac268301221ce8d738">JsonValue</a> json2 = texts;</div>
-<div class="line">EXPECT_EQ(json2.type(), Json::Array);</div>
-<div class="line">EXPECT_EQ(json2.store(), <span class="stringliteral">&quot;[\&quot;one\&quot;,\&quot;two\&quot;,\&quot;three\&quot;]&quot;</span>);</div>
+<div class="line">add_simstr()</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Ключ-значение</span></div>
-<div class="line">hashStrMapA&lt;int&gt; vals = {</div>
-<div class="line">    {<span class="stringliteral">&quot;one&quot;</span>_h, 1}, {<span class="stringliteral">&quot;two&quot;</span>_h, 2}, {<span class="stringliteral">&quot;three&quot;</span>_h, 3}, {<span class="stringliteral">&quot;four&quot;</span>_h, 4}</div>
-<div class="line">};</div>
-<div class="line"><a class="code hl_typedef" href="namespacesimjson.html#ac98d90080fe73cac268301221ce8d738">JsonValue</a> json = vals;</div>
-<div class="line">EXPECT_EQ(json.type(), Json::Object);</div>
-<div class="line">EXPECT_EQ(json.store(<span class="keyword">false</span>, <span class="keyword">true</span>), <span class="stringliteral">&quot;{\&quot;four\&quot;:4,\&quot;one\&quot;:1,\&quot;three\&quot;:3,\&quot;two\&quot;:2}&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line">std::map&lt;stringa, int&gt; vals1 = {</div>
-<div class="line">    {<span class="stringliteral">&quot;one&quot;</span>, 1}, {<span class="stringliteral">&quot;two&quot;</span>, 2}, {<span class="stringliteral">&quot;three&quot;</span>, 3}, {<span class="stringliteral">&quot;four&quot;</span>, 4}</div>
-<div class="line">};</div>
-<div class="line"><a class="code hl_typedef" href="namespacesimjson.html#ac98d90080fe73cac268301221ce8d738">JsonValue</a> json1 = vals1;</div>
-<div class="line">EXPECT_EQ(json1.type(), Json::Object);</div>
-<div class="line">EXPECT_EQ(json1.store(<span class="keyword">false</span>, <span class="keyword">true</span>), <span class="stringliteral">&quot;{\&quot;four\&quot;:4,\&quot;one\&quot;:1,\&quot;three\&quot;:3,\&quot;two\&quot;:2}&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line">std::vector&lt;std::pair&lt;lstringa&lt;20&gt;, <span class="keywordtype">int</span>&gt;&gt; vals2 = {</div>
-<div class="line">    {<span class="stringliteral">&quot;one&quot;</span>, 1}, {<span class="stringliteral">&quot;two&quot;</span>, 2}, {<span class="stringliteral">&quot;three&quot;</span>, 3}, {<span class="stringliteral">&quot;four&quot;</span>, 4}</div>
-<div class="line">};</div>
-<div class="line"><a class="code hl_typedef" href="namespacesimjson.html#ac98d90080fe73cac268301221ce8d738">JsonValue</a> json2 = vals2;</div>
-<div class="line">EXPECT_EQ(json2.type(), Json::Object);</div>
-<div class="line">EXPECT_EQ(json2.store(<span class="keyword">false</span>, <span class="keyword">true</span>), <span class="stringliteral">&quot;{\&quot;four\&quot;:4,\&quot;one\&quot;:1,\&quot;three\&quot;:3,\&quot;two\&quot;:2}&quot;</span>);</div>
-</div><!-- fragment -->   </div></div><!-- PageDoc -->
+<div class="line">target_link_libraries(&lt;your target&gt; PUBLIC <a class="code hl_namespace" href="namespacesimstr.html">simstr</a>::<a class="code hl_namespace" href="namespacesimstr.html">simstr</a>)</div>
+<div class="ttc" id="anamespacesimstr_html"><div class="ttname"><a href="namespacesimstr.html">simstr</a></div><div class="ttdoc">Пространство имён для объектов библиотеки</div><div class="ttdef"><b>Определения</b> sstring.cpp:12</div></div>
+</div><!-- fragment --><p>Библиотека также включена в <a href="https://vcpkg.io">vcpkg</a>, подключается как <code>orefkov-simstr</code>.</p>
+<p>Для работы <code>simstr</code> требуется компилятор стандарта не ниже С++20 - используются концепты и std::format. Работа проверялась под Windows на MSVC-19 и Clang-19, под Linux - на GCC-13 и Clang-21. Также проверялась работа в WASM, сборка в Emscripten 4.0.6, Clang-21.</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Удобная отладка</h2>
+<p>Вместе с библиотекой поставляются два файла, делающие просмотр simstr строковых объектов в отладчиках более удобным.\ Более подробно описано здесь.</p>
+<h2><a class="anchor" id="autotoc_md18"></a>
+Где уже используется</h2>
+<p>Также simstr используется в моих проектах:</p><ul>
+<li><a href="https://github.com/orefkov/simjson">simjson</a> - библиотека для простой работы с JSON с использованием строк simstr.</li>
+<li><a href="https://github.com/orefkov/simrex">simrex</a> - обёртка для работы с регулярными выражениями <a href="https://github.com/kkos/oniguruma">Oniguruma</a> с использованием строк simstr.</li>
+<li><a href="https://github.com/orefkov/v8sqlite">v8sqlite</a> - внешняя компонента для 1С-Предприятия V8 для работы с sqlite.   </li>
+</ul>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->

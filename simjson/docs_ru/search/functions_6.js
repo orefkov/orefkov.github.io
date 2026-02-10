@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['merge_0',['merge',['../classsimjson_1_1_json_value_templ.html#a723e67323867b3aa77e2c239a848d5cc',1,'simjson::JsonValueTempl']]]
+  ['get_5fportion_0',['get_portion',['../classsimstr_1_1chunked__string__builder.html#a1b255030f75dfcf6bb20de886d729d31',1,'simstr::chunked_string_builder']]]
 ];

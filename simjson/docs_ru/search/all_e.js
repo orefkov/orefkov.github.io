@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['библиотека_20simjson_0',['Библиотека simjson.',['../index.html',1,'']]],
-  ['библиотека_20для_20работы_20с_20json_1',['simjson - простейшая библиотека для работы с JSON',['../index.html#autotoc_md0',1,'']]],
-  ['библиотеки_2',['библиотеки',['../index.html#autotoc_md2',1,'Основные возможности библиотеки'],['../index.html#autotoc_md3',1,'Основные объекты библиотеки']]]
+  ['join_0',['join',['../classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1',1,'simstr::str_storable']]]
 ];

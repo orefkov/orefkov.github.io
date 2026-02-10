@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['библиотека_20simjson_0',['Библиотека simjson.',['../index.html',1,'']]]
+  ['2_0',['Способ 2',['../group___convert_to_str_expr.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['возможности_20библиотеки_0',['Основные возможности библиотеки',['../index.html#autotoc_md2',1,'']]]
+  ['k_20n_20forshared_20local_20string_0',['Класс lstring&lt;K, N, forShared&gt; (local string)',['../overview.html#autotoc_md29',1,'']]]
 ];

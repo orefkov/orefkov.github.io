@@ -1,7 +1,54 @@
 var annotated_dup =
 [
-    [ "simjson", "namespacesimjson.html", [
-      [ "JsonValueTempl", "classsimjson_1_1_json_value_templ.html", "classsimjson_1_1_json_value_templ" ],
-      [ "StreamedJsonParser", "structsimjson_1_1_streamed_json_parser.html", "structsimjson_1_1_streamed_json_parser" ]
+    [ "simstr", "namespacesimstr.html", [
+      [ "chunked_string_builder", "classsimstr_1_1chunked__string__builder.html", "classsimstr_1_1chunked__string__builder" ],
+      [ "convert_to_strexpr< K, const T * >", "structsimstr_1_1convert__to__strexpr_3_01_k_00_01const_01_t_01_5_01_4.html", null ],
+      [ "convert_to_strexpr< K, expr_hex_src< Val, All, Ucase, Ox > >", "structsimstr_1_1convert__to__strexpr_3_01_k_00_01expr__hex__src_3_01_val_00_01_all_00_01_ucase_00_01_ox_01_4_01_4.html", null ],
+      [ "convert_to_strexpr< K, T >", "structsimstr_1_1convert__to__strexpr_3_01_k_00_01_t_01_4.html", null ],
+      [ "e_concat", "structsimstr_1_1e__concat.html", "structsimstr_1_1e__concat" ],
+      [ "e_subst", "structsimstr_1_1e__subst.html", "structsimstr_1_1e__subst" ],
+      [ "e_vsubst", "structsimstr_1_1e__vsubst.html", "structsimstr_1_1e__vsubst" ],
+      [ "empty_expr", "structsimstr_1_1empty__expr.html", null ],
+      [ "expr_choice", "structsimstr_1_1expr__choice.html", null ],
+      [ "expr_choice_one_lit", "structsimstr_1_1expr__choice__one__lit.html", null ],
+      [ "expr_choice_two_lit", "structsimstr_1_1expr__choice__two__lit.html", null ],
+      [ "expr_if", "structsimstr_1_1expr__if.html", null ],
+      [ "expr_pad", "structsimstr_1_1expr__pad.html", null ],
+      [ "expr_replace_symbols", "structsimstr_1_1expr__replace__symbols.html", "structsimstr_1_1expr__replace__symbols" ],
+      [ "expr_replaced", "structsimstr_1_1expr__replaced.html", "structsimstr_1_1expr__replaced" ],
+      [ "expr_replaced_e", "structsimstr_1_1expr__replaced__e.html", "structsimstr_1_1expr__replaced__e" ],
+      [ "expr_spaces", "structsimstr_1_1expr__spaces.html", null ],
+      [ "expr_stdstr", "structsimstr_1_1expr__stdstr.html", null ],
+      [ "expr_to_std_string", "structsimstr_1_1expr__to__std__string.html", null ],
+      [ "expr_utf", "structsimstr_1_1expr__utf.html", null ],
+      [ "from_utf_convertible", "classsimstr_1_1from__utf__convertible.html", null ],
+      [ "hashStrMap", "classsimstr_1_1hash_str_map.html", null ],
+      [ "lstring", "classsimstr_1_1lstring.html", "classsimstr_1_1lstring" ],
+      [ "simple_str", "structsimstr_1_1simple__str.html", "structsimstr_1_1simple__str" ],
+      [ "simple_str_nt", "structsimstr_1_1simple__str__nt.html", "structsimstr_1_1simple__str__nt" ],
+      [ "SplitterBase", "classsimstr_1_1_splitter_base.html", "classsimstr_1_1_splitter_base" ],
+      [ "sstring", "classsimstr_1_1sstring.html", "classsimstr_1_1sstring" ],
+      [ "str_algs", "classsimstr_1_1str__algs.html", "classsimstr_1_1str__algs" ],
+      [ "str_mutable", "classsimstr_1_1str__mutable.html", "classsimstr_1_1str__mutable" ],
+      [ "str_src", "structsimstr_1_1str__src.html", "structsimstr_1_1str__src" ],
+      [ "str_src_algs", "classsimstr_1_1str__src__algs.html", "classsimstr_1_1str__src__algs" ],
+      [ "str_src_nt", "structsimstr_1_1str__src__nt.html", "structsimstr_1_1str__src__nt" ],
+      [ "str_storable", "classsimstr_1_1str__storable.html", "classsimstr_1_1str__storable" ],
+      [ "strexprjoin", "structsimstr_1_1strexprjoin.html", null ],
+      [ "strexprjoin_c", "structsimstr_1_1strexprjoin__c.html", null ]
+    ] ],
+    [ "std", null, [
+      [ "formatter< simstr::lstring< char8_t, N, S, A >, char >", "structstd_1_1formatter_3_01simstr_1_1lstring_3_01char8__t_00_01_n_00_01_s_00_01_a_01_4_00_01char_01_4.html", null ],
+      [ "formatter< simstr::lstring< K, N, S, A >, K >", "structstd_1_1formatter_3_01simstr_1_1lstring_3_01_k_00_01_n_00_01_s_00_01_a_01_4_00_01_k_01_4.html", null ],
+      [ "formatter< simstr::lstring< simstr::wchar_type, N, S, A >, wchar_t >", "structstd_1_1formatter_3_01simstr_1_1lstring_3_01simstr_1_1wchar__type_00_01_n_00_01_s_00_01_a_01_4_00_01wchar__t_01_4.html", null ],
+      [ "formatter< simstr::simple_str< char8_t >, char >", "structstd_1_1formatter_3_01simstr_1_1simple__str_3_01char8__t_01_4_00_01char_01_4.html", null ],
+      [ "formatter< simstr::simple_str< K >, K >", "structstd_1_1formatter_3_01simstr_1_1simple__str_3_01_k_01_4_00_01_k_01_4.html", null ],
+      [ "formatter< simstr::simple_str< simstr::wchar_type >, wchar_t >", "structstd_1_1formatter_3_01simstr_1_1simple__str_3_01simstr_1_1wchar__type_01_4_00_01wchar__t_01_4.html", null ],
+      [ "formatter< simstr::simple_str_nt< char8_t >, char >", "structstd_1_1formatter_3_01simstr_1_1simple__str__nt_3_01char8__t_01_4_00_01char_01_4.html", null ],
+      [ "formatter< simstr::simple_str_nt< K >, K >", "structstd_1_1formatter_3_01simstr_1_1simple__str__nt_3_01_k_01_4_00_01_k_01_4.html", null ],
+      [ "formatter< simstr::simple_str_nt< simstr::wchar_type >, wchar_t >", "structstd_1_1formatter_3_01simstr_1_1simple__str__nt_3_01simstr_1_1wchar__type_01_4_00_01wchar__t_01_4.html", null ],
+      [ "formatter< simstr::sstring< char8_t >, char >", "structstd_1_1formatter_3_01simstr_1_1sstring_3_01char8__t_01_4_00_01char_01_4.html", null ],
+      [ "formatter< simstr::sstring< K >, K >", "structstd_1_1formatter_3_01simstr_1_1sstring_3_01_k_01_4_00_01_k_01_4.html", null ],
+      [ "formatter< simstr::sstring< simstr::wchar_type >, wchar_t >", "structstd_1_1formatter_3_01simstr_1_1sstring_3_01simstr_1_1wchar__type_01_4_00_01wchar__t_01_4.html", null ]
     ] ]
 ];

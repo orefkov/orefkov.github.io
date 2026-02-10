@@ -1,8 +1,17 @@
 var searchData=
 [
-  ['not_5fempty_5ftext_5for_5fthrow_0',['not_empty_text_or_throw',['../classsimjson_1_1_json_value_templ.html#a7f7b1860f5bc4cf244bd08063af2bd41',1,'simjson::JsonValueTempl']]],
-  ['number_5fint_1',['number_int',['../classsimjson_1_1_json_value_templ.html#a05266528db32c8ac8c86aa90e9590bda',1,'simjson::JsonValueTempl']]],
-  ['number_5fint_5for_5fthrow_2',['number_int_or_throw',['../classsimjson_1_1_json_value_templ.html#ae55006b82c37b20f94cea8a86a08a636',1,'simjson::JsonValueTempl']]],
-  ['number_5freal_3',['number_real',['../classsimjson_1_1_json_value_templ.html#a0b67012745902956d218f7cd9a79b7b8',1,'simjson::JsonValueTempl']]],
-  ['number_5freal_5for_5fthrow_4',['number_real_or_throw',['../classsimjson_1_1_json_value_templ.html#a17cfd102dc39b4ee7cba01d305aa0219',1,'simjson::JsonValueTempl']]]
+  ['init_5ffrom_5fstr_5fother_0',['init_from_str_other',['../classsimstr_1_1str__storable.html#a4116dbd55a53014cef88f4f571cb0c64',1,'simstr::str_storable']]],
+  ['init_5freplaced_1',['init_replaced',['../classsimstr_1_1str__storable.html#a1090a808b0e761a7ecff753d80faebba',1,'simstr::str_storable']]],
+  ['init_5fstr_5fexpr_2',['init_str_expr',['../classsimstr_1_1str__storable.html#a5d6ca99606646e8a2fb07f5808dae999',1,'simstr::str_storable']]],
+  ['init_5fstr_5frepeat_3',['init_str_repeat',['../classsimstr_1_1str__storable.html#a92e0afaaca95e435c77ecc4ab3f26b8d',1,'simstr::str_storable']]],
+  ['init_5fsymb_5frepeat_4',['init_symb_repeat',['../classsimstr_1_1str__storable.html#a47d5032575e4c90cdb9a8bcd0aa8c735',1,'simstr::str_storable']]],
+  ['insert_5',['insert',['../classsimstr_1_1str__mutable.html#a81a87ca9286d27c944b0453df89e7f92',1,'simstr::str_mutable::insert(size_t to, str_piece other)'],['../classsimstr_1_1str__mutable.html#a01abc4c1daa39bb99451be642dc86f48',1,'simstr::str_mutable::insert(size_t to, const A &amp;expr)'],['../namespacesimstr_1_1str.html#afb9af1b76a9815d827e9b46affccb49f',1,'simstr::str::insert()']]],
+  ['is_5fascii_6',['is_ascii',['../classsimstr_1_1str__src__algs.html#aaeefcf45750a8260d5a57b3056a1521f',1,'simstr::str_src_algs']]],
+  ['is_5fcontinuous_7',['is_continuous',['../classsimstr_1_1chunked__string__builder.html#ab3d8e89a6d9cd07b5ef35e2ff31b1166',1,'simstr::chunked_string_builder']]],
+  ['is_5fdone_8',['is_done',['../classsimstr_1_1_splitter_base.html#a4ba6176b0e6ec2230fe51d2022252801',1,'simstr::SplitterBase']]],
+  ['is_5fempty_9',['is_empty',['../structsimstr_1_1simple__str.html#ab4c3531ce29d4b40a306c458279c7a63',1,'simstr::simple_str::is_empty()'],['../classsimstr_1_1lstring.html#ab3c7ea2f2356a1a299814a418949fdcc',1,'simstr::lstring::is_empty()'],['../classsimstr_1_1sstring.html#a35191ce33c60798706f8403507ea04f7',1,'simstr::sstring::is_empty()'],['../structsimstr_1_1str__src.html#a410949035b02ddbbe8022b0510341034',1,'simstr::str_src::is_empty()']]],
+  ['is_5fend_10',['is_end',['../structsimstr_1_1chunked__string__builder_1_1portion__store.html#aaaf570300b0a381cbf1ebd3215b34e35',1,'simstr::chunked_string_builder::portion_store']]],
+  ['is_5flocal_11',['is_local',['../classsimstr_1_1lstring.html#a4289d6b43caed9e13a78c13bf12c4794',1,'simstr::lstring']]],
+  ['is_5fpart_5fof_12',['is_part_of',['../structsimstr_1_1simple__str.html#afdaedb195f21ec725e42544784bc2663',1,'simstr::simple_str::is_part_of()'],['../structsimstr_1_1str__src.html#aeded41f429cf838fd6e1728c93b7ee35',1,'simstr::str_src::is_part_of()']]],
+  ['is_5fsame_13',['is_same',['../structsimstr_1_1simple__str.html#ab6a66a7877b07e9f95d91c71077fdf48',1,'simstr::simple_str::is_same()'],['../structsimstr_1_1str__src.html#acef14081d16a68eb11984d3200d31a42',1,'simstr::str_src::is_same()']]]
 ];

@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.7</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -143,6 +143,14 @@ requires (std::is_constructible_v&lt;<a class="el" href="structsimstr_1_1str__sr
 <tr class="memitem:a0be21b9e8525cd67515fb5a2dc78c6ba"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0be21b9e8525cd67515fb5a2dc78c6ba">replace</a> (std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, <a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt; pattern, <a class="el" href="structsimstr_1_1str__src.html">str_src</a>&lt; K &gt; repl, size_t offset=0, size_t max_count=-1)</td></tr>
 <tr class="memdesc:a0be21b9e8525cd67515fb5a2dc78c6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for searching for substrings in a standard string and replacing found occurrences with another substring.  <br /></td></tr>
 <tr class="separator:a0be21b9e8525cd67515fb5a2dc78c6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66953000f4474589175ceaca435cf273" id="r_a66953000f4474589175ceaca435cf273"><td class="memTemplParams" colspan="2">template&lt;typename K, typename A&gt; </td></tr>
+<tr class="memitem:a66953000f4474589175ceaca435cf273"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a66953000f4474589175ceaca435cf273">make_ascii_upper</a> (std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, size_t from=0, size_t to=-1)</td></tr>
+<tr class="memdesc:a66953000f4474589175ceaca435cf273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change lowercase ASCII string characters (a-z) to uppercase.  <br /></td></tr>
+<tr class="separator:a66953000f4474589175ceaca435cf273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec832284fadbd9ccf1df7d31dc1342b2" id="r_aec832284fadbd9ccf1df7d31dc1342b2"><td class="memTemplParams" colspan="2">template&lt;typename K, typename A&gt; </td></tr>
+<tr class="memitem:aec832284fadbd9ccf1df7d31dc1342b2"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aec832284fadbd9ccf1df7d31dc1342b2">make_ascii_lower</a> (std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;str, size_t from=0, size_t to=-1)</td></tr>
+<tr class="memdesc:aec832284fadbd9ccf1df7d31dc1342b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change uppercase ASCII string characters (A-Z) to lowercase.  <br /></td></tr>
+<tr class="separator:aec832284fadbd9ccf1df7d31dc1342b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Small namespace for standard string methods. </p>
@@ -291,6 +299,84 @@ template&lt;typename K, typename A, StrExprForType&lt; K &gt; E&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; - a reference to the passed string.</dd></dl>
 <p>The method gets the length of the string expression, increases the size of the string, shifts its contents and materializes the string expression to the desired location, without using intermediate buffers. Before C++23, resize was used; since C++23, resize_and_overwrite was used.</p>
 <p>IMPORTANT!!! Parts of a string expression must not reference the string itself, otherwise the result is undefined!!! </p>
+
+</div>
+</div>
+<a id="aec832284fadbd9ccf1df7d31dc1342b2" name="aec832284fadbd9ccf1df7d31dc1342b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec832284fadbd9ccf1df7d31dc1342b2">&#9670;&#160;</a></span>make_ascii_lower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename A&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; simstr::str::make_ascii_lower </td>
+          <td>(</td>
+          <td class="paramtype">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>from</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>to</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change uppercase ASCII string characters (A-Z) to lowercase. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>- standard string </td></tr>
+    <tr><td class="paramname">from</td><td>- replacement start position, default 0. </td></tr>
+    <tr><td class="paramname">to</td><td>- at what position (not inclusive) to replace (by default until the end of the line). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the passed string </dd></dl>
+
+</div>
+</div>
+<a id="a66953000f4474589175ceaca435cf273" name="a66953000f4474589175ceaca435cf273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66953000f4474589175ceaca435cf273">&#9670;&#160;</a></span>make_ascii_upper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename A&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp; simstr::str::make_ascii_upper </td>
+          <td>(</td>
+          <td class="paramtype">std::basic_string&lt; K, std::char_traits&lt; K &gt;, A &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>from</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>to</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change lowercase ASCII string characters (a-z) to uppercase. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>- standard string </td></tr>
+    <tr><td class="paramname">from</td><td>- replacement start position, default 0. </td></tr>
+    <tr><td class="paramname">to</td><td>- at what position (not inclusive) to replace (by default until the end of the line). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the passed string </dd></dl>
 
 </div>
 </div>

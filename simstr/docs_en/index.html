@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.7</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -110,7 +110,7 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 simstr - String Object and Function Library</h1>
 <p><span class="obfuscator"><a href="readme_ru.md">Russian | По-русски</a></span></p>
 <p><a href="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml"><img src="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml/badge.svg" alt="CMake on multiple platforms" style="pointer-events: none;" class="inline"/></a></p>
-<p>Version 1.6.7.</p>
+<p>Version 1.7.0.</p>
 <h2>Speed up your work with strings by 2-10 times!</h2>
 <p>This library contains a modern implementation of several types of string objects and various algorithms for working with strings. </p>
 <h2><a class="anchor" id="autotoc_md45"></a>
@@ -122,7 +122,7 @@ Brief Description</h2>
 <p>It's no secret that working with strings in C++ often causes pain. The <code>std::string</code> class is often inconvenient or inefficient. Many functions that are usually necessary when working with strings are simply not there, and everyone has to write them themselves. Even concatenating <code>std::string</code> and <code>std::string_view</code> became possible only with C++26. That's why I started creating this library for myself around 2012, and now I'm ready to share it with all C++ developers.</p>
 <p>This library was not made as a universal combine that "can do everything", I implemented what I had to use in my work, trying to do it in the most efficient way, and I modestly hope that I have succeeded in something and will be useful to other people, either directly or as a source of ideas.</p>
 <p>The library contains two parts:</p><ul>
-<li>Implementation of <a href="https://orefkov.github.io/simstr/docs_ru/overview.html#autotoc_md27"><em>"String Expressions"</em></a> and algorithms for working with constant strings.\ To use this part, just take the file <code>"include/simstr/strexpr.h"</code> and write in your code <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;path/to file/strexpr.h&quot;</span></div>
+<li>Implementation of <a href="https://orefkov.github.io/simstr/articles/fast_concat.html"><em>"String Expressions"</em></a> and algorithms for working with constant strings.\ To use this part, just take the file <code>"include/simstr/strexpr.h"</code> and write in your code <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;path/to file/strexpr.h&quot;</span></div>
 </div><!-- fragment --> This will allow you to use powerful and fast <em>"string expressions"</em> for concatenation and string construction for standard string types (<code>std::basic_string</code>, <code>std::basic_string_view</code>), as well as simplified versions of the <code>simple_str</code> and <code>simple_str_nt</code> classes, which implement all those string algorithms of the library that do not require storing or modifying strings. Since this is a header-only part, it does not include working with UTF encodings and simplified Unicode.</li>
 <li>The full version, requiring the connection of the entire library (<code>"include/simstr/sstring.h"</code>), adds its string types with the ability to store and modify strings, works with UTF encodings and simplified Unicode.</li>
 </ul>
@@ -348,8 +348,8 @@ Connection via FetchContent</h3>
 <div class="line">        <a class="code hl_namespace" href="namespacesimstr.html">simstr</a></div>
 <div class="line">        GIT_REPOSITORY https:<span class="comment">//github.com/orefkov/simstr.git</span></div>
 <div class="line">        GIT_SHALLOW TRUE</div>
-<div class="line">        GIT_TAG tags/rel1.6.7 # Specify the desired release</div>
-<div class="line">        FIND_PACKAGE_ARGS NAMES <a class="code hl_namespace" href="namespacesimstr.html">simstr</a> 1.6.7</div>
+<div class="line">        GIT_TAG tags/rel1.7.0 # Specify the desired release</div>
+<div class="line">        FIND_PACKAGE_ARGS NAMES <a class="code hl_namespace" href="namespacesimstr.html">simstr</a> 1.7.0</div>
 <div class="line">    )</div>
 <div class="line">    FetchContent_MakeAvailable(<a class="code hl_namespace" href="namespacesimstr.html">simstr</a>)</div>
 <div class="line">endfunction()</div>

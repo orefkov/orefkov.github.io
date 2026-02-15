@@ -20,6 +20,8 @@ var hierarchy =
     [ "simstr::expr_to_std_string< empty_expr< K > >", "structsimstr_1_1expr__to__std__string.html", [
       [ "simstr::empty_expr< K >", "structsimstr_1_1empty__expr.html", null ]
     ] ],
+    [ "simstr::expr_to_std_string< expr_change_case< K, upper > >", "structsimstr_1_1expr__to__std__string.html", null ],
+    [ "simstr::expr_to_std_string< expr_change_case_ascii< K, upper > >", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "simstr::expr_to_std_string< expr_char< K > >", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "simstr::expr_to_std_string< expr_choice< A, B > >", "structsimstr_1_1expr__to__std__string.html", [
       [ "simstr::expr_choice< A, B >", "structsimstr_1_1expr__choice.html", null ]

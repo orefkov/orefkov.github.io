@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.6.7</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -110,7 +110,7 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 simstr - библиотека строковых объектов и функций</h1>
 <p><span class="obfuscator"><a href="readme.md">On English | По-английски</a></span></p>
 <p><a href="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml"><img src="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml/badge.svg" alt="CMake on multiple platforms" style="pointer-events: none;" class="inline"/></a></p>
-<p>Версия 1.6.7.</p>
+<p>Версия 1.7.0.</p>
 <h2>Ускорь работу со строками в 2-10 раз!</h2>
 <p>В этой библиотеке содержится современная реализация нескольких видов строковых объектов и различных алгоритмов для работы со строками. </p>
 <h2><a class="anchor" id="autotoc_md1"></a>
@@ -122,7 +122,7 @@ simstr - библиотека строковых объектов и функц�
 <p>Не секрет, что работа со строками в С++ зачастую доставляет боль. Класс <code>std::string</code> часто неудобен либо неэффективен. Многих функций, обычно необходимых при работе со строками, просто нет, и их каждому приходится писать самому. Даже элементарно конкатенировать <code>std::string</code> и <code>std::string_view</code> стало возможно только с C++26. Именно поэтому я начал примерно в 2012 году создавать для себя эту библиотеку, и теперь готов поделится ею со всеми C++ разработчиками.</p>
 <p>Эта библиотека не делалась как универсальный комбайн, который "может всё", я реализовывал то, что мне приходилось использовать в работе, стараясь сделать это наиболее эффективным способом, и скромно надеюсь, что кое-что у меня получилось и пригодится другим людям, либо напрямую, либо как источник идей.</p>
 <p>Библиотека содержит две части:</p><ul>
-<li>Реализация <a href="https://orefkov.github.io/simstr/docs_ru/overview.html#autotoc_md27"><em>"Строковых выражений"</em></a> и алгоритмов работы с константными строками.\ Для использования этой части достаточно просто взять файл <code>"include/simstr/strexpr.h"</code> и написать в своём коде <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;путь/к файлу/strexpr.h&quot;</span></div>
+<li>Реализация <a href="https://orefkov.github.io/simstr/articles/fast_concat_ru.html"><em>"Строковых выражений"</em></a> и алгоритмов работы с константными строками.\ Для использования этой части достаточно просто взять файл <code>"include/simstr/strexpr.h"</code> и написать в своём коде <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;путь/к файлу/strexpr.h&quot;</span></div>
 </div><!-- fragment --> Это позволит вам для стандартных строковых типов (<code>std::basic_string</code>, <code>std::basic_string_view</code>) использовать мощные и быстрые <em>"строковые выражения"</em> для конкатенации и построения строк, а также упрощенные варианты классов <code>simple_str</code> и <code>simple_str_nt</code>, которые реализуют все те строковые алгоритмы библиотеки, которые не требуют хранения или модификации строк. Так как это header-only часть, она не включает в себя работу с UTF-кодировками и упрощённый Unicode.</li>
 <li>Полная версия, требующая подключения всей библиотеки (<code>"include/simstr/sstring.h"</code>), добавляет свои строковые типы с возможностями хранения и модификации строк, работает с UTF-кодировками и упрощённым Unicode.</li>
 </ul>
@@ -142,6 +142,7 @@ simstr - библиотека строковых объектов и функц�
 <li>Замена набора символов на набор соответствующих подстрок (созданием копии строки с заменой).</li>
 <li>Слияние (join) контейнеров строк в единую строку, с заданием разделителей и опций - "пропускать пустые", "разделитель после последней".</li>
 <li>Разбиение (split) строк на части по заданному разделителю. Разбиение возможно сразу в контейнер со строками, либо вызовом функтора для каждой подстроки, либо путем итерации с помощью итератора <code>Splitter</code>.</li>
+<li>Создании копии со сменой регистра ASCII символов.</li>
 </ul>
 </li>
 <li>Функции модификации стандартных строк строковыми выражениями:<ul>
@@ -348,8 +349,8 @@ simstr - библиотека строковых объектов и функц�
 <div class="line">        <a class="code hl_namespace" href="namespacesimstr.html">simstr</a></div>
 <div class="line">        GIT_REPOSITORY https:<span class="comment">//github.com/orefkov/simstr.git</span></div>
 <div class="line">        GIT_SHALLOW TRUE</div>
-<div class="line">        GIT_TAG tags/rel1.6.7 # Укажите нужный релиз</div>
-<div class="line">        FIND_PACKAGE_ARGS NAMES <a class="code hl_namespace" href="namespacesimstr.html">simstr</a> 1.6.7</div>
+<div class="line">        GIT_TAG tags/rel1.7.0 # Укажите нужный релиз</div>
+<div class="line">        FIND_PACKAGE_ARGS NAMES <a class="code hl_namespace" href="namespacesimstr.html">simstr</a> 1.7.0</div>
 <div class="line">    )</div>
 <div class="line">    FetchContent_MakeAvailable(<a class="code hl_namespace" href="namespacesimstr.html">simstr</a>)</div>
 <div class="line">endfunction()</div>

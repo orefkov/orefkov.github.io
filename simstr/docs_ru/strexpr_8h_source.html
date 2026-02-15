@@ -385,7 +385,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">struct </span>is_std_string_source : std::false_type{};</div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="keyword">struct </span>is_std_string_source&lt;std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&gt; : std::true_type{};</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="keyword">struct </span>is_std_string_source&lt;<a class="code hl_namespace" href="namespacestd.html">std</a>::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&gt; : std::true_type{};</div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K&gt;</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="keyword">struct </span>is_std_string_source&lt;std::basic_string_view&lt;K, std::char_traits&lt;K&gt;&gt;&gt; : std::true_type{};</div>
@@ -1054,7 +1054,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l01615" name="l01615"></a><span class="lineno"> 1615</span><span class="keyword">struct </span>need_sign { <span class="comment">// NOLINT</span></div>
 <div class="line"><a id="l01616" name="l01616"></a><span class="lineno"> 1616</span>    <span class="keywordtype">bool</span> negate;</div>
 <div class="line"><a id="l01617" name="l01617"></a><span class="lineno"> 1617</span>    std::make_unsigned_t&lt;T&gt; val;</div>
-<div class="line"><a id="l01618" name="l01618"></a><span class="lineno"> 1618</span>    <span class="keyword">constexpr</span> need_sign(T t) : negate(t &lt; 0), val(t &lt; 0 ? std::make_unsigned_t&lt;T&gt;{} - t : t) {}</div>
+<div class="line"><a id="l01618" name="l01618"></a><span class="lineno"> 1618</span>    <span class="keyword">constexpr</span> need_sign(T t) : negate(t &lt; 0), val(t &lt; 0 ? <a class="code hl_namespace" href="namespacestd.html">std</a>::make_unsigned_t&lt;T&gt;{} - t : t) {}</div>
 <div class="line"><a id="l01619" name="l01619"></a><span class="lineno"> 1619</span>    <span class="keyword">constexpr</span> <span class="keywordtype">void</span> after(K*&amp; ptr) {</div>
 <div class="line"><a id="l01620" name="l01620"></a><span class="lineno"> 1620</span>        <span class="keywordflow">if</span> (negate)</div>
 <div class="line"><a id="l01621" name="l01621"></a><span class="lineno"> 1621</span>            *--ptr = <span class="charliteral">&#39;-&#39;</span>;</div>
@@ -4299,9 +4299,9 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l06215" name="l06215"></a><span class="lineno"> 6215</span>    <span class="keyword">mutable</span> <span class="keywordtype">size_t</span> glue_len_;</div>
 <div class="foldopen" id="foldopen06248" data-start="{" data-end="}">
 <div class="line"><a id="l06248" name="l06248"></a><span class="lineno"><a class="line" href="structsimstr_1_1e__concat.html#a48f139874eb45fd9d8b0162b5c7fd9a6"> 6248</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="structsimstr_1_1e__concat.html#a48f139874eb45fd9d8b0162b5c7fd9a6">e_concat</a>(G&amp;&amp; glue, Arg&amp;&amp; arg, Args&amp;&amp;...args)</div>
-<div class="line"><a id="l06249" name="l06249"></a><span class="lineno"> 6249</span>        : glue_(to_subst&lt;K&gt;(std::forward&lt;G&gt;(glue)))</div>
-<div class="line"><a id="l06250" name="l06250"></a><span class="lineno"> 6250</span>        , arg_(to_subst&lt;K&gt;(std::forward&lt;Arg&gt;(arg)))</div>
-<div class="line"><a id="l06251" name="l06251"></a><span class="lineno"> 6251</span>        , args_(to_subst&lt;K&gt;(std::forward&lt;Args&gt;(args))...) {}</div>
+<div class="line"><a id="l06249" name="l06249"></a><span class="lineno"> 6249</span>        : glue_(to_subst&lt;K&gt;(<a class="code hl_namespace" href="namespacestd.html">std</a>::forward&lt;G&gt;(glue)))</div>
+<div class="line"><a id="l06250" name="l06250"></a><span class="lineno"> 6250</span>        , arg_(to_subst&lt;K&gt;(<a class="code hl_namespace" href="namespacestd.html">std</a>::forward&lt;Arg&gt;(arg)))</div>
+<div class="line"><a id="l06251" name="l06251"></a><span class="lineno"> 6251</span>        , args_(to_subst&lt;K&gt;(<a class="code hl_namespace" href="namespacestd.html">std</a>::forward&lt;Args&gt;(args))...) {}</div>
 </div>
 <div class="line"><a id="l06252" name="l06252"></a><span class="lineno"> 6252</span> </div>
 <div class="line"><a id="l06253" name="l06253"></a><span class="lineno"> 6253</span>    <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> length() const noexcept {</div>
@@ -4481,7 +4481,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="foldopen" id="foldopen06470" data-start="{" data-end="}">
 <div class="line"><a id="l06470" name="l06470"></a><span class="lineno"><a class="line" href="structsimstr_1_1e__subst.html#aaa9c67121015a8b8c3fd5df753a34d84"> 6470</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="structsimstr_1_1e__subst.html#aaa9c67121015a8b8c3fd5df753a34d84">e_subst</a>(<span class="keyword">const</span> details::subst_params&lt;K, PtLen, NParams&gt;&amp; subst, Args&amp;&amp;...args)</div>
 <div class="line"><a id="l06471" name="l06471"></a><span class="lineno"> 6471</span>        : subst_(subst)</div>
-<div class="line"><a id="l06472" name="l06472"></a><span class="lineno"> 6472</span>        , args_(to_subst&lt;K&gt;(std::forward&lt;Args&gt;(args))...){}</div>
+<div class="line"><a id="l06472" name="l06472"></a><span class="lineno"> 6472</span>        , args_(to_subst&lt;K&gt;(<a class="code hl_namespace" href="namespacestd.html">std</a>::forward&lt;Args&gt;(args))...){}</div>
 </div>
 <div class="line"><a id="l06473" name="l06473"></a><span class="lineno"> 6473</span> </div>
 <div class="line"><a id="l06474" name="l06474"></a><span class="lineno"> 6474</span>    <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> length() const noexcept {</div>
@@ -4542,7 +4542,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="foldopen" id="foldopen06569" data-start="{" data-end="}">
 <div class="line"><a id="l06569" name="l06569"></a><span class="lineno"><a class="line" href="structsimstr_1_1e__vsubst.html#ae4990a1f69eed96beee4884ee5a0ee03"> 6569</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="structsimstr_1_1e__vsubst.html#ae4990a1f69eed96beee4884ee5a0ee03">e_vsubst</a>(<a class="code hl_struct" href="structsimstr_1_1str__src.html">str_src&lt;K&gt;</a> pattern, Args&amp;&amp;...args)</div>
 <div class="line"><a id="l06570" name="l06570"></a><span class="lineno"> 6570</span>        : pattern_(pattern)</div>
-<div class="line"><a id="l06571" name="l06571"></a><span class="lineno"> 6571</span>        , args_(to_subst&lt;K&gt;(std::forward&lt;Args&gt;(args))...) {</div>
+<div class="line"><a id="l06571" name="l06571"></a><span class="lineno"> 6571</span>        , args_(to_subst&lt;K&gt;(<a class="code hl_namespace" href="namespacestd.html">std</a>::forward&lt;Args&gt;(args))...) {</div>
 <div class="line"><a id="l06572" name="l06572"></a><span class="lineno"> 6572</span> </div>
 <div class="line"><a id="l06573" name="l06573"></a><span class="lineno"> 6573</span>        all_len_ = details::parse_pattern_string&lt;K, Nparams&gt;(pattern_, [<span class="keyword">this</span>](<span class="keywordtype">unsigned</span> from, <span class="keywordtype">unsigned</span> len) {</div>
 <div class="line"><a id="l06574" name="l06574"></a><span class="lineno"> 6574</span>                <span class="keywordflow">if</span> (actual_ &lt; std::size(portions_)) {</div>
@@ -5013,26 +5013,32 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l07266" name="l07266"></a><span class="lineno"> 7266</span>} <span class="comment">// namespace str</span></div>
 <div class="line"><a id="l07267" name="l07267"></a><span class="lineno"> 7267</span> </div>
 <div class="line"><a id="l07268" name="l07268"></a><span class="lineno"> 7268</span>} <span class="comment">// namespace simstr</span></div>
-<div class="line"><a id="l07269" name="l07269"></a><span class="lineno"> 7269</span> </div>
-<div class="line"><a id="l07270" name="l07270"></a><span class="lineno"> 7270</span><span class="keyword">namespace </span>std {</div>
-<div class="line"><a id="l07290" name="l07290"></a><span class="lineno"> 7290</span><span class="keyword">template</span>&lt;simstr::StdStrSource T&gt;</div>
-<div class="foldopen" id="foldopen07291" data-start="{" data-end="}">
-<div class="line"><a id="l07291" name="l07291"></a><span class="lineno"><a class="line" href="group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327"> 7291</a></span><a class="code hl_struct" href="structsimstr_1_1expr__stdstr.html">simstr::expr_stdstr&lt;typename T::value_type, T&gt;</a> <a class="code hl_function" href="group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327">operator+</a>(<span class="keyword">const</span> T&amp; str) {</div>
-<div class="line"><a id="l07292" name="l07292"></a><span class="lineno"> 7292</span>    <span class="keywordflow">return</span> {str};</div>
-<div class="line"><a id="l07293" name="l07293"></a><span class="lineno"> 7293</span>}</div>
+<div class="line"><a id="l07269" name="l07269"></a><span class="lineno"> 7269</span></div>
+<div class="foldopen" id="foldopen07274" data-start="{" data-end="}">
+<div class="line"><a id="l07274" name="l07274"></a><span class="lineno"><a class="line" href="namespacestd.html"> 7274</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a> {</div>
+<div class="line"><a id="l07294" name="l07294"></a><span class="lineno"> 7294</span><span class="keyword">template</span>&lt;simstr::StdStrSource T&gt;</div>
+<div class="foldopen" id="foldopen07295" data-start="{" data-end="}">
+<div class="line"><a id="l07295" name="l07295"></a><span class="lineno"><a class="line" href="group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327"> 7295</a></span><a class="code hl_struct" href="structsimstr_1_1expr__stdstr.html">simstr::expr_stdstr&lt;typename T::value_type, T&gt;</a> <a class="code hl_function" href="group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327">operator+</a>(<span class="keyword">const</span> T&amp; str) {</div>
+<div class="line"><a id="l07296" name="l07296"></a><span class="lineno"> 7296</span>    <span class="keywordflow">return</span> {str};</div>
+<div class="line"><a id="l07297" name="l07297"></a><span class="lineno"> 7297</span>}</div>
 </div>
-<div class="line"><a id="l07294" name="l07294"></a><span class="lineno"> 7294</span></div>
-<div class="line"><a id="l07323" name="l07323"></a><span class="lineno"> 7323</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, simstr::StrExprForType&lt;K&gt; E&gt;</div>
-<div class="line"><a id="l07324" name="l07324"></a><span class="lineno"> 7324</span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; operator |=(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; str, <span class="keyword">const</span> E&amp; expr) {</div>
-<div class="line"><a id="l07325" name="l07325"></a><span class="lineno"> 7325</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">simstr::str::change</a>(str, str.length(), 0, expr);</div>
-<div class="line"><a id="l07326" name="l07326"></a><span class="lineno"> 7326</span>}</div>
-<div class="line"><a id="l07327" name="l07327"></a><span class="lineno"> 7327</span></div>
-<div class="line"><a id="l07356" name="l07356"></a><span class="lineno"> 7356</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, simstr::StrExprForType&lt;K&gt; E&gt;</div>
-<div class="line"><a id="l07357" name="l07357"></a><span class="lineno"> 7357</span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; operator ^=(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; str, <span class="keyword">const</span> E&amp; expr) {</div>
-<div class="line"><a id="l07358" name="l07358"></a><span class="lineno"> 7358</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">simstr::str::change</a>(str, 0, 0, expr);</div>
-<div class="line"><a id="l07359" name="l07359"></a><span class="lineno"> 7359</span>}</div>
-<div class="line"><a id="l07360" name="l07360"></a><span class="lineno"> 7360</span> </div>
-<div class="line"><a id="l07361" name="l07361"></a><span class="lineno"> 7361</span>} <span class="comment">// namespace std</span></div>
+<div class="line"><a id="l07298" name="l07298"></a><span class="lineno"> 7298</span></div>
+<div class="line"><a id="l07326" name="l07326"></a><span class="lineno"> 7326</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, simstr::StrExprForType&lt;K&gt; E&gt;</div>
+<div class="foldopen" id="foldopen07327" data-start="{" data-end="}">
+<div class="line"><a id="l07327" name="l07327"></a><span class="lineno"><a class="line" href="namespacestd.html#a77c9dedc858f8c27f863f16e8d5a6b26"> 7327</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; operator |=(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; str, <span class="keyword">const</span> E&amp; expr) {</div>
+<div class="line"><a id="l07328" name="l07328"></a><span class="lineno"> 7328</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">simstr::str::change</a>(str, str.length(), 0, expr);</div>
+<div class="line"><a id="l07329" name="l07329"></a><span class="lineno"> 7329</span>}</div>
+</div>
+<div class="line"><a id="l07330" name="l07330"></a><span class="lineno"> 7330</span></div>
+<div class="line"><a id="l07358" name="l07358"></a><span class="lineno"> 7358</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> A, simstr::StrExprForType&lt;K&gt; E&gt;</div>
+<div class="foldopen" id="foldopen07359" data-start="{" data-end="}">
+<div class="line"><a id="l07359" name="l07359"></a><span class="lineno"><a class="line" href="namespacestd.html#a8dfaa4bc273d19eb6228c3b5408d65ed"> 7359</a></span>std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; operator ^=(std::basic_string&lt;K, std::char_traits&lt;K&gt;, A&gt;&amp; str, <span class="keyword">const</span> E&amp; expr) {</div>
+<div class="line"><a id="l07360" name="l07360"></a><span class="lineno"> 7360</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacesimstr_1_1str.html#ad452138126b5952824665736845ffedf">simstr::str::change</a>(str, 0, 0, expr);</div>
+<div class="line"><a id="l07361" name="l07361"></a><span class="lineno"> 7361</span>}</div>
+</div>
+<div class="line"><a id="l07362" name="l07362"></a><span class="lineno"> 7362</span> </div>
+<div class="line"><a id="l07363" name="l07363"></a><span class="lineno"> 7363</span>} <span class="comment">// namespace std</span></div>
+</div>
 <div class="ttc" id="aclasssimstr_1_1_splitter_base_html"><div class="ttname"><a href="classsimstr_1_1_splitter_base.html">simstr::SplitterBase</a></div><div class="ttdoc">Класс для последовательного получения подстрок по заданному разделителю.</div><div class="ttdef"><b>Определения</b> strexpr.h:3232</div></div>
 <div class="ttc" id="aclasssimstr_1_1_splitter_base_html_a4ba6176b0e6ec2230fe51d2022252801"><div class="ttname"><a href="classsimstr_1_1_splitter_base.html#a4ba6176b0e6ec2230fe51d2022252801">simstr::SplitterBase::is_done</a></div><div class="ttdeci">constexpr bool is_done() const</div><div class="ttdoc">Узнать, не закончились ли подстроки.</div><div class="ttdef"><b>Определения</b> strexpr.h:3243</div></div>
 <div class="ttc" id="aclasssimstr_1_1_splitter_base_html_a95ab08d028e2a33a90b13eae2c744c29"><div class="ttname"><a href="classsimstr_1_1_splitter_base.html#a95ab08d028e2a33a90b13eae2c744c29">simstr::SplitterBase::next</a></div><div class="ttdeci">constexpr str_t next()</div><div class="ttdoc">Получить следующую подстроку.</div><div class="ttdef"><b>Определения</b> strexpr.h:3252</div></div>
@@ -5118,7 +5124,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="aconceptsimstr_1_1_str_type_html"><div class="ttname"><a href="conceptsimstr_1_1_str_type.html">simstr::StrType</a></div><div class="ttdoc">Базовая концепция строкового объекта.</div><div class="ttdef"><b>Определения</b> strexpr.h:311</div></div>
 <div class="ttc" id="aconceptsimstr_1_1is__equal__str__type__v_html"><div class="ttname"><a href="conceptsimstr_1_1is__equal__str__type__v.html">simstr::is_equal_str_type_v</a></div><div class="ttdoc">Проверка, являются ли два типа совместимыми строковыми типами.</div><div class="ttdef"><b>Определения</b> strexpr.h:172</div></div>
 <div class="ttc" id="agroup___str_exprs_html_ga1f2bd93f7c79b2c59ddf5adb18246751"><div class="ttname"><a href="group___str_exprs.html#ga1f2bd93f7c79b2c59ddf5adb18246751">simstr::e_if</a></div><div class="ttdeci">constexpr expr_if&lt; A &gt; e_if(bool c, const A &amp;a)</div><div class="ttdoc">Создание условного строкового выражения expr_if.</div><div class="ttdef"><b>Определения</b> strexpr.h:1544</div></div>
-<div class="ttc" id="agroup___str_exprs_html_ga22ea6d3c42a2de8611842e367c1bc327"><div class="ttname"><a href="group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327">std::operator+</a></div><div class="ttdeci">simstr::expr_stdstr&lt; typename T::value_type, T &gt; operator+(const T &amp;str)</div><div class="ttdoc">Унарный оператор+ для преобразования стандартных строк в строковые выражения.</div><div class="ttdef"><b>Определения</b> strexpr.h:7291</div></div>
+<div class="ttc" id="agroup___str_exprs_html_ga22ea6d3c42a2de8611842e367c1bc327"><div class="ttname"><a href="group___str_exprs.html#ga22ea6d3c42a2de8611842e367c1bc327">std::operator+</a></div><div class="ttdeci">simstr::expr_stdstr&lt; typename T::value_type, T &gt; operator+(const T &amp;str)</div><div class="ttdoc">Унарный оператор+ для преобразования стандартных строк в строковые выражения.</div><div class="ttdef"><b>Определения</b> strexpr.h:7295</div></div>
 <div class="ttc" id="agroup___str_exprs_html_ga23b5d15132fcc706d1edc1364673a4ab"><div class="ttname"><a href="group___str_exprs.html#ga23b5d15132fcc706d1edc1364673a4ab">simstr::e_spcw</a></div><div class="ttdeci">constexpr expr_spaces&lt; uws, N &gt; e_spcw()</div><div class="ttdoc">Генерирует строку из N wchar_t пробелов.</div><div class="ttdef"><b>Определения</b> strexpr.h:1104</div></div>
 <div class="ttc" id="agroup___str_exprs_html_ga29b819f35d451888d14bae0217478561"><div class="ttname"><a href="group___str_exprs.html#ga29b819f35d451888d14bae0217478561">simstr::e_fill_left</a></div><div class="ttdeci">expr_fill&lt; K, A, true &gt; e_fill_left(const A &amp;a, size_t width, K symbol=K(&#39; &#39;))</div><div class="ttdoc">Создает выражение, которое дополняет указанное строковое выражение до заданной длины заданным символо...</div><div class="ttdef"><b>Определения</b> strexpr.h:2697</div></div>
 <div class="ttc" id="agroup___str_exprs_html_ga2ebc01b80560370b2f318d897bb6000a"><div class="ttname"><a href="group___str_exprs.html#ga2ebc01b80560370b2f318d897bb6000a">simstr::eew</a></div><div class="ttdeci">constexpr empty_expr&lt; uws &gt; eew</div><div class="ttdoc">Пустое строковое выражение типа wchar_t.</div><div class="ttdef"><b>Определения</b> strexpr.h:862</div></div>
@@ -5157,6 +5163,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="anamespacesimstr_html_a1b4b1f04b733739606d97f79caa02dd9a505a83f220c02df2f85c3810cd9ceb38"><div class="ttname"><a href="namespacesimstr.html#a1b4b1f04b733739606d97f79caa02dd9a505a83f220c02df2f85c3810cd9ceb38">simstr::IntConvertResult::Success</a></div><div class="ttdeci">@ Success</div><div class="ttdoc">Успешно</div><div class="ttdef"><b>Определения</b> strexpr.h:2869</div></div>
 <div class="ttc" id="anamespacesimstr_html_a1b4b1f04b733739606d97f79caa02dd9ac15b8c76611746ee6c491a03f31855df"><div class="ttname"><a href="namespacesimstr.html#a1b4b1f04b733739606d97f79caa02dd9ac15b8c76611746ee6c491a03f31855df">simstr::IntConvertResult::NotNumber</a></div><div class="ttdeci">@ NotNumber</div><div class="ttdoc">Вообще не число</div><div class="ttdef"><b>Определения</b> strexpr.h:2872</div></div>
 <div class="ttc" id="anamespacesimstr_html_a1b4b1f04b733739606d97f79caa02dd9aeaa263ad0ebb3a51a496116be8b354b2"><div class="ttname"><a href="namespacesimstr.html#a1b4b1f04b733739606d97f79caa02dd9aeaa263ad0ebb3a51a496116be8b354b2">simstr::IntConvertResult::BadSymbolAtTail</a></div><div class="ttdeci">@ BadSymbolAtTail</div><div class="ttdoc">Число закончилось не числовым символом</div><div class="ttdef"><b>Определения</b> strexpr.h:2870</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdoc">Некоторые методы для работы с стандартными строками.</div><div class="ttdef"><b>Определения</b> strexpr.h:7274</div></div>
 <div class="ttc" id="astructsimstr_1_1e__ascii__lower_html"><div class="ttname"><a href="structsimstr_1_1e__ascii__lower.html">simstr::e_ascii_lower</a></div><div class="ttdoc">Генерирует строку на основе исходной, заменяя все ASCII прописные буквы (A-Z) на строчные.</div><div class="ttdef"><b>Определения</b> strexpr.h:6714</div></div>
 <div class="ttc" id="astructsimstr_1_1e__ascii__upper_html"><div class="ttname"><a href="structsimstr_1_1e__ascii__upper.html">simstr::e_ascii_upper</a></div><div class="ttdoc">Генерирует строку на основе исходной, заменяя все ASCII строчные буквы (a-z) на прописные.</div><div class="ttdef"><b>Определения</b> strexpr.h:6691</div></div>
 <div class="ttc" id="astructsimstr_1_1e__concat_html_a48f139874eb45fd9d8b0162b5c7fd9a6"><div class="ttname"><a href="structsimstr_1_1e__concat.html#a48f139874eb45fd9d8b0162b5c7fd9a6">simstr::e_concat::e_concat</a></div><div class="ttdeci">constexpr e_concat(G &amp;&amp;glue, Arg &amp;&amp;arg, Args &amp;&amp;...args)</div><div class="ttdoc">Создание строкового выражения, объединяющего указанные строковые выражения, с использованием заданног...</div><div class="ttdef"><b>Определения</b> strexpr.h:6248</div></div>

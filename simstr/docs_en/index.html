@@ -147,6 +147,7 @@ Key Features of the Library</h2>
 <li>Functions for modifying standard strings with string expressions:<ul>
 <li>str::append, str::prepend, str::insert, str::change - change str::string with string expressions, for example <code>str::append(text, "count = "_ss + count)</code>.</li>
 <li>str::replace - replaces occurrences of the search substring with a replacement string or string expression. If the substring is not found, the string expression is not even evaluated.</li>
+<li>str::make_ascii_upper, str::make_ascii_lower - change the case of ASCII characters.</li>
 </ul>
 </li>
 <li>Parsing integers with the possibility of "fine" tuning at compile time - you can set options for checking overflow, skipping whitespace characters, a specific radix or auto-selection by prefixes <code>0x</code>, <code>0</code>, <code>0b</code>, <code>0o</code>, the admissibility of the <code>+</code> sign. Parsing is implemented for all types of strings and characters.</li>

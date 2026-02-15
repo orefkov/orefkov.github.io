@@ -41,7 +41,7 @@ var annotated_dup =
       [ "strexprjoin", "structsimstr_1_1strexprjoin.html", null ],
       [ "strexprjoin_c", "structsimstr_1_1strexprjoin__c.html", null ]
     ] ],
-    [ "std", null, [
+    [ "std", "namespacestd.html", [
       [ "formatter< simstr::lstring< char8_t, N, S, A >, char >", "structstd_1_1formatter_3_01simstr_1_1lstring_3_01char8__t_00_01_n_00_01_s_00_01_a_01_4_00_01char_01_4.html", null ],
       [ "formatter< simstr::lstring< K, N, S, A >, K >", "structstd_1_1formatter_3_01simstr_1_1lstring_3_01_k_00_01_n_00_01_s_00_01_a_01_4_00_01_k_01_4.html", null ],
       [ "formatter< simstr::lstring< simstr::wchar_type, N, S, A >, wchar_t >", "structstd_1_1formatter_3_01simstr_1_1lstring_3_01simstr_1_1wchar__type_00_01_n_00_01_s_00_01_a_01_4_00_01wchar__t_01_4.html", null ],

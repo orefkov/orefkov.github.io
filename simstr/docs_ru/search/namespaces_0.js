@@ -1,5 +1,6 @@
 var searchData=
 [
   ['simstr_0',['simstr',['../namespacesimstr.html',1,'']]],
-  ['simstr_3a_3astr_1',['str',['../namespacesimstr_1_1str.html',1,'simstr']]]
+  ['simstr_3a_3astr_1',['str',['../namespacesimstr_1_1str.html',1,'simstr']]],
+  ['std_2',['std',['../namespacestd.html',1,'']]]
 ];

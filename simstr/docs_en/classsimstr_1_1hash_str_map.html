@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>simstr: simstr::hashStrMap&lt; K, T, H, E &gt; Class Template Reference</title>
+<title>simstr: simstr::hashStrMap&lt; K, T, HE, A &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.0</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.1</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -105,7 +105,7 @@ $(function(){initNavTree('classsimstr_1_1hash_str_map.html',''); initResizable(t
 <div class="header">
   <div class="summary">
 <a href="classsimstr_1_1hash_str_map-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">simstr::hashStrMap&lt; K, T, H, E &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">simstr::hashStrMap&lt; K, T, HE, A &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -114,8 +114,8 @@ $(function(){initNavTree('classsimstr_1_1hash_str_map.html',''); initResizable(t
 
 <p><code>#include &lt;<a class="el" href="sstring_8h_source.html">sstring.h</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename K, typename T, typename H = strhash&lt;K&gt;, typename E = streql&lt;K&gt;&gt;<br />
-class simstr::hashStrMap&lt; K, T, H, E &gt;</div><p>Container for more efficient searching by string keys. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename K, typename T, template&lt; typename C &gt; typename HE = str_exact, typename A = allocator_hashstrmap&lt;K, HE, T&gt;&gt;<br />
+class simstr::hashStrMap&lt; K, T, HE, A &gt;</div><p>Container for more efficient searching by string keys. </p>
 <p>Used to store and lookup keys of any string type. Like unordered_map, but a little better. Stores <a class="el" href="structsimstr_1_1simple__str.html" title="The simplest immutable non-owning string class.">simple_str</a> as keys along with the calculated hash and an empty space for sstring. After insertion, creates an sstring in this empty space so that <a class="el" href="structsimstr_1_1simple__str.html" title="The simplest immutable non-owning string class.">simple_str</a> has something to refer to. Allows you to use any simstr string objects for insertion and search, creating an object from them sstring only for real insertion. Since C++20, unordered_map has the ability to perform heterogeneous search by key with type, different from the type of the key being stored, but this requires some dancing with hash types and comparisons. Search with insertion (try_emplace) by a type other than the key type appears in the standard only with C++26. There is a hashing and comparison implementation for the options:</p><ul>
 <li>case sensitive</li>
 <li>case insensitive, ASCII only</li>

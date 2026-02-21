@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.0</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.1</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -272,66 +272,81 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a71efaa1a1996bef96e81b7b088589e1a" id="r_a71efaa1a1996bef96e81b7b088589e1a"><td class="memTemplParams" colspan="2"><a id="a71efaa1a1996bef96e81b7b088589e1a" name="a71efaa1a1996bef96e81b7b088589e1a"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a71efaa1a1996bef96e81b7b088589e1a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapA</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u8s, T, strhash&lt;u8s&gt;, streql&lt;u8s&gt;&gt;</td></tr>
-<tr class="memdesc:a71efaa1a1996bef96e81b7b088589e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of hash dictionary for char strings, case sensitive search. <br /></td></tr>
-<tr class="separator:a71efaa1a1996bef96e81b7b088589e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1790ec609099f364a6956dfa22333aa5" id="r_a1790ec609099f364a6956dfa22333aa5"><td class="memTemplParams" colspan="2"><a id="a1790ec609099f364a6956dfa22333aa5" name="a1790ec609099f364a6956dfa22333aa5"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a1790ec609099f364a6956dfa22333aa5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapAIA</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u8s, T, strhashia&lt;u8s&gt;, streqlia&lt;u8s&gt;&gt;</td></tr>
-<tr class="memdesc:a1790ec609099f364a6956dfa22333aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of hash dictionary for char strings, case-insensitive lookup for ASCII characters. <br /></td></tr>
-<tr class="separator:a1790ec609099f364a6956dfa22333aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac78f2af21d02b2a7fbe3a5111d5e5d3e" id="r_ac78f2af21d02b2a7fbe3a5111d5e5d3e"><td class="memTemplParams" colspan="2"><a id="ac78f2af21d02b2a7fbe3a5111d5e5d3e" name="ac78f2af21d02b2a7fbe3a5111d5e5d3e"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:ac78f2af21d02b2a7fbe3a5111d5e5d3e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapAIU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u8s, T, strhashiu&lt;u8s&gt;, streqliu&lt;u8s&gt;&gt;</td></tr>
-<tr class="memdesc:ac78f2af21d02b2a7fbe3a5111d5e5d3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char strings, case-insensitive search for Unicode characters up to 0xFFFF. <br /></td></tr>
-<tr class="separator:ac78f2af21d02b2a7fbe3a5111d5e5d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa30b610e5d5dcce51beab757a6c408b9" id="r_aa30b610e5d5dcce51beab757a6c408b9"><td class="memTemplParams" colspan="2"><a id="aa30b610e5d5dcce51beab757a6c408b9" name="aa30b610e5d5dcce51beab757a6c408b9"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:aa30b610e5d5dcce51beab757a6c408b9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapW</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;wchar_t, T, strhash&lt;wchar_t&gt;, streql&lt;wchar_t&gt;&gt;</td></tr>
-<tr class="memdesc:aa30b610e5d5dcce51beab757a6c408b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for wchar_t strings, case sensitive search. <br /></td></tr>
-<tr class="separator:aa30b610e5d5dcce51beab757a6c408b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a617db678b8f77967dc114be7706582a5" id="r_a617db678b8f77967dc114be7706582a5"><td class="memTemplParams" colspan="2"><a id="a617db678b8f77967dc114be7706582a5" name="a617db678b8f77967dc114be7706582a5"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a617db678b8f77967dc114be7706582a5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapWIA</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;wchar_t, T, strhashia&lt;wchar_t&gt;, streqlia&lt;wchar_t&gt;&gt;</td></tr>
-<tr class="memdesc:a617db678b8f77967dc114be7706582a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for wchar_t strings, case-insensitive lookup for ASCII characters. <br /></td></tr>
-<tr class="separator:a617db678b8f77967dc114be7706582a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a376c405d7404546a07f440f355038de5" id="r_a376c405d7404546a07f440f355038de5"><td class="memTemplParams" colspan="2"><a id="a376c405d7404546a07f440f355038de5" name="a376c405d7404546a07f440f355038de5"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a376c405d7404546a07f440f355038de5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapWIU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;wchar_t, T, strhashiu&lt;wchar_t&gt;, streqliu&lt;wchar_t&gt;&gt;</td></tr>
-<tr class="memdesc:a376c405d7404546a07f440f355038de5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for wchar_t strings, case insensitive search for Unicode characters up to 0xFFFF. <br /></td></tr>
-<tr class="separator:a376c405d7404546a07f440f355038de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a030877384507e9a42a658adcba5876ff" id="r_a030877384507e9a42a658adcba5876ff"><td class="memTemplParams" colspan="2"><a id="a030877384507e9a42a658adcba5876ff" name="a030877384507e9a42a658adcba5876ff"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a030877384507e9a42a658adcba5876ff"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u16s, T, strhash&lt;u16s&gt;, streql&lt;u16s&gt;&gt;</td></tr>
-<tr class="memdesc:a030877384507e9a42a658adcba5876ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char16_t strings, case sensitive search. <br /></td></tr>
-<tr class="separator:a030877384507e9a42a658adcba5876ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e4e4388c264efd467d0b166e2665e54" id="r_a9e4e4388c264efd467d0b166e2665e54"><td class="memTemplParams" colspan="2"><a id="a9e4e4388c264efd467d0b166e2665e54" name="a9e4e4388c264efd467d0b166e2665e54"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a9e4e4388c264efd467d0b166e2665e54"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapUIA</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u16s, T, strhashia&lt;u16s&gt;, streqlia&lt;u16s&gt;&gt;</td></tr>
-<tr class="memdesc:a9e4e4388c264efd467d0b166e2665e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char16_t strings, case-insensitive lookup for ASCII characters. <br /></td></tr>
-<tr class="separator:a9e4e4388c264efd467d0b166e2665e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9aaf34e22c3875c278584649bac17a1d" id="r_a9aaf34e22c3875c278584649bac17a1d"><td class="memTemplParams" colspan="2"><a id="a9aaf34e22c3875c278584649bac17a1d" name="a9aaf34e22c3875c278584649bac17a1d"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a9aaf34e22c3875c278584649bac17a1d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapUIU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u16s, T, strhashiu&lt;u16s&gt;, streqliu&lt;u16s&gt;&gt;</td></tr>
-<tr class="memdesc:a9aaf34e22c3875c278584649bac17a1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char16_t strings, case insensitive search for Unicode characters up to 0xFFFF. <br /></td></tr>
-<tr class="separator:a9aaf34e22c3875c278584649bac17a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af867baf0fff130ca193369781ccd7c02" id="r_af867baf0fff130ca193369781ccd7c02"><td class="memTemplParams" colspan="2"><a id="af867baf0fff130ca193369781ccd7c02" name="af867baf0fff130ca193369781ccd7c02"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:af867baf0fff130ca193369781ccd7c02"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapUU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u32s, T, strhash&lt;u32s&gt;, streql&lt;u32s&gt;&gt;</td></tr>
-<tr class="memdesc:af867baf0fff130ca193369781ccd7c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char32_t strings, case sensitive search. <br /></td></tr>
-<tr class="separator:af867baf0fff130ca193369781ccd7c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c04ab386fa351971da18cf50a7d1c0c" id="r_a2c04ab386fa351971da18cf50a7d1c0c"><td class="memTemplParams" colspan="2"><a id="a2c04ab386fa351971da18cf50a7d1c0c" name="a2c04ab386fa351971da18cf50a7d1c0c"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a2c04ab386fa351971da18cf50a7d1c0c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapUUIA</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u32s, T, strhashia&lt;u32s&gt;, streqlia&lt;u32s&gt;&gt;</td></tr>
-<tr class="memdesc:a2c04ab386fa351971da18cf50a7d1c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char32_t strings, case-insensitive lookup for ASCII characters. <br /></td></tr>
-<tr class="separator:a2c04ab386fa351971da18cf50a7d1c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23aa45c8506e69c74ce109617d892e69" id="r_a23aa45c8506e69c74ce109617d892e69"><td class="memTemplParams" colspan="2"><a id="a23aa45c8506e69c74ce109617d892e69" name="a23aa45c8506e69c74ce109617d892e69"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a23aa45c8506e69c74ce109617d892e69"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapUUIU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u32s, T, strhashiu&lt;u32s&gt;, streqliu&lt;u32s&gt;&gt;</td></tr>
-<tr class="memdesc:a23aa45c8506e69c74ce109617d892e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char32_t strings, case insensitive search for Unicode characters up to 0xFFFF. <br /></td></tr>
-<tr class="separator:a23aa45c8506e69c74ce109617d892e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33d505da0401e5c717a141013a982625" id="r_a33d505da0401e5c717a141013a982625"><td class="memTemplParams" colspan="2"><a id="a33d505da0401e5c717a141013a982625" name="a33d505da0401e5c717a141013a982625"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;u8s, str_exact, T&gt;&gt; </td></tr>
+<tr class="memitem:a33d505da0401e5c717a141013a982625"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapA</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u8s, T, str_exact, A&gt;</td></tr>
+<tr class="memdesc:a33d505da0401e5c717a141013a982625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of hash dictionary for char strings, case sensitive search. <br /></td></tr>
+<tr class="separator:a33d505da0401e5c717a141013a982625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad632f3e19b9975b251108cfa6589665d" id="r_ad632f3e19b9975b251108cfa6589665d"><td class="memTemplParams" colspan="2"><a id="ad632f3e19b9975b251108cfa6589665d" name="ad632f3e19b9975b251108cfa6589665d"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;u8s, str_eqlia, T&gt;&gt; </td></tr>
+<tr class="memitem:ad632f3e19b9975b251108cfa6589665d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapAIA</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u8s, T, str_eqlia, A&gt;</td></tr>
+<tr class="memdesc:ad632f3e19b9975b251108cfa6589665d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of hash dictionary for char strings, case-insensitive lookup for ASCII characters. <br /></td></tr>
+<tr class="separator:ad632f3e19b9975b251108cfa6589665d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94975f267c28bd139cfb39c667b6ad30" id="r_a94975f267c28bd139cfb39c667b6ad30"><td class="memTemplParams" colspan="2"><a id="a94975f267c28bd139cfb39c667b6ad30" name="a94975f267c28bd139cfb39c667b6ad30"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;u8s, str_eqliu, T&gt;&gt; </td></tr>
+<tr class="memitem:a94975f267c28bd139cfb39c667b6ad30"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapAIU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u8s, T, str_eqliu, A&gt;</td></tr>
+<tr class="memdesc:a94975f267c28bd139cfb39c667b6ad30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char strings, case-insensitive search for Unicode characters up to 0xFFFF. <br /></td></tr>
+<tr class="separator:a94975f267c28bd139cfb39c667b6ad30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0987bdca7994e9b50c16d2647e443b83" id="r_a0987bdca7994e9b50c16d2647e443b83"><td class="memTemplParams" colspan="2"><a id="a0987bdca7994e9b50c16d2647e443b83" name="a0987bdca7994e9b50c16d2647e443b83"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;ubs, str_exact, T&gt;&gt; </td></tr>
+<tr class="memitem:a0987bdca7994e9b50c16d2647e443b83"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapB</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;ubs, T, str_exact, A&gt;</td></tr>
+<tr class="memdesc:a0987bdca7994e9b50c16d2647e443b83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of hash dictionary for char8_t strings, case sensitive search. <br /></td></tr>
+<tr class="separator:a0987bdca7994e9b50c16d2647e443b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74997e6585cd7080448a39149d61d62b" id="r_a74997e6585cd7080448a39149d61d62b"><td class="memTemplParams" colspan="2"><a id="a74997e6585cd7080448a39149d61d62b" name="a74997e6585cd7080448a39149d61d62b"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;ubs, str_eqlia, T&gt;&gt; </td></tr>
+<tr class="memitem:a74997e6585cd7080448a39149d61d62b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapBIA</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;ubs, T, str_eqlia, A&gt;</td></tr>
+<tr class="memdesc:a74997e6585cd7080448a39149d61d62b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of hash dictionary for char8_t strings, case-insensitive lookup for ASCII characters. <br /></td></tr>
+<tr class="separator:a74997e6585cd7080448a39149d61d62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62fe31fb4b92cef6ddd6cee198866f96" id="r_a62fe31fb4b92cef6ddd6cee198866f96"><td class="memTemplParams" colspan="2"><a id="a62fe31fb4b92cef6ddd6cee198866f96" name="a62fe31fb4b92cef6ddd6cee198866f96"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;ubs, str_eqliu, T&gt;&gt; </td></tr>
+<tr class="memitem:a62fe31fb4b92cef6ddd6cee198866f96"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapBIU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;ubs, T, str_eqliu, A&gt;</td></tr>
+<tr class="memdesc:a62fe31fb4b92cef6ddd6cee198866f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char8_t strings, case-insensitive search for Unicode characters up to 0xFFFF. <br /></td></tr>
+<tr class="separator:a62fe31fb4b92cef6ddd6cee198866f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf907a8498fa9e4d17e17fd0e045a00f" id="r_aaf907a8498fa9e4d17e17fd0e045a00f"><td class="memTemplParams" colspan="2"><a id="aaf907a8498fa9e4d17e17fd0e045a00f" name="aaf907a8498fa9e4d17e17fd0e045a00f"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;wchar_t, str_exact, T&gt;&gt; </td></tr>
+<tr class="memitem:aaf907a8498fa9e4d17e17fd0e045a00f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapW</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;wchar_t, T, str_exact, A&gt;</td></tr>
+<tr class="memdesc:aaf907a8498fa9e4d17e17fd0e045a00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for wchar_t strings, case sensitive search. <br /></td></tr>
+<tr class="separator:aaf907a8498fa9e4d17e17fd0e045a00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66aed2234f0fb9bcb3e9960de124ce97" id="r_a66aed2234f0fb9bcb3e9960de124ce97"><td class="memTemplParams" colspan="2"><a id="a66aed2234f0fb9bcb3e9960de124ce97" name="a66aed2234f0fb9bcb3e9960de124ce97"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;wchar_t, str_eqlia, T&gt;&gt; </td></tr>
+<tr class="memitem:a66aed2234f0fb9bcb3e9960de124ce97"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapWIA</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;wchar_t, T, str_eqlia, A&gt;</td></tr>
+<tr class="memdesc:a66aed2234f0fb9bcb3e9960de124ce97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for wchar_t strings, case-insensitive lookup for ASCII characters. <br /></td></tr>
+<tr class="separator:a66aed2234f0fb9bcb3e9960de124ce97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f9ed9dfc52dd40ec623bc5696b6576" id="r_a15f9ed9dfc52dd40ec623bc5696b6576"><td class="memTemplParams" colspan="2"><a id="a15f9ed9dfc52dd40ec623bc5696b6576" name="a15f9ed9dfc52dd40ec623bc5696b6576"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;wchar_t, str_eqliu, T&gt;&gt; </td></tr>
+<tr class="memitem:a15f9ed9dfc52dd40ec623bc5696b6576"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapWIU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;wchar_t, T, str_eqliu, A&gt;</td></tr>
+<tr class="memdesc:a15f9ed9dfc52dd40ec623bc5696b6576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for wchar_t strings, case insensitive search for Unicode characters up to 0xFFFF. <br /></td></tr>
+<tr class="separator:a15f9ed9dfc52dd40ec623bc5696b6576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a191e4de1f0de69019ae144ac76dbf91c" id="r_a191e4de1f0de69019ae144ac76dbf91c"><td class="memTemplParams" colspan="2"><a id="a191e4de1f0de69019ae144ac76dbf91c" name="a191e4de1f0de69019ae144ac76dbf91c"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;u16s, str_exact, T&gt;&gt; </td></tr>
+<tr class="memitem:a191e4de1f0de69019ae144ac76dbf91c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u16s, T, str_exact, A&gt;</td></tr>
+<tr class="memdesc:a191e4de1f0de69019ae144ac76dbf91c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char16_t strings, case sensitive search. <br /></td></tr>
+<tr class="separator:a191e4de1f0de69019ae144ac76dbf91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01ee7db175d0b5e20a7a9f09cf2f833c" id="r_a01ee7db175d0b5e20a7a9f09cf2f833c"><td class="memTemplParams" colspan="2"><a id="a01ee7db175d0b5e20a7a9f09cf2f833c" name="a01ee7db175d0b5e20a7a9f09cf2f833c"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;u16s, str_eqlia, T&gt;&gt; </td></tr>
+<tr class="memitem:a01ee7db175d0b5e20a7a9f09cf2f833c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapUIA</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u16s, T, str_eqlia, A&gt;</td></tr>
+<tr class="memdesc:a01ee7db175d0b5e20a7a9f09cf2f833c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char16_t strings, case-insensitive lookup for ASCII characters. <br /></td></tr>
+<tr class="separator:a01ee7db175d0b5e20a7a9f09cf2f833c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af026265fd1304bd0ade145cb21bd6eb6" id="r_af026265fd1304bd0ade145cb21bd6eb6"><td class="memTemplParams" colspan="2"><a id="af026265fd1304bd0ade145cb21bd6eb6" name="af026265fd1304bd0ade145cb21bd6eb6"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;u16s, str_eqliu, T&gt;&gt; </td></tr>
+<tr class="memitem:af026265fd1304bd0ade145cb21bd6eb6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapUIU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u16s, T, str_eqliu, A&gt;</td></tr>
+<tr class="memdesc:af026265fd1304bd0ade145cb21bd6eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char16_t strings, case insensitive search for Unicode characters up to 0xFFFF. <br /></td></tr>
+<tr class="separator:af026265fd1304bd0ade145cb21bd6eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4169946018456a4fc54021d678430983" id="r_a4169946018456a4fc54021d678430983"><td class="memTemplParams" colspan="2"><a id="a4169946018456a4fc54021d678430983" name="a4169946018456a4fc54021d678430983"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;u32s, str_exact, T&gt;&gt; </td></tr>
+<tr class="memitem:a4169946018456a4fc54021d678430983"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapUU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u32s, T, str_exact, A&gt;</td></tr>
+<tr class="memdesc:a4169946018456a4fc54021d678430983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char32_t strings, case sensitive search. <br /></td></tr>
+<tr class="separator:a4169946018456a4fc54021d678430983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac72ab12708dcba172320372e2efe93e9" id="r_ac72ab12708dcba172320372e2efe93e9"><td class="memTemplParams" colspan="2"><a id="ac72ab12708dcba172320372e2efe93e9" name="ac72ab12708dcba172320372e2efe93e9"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;u32s, str_eqlia, T&gt;&gt; </td></tr>
+<tr class="memitem:ac72ab12708dcba172320372e2efe93e9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapUUIA</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u32s, T, str_eqlia, A&gt;</td></tr>
+<tr class="memdesc:ac72ab12708dcba172320372e2efe93e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char32_t strings, case-insensitive lookup for ASCII characters. <br /></td></tr>
+<tr class="separator:ac72ab12708dcba172320372e2efe93e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6755d44103985f714e455ad1ecd00ba5" id="r_a6755d44103985f714e455ad1ecd00ba5"><td class="memTemplParams" colspan="2"><a id="a6755d44103985f714e455ad1ecd00ba5" name="a6755d44103985f714e455ad1ecd00ba5"></a>
+template&lt;typename T, typename A = allocator_hashstrmap&lt;u32s, str_eqliu, T&gt;&gt; </td></tr>
+<tr class="memitem:a6755d44103985f714e455ad1ecd00ba5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hashStrMapUUIU</b> = <a class="el" href="classsimstr_1_1hash_str_map.html">hashStrMap</a>&lt;u32s, T, str_eqliu, A&gt;</td></tr>
+<tr class="memdesc:a6755d44103985f714e455ad1ecd00ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash dictionary type for char32_t strings, case insensitive search for Unicode characters up to 0xFFFF. <br /></td></tr>
+<tr class="separator:a6755d44103985f714e455ad1ecd00ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -380,6 +395,15 @@ requires (!std::is_same_v&lt;From, To&gt;)</td></tr>
 <tr class="memitem:abc78c99c32c394aa4bcb4ef5a52aed0e" id="r_abc78c99c32c394aa4bcb4ef5a52aed0e"><td class="memItemLeft" align="right" valign="top">HashKeyIU&lt; u8s &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc78c99c32c394aa4bcb4ef5a52aed0e">operator&quot;&quot;_iu</a> (const u8s *ptr, size_t l)</td></tr>
 <tr class="memdesc:abc78c99c32c394aa4bcb4ef5a52aed0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key literal operator for <a class="el" href="classsimstr_1_1hash_str_map.html" title="Container for more efficient searching by string keys.">hashStrMap</a> with a simple unicode case-insensitive hash calculated at compile time.  <br /></td></tr>
 <tr class="separator:abc78c99c32c394aa4bcb4ef5a52aed0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe9f7d4452a35b96414d053f097f0d8" id="r_adbe9f7d4452a35b96414d053f097f0d8"><td class="memItemLeft" align="right" valign="top">consteval HashKey&lt; ubs &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbe9f7d4452a35b96414d053f097f0d8">operator&quot;&quot;_h</a> (const ubs *ptr, size_t l)</td></tr>
+<tr class="memdesc:adbe9f7d4452a35b96414d053f097f0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key literal operator for <a class="el" href="classsimstr_1_1hash_str_map.html" title="Container for more efficient searching by string keys.">hashStrMap</a> with a case-sensitive hash calculated at compile time.  <br /></td></tr>
+<tr class="separator:adbe9f7d4452a35b96414d053f097f0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da321ae55c569e460613f4755f60173" id="r_a9da321ae55c569e460613f4755f60173"><td class="memItemLeft" align="right" valign="top">consteval HashKeyIA&lt; ubs &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9da321ae55c569e460613f4755f60173">operator&quot;&quot;_ia</a> (const ubs *ptr, size_t l)</td></tr>
+<tr class="memdesc:a9da321ae55c569e460613f4755f60173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key literal operator for <a class="el" href="classsimstr_1_1hash_str_map.html" title="Container for more efficient searching by string keys.">hashStrMap</a> with a case-insensitive ASCII hash calculated at compile time.  <br /></td></tr>
+<tr class="separator:a9da321ae55c569e460613f4755f60173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f7fa283aaf9878f56f2fe280dcdf8f5" id="r_a1f7fa283aaf9878f56f2fe280dcdf8f5"><td class="memItemLeft" align="right" valign="top">HashKeyIU&lt; ubs &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f7fa283aaf9878f56f2fe280dcdf8f5">operator&quot;&quot;_iu</a> (const ubs *ptr, size_t l)</td></tr>
+<tr class="memdesc:a1f7fa283aaf9878f56f2fe280dcdf8f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key literal operator for <a class="el" href="classsimstr_1_1hash_str_map.html" title="Container for more efficient searching by string keys.">hashStrMap</a> with a simple unicode case-insensitive hash calculated at compile time.  <br /></td></tr>
+<tr class="separator:a1f7fa283aaf9878f56f2fe280dcdf8f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6365fc9cbc877e83333d71c9387bf92" id="r_ab6365fc9cbc877e83333d71c9387bf92"><td class="memItemLeft" align="right" valign="top">consteval HashKey&lt; u16s &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6365fc9cbc877e83333d71c9387bf92">operator&quot;&quot;_h</a> (const u16s *ptr, size_t l)</td></tr>
 <tr class="memdesc:ab6365fc9cbc877e83333d71c9387bf92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key literal operator for <a class="el" href="classsimstr_1_1hash_str_map.html" title="Container for more efficient searching by string keys.">hashStrMap</a> with a case-sensitive hash calculated at compile time.  <br /></td></tr>
 <tr class="separator:ab6365fc9cbc877e83333d71c9387bf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -694,7 +718,7 @@ requires (!std::is_same_v&lt;From, To&gt;)</div>
 </div>
 </div>
 <a id="ab6365fc9cbc877e83333d71c9387bf92" name="ab6365fc9cbc877e83333d71c9387bf92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6365fc9cbc877e83333d71c9387bf92">&#9670;&#160;</a></span>operator&quot;&quot;_h() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6365fc9cbc877e83333d71c9387bf92">&#9670;&#160;</a></span>operator&quot;&quot;_h() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -733,7 +757,7 @@ requires (!std::is_same_v&lt;From, To&gt;)</div>
 </div>
 </div>
 <a id="a075447008b510f5cbaad22257445c54c" name="a075447008b510f5cbaad22257445c54c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a075447008b510f5cbaad22257445c54c">&#9670;&#160;</a></span>operator&quot;&quot;_h() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a075447008b510f5cbaad22257445c54c">&#9670;&#160;</a></span>operator&quot;&quot;_h() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -772,7 +796,7 @@ requires (!std::is_same_v&lt;From, To&gt;)</div>
 </div>
 </div>
 <a id="a0df8d5833d6274ee7d071c21374a5bf0" name="a0df8d5833d6274ee7d071c21374a5bf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0df8d5833d6274ee7d071c21374a5bf0">&#9670;&#160;</a></span>operator&quot;&quot;_h() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0df8d5833d6274ee7d071c21374a5bf0">&#9670;&#160;</a></span>operator&quot;&quot;_h() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -810,8 +834,47 @@ requires (!std::is_same_v&lt;From, To&gt;)</div>
 
 </div>
 </div>
+<a id="adbe9f7d4452a35b96414d053f097f0d8" name="adbe9f7d4452a35b96414d053f097f0d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbe9f7d4452a35b96414d053f097f0d8">&#9670;&#160;</a></span>operator&quot;&quot;_h() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HashKey&lt; ubs &gt; simstr::literals::operator&quot;&quot;_h </td>
+          <td>(</td>
+          <td class="paramtype">const ubs *</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel consteval">consteval</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Key literal operator for <a class="el" href="classsimstr_1_1hash_str_map.html" title="Container for more efficient searching by string keys.">hashStrMap</a> with a case-sensitive hash calculated at compile time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>- pointer to a string. </td></tr>
+    <tr><td class="paramname">l</td><td>- string length. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>StoreType. </dd></dl>
+
+</div>
+</div>
 <a id="ae2cc28c7a70e77941cb1c163ddec8fff" name="ae2cc28c7a70e77941cb1c163ddec8fff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2cc28c7a70e77941cb1c163ddec8fff">&#9670;&#160;</a></span>operator&quot;&quot;_h() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2cc28c7a70e77941cb1c163ddec8fff">&#9670;&#160;</a></span>operator&quot;&quot;_h() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -850,7 +913,7 @@ requires (!std::is_same_v&lt;From, To&gt;)</div>
 </div>
 </div>
 <a id="a5e9eb8724ed875305019a64d0522706a" name="a5e9eb8724ed875305019a64d0522706a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e9eb8724ed875305019a64d0522706a">&#9670;&#160;</a></span>operator&quot;&quot;_ia() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e9eb8724ed875305019a64d0522706a">&#9670;&#160;</a></span>operator&quot;&quot;_ia() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -889,7 +952,7 @@ requires (!std::is_same_v&lt;From, To&gt;)</div>
 </div>
 </div>
 <a id="a06f61d4a6ce1333dde5ff06f4b31c86b" name="a06f61d4a6ce1333dde5ff06f4b31c86b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06f61d4a6ce1333dde5ff06f4b31c86b">&#9670;&#160;</a></span>operator&quot;&quot;_ia() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f61d4a6ce1333dde5ff06f4b31c86b">&#9670;&#160;</a></span>operator&quot;&quot;_ia() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -928,7 +991,7 @@ requires (!std::is_same_v&lt;From, To&gt;)</div>
 </div>
 </div>
 <a id="a46fe7e669051cea6d5406e8b61ba10fa" name="a46fe7e669051cea6d5406e8b61ba10fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46fe7e669051cea6d5406e8b61ba10fa">&#9670;&#160;</a></span>operator&quot;&quot;_ia() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a46fe7e669051cea6d5406e8b61ba10fa">&#9670;&#160;</a></span>operator&quot;&quot;_ia() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -966,8 +1029,47 @@ requires (!std::is_same_v&lt;From, To&gt;)</div>
 
 </div>
 </div>
+<a id="a9da321ae55c569e460613f4755f60173" name="a9da321ae55c569e460613f4755f60173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9da321ae55c569e460613f4755f60173">&#9670;&#160;</a></span>operator&quot;&quot;_ia() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HashKeyIA&lt; ubs &gt; simstr::literals::operator&quot;&quot;_ia </td>
+          <td>(</td>
+          <td class="paramtype">const ubs *</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel consteval">consteval</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Key literal operator for <a class="el" href="classsimstr_1_1hash_str_map.html" title="Container for more efficient searching by string keys.">hashStrMap</a> with a case-insensitive ASCII hash calculated at compile time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>- pointer to a string. </td></tr>
+    <tr><td class="paramname">l</td><td>- string length. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>StoreType. </dd></dl>
+
+</div>
+</div>
 <a id="ab30a46e01c92348cb1dc730ff3679ae5" name="ab30a46e01c92348cb1dc730ff3679ae5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab30a46e01c92348cb1dc730ff3679ae5">&#9670;&#160;</a></span>operator&quot;&quot;_ia() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab30a46e01c92348cb1dc730ff3679ae5">&#9670;&#160;</a></span>operator&quot;&quot;_ia() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1006,7 +1108,7 @@ requires (!std::is_same_v&lt;From, To&gt;)</div>
 </div>
 </div>
 <a id="a6dd96a341dde656e2a1ffb25d4fd6986" name="a6dd96a341dde656e2a1ffb25d4fd6986"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dd96a341dde656e2a1ffb25d4fd6986">&#9670;&#160;</a></span>operator&quot;&quot;_iu() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dd96a341dde656e2a1ffb25d4fd6986">&#9670;&#160;</a></span>operator&quot;&quot;_iu() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1045,7 +1147,7 @@ requires (!std::is_same_v&lt;From, To&gt;)</div>
 </div>
 </div>
 <a id="a485db8e1e2e6c369f85beae0a266d0e4" name="a485db8e1e2e6c369f85beae0a266d0e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a485db8e1e2e6c369f85beae0a266d0e4">&#9670;&#160;</a></span>operator&quot;&quot;_iu() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a485db8e1e2e6c369f85beae0a266d0e4">&#9670;&#160;</a></span>operator&quot;&quot;_iu() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1084,7 +1186,7 @@ requires (!std::is_same_v&lt;From, To&gt;)</div>
 </div>
 </div>
 <a id="abc78c99c32c394aa4bcb4ef5a52aed0e" name="abc78c99c32c394aa4bcb4ef5a52aed0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc78c99c32c394aa4bcb4ef5a52aed0e">&#9670;&#160;</a></span>operator&quot;&quot;_iu() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abc78c99c32c394aa4bcb4ef5a52aed0e">&#9670;&#160;</a></span>operator&quot;&quot;_iu() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1122,8 +1224,47 @@ requires (!std::is_same_v&lt;From, To&gt;)</div>
 
 </div>
 </div>
+<a id="a1f7fa283aaf9878f56f2fe280dcdf8f5" name="a1f7fa283aaf9878f56f2fe280dcdf8f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f7fa283aaf9878f56f2fe280dcdf8f5">&#9670;&#160;</a></span>operator&quot;&quot;_iu() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HashKeyIU&lt; ubs &gt; simstr::literals::operator&quot;&quot;_iu </td>
+          <td>(</td>
+          <td class="paramtype">const ubs *</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Key literal operator for <a class="el" href="classsimstr_1_1hash_str_map.html" title="Container for more efficient searching by string keys.">hashStrMap</a> with a simple unicode case-insensitive hash calculated at compile time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>- pointer to a string. </td></tr>
+    <tr><td class="paramname">l</td><td>- string length. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>StoreType. </dd></dl>
+
+</div>
+</div>
 <a id="ac71bc810203bd9bb837c020dd9122b15" name="ac71bc810203bd9bb837c020dd9122b15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac71bc810203bd9bb837c020dd9122b15">&#9670;&#160;</a></span>operator&quot;&quot;_iu() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac71bc810203bd9bb837c020dd9122b15">&#9670;&#160;</a></span>operator&quot;&quot;_iu() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

@@ -228,9 +228,9 @@ class simstr::str_storable&lt; K, Impl, Allocator &gt;</div><p>The base for the 
 </dl>
 <p>Still knows nothing about where the heir stores the string and its size. Simply calls its methods to get the space, and fills it as needed. Works only when creating an object, does not work with string modification after its creation and ensures that if these methods are called, the object is only is being created and no data sharing has yet taken place.</p>
 <p>These methods must be implemented by the descendant class and are called only when an object is created</p><ul>
-<li><code>K* init(size_t size)</code> - allocate space for a line of the specified size, return the address</li>
+<li><code>K* init(size_t size)</code> - allocate space for a string of the specified size, return the address</li>
 <li><code>void create_empty()</code> - create an empty object</li>
-<li><code>K* set_size(size_t size)</code> - re-allocate space for the line if you didn’t guess correctly when creating the size you need and the space you need is larger or smaller. The contents of the line must be left. Although the allocator type is specified by the template parameter, this is done only for forwarding of its type in constructors, allocator methods are not called. If the heir does not use an allocator, and in <code>init</code> and <code>set_size</code> it somehow allocates space, can indicate the type of the allocator any empty class. </li>
+<li><code>K* set_size(size_t size)</code> - re-allocate space for the string if you didn’t guess correctly when creating the size you need and the space you need is larger or smaller. The contents of the string must be left. Although the allocator type is specified by the template parameter, this is done only for forwarding of its type in constructors, allocator methods are not called. If the heir does not use an allocator, and in <code>init</code> and <code>set_size</code> it somehow allocates space, can indicate the type of the allocator any empty class. </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a005fd4083acc1c2c44fe59ae6e2ec8ce" name="a005fd4083acc1c2c44fe59ae6e2ec8ce"></a>
@@ -437,7 +437,7 @@ template&lt;typename K, typename Impl, typename Allocator&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">repeat</td><td>- number of repetitions. </td></tr>
-    <tr><td class="paramname">pattern</td><td>- the line to be repeated. </td></tr>
+    <tr><td class="paramname">pattern</td><td>- the string to be repeated. </td></tr>
   </table>
   </dd>
 </dl>
@@ -536,7 +536,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
   <table class="params">
     <tr><td class="paramname">strings</td><td>- container with strings. </td></tr>
     <tr><td class="paramname">delimiter</td><td>- delimiter added between lines. </td></tr>
-    <tr><td class="paramname">tail</td><td>- add a separator after the last line. </td></tr>
+    <tr><td class="paramname">tail</td><td>- add a separator after the last string. </td></tr>
     <tr><td class="paramname">skip_empty</td><td>- skip empty lines without adding a separator. </td></tr>
     <tr><td class="paramname">...args</td><td>- parameters for initializing the allocator.</td></tr>
   </table>
@@ -666,7 +666,7 @@ template&lt;typename K, typename Impl, typename Allocator&gt; </div>
 </div><div class="memdoc">
 
 <p>Conversion operator to a null-terminated C string. </p>
-<dl class="section return"><dt>Returns</dt><dd>const K* - pointer to the beginning of the line. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const K* - pointer to the beginning of the string. </dd></dl>
 
 </div>
 </div>

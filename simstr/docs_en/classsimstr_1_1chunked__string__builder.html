@@ -181,7 +181,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename K&gt;<br />
 class simstr::chunked_string_builder&lt; K &gt;</div><p>For constructing long dynamic strings by concatenating small pieces. </p>
-<p>Selects individual blocks of a given size (or a multiple of it for large inserts) as needed. to avoid relocation of long strings. After construction, you can merge it into one line. As measurements have shown, if you then merge it into one line, it works slower than lstring +=, but more economical in memory. If you don't merge it into one line, and then iterate through buffers, it's faster. Itself is a string expression. </p>
+<p>Selects individual blocks of a given size (or a multiple of it for large inserts) as needed. to avoid relocation of long strings. After construction, you can merge it into one string. As measurements have shown, if you then merge it into one line, it works slower than lstring +=, but more economical in memory. If you don't merge it into one line, and then iterate through buffers, it's faster. Itself is a string expression. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af0b7cc558b6f119079ecf436f7d4c3ab" name="af0b7cc558b6f119079ecf436f7d4c3ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af0b7cc558b6f119079ecf436f7d4c3ab">&#9670;&#160;</a></span>data()</h2>

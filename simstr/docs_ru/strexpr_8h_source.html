@@ -107,7 +107,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * ver. 1.7.1</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * ver. 1.7.0</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * (c) Проект &quot;SimStr&quot;, Александр Орефков orefkov@gmail.com</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * База для строковых конкатенаций через выражения времени компиляции</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * (c) Project &quot;SimStr&quot;, Aleksandr Orefkov orefkov@gmail.com</span></div>
@@ -2596,7 +2596,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l03683" name="l03683"></a><span class="lineno"> 3683</span>    <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> find(<span class="keyword">const</span> K* pattern, <span class="keywordtype">size_t</span> lenPattern, <span class="keywordtype">size_t</span> offset) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l03684" name="l03684"></a><span class="lineno"> 3684</span>        <span class="keywordtype">size_t</span> lenText = _len();</div>
 <div class="line"><a id="l03685" name="l03685"></a><span class="lineno"> 3685</span>        <span class="comment">// Образец, не вмещающийся в строку и пустой образец не находим</span></div>
-<div class="line"><a id="l03686" name="l03686"></a><span class="lineno"> 3686</span>        <span class="comment">// We don&#39;t look for an empty line or a line longer than the text.</span></div>
+<div class="line"><a id="l03686" name="l03686"></a><span class="lineno"> 3686</span>        <span class="comment">// We don&#39;t look for an empty string or a string longer than the text.</span></div>
 <div class="line"><a id="l03687" name="l03687"></a><span class="lineno"> 3687</span>        <span class="keywordflow">if</span> (!lenPattern || offset &gt;= lenText || offset + lenPattern &gt; lenText)</div>
 <div class="line"><a id="l03688" name="l03688"></a><span class="lineno"> 3688</span>            <span class="keywordflow">return</span> str::npos;</div>
 <div class="line"><a id="l03689" name="l03689"></a><span class="lineno"> 3689</span>        lenPattern--;</div>
@@ -2652,7 +2652,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l03781" name="l03781"></a><span class="lineno"> 3781</span>            <span class="keywordflow">return</span> find_last(pattern[0], offset);</div>
 <div class="line"><a id="l03782" name="l03782"></a><span class="lineno"> 3782</span>        <span class="keywordtype">size_t</span> lenText = std::min(_len(), offset);</div>
 <div class="line"><a id="l03783" name="l03783"></a><span class="lineno"> 3783</span>        <span class="comment">// Образец, не вмещающийся в строку и пустой образец не находим</span></div>
-<div class="line"><a id="l03784" name="l03784"></a><span class="lineno"> 3784</span>        <span class="comment">// We don&#39;t look for an empty line or a line longer than the text.</span></div>
+<div class="line"><a id="l03784" name="l03784"></a><span class="lineno"> 3784</span>        <span class="comment">// We don&#39;t look for an empty string or a string longer than the text.</span></div>
 <div class="line"><a id="l03785" name="l03785"></a><span class="lineno"> 3785</span>        <span class="keywordflow">if</span> (!lenPattern || lenPattern &gt; lenText)</div>
 <div class="line"><a id="l03786" name="l03786"></a><span class="lineno"> 3786</span>            <span class="keywordflow">return</span> str::npos;</div>
 <div class="line"><a id="l03787" name="l03787"></a><span class="lineno"> 3787</span> </div>
@@ -4827,7 +4827,7 @@ $(function(){initNavTree('strexpr_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l07010" name="l07010"></a><span class="lineno"> 7010</span>            total_length = end_of_piece + all_delta;</div>
 <div class="line"><a id="l07011" name="l07011"></a><span class="lineno"> 7011</span>            my_type* dst_str{};</div>
 <div class="line"><a id="l07012" name="l07012"></a><span class="lineno"> 7012</span>            <span class="keywordflow">if</span> (total_length &lt;= str.capacity()) {</div>
-<div class="line"><a id="l07013" name="l07013"></a><span class="lineno"> 7013</span>                <span class="comment">// Строка поместится в старое место | The line will be placed in the old location.</span></div>
+<div class="line"><a id="l07013" name="l07013"></a><span class="lineno"> 7013</span>                <span class="comment">// Строка поместится в старое место | The string will be placed in the old location.</span></div>
 <div class="line"><a id="l07014" name="l07014"></a><span class="lineno"> 7014</span>                dst_str = &amp;str;</div>
 <div class="line"><a id="l07015" name="l07015"></a><span class="lineno"> 7015</span>            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l07016" name="l07016"></a><span class="lineno"> 7016</span>                <span class="comment">// Будем создавать в другом буфере | We will create in another buffer.</span></div>

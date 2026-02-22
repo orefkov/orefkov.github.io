@@ -168,7 +168,7 @@ constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_empty</b
 <tr class="memdesc:a1ab058c6d2bb0b8c36cafd7c82490943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the character from the specified position. Bounds checking is not performed.  <br /></td></tr>
 <tr class="separator:a1ab058c6d2bb0b8c36cafd7c82490943"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71ad322b41b70f1d49e735e2e5456c16" id="r_a71ad322b41b70f1d49e735e2e5456c16"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1simple__str.html">my_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71ad322b41b70f1d49e735e2e5456c16">remove_prefix</a> (size_t delta)</td></tr>
-<tr class="memdesc:a71ad322b41b70f1d49e735e2e5456c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shifts the start of a line by the specified number of characters.  <br /></td></tr>
+<tr class="memdesc:a71ad322b41b70f1d49e735e2e5456c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shifts the start of a string by the specified number of characters.  <br /></td></tr>
 <tr class="separator:a71ad322b41b70f1d49e735e2e5456c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a442986ca3c3ff2e67b53240cca4d2cd6" id="r_a442986ca3c3ff2e67b53240cca4d2cd6"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1simple__str.html">my_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a442986ca3c3ff2e67b53240cca4d2cd6">remove_suffix</a> (size_t delta)</td></tr>
 <tr class="memdesc:a442986ca3c3ff2e67b53240cca4d2cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortens the string by the specified number of characters.  <br /></td></tr>
@@ -489,7 +489,7 @@ struct simstr::simple_str&lt; K &gt;</div><p>The simplest immutable non-owning s
 <li>in other cases 10. </li>
 </ul>
 </td></tr>
-    <tr><td class="paramname">SkipWs</td><td>- skip whitespace characters at the beginning of the line. </td></tr>
+    <tr><td class="paramname">SkipWs</td><td>- skip whitespace characters at the beginning of the string. </td></tr>
     <tr><td class="paramname">AllowSign</td><td>- whether the '+' sign is allowed before a number. </td></tr>
   </table>
   </dd>
@@ -596,12 +596,12 @@ struct simstr::simple_str&lt; K &gt;</div><p>The simplest immutable non-owning s
 <p>Get the character at the given position. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idx</td><td>- symbol index. For negative values, it is counted from the end of the line. </td></tr>
+    <tr><td class="paramname">idx</td><td>- symbol index. For negative values, it is counted from the end of the string. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>K - character.</dd></dl>
-<p>Does not check for line boundaries. </p>
+<p>Does not check for string boundaries. </p>
 
 </div>
 </div>
@@ -631,7 +631,7 @@ struct simstr::simple_str&lt; K &gt;</div><p>The simplest immutable non-owning s
 <p>Compare strings character by character. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">o</td><td>- another line. </td></tr>
+    <tr><td class="paramname">o</td><td>- another string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -665,7 +665,7 @@ struct simstr::simple_str&lt; K &gt;</div><p>The simplest immutable non-owning s
 <p>Compare strings character by character and not case sensitive ASCII characters. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td>- another line. </td></tr>
+    <tr><td class="paramname">text</td><td>- another string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -699,7 +699,7 @@ struct simstr::simple_str&lt; K &gt;</div><p>The simplest immutable non-owning s
 <p>Compare strings character by character without taking into account the case of Unicode characters of the first plane (&lt;0xFFFF). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td>- another line. </td></tr>
+    <tr><td class="paramname">text</td><td>- another string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -909,7 +909,7 @@ struct simstr::simple_str&lt; K &gt;</div><p>The simplest immutable non-owning s
 <p>String comparison for equality. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td>- another line. </td></tr>
+    <tr><td class="paramname">other</td><td>- another string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -943,7 +943,7 @@ struct simstr::simple_str&lt; K &gt;</div><p>The simplest immutable non-owning s
 <p>Whether a string is equal to another string, character-by-character-insensitive, of ASCII characters. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td>- another line. </td></tr>
+    <tr><td class="paramname">text</td><td>- another string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -977,7 +977,7 @@ struct simstr::simple_str&lt; K &gt;</div><p>The simplest immutable non-owning s
 <p>Whether a string is equal to another string, character-by-character-insensitive, of the Unicode characters of the first plane (&lt;0xFFFF). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td>- another line. </td></tr>
+    <tr><td class="paramname">text</td><td>- another string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1823,7 +1823,7 @@ struct simstr::simple_str&lt; K &gt;</div><p>The simplest immutable non-owning s
 </div><div class="memdoc">
 
 <p>Get the substring <a class="el" href="structsimstr_1_1str__src.html" title="The simplest class of an immutable non-owning string.">str_src</a> from position from to position to (not including it). </p>
-<p>For performance reasons, the method does not check for line boundaries in any way, use in scenarios when you know for sure that these are positions inside the line and to &gt;= from. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>For performance reasons, the method does not check for string boundaries in any way, use in scenarios when you know for sure that these are positions inside the string and to &gt;= from. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">from</td><td>- starting position. </td></tr>
     <tr><td class="paramname">to</td><td>- final position (not included in the result). </td></tr>
@@ -1930,7 +1930,7 @@ template&lt;typename K&gt; </div>
 <p>Whether a string is smaller than another string, character-by-character-insensitive, ASCII characters. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td>- another line. </td></tr>
+    <tr><td class="paramname">text</td><td>- another string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1964,7 +1964,7 @@ template&lt;typename K&gt; </div>
 <p>Whether a string is smaller than another string, character-by-character-insensitive, of the Unicode characters of the first plane (&lt;0xFFFF). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td>- another line. </td></tr>
+    <tr><td class="paramname">text</td><td>- another string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2070,8 +2070,8 @@ template&lt;typename K&gt; </div>
 <p>Get part of a string as "string chunk". </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">from</td><td>- number of characters from the beginning of the line. If the string size is exceeded, it will return an empty string. </td></tr>
-    <tr><td class="paramname">len</td><td>- the number of characters in the resulting "chunk". When going beyond the line, it will return everything up to the end of the line. </td></tr>
+    <tr><td class="paramname">from</td><td>- number of characters from the beginning of the string. If the string size is exceeded, it will return an empty string. </td></tr>
+    <tr><td class="paramname">len</td><td>- the number of characters in the resulting "chunk". When going beyond the line, it will return everything up to the end of the string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2193,13 +2193,13 @@ template&lt;typename K&gt; </div>
 <p>Get part of a string as "str_src". </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">from</td><td>- number of characters from the beginning of the line. </td></tr>
+    <tr><td class="paramname">from</td><td>- number of characters from the beginning of the string. </td></tr>
     <tr><td class="paramname">len</td><td>- the number of characters in the resulting "chunk". </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Substring, <a class="el" href="structsimstr_1_1str__src.html" title="The simplest class of an immutable non-owning string.">str_src</a>.</dd></dl>
-<p>If <code>from</code> is less than zero, then <code>-from</code> characters are counted from the end of the line towards the beginning. If <code>len</code> is less than or equal to zero, then count <code>-len</code> characters from the end of the line</p>
+<p>If <code>from</code> is less than zero, then <code>-from</code> characters are counted from the end of the string towards the beginning. If <code>len</code> is less than or equal to zero, then count <code>-len</code> characters from the end of the line</p>
 <div class="fragment"><div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss(5, 2) == <span class="stringliteral">&quot;56&quot;</span>;</div>
 <div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss(5) == <span class="stringliteral">&quot;56789&quot;</span>;</div>
 <div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss(5, -1) == <span class="stringliteral">&quot;5678&quot;</span>;</div>
@@ -2235,7 +2235,7 @@ template&lt;typename K&gt; </div>
 <p>String comparison operator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td>- another line. </td></tr>
+    <tr><td class="paramname">other</td><td>- another string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2301,7 +2301,7 @@ template&lt;typename K&gt; </div>
 <p>Operator comparing strings for equality. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td>- another line. </td></tr>
+    <tr><td class="paramname">other</td><td>- another string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2470,7 +2470,7 @@ template&lt;typename K&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Shifts the start of a line by the specified number of characters. </p>
+<p>Shifts the start of a string by the specified number of characters. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">delta</td><td>- number of characters. </td></tr>
@@ -2862,8 +2862,8 @@ template&lt;typename K&gt; </div>
 <p>Get part of a string with an object of the same type to which the method is applied, similar to mid. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">from</td><td>- number of characters from the beginning of the line. If the string size is exceeded, it will return an empty string. </td></tr>
-    <tr><td class="paramname">len</td><td>- the number of characters in the resulting "chunk". When going beyond the line, it will return everything up to the end of the line. </td></tr>
+    <tr><td class="paramname">from</td><td>- number of characters from the beginning of the string. If the string size is exceeded, it will return an empty string. </td></tr>
+    <tr><td class="paramname">len</td><td>- the number of characters in the resulting "chunk". When going beyond the line, it will return everything up to the end of the string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2897,7 +2897,7 @@ template&lt;typename K&gt; </div>
 <p>Compare with C-string character by character. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td>- another line. </td></tr>
+    <tr><td class="paramname">text</td><td>- another string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2935,8 +2935,8 @@ template&lt;typename K&gt; </div>
 <p>Get a substring. Works similarly to operator(), only the result is the same type as the method applied to. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">from</td><td>- number of characters from the beginning of the line. If less than zero, it is counted from the end of the line towards the beginning. </td></tr>
-    <tr><td class="paramname">len</td><td>- the number of characters in the resulting "chunk". If less than or equal to zero, then count len ​​characters from the end of the line. </td></tr>
+    <tr><td class="paramname">from</td><td>- number of characters from the beginning of the string. If less than zero, it is counted from the end of the string towards the beginning. </td></tr>
+    <tr><td class="paramname">len</td><td>- the number of characters in the resulting "chunk". If less than or equal to zero, then count len ​​characters from the end of the string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3039,7 +3039,7 @@ template&lt;typename K&gt; </div>
 <li>in other cases 10. </li>
 </ul>
 </td></tr>
-    <tr><td class="paramname">SkipWs</td><td>- skip whitespace characters at the beginning of the line. All characters with ASCII codes &lt;= 32 are skipped. </td></tr>
+    <tr><td class="paramname">SkipWs</td><td>- skip whitespace characters at the beginning of the string. All characters with ASCII codes &lt;= 32 are skipped. </td></tr>
     <tr><td class="paramname">AllowSign</td><td>- whether the '+' sign is allowed before a number. </td></tr>
   </table>
   </dd>

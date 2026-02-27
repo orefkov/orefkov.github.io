@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.2</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -349,11 +349,11 @@ requires std::is_constructible_v&lt;Exc, Args...&gt;</td></tr>
 <tr class="memitem:afa40ca4ad70df9ec0941599b88c443dc"><td class="memTemplItemLeft" align="right" valign="top">constexpr convert_result&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#afa40ca4ad70df9ec0941599b88c443dc">to_int</a> () const noexcept</td></tr>
 <tr class="memdesc:afa40ca4ad70df9ec0941599b88c443dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a number of the given type.  <br /></td></tr>
 <tr class="separator:afa40ca4ad70df9ec0941599b88c443dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a037d07ad0ee024d983927cec3ee81908" id="r_a037d07ad0ee024d983927cec3ee81908"><td class="memTemplParams" colspan="2">template&lt;bool SkipWS = true&gt; <br />
-requires (sizeof(K) == 1)</td></tr>
-<tr class="memitem:a037d07ad0ee024d983927cec3ee81908"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a037d07ad0ee024d983927cec3ee81908">to_double_hex</a> () const noexcept</td></tr>
-<tr class="memdesc:a037d07ad0ee024d983927cec3ee81908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert string in hex form to double.  <br /></td></tr>
-<tr class="separator:a037d07ad0ee024d983927cec3ee81908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a1f104aea0e3cd1400dca2a4b005d6" id="r_a91a1f104aea0e3cd1400dca2a4b005d6"><td class="memTemplParams" colspan="2">template&lt;bool SkipWS = true&gt; <br />
+requires (sizeof(K) == 1 &amp;&amp; requires { std::from_chars(std::declval&lt;K*&gt;(), std::declval&lt;K*&gt;(), std::declval&lt;double&amp;&gt;()); })</td></tr>
+<tr class="memitem:a91a1f104aea0e3cd1400dca2a4b005d6"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a91a1f104aea0e3cd1400dca2a4b005d6">to_double_hex</a> () const noexcept</td></tr>
+<tr class="memdesc:a91a1f104aea0e3cd1400dca2a4b005d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert string in hex form to double.  <br /></td></tr>
+<tr class="separator:a91a1f104aea0e3cd1400dca2a4b005d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adffb295777b82a1475a4fc0d9754481b" id="r_adffb295777b82a1475a4fc0d9754481b"><td class="memTemplParams" colspan="2">template&lt;typename T, typename Op&gt; </td></tr>
 <tr class="memitem:adffb295777b82a1475a4fc0d9754481b"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#adffb295777b82a1475a4fc0d9754481b">splitf</a> (str_piece delimiter, const Op &amp;beforeFunc, size_t offset=0) const</td></tr>
 <tr class="memdesc:adffb295777b82a1475a4fc0d9754481b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into parts at a given delimiter, possibly applying a functor to each substring.  <br /></td></tr>
@@ -2978,8 +2978,8 @@ template&lt;bool SkipWS = true, bool AllowPlus = true&gt; </div>
 
 </div>
 </div>
-<a id="a037d07ad0ee024d983927cec3ee81908" name="a037d07ad0ee024d983927cec3ee81908"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a037d07ad0ee024d983927cec3ee81908">&#9670;&#160;</a></span>to_double_hex()</h2>
+<a id="a91a1f104aea0e3cd1400dca2a4b005d6" name="a91a1f104aea0e3cd1400dca2a4b005d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a1f104aea0e3cd1400dca2a4b005d6">&#9670;&#160;</a></span>to_double_hex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2987,7 +2987,7 @@ template&lt;bool SkipWS = true, bool AllowPlus = true&gt; </div>
 template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 <div class="memtemplate">
 template&lt;bool SkipWS = true&gt; <br />
-requires (sizeof(K) == 1)</div>
+requires (sizeof(K) == 1 &amp;&amp; requires { std::from_chars(std::declval&lt;K*&gt;(), std::declval&lt;K*&gt;(), std::declval&lt;double&amp;&gt;()); })</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

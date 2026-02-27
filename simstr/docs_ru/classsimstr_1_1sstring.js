@@ -96,7 +96,7 @@ var classsimstr_1_1sstring =
     [ "substr", "classsimstr_1_1sstring.html#a512eaf3c2c8736f3021a5bbe60823866", null ],
     [ "symbols", "classsimstr_1_1sstring.html#a3f608228b4db83ce396f48ec5373b36f", null ],
     [ "to_double", "classsimstr_1_1sstring.html#aa1af52e61e73c687a34ff6978304edc3", null ],
-    [ "to_double_hex", "classsimstr_1_1sstring.html#a037d07ad0ee024d983927cec3ee81908", null ],
+    [ "to_double_hex", "classsimstr_1_1sstring.html#a91a1f104aea0e3cd1400dca2a4b005d6", null ],
     [ "to_int", "classsimstr_1_1sstring.html#afa40ca4ad70df9ec0941599b88c443dc", null ],
     [ "to_nts", "classsimstr_1_1sstring.html#aed242dbe057042c9f72f9514aaf861ee", null ],
     [ "to_str", "classsimstr_1_1sstring.html#a53d19b3fba03bfd481d2a3b3def766af", null ],

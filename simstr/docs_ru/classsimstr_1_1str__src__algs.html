@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.2</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -317,16 +317,16 @@ requires std::is_constructible_v&lt;Exc, Args...&gt;</td></tr>
 <tr class="memitem:afa40ca4ad70df9ec0941599b88c443dc"><td class="memTemplItemLeft" align="right" valign="top">constexpr convert_result&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afa40ca4ad70df9ec0941599b88c443dc">to_int</a> () const noexcept</td></tr>
 <tr class="memdesc:afa40ca4ad70df9ec0941599b88c443dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразовать строку в число заданного типа.  <br /></td></tr>
 <tr class="separator:afa40ca4ad70df9ec0941599b88c443dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba048f26826e186c9c233625c2db3934" id="r_aba048f26826e186c9c233625c2db3934"><td class="memTemplParams" colspan="2">template&lt;bool SkipWS = true, bool AllowPlus = true&gt; <br />
-requires (sizeof(K) == 1)</td></tr>
-<tr class="memitem:aba048f26826e186c9c233625c2db3934"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aba048f26826e186c9c233625c2db3934">to_double</a> () const noexcept</td></tr>
-<tr class="memdesc:aba048f26826e186c9c233625c2db3934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразовать строку в double.  <br /></td></tr>
-<tr class="separator:aba048f26826e186c9c233625c2db3934"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a037d07ad0ee024d983927cec3ee81908" id="r_a037d07ad0ee024d983927cec3ee81908"><td class="memTemplParams" colspan="2">template&lt;bool SkipWS = true&gt; <br />
-requires (sizeof(K) == 1)</td></tr>
-<tr class="memitem:a037d07ad0ee024d983927cec3ee81908"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a037d07ad0ee024d983927cec3ee81908">to_double_hex</a> () const noexcept</td></tr>
-<tr class="memdesc:a037d07ad0ee024d983927cec3ee81908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразовать строку в 16ричной записи в double. Пока работает только для char.  <br /></td></tr>
-<tr class="separator:a037d07ad0ee024d983927cec3ee81908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78353e43961dccefc5793a699be941c3" id="r_a78353e43961dccefc5793a699be941c3"><td class="memTemplParams" colspan="2">template&lt;bool SkipWS = true, bool AllowPlus = true&gt; <br />
+requires (sizeof(K) == 1 &amp;&amp; requires { std::from_chars(std::declval&lt;K*&gt;(), std::declval&lt;K*&gt;(), std::declval&lt;double&amp;&gt;()); })</td></tr>
+<tr class="memitem:a78353e43961dccefc5793a699be941c3"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a78353e43961dccefc5793a699be941c3">to_double</a> () const noexcept</td></tr>
+<tr class="memdesc:a78353e43961dccefc5793a699be941c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразовать строку в double.  <br /></td></tr>
+<tr class="separator:a78353e43961dccefc5793a699be941c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a1f104aea0e3cd1400dca2a4b005d6" id="r_a91a1f104aea0e3cd1400dca2a4b005d6"><td class="memTemplParams" colspan="2">template&lt;bool SkipWS = true&gt; <br />
+requires (sizeof(K) == 1 &amp;&amp; requires { std::from_chars(std::declval&lt;K*&gt;(), std::declval&lt;K*&gt;(), std::declval&lt;double&amp;&gt;()); })</td></tr>
+<tr class="memitem:a91a1f104aea0e3cd1400dca2a4b005d6"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a91a1f104aea0e3cd1400dca2a4b005d6">to_double_hex</a> () const noexcept</td></tr>
+<tr class="memdesc:a91a1f104aea0e3cd1400dca2a4b005d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразовать строку в 16ричной записи в double. Пока работает только для char.  <br /></td></tr>
+<tr class="separator:a91a1f104aea0e3cd1400dca2a4b005d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb99439171e49da0afd461b50ca25317" id="r_afb99439171e49da0afd461b50ca25317"><td class="memTemplParams" colspan="2">template&lt;ToIntNumber T&gt; </td></tr>
 <tr class="memitem:afb99439171e49da0afd461b50ca25317"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afb99439171e49da0afd461b50ca25317">as_number</a> (T &amp;t) const</td></tr>
 <tr class="memdesc:afb99439171e49da0afd461b50ca25317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразовать строку в целое число.  <br /></td></tr>
@@ -2677,8 +2677,8 @@ template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 
 </div>
 </div>
-<a id="aba048f26826e186c9c233625c2db3934" name="aba048f26826e186c9c233625c2db3934"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba048f26826e186c9c233625c2db3934">&#9670;&#160;</a></span>to_double()</h2>
+<a id="a78353e43961dccefc5793a699be941c3" name="a78353e43961dccefc5793a699be941c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78353e43961dccefc5793a699be941c3">&#9670;&#160;</a></span>to_double()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2686,7 +2686,7 @@ template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 <div class="memtemplate">
 template&lt;bool SkipWS = true, bool AllowPlus = true&gt; <br />
-requires (sizeof(K) == 1)</div>
+requires (sizeof(K) == 1 &amp;&amp; requires { std::from_chars(std::declval&lt;K*&gt;(), std::declval&lt;K*&gt;(), std::declval&lt;double&amp;&gt;()); })</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2710,8 +2710,8 @@ requires (sizeof(K) == 1)</div>
 
 </div>
 </div>
-<a id="a037d07ad0ee024d983927cec3ee81908" name="a037d07ad0ee024d983927cec3ee81908"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a037d07ad0ee024d983927cec3ee81908">&#9670;&#160;</a></span>to_double_hex()</h2>
+<a id="a91a1f104aea0e3cd1400dca2a4b005d6" name="a91a1f104aea0e3cd1400dca2a4b005d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a1f104aea0e3cd1400dca2a4b005d6">&#9670;&#160;</a></span>to_double_hex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2719,7 +2719,7 @@ requires (sizeof(K) == 1)</div>
 template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 <div class="memtemplate">
 template&lt;bool SkipWS = true&gt; <br />
-requires (sizeof(K) == 1)</div>
+requires (sizeof(K) == 1 &amp;&amp; requires { std::from_chars(std::declval&lt;K*&gt;(), std::declval&lt;K*&gt;(), std::declval&lt;double&amp;&gt;()); })</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

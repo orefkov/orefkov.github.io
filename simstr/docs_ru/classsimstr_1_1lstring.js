@@ -133,7 +133,7 @@ var classsimstr_1_1lstring =
     [ "substr", "classsimstr_1_1lstring.html#a512eaf3c2c8736f3021a5bbe60823866", null ],
     [ "symbols", "classsimstr_1_1lstring.html#acc14bfdba77dd4027af118f6f52a5a93", null ],
     [ "to_double", "classsimstr_1_1lstring.html#aa1af52e61e73c687a34ff6978304edc3", null ],
-    [ "to_double_hex", "classsimstr_1_1lstring.html#a037d07ad0ee024d983927cec3ee81908", null ],
+    [ "to_double_hex", "classsimstr_1_1lstring.html#a91a1f104aea0e3cd1400dca2a4b005d6", null ],
     [ "to_int", "classsimstr_1_1lstring.html#afa40ca4ad70df9ec0941599b88c443dc", null ],
     [ "to_nts", "classsimstr_1_1lstring.html#aed242dbe057042c9f72f9514aaf861ee", null ],
     [ "to_str", "classsimstr_1_1lstring.html#a53d19b3fba03bfd481d2a3b3def766af", null ],

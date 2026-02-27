@@ -77,7 +77,7 @@ var structsimstr_1_1simple__str =
     [ "substr", "structsimstr_1_1simple__str.html#a512eaf3c2c8736f3021a5bbe60823866", null ],
     [ "symbols", "structsimstr_1_1simple__str.html#a611ab22c81c515ed231fc767ecb0df0a", null ],
     [ "to_double", "structsimstr_1_1simple__str.html#aa1af52e61e73c687a34ff6978304edc3", null ],
-    [ "to_double_hex", "structsimstr_1_1simple__str.html#a037d07ad0ee024d983927cec3ee81908", null ],
+    [ "to_double_hex", "structsimstr_1_1simple__str.html#a91a1f104aea0e3cd1400dca2a4b005d6", null ],
     [ "to_int", "structsimstr_1_1simple__str.html#afa40ca4ad70df9ec0941599b88c443dc", null ],
     [ "to_str", "structsimstr_1_1simple__str.html#a53d19b3fba03bfd481d2a3b3def766af", null ],
     [ "to_string", "structsimstr_1_1simple__str.html#adc816f095922a510dfe466db1905fc63", null ],

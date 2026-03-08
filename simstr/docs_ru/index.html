@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.2</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.3</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -110,7 +110,7 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 simstr - библиотека строковых объектов и функций</h1>
 <p><span class="obfuscator"><a href="readme.md">On English | По-английски</a></span></p>
 <p><a href="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml"><img src="https://github.com/orefkov/simstr/actions/workflows/cmake-multi-platform.yml/badge.svg" alt="CMake on multiple platforms" style="pointer-events: none;" class="inline"/></a></p>
-<p>Версия 1.7.2.</p>
+<p>Версия 1.7.3.</p>
 <h2>Ускорь работу со строками в 2-10 раз!</h2>
 <p>В этой библиотеке содержится современная реализация нескольких видов строковых объектов и различных алгоритмов для работы со строками. </p>
 <h2><a class="anchor" id="autotoc_md1"></a>
@@ -151,11 +151,12 @@ simstr - библиотека строковых объектов и функц�
 <li>str::make_ascii_upper, str::make_ascii_lower - смена регистра ASCII символов.</li>
 </ul>
 </li>
-<li>Парсинг целых чисел с возможностью "тонкой" настройки при компиляции - можно задавать опции проверки переполнения, пропуск пробельных символов, конкретное основание счисления либо автовыбор по префиксам <code>0x</code>, <code>0</code>, <code>0b</code>, <code>0o</code>, допустимость знака <code>+</code>. Парсинг реализован для всех видов строк и символов.</li>
-<li>Парсинг double для <code>char</code> и <code>wchar_t</code>, а также совместимых с ними по размеру типов символов.</li>
+<li>Парсинг целых чисел из "куска строки" (не требует нуль-терминированности) с возможностью "тонкой" настройки при компиляции - можно задавать опции проверки переполнения, пропуск пробельных символов, конкретное основание счисления либо автовыбор по префиксам <code>0x</code>, <code>0</code>, <code>0b</code>, <code>0o</code>, допустимость знака <code>+</code>. Парсинг реализован для всех видов строк и символов.</li>
+<li>Парсинг double из "куска строки" для <code>char</code> и <code>char8_t</code>.</li>
 </ul>
 <p>При использовании полной версии библиотеки:</p><ul>
 <li>Всё то же, что и перечислено выше, плюс</li>
+<li>Парсинг double из "куска строки" для всех типов символов.</li>
 <li>Дополнительные эффективные строковые объекты - <code>sstring</code> (shared string), <code>lstring</code> (local string).</li>
 <li><code>lstring</code> - поддерживает множество мутабельных операций со строками - различные замены, вставки, удаления и т.п. Позволяет задавать размер для внутреннего буфера символов, что может превращать <em>Small String Optimization</em> в <em>Big String Optimization</em> :).</li>
 <li>Прозрачное преобразование строк из одного типа символов в другой, с автоматической конвертацией между UTF-8, UTF-16, UTF-32, используя <a href="https://github.com/simdutf/simdutf">simdutf</a>. Строки "совместимых" типов преобразуются простым копированием: <code>char &lt;-&gt; char8_t</code>, <code>wchar_t &lt;-&gt; char32_t</code> в Linux, <code>wchar_t &lt;-&gt; char16_t</code> в Windows.</li>
@@ -283,7 +284,7 @@ simstr - библиотека строковых объектов и функц�
 <div class="line">std::string make_str_exp(std::string_view from, std::string_view pattern, std::string_view repl) {</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;&quot;</span> + <a class="code hl_function" href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">e_repl</a>(from, pattern, repl) + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Получить строковое выражение, генерирующее строку с заменой всех вхождений заданной подстроки.</div><div class="ttdef"><b>Определения</b> strexpr.h:5426</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gafb0987b3c98cd839334c33bc1c94bead"><div class="ttname"><a href="group___str_exprs.html#gafb0987b3c98cd839334c33bc1c94bead">simstr::e_repl</a></div><div class="ttdeci">constexpr auto e_repl(A &amp;&amp;w, T &amp;&amp;p, X &amp;&amp;r)</div><div class="ttdoc">Получить строковое выражение, генерирующее строку с заменой всех вхождений заданной подстроки.</div><div class="ttdef"><b>Определения</b> strexpr.h:5647</div></div>
 </div><!-- fragment --><p> <a href="https://orefkov.github.io/simstr/results.html#bs54035654251116789780">Ускорение от 1.5 раз и выше</a> - в зависимости от содержимого строк.</p>
 <h3><a class="anchor" id="autotoc_md12"></a>
 Разбиение строк на части, парсинг чисел</h3>
@@ -350,8 +351,8 @@ simstr - библиотека строковых объектов и функц�
 <div class="line">        <a class="code hl_namespace" href="namespacesimstr.html">simstr</a></div>
 <div class="line">        GIT_REPOSITORY https:<span class="comment">//github.com/orefkov/simstr.git</span></div>
 <div class="line">        GIT_SHALLOW TRUE</div>
-<div class="line">        GIT_TAG tags/rel1.7.2 # Укажите нужный релиз</div>
-<div class="line">        FIND_PACKAGE_ARGS NAMES <a class="code hl_namespace" href="namespacesimstr.html">simstr</a> 1.7.2</div>
+<div class="line">        GIT_TAG tags/rel1.7.3 # Укажите нужный релиз</div>
+<div class="line">        FIND_PACKAGE_ARGS NAMES <a class="code hl_namespace" href="namespacesimstr.html">simstr</a> 1.7.3</div>
 <div class="line">    )</div>
 <div class="line">    FetchContent_MakeAvailable(<a class="code hl_namespace" href="namespacesimstr.html">simstr</a>)</div>
 <div class="line">endfunction()</div>

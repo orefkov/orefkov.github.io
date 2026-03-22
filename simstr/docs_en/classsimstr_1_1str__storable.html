@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.3</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -229,8 +229,7 @@ class simstr::str_storable&lt; K, Impl, Allocator &gt;</div><p>The base for the 
 <p>Still knows nothing about where the heir stores the string and its size. Simply calls its methods to get the space, and fills it as needed. Works only when creating an object, does not work with string modification after its creation and ensures that if these methods are called, the object is only is being created and no data sharing has yet taken place.</p>
 <p>These methods must be implemented by the descendant class and are called only when an object is created</p><ul>
 <li><code>K* init(size_t size)</code> - allocate space for a string of the specified size, return the address</li>
-<li><code>void create_empty()</code> - create an empty object</li>
-<li><code>K* set_size(size_t size)</code> - re-allocate space for the string if you didn’t guess correctly when creating the size you need and the space you need is larger or smaller. The contents of the string must be left. Although the allocator type is specified by the template parameter, this is done only for forwarding of its type in constructors, allocator methods are not called. If the heir does not use an allocator, and in <code>init</code> and <code>set_size</code> it somehow allocates space, can indicate the type of the allocator any empty class. </li>
+<li><code>void create_empty()</code> - create an empty object Although the allocator type is specified by the template parameter, this is done only for forwarding of its type in constructors, allocator methods are not called. If the heir does not use an allocator, and in <code>init</code> it somehow allocates space, can indicate the type of the allocator any empty class. </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a005fd4083acc1c2c44fe59ae6e2ec8ce" name="a005fd4083acc1c2c44fe59ae6e2ec8ce"></a>
@@ -545,7 +544,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 <p>The function is used to merge a container of strings into one delimited string. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
 <div class="line">ssa delim = get_current_delimiter();</div>
 <div class="line"><span class="keyword">auto</span> line = <a class="code hl_function" href="#a9b002a3618bbfcebc945cef197a397a1">lstringa&lt;200&gt;::join</a>(strings, delimiter);</div>
-<div class="ttc" id="aclasssimstr_1_1str__storable_html_a9b002a3618bbfcebc945cef197a397a1"><div class="ttname"><a href="#a9b002a3618bbfcebc945cef197a397a1">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimiter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> sstring.h:1215</div></div>
+<div class="ttc" id="aclasssimstr_1_1str__storable_html_a9b002a3618bbfcebc945cef197a397a1"><div class="ttname"><a href="#a9b002a3618bbfcebc945cef197a397a1">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimiter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> sstring.h:1228</div></div>
 </div><!-- fragment --><p> It is worth noting that if the separator is known in advance, it is better to use the string expression <code>e_join</code>. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
 <div class="line">lstringa&lt;200&gt; line{<a class="code hl_function" href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">e_join</a>(strings, <span class="stringliteral">&quot;/&quot;</span>)};</div>
 <div class="ttc" id="agroup___str_exprs_html_gafd2e6b8a52bfe20c0b86d25f9f78cb52"><div class="ttname"><a href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a></div><div class="ttdeci">constexpr auto e_join(const T &amp;s, L &amp;&amp;d)</div><div class="ttdoc">Get a string expression concatenating the strings in the container into a single string with the give...</div><div class="ttdef"><b>Definition</b> strexpr.h:2803</div></div>

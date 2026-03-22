@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.3</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -783,7 +783,7 @@ constexpr allocator_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><
 <tr class="separator:a1090a808b0e761a7ecff753d80faebba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt;<br />
 class simstr::lstring&lt; K, N, forShared, Allocator &gt;</div><p>The mutable, owning string class. Contains an internal buffer for text of a given size. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -802,7 +802,7 @@ class simstr::lstring&lt; K, N, forShared, Allocator &gt;</div><p>The mutable, o
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">anonymous enum : size_t</td>
@@ -823,7 +823,7 @@ template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocato
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <div class="memtemplate">
 template&lt;typename... Args&gt; <br />
 requires (std::is_constructible_v&lt;allocator_t, Args...&gt; &amp;&amp; sizeof...(Args) &gt; 0)</div>
@@ -861,7 +861,7 @@ requires (std::is_constructible_v&lt;allocator_t, Args...&gt; &amp;&amp; sizeof.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <div class="memtemplate">
 template&lt;typename... Args&gt; <br />
 requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
@@ -904,7 +904,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <div class="memtemplate">
 template&lt;typename... Args&gt; <br />
 requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
@@ -953,7 +953,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <div class="memtemplate">
 template&lt;typename... Args&gt; <br />
 requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
@@ -1002,7 +1002,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <div class="memtemplate">
 template&lt;typename... Args&gt; <br />
 requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
@@ -1046,7 +1046,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <div class="memtemplate">
 template&lt;StrType&lt; K &gt; From, typename... Args&gt; <br />
 requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
@@ -1113,7 +1113,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1148,7 +1148,7 @@ template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocato
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <div class="memtemplate">
 template&lt;typename... Args&gt; <br />
 requires (sizeof...(Args) &gt; 0 &amp;&amp; std::is_convertible_v&lt;allocator_t, Args...&gt;)</div>
@@ -1191,7 +1191,7 @@ requires (sizeof...(Args) &gt; 0 &amp;&amp; std::is_convertible_v&lt;allocator_t
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <div class="memtemplate">
 template&lt;typename T, size_t I = const_lit_for&lt;K, T&gt;::Count, typename... Args&gt; <br />
 requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
@@ -1234,7 +1234,7 @@ requires std::is_constructible_v&lt;allocator_t, Args...&gt;</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1269,7 +1269,7 @@ template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocato
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <div class="memtemplate">
 template&lt;typename Op, typename... Args&gt; <br />
 requires (std::is_constructible_v&lt;Allocator, Args...&gt; &amp;&amp; (std::is_invocable_v&lt;Op, <a class="el" href="classsimstr_1_1lstring.html">my_type</a>&amp;&gt; || std::is_invocable_v&lt;Op, K*, size_t&gt;))</div>
@@ -3584,7 +3584,7 @@ template&lt;typename K, typename Impl&gt; </div>
 <p>The function is used to merge a container of strings into one delimited string. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
 <div class="line">ssa delim = get_current_delimiter();</div>
 <div class="line"><span class="keyword">auto</span> line = <a class="code hl_function" href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">lstringa&lt;200&gt;::join</a>(strings, delimiter);</div>
-<div class="ttc" id="aclasssimstr_1_1str__storable_html_a9b002a3618bbfcebc945cef197a397a1"><div class="ttname"><a href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimiter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> sstring.h:1215</div></div>
+<div class="ttc" id="aclasssimstr_1_1str__storable_html_a9b002a3618bbfcebc945cef197a397a1"><div class="ttname"><a href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimiter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> sstring.h:1228</div></div>
 </div><!-- fragment --><p> It is worth noting that if the separator is known in advance, it is better to use the string expression <code>e_join</code>. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
 <div class="line">lstringa&lt;200&gt; line{<a class="code hl_function" href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">e_join</a>(strings, <span class="stringliteral">&quot;/&quot;</span>)};</div>
 <div class="ttc" id="agroup___str_exprs_html_gafd2e6b8a52bfe20c0b86d25f9f78cb52"><div class="ttname"><a href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a></div><div class="ttdeci">constexpr auto e_join(const T &amp;s, L &amp;&amp;d)</div><div class="ttdoc">Get a string expression concatenating the strings in the container into a single string with the give...</div><div class="ttdef"><b>Definition</b> strexpr.h:2803</div></div>
@@ -4356,7 +4356,7 @@ template&lt;typename K, typename Impl&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4392,7 +4392,7 @@ template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocato
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4429,7 +4429,7 @@ template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocato
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4465,7 +4465,7 @@ template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocato
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4501,7 +4501,7 @@ template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocato
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <div class="memtemplate">
 template&lt;typename T, size_t S = const_lit_for&lt;K, T&gt;::Count&gt; </div>
 <table class="mlabels">
@@ -5093,7 +5093,7 @@ template&lt;typename T, size_t S = const_lit_for&lt;K, T&gt;::Count&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5130,7 +5130,7 @@ template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocato
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5167,7 +5167,7 @@ template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocato
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename K, size_t N, bool forShared = false, Allocatorable Allocator = allocator_string&gt; </div>
+template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator = allocator_string&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

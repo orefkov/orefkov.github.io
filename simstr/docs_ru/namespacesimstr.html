@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.7.3</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.8.1</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -255,7 +255,13 @@ $(function(){initNavTree('namespacesimstr.html',''); initResizable(true); });
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptsimstr_1_1immutable__str.html">immutable_str</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Концепт типа, который не может модифицировать хранимую строку. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptsimstr_1_1_allocatorable.html">Allocatorable</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptsimstr_1_1_allocatable_no_sized.html">AllocatableNoSized</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Концепт типа, управляющего памятью <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptsimstr_1_1_allocatable_sized.html">AllocatableSized</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Концепт типа, управляющего памятью <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptsimstr_1_1_allocatable.html">Allocatable</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Концепт типа, управляющего памятью <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptsimstr_1_1is__equal__str__type__v.html">is_equal_str_type_v</a></td></tr>
@@ -450,15 +456,15 @@ requires (!std::is_same_v&lt;From, To&gt;)</td></tr>
 <tr class="memitem:a8d9452b3a1fd08defda01e6ce0275e1d" id="r_a8d9452b3a1fd08defda01e6ce0275e1d"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d9452b3a1fd08defda01e6ce0275e1d">operator&lt;&lt;</a> (std::wostream &amp;stream, const <a class="el" href="classsimstr_1_1sstring.html">sstring</a>&lt; wchar_type &gt; &amp;text)</td></tr>
 <tr class="memdesc:a8d9452b3a1fd08defda01e6ce0275e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор вывода в поток sstring.  <br /></td></tr>
 <tr class="separator:a8d9452b3a1fd08defda01e6ce0275e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73fd8761a377379d4ce6712c3f144e18" id="r_a73fd8761a377379d4ce6712c3f144e18"><td class="memTemplParams" colspan="2">template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatorable.html">simstr::Allocatorable</a> A&gt; </td></tr>
+<tr class="memitem:a73fd8761a377379d4ce6712c3f144e18" id="r_a73fd8761a377379d4ce6712c3f144e18"><td class="memTemplParams" colspan="2">template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatable.html">simstr::Allocatable</a> A&gt; </td></tr>
 <tr class="memitem:a73fd8761a377379d4ce6712c3f144e18"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a73fd8761a377379d4ce6712c3f144e18">operator&lt;&lt;</a> (std::ostream &amp;stream, const <a class="el" href="classsimstr_1_1lstring.html">lstring</a>&lt; u8s, N, S, A &gt; &amp;text)</td></tr>
 <tr class="memdesc:a73fd8761a377379d4ce6712c3f144e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор вывода в поток lstring.  <br /></td></tr>
 <tr class="separator:a73fd8761a377379d4ce6712c3f144e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20affd543e17b6c0300871dc61c5556c" id="r_a20affd543e17b6c0300871dc61c5556c"><td class="memTemplParams" colspan="2">template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatorable.html">simstr::Allocatorable</a> A&gt; </td></tr>
+<tr class="memitem:a20affd543e17b6c0300871dc61c5556c" id="r_a20affd543e17b6c0300871dc61c5556c"><td class="memTemplParams" colspan="2">template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatable.html">simstr::Allocatable</a> A&gt; </td></tr>
 <tr class="memitem:a20affd543e17b6c0300871dc61c5556c"><td class="memTemplItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a20affd543e17b6c0300871dc61c5556c">operator&lt;&lt;</a> (std::wostream &amp;stream, const <a class="el" href="classsimstr_1_1lstring.html">lstring</a>&lt; uws, N, S, A &gt; &amp;text)</td></tr>
 <tr class="memdesc:a20affd543e17b6c0300871dc61c5556c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор вывода в поток lstring.  <br /></td></tr>
 <tr class="separator:a20affd543e17b6c0300871dc61c5556c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17ef820122a9828d0c3a4f77b676298f" id="r_a17ef820122a9828d0c3a4f77b676298f"><td class="memTemplParams" colspan="2">template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatorable.html">simstr::Allocatorable</a> A&gt; </td></tr>
+<tr class="memitem:a17ef820122a9828d0c3a4f77b676298f" id="r_a17ef820122a9828d0c3a4f77b676298f"><td class="memTemplParams" colspan="2">template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatable.html">simstr::Allocatable</a> A&gt; </td></tr>
 <tr class="memitem:a17ef820122a9828d0c3a4f77b676298f"><td class="memTemplItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a17ef820122a9828d0c3a4f77b676298f">operator&lt;&lt;</a> (std::wostream &amp;stream, const <a class="el" href="classsimstr_1_1lstring.html">lstring</a>&lt; wchar_type, N, S, A &gt; &amp;text)</td></tr>
 <tr class="memdesc:a17ef820122a9828d0c3a4f77b676298f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор вывода в поток lstring.  <br /></td></tr>
 <tr class="separator:a17ef820122a9828d0c3a4f77b676298f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1715,7 +1721,7 @@ template&lt;StrExpr A, convertible_to_strexpr&lt; typename A::symb_type &gt; B&g
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatorable.html">simstr::Allocatorable</a> A&gt; </div>
+template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatable.html">simstr::Allocatable</a> A&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1834,7 +1840,7 @@ template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatorabl
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatorable.html">simstr::Allocatorable</a> A&gt; </div>
+template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatable.html">simstr::Allocatable</a> A&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1875,7 +1881,7 @@ template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatorabl
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatorable.html">simstr::Allocatorable</a> A&gt; </div>
+template&lt;size_t N, bool S, <a class="el" href="conceptsimstr_1_1_allocatable.html">simstr::Allocatable</a> A&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

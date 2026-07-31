@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.8.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.9.1</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -104,6 +104,7 @@ $(function(){initNavTree('classsimstr_1_1hash_str_map.html',''); initResizable(t
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
 <a href="classsimstr_1_1hash_str_map-members.html">Полный список членов класса</a>  </div>
   <div class="headertitle"><div class="title">Шаблон класса simstr::hashStrMap&lt; K, T, HE, A &gt;</div></div>
 </div><!--header-->
@@ -113,6 +114,42 @@ $(function(){initNavTree('classsimstr_1_1hash_str_map.html',''); initResizable(t
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="sstring_8h_source.html">sstring.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ae5c5ac53a1e131d8e57155a7c8b60878" id="r_ae5c5ac53a1e131d8e57155a7c8b60878"><td class="memTemplParams" colspan="2">template&lt;typename Dst&gt; <br />
+requires std::is_assignable_v&lt;T, Dst&gt;</td></tr>
+<tr class="memitem:ae5c5ac53a1e131d8e57155a7c8b60878"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae5c5ac53a1e131d8e57155a7c8b60878">lookup</a> (<a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt; key, Dst &amp;val) const</td></tr>
+<tr class="memdesc:ae5c5ac53a1e131d8e57155a7c8b60878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск и извлечение значения.  <br /></td></tr>
+<tr class="separator:ae5c5ac53a1e131d8e57155a7c8b60878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ccf84520908a2a092acddd818691d1a" id="r_a5ccf84520908a2a092acddd818691d1a"><td class="memTemplParams" colspan="2">template&lt;typename Dst&gt; <br />
+requires std::is_assignable_v&lt;T, Dst&gt;</td></tr>
+<tr class="memitem:a5ccf84520908a2a092acddd818691d1a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5ccf84520908a2a092acddd818691d1a">lookup</a> (const InStore &amp;key, Dst &amp;val) const</td></tr>
+<tr class="memdesc:a5ccf84520908a2a092acddd818691d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск и извлечение значения.  <br /></td></tr>
+<tr class="separator:a5ccf84520908a2a092acddd818691d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7624068695f4c96acae8a18c363869a7" id="r_a7624068695f4c96acae8a18c363869a7"><td class="memTemplParams" colspan="2">template&lt;typename Dst = T&gt; <br />
+requires std::is_constructible_v&lt;Dst, T&gt;</td></tr>
+<tr class="memitem:a7624068695f4c96acae8a18c363869a7"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; Dst &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7624068695f4c96acae8a18c363869a7">get</a> (<a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt; key) const</td></tr>
+<tr class="memdesc:a7624068695f4c96acae8a18c363869a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск и извлечение значения.  <br /></td></tr>
+<tr class="separator:a7624068695f4c96acae8a18c363869a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a017005f8258c2a071a3fa2a679b798cd" id="r_a017005f8258c2a071a3fa2a679b798cd"><td class="memTemplParams" colspan="2">template&lt;typename Dst = T&gt; <br />
+requires std::is_constructible_v&lt;Dst, T&gt;</td></tr>
+<tr class="memitem:a017005f8258c2a071a3fa2a679b798cd"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; Dst &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a017005f8258c2a071a3fa2a679b798cd">get</a> (const InStore &amp;key) const</td></tr>
+<tr class="memdesc:a017005f8258c2a071a3fa2a679b798cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск и извлечение значения.  <br /></td></tr>
+<tr class="separator:a017005f8258c2a071a3fa2a679b798cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84164a76712b04fee368ede6815c5652" id="r_a84164a76712b04fee368ede6815c5652"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84164a76712b04fee368ede6815c5652">existed</a> (<a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt; key)</td></tr>
+<tr class="memdesc:a84164a76712b04fee368ede6815c5652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск существующего значения.  <br /></td></tr>
+<tr class="separator:a84164a76712b04fee368ede6815c5652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab60aeea19204a6c0e9855d96bf1ddce9" id="r_ab60aeea19204a6c0e9855d96bf1ddce9"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab60aeea19204a6c0e9855d96bf1ddce9">existed</a> (const InStore &amp;key)</td></tr>
+<tr class="memdesc:ab60aeea19204a6c0e9855d96bf1ddce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск существующего значения.  <br /></td></tr>
+<tr class="separator:ab60aeea19204a6c0e9855d96bf1ddce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88acf711eac3a552d412d0567fae631b" id="r_a88acf711eac3a552d412d0567fae631b"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88acf711eac3a552d412d0567fae631b">existed</a> (<a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt; key) const</td></tr>
+<tr class="memdesc:a88acf711eac3a552d412d0567fae631b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск существующего значения.  <br /></td></tr>
+<tr class="separator:a88acf711eac3a552d412d0567fae631b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a2e57d356686e1e0c2f910ad65b80a" id="r_ac6a2e57d356686e1e0c2f910ad65b80a"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6a2e57d356686e1e0c2f910ad65b80a">existed</a> (const InStore &amp;key) const</td></tr>
+<tr class="memdesc:ac6a2e57d356686e1e0c2f910ad65b80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поиск существующего значения.  <br /></td></tr>
+<tr class="separator:ac6a2e57d356686e1e0c2f910ad65b80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename K, typename T, template&lt; typename C &gt; typename HE = str_exact, typename A = allocator_hashstrmap&lt;K, HE, T&gt;&gt;<br />
 class simstr::hashStrMap&lt; K, T, HE, A &gt;</div><p>Контейнер для более эффективного поиска по строковым ключам. </p>
@@ -122,7 +159,317 @@ class simstr::hashStrMap&lt; K, T, HE, A &gt;</div><p>Контейнер для 
 <li>без учёта регистра символов, упрощённый Unicode (до 0xFFFF). Хэширование выполняется алгоритмом FNV-1A. Автоматическая конвертация simstr строковых объектов в тип хранящегося ключа (т.е. с посчитанным хешем), а также сохранение sstring в ключе при вставке - выполняется для методов try_emplace, emplace, at, find, operator[], erase. При использовании других методов поиска вам нужно самим обеспечить правильно посчитанный хэш в ключе StoreType. Методами вставки помимо перечисленных не пользоваться, они не сохранят sstring в ключе.</li>
 </ul>
 <p>Основное, на чём хотелось бы заострить внимание - само назначение strHashMap, для чего оно изначально придумывалось. Цель была не в том, чтобы как-то побить по производительности/памяти unordered_map (иначе зачем делать strHashMap на базе unordered_map?) Основная проблема, которая решалась - это то, что у нас несколько вариантов строковых объектов, и хотелось бы иметь возможность использовать для вставки и поиска ключей любой из типов строковых объектов. У нас есть <a class="el" href="structsimstr_1_1simple__str.html" title="Простейший класс иммутабельной не владеющей строки.">simple_str</a>, <a class="el" href="structsimstr_1_1simple__str__nt.html" title="Класс, заявляющий, что ссылается на нуль-терминированную строку.">simple_str_nt</a>, sstring, а <a class="el" href="classsimstr_1_1lstring.html" title="Класс мутабельной, владеющей строки. Содержит внутренний буфер для строк заданного размера.">lstring&lt;N&gt;</a> вообще на каждое N это новый тип объекта. В std всё было просто - там только string, и соответственно, пользовались unordered_map&lt;string, Что-то там&gt;. И между прочим, в std столкнулись с той же проблемой: ключи const char*, а с C++17 и string_view (это как наш <a class="el" href="structsimstr_1_1simple__str.html" title="Простейший класс иммутабельной не владеющей строки.">simple_str</a>), искать в unordered_map&lt;string, Type&gt; - не очень хорошо, приходится каждый раз ключ преобразовывать в string, хотя можно обойтись и без этого. Поэтому начиная с С++20 в unordered_map таки добавили возможность гетерогенного поиска - на <a href="https://en.cppreference.com/w/cpp/container/unordered_map/find">https://en.cppreference.com/w/cpp/container/unordered_map/find</a> это синтаксисы (3) и (4). Правда, для этого требуются ритуальные танцы с бубном - требуется особый тип для хеширования (который, понятно, в стандарт уже не входит и его надо реализовывать самому), который умеет хешировать разные типы ключей, и содержит typename <code>is_transparent</code>. Собственно, на той же странице с ним пример и приведён. Часть проблемы это закрыло - поиска, но проблему вставки не решало - для вставки в unordered_map&lt;string, Type&gt; по прежнему требуется только string. И только в будущем С++26 мы ждём возможности гетерогенной вставки в виде try_emplace (<a href="https://en.cppreference.com/w/cpp/container/unordered_map/try_emplace">https://en.cppreference.com/w/cpp/container/unordered_map/try_emplace</a>) в синтаксисе (6), который позволит принимать ключи других типов и преобразовывать их в нужный тип только если вставка реально осуществляется. В своей строковой библиотеке я столкнулся с этой проблемой ещё до С++17, и так я как не настолько крут, чтобы влиять на стандарт, просто создал свой класс - наследник от unordered_map, с обёртками вокруг методов вставки/поиска. Ну и дополнительно добавил ещё два варианта хеширования/сравнения: без учёта регистра ASCII, без учёта регистра simple unicode. Таким образом, получился класс, который расширяет стандартный unordered_map возможностями по работе со строковыми ключами разных типов, позволяющий избежать лишних ненужных преобразований ключей при поиске и вставке. То, что при этом может улучшится производительность - не цель, а побочный эффект - приятный, если он есть, но и не смертельный, если его нет. </p>
-</div><hr/>Объявления и описания членов класса находятся в файле:<ul>
+</div><h2 class="groupheader">Методы</h2>
+<a id="ab60aeea19204a6c0e9855d96bf1ddce9" name="ab60aeea19204a6c0e9855d96bf1ddce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab60aeea19204a6c0e9855d96bf1ddce9">&#9670;&#160;</a></span>existed() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename T, template&lt; typename C &gt; typename HE = str_exact, typename A = allocator_hashstrmap&lt;K, HE, T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T * <a class="el" href="classsimstr_1_1hash_str_map.html">simstr::hashStrMap</a>&lt; K, T, HE, A &gt;::existed </td>
+          <td>(</td>
+          <td class="paramtype">const InStore &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Поиск существующего значения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>- искомый ключ.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Если ключ существует, возвращает указатель на хранимое значение. Иначе возвращает nullptr. </p>
+
+</div>
+</div>
+<a id="ac6a2e57d356686e1e0c2f910ad65b80a" name="ac6a2e57d356686e1e0c2f910ad65b80a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6a2e57d356686e1e0c2f910ad65b80a">&#9670;&#160;</a></span>existed() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename T, template&lt; typename C &gt; typename HE = str_exact, typename A = allocator_hashstrmap&lt;K, HE, T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T * <a class="el" href="classsimstr_1_1hash_str_map.html">simstr::hashStrMap</a>&lt; K, T, HE, A &gt;::existed </td>
+          <td>(</td>
+          <td class="paramtype">const InStore &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Поиск существующего значения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>- искомый ключ.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Если ключ существует, возвращает константный указатель на хранимое значение. Иначе возвращает nullptr. </p>
+
+</div>
+</div>
+<a id="a84164a76712b04fee368ede6815c5652" name="a84164a76712b04fee368ede6815c5652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84164a76712b04fee368ede6815c5652">&#9670;&#160;</a></span>existed() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename T, template&lt; typename C &gt; typename HE = str_exact, typename A = allocator_hashstrmap&lt;K, HE, T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T * <a class="el" href="classsimstr_1_1hash_str_map.html">simstr::hashStrMap</a>&lt; K, T, HE, A &gt;::existed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Поиск существующего значения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>- искомый ключ.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Если ключ существует, возвращает указатель на хранимое значение. Иначе возвращает nullptr. </p>
+
+</div>
+</div>
+<a id="a88acf711eac3a552d412d0567fae631b" name="a88acf711eac3a552d412d0567fae631b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88acf711eac3a552d412d0567fae631b">&#9670;&#160;</a></span>existed() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename T, template&lt; typename C &gt; typename HE = str_exact, typename A = allocator_hashstrmap&lt;K, HE, T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T * <a class="el" href="classsimstr_1_1hash_str_map.html">simstr::hashStrMap</a>&lt; K, T, HE, A &gt;::existed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Поиск существующего значения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>- искомый ключ.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Если ключ существует, возвращает константный указатель на хранимое значение. Иначе возвращает nullptr. </p>
+
+</div>
+</div>
+<a id="a017005f8258c2a071a3fa2a679b798cd" name="a017005f8258c2a071a3fa2a679b798cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a017005f8258c2a071a3fa2a679b798cd">&#9670;&#160;</a></span>get() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename T, template&lt; typename C &gt; typename HE = str_exact, typename A = allocator_hashstrmap&lt;K, HE, T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename Dst = T&gt; <br />
+requires std::is_constructible_v&lt;Dst, T&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; Dst &gt; <a class="el" href="classsimstr_1_1hash_str_map.html">simstr::hashStrMap</a>&lt; K, T, HE, A &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">const InStore &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Поиск и извлечение значения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>- искомый ключ.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Если ключ существует, возвращает std::optional указанного типа с копией значения. Иначе возвращает std::nullopt. </p>
+
+</div>
+</div>
+<a id="a7624068695f4c96acae8a18c363869a7" name="a7624068695f4c96acae8a18c363869a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7624068695f4c96acae8a18c363869a7">&#9670;&#160;</a></span>get() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename T, template&lt; typename C &gt; typename HE = str_exact, typename A = allocator_hashstrmap&lt;K, HE, T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename Dst = T&gt; <br />
+requires std::is_constructible_v&lt;Dst, T&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; Dst &gt; <a class="el" href="classsimstr_1_1hash_str_map.html">simstr::hashStrMap</a>&lt; K, T, HE, A &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Поиск и извлечение значения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>- искомый ключ.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Если ключ существует, возвращает std::optional указанного типа с копией значения. Иначе возвращает std::nullopt. </p>
+
+</div>
+</div>
+<a id="a5ccf84520908a2a092acddd818691d1a" name="a5ccf84520908a2a092acddd818691d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ccf84520908a2a092acddd818691d1a">&#9670;&#160;</a></span>lookup() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename T, template&lt; typename C &gt; typename HE = str_exact, typename A = allocator_hashstrmap&lt;K, HE, T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename Dst&gt; <br />
+requires std::is_assignable_v&lt;T, Dst&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classsimstr_1_1hash_str_map.html">simstr::hashStrMap</a>&lt; K, T, HE, A &gt;::lookup </td>
+          <td>(</td>
+          <td class="paramtype">const InStore &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Dst &amp;</td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Поиск и извлечение значения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>- искомый ключ.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Если ключ существует, присваивает переданной ссылке хранимое значение и возвращает true. Иначе возвращает false. </p>
+
+</div>
+</div>
+<a id="ae5c5ac53a1e131d8e57155a7c8b60878" name="ae5c5ac53a1e131d8e57155a7c8b60878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5c5ac53a1e131d8e57155a7c8b60878">&#9670;&#160;</a></span>lookup() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename T, template&lt; typename C &gt; typename HE = str_exact, typename A = allocator_hashstrmap&lt;K, HE, T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename Dst&gt; <br />
+requires std::is_assignable_v&lt;T, Dst&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classsimstr_1_1hash_str_map.html">simstr::hashStrMap</a>&lt; K, T, HE, A &gt;::lookup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Dst &amp;</td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Поиск и извлечение значения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>- искомый ключ. </td></tr>
+    <tr><td class="paramname">val</td><td>- ссылка на приёмник значения.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Если ключ существует, присваивает переданной ссылке хранимое значение и возвращает true. Иначе возвращает false. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
 <li><a class="el" href="sstring_8h_source.html">sstring.h</a></li>
 </ul>
 </div><!-- contents -->

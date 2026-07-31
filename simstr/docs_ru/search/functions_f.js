@@ -30,5 +30,6 @@ var searchData=
   ['strip_5fsuffix_5fia_27',['strip_suffix_ia',['../classsimstr_1_1str__src__algs.html#af34f5f81e22a77aa2171e6d85616dd7f',1,'simstr::str_src_algs']]],
   ['strip_5fsuffix_5fiu_28',['strip_suffix_iu',['../classsimstr_1_1str__algs.html#ab3e04a9dd8bc4fff05486ab99617d52d',1,'simstr::str_algs']]],
   ['substr_29',['substr',['../classsimstr_1_1str__src__algs.html#a512eaf3c2c8736f3021a5bbe60823866',1,'simstr::str_src_algs']]],
-  ['symbols_30',['symbols',['../structsimstr_1_1simple__str.html#a611ab22c81c515ed231fc767ecb0df0a',1,'simstr::simple_str::symbols()'],['../classsimstr_1_1lstring.html#acc14bfdba77dd4027af118f6f52a5a93',1,'simstr::lstring::symbols()'],['../classsimstr_1_1sstring.html#a3f608228b4db83ce396f48ec5373b36f',1,'simstr::sstring::symbols()'],['../structsimstr_1_1str__src.html#adb6c67ae1f3d844e4bc5fd365eb0b3e7',1,'simstr::str_src::symbols()']]]
+  ['suffix_30',['suffix',['../classsimstr_1_1str__src__algs.html#a66df97b9ad812c72e56f8b930000cf8e',1,'simstr::str_src_algs']]],
+  ['symbols_31',['symbols',['../structsimstr_1_1simple__str.html#a611ab22c81c515ed231fc767ecb0df0a',1,'simstr::simple_str::symbols()'],['../classsimstr_1_1lstring.html#acc14bfdba77dd4027af118f6f52a5a93',1,'simstr::lstring::symbols()'],['../classsimstr_1_1sstring.html#a3f608228b4db83ce396f48ec5373b36f',1,'simstr::sstring::symbols()'],['../structsimstr_1_1str__src.html#adb6c67ae1f3d844e4bc5fd365eb0b3e7',1,'simstr::str_src::symbols()']]]
 ];

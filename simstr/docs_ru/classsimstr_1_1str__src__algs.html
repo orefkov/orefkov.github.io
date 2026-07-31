@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.8.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;1.9.1</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -188,6 +188,18 @@ requires is_equal_str_type_v&lt;K, D&gt;</td></tr>
 <tr class="memitem:ace8f275b33545d2491850f49ba3b7876" id="r_ace8f275b33545d2491850f49ba3b7876"><td class="memItemLeft" align="right" valign="top">constexpr str_piece&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace8f275b33545d2491850f49ba3b7876">operator()</a> (ptrdiff_t from, ptrdiff_t len=0) const noexcept</td></tr>
 <tr class="memdesc:ace8f275b33545d2491850f49ba3b7876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить часть строки как "str_src".  <br /></td></tr>
 <tr class="separator:ace8f275b33545d2491850f49ba3b7876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a206f4f76649f16d6b1e1989572cdf373" id="r_a206f4f76649f16d6b1e1989572cdf373"><td class="memTemplParams" colspan="2">template&lt;first_index_in_str S, last_index_in_str E&gt; </td></tr>
+<tr class="memitem:a206f4f76649f16d6b1e1989572cdf373"><td class="memTemplItemLeft" align="right" valign="top">constexpr str_piece&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a206f4f76649f16d6b1e1989572cdf373">get</a> (S start, E end) const noexcept</td></tr>
+<tr class="memdesc:a206f4f76649f16d6b1e1989572cdf373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить часть строки как "str_src".  <br /></td></tr>
+<tr class="separator:a206f4f76649f16d6b1e1989572cdf373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4222b88d9cd1ba1e8b8f18e004d7f3f5" id="r_a4222b88d9cd1ba1e8b8f18e004d7f3f5"><td class="memItemLeft" align="right" valign="top"><a id="a4222b88d9cd1ba1e8b8f18e004d7f3f5" name="a4222b88d9cd1ba1e8b8f18e004d7f3f5"></a>
+constexpr str_piece&#160;</td><td class="memItemRight" valign="bottom"><b>prefix</b> (size_t count) const noexcept</td></tr>
+<tr class="memdesc:a4222b88d9cd1ba1e8b8f18e004d7f3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обертка вокруг <code>get(0, count)</code>. <br /></td></tr>
+<tr class="separator:a4222b88d9cd1ba1e8b8f18e004d7f3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66df97b9ad812c72e56f8b930000cf8e" id="r_a66df97b9ad812c72e56f8b930000cf8e"><td class="memItemLeft" align="right" valign="top"><a id="a66df97b9ad812c72e56f8b930000cf8e" name="a66df97b9ad812c72e56f8b930000cf8e"></a>
+constexpr str_piece&#160;</td><td class="memItemRight" valign="bottom"><b>suffix</b> (size_t count) const noexcept</td></tr>
+<tr class="memdesc:a66df97b9ad812c72e56f8b930000cf8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обертка вокруг <code>get(from_end(count), to_end)</code>. <br /></td></tr>
+<tr class="separator:a66df97b9ad812c72e56f8b930000cf8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a507a43e6ebcc51e6409874712abbbd63" id="r_a507a43e6ebcc51e6409874712abbbd63"><td class="memItemLeft" align="right" valign="top">constexpr str_piece&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a507a43e6ebcc51e6409874712abbbd63">mid</a> (size_t from, size_t len=-1) const noexcept</td></tr>
 <tr class="memdesc:a507a43e6ebcc51e6409874712abbbd63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить часть строки как "кусок строки".  <br /></td></tr>
 <tr class="separator:a507a43e6ebcc51e6409874712abbbd63"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -339,31 +351,31 @@ requires (sizeof(K) == 1 &amp;&amp; requires { std::from_chars(std::declval&lt;K
 <tr class="memitem:a4ad7e9416ed3abc8689034463f497e6b"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4ad7e9416ed3abc8689034463f497e6b">split</a> (str_piece delimiter, size_t offset=0) const</td></tr>
 <tr class="memdesc:a4ad7e9416ed3abc8689034463f497e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разделить строку на подстроки по заданному разделителю.  <br /></td></tr>
 <tr class="separator:a4ad7e9416ed3abc8689034463f497e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2febfef44dabdf863a74db2049410e9f" id="r_a2febfef44dabdf863a74db2049410e9f"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2febfef44dabdf863a74db2049410e9f">starts_with</a> (str_piece prefix) const noexcept</td></tr>
+<tr class="memitem:a2febfef44dabdf863a74db2049410e9f" id="r_a2febfef44dabdf863a74db2049410e9f"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2febfef44dabdf863a74db2049410e9f">starts_with</a> (str_piece <a class="el" href="#a4222b88d9cd1ba1e8b8f18e004d7f3f5">prefix</a>) const noexcept</td></tr>
 <tr class="memdesc:a2febfef44dabdf863a74db2049410e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Начинается ли строка с заданной подстроки.  <br /></td></tr>
 <tr class="separator:a2febfef44dabdf863a74db2049410e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5547926085726b7790068222ba52c176" id="r_a5547926085726b7790068222ba52c176"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5547926085726b7790068222ba52c176">starts_with_and_ws</a> (str_piece prefix) const noexcept</td></tr>
+<tr class="memitem:a5547926085726b7790068222ba52c176" id="r_a5547926085726b7790068222ba52c176"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5547926085726b7790068222ba52c176">starts_with_and_ws</a> (str_piece <a class="el" href="#a4222b88d9cd1ba1e8b8f18e004d7f3f5">prefix</a>) const noexcept</td></tr>
 <tr class="memdesc:a5547926085726b7790068222ba52c176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверить, начинается ли строка с указанной подстроки, за которой следует ней пробельный ASCII символ.  <br /></td></tr>
 <tr class="separator:a5547926085726b7790068222ba52c176"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd6ec873302c4aa125eecd9de50672b9" id="r_afd6ec873302c4aa125eecd9de50672b9"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd6ec873302c4aa125eecd9de50672b9">starts_with_and_oneof</a> (str_piece prefix, str_piece next_symbol) const noexcept</td></tr>
+<tr class="memitem:afd6ec873302c4aa125eecd9de50672b9" id="r_afd6ec873302c4aa125eecd9de50672b9"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd6ec873302c4aa125eecd9de50672b9">starts_with_and_oneof</a> (str_piece <a class="el" href="#a4222b88d9cd1ba1e8b8f18e004d7f3f5">prefix</a>, str_piece next_symbol) const noexcept</td></tr>
 <tr class="memdesc:afd6ec873302c4aa125eecd9de50672b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверить, начинается ли строка с указанной подстроки, за которой следует один из указанных символов.  <br /></td></tr>
 <tr class="separator:afd6ec873302c4aa125eecd9de50672b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d9409e48b2f182546b7f7186af2477e" id="r_a6d9409e48b2f182546b7f7186af2477e"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d9409e48b2f182546b7f7186af2477e">starts_with_ia</a> (str_piece prefix) const noexcept</td></tr>
+<tr class="memitem:a6d9409e48b2f182546b7f7186af2477e" id="r_a6d9409e48b2f182546b7f7186af2477e"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d9409e48b2f182546b7f7186af2477e">starts_with_ia</a> (str_piece <a class="el" href="#a4222b88d9cd1ba1e8b8f18e004d7f3f5">prefix</a>) const noexcept</td></tr>
 <tr class="memdesc:a6d9409e48b2f182546b7f7186af2477e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Начинается ли строка с заданной подстроки без учёта регистра ASCII символов.  <br /></td></tr>
 <tr class="separator:a6d9409e48b2f182546b7f7186af2477e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a270dc187c30797920c0259611036ac12" id="r_a270dc187c30797920c0259611036ac12"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a270dc187c30797920c0259611036ac12">starts_with_ia_and_ws</a> (str_piece prefix) const noexcept</td></tr>
+<tr class="memitem:a270dc187c30797920c0259611036ac12" id="r_a270dc187c30797920c0259611036ac12"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a270dc187c30797920c0259611036ac12">starts_with_ia_and_ws</a> (str_piece <a class="el" href="#a4222b88d9cd1ba1e8b8f18e004d7f3f5">prefix</a>) const noexcept</td></tr>
 <tr class="memdesc:a270dc187c30797920c0259611036ac12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверить, начинается ли строка с указанной подстроки без учета регистра ASCII, за которой следует ней пробельный ASCII символ.  <br /></td></tr>
 <tr class="separator:a270dc187c30797920c0259611036ac12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae94181a51944c299c42f5bf2e541466c" id="r_ae94181a51944c299c42f5bf2e541466c"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae94181a51944c299c42f5bf2e541466c">starts_with_ia_and_oneof</a> (str_piece prefix, str_piece next_symbol) const noexcept</td></tr>
+<tr class="memitem:ae94181a51944c299c42f5bf2e541466c" id="r_ae94181a51944c299c42f5bf2e541466c"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae94181a51944c299c42f5bf2e541466c">starts_with_ia_and_oneof</a> (str_piece <a class="el" href="#a4222b88d9cd1ba1e8b8f18e004d7f3f5">prefix</a>, str_piece next_symbol) const noexcept</td></tr>
 <tr class="memdesc:ae94181a51944c299c42f5bf2e541466c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверить, начинается ли строка с указанной подстроки без учета регистра ASCII, за которой следует один из указанных символов.  <br /></td></tr>
 <tr class="separator:ae94181a51944c299c42f5bf2e541466c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae37c68155961c5c7b1609aa1b873b8d3" id="r_ae37c68155961c5c7b1609aa1b873b8d3"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae37c68155961c5c7b1609aa1b873b8d3">prefix_in</a> (str_piece text) const noexcept</td></tr>
 <tr class="memdesc:ae37c68155961c5c7b1609aa1b873b8d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Является ли эта строка началом другой строки.  <br /></td></tr>
 <tr class="separator:ae37c68155961c5c7b1609aa1b873b8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15504449e8d2a8f77832046b559ae0a8" id="r_a15504449e8d2a8f77832046b559ae0a8"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15504449e8d2a8f77832046b559ae0a8">ends_with</a> (str_piece suffix) const noexcept</td></tr>
+<tr class="memitem:a15504449e8d2a8f77832046b559ae0a8" id="r_a15504449e8d2a8f77832046b559ae0a8"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15504449e8d2a8f77832046b559ae0a8">ends_with</a> (str_piece <a class="el" href="#a66df97b9ad812c72e56f8b930000cf8e">suffix</a>) const noexcept</td></tr>
 <tr class="memdesc:a15504449e8d2a8f77832046b559ae0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заканчивается ли строка указанной подстрокой.  <br /></td></tr>
 <tr class="separator:a15504449e8d2a8f77832046b559ae0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63742e2c0e55c85b0569f6a0004e5418" id="r_a63742e2c0e55c85b0569f6a0004e5418"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63742e2c0e55c85b0569f6a0004e5418">ends_with_ia</a> (str_piece suffix) const noexcept</td></tr>
+<tr class="memitem:a63742e2c0e55c85b0569f6a0004e5418" id="r_a63742e2c0e55c85b0569f6a0004e5418"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63742e2c0e55c85b0569f6a0004e5418">ends_with_ia</a> (str_piece <a class="el" href="#a66df97b9ad812c72e56f8b930000cf8e">suffix</a>) const noexcept</td></tr>
 <tr class="memdesc:a63742e2c0e55c85b0569f6a0004e5418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заканчивается ли строка указанной подстрокой без учёта регистра ASCII символов.  <br /></td></tr>
 <tr class="separator:a63742e2c0e55c85b0569f6a0004e5418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaeefcf45750a8260d5a57b3056a1521f" id="r_aaeefcf45750a8260d5a57b3056a1521f"><td class="memItemLeft" align="right" valign="top"><a id="aaeefcf45750a8260d5a57b3056a1521f" name="aaeefcf45750a8260d5a57b3056a1521f"></a>
@@ -383,19 +395,19 @@ constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_ascii</b
 <tr class="memdesc:a606b0373189a0fb89bce3801e972e46a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить копию строки с заменёнными вхождениями подстрок.  <br /></td></tr>
 <tr class="separator:a606b0373189a0fb89bce3801e972e46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a949b32f563c88e19ba892bf4807496c3" id="r_a949b32f563c88e19ba892bf4807496c3"><td class="memTemplParams" colspan="2">template&lt;typename R = str_piece&gt; </td></tr>
-<tr class="memitem:a949b32f563c88e19ba892bf4807496c3"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::optional&lt; R &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a949b32f563c88e19ba892bf4807496c3">strip_prefix</a> (str_piece prefix) const</td></tr>
+<tr class="memitem:a949b32f563c88e19ba892bf4807496c3"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::optional&lt; R &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a949b32f563c88e19ba892bf4807496c3">strip_prefix</a> (str_piece <a class="el" href="#a4222b88d9cd1ba1e8b8f18e004d7f3f5">prefix</a>) const</td></tr>
 <tr class="memdesc:a949b32f563c88e19ba892bf4807496c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить строку без префикса, если она начинается с него.  <br /></td></tr>
 <tr class="separator:a949b32f563c88e19ba892bf4807496c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7fbce005bcb1b36d52c9f48d944a596" id="r_ae7fbce005bcb1b36d52c9f48d944a596"><td class="memTemplParams" colspan="2">template&lt;typename R = str_piece&gt; </td></tr>
-<tr class="memitem:ae7fbce005bcb1b36d52c9f48d944a596"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::optional&lt; R &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae7fbce005bcb1b36d52c9f48d944a596">strip_prefix_ia</a> (str_piece prefix) const</td></tr>
+<tr class="memitem:ae7fbce005bcb1b36d52c9f48d944a596"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::optional&lt; R &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae7fbce005bcb1b36d52c9f48d944a596">strip_prefix_ia</a> (str_piece <a class="el" href="#a4222b88d9cd1ba1e8b8f18e004d7f3f5">prefix</a>) const</td></tr>
 <tr class="memdesc:ae7fbce005bcb1b36d52c9f48d944a596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить строку без префикса, если она начинается с него без учёта регистра ASCII символов.  <br /></td></tr>
 <tr class="separator:ae7fbce005bcb1b36d52c9f48d944a596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a149f566252aa85b548e243440e8ffe30" id="r_a149f566252aa85b548e243440e8ffe30"><td class="memTemplParams" colspan="2">template&lt;typename R = str_piece&gt; </td></tr>
-<tr class="memitem:a149f566252aa85b548e243440e8ffe30"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::optional&lt; R &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a149f566252aa85b548e243440e8ffe30">strip_suffix</a> (str_piece suffix) const</td></tr>
+<tr class="memitem:a149f566252aa85b548e243440e8ffe30"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::optional&lt; R &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a149f566252aa85b548e243440e8ffe30">strip_suffix</a> (str_piece <a class="el" href="#a66df97b9ad812c72e56f8b930000cf8e">suffix</a>) const</td></tr>
 <tr class="memdesc:a149f566252aa85b548e243440e8ffe30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить строку без суффикса, если она заканчивается им.  <br /></td></tr>
 <tr class="separator:a149f566252aa85b548e243440e8ffe30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af34f5f81e22a77aa2171e6d85616dd7f" id="r_af34f5f81e22a77aa2171e6d85616dd7f"><td class="memTemplParams" colspan="2">template&lt;typename R = str_piece&gt; </td></tr>
-<tr class="memitem:af34f5f81e22a77aa2171e6d85616dd7f"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::optional&lt; R &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af34f5f81e22a77aa2171e6d85616dd7f">strip_suffix_ia</a> (str_piece suffix) const</td></tr>
+<tr class="memitem:af34f5f81e22a77aa2171e6d85616dd7f"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::optional&lt; R &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af34f5f81e22a77aa2171e6d85616dd7f">strip_suffix_ia</a> (str_piece <a class="el" href="#a66df97b9ad812c72e56f8b930000cf8e">suffix</a>) const</td></tr>
 <tr class="memdesc:af34f5f81e22a77aa2171e6d85616dd7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить строку без суффикса, если она заканчивается им без учёта регистра ASCII символов.  <br /></td></tr>
 <tr class="separator:af34f5f81e22a77aa2171e6d85616dd7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bded9dcb3da163cf73d690dd63a73d4" id="r_a9bded9dcb3da163cf73d690dd63a73d4"><td class="memTemplParams" colspan="2">template&lt;typename R = str_piece&gt; </td></tr>
@@ -465,19 +477,19 @@ requires is_const_pattern&lt;N&gt;</td></tr>
 <tr class="memdesc:a04f84dcbffe55415e07ee3c091a6f485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить строку с удалением символов, заданных другой строкой, а также пробельных символов, справа.  <br /></td></tr>
 <tr class="separator:a04f84dcbffe55415e07ee3c091a6f485"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c1c81003bdf3ac2b6eb1a51301b5613" id="r_a6c1c81003bdf3ac2b6eb1a51301b5613"><td class="memTemplParams" colspan="2">template&lt;typename R = str_piece&gt; </td></tr>
-<tr class="memitem:a6c1c81003bdf3ac2b6eb1a51301b5613"><td class="memTemplItemLeft" align="right" valign="top">constexpr R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a6c1c81003bdf3ac2b6eb1a51301b5613">trimmed_prefix</a> (str_piece prefix, size_t max_count=0) const</td></tr>
+<tr class="memitem:a6c1c81003bdf3ac2b6eb1a51301b5613"><td class="memTemplItemLeft" align="right" valign="top">constexpr R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a6c1c81003bdf3ac2b6eb1a51301b5613">trimmed_prefix</a> (str_piece <a class="el" href="#a4222b88d9cd1ba1e8b8f18e004d7f3f5">prefix</a>, size_t max_count=0) const</td></tr>
 <tr class="memdesc:a6c1c81003bdf3ac2b6eb1a51301b5613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает строку, в которой удалено начало строки, если она начинается с указанного префикса.  <br /></td></tr>
 <tr class="separator:a6c1c81003bdf3ac2b6eb1a51301b5613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c3965cc964a2ec2dd021295320af926" id="r_a2c3965cc964a2ec2dd021295320af926"><td class="memTemplParams" colspan="2">template&lt;typename R = str_piece&gt; </td></tr>
-<tr class="memitem:a2c3965cc964a2ec2dd021295320af926"><td class="memTemplItemLeft" align="right" valign="top">constexpr R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2c3965cc964a2ec2dd021295320af926">trimmed_prefix_ia</a> (str_piece prefix, size_t max_count=0) const</td></tr>
+<tr class="memitem:a2c3965cc964a2ec2dd021295320af926"><td class="memTemplItemLeft" align="right" valign="top">constexpr R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2c3965cc964a2ec2dd021295320af926">trimmed_prefix_ia</a> (str_piece <a class="el" href="#a4222b88d9cd1ba1e8b8f18e004d7f3f5">prefix</a>, size_t max_count=0) const</td></tr>
 <tr class="memdesc:a2c3965cc964a2ec2dd021295320af926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает строку, в которой удалено начало строки, если она начинается с указанного префикса без учёта регистра ASCII символов.  <br /></td></tr>
 <tr class="separator:a2c3965cc964a2ec2dd021295320af926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af49d13cc7818832596f5c7cbf10a2f9b" id="r_af49d13cc7818832596f5c7cbf10a2f9b"><td class="memTemplParams" colspan="2">template&lt;typename R = str_piece&gt; </td></tr>
-<tr class="memitem:af49d13cc7818832596f5c7cbf10a2f9b"><td class="memTemplItemLeft" align="right" valign="top">constexpr R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af49d13cc7818832596f5c7cbf10a2f9b">trimmed_suffix</a> (str_piece suffix) const</td></tr>
+<tr class="memitem:af49d13cc7818832596f5c7cbf10a2f9b"><td class="memTemplItemLeft" align="right" valign="top">constexpr R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af49d13cc7818832596f5c7cbf10a2f9b">trimmed_suffix</a> (str_piece <a class="el" href="#a66df97b9ad812c72e56f8b930000cf8e">suffix</a>) const</td></tr>
 <tr class="memdesc:af49d13cc7818832596f5c7cbf10a2f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает строку, в которой удалён конец строки, если она заканчивается указанным суффиксом.  <br /></td></tr>
 <tr class="separator:af49d13cc7818832596f5c7cbf10a2f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6c1d3dcf5699e66d7c366120810733a" id="r_ac6c1d3dcf5699e66d7c366120810733a"><td class="memTemplParams" colspan="2">template&lt;typename R = str_piece&gt; </td></tr>
-<tr class="memitem:ac6c1d3dcf5699e66d7c366120810733a"><td class="memTemplItemLeft" align="right" valign="top">constexpr R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac6c1d3dcf5699e66d7c366120810733a">trimmed_suffix_ia</a> (str_piece suffix) const</td></tr>
+<tr class="memitem:ac6c1d3dcf5699e66d7c366120810733a"><td class="memTemplItemLeft" align="right" valign="top">constexpr R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac6c1d3dcf5699e66d7c366120810733a">trimmed_suffix_ia</a> (str_piece <a class="el" href="#a66df97b9ad812c72e56f8b930000cf8e">suffix</a>) const</td></tr>
 <tr class="memdesc:ac6c1d3dcf5699e66d7c366120810733a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает строку, в которой удалён конец строки, если она заканчивается указанным суффиксом без учёта регистра ASCII символов.  <br /></td></tr>
 <tr class="separator:ac6c1d3dcf5699e66d7c366120810733a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3f6c202d1c1723297d46a45d82c5808" id="r_ab3f6c202d1c1723297d46a45d82c5808"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classsimstr_1_1_splitter_base.html">SplitterBase</a>&lt; K, str_piece &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3f6c202d1c1723297d46a45d82c5808">splitter</a> (str_piece delimiter) const</td></tr>
@@ -1824,6 +1836,56 @@ template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Подстроку, <a class="el" href="structsimstr_1_1str__src.html" title="Простейший класс иммутабельной не владеющей строки.">str_src</a>. </dd></dl>
 
+</div>
+</div>
+<a id="a206f4f76649f16d6b1e1989572cdf373" name="a206f4f76649f16d6b1e1989572cdf373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a206f4f76649f16d6b1e1989572cdf373">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
+<div class="memtemplate">
+template&lt;first_index_in_str S, last_index_in_str E&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">str_piece <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, StrRef, Impl, Mutable &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">S</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">E</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получить часть строки как "str_src". </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>- начальная позиция в строке. </td></tr>
+    <tr><td class="paramname">end</td><td>- конечная позиция в строке. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Подстроку, <a class="el" href="structsimstr_1_1str__src.html" title="Простейший класс иммутабельной не владеющей строки.">str_src</a>.</dd></dl>
+<p>В качестве начальной позиции может задаваться или число - отсчитывается от начала строки, но не далее её конца, или <code>from_end(число)</code> - отсчитывается от конца строки, но не ранее её начала. В качестве конечной позиции может задаваться или число - отсчитывается от начальной позиции, но не далее конца строки, или <code>from_end(число)</code> - отсчитывается от конца строки, но не ранее начальной позиции, или <code>from_begin(число)</code> - отсчитывается от начала строки, но не ранее начальной позиции и не далее конца строки. Также можно использовать <code>to_end</code> - эквивалентно from_end(0).</p>
+<div class="fragment"><div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(5, 2) == <span class="stringliteral">&quot;56&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(5, to_end) == <span class="stringliteral">&quot;56789&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(5, from_end(1)) == <span class="stringliteral">&quot;5678&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(from_end(3), to_end) == <span class="stringliteral">&quot;789&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(from_end(3), 2) == <span class="stringliteral">&quot;78&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(from_end(4), from_end(1)) == <span class="stringliteral">&quot;678&quot;</span>;</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a44ede528e694988f26555e91cf9a1ca2" name="a44ede528e694988f26555e91cf9a1ca2"></a>

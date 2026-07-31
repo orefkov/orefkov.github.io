@@ -36,7 +36,7 @@ var namespacesimstr =
     [ "expr_to_std_string", "structsimstr_1_1expr__to__std__string.html", null ],
     [ "expr_utf", "structsimstr_1_1expr__utf.html", null ],
     [ "from_utf_convertible", "classsimstr_1_1from__utf__convertible.html", null ],
-    [ "hashStrMap", "classsimstr_1_1hash_str_map.html", null ],
+    [ "hashStrMap", "classsimstr_1_1hash_str_map.html", "classsimstr_1_1hash_str_map" ],
     [ "lstring", "classsimstr_1_1lstring.html", "classsimstr_1_1lstring" ],
     [ "simple_str", "structsimstr_1_1simple__str.html", "structsimstr_1_1simple__str" ],
     [ "simple_str_nt", "structsimstr_1_1simple__str__nt.html", "structsimstr_1_1simple__str__nt" ],

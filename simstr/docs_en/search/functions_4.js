@@ -27,7 +27,8 @@ var searchData=
   ['equal_24',['equal',['../classsimstr_1_1str__src__algs.html#a3b9b0cb780c465cb9b6bd925d712ff07',1,'simstr::str_src_algs']]],
   ['equal_5fia_25',['equal_ia',['../classsimstr_1_1str__src__algs.html#afa9fca49d189fd0d760ffe8aed1485f1',1,'simstr::str_src_algs']]],
   ['equal_5fiu_26',['equal_iu',['../classsimstr_1_1str__algs.html#adbf0990c46a280cd363da46bef12e02f',1,'simstr::str_algs']]],
-  ['expr_5freplace_5fsymbols_27',['expr_replace_symbols',['../structsimstr_1_1expr__replace__symbols.html#a1fac129651136763915ab5cba6dd26dd',1,'simstr::expr_replace_symbols']]],
-  ['expr_5freplaced_28',['expr_replaced',['../structsimstr_1_1expr__replaced.html#ab7a7dfe171a1c7060837f6d700984195',1,'simstr::expr_replaced']]],
-  ['expr_5freplaced_5fe_29',['expr_replaced_e',['../structsimstr_1_1expr__replaced__e.html#a4c44795d3312117271508cd89e5a58e7',1,'simstr::expr_replaced_e']]]
+  ['existed_27',['existed',['../classsimstr_1_1hash_str_map.html#a84164a76712b04fee368ede6815c5652',1,'simstr::hashStrMap::existed(simple_str&lt; K &gt; key)'],['../classsimstr_1_1hash_str_map.html#ab60aeea19204a6c0e9855d96bf1ddce9',1,'simstr::hashStrMap::existed(const InStore &amp;key)'],['../classsimstr_1_1hash_str_map.html#a88acf711eac3a552d412d0567fae631b',1,'simstr::hashStrMap::existed(simple_str&lt; K &gt; key) const'],['../classsimstr_1_1hash_str_map.html#ac6a2e57d356686e1e0c2f910ad65b80a',1,'simstr::hashStrMap::existed(const InStore &amp;key) const']]],
+  ['expr_5freplace_5fsymbols_28',['expr_replace_symbols',['../structsimstr_1_1expr__replace__symbols.html#a1fac129651136763915ab5cba6dd26dd',1,'simstr::expr_replace_symbols']]],
+  ['expr_5freplaced_29',['expr_replaced',['../structsimstr_1_1expr__replaced.html#ab7a7dfe171a1c7060837f6d700984195',1,'simstr::expr_replaced']]],
+  ['expr_5freplaced_5fe_30',['expr_replaced_e',['../structsimstr_1_1expr__replaced__e.html#a4c44795d3312117271508cd89e5a58e7',1,'simstr::expr_replaced_e']]]
 ];

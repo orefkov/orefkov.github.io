@@ -90,15 +90,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classsimstr_1_1lstring.html#a885c6a5a9ecf6417993824dbb4425af6",
-"classsimstr_1_1sstring.html#a4e79e99462478b57d62873f7942ff2b6",
-"classsimstr_1_1str__algs.html#a4b10b1045e187638501edb2bcedc475a",
-"classsimstr_1_1str__mutable.html#ac0ee55594becb6b2c2b98df722cc7a33",
-"functions_e.html",
-"structsimstr_1_1expr__replaced__e.html",
-"structsimstr_1_1simple__str__nt.html#a108d9cd0dc24f5d395e838a3ef20d846",
-"structsimstr_1_1str__src.html#a270dc187c30797920c0259611036ac12",
-"structsimstr_1_1str__src__nt.html#a59fd4410c90e6dee1ff9b8e34d57bb45"
+"classsimstr_1_1lstring.html#a740d3b2e75a7ad8c08a8363cbfa9b4df",
+"classsimstr_1_1sstring.html#a400250ea87cc59daa152dc9ddb57491f",
+"classsimstr_1_1str__algs.html#a26465c7fdac87e8d215e836bdbf6e8c3",
+"classsimstr_1_1str__mutable.html#a73083ad3987d977364c90a9a80a1509f",
+"classsimstr_1_1str__storable.html#a458697f089f5d3f2aba985e0c707a577",
+"pages.html",
+"structsimstr_1_1simple__str.html#ad63f315c4a97ee6ad1e2b045b9f5f9e0",
+"structsimstr_1_1simple__str__nt.html#adffb295777b82a1475a4fc0d9754481b",
+"structsimstr_1_1str__src__nt.html#a0564461ab81bfbb6c5bd8b4c7e5a496e"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

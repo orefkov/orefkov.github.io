@@ -94,5 +94,6 @@ var searchData=
   ['strtype_91',['StrType',['../conceptsimstr_1_1_str_type.html',1,'simstr']]],
   ['substr_92',['substr',['../classsimstr_1_1str__src__algs.html#a512eaf3c2c8736f3021a5bbe60823866',1,'simstr::str_src_algs']]],
   ['success_93',['Success',['../namespacesimstr.html#a1b4b1f04b733739606d97f79caa02dd9a505a83f220c02df2f85c3810cd9ceb38',1,'simstr']]],
-  ['symbols_94',['symbols',['../structsimstr_1_1simple__str.html#a611ab22c81c515ed231fc767ecb0df0a',1,'simstr::simple_str::symbols()'],['../classsimstr_1_1lstring.html#acc14bfdba77dd4027af118f6f52a5a93',1,'simstr::lstring::symbols()'],['../classsimstr_1_1sstring.html#a3f608228b4db83ce396f48ec5373b36f',1,'simstr::sstring::symbols()'],['../structsimstr_1_1str__src.html#adb6c67ae1f3d844e4bc5fd365eb0b3e7',1,'simstr::str_src::symbols()']]]
+  ['suffix_94',['suffix',['../classsimstr_1_1str__src__algs.html#a66df97b9ad812c72e56f8b930000cf8e',1,'simstr::str_src_algs']]],
+  ['symbols_95',['symbols',['../structsimstr_1_1simple__str.html#a611ab22c81c515ed231fc767ecb0df0a',1,'simstr::simple_str::symbols()'],['../classsimstr_1_1lstring.html#acc14bfdba77dd4027af118f6f52a5a93',1,'simstr::lstring::symbols()'],['../classsimstr_1_1sstring.html#a3f608228b4db83ce396f48ec5373b36f',1,'simstr::sstring::symbols()'],['../structsimstr_1_1str__src.html#adb6c67ae1f3d844e4bc5fd365eb0b3e7',1,'simstr::str_src::symbols()']]]
 ];

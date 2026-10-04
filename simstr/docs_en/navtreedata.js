@@ -90,15 +90,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classsimstr_1_1lstring.html#a740d3b2e75a7ad8c08a8363cbfa9b4df",
-"classsimstr_1_1sstring.html#a400250ea87cc59daa152dc9ddb57491f",
-"classsimstr_1_1str__algs.html#a26465c7fdac87e8d215e836bdbf6e8c3",
-"classsimstr_1_1str__mutable.html#a73083ad3987d977364c90a9a80a1509f",
-"classsimstr_1_1str__storable.html#a458697f089f5d3f2aba985e0c707a577",
-"pages.html",
-"structsimstr_1_1simple__str.html#ad63f315c4a97ee6ad1e2b045b9f5f9e0",
-"structsimstr_1_1simple__str__nt.html#adffb295777b82a1475a4fc0d9754481b",
-"structsimstr_1_1str__src__nt.html#a0564461ab81bfbb6c5bd8b4c7e5a496e"
+"classsimstr_1_1lstring.html#a73806fa93c9ec619ba93d479d413ea0f",
+"classsimstr_1_1sstring.html#a3ef46eb3fb57583ad6f71a3452f630ca",
+"classsimstr_1_1str__algs.html#a15504449e8d2a8f77832046b559ae0a8",
+"classsimstr_1_1str__mutable.html#a537880538e549f94a3ce137d7cf33064",
+"classsimstr_1_1str__src__algs.html#afa40ca4ad70df9ec0941599b88c443dc",
+"overview.html#autotoc_md72",
+"structsimstr_1_1simple__str.html#ac17421202713ebd4d62ddf175023f535",
+"structsimstr_1_1simple__str__nt.html#ac6c1d3dcf5699e66d7c366120810733a",
+"structsimstr_1_1str__src.html#ae7fbce005bcb1b36d52c9f48d944a596",
+"structstd_1_1formatter_3_01simstr_1_1lstring_3_01char8__t_00_01_n_00_01_s_00_01_a_01_4_00_01char_01_4.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

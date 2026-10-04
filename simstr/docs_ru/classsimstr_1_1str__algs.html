@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.9.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;2.0.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -236,17 +236,17 @@ requires is_equal_str_type_v&lt;K, D&gt;</td></tr>
 <tr class="memitem:ace8f275b33545d2491850f49ba3b7876" id="r_ace8f275b33545d2491850f49ba3b7876"><td class="memItemLeft" align="right" valign="top">constexpr str_piece&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#ace8f275b33545d2491850f49ba3b7876">operator()</a> (ptrdiff_t from, ptrdiff_t len=0) const noexcept</td></tr>
 <tr class="memdesc:ace8f275b33545d2491850f49ba3b7876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить часть строки как "str_src".  <br /></td></tr>
 <tr class="separator:ace8f275b33545d2491850f49ba3b7876"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a206f4f76649f16d6b1e1989572cdf373" id="r_a206f4f76649f16d6b1e1989572cdf373"><td class="memTemplParams" colspan="2">template&lt;first_index_in_str S, last_index_in_str E&gt; </td></tr>
-<tr class="memitem:a206f4f76649f16d6b1e1989572cdf373"><td class="memTemplItemLeft" align="right" valign="top">constexpr str_piece&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a206f4f76649f16d6b1e1989572cdf373">get</a> (S start, E end) const noexcept</td></tr>
-<tr class="memdesc:a206f4f76649f16d6b1e1989572cdf373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить часть строки как "str_src".  <br /></td></tr>
-<tr class="separator:a206f4f76649f16d6b1e1989572cdf373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ed0b54ba5a9b09ec7f4aa73292b4eb1" id="r_a6ed0b54ba5a9b09ec7f4aa73292b4eb1"><td class="memTemplParams" colspan="2">template&lt;first_index_in_str S, last_index_in_str E&gt; </td></tr>
+<tr class="memitem:a6ed0b54ba5a9b09ec7f4aa73292b4eb1"><td class="memTemplItemLeft" align="right" valign="top">constexpr str_piece&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a6ed0b54ba5a9b09ec7f4aa73292b4eb1">slice</a> (S start, E end) const noexcept</td></tr>
+<tr class="memdesc:a6ed0b54ba5a9b09ec7f4aa73292b4eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить часть строки как "str_src".  <br /></td></tr>
+<tr class="separator:a6ed0b54ba5a9b09ec7f4aa73292b4eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4222b88d9cd1ba1e8b8f18e004d7f3f5" id="r_a4222b88d9cd1ba1e8b8f18e004d7f3f5"><td class="memItemLeft" align="right" valign="top"><a id="a4222b88d9cd1ba1e8b8f18e004d7f3f5" name="a4222b88d9cd1ba1e8b8f18e004d7f3f5"></a>
 constexpr str_piece&#160;</td><td class="memItemRight" valign="bottom"><b>prefix</b> (size_t count) const noexcept</td></tr>
-<tr class="memdesc:a4222b88d9cd1ba1e8b8f18e004d7f3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обертка вокруг <code>get(0, count)</code>. <br /></td></tr>
+<tr class="memdesc:a4222b88d9cd1ba1e8b8f18e004d7f3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обертка вокруг <code>slice(0, count)</code>. <br /></td></tr>
 <tr class="separator:a4222b88d9cd1ba1e8b8f18e004d7f3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66df97b9ad812c72e56f8b930000cf8e" id="r_a66df97b9ad812c72e56f8b930000cf8e"><td class="memItemLeft" align="right" valign="top"><a id="a66df97b9ad812c72e56f8b930000cf8e" name="a66df97b9ad812c72e56f8b930000cf8e"></a>
 constexpr str_piece&#160;</td><td class="memItemRight" valign="bottom"><b>suffix</b> (size_t count) const noexcept</td></tr>
-<tr class="memdesc:a66df97b9ad812c72e56f8b930000cf8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обертка вокруг <code>get(from_end(count), to_end)</code>. <br /></td></tr>
+<tr class="memdesc:a66df97b9ad812c72e56f8b930000cf8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обертка вокруг <code>slice(from_end(count), to_end)</code>. <br /></td></tr>
 <tr class="separator:a66df97b9ad812c72e56f8b930000cf8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a507a43e6ebcc51e6409874712abbbd63" id="r_a507a43e6ebcc51e6409874712abbbd63"><td class="memItemLeft" align="right" valign="top">constexpr str_piece&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a507a43e6ebcc51e6409874712abbbd63">mid</a> (size_t from, size_t len=-1) const noexcept</td></tr>
 <tr class="memdesc:a507a43e6ebcc51e6409874712abbbd63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить часть строки как "кусок строки".  <br /></td></tr>
@@ -302,11 +302,11 @@ constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!</
 <tr class="memitem:a129d72cc64be6029f10bbe1f8385f3ea" id="r_a129d72cc64be6029f10bbe1f8385f3ea"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a129d72cc64be6029f10bbe1f8385f3ea">find</a> (K s, size_t offset=0) const noexcept</td></tr>
 <tr class="memdesc:a129d72cc64be6029f10bbe1f8385f3ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Найти символ в этой строке.  <br /></td></tr>
 <tr class="separator:a129d72cc64be6029f10bbe1f8385f3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40ab0482ea5f02bc0c3097bed6c9a5fa" id="r_a40ab0482ea5f02bc0c3097bed6c9a5fa"><td class="memTemplParams" colspan="2">template&lt;typename Exc, typename ... Args&gt; <br />
+<tr class="memitem:af102fc124ef5b7c403b90872ae19929d" id="r_af102fc124ef5b7c403b90872ae19929d"><td class="memTemplParams" colspan="2">template&lt;typename Exc, typename ... Args&gt; <br />
 requires std::is_constructible_v&lt;Exc, Args...&gt;</td></tr>
-<tr class="memitem:a40ab0482ea5f02bc0c3097bed6c9a5fa"><td class="memTemplItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a40ab0482ea5f02bc0c3097bed6c9a5fa">find_or_throw</a> (str_piece pattern, size_t offset=0, Args &amp;&amp;... args) const noexcept</td></tr>
-<tr class="memdesc:a40ab0482ea5f02bc0c3097bed6c9a5fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Найти начало первого вхождения подстроки в этой строке или выкинуть исключение.  <br /></td></tr>
-<tr class="separator:a40ab0482ea5f02bc0c3097bed6c9a5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af102fc124ef5b7c403b90872ae19929d"><td class="memTemplItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#af102fc124ef5b7c403b90872ae19929d">find_or_throw</a> (str_piece pattern, size_t offset=0, Args &amp;&amp;... args) const</td></tr>
+<tr class="memdesc:af102fc124ef5b7c403b90872ae19929d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Найти начало первого вхождения подстроки в этой строке или выкинуть исключение.  <br /></td></tr>
+<tr class="separator:af102fc124ef5b7c403b90872ae19929d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bcde5878d3d7fd5138d38ff2f1df4d2" id="r_a8bcde5878d3d7fd5138d38ff2f1df4d2"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a8bcde5878d3d7fd5138d38ff2f1df4d2">find_end</a> (str_piece pattern, size_t offset=0) const noexcept</td></tr>
 <tr class="memdesc:a8bcde5878d3d7fd5138d38ff2f1df4d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Найти конец вхождения подстроки в этой строке.  <br /></td></tr>
 <tr class="separator:a8bcde5878d3d7fd5138d38ff2f1df4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -366,6 +366,16 @@ requires std::is_constructible_v&lt;Exc, Args...&gt;</td></tr>
 <tr class="memitem:a512eaf3c2c8736f3021a5bbe60823866" id="r_a512eaf3c2c8736f3021a5bbe60823866"><td class="memItemLeft" align="right" valign="top">constexpr my_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a512eaf3c2c8736f3021a5bbe60823866">substr</a> (ptrdiff_t from, ptrdiff_t len=0) const</td></tr>
 <tr class="memdesc:a512eaf3c2c8736f3021a5bbe60823866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить подстроку. Работает аналогично operator(), только результат выдает того же типа, к которому применён метод.  <br /></td></tr>
 <tr class="separator:a512eaf3c2c8736f3021a5bbe60823866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e0fb508529624e08cd8ae694fcd801" id="r_a25e0fb508529624e08cd8ae694fcd801"><td class="memTemplParams" colspan="2">template&lt;typename T, first_index_in_str S, last_index_in_str E&gt; <br />
+requires std::is_constructible_v&lt;T, str_piece&gt;</td></tr>
+<tr class="memitem:a25e0fb508529624e08cd8ae694fcd801"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a25e0fb508529624e08cd8ae694fcd801">slice_to</a> (S start, E end) const noexcept</td></tr>
+<tr class="memdesc:a25e0fb508529624e08cd8ae694fcd801"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить результат slice и поместить его в объект заданного типа.  <br /></td></tr>
+<tr class="separator:a25e0fb508529624e08cd8ae694fcd801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44603768b77fff1a38d4c37ed0f72501" id="r_a44603768b77fff1a38d4c37ed0f72501"><td class="memTemplParams" colspan="2"><a id="a44603768b77fff1a38d4c37ed0f72501" name="a44603768b77fff1a38d4c37ed0f72501"></a>
+template&lt;first_index_in_str S, last_index_in_str E&gt; </td></tr>
+<tr class="memitem:a44603768b77fff1a38d4c37ed0f72501"><td class="memTemplItemLeft" align="right" valign="top">constexpr my_type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>substring</b> (S start, E end) const noexcept</td></tr>
+<tr class="memdesc:a44603768b77fff1a38d4c37ed0f72501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обёртка вокруг slice_to&lt;my_type&gt; <br /></td></tr>
+<tr class="separator:a44603768b77fff1a38d4c37ed0f72501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa77c31da012cf5cc23e0a60c1888cec2" id="r_aa77c31da012cf5cc23e0a60c1888cec2"><td class="memItemLeft" align="right" valign="top">constexpr my_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#aa77c31da012cf5cc23e0a60c1888cec2">str_mid</a> (size_t from, size_t len=-1) const</td></tr>
 <tr class="memdesc:aa77c31da012cf5cc23e0a60c1888cec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить часть строки объектом того же типа, к которому применён метод, аналогично mid.  <br /></td></tr>
 <tr class="separator:aa77c31da012cf5cc23e0a60c1888cec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1862,8 +1872,8 @@ template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 
 </div>
 </div>
-<a id="a40ab0482ea5f02bc0c3097bed6c9a5fa" name="a40ab0482ea5f02bc0c3097bed6c9a5fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40ab0482ea5f02bc0c3097bed6c9a5fa">&#9670;&#160;</a></span>find_or_throw()</h2>
+<a id="af102fc124ef5b7c403b90872ae19929d" name="af102fc124ef5b7c403b90872ae19929d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af102fc124ef5b7c403b90872ae19929d">&#9670;&#160;</a></span>find_or_throw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1894,7 +1904,7 @@ requires std::is_constructible_v&lt;Exc, Args...&gt;</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel inherited">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2012,56 +2022,6 @@ template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Подстроку, <a class="el" href="structsimstr_1_1str__src.html" title="Простейший класс иммутабельной не владеющей строки.">str_src</a>. </dd></dl>
 
-</div>
-</div>
-<a id="a206f4f76649f16d6b1e1989572cdf373" name="a206f4f76649f16d6b1e1989572cdf373"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a206f4f76649f16d6b1e1989572cdf373">&#9670;&#160;</a></span>get()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
-<div class="memtemplate">
-template&lt;first_index_in_str S, last_index_in_str E&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">str_piece <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, StrRef, Impl, Mutable &gt;::get </td>
-          <td>(</td>
-          <td class="paramtype">S</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">E</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;) const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Получить часть строки как "str_src". </p>
-<dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">start</td><td>- начальная позиция в строке. </td></tr>
-    <tr><td class="paramname">end</td><td>- конечная позиция в строке. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Возвращает</dt><dd>Подстроку, <a class="el" href="structsimstr_1_1str__src.html" title="Простейший класс иммутабельной не владеющей строки.">str_src</a>.</dd></dl>
-<p>В качестве начальной позиции может задаваться или число - отсчитывается от начала строки, но не далее её конца, или <code>from_end(число)</code> - отсчитывается от конца строки, но не ранее её начала. В качестве конечной позиции может задаваться или число - отсчитывается от начальной позиции, но не далее конца строки, или <code>from_end(число)</code> - отсчитывается от конца строки, но не ранее начальной позиции, или <code>from_begin(число)</code> - отсчитывается от начала строки, но не ранее начальной позиции и не далее конца строки. Также можно использовать <code>to_end</code> - эквивалентно from_end(0).</p>
-<div class="fragment"><div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(5, 2) == <span class="stringliteral">&quot;56&quot;</span>;</div>
-<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(5, to_end) == <span class="stringliteral">&quot;56789&quot;</span>;</div>
-<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(5, from_end(1)) == <span class="stringliteral">&quot;5678&quot;</span>;</div>
-<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(from_end(3), to_end) == <span class="stringliteral">&quot;789&quot;</span>;</div>
-<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(from_end(3), 2) == <span class="stringliteral">&quot;78&quot;</span>;</div>
-<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(from_end(4), from_end(1)) == <span class="stringliteral">&quot;678&quot;</span>;</div>
-</div><!-- fragment --> 
 </div>
 </div>
 <a id="a44ede528e694988f26555e91cf9a1ca2" name="a44ede528e694988f26555e91cf9a1ca2"></a>
@@ -2701,6 +2661,99 @@ template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 
 <p>Размер строки в символах. </p>
 <dl class="section return"><dt>Возвращает</dt><dd>size_t </dd></dl>
+
+</div>
+</div>
+<a id="a6ed0b54ba5a9b09ec7f4aa73292b4eb1" name="a6ed0b54ba5a9b09ec7f4aa73292b4eb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ed0b54ba5a9b09ec7f4aa73292b4eb1">&#9670;&#160;</a></span>slice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
+<div class="memtemplate">
+template&lt;first_index_in_str S, last_index_in_str E&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">str_piece <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, StrRef, Impl, Mutable &gt;::slice </td>
+          <td>(</td>
+          <td class="paramtype">S</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">E</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получить часть строки как "str_src". </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>- начальная позиция в строке. </td></tr>
+    <tr><td class="paramname">end</td><td>- конечная позиция в строке. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Подстроку, <a class="el" href="structsimstr_1_1str__src.html" title="Простейший класс иммутабельной не владеющей строки.">str_src</a>.</dd></dl>
+<p>В качестве начальной позиции может задаваться или число - отсчитывается от начала строки, но не далее её конца, или <code>from_end(число)</code> - отсчитывается от конца строки, но не ранее её начала. В качестве конечной позиции может задаваться или число - отсчитывается от начальной позиции, но не далее конца строки, или <code>from_end(число)</code> - отсчитывается от конца строки, но не ранее начальной позиции, или <code>from_begin(число)</code> - отсчитывается от начала строки, но не ранее начальной позиции и не далее конца строки. Также можно использовать <code>to_end</code> - эквивалентно from_end(0).</p>
+<div class="fragment"><div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(5, 2) == <span class="stringliteral">&quot;56&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(5, to_end) == <span class="stringliteral">&quot;56789&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(5, from_end(1)) == <span class="stringliteral">&quot;5678&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(from_end(3), to_end) == <span class="stringliteral">&quot;789&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(from_end(3), 2) == <span class="stringliteral">&quot;78&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(from_end(4), from_end(1)) == <span class="stringliteral">&quot;678&quot;</span>;</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a25e0fb508529624e08cd8ae694fcd801" name="a25e0fb508529624e08cd8ae694fcd801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25e0fb508529624e08cd8ae694fcd801">&#9670;&#160;</a></span>slice_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
+<div class="memtemplate">
+template&lt;typename T, first_index_in_str S, last_index_in_str E&gt; <br />
+requires std::is_constructible_v&lt;T, str_piece&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, StrRef, Impl, Mutable &gt;::slice_to </td>
+          <td>(</td>
+          <td class="paramtype">S</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">E</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получить результат slice и поместить его в объект заданного типа. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>- тип объекта </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>объект типа T, инициализированный результатом slice. </dd></dl>
 
 </div>
 </div>

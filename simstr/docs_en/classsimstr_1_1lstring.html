@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;1.9.1</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;2.0.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -331,16 +331,16 @@ constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (
 <tr class="memitem:ace8f275b33545d2491850f49ba3b7876" id="r_ace8f275b33545d2491850f49ba3b7876"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#ace8f275b33545d2491850f49ba3b7876">operator()</a> (ptrdiff_t from, ptrdiff_t len=0) const noexcept</td></tr>
 <tr class="memdesc:ace8f275b33545d2491850f49ba3b7876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get part of a string as "str_src".  <br /></td></tr>
 <tr class="separator:ace8f275b33545d2491850f49ba3b7876"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a206f4f76649f16d6b1e1989572cdf373" id="r_a206f4f76649f16d6b1e1989572cdf373"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a206f4f76649f16d6b1e1989572cdf373">get</a> (S start, E end) const noexcept</td></tr>
-<tr class="memdesc:a206f4f76649f16d6b1e1989572cdf373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get part of a string as "str_src".  <br /></td></tr>
-<tr class="separator:a206f4f76649f16d6b1e1989572cdf373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ed0b54ba5a9b09ec7f4aa73292b4eb1" id="r_a6ed0b54ba5a9b09ec7f4aa73292b4eb1"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a6ed0b54ba5a9b09ec7f4aa73292b4eb1">slice</a> (S start, E end) const noexcept</td></tr>
+<tr class="memdesc:a6ed0b54ba5a9b09ec7f4aa73292b4eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get part of a string as "str_src".  <br /></td></tr>
+<tr class="separator:a6ed0b54ba5a9b09ec7f4aa73292b4eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4222b88d9cd1ba1e8b8f18e004d7f3f5" id="r_a4222b88d9cd1ba1e8b8f18e004d7f3f5"><td class="memItemLeft" align="right" valign="top"><a id="a4222b88d9cd1ba1e8b8f18e004d7f3f5" name="a4222b88d9cd1ba1e8b8f18e004d7f3f5"></a>
 constexpr <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a>&#160;</td><td class="memItemRight" valign="bottom"><b>prefix</b> (size_t count) const noexcept</td></tr>
-<tr class="memdesc:a4222b88d9cd1ba1e8b8f18e004d7f3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps <code>get(0, count)</code>. <br /></td></tr>
+<tr class="memdesc:a4222b88d9cd1ba1e8b8f18e004d7f3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps <code>slice(0, count)</code>. <br /></td></tr>
 <tr class="separator:a4222b88d9cd1ba1e8b8f18e004d7f3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66df97b9ad812c72e56f8b930000cf8e" id="r_a66df97b9ad812c72e56f8b930000cf8e"><td class="memItemLeft" align="right" valign="top"><a id="a66df97b9ad812c72e56f8b930000cf8e" name="a66df97b9ad812c72e56f8b930000cf8e"></a>
 constexpr <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a>&#160;</td><td class="memItemRight" valign="bottom"><b>suffix</b> (size_t count) const noexcept</td></tr>
-<tr class="memdesc:a66df97b9ad812c72e56f8b930000cf8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps <code>get(from_end(count), to_end)</code>. <br /></td></tr>
+<tr class="memdesc:a66df97b9ad812c72e56f8b930000cf8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps <code>slice(from_end(count), to_end)</code>. <br /></td></tr>
 <tr class="separator:a66df97b9ad812c72e56f8b930000cf8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a507a43e6ebcc51e6409874712abbbd63" id="r_a507a43e6ebcc51e6409874712abbbd63"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structsimstr_1_1simple__str.html">str_piece</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a507a43e6ebcc51e6409874712abbbd63">mid</a> (size_t from, size_t len=-1) const noexcept</td></tr>
 <tr class="memdesc:a507a43e6ebcc51e6409874712abbbd63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get part of a string as "string chunk".  <br /></td></tr>
@@ -394,9 +394,9 @@ constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!</
 <tr class="memitem:a129d72cc64be6029f10bbe1f8385f3ea" id="r_a129d72cc64be6029f10bbe1f8385f3ea"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a129d72cc64be6029f10bbe1f8385f3ea">find</a> (K s, size_t offset=0) const noexcept</td></tr>
 <tr class="memdesc:a129d72cc64be6029f10bbe1f8385f3ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a character in this string.  <br /></td></tr>
 <tr class="separator:a129d72cc64be6029f10bbe1f8385f3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40ab0482ea5f02bc0c3097bed6c9a5fa" id="r_a40ab0482ea5f02bc0c3097bed6c9a5fa"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a40ab0482ea5f02bc0c3097bed6c9a5fa">find_or_throw</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> pattern, size_t offset=0, Args &amp;&amp;... args) const noexcept</td></tr>
-<tr class="memdesc:a40ab0482ea5f02bc0c3097bed6c9a5fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the beginning of the first occurrence of a substring in this string or throw an exception.  <br /></td></tr>
-<tr class="separator:a40ab0482ea5f02bc0c3097bed6c9a5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af102fc124ef5b7c403b90872ae19929d" id="r_af102fc124ef5b7c403b90872ae19929d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#af102fc124ef5b7c403b90872ae19929d">find_or_throw</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> pattern, size_t offset=0, Args &amp;&amp;... args) const</td></tr>
+<tr class="memdesc:af102fc124ef5b7c403b90872ae19929d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the beginning of the first occurrence of a substring in this string or throw an exception.  <br /></td></tr>
+<tr class="separator:af102fc124ef5b7c403b90872ae19929d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bcde5878d3d7fd5138d38ff2f1df4d2" id="r_a8bcde5878d3d7fd5138d38ff2f1df4d2"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a8bcde5878d3d7fd5138d38ff2f1df4d2">find_end</a> (<a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> pattern, size_t offset=0) const noexcept</td></tr>
 <tr class="memdesc:a8bcde5878d3d7fd5138d38ff2f1df4d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the end of the occurrence of a substring in this string.  <br /></td></tr>
 <tr class="separator:a8bcde5878d3d7fd5138d38ff2f1df4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -454,6 +454,13 @@ constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!</
 <tr class="memitem:a512eaf3c2c8736f3021a5bbe60823866" id="r_a512eaf3c2c8736f3021a5bbe60823866"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classsimstr_1_1lstring.html">my_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a512eaf3c2c8736f3021a5bbe60823866">substr</a> (ptrdiff_t from, ptrdiff_t len=0) const</td></tr>
 <tr class="memdesc:a512eaf3c2c8736f3021a5bbe60823866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a substring. Works similarly to operator(), only the result is the same type as the method applied to.  <br /></td></tr>
 <tr class="separator:a512eaf3c2c8736f3021a5bbe60823866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e0fb508529624e08cd8ae694fcd801" id="r_a25e0fb508529624e08cd8ae694fcd801"><td class="memItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a25e0fb508529624e08cd8ae694fcd801">slice_to</a> (S start, E end) const noexcept</td></tr>
+<tr class="memdesc:a25e0fb508529624e08cd8ae694fcd801"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the slice result and place it into an object of the specified type.  <br /></td></tr>
+<tr class="separator:a25e0fb508529624e08cd8ae694fcd801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44603768b77fff1a38d4c37ed0f72501" id="r_a44603768b77fff1a38d4c37ed0f72501"><td class="memItemLeft" align="right" valign="top"><a id="a44603768b77fff1a38d4c37ed0f72501" name="a44603768b77fff1a38d4c37ed0f72501"></a>
+constexpr <a class="el" href="classsimstr_1_1lstring.html">my_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>substring</b> (S start, E end) const noexcept</td></tr>
+<tr class="memdesc:a44603768b77fff1a38d4c37ed0f72501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around slice_to&lt;my_type&gt; <br /></td></tr>
+<tr class="separator:a44603768b77fff1a38d4c37ed0f72501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa77c31da012cf5cc23e0a60c1888cec2" id="r_aa77c31da012cf5cc23e0a60c1888cec2"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classsimstr_1_1lstring.html">my_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#aa77c31da012cf5cc23e0a60c1888cec2">str_mid</a> (size_t from, size_t len=-1) const</td></tr>
 <tr class="memdesc:aa77c31da012cf5cc23e0a60c1888cec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get part of a string with an object of the same type to which the method is applied, similar to mid.  <br /></td></tr>
 <tr class="separator:aa77c31da012cf5cc23e0a60c1888cec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3035,8 +3042,8 @@ template&lt;typename K, typename Impl&gt; </div>
 
 </div>
 </div>
-<a id="a40ab0482ea5f02bc0c3097bed6c9a5fa" name="a40ab0482ea5f02bc0c3097bed6c9a5fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40ab0482ea5f02bc0c3097bed6c9a5fa">&#9670;&#160;</a></span>find_or_throw()</h2>
+<a id="af102fc124ef5b7c403b90872ae19929d" name="af102fc124ef5b7c403b90872ae19929d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af102fc124ef5b7c403b90872ae19929d">&#9670;&#160;</a></span>find_or_throw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3062,7 +3069,7 @@ template&lt;typename K, typename Impl&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel inherited">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3260,52 +3267,6 @@ template&lt;typename K, typename Impl&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Substring, <a class="el" href="structsimstr_1_1str__src.html" title="The simplest class of an immutable non-owning string.">str_src</a>. </dd></dl>
 
-</div>
-</div>
-<a id="a206f4f76649f16d6b1e1989572cdf373" name="a206f4f76649f16d6b1e1989572cdf373"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a206f4f76649f16d6b1e1989572cdf373">&#9670;&#160;</a></span>get()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, <a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt;, <a class="el" href="classsimstr_1_1lstring.html">lstring</a>&lt; K, N, false, allocator_string &gt;, Mutable &gt;::get </td>
-          <td>(</td>
-          <td class="paramtype">S</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">E</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;) const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get part of a string as "str_src". </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">start</td><td>- starting position in the string. </td></tr>
-    <tr><td class="paramname">end</td><td>- the end position in the string. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Substring, <a class="el" href="structsimstr_1_1str__src.html" title="The simplest class of an immutable non-owning string.">str_src</a>.</dd></dl>
-<p>Either a number can be specified as the starting position - it is counted from the beginning of the string, but not further than its end, or <code>from_end(number)</code> - counted from the end of the string, but not earlier than its beginning. The ending position can be either a number - counted from the starting position, but not further than the end of the string, or <code>from_end(number)</code> - counted from the end of the string, but not earlier than the starting position, or <code>from_begin(number)</code> - counted from the beginning of the string, but not earlier than the starting position and not further than the end of the string. You can also use <code>to_end</code> - equivalent to from_end(0).</p>
-<div class="fragment"><div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(5, 2) == <span class="stringliteral">&quot;56&quot;</span>;</div>
-<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(5, to_end) == <span class="stringliteral">&quot;56789&quot;</span>;</div>
-<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(5, from_end(1)) == <span class="stringliteral">&quot;5678&quot;</span>;</div>
-<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(from_end(3), to_end) == <span class="stringliteral">&quot;789&quot;</span>;</div>
-<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(from_end(3), 2) == <span class="stringliteral">&quot;78&quot;</span>;</div>
-<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.get(from_end(4), from_end(1)) == <span class="stringliteral">&quot;678&quot;</span>;</div>
-</div><!-- fragment --> 
 </div>
 </div>
 <a id="a4116dbd55a53014cef88f4f571cb0c64" name="a4116dbd55a53014cef88f4f571cb0c64"></a>
@@ -3644,7 +3605,7 @@ template&lt;typename K, typename Impl&gt; </div>
 <div class="ttc" id="aclasssimstr_1_1str__storable_html_a9b002a3618bbfcebc945cef197a397a1"><div class="ttname"><a href="classsimstr_1_1str__storable.html#a9b002a3618bbfcebc945cef197a397a1">simstr::lstring&lt; u8s, N &gt;::join</a></div><div class="ttdeci">static my_type join(const T &amp;strings, s_str delimiter, bool tail=false, bool skip_empty=false, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> sstring.h:1228</div></div>
 </div><!-- fragment --><p> It is worth noting that if the separator is known in advance, it is better to use the string expression <code>e_join</code>. </p><div class="fragment"><div class="line">std::vector&lt;ssa&gt; strings = get_strings();</div>
 <div class="line">lstringa&lt;200&gt; line{<a class="code hl_function" href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">e_join</a>(strings, <span class="stringliteral">&quot;/&quot;</span>)};</div>
-<div class="ttc" id="agroup___str_exprs_html_gafd2e6b8a52bfe20c0b86d25f9f78cb52"><div class="ttname"><a href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a></div><div class="ttdeci">constexpr auto e_join(const T &amp;s, L &amp;&amp;d)</div><div class="ttdoc">Get a string expression concatenating the strings in the container into a single string with the give...</div><div class="ttdef"><b>Definition</b> strexpr.h:2803</div></div>
+<div class="ttc" id="agroup___str_exprs_html_gafd2e6b8a52bfe20c0b86d25f9f78cb52"><div class="ttname"><a href="group___str_exprs.html#gafd2e6b8a52bfe20c0b86d25f9f78cb52">simstr::e_join</a></div><div class="ttdeci">constexpr auto e_join(const T &amp;s, L &amp;&amp;d)</div><div class="ttdoc">Get a string expression concatenating the strings in the container into a single string with the give...</div><div class="ttdef"><b>Definition</b> strexpr.h:2799</div></div>
 </div><!-- fragment --><p> In this case, the compiler can better optimize the string merging code. </p>
 
 </div>
@@ -5280,6 +5241,90 @@ template&lt;typename K, size_t N, bool forShared = false, Allocatable Allocator 
 
 <p>The size of the string in characters. </p>
 <dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
+
+</div>
+</div>
+<a id="a6ed0b54ba5a9b09ec7f4aa73292b4eb1" name="a6ed0b54ba5a9b09ec7f4aa73292b4eb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ed0b54ba5a9b09ec7f4aa73292b4eb1">&#9670;&#160;</a></span>slice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsimstr_1_1simple__str.html">str_piece</a> <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, <a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt;, <a class="el" href="classsimstr_1_1lstring.html">lstring</a>&lt; K, N, false, allocator_string &gt;, Mutable &gt;::slice </td>
+          <td>(</td>
+          <td class="paramtype">S</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">E</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get part of a string as "str_src". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>- starting position in the string. </td></tr>
+    <tr><td class="paramname">end</td><td>- the end position in the string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Substring, <a class="el" href="structsimstr_1_1str__src.html" title="The simplest class of an immutable non-owning string.">str_src</a>.</dd></dl>
+<p>Either a number can be specified as the starting position - it is counted from the beginning of the string, but not further than its end, or <code>from_end(number)</code> - counted from the end of the string, but not earlier than its beginning. The ending position can be either a number - counted from the starting position, but not further than the end of the string, or <code>from_end(number)</code> - counted from the end of the string, but not earlier than the starting position, or <code>from_begin(number)</code> - counted from the beginning of the string, but not earlier than the starting position and not further than the end of the string. You can also use <code>to_end</code> - equivalent to from_end(0).</p>
+<div class="fragment"><div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(5, 2) == <span class="stringliteral">&quot;56&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(5, to_end) == <span class="stringliteral">&quot;56789&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(5, from_end(1)) == <span class="stringliteral">&quot;5678&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(from_end(3), to_end) == <span class="stringliteral">&quot;789&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(from_end(3), 2) == <span class="stringliteral">&quot;78&quot;</span>;</div>
+<div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(from_end(4), from_end(1)) == <span class="stringliteral">&quot;678&quot;</span>;</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a25e0fb508529624e08cd8ae694fcd801" name="a25e0fb508529624e08cd8ae694fcd801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25e0fb508529624e08cd8ae694fcd801">&#9670;&#160;</a></span>slice_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, <a class="el" href="structsimstr_1_1simple__str.html">simple_str</a>&lt; K &gt;, <a class="el" href="classsimstr_1_1lstring.html">lstring</a>&lt; K, N, false, allocator_string &gt;, Mutable &gt;::slice_to </td>
+          <td>(</td>
+          <td class="paramtype">S</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">E</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the slice result and place it into an object of the specified type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>- object type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>an object of type T initialized with the slice result. </dd></dl>
 
 </div>
 </div>

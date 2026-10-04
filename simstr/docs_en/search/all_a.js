@@ -20,7 +20,7 @@ var searchData=
   ['find_5flast_5fof_5fidx_17',['find_last_of_idx',['../classsimstr_1_1str__src__algs.html#ab630d62252bf1210f573a8c7222942c8',1,'simstr::str_src_algs']]],
   ['find_5flast_5for_5fall_18',['find_last_or_all',['../classsimstr_1_1str__src__algs.html#a6a5bdd0e7ab4f7e64e1e776f4dabe11c',1,'simstr::str_src_algs']]],
   ['find_5for_5fall_19',['find_or_all',['../classsimstr_1_1str__src__algs.html#ac029fd5412ed114bfefbdddba2c50167',1,'simstr::str_src_algs::find_or_all(str_piece pattern, size_t offset=0) const noexcept'],['../classsimstr_1_1str__src__algs.html#a762c55d09b34ba2b7b5f9f10783da662',1,'simstr::str_src_algs::find_or_all(K s, size_t offset=0) const noexcept']]],
-  ['find_5for_5fthrow_20',['find_or_throw',['../classsimstr_1_1str__src__algs.html#a40ab0482ea5f02bc0c3097bed6c9a5fa',1,'simstr::str_src_algs']]],
+  ['find_5for_5fthrow_20',['find_or_throw',['../classsimstr_1_1str__src__algs.html#af102fc124ef5b7c403b90872ae19929d',1,'simstr::str_src_algs']]],
   ['first_20simplest_20string_20class_20is_20called_20of_20course_20tt_20simple_5fstr_20tt_20_3a_21',['The first simplest string class is called, of course, &lt;tt&gt;simple_str&lt;/tt&gt; :)',['../overview.html#autotoc_md70',1,'']]],
   ['for_5fall_5ffinded_22',['for_all_finded',['../classsimstr_1_1str__src__algs.html#a8185ccf8fc2297b628cce3c83b6a0b4c',1,'simstr::str_src_algs']]],
   ['format_23',['format',['../index.html#autotoc_md52',1,'Adding strings with numbers in hex format'],['../classsimstr_1_1str__mutable.html#a3bfceeaa8961165845fa25fc652e31b0',1,'simstr::str_mutable::format()'],['../classsimstr_1_1sstring.html#a577bf1ac46d957ea3a438f358c46b971',1,'simstr::sstring::format()']]],

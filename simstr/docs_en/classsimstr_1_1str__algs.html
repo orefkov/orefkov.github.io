@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">simstr<span id="projectnumber">&#160;2.0.0</span>
+   <div id="projectname">simstr<span id="projectnumber">&#160;2.1.0</span>
    </div>
    <div id="projectbrief">Yet another strings library</div>
   </td>
@@ -236,7 +236,7 @@ requires is_equal_str_type_v&lt;K, D&gt;</td></tr>
 <tr class="memitem:ace8f275b33545d2491850f49ba3b7876" id="r_ace8f275b33545d2491850f49ba3b7876"><td class="memItemLeft" align="right" valign="top">constexpr str_piece&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#ace8f275b33545d2491850f49ba3b7876">operator()</a> (ptrdiff_t from, ptrdiff_t len=0) const noexcept</td></tr>
 <tr class="memdesc:ace8f275b33545d2491850f49ba3b7876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get part of a string as "str_src".  <br /></td></tr>
 <tr class="separator:ace8f275b33545d2491850f49ba3b7876"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ed0b54ba5a9b09ec7f4aa73292b4eb1" id="r_a6ed0b54ba5a9b09ec7f4aa73292b4eb1"><td class="memTemplParams" colspan="2">template&lt;first_index_in_str S, last_index_in_str E&gt; </td></tr>
+<tr class="memitem:a6ed0b54ba5a9b09ec7f4aa73292b4eb1" id="r_a6ed0b54ba5a9b09ec7f4aa73292b4eb1"><td class="memTemplParams" colspan="2">template&lt;first_index_in_str&lt; K &gt; S, last_index_in_str&lt; K &gt; E&gt; </td></tr>
 <tr class="memitem:a6ed0b54ba5a9b09ec7f4aa73292b4eb1"><td class="memTemplItemLeft" align="right" valign="top">constexpr str_piece&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a6ed0b54ba5a9b09ec7f4aa73292b4eb1">slice</a> (S start, E end) const noexcept</td></tr>
 <tr class="memdesc:a6ed0b54ba5a9b09ec7f4aa73292b4eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get part of a string as "str_src".  <br /></td></tr>
 <tr class="separator:a6ed0b54ba5a9b09ec7f4aa73292b4eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -331,12 +331,18 @@ requires std::is_constructible_v&lt;Exc, Args...&gt;</td></tr>
 <tr class="memitem:a6a5bdd0e7ab4f7e64e1e776f4dabe11c" id="r_a6a5bdd0e7ab4f7e64e1e776f4dabe11c"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a6a5bdd0e7ab4f7e64e1e776f4dabe11c">find_last_or_all</a> (str_piece pattern, size_t offset=-1) const noexcept</td></tr>
 <tr class="memdesc:a6a5bdd0e7ab4f7e64e1e776f4dabe11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the beginning of the last occurrence of a substring in this string or the end of the string.  <br /></td></tr>
 <tr class="separator:a6a5bdd0e7ab4f7e64e1e776f4dabe11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae281c63da2d81ef8aac65a2dad77eb93" id="r_ae281c63da2d81ef8aac65a2dad77eb93"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#ae281c63da2d81ef8aac65a2dad77eb93">find_end_of_last_or_all</a> (str_piece pattern, size_t offset=-1) const noexcept</td></tr>
-<tr class="memdesc:ae281c63da2d81ef8aac65a2dad77eb93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the end of the last occurrence of a substring in this string, or the end of a string.  <br /></td></tr>
-<tr class="separator:ae281c63da2d81ef8aac65a2dad77eb93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcc7d25e9507bd1dfddce3488d8d86f5" id="r_afcc7d25e9507bd1dfddce3488d8d86f5"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#afcc7d25e9507bd1dfddce3488d8d86f5">find_end_last_or_all</a> (str_piece pattern, size_t offset=-1) const noexcept</td></tr>
+<tr class="memdesc:afcc7d25e9507bd1dfddce3488d8d86f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the end of the last occurrence of a substring in this string, or the end of a string.  <br /></td></tr>
+<tr class="separator:afcc7d25e9507bd1dfddce3488d8d86f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4d712294186e2e181910677ba9c3ca7" id="r_ac4d712294186e2e181910677ba9c3ca7"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#ac4d712294186e2e181910677ba9c3ca7">contains</a> (str_piece pattern, size_t offset=0) const noexcept</td></tr>
 <tr class="memdesc:ac4d712294186e2e181910677ba9c3ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the string contains the specified substring.  <br /></td></tr>
 <tr class="separator:ac4d712294186e2e181910677ba9c3ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a624e4b950a90eb826d806c77a4ad0977" id="r_a624e4b950a90eb826d806c77a4ad0977"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a624e4b950a90eb826d806c77a4ad0977">find_ia</a> (str_piece pattern, size_t offset=0) const noexcept</td></tr>
+<tr class="memdesc:a624e4b950a90eb826d806c77a4ad0977"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the start of the first occurrence of a substring within this string, ignoring ASCII case.  <br /></td></tr>
+<tr class="separator:a624e4b950a90eb826d806c77a4ad0977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840a664022f4601c1d2a3f6120819ecd" id="r_a840a664022f4601c1d2a3f6120819ecd"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a840a664022f4601c1d2a3f6120819ecd">find_ia_lower</a> (str_piece pattern_lower, size_t offset=0) const noexcept</td></tr>
+<tr class="memdesc:a840a664022f4601c1d2a3f6120819ecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the start of the first occurrence of a substring within this string, ignoring ASCII case, given that the search pattern is already in ASCII lowercase.  <br /></td></tr>
+<tr class="separator:a840a664022f4601c1d2a3f6120819ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8185ccf8fc2297b628cce3c83b6a0b4c" id="r_a8185ccf8fc2297b628cce3c83b6a0b4c"><td class="memTemplParams" colspan="2">template&lt;typename Op&gt; </td></tr>
 <tr class="memitem:a8185ccf8fc2297b628cce3c83b6a0b4c"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a8185ccf8fc2297b628cce3c83b6a0b4c">for_all_finded</a> (const Op &amp;op, str_piece pattern, size_t offset=0, size_t maxCount=0) const</td></tr>
 <tr class="memdesc:a8185ccf8fc2297b628cce3c83b6a0b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call a functor on all found occurrences of a substring in this string.  <br /></td></tr>
@@ -366,13 +372,13 @@ requires std::is_constructible_v&lt;Exc, Args...&gt;</td></tr>
 <tr class="memitem:a512eaf3c2c8736f3021a5bbe60823866" id="r_a512eaf3c2c8736f3021a5bbe60823866"><td class="memItemLeft" align="right" valign="top">constexpr my_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a512eaf3c2c8736f3021a5bbe60823866">substr</a> (ptrdiff_t from, ptrdiff_t len=0) const</td></tr>
 <tr class="memdesc:a512eaf3c2c8736f3021a5bbe60823866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a substring. Works similarly to operator(), only the result is the same type as the method applied to.  <br /></td></tr>
 <tr class="separator:a512eaf3c2c8736f3021a5bbe60823866"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25e0fb508529624e08cd8ae694fcd801" id="r_a25e0fb508529624e08cd8ae694fcd801"><td class="memTemplParams" colspan="2">template&lt;typename T, first_index_in_str S, last_index_in_str E&gt; <br />
+<tr class="memitem:a25e0fb508529624e08cd8ae694fcd801" id="r_a25e0fb508529624e08cd8ae694fcd801"><td class="memTemplParams" colspan="2">template&lt;typename T, first_index_in_str&lt; K &gt; S, last_index_in_str&lt; K &gt; E&gt; <br />
 requires std::is_constructible_v&lt;T, str_piece&gt;</td></tr>
 <tr class="memitem:a25e0fb508529624e08cd8ae694fcd801"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsimstr_1_1str__src__algs.html#a25e0fb508529624e08cd8ae694fcd801">slice_to</a> (S start, E end) const noexcept</td></tr>
 <tr class="memdesc:a25e0fb508529624e08cd8ae694fcd801"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the slice result and place it into an object of the specified type.  <br /></td></tr>
 <tr class="separator:a25e0fb508529624e08cd8ae694fcd801"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44603768b77fff1a38d4c37ed0f72501" id="r_a44603768b77fff1a38d4c37ed0f72501"><td class="memTemplParams" colspan="2"><a id="a44603768b77fff1a38d4c37ed0f72501" name="a44603768b77fff1a38d4c37ed0f72501"></a>
-template&lt;first_index_in_str S, last_index_in_str E&gt; </td></tr>
+template&lt;first_index_in_str&lt; K &gt; S, last_index_in_str&lt; K &gt; E&gt; </td></tr>
 <tr class="memitem:a44603768b77fff1a38d4c37ed0f72501"><td class="memTemplItemLeft" align="right" valign="top">constexpr my_type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>substring</b> (S start, E end) const noexcept</td></tr>
 <tr class="memdesc:a44603768b77fff1a38d4c37ed0f72501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around slice_to&lt;my_type&gt; <br /></td></tr>
 <tr class="separator:a44603768b77fff1a38d4c37ed0f72501"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1298,6 +1304,47 @@ template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 
 </div>
 </div>
+<a id="afcc7d25e9507bd1dfddce3488d8d86f5" name="afcc7d25e9507bd1dfddce3488d8d86f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcc7d25e9507bd1dfddce3488d8d86f5">&#9670;&#160;</a></span>find_end_last_or_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, StrRef, Impl, Mutable &gt;::find_end_last_or_all </td>
+          <td>(</td>
+          <td class="paramtype">str_piece</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find the end of the last occurrence of a substring in this string, or the end of a string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- the search string. </td></tr>
+    <tr><td class="paramname">offset</td><td>- from which position to search in the opposite direction, -1 - from the very end. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>size_t - the position immediately after the last occurrence of the substring, or the length of the string if not found. </dd></dl>
+
+</div>
+</div>
 <a id="aab67ba06c8637f93984e45cf349c3eb8" name="aab67ba06c8637f93984e45cf349c3eb8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab67ba06c8637f93984e45cf349c3eb8">&#9670;&#160;</a></span>find_end_of_last()</h2>
 
@@ -1336,47 +1383,6 @@ template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>size_t - the position immediately after the last occurrence of the substring, or -1 if not found. </dd></dl>
-
-</div>
-</div>
-<a id="ae281c63da2d81ef8aac65a2dad77eb93" name="ae281c63da2d81ef8aac65a2dad77eb93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae281c63da2d81ef8aac65a2dad77eb93">&#9670;&#160;</a></span>find_end_of_last_or_all()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, StrRef, Impl, Mutable &gt;::find_end_of_last_or_all </td>
-          <td>(</td>
-          <td class="paramtype">str_piece</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;) const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Find the end of the last occurrence of a substring in this string, or the end of a string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pattern</td><td>- the search string. </td></tr>
-    <tr><td class="paramname">offset</td><td>- from which position to search in the opposite direction, -1 - from the very end. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>size_t - the position immediately after the last occurrence of the substring, or the length of the string if not found. </dd></dl>
 
 </div>
 </div>
@@ -1541,6 +1547,88 @@ template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::pair&lt;size_t, size_t&gt; - a pair from the position of the found occurrence and the number of the found character in the set, or -1 if not found. </dd></dl>
+
+</div>
+</div>
+<a id="a624e4b950a90eb826d806c77a4ad0977" name="a624e4b950a90eb826d806c77a4ad0977"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a624e4b950a90eb826d806c77a4ad0977">&#9670;&#160;</a></span>find_ia()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, StrRef, Impl, Mutable &gt;::find_ia </td>
+          <td>(</td>
+          <td class="paramtype">str_piece</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find the start of the first occurrence of a substring within this string, ignoring ASCII case. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>- the search string. </td></tr>
+    <tr><td class="paramname">offset</td><td>- from which position to start the search. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>size_t - the position of the beginning of the occurrence of the substring, or -1 if not found. </dd></dl>
+
+</div>
+</div>
+<a id="a840a664022f4601c1d2a3f6120819ecd" name="a840a664022f4601c1d2a3f6120819ecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840a664022f4601c1d2a3f6120819ecd">&#9670;&#160;</a></span>find_ia_lower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classsimstr_1_1str__src__algs.html">simstr::str_src_algs</a>&lt; K, StrRef, Impl, Mutable &gt;::find_ia_lower </td>
+          <td>(</td>
+          <td class="paramtype">str_piece</td>          <td class="paramname"><span class="paramname"><em>pattern_lower</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find the start of the first occurrence of a substring within this string, ignoring ASCII case, given that the search pattern is already in ASCII lowercase. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern_lower</td><td>- the search string, must be in lowercase. </td></tr>
+    <tr><td class="paramname">offset</td><td>- from which position to start the search. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>size_t - the position of the beginning of the occurrence of the substring, or -1 if not found. </dd></dl>
 
 </div>
 </div>
@@ -2672,7 +2760,7 @@ template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 <div class="memtemplate">
 template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 <div class="memtemplate">
-template&lt;first_index_in_str S, last_index_in_str E&gt; </div>
+template&lt;first_index_in_str&lt; K &gt; S, last_index_in_str&lt; K &gt; E&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2704,14 +2792,31 @@ template&lt;first_index_in_str S, last_index_in_str E&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Substring, <a class="el" href="structsimstr_1_1str__src.html" title="The simplest class of an immutable non-owning string.">str_src</a>.</dd></dl>
-<p>Either a number can be specified as the starting position - it is counted from the beginning of the string, but not further than its end, or <code>from_end(number)</code> - counted from the end of the string, but not earlier than its beginning. The ending position can be either a number - counted from the starting position, but not further than the end of the string, or <code>from_end(number)</code> - counted from the end of the string, but not earlier than the starting position, or <code>from_begin(number)</code> - counted from the beginning of the string, but not earlier than the starting position and not further than the end of the string. You can also use <code>to_end</code> - equivalent to from_end(0).</p>
+<p>Either a number can be specified as the starting position - it is counted from the beginning of the string, but not further than its end, or <code>from_end(number)</code> - counted from the end of the string, but not earlier than its beginning. The ending position can be either a number - counted from the starting position, but not further than the end of the string, or <code>from_end(number)</code> - counted from the end of the string, but not earlier than the starting position, or <code>from_begin(number)</code> - counted from the beginning of the string, but not earlier than the starting position and not further than the end of the string. You can also use <code>to_end</code> - equivalent to from_end(0). As well as the starting or ending position, you can use “search operators” that specify the sub-string that you need find, search starting position (default 0), how many found occurrences to skip (default 0)</p><ul>
+<li>begin_or_all{"needle", offset = 0, skip = 0} or "needle"_boa: position from the beginning of the found substring. If the substring is not found, then the entire string.</li>
+<li>end_or_all{"needle", offset = 0, skip = 0} or "needle"_eoa: position after the end of the found substring. If the substring is not found, then the entire string.</li>
+<li>begin_or_empty{"needle", offset = 0, skip = 0} or "needle"_boe: position from the beginning of the found substring. If the substring is not found, then the empty string.</li>
+<li>end_or_empty{"needle", offset = 0, skip = 0} or "needle"_eoe: : position after the end of the found substring. If the substring is not found, then the empty string.</li>
+<li>begin_last_or_all{"needle", offset = 0, skip = 0} or "needle"_bloa: position from the beginning of the last substring found. If the substring is not found, then the entire string.</li>
+<li>end_last_or_all{"needle", offset = 0, skip = 0} or "needle"_eloa: position after the end of the last substring found. If the substring is not found, then the entire string.</li>
+<li>begin_last_or_empty{"needle", offset = 0, skip = 0} or "needle"_bloe: position from the beginning of the last substring found. If the substring is not found, then the empty string.</li>
+<li><p class="startli">end_last_or_empty{"needle", offset = 0, skip = 0} or "needle"_eloe: : position after the end of the last substring found. If the substring is not found, then the empty string. In operators that search for starting occurrences, when specifying a offset for the search, it is counted from the beginning of the line, if the operator specifies a starting position, and from the found beginning of the string if the operator specifies the end position. In operators that search for the last occurrences, when specifying the offset for the search, it is counted from the end of the string to the beginning, the search is performed from the end of the string to the beginning, the skip parameter specifies how many occurrences to skip from the end of the string.</p>
 <div class="fragment"><div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(5, 2) == <span class="stringliteral">&quot;56&quot;</span>;</div>
 <div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(5, to_end) == <span class="stringliteral">&quot;56789&quot;</span>;</div>
 <div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(5, from_end(1)) == <span class="stringliteral">&quot;5678&quot;</span>;</div>
 <div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(from_end(3), to_end) == <span class="stringliteral">&quot;789&quot;</span>;</div>
 <div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(from_end(3), 2) == <span class="stringliteral">&quot;78&quot;</span>;</div>
 <div class="line"><span class="stringliteral">&quot;0123456789&quot;</span>_ss.slice(from_end(4), from_end(1)) == <span class="stringliteral">&quot;678&quot;</span>;</div>
-</div><!-- fragment --> 
+<div class="line"> ssa test{<span class="stringliteral">&quot;abc def&quot;</span>}, pattern{<span class="stringliteral">&quot;c &quot;</span>};</div>
+<div class="line"> test.slice(begin_or_all{pattern}, to_end) == <span class="stringliteral">&quot;c def&quot;</span>;</div>
+<div class="line"> test.slice(end_or_all{pattern}, to_end) == <span class="stringliteral">&quot;def&quot;</span>;</div>
+<div class="line"> test.slice(<span class="stringliteral">&quot;c &quot;</span>_boa, to_end) == <span class="stringliteral">&quot;c def&quot;</span>;</div>
+<div class="line"> test = <span class="stringliteral">&quot;qwe rty uio pas dfg&quot;</span>;</div>
+<div class="line"> test.slice(<span class="stringliteral">&quot; &quot;</span>_eoa, <span class="stringliteral">&quot; &quot;</span>_bloa) == <span class="stringliteral">&quot;rty uio pas&quot;</span>;</div>
+<div class="line"> <span class="stringliteral">&quot;-abc -abcFound&quot;</span>_ss.slice(begin_or_all{<span class="stringliteral">&quot;abc&quot;</span>, 0, 1}, to_end) == <span class="stringliteral">&quot;abcFound&quot;</span>;</div>
+</div><!-- fragment --> </li>
+</ul>
+
 </div>
 </div>
 <a id="a25e0fb508529624e08cd8ae694fcd801" name="a25e0fb508529624e08cd8ae694fcd801"></a>
@@ -2722,7 +2827,7 @@ template&lt;first_index_in_str S, last_index_in_str E&gt; </div>
 <div class="memtemplate">
 template&lt;typename K, typename StrRef, typename Impl, bool Mutable&gt; </div>
 <div class="memtemplate">
-template&lt;typename T, first_index_in_str S, last_index_in_str E&gt; <br />
+template&lt;typename T, first_index_in_str&lt; K &gt; S, last_index_in_str&lt; K &gt; E&gt; <br />
 requires std::is_constructible_v&lt;T, str_piece&gt;</div>
 <table class="mlabels">
   <tr>
